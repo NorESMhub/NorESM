@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Obtain a copy of the model (using git) &mdash; norESM  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="What is a branch?" href="svnbestpractice.html" />
+    <link rel="prev" title="Test list for NorESM" href="testlist.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> norESM
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Content:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runmodel/newbie.html">Newbies guide to running NorESM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runmodel/advanced.html">Advanced configuration (NorESM1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runmodel/advancednoresm2.html">Advanced configuration of NorESM2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runmodel/fluxescrossingboundaries.html">Fluxes crossing boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runmodel/cmip6_volcanic_forcing.html">CMIP6 volcanic forcing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runmodel/cmip6emissionsofshortlivedcomponents.html">CMIP6 emissions of short-lived components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runmodel/noresm2_output.html">Atmospheric output for some commonly used configurations of NorESM2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="settingupcamonlinuxpc.html">Setting up CAM on your own linux PC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeldiagnostics.html">Model Diagnostic Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usingtheissuetracker.html">Using the issue tracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testlist.html">Test list for NorESM</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Obtain a copy of the model (using git)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#verify-that-you-have-the-correct-checkout">Verify that you have the correct checkout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#modify-files">Modify files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#get-modifications-from-github">Get modifications from github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#send-modifications-to-github">Send modifications to github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#if-you-don-t-understand-and-want-to-get-back-to-svn">If you don’t understand and want to get back to svn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html">What is a branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#when-should-i-work-on-a-branch">When should I work on a branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#how-should-i-name-the-branch">How should I name the branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#a-note-on-branch-tag-naming">A note on branch / tag naming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#how-and-when-should-i-merge-from-trunk-to-my-branch">How and when should I merge from trunk to my branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#how-can-i-merge-my-branch-back-into-the-trunk">How can I merge my branch back into the trunk?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#what-is-a-tag">What is a tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#when-should-i-create-a-tag">When should I create a tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#what-tags-exist">What tags exist?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#how-should-i-name-the-tag">How should I name the tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#tagging-noresm0-and-noresm1-branches">Tagging noresm0 and noresm1 branches?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#case-1">Case 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#case-2">Case 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#case-3">Case 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#what-should-be-stated-in-the-commit-message">What should be stated in the commit message?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#what-should-be-stated-in-the-copy-message-of-a-branch">What should be stated in the copy message of a branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#what-should-be-stated-in-the-copy-message-of-a-tag">What should be stated in the copy message of a tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnnorstorehowto.html">Subversion how-to for NorStore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uncertainaerosolparameters.html">Uncertain parameters (which can be discussed) in the aerosol model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeldiagnostics.html">Model Diagnostic Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="norstoretape.html">NorStore Tape Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="norstorearchive.html">NorStore Research Data Archive: Guidelines for ingestion of NorESM output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Existing projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">norESM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Obtain a copy of the model (using git)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/gitbestpractice.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="obtain-a-copy-of-the-model-using-git">
+<span id="gitbestpractice"></span><h1>Obtain a copy of the model (using git)<a class="headerlink" href="#obtain-a-copy-of-the-model-using-git" title="Permalink to this headline">¶</a></h1>
+<p>-&nbsp;<strong>Create&nbsp;a&nbsp;github&nbsp;user:</strong>&nbsp;You&nbsp;can&nbsp;create&nbsp;the&nbsp;github&nbsp;user&nbsp;yourself.&nbsp;Go&nbsp;to&nbsp;<a class="reference external" href="https://github.com/join">https://github.com/join</a>&nbsp;and&nbsp;create&nbsp;a&nbsp;user&nbsp;(Make&nbsp;user-name&nbsp;which&nbsp;is&nbsp;easy&nbsp;to&nbsp;understand,&nbsp;for&nbsp;example&nbsp;FirstnameLastname.&nbsp;You&nbsp;can&nbsp;attach&nbsp;several&nbsp;email-addresses&nbsp;to&nbsp;the&nbsp;same&nbsp;user.)</p>
+<p>-&nbsp;Visit&nbsp;this&nbsp;page:&nbsp;<a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup</a></p>
+<p>-&nbsp;Send&nbsp;email&nbsp;to&nbsp;<a class="reference external" href="mailto:oyvind&#46;seland&#37;&#52;&#48;met&#46;no">oyvind<span>&#46;</span>seland<span>&#64;</span>met<span>&#46;</span>no</a>&nbsp;to&nbsp;get&nbsp;the&nbsp;right&nbsp;permissions&nbsp;for&nbsp;the&nbsp;new&nbsp;github&nbsp;user&nbsp;(The&nbsp;email&nbsp;must&nbsp;contain&nbsp;who&nbsp;you&nbsp;are&nbsp;and&nbsp;the&nbsp;github&nbsp;username).</p>
+<p>-&nbsp;When&nbsp;you&nbsp;have&nbsp;the&nbsp;right&nbsp;permissions,&nbsp;you&nbsp;can&nbsp;obtain&nbsp;the&nbsp;code.</p>
+<p>-&nbsp;git&nbsp;clone&nbsp;<a class="reference external" href="https://githubUserName&#64;github.com/metno/noresm.git">https://githubUserName&#64;github.com/metno/noresm.git</a></p>
+<p>The last point will create a new directory called “noresm” in the place
+you checked out the model. Go to that directory before executing any
+git-commands.</p>
+<p>If you get error messages, verify that you can open the page
+<a class="reference external" href="https://github.com/metno/noresm">https://github.com/metno/noresm</a> in a web-browser. If you can not, you
+are probably not a github-user or not member of the noresm group on
+github.</p>
+<ul class="simple">
+<li>Also do the following on all machines where you use git:</li>
+</ul>
+<blockquote>
+<div>*&nbsp;<strong>Make&nbsp;sure&nbsp;you&nbsp;have&nbsp;a&nbsp;version&nbsp;of&nbsp;git&nbsp;&gt;=&nbsp;2.0</strong>&nbsp;(add&nbsp;the&nbsp;line&nbsp;“module&nbsp;load&nbsp;git”&nbsp;to&nbsp;your&nbsp;.bashrc&nbsp;files&nbsp;on&nbsp;hexagon,&nbsp;vilje)
+*&nbsp;<strong>git&nbsp;config&nbsp;-&nbsp;-global&nbsp;push.default&nbsp;simple</strong>&nbsp;(Will&nbsp;edit&nbsp;your&nbsp;~/.gitconfig&nbsp;file&nbsp;to&nbsp;a&nbsp;safer&nbsp;way&nbsp;to&nbsp;share&nbsp;your&nbsp;modifications,&nbsp;see&nbsp;<a class="reference external" href="http://stackoverflow.com/questions/13148066/warning-push-default-is-unset-its-implicit-value-is-changing-in-git-2-0">http://stackoverflow.com/questions/13148066/warning-push-default-is-unset-its-implicit-value-is-changing-in-git-2-0</a>)</div></blockquote>
+<p>Note that with git, the main branch is no longer called “trunk”, it is
+called “master”!</p>
+</div>
+<div class="section" id="verify-that-you-have-the-correct-checkout">
+<h1>Verify that you have the correct checkout<a class="headerlink" href="#verify-that-you-have-the-correct-checkout" title="Permalink to this headline">¶</a></h1>
+<p>When you have cloned the model, check that you have gotten what you
+wanted!</p>
+<p>Check that your favourite branch is available using the command git
+branch –all (You should see the branch “master” on top with a star next
+to it. This is the branch you get by default. The other branches are
+listed below with remotes/origin/branchName, but you can not work on
+them until you check them out, see below)</p>
+<p>To check out (locally) your favourite branch and to start working on it,
+write git checkout -b myBranchName origin/myBranchName (Note that
+myBranchName must be one of the branches listed by the above command)</p>
+<p>If you don’t user the “-b” option, you will get something which is not
+correct. Make sure you are tracking a remote branch. You can write git
+branch -vv to see which remote branch you are tracking. The output will
+be something like: * myCheckedOutBranchName 1a08184
+[origin/myCheckedOutBranchname] LatestCommitMessageOnBranch</p>
+<p>Note that once a branch has been checked out using the -b option, you
+can switch between any of your checked out branches using the command
+git checkout aCheckedOutBranchName</p>
+<p>Note that in git, switching to a new branch change the files in your
+working directory. Git will warn you if you have any modified files
+before switching to a new branch. This is different from how svn works.</p>
+</div>
+<div class="section" id="modify-files">
+<h1>Modify files<a class="headerlink" href="#modify-files" title="Permalink to this headline">¶</a></h1>
+<p>Modify the code (for example a file named myChangedFile.F90) and send
+back to your local repository through git add myChangedFile.F90 git
+commit -m “aMessage”</p>
+<p>The message should link to the issue on github, so if you fix issue
+number 100 by this code change, you would probably write something like
+git commit -am “Did part of the work to resolve metno/noresm#100”</p>
+<p>Verify, using the tool “gitk” that the changes make sense.</p>
+</div>
+<div class="section" id="get-modifications-from-github">
+<h1>Get modifications from github<a class="headerlink" href="#get-modifications-from-github" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span>
+</pre></div>
+</div>
+<p>To be absolutely sure about branch names etc, you can do</p>
+<p>git pull remoteName remoteBranchName:myLocalBranchName which if your are
+picking up changes the master-branch would translate to git pull origin
+master:master</p>
+</div>
+<div class="section" id="send-modifications-to-github">
+<h1>Send modifications to github<a class="headerlink" href="#send-modifications-to-github" title="Permalink to this headline">¶</a></h1>
+<p>This command assumes that your changes go to the remote branch named
+like your branch (which is most of the times the case) git push</p>
+<p>You can also do (to be completely sure): git push remoteName
+myLocalBranchName:remoteBranchName which if your are changing the
+master-branch would translate to git push origin master:master (The
+above command means push my changes to the remote named “origin” from my
+local branch named master to the remote branch named master. If you are
+changing another branch than master, you must obviously not write
+“master”.)</p>
+</div>
+<div class="section" id="if-you-don-t-understand-and-want-to-get-back-to-svn">
+<h1>If you don’t understand and want to get back to svn<a class="headerlink" href="#if-you-don-t-understand-and-want-to-get-back-to-svn" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://www.git-tower.com/blog/git-for-subversion-users-cheat-sheet/">http://www.git-tower.com/blog/git-for-subversion-users-cheat-sheet/</a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="svnbestpractice.html" class="btn btn-neutral float-right" title="What is a branch?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="testlist.html" class="btn btn-neutral" title="Test list for NorESM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Anne Fouilloux
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

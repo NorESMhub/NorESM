@@ -1,0 +1,292 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>N_1850_AEROSLO_CNONL101 &mdash; norESM  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> norESM
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Content:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../start.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../runmodel/newbie.html">Newbies guide to running NorESM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../runmodel/advanced.html">Advanced configuration (NorESM1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../runmodel/advancednoresm2.html">Advanced configuration of NorESM2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../runmodel/fluxescrossingboundaries.html">Fluxes crossing boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../runmodel/cmip6_volcanic_forcing.html">CMIP6 volcanic forcing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../runmodel/cmip6emissionsofshortlivedcomponents.html">CMIP6 emissions of short-lived components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../runmodel/noresm2_output.html">Atmospheric output for some commonly used configurations of NorESM2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../settingupcamonlinuxpc.html">Setting up CAM on your own linux PC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeldiagnostics.html">Model Diagnostic Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usingtheissuetracker.html">Using the issue tracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testlist.html">Test list for NorESM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html">Obtain a copy of the model (using git)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html#verify-that-you-have-the-correct-checkout">Verify that you have the correct checkout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html#modify-files">Modify files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html#get-modifications-from-github">Get modifications from github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html#send-modifications-to-github">Send modifications to github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html#if-you-don-t-understand-and-want-to-get-back-to-svn">If you don’t understand and want to get back to svn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html">What is a branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#when-should-i-work-on-a-branch">When should I work on a branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#how-should-i-name-the-branch">How should I name the branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#a-note-on-branch-tag-naming">A note on branch / tag naming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#how-and-when-should-i-merge-from-trunk-to-my-branch">How and when should I merge from trunk to my branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#how-can-i-merge-my-branch-back-into-the-trunk">How can I merge my branch back into the trunk?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#what-is-a-tag">What is a tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#when-should-i-create-a-tag">When should I create a tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#what-tags-exist">What tags exist?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#how-should-i-name-the-tag">How should I name the tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#tagging-noresm0-and-noresm1-branches">Tagging noresm0 and noresm1 branches?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#case-1">Case 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#case-2">Case 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#case-3">Case 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#what-should-be-stated-in-the-commit-message">What should be stated in the commit message?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#what-should-be-stated-in-the-copy-message-of-a-branch">What should be stated in the copy message of a branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#what-should-be-stated-in-the-copy-message-of-a-tag">What should be stated in the copy message of a tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnnorstorehowto.html">Subversion how-to for NorStore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uncertainaerosolparameters.html">Uncertain parameters (which can be discussed) in the aerosol model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeldiagnostics.html">Model Diagnostic Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../norstoretape.html">NorStore Tape Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../norstorearchive.html">NorStore Research Data Archive: Guidelines for ingestion of NorESM output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects.html">Existing projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">norESM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>N_1850_AEROSLO_CNONL101</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modeldeffiles/n_1850_aeroslo_cnonl101.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="n-1850-aeroslo-cnonl101">
+<span id="id1"></span><h1>N_1850_AEROSLO_CNONL101<a class="headerlink" href="#n-1850-aeroslo-cnonl101" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="model-run-description-for-a-simulation-with-cam4-oslo-noresm1-m">
+<h2>Model-run description for a simulation with CAM4-Oslo (NorESM1-M)<a class="headerlink" href="#model-run-description-for-a-simulation-with-cam4-oslo-noresm1-m" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Purpose of simulation:<a href="#id2"><span class="problematic" id="id3">*</span></a>* Model validation for PI conditions</dt>
+<dd>including chemistry</dd>
+</dl>
+</li>
+<li>Contact person:<a href="#id4"><span class="problematic" id="id5">*</span></a>* Dirk Olivié (<a class="reference external" href="mailto:dirk&#46;olivie&#37;&#52;&#48;met&#46;no">dirk<span>&#46;</span>olivie<span>&#64;</span>met<span>&#46;</span>no</a>)</li>
+<li>Data owner:<a href="#id6"><span class="problematic" id="id7">*</span></a>* Dirk Olivié (<a class="reference external" href="mailto:dirk&#46;olivie&#37;&#52;&#48;met&#46;no">dirk<span>&#46;</span>olivie<span>&#64;</span>met<span>&#46;</span>no</a>)</li>
+<li>Revision Number:<a href="#id8"><span class="problematic" id="id9">*</span></a>* r155/156</li>
+<li>Ensemble runs:<a href="#id10"><span class="problematic" id="id11">*</span></a>* No</li>
+<li>Production computer used:<a href="#id12"><span class="problematic" id="id13">*</span></a>* Cray XT in Bergen (hexagon)</li>
+<li>Production date:<a href="#id14"><span class="problematic" id="id15">*</span></a>* December 2012 – April 2013</li>
+<li><dl class="first docutils">
+<dt>Storage locations:<a href="#id16"><span class="problematic" id="id17">*</span></a>* NorStore</dt>
+<dd>(/norstore_osl/projects/NS2345K/noresm/case/N_1850_AEROSLO_CNONL101/)</dd>
+</dl>
+</li>
+</ul>
+<p>MET Norway (local disk)</p>
+<ul class="simple">
+<li>Storage space:<a href="#id18"><span class="problematic" id="id19">*</span></a>*</li>
+<li>Projects:<a href="#id20"><span class="problematic" id="id21">*</span></a>* EarthClim</li>
+<li>Publications:<a href="#id22"><span class="problematic" id="id23">*</span></a>*</li>
+<li>Papers in preparation:<a href="#id24"><span class="problematic" id="id25">*</span></a>*</li>
+<li>Simulation name(s):<a href="#id26"><span class="problematic" id="id27">*</span></a>* N_1850_AEROSLO_CNONL101</li>
+<li>Compset name used:<a href="#id28"><span class="problematic" id="id29">*</span></a>* N_1850_AEROSLO_CNONL101</li>
+<li>Model type:<a href="#id30"><span class="problematic" id="id31">*</span></a>* Coupled</li>
+<li>Type of run:<a href="#id32"><span class="problematic" id="id33">*</span></a>* Hybrid</li>
+<li>Simulation period:<a href="#id34"><span class="problematic" id="id35">*</span></a>* 174 years</li>
+<li>Spin-up period:<a href="#id36"><span class="problematic" id="id37">*</span></a>*</li>
+<li><dl class="first docutils">
+<dt>Initialisation:<a href="#id38"><span class="problematic" id="id39">*</span></a>* Pre-industrial simulation</dt>
+<dd>NAER1850CNOC_f19_g16_05 (date 0700-01-01)</dd>
+</dl>
+</li>
+<li>Resolution:<a href="#id40"><span class="problematic" id="id41">*</span></a>* f19_g16= 1.8x2.5 (atmosphere), …x… (ocean)</li>
+<li>Emission year(s):<a href="#id42"><span class="problematic" id="id43">*</span></a>* 1850 (aerosols and precursors)</li>
+<li>Emission inventories** ACCMIP from IPCC AR5</li>
+<li>Greenhouse gases:<a href="#id44"><span class="problematic" id="id45">*</span></a>* Prescribed concentrations</li>
+<li>Frequency for output:<a href="#id46"><span class="problematic" id="id47">*</span></a>* Monthly</li>
+<li>Active/changing forcing agents:<a href="#id48"><span class="problematic" id="id49">*</span></a>*</li>
+<li>Special considerations:<a href="#id50"><span class="problematic" id="id51">*</span></a>*</li>
+<li><dl class="first docutils">
+<dt>Tuning parameters which are changed relative to the host model</dt>
+<dd>CAM4:<a href="#id52"><span class="problematic" id="id53">*</span></a>*</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Anne Fouilloux
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

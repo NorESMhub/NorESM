@@ -1,0 +1,655 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>standard set-up output &mdash; norESM  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> norESM
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Content:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../start.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newbie.html">Newbies guide to running NorESM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced configuration (NorESM1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advancednoresm2.html">Advanced configuration of NorESM2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fluxescrossingboundaries.html">Fluxes crossing boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmip6_volcanic_forcing.html">CMIP6 volcanic forcing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmip6emissionsofshortlivedcomponents.html">CMIP6 emissions of short-lived components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="noresm2_output.html">Atmospheric output for some commonly used configurations of NorESM2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../settingupcamonlinuxpc.html">Setting up CAM on your own linux PC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeldiagnostics.html">Model Diagnostic Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usingtheissuetracker.html">Using the issue tracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testlist.html">Test list for NorESM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html">Obtain a copy of the model (using git)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html#verify-that-you-have-the-correct-checkout">Verify that you have the correct checkout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html#modify-files">Modify files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html#get-modifications-from-github">Get modifications from github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html#send-modifications-to-github">Send modifications to github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html#if-you-don-t-understand-and-want-to-get-back-to-svn">If you don’t understand and want to get back to svn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html">What is a branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#when-should-i-work-on-a-branch">When should I work on a branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#how-should-i-name-the-branch">How should I name the branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#a-note-on-branch-tag-naming">A note on branch / tag naming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#how-and-when-should-i-merge-from-trunk-to-my-branch">How and when should I merge from trunk to my branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#how-can-i-merge-my-branch-back-into-the-trunk">How can I merge my branch back into the trunk?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#what-is-a-tag">What is a tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#when-should-i-create-a-tag">When should I create a tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#what-tags-exist">What tags exist?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#how-should-i-name-the-tag">How should I name the tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#tagging-noresm0-and-noresm1-branches">Tagging noresm0 and noresm1 branches?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#case-1">Case 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#case-2">Case 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#case-3">Case 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#what-should-be-stated-in-the-commit-message">What should be stated in the commit message?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#what-should-be-stated-in-the-copy-message-of-a-branch">What should be stated in the copy message of a branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#what-should-be-stated-in-the-copy-message-of-a-tag">What should be stated in the copy message of a tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnnorstorehowto.html">Subversion how-to for NorStore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uncertainaerosolparameters.html">Uncertain parameters (which can be discussed) in the aerosol model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeldiagnostics.html">Model Diagnostic Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../norstoretape.html">NorStore Tape Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../norstorearchive.html">NorStore Research Data Archive: Guidelines for ingestion of NorESM output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects.html">Existing projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">norESM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>standard set-up output</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/runmodel/standard_output.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="standard-set-up-output">
+<span id="standard-output"></span><h1>standard set-up output<a class="headerlink" href="#standard-set-up-output" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lat:long_name&nbsp;=&nbsp;“latitude”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zlon:long_name&nbsp;=&nbsp;“longitude”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zlon_bnds:long_name&nbsp;=&nbsp;“zlon&nbsp;bounds”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gw:long_name&nbsp;=&nbsp;“latitude&nbsp;weights”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lon:long_name&nbsp;=&nbsp;“longitude”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lev:long_name&nbsp;=&nbsp;“hybrid&nbsp;level&nbsp;at&nbsp;midpoints&nbsp;(1000*(A+B))”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hyam:long_name&nbsp;=&nbsp;“hybrid&nbsp;A&nbsp;coefficient&nbsp;at&nbsp;layer&nbsp;midpoints”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hybm:long_name&nbsp;=&nbsp;“hybrid&nbsp;B&nbsp;coefficient&nbsp;at&nbsp;layer&nbsp;midpoints”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P0:long_name&nbsp;=&nbsp;“reference&nbsp;pressure”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ilev:long_name&nbsp;=&nbsp;“hybrid&nbsp;level&nbsp;at&nbsp;interfaces&nbsp;(1000*(A+B))”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hyai:long_name&nbsp;=&nbsp;“hybrid&nbsp;A&nbsp;coefficient&nbsp;at&nbsp;layer&nbsp;interfaces”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hybi:long_name&nbsp;=&nbsp;“hybrid&nbsp;B&nbsp;coefficient&nbsp;at&nbsp;layer&nbsp;interfaces”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time:long_name&nbsp;=&nbsp;“time”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;date:long_name&nbsp;=&nbsp;“current&nbsp;date&nbsp;(YYYYMMDD)”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;datesec:long_name&nbsp;=&nbsp;“current&nbsp;seconds&nbsp;of&nbsp;current&nbsp;date”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time_bnds:long_name&nbsp;=&nbsp;“time&nbsp;interval&nbsp;endpoints”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ndbase:long_name&nbsp;=&nbsp;“base&nbsp;day”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nsbase:long_name&nbsp;=&nbsp;“seconds&nbsp;of&nbsp;base&nbsp;day”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nbdate:long_name&nbsp;=&nbsp;“base&nbsp;date&nbsp;(YYYYMMDD)”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nbsec:long_name&nbsp;=&nbsp;“seconds&nbsp;of&nbsp;base&nbsp;date”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mdt:long_name&nbsp;=&nbsp;“timestep”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ndcur:long_name&nbsp;=&nbsp;“current&nbsp;day&nbsp;(from&nbsp;base&nbsp;day)”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nscur:long_name&nbsp;=&nbsp;“current&nbsp;seconds&nbsp;of&nbsp;current&nbsp;day”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;co2vmr:long_name&nbsp;=&nbsp;“co2&nbsp;volume&nbsp;mixing&nbsp;ratio”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ch4vmr:long_name&nbsp;=&nbsp;“ch4&nbsp;volume&nbsp;mixing&nbsp;ratio”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n2ovmr:long_name&nbsp;=&nbsp;“n2o&nbsp;volume&nbsp;mixing&nbsp;ratio”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f11vmr:long_name&nbsp;=&nbsp;“f11&nbsp;volume&nbsp;mixing&nbsp;ratio”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f12vmr:long_name&nbsp;=&nbsp;“f12&nbsp;volume&nbsp;mixing&nbsp;ratio”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sol_tsi:long_name&nbsp;=&nbsp;“total&nbsp;solar&nbsp;irradiance”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nsteph:long_name&nbsp;=&nbsp;“current&nbsp;timestep”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ABSVIS:long_name&nbsp;=&nbsp;“Aerosol&nbsp;absorptive&nbsp;optical&nbsp;depth&nbsp;at&nbsp;0.442-0.625um”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ABSVVOLC:long_name&nbsp;=&nbsp;“CMIP6&nbsp;volcanic&nbsp;aerosol&nbsp;absorptive&nbsp;optical&nbsp;depth&nbsp;at&nbsp;0.442-0.625um”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ACTNI:long_name&nbsp;=&nbsp;“Average&nbsp;Cloud&nbsp;Top&nbsp;ice&nbsp;number”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ACTNL:long_name&nbsp;=&nbsp;“Average&nbsp;Cloud&nbsp;Top&nbsp;droplet&nbsp;number”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ACTNL_B:long_name&nbsp;=&nbsp;“Average&nbsp;Cloud&nbsp;Top&nbsp;&nbsp;&nbsp;droplet&nbsp;number&nbsp;(Bennartz)”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ACTREI:long_name&nbsp;=&nbsp;“Average&nbsp;Cloud&nbsp;Top&nbsp;ice&nbsp;effective&nbsp;radius”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ACTREL:long_name&nbsp;=&nbsp;“Average&nbsp;Cloud&nbsp;Top&nbsp;droplet&nbsp;effective&nbsp;radius”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ADRAIN:long_name&nbsp;=&nbsp;“Average&nbsp;rain&nbsp;effective&nbsp;Diameter”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ADSNOW:long_name&nbsp;=&nbsp;“Average&nbsp;snow&nbsp;effective&nbsp;Diameter”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AEROD_v:long_name&nbsp;=&nbsp;“Total&nbsp;Aerosol&nbsp;Optical&nbsp;Depth&nbsp;in&nbsp;visible&nbsp;band”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ANRAIN:long_name&nbsp;=&nbsp;“Average&nbsp;rain&nbsp;number&nbsp;conc”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ANSNOW:long_name&nbsp;=&nbsp;“Average&nbsp;snow&nbsp;number&nbsp;conc”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AODVVOLC:long_name&nbsp;=&nbsp;“CMIP6&nbsp;volcanic&nbsp;aerosol&nbsp;optical&nbsp;depth&nbsp;at&nbsp;0.442-0.625um”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AOD_VIS:long_name&nbsp;=&nbsp;“Aerosol&nbsp;optical&nbsp;depth&nbsp;at&nbsp;0.442-0.625um”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQRAIN:long_name&nbsp;=&nbsp;“Average&nbsp;rain&nbsp;mixing&nbsp;ratio”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQSNOW:long_name&nbsp;=&nbsp;“Average&nbsp;snow&nbsp;mixing&nbsp;ratio”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AREI:long_name&nbsp;=&nbsp;“Average&nbsp;ice&nbsp;effective&nbsp;radius”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AREL:long_name&nbsp;=&nbsp;“Average&nbsp;droplet&nbsp;effective&nbsp;radius”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ASYMMVIS:long_name&nbsp;=&nbsp;“Aerosol&nbsp;assymetry&nbsp;factor&nbsp;in&nbsp;visible&nbsp;wavelength&nbsp;band”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AWNC:long_name&nbsp;=&nbsp;“Average&nbsp;cloud&nbsp;water&nbsp;number&nbsp;conc”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AWNI:long_name&nbsp;=&nbsp;“Average&nbsp;cloud&nbsp;ice&nbsp;number&nbsp;conc”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BC_A:long_name&nbsp;=&nbsp;“BC_A&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BC_AC:long_name&nbsp;=&nbsp;“BC_AC&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BC_AC_OCW:long_name&nbsp;=&nbsp;“BC_AC_OCW&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BC_AC_SRF:long_name&nbsp;=&nbsp;“BC_AC&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BC_AI:long_name&nbsp;=&nbsp;“BC_AI&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BC_AI_OCW:long_name&nbsp;=&nbsp;“BC_AI_OCW&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BC_AI_SRF:long_name&nbsp;=&nbsp;“BC_AI&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BC_AX:long_name&nbsp;=&nbsp;“BC_AX&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BC_AX_CLXF:long_name&nbsp;=&nbsp;“vertically&nbsp;integrated&nbsp;external&nbsp;forcing&nbsp;for&nbsp;BC_AX”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BC_AX_CMXF:long_name&nbsp;=&nbsp;“vertically&nbsp;integrated&nbsp;external&nbsp;forcing&nbsp;for&nbsp;BC_AX”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BC_AX_SRF:long_name&nbsp;=&nbsp;“BC_AX&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BC_A_OCW:long_name&nbsp;=&nbsp;“BC_A_OCW&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BC_A_SRF:long_name&nbsp;=&nbsp;“BC_A&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BC_N:long_name&nbsp;=&nbsp;“BC_N&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BC_NI:long_name&nbsp;=&nbsp;“BC_NI&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BC_NI_CLXF:long_name&nbsp;=&nbsp;“vertically&nbsp;integrated&nbsp;external&nbsp;forcing&nbsp;for&nbsp;BC_NI”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BC_NI_CMXF:long_name&nbsp;=&nbsp;“vertically&nbsp;integrated&nbsp;external&nbsp;forcing&nbsp;for&nbsp;BC_NI”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BC_NI_OCW:long_name&nbsp;=&nbsp;“BC_NI_OCW&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BC_NI_SRF:long_name&nbsp;=&nbsp;“BC_NI&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BC_N_CLXF:long_name&nbsp;=&nbsp;“vertically&nbsp;integrated&nbsp;external&nbsp;forcing&nbsp;for&nbsp;BC_N”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BC_N_CMXF:long_name&nbsp;=&nbsp;“vertically&nbsp;integrated&nbsp;external&nbsp;forcing&nbsp;for&nbsp;BC_N”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BC_N_OCW:long_name&nbsp;=&nbsp;“BC_N_OCW&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BC_N_SRF:long_name&nbsp;=&nbsp;“BC_N&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BVISVOLC:long_name&nbsp;=&nbsp;“CMIP6&nbsp;volcanic&nbsp;aerosol&nbsp;extinction&nbsp;at&nbsp;0.442-0.625um”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CABSVIS:long_name&nbsp;=&nbsp;“Clear&nbsp;air&nbsp;aerosol&nbsp;absorptive&nbsp;optical&nbsp;depth”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CAODVIS:long_name&nbsp;=&nbsp;“Clear&nbsp;air&nbsp;aerosol&nbsp;optical&nbsp;depth”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CCN_B:long_name&nbsp;=&nbsp;“Average&nbsp;Cloud&nbsp;Top&nbsp;liquid&nbsp;CCN&nbsp;(Bennartz)”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CDNUMC:long_name&nbsp;=&nbsp;“Vertically-integrated&nbsp;droplet&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLDFREE:long_name&nbsp;=&nbsp;“Cloud&nbsp;free&nbsp;fraction&nbsp;wrt&nbsp;CAODVIS&nbsp;and&nbsp;CABSVIS”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLDHGH:long_name&nbsp;=&nbsp;“Vertically-integrated&nbsp;high&nbsp;cloud”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLDICE:long_name&nbsp;=&nbsp;“Grid&nbsp;box&nbsp;averaged&nbsp;cloud&nbsp;ice&nbsp;amount”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLDLIQ:long_name&nbsp;=&nbsp;“Grid&nbsp;box&nbsp;averaged&nbsp;cloud&nbsp;liquid&nbsp;amount”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLDLOW:long_name&nbsp;=&nbsp;“Vertically-integrated&nbsp;low&nbsp;cloud”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLDMED:long_name&nbsp;=&nbsp;“Vertically-integrated&nbsp;mid-level&nbsp;cloud”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLDTOT:long_name&nbsp;=&nbsp;“Vertically-integrated&nbsp;total&nbsp;cloud”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLOUD:long_name&nbsp;=&nbsp;“Cloud&nbsp;fraction”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLOUDCOVER_CLUBB:long_name&nbsp;=&nbsp;“Cloud&nbsp;Cover”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLOUDFRAC_CLUBB:long_name&nbsp;=&nbsp;“Cloud&nbsp;Fraction”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CONCLD:long_name&nbsp;=&nbsp;“Convective&nbsp;cloud&nbsp;cover”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DAYFOC:long_name&nbsp;=&nbsp;“Daylight&nbsp;fraction”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DCQ:long_name&nbsp;=&nbsp;“Q&nbsp;tendency&nbsp;due&nbsp;to&nbsp;moist&nbsp;processes”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DF_H2O2:long_name&nbsp;=&nbsp;“dry&nbsp;deposition&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DF_H2SO4:long_name&nbsp;=&nbsp;“dry&nbsp;deposition&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DF_SO2:long_name&nbsp;=&nbsp;“dry&nbsp;deposition&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DMS:long_name&nbsp;=&nbsp;“DMS&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DMS_SRF:long_name&nbsp;=&nbsp;“DMS&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DST_A2:long_name&nbsp;=&nbsp;“DST_A2&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DST_A2_OCW:long_name&nbsp;=&nbsp;“DST_A2_OCW&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DST_A2_SRF:long_name&nbsp;=&nbsp;“DST_A2&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DST_A3:long_name&nbsp;=&nbsp;“DST_A3&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DST_A3_OCW:long_name&nbsp;=&nbsp;“DST_A3_OCW&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DST_A3_SRF:long_name&nbsp;=&nbsp;“DST_A3&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DTCOND:long_name&nbsp;=&nbsp;“T&nbsp;tendency&nbsp;-&nbsp;moist&nbsp;processes”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DTV:long_name&nbsp;=&nbsp;“T&nbsp;vertical&nbsp;diffusion”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DTWR_H2O2:long_name&nbsp;=&nbsp;“wet&nbsp;removal&nbsp;Neu&nbsp;scheme&nbsp;tendency”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DTWR_H2SO4:long_name&nbsp;=&nbsp;“wet&nbsp;removal&nbsp;Neu&nbsp;scheme&nbsp;tendency”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DTWR_SO2:long_name&nbsp;=&nbsp;“wet&nbsp;removal&nbsp;Neu&nbsp;scheme&nbsp;tendency”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EXTVIS:long_name&nbsp;=&nbsp;“Aerosol&nbsp;extinction”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FCTI:long_name&nbsp;=&nbsp;“Fractional&nbsp;occurrence&nbsp;of&nbsp;cloud&nbsp;top&nbsp;ice”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FCTL:long_name&nbsp;=&nbsp;“Fractional&nbsp;occurrence&nbsp;of&nbsp;cloud&nbsp;top&nbsp;liquid”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FCTL_B:long_name&nbsp;=&nbsp;“Fractional&nbsp;occurrence&nbsp;of&nbsp;cloud&nbsp;top&nbsp;liquid&nbsp;(Bennartz)”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FICE:long_name&nbsp;=&nbsp;“Fractional&nbsp;ice&nbsp;content&nbsp;within&nbsp;cloud”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FLDS:long_name&nbsp;=&nbsp;“Downwelling&nbsp;longwave&nbsp;flux&nbsp;at&nbsp;surface”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FLNS:long_name&nbsp;=&nbsp;“Net&nbsp;longwave&nbsp;flux&nbsp;at&nbsp;surface”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FLNSC:long_name&nbsp;=&nbsp;“Clearsky&nbsp;net&nbsp;longwave&nbsp;flux&nbsp;at&nbsp;surface”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FLNT:long_name&nbsp;=&nbsp;“Net&nbsp;longwave&nbsp;flux&nbsp;at&nbsp;top&nbsp;of&nbsp;model”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FLNTC:long_name&nbsp;=&nbsp;“Clearsky&nbsp;net&nbsp;longwave&nbsp;flux&nbsp;at&nbsp;top&nbsp;of&nbsp;model”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FLUT:long_name&nbsp;=&nbsp;“Upwelling&nbsp;longwave&nbsp;flux&nbsp;at&nbsp;top&nbsp;of&nbsp;model”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FLUTC:long_name&nbsp;=&nbsp;“Clearsky&nbsp;upwelling&nbsp;longwave&nbsp;flux&nbsp;at&nbsp;top&nbsp;of&nbsp;model”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FREQI:long_name&nbsp;=&nbsp;“Fractional&nbsp;occurrence&nbsp;of&nbsp;ice”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FREQL:long_name&nbsp;=&nbsp;“Fractional&nbsp;occurrence&nbsp;of&nbsp;liquid”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FREQR:long_name&nbsp;=&nbsp;“Fractional&nbsp;occurrence&nbsp;of&nbsp;rain”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FREQS:long_name&nbsp;=&nbsp;“Fractional&nbsp;occurrence&nbsp;of&nbsp;snow”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FSDS:long_name&nbsp;=&nbsp;“Downwelling&nbsp;solar&nbsp;flux&nbsp;at&nbsp;surface”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FSDSC:long_name&nbsp;=&nbsp;“Clearsky&nbsp;downwelling&nbsp;solar&nbsp;flux&nbsp;at&nbsp;surface”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FSNS:long_name&nbsp;=&nbsp;“Net&nbsp;solar&nbsp;flux&nbsp;at&nbsp;surface”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FSNSC:long_name&nbsp;=&nbsp;“Clearsky&nbsp;net&nbsp;solar&nbsp;flux&nbsp;at&nbsp;surface”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FSNT:long_name&nbsp;=&nbsp;“Net&nbsp;solar&nbsp;flux&nbsp;at&nbsp;top&nbsp;of&nbsp;model”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FSNTC:long_name&nbsp;=&nbsp;“Clearsky&nbsp;net&nbsp;solar&nbsp;flux&nbsp;at&nbsp;top&nbsp;of&nbsp;model”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FSNTOA:long_name&nbsp;=&nbsp;“Net&nbsp;solar&nbsp;flux&nbsp;at&nbsp;top&nbsp;of&nbsp;atmosphere”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FSNTOAC:long_name&nbsp;=&nbsp;“Clearsky&nbsp;net&nbsp;solar&nbsp;flux&nbsp;at&nbsp;top&nbsp;of&nbsp;atmosphere”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FSUTOA:long_name&nbsp;=&nbsp;“Upwelling&nbsp;solar&nbsp;flux&nbsp;at&nbsp;top&nbsp;of&nbsp;atmosphere”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H2O:long_name&nbsp;=&nbsp;“water&nbsp;vapor&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H2O2:long_name&nbsp;=&nbsp;“H2O2&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H2O2_SRF:long_name&nbsp;=&nbsp;“H2O2&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H2O_CLXF:long_name&nbsp;=&nbsp;“vertically&nbsp;integrated&nbsp;external&nbsp;forcing&nbsp;for&nbsp;H2O”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H2O_CMXF:long_name&nbsp;=&nbsp;“vertically&nbsp;integrated&nbsp;external&nbsp;forcing&nbsp;for&nbsp;H2O”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H2O_SRF:long_name&nbsp;=&nbsp;“water&nbsp;vapor&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H2SO4:long_name&nbsp;=&nbsp;“H2SO4&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H2SO4_SRF:long_name&nbsp;=&nbsp;“H2SO4&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HO2_aft:long_name&nbsp;=&nbsp;“HO2&nbsp;invariants&nbsp;after&nbsp;adding&nbsp;diurnal&nbsp;variations”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HO2_bef:long_name&nbsp;=&nbsp;“HO2&nbsp;invariants&nbsp;before&nbsp;adding&nbsp;diurnal&nbsp;variations”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ICEFRAC:long_name&nbsp;=&nbsp;“Fraction&nbsp;of&nbsp;sfc&nbsp;area&nbsp;covered&nbsp;by&nbsp;sea-ice”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ICIMR:long_name&nbsp;=&nbsp;“Prognostic&nbsp;in-cloud&nbsp;ice&nbsp;mixing&nbsp;ratio”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ICWMR:long_name&nbsp;=&nbsp;“Prognostic&nbsp;in-cloud&nbsp;water&nbsp;mixing&nbsp;ratio”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IWC:long_name&nbsp;=&nbsp;“Grid&nbsp;box&nbsp;average&nbsp;ice&nbsp;water&nbsp;content”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LANDFRAC:long_name&nbsp;=&nbsp;“Fraction&nbsp;of&nbsp;sfc&nbsp;area&nbsp;covered&nbsp;by&nbsp;land”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LHFLX:long_name&nbsp;=&nbsp;“Surface&nbsp;latent&nbsp;heat&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LWCF:long_name&nbsp;=&nbsp;“Longwave&nbsp;cloud&nbsp;forcing”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MEG_isoprene:long_name&nbsp;=&nbsp;“isoprene&nbsp;MEGAN&nbsp;emissions&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MEG_monoterp:long_name&nbsp;=&nbsp;“monoterp&nbsp;MEGAN&nbsp;emissions&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MSKtem:long_name&nbsp;=&nbsp;“TEM&nbsp;mask”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NO3_aft:long_name&nbsp;=&nbsp;“NO3&nbsp;invariants&nbsp;after&nbsp;adding&nbsp;diurnal&nbsp;variations”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NO3_bef:long_name&nbsp;=&nbsp;“NO3&nbsp;invariants&nbsp;before&nbsp;adding&nbsp;diurnal&nbsp;variations”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NUMICE:long_name&nbsp;=&nbsp;“Grid&nbsp;box&nbsp;averaged&nbsp;cloud&nbsp;ice&nbsp;number”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NUMLIQ:long_name&nbsp;=&nbsp;“Grid&nbsp;box&nbsp;averaged&nbsp;cloud&nbsp;liquid&nbsp;number”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NUMRAI:long_name&nbsp;=&nbsp;“Grid&nbsp;box&nbsp;averaged&nbsp;rain&nbsp;number”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NUMSNO:long_name&nbsp;=&nbsp;“Grid&nbsp;box&nbsp;averaged&nbsp;snow&nbsp;number”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N_AER:long_name&nbsp;=&nbsp;“Aerosol&nbsp;number&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OCNFRAC:long_name&nbsp;=&nbsp;“Fraction&nbsp;of&nbsp;sfc&nbsp;area&nbsp;covered&nbsp;by&nbsp;ocean”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OH_aft:long_name&nbsp;=&nbsp;“OH&nbsp;invariants&nbsp;after&nbsp;adding&nbsp;diurnal&nbsp;variations”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OH_bef:long_name&nbsp;=&nbsp;“OH&nbsp;invariants&nbsp;before&nbsp;adding&nbsp;diurnal&nbsp;variations”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OMEGA:long_name&nbsp;=&nbsp;“Vertical&nbsp;velocity&nbsp;(pressure)”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OMEGAT:long_name&nbsp;=&nbsp;“Vertical&nbsp;heat&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OM_AC:long_name&nbsp;=&nbsp;“OM_AC&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OM_AC_OCW:long_name&nbsp;=&nbsp;“OM_AC_OCW&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OM_AC_SRF:long_name&nbsp;=&nbsp;“OM_AC&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OM_AI:long_name&nbsp;=&nbsp;“OM_AI&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OM_AI_OCW:long_name&nbsp;=&nbsp;“OM_AI_OCW&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OM_AI_SRF:long_name&nbsp;=&nbsp;“OM_AI&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OM_NI:long_name&nbsp;=&nbsp;“OM_NI&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OM_NI_CLXF:long_name&nbsp;=&nbsp;“vertically&nbsp;integrated&nbsp;external&nbsp;forcing&nbsp;for&nbsp;OM_NI”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OM_NI_CMXF:long_name&nbsp;=&nbsp;“vertically&nbsp;integrated&nbsp;external&nbsp;forcing&nbsp;for&nbsp;OM_NI”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OM_NI_OCW:long_name&nbsp;=&nbsp;“OM_NI_OCW&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OM_NI_SRF:long_name&nbsp;=&nbsp;“OM_NI&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PBLH:long_name&nbsp;=&nbsp;“PBL&nbsp;height”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PHIS:long_name&nbsp;=&nbsp;“Surface&nbsp;geopotential”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRECC:long_name&nbsp;=&nbsp;“Convective&nbsp;precipitation&nbsp;rate&nbsp;(liq&nbsp;+&nbsp;ice)”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRECL:long_name&nbsp;=&nbsp;“Large-scale&nbsp;(stable)&nbsp;precipitation&nbsp;rate&nbsp;(liq&nbsp;+&nbsp;ice)”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRECSC:long_name&nbsp;=&nbsp;“Convective&nbsp;snow&nbsp;rate&nbsp;(water&nbsp;equivalent)”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRECSL:long_name&nbsp;=&nbsp;“Large-scale&nbsp;(stable)&nbsp;snow&nbsp;rate&nbsp;(water&nbsp;equivalent)”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PS:long_name&nbsp;=&nbsp;“Surface&nbsp;pressure”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PSL:long_name&nbsp;=&nbsp;“Sea&nbsp;level&nbsp;pressure”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Q:long_name&nbsp;=&nbsp;“Specific&nbsp;humidity”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QFLX:long_name&nbsp;=&nbsp;“Surface&nbsp;water&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QREFHT:long_name&nbsp;=&nbsp;“Reference&nbsp;height&nbsp;humidity”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QRL:long_name&nbsp;=&nbsp;“Longwave&nbsp;heating&nbsp;rate”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QRS:long_name&nbsp;=&nbsp;“Solar&nbsp;heating&nbsp;rate”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QT:long_name&nbsp;=&nbsp;“Total&nbsp;water&nbsp;mixing&nbsp;ratio”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RAINQM:long_name&nbsp;=&nbsp;“Grid&nbsp;box&nbsp;averaged&nbsp;rain&nbsp;amount”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RCMINLAYER_CLUBB:long_name&nbsp;=&nbsp;“Cloud&nbsp;Water&nbsp;in&nbsp;Layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RCMTEND_CLUBB:long_name&nbsp;=&nbsp;“Cloud&nbsp;Liquid&nbsp;Water&nbsp;Tendency”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RCM_CLUBB:long_name&nbsp;=&nbsp;“Cloud&nbsp;Water&nbsp;Mixing&nbsp;Ratio”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RELH:long_name&nbsp;=&nbsp;“Fictive&nbsp;relative&nbsp;humidity”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RELHUM:long_name&nbsp;=&nbsp;“Relative&nbsp;humidity”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RELVAR:long_name&nbsp;=&nbsp;“Relative&nbsp;cloud&nbsp;water&nbsp;variance”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RHO_CLUBB:long_name&nbsp;=&nbsp;“Air&nbsp;Density”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RIMTEND_CLUBB:long_name&nbsp;=&nbsp;“Cloud&nbsp;Ice&nbsp;Tendency”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RTP2_CLUBB:long_name&nbsp;=&nbsp;“Moisture&nbsp;Variance”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RTPTHLP_CLUBB:long_name&nbsp;=&nbsp;“Temp.&nbsp;Moist.&nbsp;Covariance”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RVMTEND_CLUBB:long_name&nbsp;=&nbsp;“Water&nbsp;vapor&nbsp;tendency”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFBC_A:long_name&nbsp;=&nbsp;“BC_A&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFBC_AC:long_name&nbsp;=&nbsp;“BC_AC&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFBC_AI:long_name&nbsp;=&nbsp;“BC_AI&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFBC_AX:long_name&nbsp;=&nbsp;“BC_AX&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFBC_N:long_name&nbsp;=&nbsp;“BC_N&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFBC_NI:long_name&nbsp;=&nbsp;“BC_NI&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFDMS:long_name&nbsp;=&nbsp;“DMS&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFDST_A2:long_name&nbsp;=&nbsp;“DST_A2&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFDST_A3:long_name&nbsp;=&nbsp;“DST_A3&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFH2O2:long_name&nbsp;=&nbsp;“H2O2&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFH2SO4:long_name&nbsp;=&nbsp;“H2SO4&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFOM_AC:long_name&nbsp;=&nbsp;“OM_AC&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFOM_AI:long_name&nbsp;=&nbsp;“OM_AI&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFOM_NI:long_name&nbsp;=&nbsp;“OM_NI&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFSO2:long_name&nbsp;=&nbsp;“SO2&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFSO4_A1:long_name&nbsp;=&nbsp;“SO4_A1&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFSO4_A2:long_name&nbsp;=&nbsp;“SO4_A2&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFSO4_AC:long_name&nbsp;=&nbsp;“SO4_AC&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFSO4_NA:long_name&nbsp;=&nbsp;“SO4_NA&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFSO4_PR:long_name&nbsp;=&nbsp;“SO4_PR&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFSOA_A1:long_name&nbsp;=&nbsp;“SOA_A1&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFSOA_LV:long_name&nbsp;=&nbsp;“SOA_LV&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFSOA_NA:long_name&nbsp;=&nbsp;“SOA_NA&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFSOA_SV:long_name&nbsp;=&nbsp;“SOA_SV&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFSS_A1:long_name&nbsp;=&nbsp;“SS_A1&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFSS_A2:long_name&nbsp;=&nbsp;“SS_A2&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFSS_A3:long_name&nbsp;=&nbsp;“SS_A3&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFisoprene:long_name&nbsp;=&nbsp;“isoprene&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFmonoterp:long_name&nbsp;=&nbsp;“monoterp&nbsp;surface&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHFLX:long_name&nbsp;=&nbsp;“Surface&nbsp;sensible&nbsp;heat&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SL:long_name&nbsp;=&nbsp;“Liquid&nbsp;water&nbsp;static&nbsp;energy”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SNOWHICE:long_name&nbsp;=&nbsp;“Snow&nbsp;depth&nbsp;over&nbsp;ice”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SNOWHLND:long_name&nbsp;=&nbsp;“Water&nbsp;equivalent&nbsp;snow&nbsp;depth”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SNOWQM:long_name&nbsp;=&nbsp;“Grid&nbsp;box&nbsp;averaged&nbsp;snow&nbsp;amount”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SO2:long_name&nbsp;=&nbsp;“SO2&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SO2_CLXF:long_name&nbsp;=&nbsp;“vertically&nbsp;integrated&nbsp;external&nbsp;forcing&nbsp;for&nbsp;SO2”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SO2_CMXF:long_name&nbsp;=&nbsp;“vertically&nbsp;integrated&nbsp;external&nbsp;forcing&nbsp;for&nbsp;SO2”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SO2_SRF:long_name&nbsp;=&nbsp;“SO2&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SO4_A1:long_name&nbsp;=&nbsp;“SO4_A1&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SO4_A1_OCW:long_name&nbsp;=&nbsp;“SO4_A1_OCW&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SO4_A1_SRF:long_name&nbsp;=&nbsp;“SO4_A1&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SO4_A2:long_name&nbsp;=&nbsp;“SO4_A2&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SO4_A2_OCW:long_name&nbsp;=&nbsp;“SO4_A2_OCW&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SO4_A2_SRF:long_name&nbsp;=&nbsp;“SO4_A2&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SO4_AC:long_name&nbsp;=&nbsp;“SO4_AC&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SO4_AC_OCW:long_name&nbsp;=&nbsp;“SO4_AC_OCW&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SO4_AC_SRF:long_name&nbsp;=&nbsp;“SO4_AC&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SO4_NA:long_name&nbsp;=&nbsp;“SO4_NA&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SO4_NA_OCW:long_name&nbsp;=&nbsp;“SO4_NA_OCW&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SO4_NA_SRF:long_name&nbsp;=&nbsp;“SO4_NA&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SO4_PR:long_name&nbsp;=&nbsp;“SO4_PR&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SO4_PR_CLXF:long_name&nbsp;=&nbsp;“vertically&nbsp;integrated&nbsp;external&nbsp;forcing&nbsp;for&nbsp;SO4_PR”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SO4_PR_CMXF:long_name&nbsp;=&nbsp;“vertically&nbsp;integrated&nbsp;external&nbsp;forcing&nbsp;for&nbsp;SO4_PR”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SO4_PR_OCW:long_name&nbsp;=&nbsp;“SO4_PR_OCW&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SO4_PR_SRF:long_name&nbsp;=&nbsp;“SO4_PR&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SOA_A1:long_name&nbsp;=&nbsp;“SOA_A1&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SOA_A1_OCW:long_name&nbsp;=&nbsp;“SOA_A1_OCW&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SOA_A1_SRF:long_name&nbsp;=&nbsp;“SOA_A1&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SOA_LV:long_name&nbsp;=&nbsp;“SOA_LV&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SOA_LV_SRF:long_name&nbsp;=&nbsp;“SOA_LV&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SOA_NA:long_name&nbsp;=&nbsp;“SOA_NA&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SOA_NA_OCW:long_name&nbsp;=&nbsp;“SOA_NA_OCW&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SOA_NA_SRF:long_name&nbsp;=&nbsp;“SOA_NA&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SOA_SV:long_name&nbsp;=&nbsp;“SOA_SV&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SOA_SV_SRF:long_name&nbsp;=&nbsp;“SOA_SV&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SOLIN:long_name&nbsp;=&nbsp;“Solar&nbsp;insolation”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SSAVIS:long_name&nbsp;=&nbsp;“Aerosol&nbsp;single&nbsp;scattering&nbsp;albedo&nbsp;in&nbsp;visible&nbsp;wavelength&nbsp;band”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SS_A1:long_name&nbsp;=&nbsp;“SS_A1&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SS_A1_OCW:long_name&nbsp;=&nbsp;“SS_A1_OCW&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SS_A1_SRF:long_name&nbsp;=&nbsp;“SS_A1&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SS_A2:long_name&nbsp;=&nbsp;“SS_A2&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SS_A2_OCW:long_name&nbsp;=&nbsp;“SS_A2_OCW&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SS_A2_SRF:long_name&nbsp;=&nbsp;“SS_A2&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SS_A3:long_name&nbsp;=&nbsp;“SS_A3&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SS_A3_OCW:long_name&nbsp;=&nbsp;“SS_A3_OCW&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SS_A3_SRF:long_name&nbsp;=&nbsp;“SS_A3&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STEND_CLUBB:long_name&nbsp;=&nbsp;“Temperature&nbsp;tendency”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SWCF:long_name&nbsp;=&nbsp;“Shortwave&nbsp;cloud&nbsp;forcing”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T:long_name&nbsp;=&nbsp;“Temperature”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TAUBLJX:long_name&nbsp;=&nbsp;“Zonal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;integrated&nbsp;drag&nbsp;from&nbsp;Beljaars&nbsp;SGO”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TAUBLJY:long_name&nbsp;=&nbsp;“Meridional&nbsp;integrated&nbsp;drag&nbsp;from&nbsp;Beljaars&nbsp;SGO”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TAUGWX:long_name&nbsp;=&nbsp;“Zonal&nbsp;gravity&nbsp;wave&nbsp;surface&nbsp;stress”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TAUGWY:long_name&nbsp;=&nbsp;“Meridional&nbsp;gravity&nbsp;wave&nbsp;surface&nbsp;stress”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TAUX:long_name&nbsp;=&nbsp;“Zonal&nbsp;surface&nbsp;stress”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TAUY:long_name&nbsp;=&nbsp;“Meridional&nbsp;surface&nbsp;stress”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TGCLDCWP:long_name&nbsp;=&nbsp;“Total&nbsp;grid-box&nbsp;cloud&nbsp;water&nbsp;path&nbsp;(liquid&nbsp;and&nbsp;ice)”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TGCLDIWP:long_name&nbsp;=&nbsp;“Total&nbsp;grid-box&nbsp;cloud&nbsp;ice&nbsp;water&nbsp;path”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TGCLDLWP:long_name&nbsp;=&nbsp;“Total&nbsp;grid-box&nbsp;cloud&nbsp;liquid&nbsp;water&nbsp;path”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TH:long_name&nbsp;=&nbsp;“Potential&nbsp;Temperature”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;THLP2_CLUBB:long_name&nbsp;=&nbsp;“Temperature&nbsp;Variance”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TMQ:long_name&nbsp;=&nbsp;“Total&nbsp;(vertically&nbsp;integrated)&nbsp;precipitable&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TREFHT:long_name&nbsp;=&nbsp;“Reference&nbsp;height&nbsp;temperature”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TS:long_name&nbsp;=&nbsp;“Surface&nbsp;temperature&nbsp;(radiative)”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TSMN:long_name&nbsp;=&nbsp;“Minimum&nbsp;surface&nbsp;temperature&nbsp;over&nbsp;output&nbsp;period”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TSMX:long_name&nbsp;=&nbsp;“Maximum&nbsp;surface&nbsp;temperature&nbsp;over&nbsp;output&nbsp;period”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;U:long_name&nbsp;=&nbsp;“Zonal&nbsp;wind”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;U10:long_name&nbsp;=&nbsp;“10m&nbsp;wind&nbsp;speed”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UM_CLUBB:long_name&nbsp;=&nbsp;“Zonal&nbsp;Wind”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UP2_CLUBB:long_name&nbsp;=&nbsp;“Zonal&nbsp;Velocity&nbsp;Variance”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UPWP_CLUBB:long_name&nbsp;=&nbsp;“Zonal&nbsp;Momentum&nbsp;Flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UTEND_CLUBB:long_name&nbsp;=&nbsp;“U-wind&nbsp;Tendency”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UU:long_name&nbsp;=&nbsp;“Zonal&nbsp;velocity&nbsp;squared”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UVzm:long_name&nbsp;=&nbsp;“Meridional&nbsp;Flux&nbsp;of&nbsp;Zonal&nbsp;Momentum:&nbsp;3D&nbsp;zon.&nbsp;mean”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UWzm:long_name&nbsp;=&nbsp;“Vertical&nbsp;Flux&nbsp;of&nbsp;Zonal&nbsp;Momentum:&nbsp;3D&nbsp;zon.&nbsp;mean”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V:long_name&nbsp;=&nbsp;“Meridional&nbsp;wind”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VD01:long_name&nbsp;=&nbsp;“Vertical&nbsp;diffusion&nbsp;of&nbsp;Q”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VM_CLUBB:long_name&nbsp;=&nbsp;“Meridional&nbsp;Wind”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VP2_CLUBB:long_name&nbsp;=&nbsp;“Meridional&nbsp;Velocity&nbsp;Variance”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VPWP_CLUBB:long_name&nbsp;=&nbsp;“Meridional&nbsp;Momentum&nbsp;Flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VQ:long_name&nbsp;=&nbsp;“Meridional&nbsp;water&nbsp;transport”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VT:long_name&nbsp;=&nbsp;“Meridional&nbsp;heat&nbsp;transport”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VTEND_CLUBB:long_name&nbsp;=&nbsp;“V-wind&nbsp;Tendency”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VTHzm:long_name&nbsp;=&nbsp;“Meridional&nbsp;Heat&nbsp;Flux:&nbsp;3D&nbsp;zon.&nbsp;mean”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VU:long_name&nbsp;=&nbsp;“Meridional&nbsp;flux&nbsp;of&nbsp;zonal&nbsp;momentum”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VV:long_name&nbsp;=&nbsp;“Meridional&nbsp;velocity&nbsp;squared”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WD_A_DMS:long_name&nbsp;=&nbsp;“DMS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wet&nbsp;deposition”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WD_A_H2O2:long_name&nbsp;=&nbsp;“H2O2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wet&nbsp;deposition”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WD_A_H2SO4:long_name&nbsp;=&nbsp;“H2SO4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wet&nbsp;deposition”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WD_A_SO2:long_name&nbsp;=&nbsp;“SO2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wet&nbsp;deposition”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WD_A_SOA_LV:long_name&nbsp;=&nbsp;“SOA_LV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wet&nbsp;deposition”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WD_A_SOA_SV:long_name&nbsp;=&nbsp;“SOA_SV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wet&nbsp;deposition”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WD_A_isoprene:long_name&nbsp;=&nbsp;“isoprene&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wet&nbsp;deposition”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WD_A_monoterp:long_name&nbsp;=&nbsp;“monoterp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wet&nbsp;deposition”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WD_H2O2:long_name&nbsp;=&nbsp;“vertical&nbsp;integrated&nbsp;wet&nbsp;deposition&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WD_H2SO4:long_name&nbsp;=&nbsp;“vertical&nbsp;integrated&nbsp;wet&nbsp;deposition&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WD_SO2:long_name&nbsp;=&nbsp;“vertical&nbsp;integrated&nbsp;wet&nbsp;deposition&nbsp;flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WP2_CLUBB:long_name&nbsp;=&nbsp;“Vertical&nbsp;Velocity&nbsp;Variance”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WP3_CLUBB:long_name&nbsp;=&nbsp;“Third&nbsp;Moment&nbsp;Vertical&nbsp;Velocity”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WPRCP_CLUBB:long_name&nbsp;=&nbsp;“Liquid&nbsp;Water&nbsp;Flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WPRTP_CLUBB:long_name&nbsp;=&nbsp;“Moisture&nbsp;Flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WPTHLP_CLUBB:long_name&nbsp;=&nbsp;“Heat&nbsp;Flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WPTHVP_CLUBB:long_name&nbsp;=&nbsp;“Buoyancy&nbsp;Flux”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WSUB:long_name&nbsp;=&nbsp;“Diagnostic&nbsp;sub-grid&nbsp;vertical&nbsp;velocity”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WTHzm:long_name&nbsp;=&nbsp;“Vertical&nbsp;Heat&nbsp;Flux:&nbsp;3D&nbsp;zon.&nbsp;mean”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Z3:long_name&nbsp;=&nbsp;“Geopotential&nbsp;Height&nbsp;(above&nbsp;sea&nbsp;level)”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ZM_CLUBB:long_name&nbsp;=&nbsp;“Momentum&nbsp;Heights”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ZT_CLUBB:long_name&nbsp;=&nbsp;“Thermodynamic&nbsp;Heights”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_BC:long_name&nbsp;=&nbsp;“cb_BC&nbsp;column&nbsp;of&nbsp;aerosol&nbsp;type”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_BC_A:long_name&nbsp;=&nbsp;“cb_BC_A&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_BC_AC:long_name&nbsp;=&nbsp;“cb_BC_AC&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_BC_AC_OCW:long_name&nbsp;=&nbsp;“cb_BC_AC_OCW&nbsp;column&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_BC_AI:long_name&nbsp;=&nbsp;“cb_BC_AI&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_BC_AI_OCW:long_name&nbsp;=&nbsp;“cb_BC_AI_OCW&nbsp;column&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_BC_AX:long_name&nbsp;=&nbsp;“cb_BC_AX&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_BC_A_OCW:long_name&nbsp;=&nbsp;“cb_BC_A_OCW&nbsp;column&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_BC_N:long_name&nbsp;=&nbsp;“cb_BC_N&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_BC_NI:long_name&nbsp;=&nbsp;“cb_BC_NI&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_BC_NI_OCW:long_name&nbsp;=&nbsp;“cb_BC_NI_OCW&nbsp;column&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_BC_N_OCW:long_name&nbsp;=&nbsp;“cb_BC_N_OCW&nbsp;column&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_DMS:long_name&nbsp;=&nbsp;“cb_DMS&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_DST_A2:long_name&nbsp;=&nbsp;“cb_DST_A2&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_DST_A2_OCW:long_name&nbsp;=&nbsp;“cb_DST_A2_OCW&nbsp;column&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_DST_A3:long_name&nbsp;=&nbsp;“cb_DST_A3&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_DST_A3_OCW:long_name&nbsp;=&nbsp;“cb_DST_A3_OCW&nbsp;column&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_DUST:long_name&nbsp;=&nbsp;“cb_DUST&nbsp;column&nbsp;of&nbsp;aerosol&nbsp;type”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_H2O2:long_name&nbsp;=&nbsp;“cb_H2O2&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_H2SO4:long_name&nbsp;=&nbsp;“cb_H2SO4&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_OM:long_name&nbsp;=&nbsp;“cb_OM&nbsp;column&nbsp;of&nbsp;aerosol&nbsp;type”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_OM_AC:long_name&nbsp;=&nbsp;“cb_OM_AC&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_OM_AC_OCW:long_name&nbsp;=&nbsp;“cb_OM_AC_OCW&nbsp;column&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_OM_AI:long_name&nbsp;=&nbsp;“cb_OM_AI&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_OM_AI_OCW:long_name&nbsp;=&nbsp;“cb_OM_AI_OCW&nbsp;column&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_OM_NI:long_name&nbsp;=&nbsp;“cb_OM_NI&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_OM_NI_OCW:long_name&nbsp;=&nbsp;“cb_OM_NI_OCW&nbsp;column&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_SALT:long_name&nbsp;=&nbsp;“cb_SALT&nbsp;column&nbsp;of&nbsp;aerosol&nbsp;type”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_SO2:long_name&nbsp;=&nbsp;“cb_SO2&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_SO4_A1:long_name&nbsp;=&nbsp;“cb_SO4_A1&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_SO4_A1_OCW:long_name&nbsp;=&nbsp;“cb_SO4_A1_OCW&nbsp;column&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_SO4_A2:long_name&nbsp;=&nbsp;“cb_SO4_A2&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_SO4_A2_OCW:long_name&nbsp;=&nbsp;“cb_SO4_A2_OCW&nbsp;column&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_SO4_AC:long_name&nbsp;=&nbsp;“cb_SO4_AC&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_SO4_AC_OCW:long_name&nbsp;=&nbsp;“cb_SO4_AC_OCW&nbsp;column&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_SO4_NA:long_name&nbsp;=&nbsp;“cb_SO4_NA&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_SO4_NA_OCW:long_name&nbsp;=&nbsp;“cb_SO4_NA_OCW&nbsp;column&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_SO4_PR:long_name&nbsp;=&nbsp;“cb_SO4_PR&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_SO4_PR_OCW:long_name&nbsp;=&nbsp;“cb_SO4_PR_OCW&nbsp;column&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_SOA_A1:long_name&nbsp;=&nbsp;“cb_SOA_A1&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_SOA_A1_OCW:long_name&nbsp;=&nbsp;“cb_SOA_A1_OCW&nbsp;column&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_SOA_LV:long_name&nbsp;=&nbsp;“cb_SOA_LV&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_SOA_NA:long_name&nbsp;=&nbsp;“cb_SOA_NA&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_SOA_NA_OCW:long_name&nbsp;=&nbsp;“cb_SOA_NA_OCW&nbsp;column&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_SOA_SV:long_name&nbsp;=&nbsp;“cb_SOA_SV&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_SS_A1:long_name&nbsp;=&nbsp;“cb_SS_A1&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_SS_A1_OCW:long_name&nbsp;=&nbsp;“cb_SS_A1_OCW&nbsp;column&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_SS_A2:long_name&nbsp;=&nbsp;“cb_SS_A2&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_SS_A2_OCW:long_name&nbsp;=&nbsp;“cb_SS_A2_OCW&nbsp;column&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_SS_A3:long_name&nbsp;=&nbsp;“cb_SS_A3&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_SS_A3_OCW:long_name&nbsp;=&nbsp;“cb_SS_A3_OCW&nbsp;column&nbsp;in&nbsp;cloud&nbsp;water”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_SULFATE:long_name&nbsp;=&nbsp;“cb_SULFATE&nbsp;column&nbsp;of&nbsp;aerosol&nbsp;type”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_isoprene:long_name&nbsp;=&nbsp;“cb_isoprene&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb_monoterp:long_name&nbsp;=&nbsp;“cb_monoterp&nbsp;in&nbsp;column”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dU:long_name&nbsp;=&nbsp;“U&nbsp;dyn&nbsp;increm”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dUa:long_name&nbsp;=&nbsp;“U&nbsp;adv&nbsp;increm”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dUazm:long_name&nbsp;=&nbsp;“Zonal-Mean&nbsp;U&nbsp;adv&nbsp;increm&nbsp;-&nbsp;defined&nbsp;on&nbsp;ilev”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dUf:long_name&nbsp;=&nbsp;“U&nbsp;fixer&nbsp;incr”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dUfzm:long_name&nbsp;=&nbsp;“Zonal-Mean&nbsp;U&nbsp;fixer&nbsp;incr&nbsp;-&nbsp;defined&nbsp;on&nbsp;ilev”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dUzm:long_name&nbsp;=&nbsp;“Zonal-Mean&nbsp;U&nbsp;dyn&nbsp;increm&nbsp;-&nbsp;defined&nbsp;on&nbsp;ilev”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dV:long_name&nbsp;=&nbsp;“V&nbsp;dyn&nbsp;increm”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dVa:long_name&nbsp;=&nbsp;“V&nbsp;adv&nbsp;increm”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dVazm:long_name&nbsp;=&nbsp;“Zonal-Mean&nbsp;V&nbsp;adv&nbsp;increm&nbsp;-&nbsp;defined&nbsp;on&nbsp;ilev”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dVzm:long_name&nbsp;=&nbsp;“Zonal-Mean&nbsp;V&nbsp;dyn&nbsp;increm&nbsp;-&nbsp;defined&nbsp;on&nbsp;ilev”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isoprene:long_name&nbsp;=&nbsp;“isoprene&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isoprene_SRF:long_name&nbsp;=&nbsp;“isoprene&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mmr_BC:long_name&nbsp;=&nbsp;“mmr_BC&nbsp;mmr&nbsp;of&nbsp;aerosol&nbsp;type”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mmr_DUST:long_name&nbsp;=&nbsp;“mmr_DUST&nbsp;mmr&nbsp;of&nbsp;aerosol&nbsp;type”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mmr_OM:long_name&nbsp;=&nbsp;“mmr_OM&nbsp;mmr&nbsp;of&nbsp;aerosol&nbsp;type”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mmr_SALT:long_name&nbsp;=&nbsp;“mmr_SALT&nbsp;mmr&nbsp;of&nbsp;aerosol&nbsp;type”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mmr_SULFATE:long_name&nbsp;=&nbsp;“mmr_SULFATE&nbsp;mmr&nbsp;of&nbsp;aerosol&nbsp;type”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monoterp:long_name&nbsp;=&nbsp;“monoterp&nbsp;concentration”&nbsp;;``</div>
+<div class="line">``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monoterp_SRF:long_name&nbsp;=&nbsp;“monoterp&nbsp;in&nbsp;bottom&nbsp;layer”&nbsp;;``</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Anne Fouilloux
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

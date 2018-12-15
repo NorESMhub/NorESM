@@ -1,0 +1,550 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>NorStore Research Data Archive: Guidelines for ingestion of NorESM output &mdash; norESM  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Existing projects" href="projects.html" />
+    <link rel="prev" title="NorStore Tape Storage" href="norstoretape.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> norESM
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Content:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runmodel/newbie.html">Newbies guide to running NorESM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runmodel/advanced.html">Advanced configuration (NorESM1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runmodel/advancednoresm2.html">Advanced configuration of NorESM2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runmodel/fluxescrossingboundaries.html">Fluxes crossing boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runmodel/cmip6_volcanic_forcing.html">CMIP6 volcanic forcing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runmodel/cmip6emissionsofshortlivedcomponents.html">CMIP6 emissions of short-lived components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runmodel/noresm2_output.html">Atmospheric output for some commonly used configurations of NorESM2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="settingupcamonlinuxpc.html">Setting up CAM on your own linux PC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeldiagnostics.html">Model Diagnostic Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usingtheissuetracker.html">Using the issue tracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testlist.html">Test list for NorESM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitbestpractice.html">Obtain a copy of the model (using git)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitbestpractice.html#verify-that-you-have-the-correct-checkout">Verify that you have the correct checkout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitbestpractice.html#modify-files">Modify files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitbestpractice.html#get-modifications-from-github">Get modifications from github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitbestpractice.html#send-modifications-to-github">Send modifications to github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitbestpractice.html#if-you-don-t-understand-and-want-to-get-back-to-svn">If you don’t understand and want to get back to svn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html">What is a branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#when-should-i-work-on-a-branch">When should I work on a branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#how-should-i-name-the-branch">How should I name the branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#a-note-on-branch-tag-naming">A note on branch / tag naming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#how-and-when-should-i-merge-from-trunk-to-my-branch">How and when should I merge from trunk to my branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#how-can-i-merge-my-branch-back-into-the-trunk">How can I merge my branch back into the trunk?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#what-is-a-tag">What is a tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#when-should-i-create-a-tag">When should I create a tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#what-tags-exist">What tags exist?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#how-should-i-name-the-tag">How should I name the tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#tagging-noresm0-and-noresm1-branches">Tagging noresm0 and noresm1 branches?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#case-1">Case 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#case-2">Case 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#case-3">Case 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#what-should-be-stated-in-the-commit-message">What should be stated in the commit message?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#what-should-be-stated-in-the-copy-message-of-a-branch">What should be stated in the copy message of a branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#what-should-be-stated-in-the-copy-message-of-a-tag">What should be stated in the copy message of a tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnnorstorehowto.html">Subversion how-to for NorStore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uncertainaerosolparameters.html">Uncertain parameters (which can be discussed) in the aerosol model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeldiagnostics.html">Model Diagnostic Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="norstoretape.html">NorStore Tape Storage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">NorStore Research Data Archive: Guidelines for ingestion of NorESM output</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#metadata-recommendations">Metadata recommendations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bibliographiccitation">BibliographicCitation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#coverage">Coverage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#box-http-dublincore-org-documents-dcmi-box">Box (http://dublincore.org/documents/dcmi-box)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#period-http-dublincore-org-documents-dcmi-period-http-www-w3-org-tr-note-datetime">Period (http://dublincore.org/documents/dcmi-period http://www.w3.org/TR/NOTE-datetime)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#description">Description</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mapping-of-cmip-experiment-long-short-names">Mapping of CMIP experiment long/short names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#boundary-conditions">Boundary conditions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#label">Label</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rights-holder">Rights holder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#title">Title</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#project">Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conforms-to">Conforms to</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#provenance">Provenance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#metadata-example">Metadata example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Existing projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">norESM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>NorStore Research Data Archive: Guidelines for ingestion of NorESM output</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/norstorearchive.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="norstore-research-data-archive-guidelines-for-ingestion-of-noresm-output">
+<span id="norstorearchive"></span><h1>NorStore Research Data Archive: Guidelines for ingestion of NorESM output<a class="headerlink" href="#norstore-research-data-archive-guidelines-for-ingestion-of-noresm-output" title="Permalink to this headline">¶</a></h1>
+<p>The recommendations presented on this page are based on discussion
+between Alok, Mats and Ingo. Please feel free to comment and modify
+them.</p>
+<p>The access point to NorStore’s Research Data Archive is
+<a class="reference external" href="http://archive.norstore.no">http://archive.norstore.no</a></p>
+<p>For testing purposes, the alternative site
+<a class="reference external" href="http://archive-test.norstore.uio.no">http://archive-test.norstore.uio.no</a> should be used.</p>
+<div class="section" id="metadata-recommendations">
+<h2>Metadata recommendations<a class="headerlink" href="#metadata-recommendations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="bibliographiccitation">
+<h3>BibliographicCitation<a class="headerlink" href="#bibliographiccitation" title="Permalink to this headline">¶</a></h3>
+<p>Specify “<a class="reference external" href="http://cmip-pcmdi.llnl.gov/cmip5/terms.html">http://cmip-pcmdi.llnl.gov/cmip5/terms.html</a>” as value.</p>
+</div>
+<div class="section" id="coverage">
+<h3>Coverage<a class="headerlink" href="#coverage" title="Permalink to this headline">¶</a></h3>
+<p>Please follow DCMI recommendations when specifying coverage.</p>
+<div class="section" id="box-http-dublincore-org-documents-dcmi-box">
+<h4>Box (<a class="reference external" href="http://dublincore.org/documents/dcmi-box">http://dublincore.org/documents/dcmi-box</a>)<a class="headerlink" href="#box-http-dublincore-org-documents-dcmi-box" title="Permalink to this headline">¶</a></h4>
+<p>If coverage is global, use:</p>
+<div class="line-block">
+<div class="line">``&nbsp;*&nbsp;northlimit=90``</div>
+<div class="line">``&nbsp;*&nbsp;southlimit=-90&nbsp;``</div>
+<div class="line">``&nbsp;*&nbsp;westlimit=-180``</div>
+<div class="line">``&nbsp;*&nbsp;eastlimit=180``</div>
+<div class="line">``&nbsp;*&nbsp;units=signed&nbsp;decimal&nbsp;degrees&nbsp;``</div>
+</div>
+<p>(leave rest unspecified)</p>
+</div>
+<div class="section" id="period-http-dublincore-org-documents-dcmi-period-http-www-w3-org-tr-note-datetime">
+<h4>Period (<a class="reference external" href="http://dublincore.org/documents/dcmi-period">http://dublincore.org/documents/dcmi-period</a> <a class="reference external" href="http://www.w3.org/TR/NOTE-datetime">http://www.w3.org/TR/NOTE-datetime</a>)<a class="headerlink" href="#period-http-dublincore-org-documents-dcmi-period-http-www-w3-org-tr-note-datetime" title="Permalink to this headline">¶</a></h4>
+<p>Specification of start- and end-year required (optionally, month and
+day):</p>
+<div class="line-block">
+<div class="line">``&nbsp;*&nbsp;start=YYYY[-MM-DD]``</div>
+<div class="line">``&nbsp;*&nbsp;end=YYYY[-MM-DD]``</div>
+<div class="line">``&nbsp;*&nbsp;scheme=W3C-DTF``</div>
+</div>
+<p>The value of //scheme// should be always set to W3C-DTF. The value of
+//name// can be left blank.</p>
+</div>
+</div>
+<div class="section" id="description">
+<h3>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h3>
+<p>Recommended content in description:</p>
+<div class="line-block">
+<div class="line">``&nbsp;*&nbsp;long&nbsp;version&nbsp;of&nbsp;title,&nbsp;e.g.&nbsp;“Norwegian&nbsp;Earth&nbsp;System&nbsp;Model&nbsp;version&nbsp;1&nbsp;(medium&nbsp;resolution)&nbsp;output&nbsp;prepared&nbsp;for&nbsp;the&nbsp;CMIP5&nbsp;pre-industrial&nbsp;control&nbsp;experiment.”&nbsp;``</div>
+<div class="line">``&nbsp;*&nbsp;citation&nbsp;information&nbsp;(see&nbsp;below)``</div>
+<div class="line">``&nbsp;*&nbsp;reference&nbsp;to&nbsp;CMIP5&nbsp;experimental&nbsp;design&nbsp;(<a class="reference external" href="http://cmip-pcmdi.llnl.gov/cmip5/docs/Taylor_CMIP5_design.pdf">http://cmip-pcmdi.llnl.gov/cmip5/docs/Taylor_CMIP5_design.pdf</a>)&nbsp;``</div>
+<div class="line">``&nbsp;*&nbsp;forcing&nbsp;agents&nbsp;(link&nbsp;to&nbsp;<code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">```http://search.es-doc.org</span></code> &lt;<a class="reference external" href="http://search.es-doc.org">http://search.es-doc.org</a>&gt;`__<a href="#id1"><span class="problematic" id="id2">``</span></a>)&nbsp;<strong>(INGO:&nbsp;skip?)</strong>&nbsp;``</div>
+<div class="line">``&nbsp;*&nbsp;initialisation&nbsp;(parent&nbsp;experiment,&nbsp;branch&nbsp;time)&nbsp;<strong>(INGO:&nbsp;skip?)</strong>&nbsp;``</div>
+</div>
+<p>NorESM1-M citation:</p>
+<ul class="simple">
+<li><ul class="first">
+<li>Bentsen, M., Bethke, I., Debernard, J. B., Iversen, T., Kirkevåg,
+A., Seland, Ø., Drange, H., Roelandt, C., Seierstad, I. A., Hoose,
+C., and Kristjánsson, J. E.: The Norwegian Earth System Model,
+NorESM1-M – Part 1: Description and basic evaluation of the
+physical climate, Geosci. Model Dev., 6, 687-720,
+doi:10.5194/gmd-6-687-2013, 2013.**</li>
+</ul>
+</li>
+</ul>
+<p>NorESM1-ME citation:</p>
+<ul class="simple">
+<li><ul class="first">
+<li>Tjiputra, J. F., Roelandt, C., Bentsen, M., Lawrence, D. M.,
+Lorentzen, T., Schwinger, J., Seland, Ø., and Heinze, C.:
+Evaluation of the carbon cycle components in the Norwegian Earth
+System Model (NorESM), Geosci. Model Dev., 6, 301-325,
+doi:10.5194/gmd-6-301-2013, 2013.**</li>
+</ul>
+</li>
+</ul>
+<div class="section" id="mapping-of-cmip-experiment-long-short-names">
+<h4>Mapping of CMIP experiment long/short names<a class="headerlink" href="#mapping-of-cmip-experiment-long-short-names" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div>10- or 30-year run initialized in year XXXX decadalXXXX volcano-free</div></blockquote>
+<p>hindcast initialized in year XXXX noVolcXXXX prediction with 2010
+volcano volcIn2010 pre-industrial control piControl historical
+historical historical extension historicalExt other historical forcing
+historicalMisc mid-Holocene midHolocene last glacial maximum lgm last
+millennium past1000 RCP4.5 rcp45 RCP8.5 rcp85 RCP2.6 rcp26 RCP6 rcp60
+ESM pre-industrial control esmControl ESM historical esmHistorical ESM
+RCP8.5 esmrcp85 ESM fixed climate 1 esmFixClim1 ESM fixed climate 2
+esmFixClim2 ESM feedback 1 esmFdbk1 ESM feedback 2 esmFdbk2 1 percent
+per year CO2 1pctCO2 abrupt 4XCO2 abrupt4xCO2 natural-only historicalNat
+GHG-only historicalGHG AMIP amip 2030 time-slice sst2030 control SST
+climatology sstClim CO2 forcing sstClim4xCO2 all aerosol forcing
+sstClimAerosol sulfate aerosol forcing sstClimSulfate 4xCO2 AMIP
+amip4xCO2 AMIP plus patterned anomaly amipFuture aqua planet control
+aquaControl 4xCO2 aqua planet aqua4xCO2 aqua planet plus 4K anomaly
+aqua4K AMIP plus 4K anomaly amip4K</p>
+</div>
+<div class="section" id="boundary-conditions">
+<h4>Boundary conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this headline">¶</a></h4>
+<p>piControl: -Prescribed atmospheric concentrations of pre-industrial well
+mixed gas: Carbon Dioxide -Unperturbed Pre-Industrial Land Use
+-Prescribed concentrations or emissions of pre-industrial natural
+aerosols -Prescribed concentrations or emissions of pre-industrial
+natural aerosol precursors -Prescribed atmospheric concentration of
+pre-industrial short lived (reactive) gas species -Prescribed
+concentrations or emissions of pre-industrial short lived (reactive)
+aerosol species -Prescribed atmospheric concentrations of pre-industrial
+well mixed gases: excluding CO2</p>
+</div>
+</div>
+<div class="section" id="label">
+<h3>Label<a class="headerlink" href="#label" title="Permalink to this headline">¶</a></h3>
+<p>If the dataset matches a NorESM case then specify the case name as
+label, e.g., //NAER1850CNOC_f19_g16_06//.</p>
+</div>
+<div class="section" id="rights-holder">
+<h3>Rights holder<a class="headerlink" href="#rights-holder" title="Permalink to this headline">¶</a></h3>
+<p>If in doubt, specify</p>
+<div class="line-block">
+<div class="line">``&nbsp;*&nbsp;Organization:&nbsp;//Norwegian&nbsp;Climate&nbsp;Centre//``</div>
+<div class="line">``&nbsp;*&nbsp;Organization&nbsp;acronym:&nbsp;//NCC//``</div>
+<div class="line">``&nbsp;*&nbsp;Organization&nbsp;web-page:&nbsp;//gfi.uib.no/EarthClim//``</div>
+<div class="line">``&nbsp;*&nbsp;Contact&nbsp;email:&nbsp;<a class="reference external" href="mailto://noresm-ncc&#37;&#52;&#48;met&#46;no//">//noresm-ncc<span>&#64;</span>met<span>&#46;</span>no//</a>&nbsp;<a href="#id3"><span class="problematic" id="id4">**</span></a>(INGO:&nbsp;NEED&nbsp;TO&nbsp;FIND&nbsp;BETTER&nbsp;SOLUTION&nbsp;FOR&nbsp;EMAIL&nbsp;ADDRESS)**``</div>
+</div>
+</div>
+<div class="section" id="title">
+<h3>Title<a class="headerlink" href="#title" title="Permalink to this headline">¶</a></h3>
+<p>We recommend to use following formula:</p>
+<p>``&nbsp;<code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">\</span> <span class="pre">``&nbsp;``\</span> <span class="pre">\</span> <span class="pre">``&nbsp;``\</span> <span class="pre">\</span> <span class="pre">``&nbsp;(</span></code><code class="docutils literal notranslate"><span class="pre">)&nbsp;r</span></code><code class="docutils literal notranslate"><span class="pre">[</span></code><a href="#id5"><span class="problematic" id="id6">``</span></a>]&nbsp;``</p>
+<output type><p>Examples:</p>
+<div class="line-block">
+<div class="line">``&nbsp;*&nbsp;<code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">*``NorESM1-M</span></code><a href="#id7"><span class="problematic" id="id8">``</span></a><code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">``CMIP5</span></code><a href="#id9"><span class="problematic" id="id10">``</span></a><code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">``historicalExt</span></code><a href="#id11"><span class="problematic" id="id12">``</span></a><code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">``(3.2)</span></code><a href="#id13"><span class="problematic" id="id14">``</span></a><code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">``r1</span></code><a href="#id15"><span class="problematic" id="id16">``</span></a><code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">``raw</span></code><a href="#id17"><span class="problematic" id="id18">``</span></a><a href="#id19"><span class="problematic" id="id20">``</span></a><a href="#id21"><span class="problematic" id="id22">``</span></a>output``*``&nbsp;&nbsp;``</div>
+<div class="line">``&nbsp;*&nbsp;<code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">*``NorESM1-ME</span></code><a href="#id23"><span class="problematic" id="id24">``</span></a><code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">``CMIP5</span></code><a href="#id25"><span class="problematic" id="id26">``</span></a><code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">``rcp85</span></code><a href="#id27"><span class="problematic" id="id28">``</span></a><code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">``(4.2)</span></code><a href="#id29"><span class="problematic" id="id30">``</span></a><code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">``r1a</span></code><a href="#id31"><span class="problematic" id="id32">``</span></a><code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">``raw</span></code><a href="#id33"><span class="problematic" id="id34">``</span></a><a href="#id35"><span class="problematic" id="id36">``</span></a><a href="#id37"><span class="problematic" id="id38">``</span></a>output``*``&nbsp;``</div>
+<div class="line">``&nbsp;*&nbsp;<code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">*``NorESM1-ME</span></code><a href="#id39"><span class="problematic" id="id40">``</span></a><code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">``CMIP5</span></code><a href="#id41"><span class="problematic" id="id42">``</span></a><code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">``rcp85</span></code><a href="#id43"><span class="problematic" id="id44">``</span></a><code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">``(4.2)</span></code><a href="#id45"><span class="problematic" id="id46">``</span></a><code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">``r1</span></code><a href="#id47"><span class="problematic" id="id48">``</span></a><code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">``cmor-processed</span></code><a href="#id49"><span class="problematic" id="id50">``</span></a><a href="#id51"><span class="problematic" id="id52">``</span></a><a href="#id53"><span class="problematic" id="id54">``</span></a>output``*``&nbsp;``</div>
+</div>
+<output type><p>should be a brief and general description of the type of output, e.g.
+//raw output// or //cmor-processed output//. Information on data format
+etc will be specified elsewhere.</p>
+<blockquote>
+<div>can be used if an experiment is composed of several cases – e.g.,</div></blockquote>
+<p><em>NorESM1-ME CMIP5 rcp85 r1</em> is associated with the cases
+<em>NRCP85AERCNOC_f19_g16_01</em> and <em>NRCP85AERCNOC_f19_g16_02</em> – and one
+intends to create a dataset for each cases.</p>
+<p>Mapping between CMIP5 experiment acronyms and NorESM1-M cases:</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">piControl&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r1&nbsp;NAER1850CNOC_f19_g16_06&nbsp;&nbsp;(3.1)&nbsp;none</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">1pctCO2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r1&nbsp;N1850RMAERCN_f19_g16_01&nbsp;&nbsp;(6.1)&nbsp;GHG</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">abrupt4xCO2&nbsp;&nbsp;&nbsp;&nbsp;r1&nbsp;N18504XAERCN_f19_g16_01&nbsp;&nbsp;(6.3)&nbsp;GHG</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">amip&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r1&nbsp;NFAMIP2005AERAMIPO_f19_f19_01&nbsp;(1979-2005),&nbsp;NFAMIP2008AERAMIPO_f19_f19_01&nbsp;(2006-2008)&nbsp;(3.3)&nbsp;GHG+AER</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">amip&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r2&nbsp;NFAMIP2005AERAMIPO_f19_f19_02&nbsp;(1979-2005),&nbsp;NFAMIP2008AERAMIPO_f19_f19_02&nbsp;(2006-2008)&nbsp;(3.3)&nbsp;GHG+AER</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">amip&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r3&nbsp;NFAMIP2005AERAMIPO_f19_f19_03&nbsp;(1979-2005),&nbsp;NFAMIP2008AERAMIPO_f19_f19_03&nbsp;(2006-2008)&nbsp;(3.3)&nbsp;GHG+AER</span></code></div>
+<div class="line"><a href="#id55"><span class="problematic" id="id56">``</span></a>amip4xCO2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r1&nbsp;NF20054XAERAMIPO_f19_f19_01&nbsp;(1979-2005),&nbsp;NF20084XAERAMIPO_f19_f19_01&nbsp;(2006-2008)&nbsp;(6.5)&nbsp;GHG&nbsp;``</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">historical&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r1&nbsp;N20TRAERCN_f19_g16_01&nbsp;GHG+AER</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">historical&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r2&nbsp;N20TRAERCN_f19_g16_02&nbsp;GHG+AER</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">historical&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r3&nbsp;N20TRAERCN_f19_g16_03&nbsp;GHG+AER</span></code></div>
+<div class="line"><a href="#id57"><span class="problematic" id="id58">``</span></a>historicalExt&nbsp;&nbsp;r2&nbsp;NRCP85AERCN_f19_g16_02&nbsp;GHG+AER&nbsp;&nbsp;``</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">historicalExt&nbsp;&nbsp;r3&nbsp;NRCP85AERCN_f19_g16_03&nbsp;GHG+AER</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">historicalGHG&nbsp;&nbsp;r1&nbsp;N20TRAERCNGHG_f19_g16_01&nbsp;(1850-2005),&nbsp;NRCP85AERCNGHG_f19_g16_01&nbsp;(2006-2012)&nbsp;(7.2)&nbsp;GHG</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">historicalMisc&nbsp;r1&nbsp;N20TRAERCNAER_f19_g16_01&nbsp;(1850-2005),&nbsp;NRCP85AERCNAER_f19_g16_01&nbsp;(2006-2012)&nbsp;(7.3)&nbsp;AER</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">historicalNat&nbsp;&nbsp;r1&nbsp;N20TRAERCNNAT_f19_g16_01&nbsp;(1850-2005),&nbsp;NRCP85AERCNNAT_f19_g16_01&nbsp;(2006-2012)&nbsp;(7.1)&nbsp;NONE</span></code></div>
+<div class="line"><a href="#id59"><span class="problematic" id="id60">``</span></a>rcp26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r1&nbsp;NRCP26AERCN_f19_g16_01&nbsp;(4.3)&nbsp;GHG+AER&nbsp;``</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">rcp45&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r1&nbsp;NRCP45AERCN_f19_g16_01&nbsp;(2006-2100),&nbsp;NRCP45XTAERCN_f19_g16_01&nbsp;(2101-2300)&nbsp;(4.1-L)&nbsp;GHG+AER</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">rcp6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r1&nbsp;NRCP60AERCN_f19_g16_01&nbsp;(4.4)&nbsp;GHG+AER</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">rcp85&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r1&nbsp;NRCP85AERCN_f19_g16_01&nbsp;(4.2)&nbsp;GHG+AER</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sst2030&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r1&nbsp;NFRCP45_2026-2035_f19_f19&nbsp;(2.1)&nbsp;GHG+AER</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sstClim&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r1&nbsp;NF1850AERCNAMIPC_f19_f19_01&nbsp;&nbsp;(6.2a)&nbsp;none</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sstClim4xCO2&nbsp;&nbsp;&nbsp;r1&nbsp;NF18504XAERCNAMIPC_f19_f19_01&nbsp;(6.2b)&nbsp;GHG</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sstClimAerosol&nbsp;r1&nbsp;NF1850AER20CNAMIPC_f19_f19_01&nbsp;(6.4a)&nbsp;AER</span></code></div>
+</div>
+<p>Mapping between CMIP5 experiment acronyms and NorESM1-ME cases names:</p>
+<div class="line-block">
+<div class="line">``&nbsp;piControl&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r1&nbsp;N1850AERCNOC_f19_g16_CTRL_02&nbsp;``</div>
+<div class="line">``&nbsp;1pctCO2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r1&nbsp;N1850RMAERCNOC_f19_g16_02&nbsp;``</div>
+<div class="line">``&nbsp;historical&nbsp;&nbsp;&nbsp;&nbsp;r1&nbsp;N20TRAERCNOC_01``</div>
+<div class="line">``&nbsp;esmControl&nbsp;&nbsp;&nbsp;&nbsp;r1&nbsp;N1850AERBPRP_f19_g16_02&nbsp;``</div>
+<div class="line">``&nbsp;esmHistorical&nbsp;r1&nbsp;N20TRAERCNOCBPRP_f19_g16_01&nbsp;&nbsp;``</div>
+<div class="line">``&nbsp;esmrcp85&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r1&nbsp;NRCP85AERBPRP_f19_g16_03&nbsp;&nbsp;&nbsp;``</div>
+<div class="line">``&nbsp;esmFdbk1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r1&nbsp;N1850RMAERCNOC_f19_g16_RAD_02&nbsp;&nbsp;``</div>
+<div class="line">``&nbsp;esmFixClim1&nbsp;&nbsp;&nbsp;r1&nbsp;N1850RMAERCNOC_f19_g16_BGC_02&nbsp;``</div>
+<div class="line">``&nbsp;rcp26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r1&nbsp;NRCP26AERCNOC_f19_g16_01&nbsp;(2006-2060),&nbsp;NRCP26AERCNOC_f19_g16_02&nbsp;(2061-2101)&nbsp;&nbsp;``</div>
+<div class="line">``&nbsp;rcp45&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r1&nbsp;NRCP45AERCNOC_f19_g16_02&nbsp;&nbsp;``</div>
+<div class="line">``&nbsp;rcp6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r1&nbsp;NRCP60AERCNOC_f19_g16_01&nbsp;(2006-2050),&nbsp;NRCP60AERCNOC_f19_g16_02&nbsp;(2051-2101)&nbsp;``</div>
+<div class="line">``&nbsp;rcp85&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r1&nbsp;NRCP85AERCNOC_f19_g16_01&nbsp;(2006-2044),&nbsp;NRCP85AERCNOC_f19_g16_02&nbsp;(2045-2100)&nbsp;&nbsp;&nbsp;``</div>
+</div>
+</div>
+<div class="section" id="project">
+<h3>Project<a class="headerlink" href="#project" title="Permalink to this headline">¶</a></h3>
+<p>For CMIP5 output, specify //Integrated Earth System Approach to Explore
+Natural Variability and Climate Sensitivity (EarthClim)//</p>
+</div>
+<div class="section" id="conforms-to">
+<h3>Conforms to<a class="headerlink" href="#conforms-to" title="Permalink to this headline">¶</a></h3>
+<p>If in doubt, specify “//Climate and Forecast (CF) metadata
+conventions//”</p>
+</div>
+<div class="section" id="provenance">
+<h3>Provenance<a class="headerlink" href="#provenance" title="Permalink to this headline">¶</a></h3>
+<p>In case the output has been compressed, specify “//gzip compression of
+restart files and conversion of history output to compressed NetCDF-4
+format//” and state the time stamp of the last compressed restart file.</p>
+<p>Please add additional provenance entries in case further manipulations
+have been performed on the output.</p>
+</div>
+</div>
+<div class="section" id="metadata-example">
+<h2>Metadata example<a class="headerlink" href="#metadata-example" title="Permalink to this headline">¶</a></h2>
+<p>Link to <a class="reference external" href="norstorearchive#Metadata_example">this section</a>. ^ Parameter
+^ Value ^ Comment ^ | **Title** | NorESM1-M CMIP5 historicalExt
+(3.2) r2 raw output | | **Created on** | 29/Oct/2011 | **Ingo:<em>*
+time stamp of the last restart folder (i.e, time experiment was
+completed) | | **Category</em>* | Simulation | | **State** | Raw
+| | **Domain** | Natural Sciences | | **Field** | Earth
+Sciences | | **Creator** | Norwegian Climate Center (NCC) | |
+**Contributor** | Alok Kumar Gupta (<a class="reference external" href="mailto:Alok&#46;Gupta&#37;&#52;&#48;uni&#46;no">Alok<span>&#46;</span>Gupta<span>&#64;</span>uni<span>&#46;</span>no</a>) | **Ingo:<em>*
+NorStore defines the contributor as the person who puts in the metadata
+| | **Data Manager</em>* | Alok Kumar Gupta (<a class="reference external" href="mailto:Alok&#46;Gupta&#37;&#52;&#48;uni&#46;no">Alok<span>&#46;</span>Gupta<span>&#64;</span>uni<span>&#46;</span>no</a>) | |
+**Rights Holder** | Norwegian Climate Center (NCC)
+(<a class="reference external" href="mailto:Ingo&#46;Bethke&#37;&#52;&#48;uni&#46;no">Ingo<span>&#46;</span>Bethke<span>&#64;</span>uni<span>&#46;</span>no</a>) | **Ingo:<em>* need to find better solution for the
+email address | | **Access Rights</em>* | Public | **Ingo:<em>* our
+processed CMIP5 is public, so we might as well make the raw data public
+| | **Label</em>* | NRCP85AERCN_f19_g16_02 | **Ingo:<em>* decided to
+use the experiment “case name” as label | |
+**BibliographicCitation</em>* |
+<a class="reference external" href="http://www.geosci-model-dev.net/6/687/2013/gmd-6-687-2013.html">http://www.geosci-model-dev.net/6/687/2013/gmd-6-687-2013.html</a> |
+**Ingo:<em>* the *BibliographicCitation</em> value has to be an URL. We
+decided to add additional citation information to <em>Description</em> | |
+**Project** | Integrated Earth System Approach to Explore Natural
+Variability and Climate Sensitivity (EarthClim) | | **Conforms to**
+| Climate and Forecast (CF) metadata conventions | | **Provenance**
+| gzip compression of restart files and conversion of history output to
+compressed NetCDF-4 format | **Ingo:<em>* specify time stamp of last
+compressed restart file | | **Coverage</em>* | Box: Southlimit=-90,
+Northlimit=90, Westlimit=-180, Eastlimit=180, Uplimit=20000,
+Downlimit=-9000, Units=signed decimal degrees, Zunits=m; Period:
+start=2006-01-01, end=2012-12-31, scheme=W3C-DTF | **Ingo:<a href="#id61"><span class="problematic" id="id62">*</span></a>* use of
+DCMI standard makes it easy for external servers to interpret the
+coverage information |</p>
+<ul class="simple">
+<li><ul class="first">
+<li>Description **</li>
+</ul>
+</li>
+</ul>
+<p>Norwegian Earth System Model version 1 (medium resolution) output
+prepared for the CMIP5 historical extension experiment with forcing
+scenario RCP8.5.</p>
+<p>Citation: Bentsen, M., Bethke, I., Debernard, J. B., Iversen, T.,
+Kirkevåg, A., Seland, Ø., Drange, H., Roelandt, C., Seierstad, I. A.,
+Hoose, C., and Kristjánsson, J. E.: The Norwegian Earth System Model,
+NorESM1-M – Part 1: Description and basic evaluation of the physical
+climate, Geosci. Model Dev., 6, 687-720, doi:10.5194/gmd-6-687-2013,
+2013.</p>
+<p>Technical details: Production machine: Cray XT3 in Bergen (hexagon)
+Model source:
+<a class="reference external" href="https://svn.met.no/viewvc/noresm/noresm/branches/noresm-ver1_cmip5-r112">https://svn.met.no/viewvc/noresm/noresm/branches/noresm-ver1_cmip5-r112</a>
+Model revision number: 112 Model components: atmosphere=CAM4;
+ocean=MICOM; land=CLM; sea ice=CICE Horizontal resolution:
+atmosphere/land=1.9x2.5 degree; ocean/sea ice=~1 degree Output
+frequency: monthly + daily + 6-hourly + 3-hourly as requested by CMIP5
+Experiment type: fully coupled Initialisation: branched from CMIP5
+historical simulation r2 (N20TRAERCN_f19_g16_02) at 2006-01-01 Changing
+forcing agents: prescribed GHG concentration changes; aerosol emissions
+for SO4, POM and BC (see Kirkevåg et al. 2013) Tuning parameters changed
+relative to the host model CAM4: rhminl=0.90 (0.91 in CAM4) reduced RH
+threshold for formation of low stratiform clouds; critrp=5.0 mm/day (0.5
+mm/day in CAM4) maximum precipitation rate for suppression of
+autoconversion of cloud water; r3lc=14 um (10 um in CAM4) critical mean
+droplet volume radius for onset of autoconversion Other comments: -</p>
+<p>External references:
+<a class="reference external" href="http://cmip-pcmdi.llnl.gov/cmip5/docs/Taylor_CMIP5_design.pdf">http://cmip-pcmdi.llnl.gov/cmip5/docs/Taylor_CMIP5_design.pdf</a>
+(experimental design) <a class="reference external" href="http://search.es-doc.org">http://search.es-doc.org</a> (model system, boundary
+conditions, experiments, etc) <a class="reference external" href="http://noresg.norstore.no">http://noresg.norstore.no</a> (Norwegian ESGF
+portal with post-processed CMIP5 data)
+<a class="reference external" href="http://www.geosci-model-dev.net/special_issue20.html">http://www.geosci-model-dev.net/special_issue20.html</a> (NorESM special
+issue)
+<a class="reference external" href="http://www.cristin.no/as/WebObjects/cristin.woa/wo/18.Profil.29.25.2.3.3.7">http://www.cristin.no/as/WebObjects/cristin.woa/wo/18.Profil.29.25.2.3.3.7</a>
+(link to national publication database)</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="projects.html" class="btn btn-neutral float-right" title="Existing projects" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="norstoretape.html" class="btn btn-neutral" title="NorStore Tape Storage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Anne Fouilloux
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

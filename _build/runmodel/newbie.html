@@ -1,0 +1,350 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Newbies guide to running NorESM &mdash; norESM  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Advanced configuration (NorESM1)" href="advanced.html" />
+    <link rel="prev" title="Introduction" href="../start.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> norESM
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Content:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../start.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Newbies guide to running NorESM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#go-to-scripts-directory">Go to scripts directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-the-case">Create the case</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configure-the-case">Configure the case</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-the-case">Build the case</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-the-case">Run the case</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#important-files">Important files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#more-information">More information</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced configuration (NorESM1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advancednoresm2.html">Advanced configuration of NorESM2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fluxescrossingboundaries.html">Fluxes crossing boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmip6_volcanic_forcing.html">CMIP6 volcanic forcing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmip6emissionsofshortlivedcomponents.html">CMIP6 emissions of short-lived components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="noresm2_output.html">Atmospheric output for some commonly used configurations of NorESM2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../settingupcamonlinuxpc.html">Setting up CAM on your own linux PC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeldiagnostics.html">Model Diagnostic Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usingtheissuetracker.html">Using the issue tracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testlist.html">Test list for NorESM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html">Obtain a copy of the model (using git)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html#verify-that-you-have-the-correct-checkout">Verify that you have the correct checkout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html#modify-files">Modify files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html#get-modifications-from-github">Get modifications from github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html#send-modifications-to-github">Send modifications to github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html#if-you-don-t-understand-and-want-to-get-back-to-svn">If you don’t understand and want to get back to svn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html">What is a branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#when-should-i-work-on-a-branch">When should I work on a branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#how-should-i-name-the-branch">How should I name the branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#a-note-on-branch-tag-naming">A note on branch / tag naming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#how-and-when-should-i-merge-from-trunk-to-my-branch">How and when should I merge from trunk to my branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#how-can-i-merge-my-branch-back-into-the-trunk">How can I merge my branch back into the trunk?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#what-is-a-tag">What is a tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#when-should-i-create-a-tag">When should I create a tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#what-tags-exist">What tags exist?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#how-should-i-name-the-tag">How should I name the tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#tagging-noresm0-and-noresm1-branches">Tagging noresm0 and noresm1 branches?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#case-1">Case 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#case-2">Case 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#case-3">Case 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#what-should-be-stated-in-the-commit-message">What should be stated in the commit message?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#what-should-be-stated-in-the-copy-message-of-a-branch">What should be stated in the copy message of a branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#what-should-be-stated-in-the-copy-message-of-a-tag">What should be stated in the copy message of a tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnnorstorehowto.html">Subversion how-to for NorStore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uncertainaerosolparameters.html">Uncertain parameters (which can be discussed) in the aerosol model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeldiagnostics.html">Model Diagnostic Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../norstoretape.html">NorStore Tape Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../norstorearchive.html">NorStore Research Data Archive: Guidelines for ingestion of NorESM output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects.html">Existing projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">norESM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Newbies guide to running NorESM</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/runmodel/newbie.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="newbies-guide-to-running-noresm">
+<span id="newbie"></span><h1>Newbies guide to running NorESM<a class="headerlink" href="#newbies-guide-to-running-noresm" title="Permalink to this headline">¶</a></h1>
+<p>The purpose of this page is to be able to set up and run the model
+within 15 minutes. For more advanced configuration, please consult
+<a class="reference external" href="http://www.cesm.ucar.edu/models/ccsm4.0/ccsm_doc/ug.pdf">http://www.cesm.ucar.edu/models/ccsm4.0/ccsm_doc/ug.pdf</a></p>
+<p>This guide assumes that you have properly checked out the model to some
+directory which will call $NORESM. This directory will contain
+subdirectories “models” and “scripts”.</p>
+<div class="section" id="go-to-scripts-directory">
+<h2>Go to scripts directory<a class="headerlink" href="#go-to-scripts-directory" title="Permalink to this headline">¶</a></h2>
+<p>cd $NORESM/scripts</p>
+</div>
+<div class="section" id="create-the-case">
+<h2>Create the case<a class="headerlink" href="#create-the-case" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">create_newcase</span> <span class="o">-</span><span class="n">case</span> <span class="o">../</span><span class="n">cases</span><span class="o">///</span><span class="n">casename</span><span class="o">///</span> <span class="o">-</span><span class="n">mach</span> <span class="o">//</span><span class="n">machinename</span><span class="o">//</span> <span class="o">-</span><span class="n">res</span>
+<span class="n">f19_g16</span> <span class="o">-</span><span class="n">compset</span> <span class="o">//</span><span class="n">compsetname</span><span class="o">//</span>
+</pre></div>
+</div>
+<p>(where //casename//, //machinename// and //compsetname// are user input.
+Res is imodel resolution. The user can //not// give any resolution since
+input data are not prepared for any resolution in NorESM.)</p>
+<p>To see a list of available composets type</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">create_newcase</span> <span class="o">-</span><span class="nb">list</span>
+</pre></div>
+</div>
+<p>The simplest case which runs production tagged aerosols and data ocean
+in a VERY coarse resolution is</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">create_newcase</span> <span class="o">-</span><span class="n">case</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">where</span><span class="o">/</span><span class="n">I</span><span class="o">/</span><span class="n">store</span><span class="o">/</span><span class="n">the</span><span class="o">/</span><span class="n">case</span> <span class="o">-</span><span class="n">compset</span> <span class="n">NFPTAERO</span>
+ <span class="o">-</span><span class="n">mach</span> <span class="n">hexagon</span> <span class="o">-</span><span class="n">res</span> <span class="n">f10_f10</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="configure-the-case">
+<h2>Configure the case<a class="headerlink" href="#configure-the-case" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $NORESM/cases///casename//
+</pre></div>
+</div>
+<p>edit any configuration files (understand env_conf.xml and env_run.xml)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">configure</span> <span class="o">-</span><span class="n">case</span> <span class="p">(</span><span class="ow">in</span> <span class="n">NorESM1</span> <span class="o">/</span> <span class="n">CAM4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">cesm_setup</span> <span class="p">(</span><span class="ow">in</span> <span class="n">NorESM2</span> <span class="o">/</span> <span class="n">CAM5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>After these two commands, the case is configured</p>
+</div>
+<div class="section" id="build-the-case">
+<h2>Build the case<a class="headerlink" href="#build-the-case" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.///</span><span class="n">casename</span><span class="o">//.//</span><span class="n">machinename</span><span class="o">//.</span><span class="n">build</span> <span class="p">(</span><span class="n">NorESM1</span> <span class="o">/</span> <span class="n">CAM4</span><span class="p">)</span>
+
+<span class="o">.///</span><span class="n">casename</span><span class="o">//.</span><span class="n">build</span> <span class="p">(</span><span class="n">NorESM2</span> <span class="o">/</span> <span class="n">CAM5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-the-case">
+<h2>Run the case<a class="headerlink" href="#run-the-case" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qsub</span> <span class="o">//</span><span class="n">casename</span><span class="o">//.//</span><span class="n">machinename</span><span class="o">//.</span><span class="n">run</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>=</p>
+<p>There are already several pre-defined compsets. They all have long and
+short names. As and example we can use the compset N_2000_AEROSLO_CN
+(with short name N2000AERCN). Thus a valid command on the machine
+//hexagon// is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">create_newcase</span> <span class="o">-</span><span class="n">case</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">my</span><span class="o">/</span><span class="n">case</span><span class="o">/</span><span class="n">directory</span><span class="o">/</span> <span class="o">-</span><span class="n">mach</span> <span class="n">hexagon</span> <span class="o">-</span><span class="n">res</span>
+<span class="n">f19_g16</span> <span class="o">-</span><span class="n">compset</span> <span class="n">N2000AERCN</span>
+</pre></div>
+</div>
+<p>(will run a “year 2000” CAM4/NorESM1 case with the Oslo-aerosols)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">create_newcase</span> <span class="o">-</span><span class="n">case</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">my</span><span class="o">/</span><span class="n">case</span><span class="o">/</span><span class="n">directory</span><span class="o">/</span> <span class="o">-</span><span class="n">mach</span> <span class="n">hexagon</span> <span class="o">-</span><span class="n">res</span>
+<span class="n">f19_g16</span> <span class="o">-</span><span class="n">compset</span> <span class="n">FAMIPC5</span>
+</pre></div>
+</div>
+<p>(will configure the “default” atmoshere-only simulation of CAM5)</p>
+</div>
+<div class="section" id="important-files">
+<h2>Important files<a class="headerlink" href="#important-files" title="Permalink to this headline">¶</a></h2>
+<p>The most important files to understand in your case-directory are:</p>
+<p>*&nbsp;env_run.xml&nbsp;(model&nbsp;run&nbsp;type,&nbsp;how&nbsp;long&nbsp;time&nbsp;to&nbsp;run&nbsp;etc)
+*&nbsp;env_conf.xml&nbsp;(model&nbsp;configuration)</p>
+</div>
+<div class="section" id="more-information">
+<h2>More information<a class="headerlink" href="#more-information" title="Permalink to this headline">¶</a></h2>
+<p>Go to <a class="reference internal" href="advanced.html#advanced"><span class="std std-ref">Advanced configuration (NorESM1)</span></a> for
+more information</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="advanced.html" class="btn btn-neutral float-right" title="Advanced configuration (NorESM1)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../start.html" class="btn btn-neutral" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Anne Fouilloux
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

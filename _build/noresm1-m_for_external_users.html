@@ -1,0 +1,364 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>NorESM1-M for external users &mdash; norESM  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> norESM
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Content:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="start.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runmodel/newbie.html">Newbies guide to running NorESM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runmodel/advanced.html">Advanced configuration (NorESM1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runmodel/advancednoresm2.html">Advanced configuration of NorESM2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runmodel/fluxescrossingboundaries.html">Fluxes crossing boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runmodel/cmip6_volcanic_forcing.html">CMIP6 volcanic forcing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runmodel/cmip6emissionsofshortlivedcomponents.html">CMIP6 emissions of short-lived components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runmodel/noresm2_output.html">Atmospheric output for some commonly used configurations of NorESM2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="settingupcamonlinuxpc.html">Setting up CAM on your own linux PC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeldiagnostics.html">Model Diagnostic Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usingtheissuetracker.html">Using the issue tracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testlist.html">Test list for NorESM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitbestpractice.html">Obtain a copy of the model (using git)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitbestpractice.html#verify-that-you-have-the-correct-checkout">Verify that you have the correct checkout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitbestpractice.html#modify-files">Modify files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitbestpractice.html#get-modifications-from-github">Get modifications from github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitbestpractice.html#send-modifications-to-github">Send modifications to github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitbestpractice.html#if-you-don-t-understand-and-want-to-get-back-to-svn">If you don’t understand and want to get back to svn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html">What is a branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#when-should-i-work-on-a-branch">When should I work on a branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#how-should-i-name-the-branch">How should I name the branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#a-note-on-branch-tag-naming">A note on branch / tag naming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#how-and-when-should-i-merge-from-trunk-to-my-branch">How and when should I merge from trunk to my branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#how-can-i-merge-my-branch-back-into-the-trunk">How can I merge my branch back into the trunk?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#what-is-a-tag">What is a tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#when-should-i-create-a-tag">When should I create a tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#what-tags-exist">What tags exist?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#how-should-i-name-the-tag">How should I name the tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#tagging-noresm0-and-noresm1-branches">Tagging noresm0 and noresm1 branches?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#case-1">Case 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#case-2">Case 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#case-3">Case 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#what-should-be-stated-in-the-commit-message">What should be stated in the commit message?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#what-should-be-stated-in-the-copy-message-of-a-branch">What should be stated in the copy message of a branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnbestpractice.html#what-should-be-stated-in-the-copy-message-of-a-tag">What should be stated in the copy message of a tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svnnorstorehowto.html">Subversion how-to for NorStore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uncertainaerosolparameters.html">Uncertain parameters (which can be discussed) in the aerosol model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeldiagnostics.html">Model Diagnostic Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="norstoretape.html">NorStore Tape Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="norstorearchive.html">NorStore Research Data Archive: Guidelines for ingestion of NorESM output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Existing projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">norESM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>NorESM1-M for external users</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/noresm1-m_for_external_users.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="noresm1-m-for-external-users">
+<span id="id1"></span><h1>NorESM1-M for external users<a class="headerlink" href="#noresm1-m-for-external-users" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="access">
+<h2>Access<a class="headerlink" href="#access" title="Permalink to this headline">¶</a></h2>
+<p>To request model access, please send a request to <a class="reference external" href="mailto://noresm-ncc&#37;&#52;&#48;met&#46;no//">//noresm-ncc<span>&#64;</span>met<span>&#46;</span>no//</a>
+with some background information on how you plan to use the model.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="installing">
+<h2>Installing<a class="headerlink" href="#installing" title="Permalink to this headline">¶</a></h2>
+<p>Untar //NorESM1-M_sourceCode_vXXX.tar.zg// in your home directory. This
+will install the model source code in the folder //$HOME/NorESM1-M//.</p>
+<p>Untar //NorESM1-M_inputdata_vXXX.tar.zg// to a folder that is available
+during run-time and has at least 70 GB of free space. This will create a
+sub-folder inputdata and install NorESM’s forcing data and other
+boundary conditions to it.</p>
+<p>Untar //NorESM1-M_initialPiHist1_vXXX.tar.zg// to a folder that is
+available during run-time and has at least 2 GB of free space. This will
+install restart conditions for the CMIP5 PiControl and first member of
+historical experiment.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="porting">
+<h2>Porting<a class="headerlink" href="#porting" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="machine-name-and-characteristics">
+<h3>Machine name and characteristics<a class="headerlink" href="#machine-name-and-characteristics" title="Permalink to this headline">¶</a></h3>
+<p>Define the characteristics of your HPC system in
+//NorESM1-M/scripts/ccsm_utils/Machines/config_machines.xml//.</p>
+<p>Edit following section:</p>
+<p>Set //MACH// to an acronym/name tag of your choice of your HPC system.
+Update //DESC// correspondingly.</p>
+<p>Set //EXEROOT// to the root location where the model should create the
+build and run-directories. The model will replace //$CCSMUSER// with
+your unix user and //$CASE// with the specific case name
+(=simulation/experiment name).</p>
+<p>Set //DIN_LOC_ROOT_CSMDATA// to the location where you installed the
+forcing and boundary condition data (this path should end with
+“/inputdata”).</p>
+<p>Set //DOUT_S_ROOT// to the root location for the short-term archiving
+(normally on the work disk area of the HPC system).</p>
+<p>Optionally, set //DOUT_L_MSROOT// to the root location for the long-term
+archiving (normally a location that is not subject to automatic
+deletion). Leave unchanged if you don’t plan to use automatic long-term
+archiving (e.g., if you want to move the data manually).</p>
+<p>Optionally, set //DOUT_L_MSHOST// to the name of the (remote)-server for
+long-term archiving. Leave unchanged if you don’t plan to use automatic
+long-term archiving</p>
+<p>Set //BATCHSUBMIT// to the submit command on your HPC system.</p>
+<p>Set //GMAKE_J// to the number of make instances run in parallel when
+building the system. Set to 1 if licence or memory issues occur.</p>
+<p>Set //MAX_TASKS_PER_NODE// to the maximum number of MPI tasks that can
+run on a single node on your HPC system (usually the same as the number
+of cores per node).</p>
+</div>
+<div class="section" id="cpu-configurations">
+<h3>CPU configurations<a class="headerlink" href="#cpu-configurations" title="Permalink to this headline">¶</a></h3>
+<p>Define NorESM1-M CPU-configurations for your HPC system in
+//NorESM1-M/scripts/ccsm_utils/Machines/config_pes.xml//.</p>
+<p>As a start, we recommend to simply replace all instances of //vilje//
+with your choice for //MACH// (i.e. the name tag of your machine).</p>
+</div>
+<div class="section" id="building-and-runtime-options">
+<h3>Building and runtime options<a class="headerlink" href="#building-and-runtime-options" title="Permalink to this headline">¶</a></h3>
+<p>Copy //env_machopts.vilje// to //env_machopts.$MACH// where //$MACH//
+has to be replaced with the name of your machine.</p>
+<p>Edit settings as necessary. The settings should make compilers,
+libraries, queuing system commands ect. available during building and
+model execution. You will likely have to remove/replace all module
+specifications, while the runtime environment settings should work for
+most systems.</p>
+</div>
+<div class="section" id="compiler-and-linker-options">
+<h3>Compiler and linker options<a class="headerlink" href="#compiler-and-linker-options" title="Permalink to this headline">¶</a></h3>
+<p>Copy //Macros.vilje// to //Macros.$MACH// if your compiler is intel. If
+your compiler is pgi, then instead use //Macros.hexagon// as template.</p>
+<p>Following lines need to be customised:
+<code class="docutils literal notranslate"><span class="pre">FC</span> <span class="pre">:=</span> <span class="pre">FORTRAN</span> <span class="pre">COMPILER</span> <span class="pre">COMMAND</span></code> <code class="docutils literal notranslate"><span class="pre">CC</span> <span class="pre">:=</span> <span class="pre">FORTRAN</span> <span class="pre">COMPILER</span> <span class="pre">COMMAND</span></code>
+<code class="docutils literal notranslate"><span class="pre">NETCDF_PATH</span> <span class="pre">:=</span> <span class="pre">ROOT</span> <span class="pre">PATH</span> <span class="pre">FOR</span> <span class="pre">NETCDF</span> <span class="pre">LIBRARY</span></code>
+<code class="docutils literal notranslate"><span class="pre">MPI_ROOT</span> <span class="pre">:=</span> <span class="pre">ROOT</span> <span class="pre">PATH</span> <span class="pre">FOR</span> <span class="pre">MPI</span> <span class="pre">LIBRARY</span></code>
+<code class="docutils literal notranslate"><span class="pre">INC_NETCDF</span> <span class="pre">:=</span> <span class="pre">$(NETCDF_PATH)/include</span></code>
+<code class="docutils literal notranslate"><span class="pre">LIB_NETCDF</span> <span class="pre">:=</span> <span class="pre">$(NETCDF_PATH)/lib</span></code>
+<code class="docutils literal notranslate"><span class="pre">MOD_NETCDF</span> <span class="pre">:=</span> <span class="pre">$(NETCDF_PATH)/include</span></code>
+<code class="docutils literal notranslate"><span class="pre">INC_MPI</span> <span class="pre">:=</span> <span class="pre">$(MPI_ROOT)/include</span></code> <code class="docutils literal notranslate"><span class="pre">LIB_MPI</span> <span class="pre">:=</span> <span class="pre">$(MPI_ROOT)/lib</span></code></p>
+</div>
+<div class="section" id="batch-queuing-system-rules">
+<h3>Batch/queuing system rules<a class="headerlink" href="#batch-queuing-system-rules" title="Permalink to this headline">¶</a></h3>
+<p>Copy //mkbatch.vilje// to //mkbatch.$MACH//.</p>
+<p>Change as necessary the settings for //mach//, //group_id//,
+//mppsize//, //mppnodes//, etc.</p>
+<p>Replace the line <em>mpiexec_mpt -stats -n $mpptotal omplace -nt
+${maxthrds} ./ccsm.exe &gt;&amp;! ccsm.log.$LID</em> with the submit command and
+appropriate options for your HPC system.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
+<p>We suggest to test the installation by running a pre-industrial spin-up
+experiment that is configured as ‘start-up’ simulation (i.e. uses
+idealised conditions and observational climatologies as initial
+conditions).</p>
+<p>Change directory to //$HOME/NorESM1-M/scripts//.</p>
+<p>Set up pre-industrial spin-up simulation with <em>./create_newcase -case
+../cases/NorESM1-M_PI_spinup -compset NAER1850CN -res f19_g16 -mach
+$MACH -pecount S</em> where //$MACH// is the name tag of your machine.</p>
+<p>Change directory to //../cases/NorESM1-M_PI_spinup//</p>
+<p>Run <em>.configure -case</em> to set up simulation.</p>
+<p>Run <em>./NorESM1-M_PI_spinup.$MACH.build</em> to stage namelists in run
+directory and build model code.</p>
+<p>Submit run-script //./NorESM1-M_PI_spinup.$MACH.run// (use appropriate
+submit command for your HPC system, e.g. qsub).</p>
+<p>If the test was successful then the model should run for 5 days and
+write our restart conditions at the beginning of the 6th day. The
+location of the run directory is specified via EXEROOT in
+config_machines.xml (see section Porting).</p>
+</div>
+<div class="section" id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">``&nbsp;*&nbsp;<code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">```Quickstart</span></code><a href="#id2"><span class="problematic" id="id3">``</span></a><code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">``for</span></code><a href="#id4"><span class="problematic" id="id5">``</span></a><code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">``running</span></code><a href="#id6"><span class="problematic" id="id7">``</span></a><code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">``NorESM1</span></code> &lt;noresm:runmodel:newbie&gt;`__</div>
+<div class="line">``&nbsp;*&nbsp;<code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">```Advanced</span></code><a href="#id8"><span class="problematic" id="id9">``</span></a><code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">``options</span></code><a href="#id10"><span class="problematic" id="id11">``</span></a><code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">``for</span></code><a href="#id12"><span class="problematic" id="id13">``</span></a><code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">``running</span></code><a href="#id14"><span class="problematic" id="id15">``</span></a><code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">``NorESM1</span></code> &lt;noresm:runmodel:advanced&gt;`__</div>
+<div class="line">``&nbsp;*&nbsp;<code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">```Porting</span></code><a href="#id16"><span class="problematic" id="id17">``</span></a><code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">``of</span></code><a href="#id18"><span class="problematic" id="id19">``</span></a><code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">``NorESM1</span></code><a href="#id20"><span class="problematic" id="id21">``</span></a><code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">``to</span></code><a href="#id22"><span class="problematic" id="id23">``</span></a><code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">``TERI</span></code><a href="#id24"><span class="problematic" id="id25">``</span></a><code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">``(India)</span></code> &lt;<a class="reference external" href="http://www.teriin.org/projects/nfa/pdf/Working_paper7.pdf">http://www.teriin.org/projects/nfa/pdf/Working_paper7.pdf</a>&gt;`__</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Anne Fouilloux
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

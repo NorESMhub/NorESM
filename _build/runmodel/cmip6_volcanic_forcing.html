@@ -1,0 +1,408 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CMIP6 volcanic forcing &mdash; norESM  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="CMIP6 emissions of short-lived components" href="cmip6emissionsofshortlivedcomponents.html" />
+    <link rel="prev" title="Fluxes crossing boundaries" href="fluxescrossingboundaries.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> norESM
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Content:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../start.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newbie.html">Newbies guide to running NorESM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced configuration (NorESM1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advancednoresm2.html">Advanced configuration of NorESM2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fluxescrossingboundaries.html">Fluxes crossing boundaries</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CMIP6 volcanic forcing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#code-and-installation">Code and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-of-user-namelists">Configuration of user namelists</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cesm1-2-climatological-background-forcing">CESM1.2 - climatological background forcing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cesm1-2-transient-forcing">CESM1.2 - transient forcing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cesm2-beta-climatological-background-transient">CESM2_beta - climatological background &amp; transient</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#writing-the-volcanic-forcing-to-the-history-output-for-verification">Writing the volcanic forcing to the history output for verification</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cmip6emissionsofshortlivedcomponents.html">CMIP6 emissions of short-lived components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="noresm2_output.html">Atmospheric output for some commonly used configurations of NorESM2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../settingupcamonlinuxpc.html">Setting up CAM on your own linux PC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeldiagnostics.html">Model Diagnostic Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usingtheissuetracker.html">Using the issue tracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testlist.html">Test list for NorESM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html">Obtain a copy of the model (using git)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html#verify-that-you-have-the-correct-checkout">Verify that you have the correct checkout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html#modify-files">Modify files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html#get-modifications-from-github">Get modifications from github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html#send-modifications-to-github">Send modifications to github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html#if-you-don-t-understand-and-want-to-get-back-to-svn">If you don’t understand and want to get back to svn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html">What is a branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#when-should-i-work-on-a-branch">When should I work on a branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#how-should-i-name-the-branch">How should I name the branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#a-note-on-branch-tag-naming">A note on branch / tag naming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#how-and-when-should-i-merge-from-trunk-to-my-branch">How and when should I merge from trunk to my branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#how-can-i-merge-my-branch-back-into-the-trunk">How can I merge my branch back into the trunk?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#what-is-a-tag">What is a tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#when-should-i-create-a-tag">When should I create a tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#what-tags-exist">What tags exist?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#how-should-i-name-the-tag">How should I name the tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#tagging-noresm0-and-noresm1-branches">Tagging noresm0 and noresm1 branches?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#case-1">Case 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#case-2">Case 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#case-3">Case 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#what-should-be-stated-in-the-commit-message">What should be stated in the commit message?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#what-should-be-stated-in-the-copy-message-of-a-branch">What should be stated in the copy message of a branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#what-should-be-stated-in-the-copy-message-of-a-tag">What should be stated in the copy message of a tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnnorstorehowto.html">Subversion how-to for NorStore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uncertainaerosolparameters.html">Uncertain parameters (which can be discussed) in the aerosol model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeldiagnostics.html">Model Diagnostic Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../norstoretape.html">NorStore Tape Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../norstorearchive.html">NorStore Research Data Archive: Guidelines for ingestion of NorESM output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects.html">Existing projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">norESM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>CMIP6 volcanic forcing</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/runmodel/cmip6_volcanic_forcing.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cmip6-volcanic-forcing">
+<span id="id1"></span><h1>CMIP6 volcanic forcing<a class="headerlink" href="#cmip6-volcanic-forcing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="code-and-installation">
+<h2>Code and installation<a class="headerlink" href="#code-and-installation" title="Permalink to this headline">¶</a></h2>
+<p>The CMIP6 volcanic forcing implementation has been committed to the
+noresm (CESM1.2) repository and the noresm-dev (CESM2_beta) repository.
+The changes can be viewed here: \
+<a class="reference external" href="https://github.com/metno/noresm/commit/59d2b4c4714c0df41141a10d79fd329b27b8aed6">https://github.com/metno/noresm/commit/59d2b4c4714c0df41141a10d79fd329b27b8aed6</a>
+\
+<a class="reference external" href="https://github.com/metno/noresm-dev/commit/bbec72fa49ed57ab70d5052b8b4c0162eeb6ab88">https://github.com/metno/noresm-dev/commit/bbec72fa49ed57ab70d5052b8b4c0162eeb6ab88</a></p>
+<p>SourceMods are available on FRAM/NIRD: \</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">nird</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">fram</span><span class="o">/</span><span class="n">nn2345k</span><span class="o">/</span><span class="n">ingo</span><span class="o">/</span><span class="n">CMIP6</span><span class="o">/</span><span class="n">Forcing</span><span class="o">/</span><span class="n">Volc</span><span class="o">/</span><span class="n">SourceMods_noresm_cesm1</span><span class="o">.</span><span class="mi">2</span>
+
+
+<span class="o">/</span><span class="n">nird</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">fram</span><span class="o">/</span><span class="n">nn2345k</span><span class="o">/</span><span class="n">ingo</span><span class="o">/</span><span class="n">CMIP6</span><span class="o">/</span><span class="n">Forcing</span><span class="o">/</span><span class="n">Volc</span><span class="o">/</span><span class="n">SourceMods_noresm_cesm2beta6</span>
+</pre></div>
+</div>
+<p>The folder</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SourceMods_noresm_cesm2beta6</span>
+</pre></div>
+</div>
+<p>also contains a modified version of CAM’s</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">build</span><span class="o">-</span><span class="n">namelist</span>
+</pre></div>
+</div>
+<p>script that needs to be installed in</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">components</span><span class="o">/</span><span class="n">cam</span><span class="o">/</span><span class="n">bld</span><span class="o">/</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="configuration-of-user-namelists">
+<h2>Configuration of user namelists<a class="headerlink" href="#configuration-of-user-namelists" title="Permalink to this headline">¶</a></h2>
+<p>For some compsets the below specifications are applied automatically.
+Still, you can specify the same settings in your</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">user_nl_cam</span>
+</pre></div>
+</div>
+<p>in your case directory.</p>
+<div class="section" id="cesm1-2-climatological-background-forcing">
+<h3>CESM1.2 - climatological background forcing<a class="headerlink" href="#cesm1-2-climatological-background-forcing" title="Permalink to this headline">¶</a></h3>
+<p>Specify following in your</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">user_nl_cam</span>
+</pre></div>
+</div>
+<p>to activate the use of CMIP6 compliant volcanic background forcing: !
+Users should add all user specific namelist changes below in the form of
+! namelist_var = new_namelist_value</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prescribed_volcaero_datapath</span>           <span class="o">=</span> <span class="s1">&#39;/cluster/shared/noresm/inputdata/atm/cam/volc&#39;</span>
+<span class="n">prescribed_volcaero_file</span>               <span class="o">=</span> <span class="s1">&#39;CMIP_CAM6_radiation_average_v3_reformatted.nc&#39;</span>
+<span class="n">prescribed_volcaero_cycle_yr</span>           <span class="o">=</span> <span class="mi">1850</span>
+<span class="n">prescribed_volcaero_type</span>               <span class="o">=</span> <span class="s1">&#39;CYCLICAL&#39;</span>
+<span class="n">rad_climate</span>            <span class="o">=</span> <span class="s1">&#39;A:Q:H2O&#39;</span><span class="p">,</span> <span class="s1">&#39;N:O2:O2&#39;</span><span class="p">,</span> <span class="s1">&#39;N:CO2:CO2&#39;</span><span class="p">,</span> <span class="s1">&#39;N:ozone:O3&#39;</span><span class="p">,</span> <span class="s1">&#39;N:N2O:N2O&#39;</span><span class="p">,</span> <span class="s1">&#39;N:CH4:CH4&#39;</span><span class="p">,</span> <span class="s1">&#39;N:CFC11:CFC11&#39;</span><span class="p">,</span> <span class="s1">&#39;N:CFC12:CFC12&#39;</span>
+<span class="n">fincl1</span> <span class="o">=</span> <span class="s1">&#39;AODVVOLC&#39;</span><span class="p">,</span> <span class="s1">&#39;ABSVVOLC&#39;</span>
+</pre></div>
+</div>
+<p>Note that</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rad_climate</span>
+</pre></div>
+</div>
+<p>is specified here because CAM’s</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">build</span><span class="o">-</span><span class="n">namelist</span>
+</pre></div>
+</div>
+<p>script will otherwise add an extra entry that was needed by the CMIP5
+volcanic forcing implementation.</p>
+</div>
+<div class="section" id="cesm1-2-transient-forcing">
+<h3>CESM1.2 - transient forcing<a class="headerlink" href="#cesm1-2-transient-forcing" title="Permalink to this headline">¶</a></h3>
+<p>Specify following in your</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">user_nl_cam</span>
+</pre></div>
+</div>
+<p>to activate the use of CMIP6 compliant transient (1850-2014) volcanic
+forcing: ! Users should add all user specific namelist changes below in
+the form of ! namelist_var = new_namelist_value</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prescribed_volcaero_datapath</span>           <span class="o">=</span> <span class="s1">&#39;/cluster/shared/noresm/inputdata/atm/cam/volc&#39;</span>
+<span class="n">prescribed_volcaero_file</span>               <span class="o">=</span> <span class="s1">&#39;CMIP_CAM6_radiation_v3_reformatted.nc&#39;</span>
+<span class="n">rad_climate</span>            <span class="o">=</span> <span class="s1">&#39;A:Q:H2O&#39;</span><span class="p">,</span> <span class="s1">&#39;N:O2:O2&#39;</span><span class="p">,</span> <span class="s1">&#39;N:CO2:CO2&#39;</span><span class="p">,</span> <span class="s1">&#39;N:ozone:O3&#39;</span><span class="p">,</span> <span class="s1">&#39;N:N2O:N2O&#39;</span><span class="p">,</span> <span class="s1">&#39;N:CH4:CH4&#39;</span><span class="p">,</span> <span class="s1">&#39;N:CFC11:CFC11&#39;</span><span class="p">,</span> <span class="s1">&#39;N:CFC12:CFC12&#39;</span>
+<span class="n">fincl1</span> <span class="o">=</span> <span class="s1">&#39;AODVVOLC&#39;</span><span class="p">,</span> <span class="s1">&#39;ABSVVOLC&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cesm2-beta-climatological-background-transient">
+<h3>CESM2_beta - climatological background &amp; transient<a class="headerlink" href="#cesm2-beta-climatological-background-transient" title="Permalink to this headline">¶</a></h3>
+<p>The</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">user_nl_cam</span>
+</pre></div>
+</div>
+<p>namelist settings are the same as for CESM1.2, except that following
+extra line needs to be added:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prescribed_strataero_file</span>              <span class="o">=</span> <span class="s1">&#39; &#39;</span>
+</pre></div>
+</div>
+<p>This will deactivate the use of NCAR’s alternative CMIP6 volcanic
+forcing.</p>
+<p>CAM’s original</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">build</span><span class="o">-</span><span class="n">namelist</span>
+</pre></div>
+</div>
+<p>script does not properly recognise the deactivation and will issue an
+error that both</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prescribed_strataero_file</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prescribed_volcaero_file</span>
+</pre></div>
+</div>
+<p>are set.</p>
+<p>As a workaround, replace</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">components</span><span class="o">/</span><span class="n">cam</span><span class="o">/</span><span class="n">bld</span><span class="o">/</span><span class="n">build</span><span class="o">-</span><span class="n">namelist</span>
+</pre></div>
+</div>
+<p>in your model tree with the modified version</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd>/nird/projects/fram/nn2345k/ingo/CMIP6/Forcing/Volc/SourceMods_noresm_cesm2beta6/build-namelist</dd>
+</dl>
+</div>
+<div class="section" id="writing-the-volcanic-forcing-to-the-history-output-for-verification">
+<h3>Writing the volcanic forcing to the history output for verification<a class="headerlink" href="#writing-the-volcanic-forcing-to-the-history-output-for-verification" title="Permalink to this headline">¶</a></h3>
+<p>The complete set of optical parameters of the volcanic forcing can be
+written to CAM-OSLO’s monthly history output by adding following in the
+case’s</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">user_nl_cam</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fincl1</span> <span class="o">=</span> <span class="s1">&#39;ext_sun1&#39;</span><span class="p">,</span><span class="s1">&#39;ext_sun2&#39;</span><span class="p">,</span><span class="s1">&#39;ext_sun3&#39;</span><span class="p">,</span><span class="s1">&#39;ext_sun4&#39;</span><span class="p">,</span><span class="s1">&#39;ext_sun5&#39;</span><span class="p">,</span><span class="s1">&#39;ext_sun6&#39;</span><span class="p">,</span><span class="s1">&#39;ext_sun7&#39;</span><span class="p">,</span><span class="s1">&#39;ext_sun8&#39;</span><span class="p">,</span><span class="s1">&#39;ext_sun9&#39;</span><span class="p">,</span><span class="s1">&#39;ext_sun10&#39;</span><span class="p">,</span><span class="s1">&#39;ext_sun11&#39;</span><span class="p">,</span><span class="s1">&#39;ext_sun12&#39;</span><span class="p">,</span><span class="s1">&#39;ext_sun13&#39;</span><span class="p">,</span><span class="s1">&#39;ext_sun14&#39;</span><span class="p">,</span><span class="s1">&#39;omega_sun1&#39;</span><span class="p">,</span><span class="s1">&#39;omega_sun2&#39;</span><span class="p">,</span><span class="s1">&#39;omega_sun3&#39;</span><span class="p">,</span><span class="s1">&#39;omega_sun4&#39;</span><span class="p">,</span><span class="s1">&#39;omega_sun5&#39;</span><span class="p">,</span><span class="s1">&#39;omega_sun6&#39;</span><span class="p">,</span><span class="s1">&#39;omega_sun7&#39;</span><span class="p">,</span><span class="s1">&#39;omega_sun8&#39;</span><span class="p">,</span><span class="s1">&#39;omega_sun9&#39;</span><span class="p">,</span><span class="s1">&#39;omega_sun10&#39;</span><span class="p">,</span><span class="s1">&#39;omega_sun11&#39;</span><span class="p">,</span><span class="s1">&#39;omega_sun12&#39;</span><span class="p">,</span><span class="s1">&#39;omega_sun13&#39;</span><span class="p">,</span><span class="s1">&#39;omega_sun14&#39;</span><span class="p">,</span><span class="s1">&#39;g_sun1&#39;</span><span class="p">,</span><span class="s1">&#39;g_sun2&#39;</span><span class="p">,</span><span class="s1">&#39;g_sun3&#39;</span><span class="p">,</span><span class="s1">&#39;g_sun4&#39;</span><span class="p">,</span><span class="s1">&#39;g_sun5&#39;</span><span class="p">,</span><span class="s1">&#39;g_sun6&#39;</span><span class="p">,</span><span class="s1">&#39;g_sun7&#39;</span><span class="p">,</span><span class="s1">&#39;g_sun8&#39;</span><span class="p">,</span><span class="s1">&#39;g_sun9&#39;</span><span class="p">,</span><span class="s1">&#39;g_sun10&#39;</span><span class="p">,</span><span class="s1">&#39;g_sun11&#39;</span><span class="p">,</span><span class="s1">&#39;g_sun12&#39;</span><span class="p">,</span><span class="s1">&#39;g_sun13&#39;</span><span class="p">,</span><span class="s1">&#39;g_sun14&#39;</span><span class="p">,</span><span class="s1">&#39;ext_earth1&#39;</span><span class="p">,</span><span class="s1">&#39;ext_earth2&#39;</span><span class="p">,</span><span class="s1">&#39;ext_earth3&#39;</span><span class="p">,</span><span class="s1">&#39;ext_earth4&#39;</span><span class="p">,</span><span class="s1">&#39;ext_earth5&#39;</span><span class="p">,</span><span class="s1">&#39;ext_earth6&#39;</span><span class="p">,</span><span class="s1">&#39;ext_earth7&#39;</span><span class="p">,</span><span class="s1">&#39;ext_earth8&#39;</span><span class="p">,</span><span class="s1">&#39;ext_earth9&#39;</span><span class="p">,</span><span class="s1">&#39;ext_earth10&#39;</span><span class="p">,</span><span class="s1">&#39;ext_earth11&#39;</span><span class="p">,</span><span class="s1">&#39;ext_earth12&#39;</span><span class="p">,</span><span class="s1">&#39;ext_earth13&#39;</span><span class="p">,</span><span class="s1">&#39;ext_earth14&#39;</span><span class="p">,</span><span class="s1">&#39;ext_earth15&#39;</span><span class="p">,</span><span class="s1">&#39;ext_earth16&#39;</span><span class="p">,</span><span class="s1">&#39;omega_earth1&#39;</span><span class="p">,</span><span class="s1">&#39;omega_earth2&#39;</span><span class="p">,</span><span class="s1">&#39;omega_earth3&#39;</span><span class="p">,</span><span class="s1">&#39;omega_earth4&#39;</span><span class="p">,</span><span class="s1">&#39;omega_earth5&#39;</span><span class="p">,</span><span class="s1">&#39;omega_earth6&#39;</span><span class="p">,</span><span class="s1">&#39;omega_earth7&#39;</span><span class="p">,</span><span class="s1">&#39;omega_earth8&#39;</span><span class="p">,</span><span class="s1">&#39;omega_earth9&#39;</span><span class="p">,</span><span class="s1">&#39;omega_earth10&#39;</span><span class="p">,</span><span class="s1">&#39;omega_earth11&#39;</span><span class="p">,</span><span class="s1">&#39;omega_earth12&#39;</span><span class="p">,</span><span class="s1">&#39;omega_earth13&#39;</span><span class="p">,</span><span class="s1">&#39;omega_earth14&#39;</span><span class="p">,</span><span class="s1">&#39;omega_earth15&#39;</span><span class="p">,</span><span class="s1">&#39;omega_earth16&#39;</span><span class="p">,</span><span class="s1">&#39;g_earth1&#39;</span><span class="p">,</span><span class="s1">&#39;g_earth2&#39;</span><span class="p">,</span><span class="s1">&#39;g_earth3&#39;</span><span class="p">,</span><span class="s1">&#39;g_earth4&#39;</span><span class="p">,</span><span class="s1">&#39;g_earth5&#39;</span><span class="p">,</span><span class="s1">&#39;g_earth6&#39;</span><span class="p">,</span><span class="s1">&#39;g_earth7&#39;</span><span class="p">,</span><span class="s1">&#39;g_earth8&#39;</span><span class="p">,</span><span class="s1">&#39;g_earth9&#39;</span><span class="p">,</span><span class="s1">&#39;g_earth10&#39;</span><span class="p">,</span><span class="s1">&#39;g_earth11&#39;</span><span class="p">,</span><span class="s1">&#39;g_earth12&#39;</span><span class="p">,</span><span class="s1">&#39;g_earth13&#39;</span><span class="p">,</span><span class="s1">&#39;g_earth14&#39;</span><span class="p">,</span><span class="s1">&#39;g_earth15&#39;</span><span class="p">,</span><span class="s1">&#39;g_earth16&#39;</span>
+</pre></div>
+</div>
+<p>Note that each variable corresponds to a single band, that values are
+masked below the model’s tropopause and that all values are interpolated
+online from altitude to pressure. The output can be compared to the
+original input data which is stored in</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CMIP_CAM6_radiation_average_v3</span><span class="o">.</span><span class="n">nc</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CMIP_CAM6_radiation_v3</span><span class="o">.</span><span class="n">nc</span>
+</pre></div>
+</div>
+<p>in</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">cluster</span><span class="o">/</span><span class="n">shared</span><span class="o">/</span><span class="n">noresm</span><span class="o">/</span><span class="n">inputdata</span><span class="o">/</span><span class="n">atm</span><span class="o">/</span><span class="n">cam</span><span class="o">/</span><span class="n">volc</span>
+</pre></div>
+</div>
+<p>on FRAM.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cmip6emissionsofshortlivedcomponents.html" class="btn btn-neutral float-right" title="CMIP6 emissions of short-lived components" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="fluxescrossingboundaries.html" class="btn btn-neutral" title="Fluxes crossing boundaries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Anne Fouilloux
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

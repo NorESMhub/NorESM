@@ -1,0 +1,405 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Advanced configuration of NorESM2 &mdash; norESM  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Fluxes crossing boundaries" href="fluxescrossingboundaries.html" />
+    <link rel="prev" title="Advanced configuration (NorESM1)" href="advanced.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> norESM
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Content:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../start.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newbie.html">Newbies guide to running NorESM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced configuration (NorESM1)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Advanced configuration of NorESM2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-new-compset">Creating a new compset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-a-case-with-the-new-compset-and-building-the-model">Setting up a case with the new compset and building the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#why-does-it-work-to-change-config-compsets-xml">Why does it work to change config_compsets.xml ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configure-nudging">Configure nudging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-the-met-data">Create the met-data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-the-met-data-in-another-run">Use the met-data in another run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#namelist-options">Namelist options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nudge-to-era-interim-reanalysis">Nudge to ERA-interim reanalysis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fluxescrossingboundaries.html">Fluxes crossing boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmip6_volcanic_forcing.html">CMIP6 volcanic forcing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmip6emissionsofshortlivedcomponents.html">CMIP6 emissions of short-lived components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="noresm2_output.html">Atmospheric output for some commonly used configurations of NorESM2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../settingupcamonlinuxpc.html">Setting up CAM on your own linux PC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeldiagnostics.html">Model Diagnostic Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usingtheissuetracker.html">Using the issue tracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testlist.html">Test list for NorESM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html">Obtain a copy of the model (using git)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html#verify-that-you-have-the-correct-checkout">Verify that you have the correct checkout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html#modify-files">Modify files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html#get-modifications-from-github">Get modifications from github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html#send-modifications-to-github">Send modifications to github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitbestpractice.html#if-you-don-t-understand-and-want-to-get-back-to-svn">If you don’t understand and want to get back to svn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html">What is a branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#when-should-i-work-on-a-branch">When should I work on a branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#how-should-i-name-the-branch">How should I name the branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#a-note-on-branch-tag-naming">A note on branch / tag naming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#how-and-when-should-i-merge-from-trunk-to-my-branch">How and when should I merge from trunk to my branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#how-can-i-merge-my-branch-back-into-the-trunk">How can I merge my branch back into the trunk?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#what-is-a-tag">What is a tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#when-should-i-create-a-tag">When should I create a tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#what-tags-exist">What tags exist?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#how-should-i-name-the-tag">How should I name the tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#tagging-noresm0-and-noresm1-branches">Tagging noresm0 and noresm1 branches?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#case-1">Case 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#case-2">Case 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#case-3">Case 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#what-should-be-stated-in-the-commit-message">What should be stated in the commit message?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#what-should-be-stated-in-the-copy-message-of-a-branch">What should be stated in the copy message of a branch?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnbestpractice.html#what-should-be-stated-in-the-copy-message-of-a-tag">What should be stated in the copy message of a tag?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svnnorstorehowto.html">Subversion how-to for NorStore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uncertainaerosolparameters.html">Uncertain parameters (which can be discussed) in the aerosol model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeldiagnostics.html">Model Diagnostic Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../norstoretape.html">NorStore Tape Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../norstorearchive.html">NorStore Research Data Archive: Guidelines for ingestion of NorESM output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects.html">Existing projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">norESM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Advanced configuration of NorESM2</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/runmodel/advancednoresm2.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="advanced-configuration-of-noresm2">
+<span id="advancednoresm2"></span><h1>Advanced configuration of NorESM2<a class="headerlink" href="#advanced-configuration-of-noresm2" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>NOTE THAT THE COMPSETS MENTIONED IN THIS EXAMPLE ARE NO LONGER</dt>
+<dd>MAINTAINED! THE GENERAL EXPLANATION AND IDEAS ARE STILL VALID!</dd>
+</dl>
+</li>
+</ul>
+<div class="section" id="creating-a-new-compset">
+<h2>Creating a new compset<a class="headerlink" href="#creating-a-new-compset" title="Permalink to this headline">¶</a></h2>
+<p>The essential file to edit is
+~/noresm/scripts/ccsm_utils/Case.template/config_compsets.xml</p>
+<p>This examples shows how to simply add a to the “F_AMIP_CAM5” compset:</p>
+<p>Under ” “, add</p>
+<blockquote>
+<div>AMIP_CAM5%OSLO_CLM40%SP_CICE%PRES_DOCN%DOM_RTM_SGLC_SWAV</div></blockquote>
+<p>The “CAM5%OSLO” options have to be defined, so a line like this is
+needed:</p>
+<blockquote>
+<div>-phys cam5 -cam_oslo aerlife</div></blockquote>
+<p>The compset needs a description, we also need the line cam 5 physcs and
+oslo aerosols</p>
+<p>We could also define a specific use-case (namelist) for our compset.
+This would need a line like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_namelist</span>
+</pre></div>
+</div>
+<p>This would only work if the file my_namelist.xml exists as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">noresm</span><span class="o">/</span><span class="n">models</span><span class="o">/</span><span class="n">atm</span><span class="o">/</span><span class="n">cam</span><span class="o">/</span><span class="n">bld</span><span class="o">/</span><span class="n">namelist_files</span><span class="o">/</span><span class="n">use_cases</span><span class="o">/</span><span class="n">my_namelist</span><span class="o">.</span><span class="n">xml</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setting-up-a-case-with-the-new-compset-and-building-the-model">
+<h2>Setting up a case with the new compset and building the model<a class="headerlink" href="#setting-up-a-case-with-the-new-compset-and-building-the-model" title="Permalink to this headline">¶</a></h2>
+<p>It should now be possible to create a new case directory, which we here
+name FAMIPOSLOtst and configure with 1 degree horizontal atmospheric
+resolution;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">create_newcase</span> <span class="o">-</span><span class="n">case</span> <span class="o">../</span><span class="n">cases</span><span class="o">/</span><span class="n">FAMIPOSLOtst</span> <span class="o">-</span><span class="n">compset</span> <span class="n">FAMIPOSLO</span> <span class="o">-</span><span class="n">mach</span>
+ <span class="n">hexagon</span> <span class="o">-</span><span class="n">res</span> <span class="n">f09_f09</span>
+</pre></div>
+</div>
+<p>and finally set up and compile the model: cd ../cases/FAMIPOSLOtst</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">cesm_setup</span>
+
+<span class="o">./</span><span class="n">FAMIPOSLOtst</span><span class="o">.</span><span class="n">build</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="why-does-it-work-to-change-config-compsets-xml">
+<h2>Why does it work to change config_compsets.xml ?<a class="headerlink" href="#why-does-it-work-to-change-config-compsets-xml" title="Permalink to this headline">¶</a></h2>
+<p>In NorESM there are 3 new config-options for CAM:</p>
+<div class="line-block">
+<div class="line">``&nbsp;*&nbsp;-cam-oslo&nbsp;aerlife&nbsp;(turns&nbsp;on&nbsp;transport&nbsp;of&nbsp;oslo&nbsp;tracers)``</div>
+<div class="line">``&nbsp;*&nbsp;-cam-oslo&nbsp;dirind&nbsp;&nbsp;(also&nbsp;turns&nbsp;on&nbsp;interaction&nbsp;with&nbsp;radiation)``</div>
+<div class="line">``&nbsp;*&nbsp;-cam-oslo&nbsp;warmclouds&nbsp;(also&nbsp;turns&nbsp;on&nbsp;interaction&nbsp;with&nbsp;warm&nbsp;clouds)``</div>
+</div>
+<p>They change number of tracers and turn on different preprocessor flags
+in in a perl script called “configure”, see:
+models/atm/cam/bld/configure</p>
+<p>To understand the implementation do: svn diff -r 202
+models/atm/cam/bld/configure</p>
+<p>The new oslo-options also need to be defined, see
+models/atm/cam/bld/config_files/definition.xml</p>
+<p>To see how these new options were added, do: svn diff -r 202
+models/atm/cam/bld/config_files/definition.xml</p>
+</div>
+<div class="section" id="configure-nudging">
+<h2>Configure nudging<a class="headerlink" href="#configure-nudging" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="create-the-met-data">
+<h3>Create the met-data<a class="headerlink" href="#create-the-met-data" title="Permalink to this headline">¶</a></h3>
+<p>First run the model to produce 6 hourly data. The following namelists
+are needed:</p>
+<blockquote>
+<div>user_nl_cam &amp;camexp mfilt = 1, 4, nhtfrq = 0, -6, avgflag_pertape</div></blockquote>
+<p>=’A’,’I’, fincl2 =
+‘PS’,’U’,’V’,’TAUX’,’TAUY’,’FSDS’,’TS’,’T’,’Q’,’PHIS’,’QFLX’,’SHFLX’</p>
+<blockquote>
+<div>user_nl_clm &amp;clmexp hist_mfilt = 1,4 hist_nhtfrq = 0,-6</div></blockquote>
+<p>hist_avgflag_pertape = ‘A’,’I’ hist_fincl2 = ‘SNOWDP’,’H2OSNO’,’H2OSOI’</p>
+</div>
+<div class="section" id="use-the-met-data-in-another-run">
+<h3>Use the met-data in another run<a class="headerlink" href="#use-the-met-data-in-another-run" title="Permalink to this headline">¶</a></h3>
+<p>First create a compset which has the configure-option “-offline_dyn”.
+Check in config_compsets.xml which compsets have this configure-option
+added. See for example the compset NFAMIPNUDGEPTAERO in
+<a class="reference external" href="https://svn.met.no/NorESM/noresm/branches/featureCAM5-OsloDevelopment_trunk2.0-1/noresm/scripts/ccsm_utils/Case.template/config_compsets.xml">https://svn.met.no/NorESM/noresm/branches/featureCAM5-OsloDevelopment_trunk2.0-1/noresm/scripts/ccsm_utils/Case.template/config_compsets.xml</a></p>
+<p>Then use this compset to create a case. You need the following
+user-input (for example in your user_nl_cam)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&amp;</span><span class="n">metdata_nl</span>
+<span class="n">met_data_file</span><span class="o">=</span><span class="s1">&#39;/work/shared/noresm/inputForNudging/FAMIPC5NudgeOut/atm/hist/FAMIPC5NudgeOut.cam.h1.1979-01-01-00000.nc&#39;</span>
+<span class="n">met_filenames_list</span> <span class="o">=</span>
+<span class="s1">&#39;/work/shared/noresm/inputForNudging/FAMIPC5NudgeOut/atm/hist/fileList.txt&#39;</span>
+</pre></div>
+</div>
+<p>This info can be added directly in a use_case which you associate with
+the compset created (see e.g. 2000_cam5_oslonudge.xml)</p>
+<p>where met_data_file is the first met-data file to read, and
+met_filenames_list is a list of the following met-data. The first lines
+of the file should look something like this (guess what the rest of the
+file should look like? 8-o: )</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">work</span><span class="o">/</span><span class="n">shared</span><span class="o">/</span><span class="n">noresm</span><span class="o">/</span><span class="n">inputForNudging</span><span class="o">/</span><span class="n">FAMIPC5NudgeOut</span><span class="o">/</span><span class="n">atm</span><span class="o">/</span><span class="n">hist</span><span class="o">/</span><span class="n">FAMIPC5NudgeOut</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h1</span><span class="o">.</span><span class="mi">1979</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
+<span class="o">/</span><span class="n">work</span><span class="o">/</span><span class="n">shared</span><span class="o">/</span><span class="n">noresm</span><span class="o">/</span><span class="n">inputForNudging</span><span class="o">/</span><span class="n">FAMIPC5NudgeOut</span><span class="o">/</span><span class="n">atm</span><span class="o">/</span><span class="n">hist</span><span class="o">/</span><span class="n">FAMIPC5NudgeOut</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h1</span><span class="o">.</span><span class="mi">1979</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
+<span class="o">/</span><span class="n">work</span><span class="o">/</span><span class="n">shared</span><span class="o">/</span><span class="n">noresm</span><span class="o">/</span><span class="n">inputForNudging</span><span class="o">/</span><span class="n">FAMIPC5NudgeOut</span><span class="o">/</span><span class="n">atm</span><span class="o">/</span><span class="n">hist</span><span class="o">/</span><span class="n">FAMIPC5NudgeOut</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h1</span><span class="o">.</span><span class="mi">1979</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
+</pre></div>
+</div>
+<p>This file can be created at the place where you put the metdata with
+this command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>alfgr@hexagon-4:/work/shared/noresm/inputForNudging/FAMIPC5NudgeOut/atm/hist&gt;
+ls -d -1 $PWD/*.h1.*.nc &gt; fileList.txt
+</pre></div>
+</div>
+</div>
+<div class="section" id="namelist-options">
+<h3>Namelist options<a class="headerlink" href="#namelist-options" title="Permalink to this headline">¶</a></h3>
+<p>When looking at aerosol indirect effects, it’s recommended to nudge only
+U, V and PS: &amp;metdata_nl</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">met_nudge_only_uvps</span> <span class="o">=</span> <span class="o">.</span><span class="n">true</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Choose relaxation time (hours). Use the same time as dt in
+met_data_file: &amp;metdata_nl</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">met_rlx_time</span> <span class="o">=</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="nudge-to-era-interim-reanalysis">
+<h3>Nudge to ERA-interim reanalysis<a class="headerlink" href="#nudge-to-era-interim-reanalysis" title="Permalink to this headline">¶</a></h3>
+<p>Link to ERA-interim metdata instead of model produced metdata. Remember
+to choose the files corresponding to your resolution (examples below are
+for f09_f09 and 32 levels in the vertical): &amp;metdata_nl</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">met_data_file</span> <span class="o">=</span> <span class="s1">&#39;/work/shared/noresm/inputdata/noresm-only/inputForNudging/ERA_f09f09_30L_days/2001-01-01.nc&#39;</span>
+<span class="n">met_filenames_list</span> <span class="o">=</span> <span class="s1">&#39;/work/shared/noresm/inputdata/noresm-only/inputForNudging/ERA_f09f09_30L_days/fileList2001-2015.txt&#39;</span>
+</pre></div>
+</div>
+<p>Add also the ERA-topography (no matter which fields you are nudging):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&amp;</span><span class="n">cam_inparm</span>
+
+<span class="n">bnd_topo</span> <span class="o">=</span> <span class="s1">&#39;/work/shared/noresm/inputdata/noresm-only/inputForNudging/ERA_f09f09_30L_days/ERA_bnd_topo.nc&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="fluxescrossingboundaries.html" class="btn btn-neutral float-right" title="Fluxes crossing boundaries" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="advanced.html" class="btn btn-neutral" title="Advanced configuration (NorESM1)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Anne Fouilloux
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
