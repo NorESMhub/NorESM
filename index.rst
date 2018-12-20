@@ -19,12 +19,7 @@ If you have any questions, create a new issue on github at https://github.com/No
    start.rst
    runmodel/newbie.rst
    runmodel/advanced.rst
-   runmodel/advancednoresm2.rst
    runmodel/fluxescrossingboundaries.rst
-   runmodel/cmip6_volcanic_forcing.rst
-   runmodel/cmip6emissionsofshortlivedcomponents.rst
-   runmodel/cmip6greenhousegasConcentrations.rst
-   runmodel/noresm2_output.rst
    settingupcamonlinuxpc.rst
    modeldiagnostics.rst
    usingtheissuetracker.rst

@@ -20,14 +20,8 @@ http://www.geosci-model-dev.net/special_issue20.html
 :cite:`gmd-6-207-2013`
 :cite:`gmd-6-301-2013`
 
-The next version of the model NorESM2 is built on a update version of
-the CCSM framework, CESM2. (http://www.cesm.ucar.edu/models/cesm2/) ;
-(https://en.wikipedia.org/wiki/Community_Earth_System_Model). Its
-aerosol module is based on OsloAero5.3 of NorESM1.2 / CAM5.3-Oslo
-:cite:`gmd-11-3945-2018`.
-
 This website contains information shared between NorESM developers and
-users
+users.
 
 Obtaining a version of the model
 ''''''''''''''''''''''''''''''''
@@ -52,12 +46,7 @@ Running / Configuring the model
 
 - :ref:`newbie`
 - :ref:`advanced`
-- :ref:`advancednoresm2`
 - :ref:`fluxescrossingboundaries`
-- :ref:`cmip6_volcanic_forcing`
-- :ref:`cmip6emissionsofshortlivedcomponents`
-- :ref:`cmip6greenhouseGasConcentrations`
-- :ref:`noresm2_output` (Oct 30'th 2018)
 
 Develop the model
 '''''''''''''''''
@@ -105,42 +94,7 @@ Some guidelines for modifying NorESM’s subversion repository:
 How-to for setting up svn repositories on NorStore:
 :ref:`svnnorstorehowto`
 
-NorESM2 branches in active development
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-- https://github.com/metno/noresm/: master (this is the trunk/master version)
-- https://github.com/metno/noresm/: featureCAM5-OsloDevelopment_trunk2.0-6 (Main development branch for CAM-Oslo aerosol features)
-- https://github.com/metno/noresm/: feature-classnuc-ice_featureCAM5-OsloDevelopment-2 (ice nucleation feature branch)
-- https://github.com/metno/noresm/: featureNitrate_featureCAM5-OsloDevelopment-2/ (aerosol nitrate feature branch)
-
-NorESM1 branches in active development
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-- https://github.com/metno/noresm/  noresm-ver1-cmip5/ (Original NorESM1-M CMIP5 version. Only technical updates)
-- https://github.com/metno/noresm/: noresm-ver1_r112-r169/ (Further development from the CMIP5 version. Include EU-ACCESS project improvements)
-
-You obtain the model code through checking it out. The command would be
-git clone https://githubUserName@github.com/metno/noresm.git git
-checkout -b aBranchName origin/aBranchName This gives the code in your
-directory
-
-Uncertain parameters in the aerosol model
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Developing the model also involves setting some uncertain numbers into
-the model. Not all of these are available from namelists. Go to the link
-below to understand where main uncertainties are.
-
-:ref:`uncertainaerosolparameters`
-
-Analyze model results
-'''''''''''''''''''''
-
-:ref:`modeldiagnostics`
-
-Several tools are shared among NorESM users
-
-- :ref:`noresm2nc4mpi`
+noresm2nc4mpi`
 - :ref:`noresm2nc4norstore`
 - :ref:`modeldiagnostics`
 - :ref:`esmvaltool`
@@ -171,10 +125,6 @@ Model output and derived data products can be shared via the Norwegian
 Earth System Grid data portal http://noresg.norstore.no (see
 :ref:`norstoreesg`
 for instructions).
-
-Some aerosol and cloud-relevant output for the development version of
-NorESM2 is available for those with MET Norway affiliation through VpN
-at /vol/fou/emep/People/alfk/CAM-Oslo-diagnostics/
 
 Past and ongoing work
 '''''''''''''''''''''
