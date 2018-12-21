@@ -14,7 +14,10 @@ On the NorStore node *noresg.norstore.no*, a svnmerge demon is running
 as a background process. The demon serves repositories that are stored
 in NorStore's project work space in */projects/NS2345K/svn*. The svn
 repositories each receive an URL of form
-svn://noresg.norstore.no/<repository name>
+
+::
+
+  svn://noresg.norstore.no/<repository name>
 
 Prerequisites
 '''''''''''''
@@ -41,7 +44,9 @@ Log on to *noresg.norstore.no* via ssh.
 
 To take all svn repositories online, do
 
-`` svnserve -d -r /projects/NS2345K/svn --log-file /projects/NS2345K/svn/svnserve.log --pid-file /projects/NS2345K/svn/svnserve.pid``
+::
+
+  svnserve -d -r /projects/NS2345K/svn --log-file /projects/NS2345K/svn/svnserve.log --pid-file /projects/NS2345K/svn/svnserve.pid
 
 An svnserve demon has now been started as a background process on
 noresg.norstore.no. The process id is logged in
@@ -49,7 +54,9 @@ noresg.norstore.no. The process id is logged in
 
 To take all repositories offline again, do
 
-:literal:` kill `cat /projects/NS2345K/svn/svnserve.pid\``
+::
+
+  kill `cat /projects/NS2345K/svn/svnserve.pid`
 
 Creating a new repository
 '''''''''''''''''''''''''
@@ -60,7 +67,9 @@ Change directory to */projects/NS2345K/svn*.
 
 Create a new svn repository with
 
-`` svnadmin create testrepo``
+::
+
+  svnadmin create testrepo
 
 where *testrepo* is to be replaced with the repository name.
 
@@ -78,54 +87,74 @@ for anonymous.
 
 To limited access to read for authenticated users, change
 
-`` # auth-access = write``
+::
+
+  # auth-access = write
 
 to
 
-`` auth-access = read  ``
+::
+
+  auth-access = read  
 
 To grant anonymous read, change
 
-`` # anon-access = none     ``
+::
+
+  # anon-access = none     
 
 to
 
-| `` anon-access = read``
-| `` ``
+::
+
+  anon-access = read
+
 
 The users of the repository are defined in *testrepo/conf/passwd* with
 user name and password, e.g.
 
-| `` [users]``
-| `` harry = harryssecret``
-| `` sally = sallyssecret``
-| `` guestuser = friendly``
+::
+
+   [users]
+     harry = harryssecret
+     sally = sallyssecret
+     guestuser = friendly
 
 The user customisation is activated in *svnserve.conf* by uncommenting
 
-`` # password-db = passwd``
+::
+
+  # password-db = passwd
 
 to
 
-`` password-db = passwd``
+::
+
+  password-db = passwd
 
 Further fine tuning of access rights can be done in
 *testrepo/conf/authz*. E.g.,
 
-| `` [/]``
-| `` harry = rw ``
-| `` guestuser = r``
+::
+
+     [/]
+     harry = rw 
+     guestuser = r
 
 gives *harry* read/write access but limits the access of *guestuser* to
 read-only. The *authz* customisation is activated in *svnserve.conf* by
 uncommenting
 
-`` # authz-db = authz``
+::
+
+  # authz-db = authz
 
 to
 
-| `` authz-db = authz``
-| ``      ``
+::
+
+   authz-db = authz
+      
 
 Remote access
 '''''''''''''
@@ -135,20 +164,28 @@ is svn://noresg.norstore.no/testrepo
 
 To checkout the repository, do
 
-| `` svn co ``\ ```svn://noresg.norstore.no/testrepo`` <svn://noresg.norstore.no/testrepo>`__
-| `` ``
+::
+
+  svn co svn://noresg.norstore.no/testrepo
+
 
 Change directory to *testrepo*
 
-| `` cd testrepo ``
-| `` ``
+::
+
+  cd testrepo 
+
 
 Create a dummy file and mark it for adding
 
-| `` echo test > README ``
-| `` svn add README ``
+::
+
+   echo test > README 
+   svn add README 
 
 Commit the repository
 
-| `` svn commit -m "my commit message"       ``
-| `` ``
+::
+
+  svn commit -m "my commit message"       
+

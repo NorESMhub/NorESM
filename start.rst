@@ -38,8 +38,10 @@ problem, the solution is here:
 http://askubuntu.com/questions/206604/svn-and-gnome-keyring
 
 
--  Need access to other versions: Special access document**:
-      https://docs.google.com/a/met.no/document/d/1G1ezxtBhzDyNWwrKJYWmp8gn402bOWThe_6gN00PDMQ/edit?usp=sharing
+-  Need access to other versions: Special access document:
+
+
+https://docs.google.com/a/met.no/document/d/1G1ezxtBhzDyNWwrKJYWmp8gn402bOWThe_6gN00PDMQ/edit?usp=sharing
 
 Running / Configuring the model
 '''''''''''''''''''''''''''''''
@@ -83,18 +85,19 @@ Testing
 Version control best practices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  NEW**: After switching to git (13th november 2015) the
+-  **NEW**: After switching to git (13th november 2015) the
       svn-repository is read-only. Some advice on how to use the new
       git-repository are available here:
       :ref:`gitbestpractice`
 
 Some guidelines for modifying NorESM’s subversion repository:
-:ref:`svnbestpractice`
+ :ref:`svnbestpractice`
 
 How-to for setting up svn repositories on NorStore:
 :ref:`svnnorstorehowto`
 
-noresm2nc4mpi`
+**noresm2nc4mpi**
+
 - :ref:`noresm2nc4norstore`
 - :ref:`modeldiagnostics`
 - :ref:`esmvaltool`
@@ -106,7 +109,7 @@ Long-term archiving is normally done on NorStore's disk resources (e.g,
 in /projects/NS2345K/noresm/cases).
 
 To avoid loss of data, another copy should be placed on tape. For
-instructions, see `Norstore Tape <NORESM:NorstoreTape>`__
+instructions, see :ref:`norstoretape`
 
 Data that builds the basis of publications should be migrated to
 NorStore's Research Data Archive in order to guarantee preservation and
@@ -145,7 +148,27 @@ NorESM is also used in several projects:
 Resources
 '''''''''
 
-* TaiESM CCliCS workshop in Taipei 2016 - Ingo Bethke
+See presentation from :download:`NorESM workshop November 28'th 2013 <../presentations/dirkjlo_chemistry_noresmworkshopnov2013.pdf>`
+
+- :download:`EVA final meeting: CMOR-ization and ESGF publication of NorESM2 simulations - Ingo Bethke <presentations/EVAannualMeeting2018_WP4_IngoBethke_20180831.pdf>`
+- :download:`NICEST workshop for ESGF at NSC: CMOR post-processing of NorESM CMIP5 & CMIP6 output - Ingo Bethke <presentations/LiuWorkshopESGF2018_IngoBethke.pdf>`
+- :download:`ESMValTool setup for NorESM (10 May 2017) - Ingo Bethke <presentations/NorESMValTool20170510.pdf>`
+- TaiESM CCliCS workshop in Taipei 2016 - Ingo Bethke :download:`pptx <presentations/BethkeEtAl_CCliCS2016_v2.pptx>`, :download:`pdf <presentations/BethkeEtAl_CCliCS2016_v2.pdf>`
+- :download:`HappiEVA kick-off 2016 - Ingo Bethke <presentations/HappiEVA_kickoff-meeting_Ingo.pdf>`
+- :download:`NeIC/Nordic ESM workshop 2015 - CMOR-izing of NorESM output by Ingo Bethke  <presentations/NeICESMworkshop2015_IngoBethke.pdf>`
+- :download:`Presentation on data management in EVA - EVA meeting, 2014, Bergen <presentations/eva2014_ingobethke.pdf>`
+- :download:`NorESM Workshop 2014 SU - Alf Grini <presentations/alfg_stockholmpres.pdf>`
+- :download:`NorESM Workshop 2014 SU - Annica Ekman <presentations/annica_new_noresm_workshop_2014.pdf>`
+- :download:`NorESM Workshop 2014 SU - Chandan Basu <presentations/workshop-14_chandan.pdf>`
+- :download:`NorESM Workshop 2014 SU - Francesco Pausata <presentations/pausata_noresm_2014.pdf>`
+- :download:`NorESM Workshop 2014 SU - Juan-Camilo Acosta <presentations/pegasos_oct_acosta.pdf>`
+- :download:`NorESM Workshop 2014 SU - Risto Makkonen <presentations/makkonen_noresm_ws_2014.pdf>`
+- :download:`NorESM Workshop 2014 SU - Trond Iversen <presentations/trondiversen_noresm-workshop_oct2014.pdf>`
+- :download:`NorESM Workshop 2014 SU - Vidya Varma <presentations/vidya_noresm_ws_2014_su.pdf>`
+- :download:`After NorESM Workshop 2014 SU - Alf Kirkevåg: some AeroTab-slides <presentations/aerotab-slides.pdf>`
+
+References
+''''''''''
 
 .. bibliography:: references_noresm.bib
    :cited:

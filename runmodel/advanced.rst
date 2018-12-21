@@ -9,8 +9,8 @@ Understanding compsets
 A compset is a collection of configuration parameters which describe a
 specific case. NorESM has several pre-defined compsets. The CCSM users
 guide provides information on configuring your own compsets. The
-compsets define things like //how many processors will be used in this
-case //, //which options go to cam_oslo in this case //
+compsets define things like *how many processors will be used in this
+case*, *which options go to cam_oslo in this case*
 
 For existing composets, search for the file config_compsets.xml in your
 $NORESM folder. They can also all be printed by going to $NORESM/scripts
@@ -25,8 +25,8 @@ AMIP type simulations
 
 For AMIP type simulations, using the data ocean model with prescribed
 (observed) SST, use one of the pre-defined compsets with long names
-starting with “NF_”. One, used in the AMIP run for CMIP5, is
-“NF_1979-2005\_ AER\_ AMIP_OBS”, with the short name “NF2005AERAMIPO”.
+starting with "NF_". One, used in the AMIP run for CMIP5, is
+"NF_1979-2005\_ AER\_ AMIP_OBS", with the short name "NF2005AERAMIPO".
 To create a Case with the chosen name AMIPtest for this compset, as an
 example, write
 
@@ -49,7 +49,7 @@ AEROFFL \*.F90), and replace all instances of
 
 ::
 
-  #. undef AEROFFL
+  #undef AEROFFL
 
 and
 
@@ -61,7 +61,7 @@ with
 
 ::
 
-  #. define AEROFFL
+  #define AEROFFL
 
 This is useful for short simulations where we want to look at direct
 and/or indirect radiative forcing by aerosols, since the meteorology
@@ -80,7 +80,7 @@ with
 
 ::
 
-  #. define AEROCOM
+  #define AEROCOM
 
 The model may be run with any combination of these options: with AEROFFL
 only, with AEROCOM only, or with AEROFFL and AEROCOM activated at the
@@ -100,24 +100,17 @@ model, run
 
 ::
 
-  svn checkout
-   https://svn.met.no/NorESM/noresm/trunk/noresm/models/atm/cam/tools/AeroTab
-   myAeroTab
+  svn checkout https://svn.met.no/NorESM/noresm/trunk/noresm/models/atm/cam/tools/AeroTab myAeroTab
 
 Or, if you are interested in the CMIP5 version (with some updates), run
 instead
 
 ::
 
-  svn checkout -r 199
-  https://svn.met.no/NorESM/noresm/trunk/noresm/models/atm/cam/tools/AeroTab
-  myAeroTab
+  svn checkout -r 199 https://svn.met.no/NorESM/noresm/trunk/noresm/models/atm/cam/tools/AeroTab myAeroTab
 
 Use of chemistry
 ~~~~~~~~~~~~~~~~
 
-See presentation from NorESM workshop November 28'th 2013:
+See presentation from :download:`NorESM workshop November 28'th 2013 <../presentations/dirkjlo_chemistry_noresmworkshopnov2013.pdf>`
 
-.. raw:: mediawiki
-
-   {{dirkjlo_chemistry_noresmworkshopnov2013.pdf|}}

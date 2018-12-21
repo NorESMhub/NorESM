@@ -3,4 +3,4 @@
 Existing projects
 '''''''''''''''''
 
-`NORESM:Projects:Expect <NORESM:Projects:Expect>`__
+ :ref:`expect`

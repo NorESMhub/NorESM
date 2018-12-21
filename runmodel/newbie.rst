@@ -14,18 +14,19 @@ subdirectories "models" and "scripts".
 Go to scripts directory
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-cd $NORESM/scripts
+::
+
+  cd $NORESM/scripts
 
 Create the case
 ~~~~~~~~~~~~~~~
 
 :: 
 
-  ./create_newcase -case ../cases///casename/// -mach //machinename// -res
-  f19_g16 -compset //compsetname//
+  ./create_newcase -case ../cases/casename/ -mach machinename -res f19_g16 -compset compsetname
 
-(where //casename//, //machinename// and //compsetname// are user input.
-Res is imodel resolution. The user can //not// give any resolution since
+(where casename, machinename and compsetname are user input.
+Res is imodel resolution. The user can *not* give any resolution since
 input data are not prepared for any resolution in NorESM.)
 
 To see a list of available composets type
@@ -39,15 +40,14 @@ in a VERY coarse resolution is
 
 ::
 
-  ./create_newcase -case /path/to/where/I/store/the/case -compset NFPTAERO
-   -mach hexagon -res f10_f10
+  ./create_newcase -case /path/to/where/I/store/the/case -compset NFPTAERO -mach hexagon -res f10_f10
 
 Configure the case
 ~~~~~~~~~~~~~~~~~~
 
 :: 
 
-  cd $NORESM/cases///casename//
+  cd $NORESM/cases/casename
 
 edit any configuration files (understand env_conf.xml and env_run.xml)
 
@@ -68,38 +68,35 @@ Build the case
 
 ::
 
-  .///casename//.//machinename//.build (NorESM1 / CAM4)
+  ./casename.machinename.build (NorESM1 / CAM4)
 
-  .///casename//.build (NorESM2 / CAM5)
+  ./casename.build (NorESM2 / CAM5)
 
 Run the case
 ~~~~~~~~~~~~
 
 ::
 
-  qsub //casename//.//machinename//.run
+  qsub casename.machinename.run
 
 Example
 ~~~~~~~
 
-=
 
 There are already several pre-defined compsets. They all have long and
 short names. As and example we can use the compset N_2000_AEROSLO_CN
 (with short name N2000AERCN). Thus a valid command on the machine
-//hexagon// is:
+*hexagon* is:
 
 ::
 
-  ./create_newcase -case /path/to/my/case/directory/ -mach hexagon -res
-  f19_g16 -compset N2000AERCN
+  ./create_newcase -case /path/to/my/case/directory/ -mach hexagon -res f19_g16 -compset N2000AERCN
 
 (will run a "year 2000" CAM4/NorESM1 case with the Oslo-aerosols)
 
 :: 
 
-  ./create_newcase -case /path/to/my/case/directory/ -mach hexagon -res
-  f19_g16 -compset FAMIPC5
+  ./create_newcase -case /path/to/my/case/directory/ -mach hexagon -res f19_g16 -compset FAMIPC5
 
 (will configure the "default" atmoshere-only simulation of CAM5)
 
@@ -109,8 +106,9 @@ Important files
 The most important files to understand in your case-directory are:
 
 
-* env_run.xml (model run type, how long time to run etc)
-* env_conf.xml (model configuration)
+- env_run.xml (model run type, how long time to run etc)
+
+- env_conf.xml (model configuration)
 
 More information
 ~~~~~~~~~~~~~~~~

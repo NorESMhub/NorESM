@@ -11,8 +11,7 @@ Obtain CAM 5.3 source code
 ''''''''''''''''''''''''''
 ::
 
-  svn checkout
-  https://svn-ccsm-release.cgd.ucar.edu/model_versions/cesm1_2_0
+  svn checkout https://svn-ccsm-release.cgd.ucar.edu/model_versions/cesm1_2_0
 
 You will be asked for a user name and password. You can easily get that
 from NCAR through
@@ -23,13 +22,11 @@ password, and then it will prompt you for another user name, then use
 the one provided by NCAR).
 
 -    To use the development version of CAM5-Oslo, check out NorESM (not
-      CESM) from the noresm repository*\*
+      CESM) from the noresm repository
 
 ::
 
-  svn checkout
-  https://svn.met.no/NorESM/noresm/branches/featureCAM5-OsloDevelopment_trunk2.0-4
-  myCamOsloDev
+  svn checkout https://svn.met.no/NorESM/noresm/branches/featureCAM5-OsloDevelopment_trunk2.0-4 myCamOsloDev
 
 Compile the netcdf libraries using gfortran
 '''''''''''''''''''''''''''''''''''''''''''
@@ -101,10 +98,10 @@ script!
 
 ::
 
-  export INC_NETCDF=/home/alfg/LIBS/netcdf-4.2.gfortran/include export
-  LIB_NETCDF=/home/alfg/LIBS/netcdf-4.2.gfortran/lib export
-  MOD_NETCDF=/home/alfg/LIBS/netcdf-4.2.gfortran/include export
-  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$LIB_NETCDF
+  export INC_NETCDF=/home/alfg/LIBS/netcdf-4.2.gfortran/include 
+  export LIB_NETCDF=/home/alfg/LIBS/netcdf-4.2.gfortran/lib 
+  export MOD_NETCDF=/home/alfg/LIBS/netcdf-4.2.gfortran/include 
+  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$LIB_NETCDF
 
 The steps for building and installing CAM are well described at
 http://www.cesm.ucar.edu/models/cesm1.0/cam/docs/ug5_1/ug.html
@@ -121,15 +118,17 @@ machine. It creates a Makefile used later for compilation.
 
 ::
 
-  $camcfg/configure -dyn fv -debug -hgrid 10x15 -fc gfortran -nospmd
-  -nosmp -test -fc_type gnu
+  $camcfg/configure -dyn fv -debug -hgrid 10x15 -fc gfortran -nospmd -nosmp -test -fc_type gnu
 
 -   As long as $camcfg is defined, you can execute this from any
-      directory..*\*
+      directory..
 
-Then you need the following commands \**executed from the same directory
-as you executed "configure"*\* $camcfg/build-namelist -test -config
-config_cache.xml
+Then you need the following commands **executed from the same directory
+as you executed "configure"** 
+
+::
+
+  $camcfg/build-namelist -test -config config_cache.xml
 
 ::
 
@@ -144,7 +143,11 @@ The input data have been collected and put at norstore:
 You should copy these files to somewhere on your computer. The CSMDATA
 environment variable should point to the "input-data" directory after
 the copying. For example I copied it to /disk1/alfg/csm/, so my $CSMDATA
-is alfg@pc4400:$ echo $CSMDATA /disk1/alfg/csm/inputdata
+is 
+
+::
+
+  alfg@pc4400:$ echo $CSMDATA /disk1/alfg/csm/inputdata
 
 Finally run the model simply executing the command ./cam
 
@@ -153,9 +156,7 @@ work with the following command (NOT VERIFIED):
 
 ::
 
-  $camcfg/configure -fc
-  gfortran -fc_type gnu -debug -nospmd -nosmp -dyn fv -res 10x15 -ice sice
-  -phys cam5
+  $camcfg/configure -fc gfortran -fc_type gnu -debug -nospmd -nosmp -dyn fv -res 10x15 -ice sice -phys cam5
 
 Including cam-oslo code
 '''''''''''''''''''''''
@@ -166,7 +167,7 @@ Works with latest version of oslo aerosol development branch
 
 :: 
 
-  $camcfg/configure -dyn fv -debug -hgrid 10x15 -fc gfortran -nospmd -nosmp -test -fc_type gnu -chem trop_mam_oslo ``
+  $camcfg/configure -dyn fv -debug -hgrid 10x15 -fc gfortran -nospmd -nosmp -test -fc_type gnu -chem trop_mam_oslo 
 
 There are additional input needed for the CAM-Oslo code. They are
 available in the same input-directory as the normal CESM-input files. As
@@ -210,9 +211,15 @@ ncview has trouble visualizing results which are of this coarse
 resolution (10x15 degrees). Panoply is a better option. Download from
 http://www.giss.nasa.gov/tools/panoply/download_gen.html
 
-| `` - Unpack the files``
-| `` - Add the folder where you find panoply.sh to your path (in your .bashrc file, add: export PATH=$PATH:/path/to/panoply/dot/sh)``
-| `` - launch program with "panoply.sh netcdfFileName" from any folder``
+1. Unpack the files
+
+2. Add the folder where you find panoply.sh to your path. In your .bashrc file, add: 
+  
+::  
+
+  export PATH=$PATH:/path/to/panoply/dot/sh
+
+3. launch program with "panoply.sh netcdfFileName" from any folder
 
 Configure your case
 '''''''''''''''''''
@@ -242,15 +249,25 @@ the command
 
  $camcfg/build-namelist -test -config config_cache.xml -use_case my_case
 
+
+::
+
   <?xml version="1.0"?>
 
-  1,30,30,30,30
+  <namelist_defaults>
 
-  0,-1,-1,-1,-1
+  <mfilt>1,30,30,30,30</mfilt>
 
-  'QREFHT','TREFHTMN','TREFHTMX','TREFHT','PRECT','PRECC','PRECSC','PRECSL','PSL','T','Z3','U','V','PS','TS','SST','PHIS','CLDTOT'
-  'U850:I','V850:I','T850:I','Q850:I','OMEGA850:I','U:I','V:I','T:I','PS:I','PSL:I','Q:I','PHIS:I'
-  'PRECT','LHFLX','SHFLX','FLDS','FLNS','FSNS','PRECC','PRECSC','PRECSL'
-  'TREFHT:I','QREFHT:I','TS:I','SST:I','PS:I'
+  <nhtfrq>0,-1,-1,-1,-1</nhtfrq>
+
+  <!-- TEM diagnostics output -->
+
+  <fincl2>'QREFHT','TREFHTMN','TREFHTMX','TREFHT','PRECT','PRECC','PRECSC','PRECSL','PSL','T','Z3','U','V','PS','TS','SST','PHIS','CLDTOT'</fincl2>
+  <fincl3>'U850:I','V850:I','T850:I','Q850:I','OMEGA850:I','U:I','V:I','T:I','PS:I','PSL:I','Q:I','PHIS:I'</fincl3>
+  <fincl4>'PRECT','LHFLX','SHFLX','FLDS','FLNS','FSNS','PRECC','PRECSC','PRECSL'</fincl4>
+  <fincl5>'TREFHT:I','QREFHT:I','TS:I','SST:I','PS:I'</fincl5>
+
+ 
+ </namelist_defaults>
 
 

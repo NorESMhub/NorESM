@@ -3,12 +3,16 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to norESM documentation!
+Welcome to norESM-1 documentation!
 ================================================
 
-The purpose of the norESM documentation is to provide a common place for NorESM users
-and developers to share information. What tools are you using? Which
-version should I run for what purpose? etc.
+NorESM1 is the Norwegian Earth System model used for CMIP5. The model is based on the CCSM framework (http://en.wikipedia.org/wiki/Community_Climate_System_Model). However, NorESM has special features developed by Norwegian researchers. 
+
+The purpose of the norESM-1 documentation is to provide a common place for NorESM users
+and developers to share information. 
+
+- What tools are you using? 
+- Which version should I run for what purpose? etc.
 
 If you have any questions, create a new issue on github at https://github.com/NorESMhub/norESM-docs/issues
 
@@ -31,7 +35,7 @@ If you have any questions, create a new issue on github at https://github.com/No
    modeldiagnostics.rst
    norstoretape.rst
    norstorearchive.rst
-   norstoreesgf.rst
+   norstoreesg.rst
    projects.rst
    references.rst
 

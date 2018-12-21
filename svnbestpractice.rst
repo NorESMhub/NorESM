@@ -9,11 +9,11 @@ NorESM svn branch/merge tutorial to understand branching and merging. In
 30 minutes you can become an svn wizard
 
 Follow this link to find the tutorial:
-`NORESM:SvnTutorial <NORESM:SvnTutorial>`__
+  :ref:`svntutorial`
 
--  Note: As of November 13th 2015, NorESM uses git as version control
-      system. The rules and guidelines for merging/branching, tags and
-      branch names are still valid in the new system*\*
+- **Note**: As of November 13th 2015, NorESM uses git as version control system. 
+  The rules and guidelines for merging/branching, tags and branch names are still 
+  valid in the new system
 
 Branches
 ========
@@ -26,13 +26,13 @@ work on a feature "in private" without having to relate to other
 developers' codes. And sometimes you want to work on something which
 takes some time before it is finished.
 
-In these cases you can create a //branch//. You can work on it on your
+In these cases you can create a *branch*. You can work on it on your
 own or in a team of colleques. When you are happy with the the content
-of the branch, you can merge it back to the //trunk//.
+of the branch, you can merge it back to the *trunk*.
 
-The //trunk// is considered a safe repository. \**The code in the trunk
+The *trunk* is considered a safe repository. The code in the trunk
 should always have passed a set of tests to make sure it is
-stable.(https://wiki.met.no/noresm/testlist)*\*
+stable.(https://wiki.met.no/noresm/testlist)
 
 Branches let you take advantage of the svn features, but without having
 to worry every day that your code passes the tests.
@@ -42,21 +42,24 @@ Create a branch with
 
 ::
 
-  svn copy http://svn.example.com/repos/calc/trunk
-  http://svn.example.com/repos/calc/branches/my-calc-branch  -m "Creating a private branch of /calc/trunk."
+  svn copy http://svn.example.com/repos/calc/trunk http://svn.example.com/repos/calc/branches/my-calc-branch  -m "Creating a private branch of /calc/trunk."
 
- or specifically for the NorESM repository with
+or specifically for the NorESM repository with
 
-| `` svn copy ``\ ```https://svn.met.no/NorESM/noresm/tags/trunk2.0-1`` <https://svn.met.no/NorESM/noresm/tags/trunk2.0-1>`__\ `` \``
-| ``          ``\ ```https://svn.met.no/NorESM/noresm/branches/privateMYPORJECT_trunk2.0-1`` <https://svn.met.no/NorESM/noresm/branches/privateMYPORJECT_trunk2.0-1>`__\ `` \ ``
-| ``          -m "Creating a project branch of tags/trunk2.0-1." ``
+::
+
+  svn copy https://svn.met.no/NorESM/noresm/tags/trunk2.0-1 https://svn.met.no/NorESM/noresm/branches/privateMYPORJECT_trunk2.0-1 -m "Creating a project branch of tags/trunk2.0-1." 
 
 Then check out the branch using svn checkout $BRANCHURL
 nameOfBranchOnMyPC
 
 In git: First create your new branch locally and then make the remote
-aware of the new branch like so: git checkout -b my_branch_name git push
--u origin my_branch_name
+aware of the new branch like so: 
+
+::
+
+  git checkout -b my_branch_name 
+  git push -u origin my_branch_name
 
 ..and make sure your .gitconfig-file is configured for doing a merge
 (for example):
@@ -64,12 +67,11 @@ aware of the new branch like so: git checkout -b my_branch_name git push
 ::
 
   [merge]
-
-
-   tool = vimdiff
-
+  
+  tool = vimdiff
+  
   [diff]
-
+  
   tool = vimdiff
 
 When should I work on a branch?
@@ -91,39 +93,51 @@ simulations.
 How should I name the branch?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The NorESM branches have the following \**naming convension :
-{PurposeOfLife}_{ParentTagName}**. This means that a branch name should
-state \**why*\* it is created and \**where*\* it is created from.
+The NorESM branches have the following **naming convension :
 
-PurposeOfLife is a text string (allowed characters are a-z, A-Z, 0-9 and
-".") that must start with //feature//, //release//, //project// or
-//private//, where
+{PurposeOfLife}_{ParentTagName}. 
 
-| `` * a //feature// branch is a temporary branch created to work on a complex change without interfering with the stability of /trunk (or another parent branch). Feature branches are always reintegrated. See also ``\ ```http://svnbook.red-bean.com/en/1.7/svn.branchmerge.commonpatterns.html`` <http://svnbook.red-bean.com/en/1.7/svn.branchmerge.commonpatterns.html>`__
-| `` * a //release// branch is created if a version with frozen functionality is desired. The development on the release branch itself is limited to bug fixes, addition of forcing scenarios and other minor changes. Releases branches are not reintegrated.  ``
-| `` * a //project // branch is similar to a release branch. For some projects a specific version with small changes might be required to do specific model runs. It is important that all members of the project use the same code. If the project involves major development tasks, the project team should concider creating a //feature// branch instead. A //project// branch is likely not reintegrated.``
-| `` * a //private// branch can be created if a project requires a strongly tailored version of the model, that typically is maintained by only one person. Commits to a private branch should be agreed on with the branch creator. Private branches are not necessarily reintegrated. ``
+This means that a branch name should
+state **why** it is created and **where** it is created from.
+
+PurposeOfLife is a text string (allowed characters are a-z, A-Z, 0-9 and ".") 
+that must start with *feature*, *release*, *project* or *private*, where
+
+- a *feature* branch is a temporary branch created to work on a complex change without interfering with the stability of /trunk (or another parent branch). Feature branches are always reintegrated. See also http://svnbook.red-bean.com/en/1.7/svn.branchmerge.commonpatterns.html
+- a *release* branch is created if a version with frozen functionality is desired. 
+  The development on the release branch itself is limited to bug fixes, addition of 
+  forcing scenarios and other minor changes. Releases branches are not reintegrated. 
+
+- a *project* branch is similar to a release branch. For some projects a specific version  with small changes might be required to do specific model runs. It is important that 
+  all members of the project use the same code. If the project involves major 
+  development tasks, the project team should concider creating a *feature* branch 
+  instead. A *project* branch is likely not reintegrated.
+
+- a *private* branch can be created if a project requires a strongly tailored version 
+  of the model, that typically is maintained by only one person. Commits to a private 
+  branch should be agreed on with the branch creator. Private branches are not 
+  necessarily reintegrated. 
 
 ParentTagName is the name of an existing noresm tag.
 
 Examples of valid branch names are:
 
-| `` * ``\ *``featureIceActivation_trunk2.0-1``*\ `` (development of ice activation feature, created from tag ``\ *``trunk2.0-1``*\ ``)``
-| `` * ``\ *``release2.0.0_trunk2.0-19``*\ `` (release branch created from tag ``\ *``trunk2.0-19``*\ ``) ``
-| `` * ``\ *``release2.0.1_release2.0.0-15``*\ `` (release branch created from tag ``\ *``release2.0.0-15``*\ ``) ``
-| `` * ``\ *``privateHiatusStudy_release2.0.1-3``*\ `` (private branch for Ingo's hiatus study, created from tag ``\ *``release2.0.1-3``*\ ``)``
-| `` * ``\ *``projectEXPECT_cmip5-r143-1``*\ `` (branch created for use in project named EXPECT, created from tag ``\ *``cmip5-r143-1``*\ ``)``
+- featureIceActivation_trunk2.0-1: development of ice activation feature, created from tag trunk2.0-1)
+- release2.0.0_trunk2.0-19 (release branch created from tag trunk2.0-19)
+- release2.0.1_release2.0.0-15 (release branch created from tag release2.0.0-15)
+- privateHiatusStudy_release2.0.1-3 (private branch for Ingo's hiatus study, created from tag release2.0.1-3)
+- projectEXPECT_cmip5-r143-1 (branch created for use in project named EXPECT, created from tag cmip5-r143-1)
 
 Note that in this scheme a new branch is never branched off directly
-from trunk or another branch. \**A tag MUST be created before creating a
-branch*\* (see section on tags below).
+from trunk or another branch. **A tag MUST be created before creating a
+branch** (see section on tags below).
 
 Note that purposeOfLife of release-branches contains version numbers.
 "release2.0.0" and "release2.0.1" are "purposeOfLife". When creating
 release-branches, please agree on numbering with <Mats.Bentsen@uni.no>.
-\**The version numbers in release-branches' "purposeOfLife" should not
+**The version numbers in release-branches** "purposeOfLife" should not
 be confused with "increasingVersionNumber" used to make tag-names
-unique.*\*
+unique.
 
 A note on branch / tag naming
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -193,20 +207,25 @@ How can I merge my branch back into the trunk?
 You can merge to trunk after your changed code has passed a list of
 tests. The tests are available here: https://wiki.met.no/noresm/testlist
 
-If your code does not pass the tests, you can \**not*\* merge your code
+If your code does not pass the tests, you can **not** merge your code
 back to the trunk
 
-Note that in svn, \**you can only merge ONE time from your branch to the
+Note that in svn, **you can only merge ONE time from your branch to the
 trunk**, or you risk making a mess of the system! (See
 http://svnbook.red-bean.com/en/1.7/svn.branchmerge.basicmerging.html ==>
-"Reintegrating a branch", note the statement \**Once a --reintegrate
+"Reintegrating a branch", note the statement **Once a --reintegrate
 merge is done from branch to trunk, the branch is no longer usable for
-further work"**). N.B. There is a workaround to this, described in
+further work"**). 
+
+N.B. There is a workaround to this, described in
 http://svnbook.red-bean.com/en/1.7/svn.branchmerge.advanced.html#svn.branchmerge.advanced.reintegratetwice
 
 The merge command (from trunk) will be something like
 (http://svnbook.red-bean.com/en/1.7/svn.branchmerge.basicmerging.html)
-svn merge --reintegrate $BRANCHURL
+
+::
+
+  svn merge --reintegrate $BRANCHURL
 
 Using git, just use git merge branchNameIWantToMergeWith
 
@@ -225,32 +244,34 @@ is just a question of naming convension. Recommended convension is that
 tags are branches saved under the "tags" subdirectory and a branch is
 saved under the "branches" directory.
 
--  
-
-   -  In NorESM tags are considered frozen, and people are not allowed
-      to do developement on tagged versions.*\*
+- In NorESM tags are considered frozen, and people are not allowed
+      to do developement on tagged versions.
 
 Create the tag with a command like
 (http://svnbook.red-bean.com/en/1.6/svn.branchmerge.tags.html)
 
-| `` svn copy ``\ ```http://svn.example.com/repos/calc/trunk`` <http://svn.example.com/repos/calc/trunk>`__\ `` \``
-| ``          ``\ ```http://svn.example.com/repos/calc/tags/release-1.0`` <http://svn.example.com/repos/calc/tags/release-1.0>`__\ `` \``
-| ``          -m "Tagging the 1.0 release of the 'calc' project."``
+::
+
+  svn copy http://svn.example.com/repos/calc/trunk http://svn.example.com/repos/calc/tags/release-1.0 -m "Tagging the 1.0 release of the 'calc' project."
 
  or specifically for the NorESM repository with
 
-| `` svn copy ``\ ```https://svn.met.no/NorESM/noresm/trunk`` <https://svn.met.no/NorESM/noresm/trunk>`__\ `` \``
-| ``          ``\ ```https://svn.met.no/NorESM/noresm/tags/trunk2.0-2`` <https://svn.met.no/NorESM/noresm/tags/trunk2.0-2>`__\ `` \ ``
-| ``          -m "Creating new tag of trunk." ``
+::
+
+  svn copy https://svn.met.no/NorESM/noresm/trunk https://svn.met.no/NorESM/noresm/tags/trunk2.0-2 -m "Creating new tag of trunk." 
 
 When should I create a tag?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You should create a tag in the following cases:
 
-| `` * When you want to create a branch! **Always tag the model first and then create the branch from the tag**. (If a tag has already been made at the point where you want to branch off, you don't need to create a new tag!!)``
-| `` * A "released" version, a version which has been properly tested and which we recommend other users to run``
-| `` * A version which has been used for some specific paper (maybe you want to do more runs after referee comments)``
+- When you want to create a branch! **Always tag the model first and then create the 
+  branch from the tag**. (If a tag has already been made at the point where you want 
+  to branch off, you don't need to create a new tag!!)
+- A "released" version, a version which has been properly tested and which we recommend 
+  other users to run
+- A version which has been used for some specific paper (maybe you want to do more runs 
+  after referee comments)
 
 What tags exist?
 ^^^^^^^^^^^^^^^^
@@ -265,20 +286,22 @@ How should I name the tag?
 
 Tags created from trunk have the naming convention:
 
-`` trunk{MainModelVersion}.{MinorModelVersion}-{IncreasingVersionNumber}``
+::
+
+ trunk{MainModelVersion}.{MinorModelVersion}-{IncreasingVersionNumber}
 
 Tags created from branches have the naming convention:
 
-`` {BranchPurposeOfLife}-{IncreasingVersionNumber}``
+::
+
+ {BranchPurposeOfLife}-{IncreasingVersionNumber}
 
 Every time a release branch is created from trunk, then
 MinorModelVersion is increased and IncreasingVersionNumber reset to 1.
 If no new release branch is created, then MinorModelVersion stays the
 same and IncreasingVersionNumber is increased.
 
--  
-
-   -  Important:*\* If a user wants to create a tag from a freshly
+- Important: If a user wants to create a tag from a freshly
       created branch, then IncreasingVersionNumber should be set to 0
       (e.g., *featureMicomDevelopment-0*). Be aware, however, that
       creating a tag from a freshly created branch results in tag
@@ -291,18 +314,18 @@ IncreasingVersionNumber is local to the trunk or a specific branch.
 
 Examples are:
 
-| `` * ``\ *``trunk2.0-1``*
-| `` * ``\ *``trunk2.0-2``*
-| `` * ``\ *``featureIceActivation-1``*
-| `` * ``\ *``release2.0.0-1``*
-| `` * ``\ *``release2.0.0-2``*
-| `` * ``\ *``release2.0.1-1``*\ `` (associated branch created from tag release2.0.0-2)``
-| `` * ``\ *``privateHiatusStudy-1``*\ ``  (owned by Ingo)``
-| `` * ``\ *``privateKatlaStudy-1``*\ ``  (owned by Øyvind)``
+- trunk2.0-1
+- trunk2.0-2
+- featureIceActivation-1
+- release2.0.0-1
+- release2.0.0-2
+- release2.0.1-1 (associated branch created from tag release2.0.0-2)``
+- privateHiatusStudy-1  (owned by Ingo)``
+- privateKatlaStudy-1  (owned by Øyvind)``
 
-Note how this is consistent with the branch naming scheme. \**You
+Note how this is consistent with the branch naming scheme. You
 actually need to create a tag in order to give your branch a proper
-name!*\*
+name!
 
 Tagging noresm0 and noresm1 branches?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -319,10 +342,8 @@ Therefore, even though it is confusing it is proposed here to use
 tags created from these branches would be called "cmip5-r112-1",
 "cmip5-r112-2", "cmip5-r143-1", "cmip5-r143-2" etc.
 
--  
-
-   -  purposeOfLife of NorESM1 branches is therefore whatever follows
-      after "noresm-verX-" in the branch name*\*
+- purposeOfLife of NorESM1 branches is therefore whatever follows
+      after "noresm-verX-" in the branch name
 
 Tricky use cases
 ''''''''''''''''
@@ -330,11 +351,11 @@ Tricky use cases
 Case 1
 ^^^^^^
 
-//A user has performed a control simulation using a tagged NorESM
+*A user has performed a control simulation using a tagged NorESM
 version. He/she wants to use this control simulation as baseline for
 several new implementations. How should the user create/update working
 branches without having to worry about changes in trunk that can affect
-the result?//
+the result?*
 
 This is straight forward. The user creates several branches based on the
 original tag. Following the naming convension scheme, they all have a
@@ -348,8 +369,8 @@ evaluation experiments for the new implementations have been performed.
 Case 2
 ^^^^^^
 
-//A user group wants to develop one model component without constantly
-having to worry about changes in other model components.//
+*A user group wants to develop one model component without constantly
+having to worry about changes in other model components.*
 
 A solution is to bundle new implementations for a specific component by
 creating a super branch (e.g., *featureMicomDevelopment_trunk2.0-19*).
@@ -365,15 +386,15 @@ branch. Last, the super branch is reintegrated into trunk.
 Case 3
 ^^^^^^
 
-// A tagged NorESM version has been used for the production of a certain
+* A tagged NorESM version has been used for the production of a certain
 simulation. Part of the simulations has to be rerun with extended
 diagnostic capability (e.g., with U10 output). How can I commit the
-extended diagnostic capability to svn?//
+extended diagnostic capability to svn?*
 
 One can imagine that something like this happened:
 
-| `` * The originally tagged version was made from a branched called "release2.0.0_trunk2.0-45"``
-| `` * The experiment was run with "release2.0.0-3"``
+- The originally tagged version was made from a branched called "release2.0.0_trunk2.0-45"
+- The experiment was run with "release2.0.0-3"
 
 When the update is needed there are two possibilities:
 
@@ -398,21 +419,23 @@ the extra simulations so using the latest version of
 "release2.0.0_trunk2.0-45" is not an option.
 
 In this case, create a new branch: "release2.0.1_release2.0.0-3", update
-it and tag it "release2.0.1-1". \**Note that in this case, you have
+it and tag it "release2.0.1-1". **Note that in this case, you have
 created a new branch with a different "purposeOfLife": "release2.0.1" is
-different from "release2.0.0".*\*
+different from "release2.0.0".**
 
 ``===== SVN messages =====``
 
 What should be stated in the commit message?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  
+- Always state the JIRA issue associated with the work! This makes
+      the code changes pop up in JIRA!: For example:
+      
+::
 
-   -  Always state the JIRA issue associated with the work**! This makes
-      the code changes pop up in JIRA!: For example "svn commit -m
-      "NE-100: These are the fixes needed to solve this issue" " (see
-      https://wiki.met.no/noresm/usingtheissuetracker)
+      svn commit -m "NE-100: These are the fixes needed to solve this issue" 
+      
+(see https://wiki.met.no/noresm/usingtheissuetracker)
 
 The commit message should include a concise description of the committed
 changes.
@@ -423,11 +446,15 @@ assume that bit-identity is broken.
 
 Examples 1:
 
-`` Added new compset COMPSETNAME, bit identical compared to revision r ``
+::
+
+  Added new compset COMPSETNAME, bit identical compared to revision r
 
 Examples 2:
 
-`` Added new diagnostics in cloud.F90, bit identical compared to revision r``
+::
+
+  Added new diagnostics in cloud.F90, bit identical compared to revision r
 
 What should be stated in the copy message of a branch?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -444,33 +471,40 @@ Ideally, the commit message of a tag should provide a complete change
 history relative to the last tag. This information can be easily
 extracted from the svn viewer.
 
-Example 1: Change history: trunk-2.0 -> trunk-2.1 (r190 -> r198)
+Example 1: 
 
-Revision 198
+::
 
-``changes made in r198...``
+  Change history: trunk-2.0 -> trunk-2.1 (r190 -> r198)
 
-Revision 193
+  Revision 198
 
-``changes made in r193...``
+  changes made in r198...
 
-Revision 190
+  Revision 193
 
-``changes made in r190...``
+  changes made in r193...
 
-Example 2: Change history: trunk-2.3 -> featureMicomDevelopment-1 (r200
--> r205)
+  Revision 190
 
-Revision 205
+  changes made in r190...
 
-``changes made in r205 to branch featureMicomDevelopment...``
+Example 2: 
 
-Revision 202
+::
 
-`` changes made in r202 to branch featureMicomDevelopment...``
+  Change history: trunk-2.3 -> featureMicomDevelopment-1 (r200 -> r205)
 
-Revision 200
+  Revision 205
 
-`` changes made in r200 to branch featureMicomDevelopment...``
+  changes made in r205 to branch featureMicomDevelopment...
+
+  Revision 202
+
+  changes made in r202 to branch featureMicomDevelopment...
+
+  Revision 200
+
+  changes made in r200 to branch featureMicomDevelopment...
 
 
