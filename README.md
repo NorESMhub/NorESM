@@ -23,6 +23,8 @@ The documentation is for now what was available as part of the MetNo wiki and ne
 <img src="img/propose_changes.png" alt="Propose your changes">
 
 
+If you do not like to update the documentation online and prefer to use your favorite editor locally on your machine/laptop, you can skip step-3 and 4 and then clone your forked repository to edit the files locally. Once pushed to your forked github repository, you can create a pull request and propose your changes.
+
 
 
 
