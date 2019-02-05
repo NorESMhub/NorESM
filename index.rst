@@ -6,11 +6,15 @@
 Welcome to norESM documentation!
 ================================================
 
-The purpose of the norESM documentation is to provide a common place for NorESM users
-and developers to share information. What tools are you using? Which
+The purpose of the norESM documentation is to provide a common place for NorESM users and developers to share information. What tools are you using? Which
 version should I run for what purpose? etc.
 
-If you have any questions, create a new issue on github at https://github.com/NorESMhub/norESM-docs/issues
+This documentation is being re-organized and a Github project has been created to follow the progress at https://github.com/NorESMhub/NorESM-docs/projects. 
+
+If you have any questions or interested in actively participate in the reorganization, create a new issue on github at https://github.com/NorESMhub/norESM-docs/issues
+
+Information on how to contribute can be found at https://github.com/NorESMhub/NorESM-docs/blob/master/README.md.
+
 
 .. toctree::
    :maxdepth: 2
