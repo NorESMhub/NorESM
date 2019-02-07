@@ -29,6 +29,7 @@ Information on how to contribute can be found at https://github.com/NorESMhub/No
    runmodel/cmip6emissionsofshortlivedcomponents.rst
    runmodel/cmip6greenhousegasConcentrations.rst
    runmodel/noresm2_output.rst
+   noresm2cesm2.1.0upgrade.rst
    settingupcamonlinuxpc.rst
    modeldiagnostics.rst
    usingtheissuetracker.rst
