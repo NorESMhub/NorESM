@@ -13,6 +13,9 @@ This documentation is being re-organized and a Github project has been created t
 
 If you have any questions or interested in actively participate in the reorganization, create a new issue on github at https://github.com/NorESMhub/norESM-docs/issues
 
+How to contribute
+------------------
+
 Information on how to contribute can be found at https://github.com/NorESMhub/NorESM-docs/blob/master/README.md.
 
 
