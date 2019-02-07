@@ -1,5 +1,7 @@
 # Norwegian Earth System Model Documentation
 
+[![Documentation Status](https://readthedocs.org/projects/noresm-docs/badge/?version=latest)](https://noresm-docs.readthedocs.io/en/latest/?badge=latest)
+
 The documentation is for now what was available as part of the MetNo wiki and needs to be re-organized (see project).
 
 ## How to contribute to the NorESM documentation
