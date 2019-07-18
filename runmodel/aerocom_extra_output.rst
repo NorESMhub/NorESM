@@ -166,3 +166,7 @@ NNAT_9:long_name = "Aerosol mode 9 number concentration" ;
 PM2.5" ; > PMTOT:long_name = "Aerosol PM, all sizes" ;
 
 > RHW:long_name = "Relative humidity with respect to liquid" ;
+
+ NorESM2.1, additional output:
+
+ > MMRPM1:long_name = “3D aerosol PM1.0 mass mixing ratio” ;
