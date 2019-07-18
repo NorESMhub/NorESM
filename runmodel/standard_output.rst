@@ -415,3 +415,8 @@ standard set-up output
 | ``       mmr_SULFATE:long_name = "mmr_SULFATE mmr of aerosol type" ;``
 | ``       monoterp:long_name = "monoterp concentration" ;``
 | ``       monoterp_SRF:long_name = "monoterp in bottom layer" ;``
+
+ NorESM2.1, additional fields:
+
+| ``       FLNTCLR:long_name = “Clearsky ONLY points net longwave flux at top of model” ;
+| ``       FREQCLR:long_name = “Frequency of Occurrence of Clearsky” ; 
