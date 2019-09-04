@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to norESM documentation!
+Welcome to NorESM documentation!
 ================================================
 
 The purpose of the norESM documentation is to provide a common place for NorESM users and developers to share information. How is the code organised? What tools are you using? Which version should I run for what purpose? etc.
