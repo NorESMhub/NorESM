@@ -14,7 +14,11 @@ subdirectories "models" and "scripts".
 Go to scripts directory
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-cd $NORESM/scripts
+The following guidelines assumes that execution is done from the scripts folder
+
+::
+
+  cd $NORESM/scripts
 
 Create the case
 ~~~~~~~~~~~~~~~
