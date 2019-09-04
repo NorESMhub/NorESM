@@ -37,39 +37,36 @@ alfg@pc4400:~/testproject$ ls -l total 4 -rw-rw-r-- 1 alfg alfg 166 Dec
 CD TO THE FRESHLY CREATED REPOSITORY AND CREATE "testproject"
 alfg@pc4400:~/svnrepos$ svnadmin create testproject
 
-IMPORT YOUR WORKING-DIRECTORY TO THE REPOSITORY alfg@pc4400:~$svn import
-$HOME/testproject/ file://$HOME/svnrepos/testproject/trunk -m "Initial
-version of testproject"
+IMPORT YOUR WORKING-DIRECTORY TO THE REPOSITORY 
+alfg@pc4400:~$svn import $HOME/testproject/ file://$HOME/svnrepos/testproject/trunk -m "Initial version of testproject"
 
-MAKE A BRANCHES-DIRECTORY alfg@pc4400:~$svn mkdir
-file://$HOME/svnrepos/testproject/branches/ -m "created branches
-directory"
+MAKE A BRANCHES-DIRECTORY 
+alfg@pc4400:~$svn mkdir file://$HOME/svnrepos/testproject/branches/ -m "created branches directory"
 
 ==>YOU NOW HAVE A REPOSITORY CONTAINING TRUNK AND (EMPTY) BRANCHES
 DIRECTORY. YOU CAN START TO USE IT
 
 ===== PART 2: Create a working directory for two developers ====
 
- alfg@pc4400:~$mkdir twoDevelopers alfg@pc4400:~$cd twoDevelopers
+ alfg@pc4400:~$mkdir twoDevelopers 
+ alfg@pc4400:~$cd twoDevelopers
 
-CHECK OUT TRUNK FOR ONE DEVELOPER alfg@pc4400:~/twoDevelopers$svn
-checkout file://$HOME/svnrepos/testproject/trunk trunk
+CHECK OUT TRUNK FOR ONE DEVELOPER 
+alfg@pc4400:~/twoDevelopers$svn checkout file://$HOME/svnrepos/testproject/trunk trunk
 alfg@pc4400:~/twoDevelopers$cd trunk
 
-CREATE A BRANCH BASED ON TRUNK alfg@pc4400:~/twoDevelopers/trunk$ svn
-copy file://$HOME/svnrepos/testproject/trunk
-file://$HOME/svnrepos/testproject/branches/aBranch -m "created branch
-aBranch"
+CREATE A BRANCH BASED ON TRUNK 
+alfg@pc4400:~/twoDevelopers/trunk$ svn copy file://$HOME/svnrepos/testproject/trunk file://$HOME/svnrepos/testproject/branches/aBranch -m "created branch aBranch"
 
 CD BACK ONE STEP AND CHECK OUT THE BRANCH FOR THE OTHER DEVELOPER
-alfg@pc4400:~/twoDevelopers$ svn checkout
-file://$HOME/svnrepos/testproject/branches/aBranch aBranch
+alfg@pc4400:~/twoDevelopers$ svn checkout file://$HOME/svnrepos/testproject/branches/aBranch aBranch
 
 ==> THE DIRECTORY "TWODEVELOPERS" NOW HAS TWO DIRECTORIES, ONE WITH
 TRUNK AND ONE WITH A BRANCH VERIFY THAT THEY ARE THERE USING THE "LS"
 COMMAND
 
- alfg@pc4400:~/twoDevelopers$ ls -trl total 8 drwxrwxr-x 3 alfg alfg
+ alfg@pc4400:~/twoDevelopers$ ls -trl 
+total 8 drwxrwxr-x 3 alfg alfg
 4096 Dec 9 08:36 trunk drwxrwxr-x 3 alfg alfg 4096 Dec 9 09:40 aBranch
 
 PART 3: Create conflict in the file test.F90
