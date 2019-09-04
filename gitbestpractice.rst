@@ -31,13 +31,14 @@ Note that with git, the main branch is no longer called "trunk", it is
 called "master"!
 
 Verify that you have the correct checkout
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When you have cloned the model, check that you have gotten what you
 wanted!
 
 Check that your favourite branch is available using the command git
-branch --all (You should see the branch "master" on top with a star next
+branch --all 
+(You should see the branch "master" on top with a star next
 to it. This is the branch you get by default. The other branches are
 listed below with remotes/origin/branchName, but you can not work on
 them until you check them out, see below)
