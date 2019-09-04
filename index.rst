@@ -1,7 +1,7 @@
 .. norESM documentation master file, created by
    sphinx-quickstart on Thu Dec 13 14:50:22 2018.
    You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+   contain the root `toctree` directive.researchers
 
 Welcome to norESM documentation!
 ================================================
@@ -19,6 +19,7 @@ How to contribute
 Information on how to contribute can be found at https://github.com/NorESMhub/NorESM-docs/blob/master/README.md.
 
 
+
 .. toctree::
    :maxdepth: 2
    :caption: Content:
@@ -26,7 +27,7 @@ Information on how to contribute can be found at https://github.com/NorESMhub/No
    start.rst
    runmodel/newbie.rst
    runmodel/advanced.rst
-   runmodel/advancednoresm2.rst
+   runmodel/advancednoresm2.rstresearchers
    runmodel/fluxescrossingboundaries.rst
    runmodel/cmip6_volcanic_forcing.rst
    runmodel/cmip6emissionsofshortlivedcomponents.rst
