@@ -1,7 +1,7 @@
 .. _advanced:
 
-Advanced configuration (NorESM1)
-=================================                                
+Advanced configuration for NorESM1
+===================================                                
 
 Understanding compsets
 ~~~~~~~~~~~~~~~~~~~~~~
