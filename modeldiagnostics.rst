@@ -6,7 +6,7 @@ Model Diagnostic Tools
 This page links to tools used for the NorESM model evaluation.
 
 NorESM Diagnostic Packages
-''''''''''''''''''''''''''
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Output from the latest NCAR diagnostic pages can be found on nird here:
 
@@ -26,10 +26,7 @@ Program: /projects/NS2345K/noresm_diagnostics/bin/diag_run Version: 5.1
 
 Short description: A wrapper script for NorESM diagnostic packages.
 
-Basic usage: diag_run -m [model] -c [test case name] -s [test case start
-yr] -e [test case end yr] # Run model-obs diagnostics diag_run -m
-[model] -c [test case name] -s [test case start yr] -e [test case end
-yr] -c2 [cntl case name] -s2 [cntl case start yr] -e2 [cntl case end yr]
+Basic usage: diag_run -m [model] -c [test case name] -s [test case start yr] -e [test case end yr] # Run model-obs diagnostics diag_run - m [model] -c [test case name] -s [test case start yr] -e [test case end yr] -c2 [cntl case name] -s2 [cntl case start yr] -e2 [cntl case end yr]
 # Run model1-model2 diagnostics nohup
 /projects/NS2345K/noresm_diagnostics/bin/diag_run -m [model] -c [test
 case name] -s [test case start yr] -e [test case end yr] &> out & # Run
@@ -47,13 +44,13 @@ Command-line options: -m, --model=MODEL Specify the diagnostics package
 | ``                                               all    : configure all available packages.``
 
 -c, -c1, --case=CASE1, --case1=CASE1 Test case simulation (OPTIONAL).
--s, -s1, --start_yr=SYR1, --start_yr1=SYR1 Start year of test case
-climatology (OPTIONAL). -e, -e1, --end_yr=EYR1, --end_yr1=EYR1 End year
-of test case climatology (OPTIONAL). -c2, --case2=CASE2 Control case
-simulation (OPTIONAL). -s2, --start_yr2=SYR2 Start year of control case
-climatology (OPTIONAL). -e2, --end_yr2=EYR2 End year of control case
-climatology (OPTIONAL). -i, -i1, --input-dir=DIR, --input-dir1=DIR
-Specify the directory where the test case history files are located
+
+-s, -s1, --start_yr=SYR1, --start_yr1=SYR1 Start year of test case climatology (OPTIONAL).
+-e, -e1, --end_yr=EYR1, --end_yr1=EYR1 End year of test case climatology (OPTIONAL).
+-c2, --case2=CASE2 Control case simulation (OPTIONAL).
+-s2, --start_yr2=SYR2 Start year of control case climatology (OPTIONAL).
+-e2, --end_yr2=EYR2 End year of control case climatology (OPTIONAL).
+-i, -i1, --input-dir=DIR, --input-dir1=DIR Specify the directory where the test case history files are located
 (OPTIONAL).
 
 ``                                             Default is --input-dir=/projects/NS2345K/noresm/cases``
@@ -83,10 +80,13 @@ published (OPTIONAL).
 --no-atm Run CLM diagnostics without CAM data. Must be used for offline
 CLM simulations.
 
-Examples: diag_run -m all -c N1850_f19_tn11_exp1 -s 21 -e 50 # model-obs
-diagnostics of case=N1850_f19_tn11_exp1 (climatology between yrs 21 and
-50) for all model components. diag_run -m cam -c N1850_f19_tn11_exp1 -s
-21 -e 50 -w /path/to/my/html # model-obs diagnostics in CAM, publish the
+Examples:
+diag_run -m all -c N1850_f19_tn11_exp1 -s 21 -e 50
+# model-obs diagnostics of case=N1850_f19_tn11_exp1 (climatology between yrs 21 and
+50) for all model components.
+diag_run -m cam -c N1850_f19_tn11_exp1 -s
+21 -e 50 -w /path/to/my/html
+# model-obs diagnostics in CAM, publish the
 html in /path/to/my/html. diag_run -m micom -c N1850_f19_tn11_exp1 -t
 time_series # model-obs time-series diagnostics in MICOM for all years
 represented in the model output directory
