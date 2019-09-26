@@ -7,7 +7,11 @@ Introduction
 NorESM1 is the Norwegian Earth System model used for CMIP5. The model is
 based on the CCSM framework
 (http://en.wikipedia.org/wiki/Community_Climate_System_Model). However,
-NorESM has special features developed by Norwegian researchers.
+NorESM has special features developed by Norwegian researchers,
+including (but not limited to)
+
+- Atmosphere module : CAM-Oslo replaces standard CAM
+- Ocean module : Based on the isopycnic coordinate model MICOM
 
 Main references are:
 
