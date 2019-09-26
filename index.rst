@@ -40,7 +40,6 @@ Information on how to contribute can be found at https://github.com/NorESMhub/No
    svnbestpractice.rst
    svnnorstorehowto.rst
    uncertainaerosolparameters.rst
-   modeldiagnostics.rst
    norstoretape.rst
    norstorearchive.rst
    norstoreesgf.rst
