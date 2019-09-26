@@ -38,7 +38,7 @@ Obtaining a version of the model
 
 -  The development version has been moved to git: Obtain a
    copy through git clone
-   https://githubUserName@github.com/metno/noresm.git You first need
+   https://<githubUserName>@github.com/metno/noresm-dev.git You first need
    to be registered as a noresm user on github (see detailed info in
    :ref:`gitbestpractice`.
 
@@ -124,7 +124,7 @@ NorESM1 branches in active development
 - https://github.com/metno/noresm/: noresm-ver1_r112-r169/ (Further development from the CMIP5 version. Include EU-ACCESS project improvements)
 
 You obtain the model code through checking it out. The command would be
-git clone https://githubUserName@github.com/metno/noresm.git git
+git clone https://<githubUserName>@github.com/metno/noresm-dev.git git
 checkout -b aBranchName origin/aBranchName This gives the code in your
 directory
 
