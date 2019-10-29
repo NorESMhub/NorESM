@@ -36,6 +36,7 @@ Information on how to contribute can be found at https://github.com/NorESMhub/No
    modeldiagnostics.rst
    usingtheissuetracker.rst
    testlist.rst
+   codingguidelinesforhamocc.rst
    gitbestpractice.rst
    svnbestpractice.rst
    svnnorstorehowto.rst
