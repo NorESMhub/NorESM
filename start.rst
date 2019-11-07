@@ -7,7 +7,11 @@ Introduction
 NorESM1 is the Norwegian Earth System model used for CMIP5. The model is
 based on the CCSM framework
 (http://en.wikipedia.org/wiki/Community_Climate_System_Model). However,
-NorESM has special features developed by Norwegian researchers.
+NorESM has special features developed by Norwegian researchers,
+including (but not limited to)
+
+- Atmosphere module : CAM-Oslo replaces standard CAM
+- Ocean module : Based on the isopycnic coordinate model MICOM
 
 Main references are:
 
@@ -33,10 +37,9 @@ Obtaining a version of the model
 ''''''''''''''''''''''''''''''''
 
 -  The development version has been moved to git: Obtain a
-   copy through git clone
-   https://githubUserName@github.com/metno/noresm.git You first need
-   to be registered as a noresm user on github (see detailed info in
-   :ref:`gitbestpractice`.
+   copy through ``git clone https://<githubUserName>@github.com/metno/noresm-dev.git``. 
+   You first need to be registered as a noresm user on github 
+   (see detailed info in :ref:`gitbestpractice`).
 
 If you are on a normal ubuntu PC and want the source code, you might see
 that "svn checkout" complains about "gnome keyring". If you see this
@@ -120,9 +123,13 @@ NorESM1 branches in active development
 - https://github.com/metno/noresm/: noresm-ver1_r112-r169/ (Further development from the CMIP5 version. Include EU-ACCESS project improvements)
 
 You obtain the model code through checking it out. The command would be
-git clone https://githubUserName@github.com/metno/noresm.git git
-checkout -b aBranchName origin/aBranchName This gives the code in your
-directory
+
+::
+
+   git clone https://<githubUserName>@github.com/metno/noresm-dev.git
+   git checkout -b aBranchName origin/aBranchName 
+
+This gives the code in your directory.
 
 Uncertain parameters in the aerosol model
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
