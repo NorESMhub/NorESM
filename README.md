@@ -52,5 +52,5 @@ sphinx-build . _build
 open _build/index.html in browser
 
 More info
-See https://coderefinery.github.io/documentation/04-sphinx/​
+See https://coderefinery.github.io/documentation/04-sphinx/
 
