@@ -31,7 +31,16 @@ The documentation is for now what was available as part of the MetNo wiki and ne
 
 If you do not like to update the documentation online and prefer to use your favorite editor locally on your machine/laptop, you can skip step-3 and 4 and then clone your forked repository to edit the files locally. Once pushed to your forked github repository, you can create a pull request and propose your changes.
 
+Example on how to see your changes locally with sphinx:
+Prepare your PC/MAC
+conda install sphinx
+conda install -c conda-forge sphinxcontrib-bibtex
+conda install -c conda-forge sphinx_rtd_theme
 
-
+Copy NorESMdoc repository to local
+git clone git@github.com:NorESMhub/NorESM-docs.git
+go to NorESM-docs dir
+sphinx-build . _build
+open _build/index.html in browser
 
 
