@@ -1,17 +1,23 @@
 .. _gitbestpractice:
 
+Version control - git/GitHub
+============================
+
 Obtain a copy of the model (using git)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+''''''''''''''''''''''''''''''''''''''
 
-- **Create a github user:** You can create the github user yourself. Go to https://github.com/join and create a user (Make user-name which is easy to understand, for example FirstnameLastname. You can attach several email-addresses to the same user.)
+- **Create a github user:** You can create the github user yourself. Go to https://github.com/join and create a user (Make user-name which is easy to understand, for example FirstnameLastname. You can attach several email-addresses to the same user.)
 
-- Visit this page: https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
+- Visit this page:
+  https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
 
-- Send email to oyvind.seland@met.no to get the right permissions for the new github user (The email must contain who you are and the github username).
+- Send email to oyvind.seland@met.no to get the right permissions for the new github user (The email must contain who you are and the github username).
 
-- When you have the right permissions, you can obtain the code.
+- When you have the right permissions, you can obtain the code.
 
-- git clone https://githubUserName@github.com/metno/noresm.git
+::
+
+  git clone https://githubUserName@github.com/metno/noresm.git
 
 The last point will create a new directory called "noresm" in the place
 you checked out the model. Go to that directory before executing any
@@ -24,14 +30,14 @@ github.
 
 -  Also do the following on all machines where you use git:
 
-  * **Make sure you have a version of git >= 2.0** (add the line "module load git" to your .bashrc files on hexagon, vilje)
-  * **git config - -global push.default simple** (Will edit your ~/.gitconfig file to a safer way to share your modifications, see http://stackoverflow.com/questions/13148066/warning-push-default-is-unset-its-implicit-value-is-changing-in-git-2-0)
+  * **Make sure you have a version of git >= 2.0** (add the line "module load git" to your .bashrc files on hexagon, vilje)
+  * **git config - -global push.default simple** (Will edit your ~/.gitconfig file to a safer way to share your modifications, see http://stackoverflow.com/questions/13148066/warning-push-default-is-unset-its-implicit-value-is-changing-in-git-2-0)
 
 Note that with git, the main branch is no longer called "trunk", it is
 called "master"!
 
 Verify that you have the correct checkout
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'''''''''''''''''''''''''''''''''''''''''
 
 When you have cloned the model, check that you have gotten what you
 wanted!
@@ -62,7 +68,7 @@ working directory. Git will warn you if you have any modified files
 before switching to a new branch. This is different from how svn works.
 
 Modify files
-^^^^^^^^^^^^
+''''''''''''
 
 Modify the code (for example a file named myChangedFile.F90) and send
 back to your local repository through git add myChangedFile.F90 git
@@ -75,7 +81,7 @@ git commit -am "Did part of the work to resolve metno/noresm#100"
 Verify, using the tool "gitk" that the changes make sense.
 
 Get modifications from github
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'''''''''''''''''''''''''''''
 
 ::
 
@@ -88,8 +94,7 @@ picking up changes the master-branch would translate to git pull origin
 master:master
 
 Send modifications to github
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+''''''''''''''''''''''''''''
 
 This command assumes that your changes go to the remote branch named
 like your branch (which is most of the times the case) git push
@@ -103,6 +108,6 @@ changing another branch than master, you must obviously not write
 "master".)
 
 If you don't understand and want to get back to svn
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'''''''''''''''''''''''''''''''''''''''''''''''''''
 
 http://www.git-tower.com/blog/git-for-subversion-users-cheat-sheet/
