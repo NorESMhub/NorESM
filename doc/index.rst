@@ -15,7 +15,7 @@ If you have any questions or interested in actively participate in the reorganiz
 How to contribute
 ------------------
 
-Information on how to contribute to this documentation can be found at https://github.com/NorESMhub/NorESM-docs/blob/master/README.md.
+Information on how to contribute to this documentation can be found at https://github.com/NorESMhub/NorESM/blob/master/README.md.
 
 
 .. toctree::
