@@ -1,0 +1,2 @@
+#undef AEROCOM
+#define AEROFFL

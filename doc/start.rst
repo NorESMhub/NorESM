@@ -15,8 +15,8 @@ including (but not limited to)
 
 Main references are:
 
-GMD - Special issue The Norwegian Earth System Model: NorESM; basic
-development, validation, scientific analyses, and climate scenarios
+GMD – Special issue The Norwegian Earth System Model: NorESM; basic
+development, validation, scientific analyses, and climate scenarios.
 
 http://www.geosci-model-dev.net/special_issue20.html
 :cite:`gmd-6-687-2013`
@@ -41,7 +41,7 @@ Obtaining a version of the model
    You first need to be registered as a noresm user on github 
    (see detailed info in :ref:`gitbestpractice`).
 
-If you are on a normal ubuntu PC and want the source code, you might see
+If you are on a normal Ubuntu PC and want the source code, you might see
 that "svn checkout" complains about "gnome keyring". If you see this
 problem, the solution is here:
 http://askubuntu.com/questions/206604/svn-and-gnome-keyring
@@ -202,7 +202,7 @@ NorESM is also used in several projects:
 Resources
 '''''''''
 
-* TaiESM CCliCS workshop in Taipei 2016 - Ingo Bethke
+* TaiESM CCliCS workshop in Taipei 2016 – Ingo Bethke
 
 .. bibliography:: references_noresm.bib
    :cited:

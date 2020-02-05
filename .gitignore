@@ -1,1 +1,18 @@
-_build/
+# managed directories that are checked out by the externals tool
+cime/
+components/
+libraries/
+
+# generated local files
+*.log
+
+# editor files
+*~
+*.bak
+.*.sw*
+
+# generated python files
+*.pyc
+
+# ignore for the merge to master and orphaning of the gh-pages branch
+doc/build
