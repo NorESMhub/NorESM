@@ -12,3 +12,16 @@ The atmosphere model, CAM6-Nor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The atmospheric model component of NorESM2 (NorESM2; Seland et al., in review for GMD) is built on the CAM6 version from CESM2.1, but with particulate aerosols and the aerosol-radiation-cloud interaction parameterisation from NorESM1 and NorESM1.2 as described by Kirkevåg et al. (2013, 2018). NorESM2-specific changes to model physics and dynamics which are not aerosol related, are described by Toniazzo et al. (2019) and Toniazzo et al. (in prep.). The latest updates in the aerosol modules (that is, the changes between NorESM1.2 and NorESM2) are described by Olivié et al. (in prep.).
+
+The ocean model, BLOM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The ocean component BLOM (Bentsen et al., in prep.) is based on the version of MICOM used in NorESM1 and shares the use of near-isopycnic interior layers and variable density layers in the surface well-mixed boundary layer.
+
+
+The ocean biogeochemistry model 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The ocean biogeochemistry component iHAMOCC (isopycnic coordinate HAMburg Ocean Carbon Cycle model) is an updated version of the ocean biogeochemistry module used in NorESM1. Details on the updates and improvements of the ocean biogeochemical component of NorESM2 are provided in Tjiputra et al. (2019).
+
+
