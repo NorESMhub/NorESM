@@ -29,6 +29,7 @@ https://github.com/NorESMhub/NorESM/blob/master/doc/README.md.
    :maxdepth: 2
    :caption: Content:
 
+   index.rst
    start.rst
    access/access.rst
    newbie-guide/newbie-guide.rst
