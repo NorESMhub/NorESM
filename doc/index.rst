@@ -8,9 +8,9 @@ Welcome to NorESM documentation!
 
 The purpose of the norESM documentation is to provide a common place for NorESM users and developers to share information. How is the code organised? What tools are you using? Which version should I run for what purpose? etc.
 
-This documentation is being re-organized and a Github project has been created to follow the progress at https://github.com/NorESMhub/NorESM-docs/projects. 
+This documentation is being re-organized and a Github project has been created to follow the progress at https://github.com/NorESMhub/NorESM/projects 
 
-If you have any questions or interested in actively participate in the reorganization, create a new issue on github at https://github.com/NorESMhub/norESM-docs/issues
+If you have any questions or interested in actively participate in the reorganization, create a new issue on github at https://github.com/NorESMhub/NorESM/issues
 
 How to contribute
 ------------------
