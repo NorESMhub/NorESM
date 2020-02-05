@@ -14,12 +14,10 @@ including (but not limited to)
 - Aerosol module: OsloAero6
 - Ocean module : Isopycnic coordinate model BLOM
 
-Main references are in the GMD – Special issue "The Norwegian Earth System Model: NorESM"
+Scientific documentation in the GMD – Special issue "The Norwegian Earth System Model: NorESM"
 
 http://www.geosci-model-dev.net/special_issue20.html
 
-This website contains information shared between NorESM developers and
-users.
 
 NorESM1 Documentation is found here:
 https://noresm-docs.readthedocs.io/en/noresm1/
