@@ -10,7 +10,7 @@ The purpose of the norESM documentation is to provide a common place for NorESM 
 
 This documentation is being re-organized and a Github project has been created to follow the progress at https://github.com/NorESMhub/NorESM-docs/projects. 
 
-If you have any questions or interested in actively participate in the reorganization, create a new issue on github at https://github.com/NorESMhub/norESM-docs/issues
+If you have any questions or interested in actively participate in the reorganization, create a new issue on github at https://github.com/NorESMhub/NorESM/issues
 
 How to contribute
 ------------------
