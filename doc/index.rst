@@ -23,30 +23,12 @@ https://github.com/NorESMhub/NorESM/blob/master/doc/README.md.
    :maxdepth: 2
    :caption: Content:
 
-   start.rst
-   runmodel/newbie.rst
-   runmodel/advanced.rst
-   runmodel/advancednoresm2.rst
-   runmodel/fluxescrossingboundaries.rst
-   runmodel/cmip6_volcanic_forcing.rst
-   runmodel/cmip6emissionsofshortlivedcomponents.rst
-   runmodel/cmip6greenhousegasConcentrations.rst
-   runmodel/noresm2_output.rst
-   noresm2cesm2.1.0upgrade.rst
-   settingupcamonlinuxpc.rst
-   modeldiagnostics.rst
-   usingtheissuetracker.rst
-   testlist.rst
-   codingguidelinesforhamocc.rst
-   gitbestpractice.rst
-   svnbestpractice.rst
-   svnnorstorehowto.rst
-   uncertainaerosolparameters.rst
-   norstoretape.rst
-   norstorearchive.rst
-   norstoreesgf.rst
-   projects.rst
-   references.rst
+   access/access.rst
+   newbie-guide/newbie-guide.rst
+   configurations/configurations.rst
+   contribute/contribute.rst
+   model-description/model-description.rst
+   faq/faq.rst
 
 
 Search
