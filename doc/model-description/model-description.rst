@@ -13,6 +13,8 @@ The atmosphere model, CAM6-Nor
 
 The atmospheric model component of NorESM2 (NorESM2; Seland et al., in review for GMD) is built on the CAM6 version from CESM2.1, but with particulate aerosols and the aerosol-radiation-cloud interaction parameterisation from NorESM1 and NorESM1.2 as described by Kirkevåg et al. (2013, 2018). NorESM2-specific changes to model physics and dynamics which are not aerosol related, are described by Toniazzo et al. (2019) and Toniazzo et al. (in prep.). The latest updates in the aerosol modules (that is, the changes between NorESM1.2 and NorESM2) are described by Olivié et al. (in prep.).
 
+One particular part of the CAM6-Nor which is not described in great detail in any of the most recent papers (2020) is the offline sectional aerosol model AeroTab6. This is based on AeroTab5.3 (Kirkevåg et al., 2018), but uses updated complex refractive indexes for mineral dust for wavelengths below 15 μm, changed according to recent research (for details, see Olivié et al. (in prep.). A user guide for this model code will soon appear under the Configurations chapter.
+
 ::
 
 The ocean model, BLOM
@@ -20,12 +22,14 @@ The ocean model, BLOM
 
 The ocean component BLOM (Bentsen et al., in prep.) is based on the version of MICOM used in NorESM1 and shares the use of near-isopycnic interior layers and variable density layers in the surface well-mixed boundary layer.
 
+::
 
 The ocean biogeochemistry model, iHAMMOC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ocean biogeochemistry component iHAMOCC (isopycnic coordinate HAMburg Ocean Carbon Cycle model) is an updated version of the ocean biogeochemistry module used in NorESM1. Details on the updates and improvements of the ocean biogeochemical component of NorESM2 are provided in Tjiputra et al. (2019).
 
+::
 
 The sea-ice model, CICE
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -34,10 +38,14 @@ The sea ice model component is based upon version 5.1.2 of the CICE sea ice mode
 specific change is including the effect of wind drift of snow into ocean following Lecomte et al. (2013), as described in Bentsen
 et al. (in prep).
 
+::
+
 The land model, CLM5
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 The NorESM2 land model is CLM5 (Lawrence et al., 2019) with one minor modification (Seland et al., in review for GMD). This specific modification was made to the surface water treatment in CLM. The surface water pool is a new feature replacing the wetland land unit in earlier versions of CLM (introduced in CLM4.5). This water pool does not have a frozen state, but is added to the snow-pack when frozen. To avoid water being looped between surface water and snow during alternating cold and warm periods, we remove infiltration excess water as runoff if the temperature of the surface water pool is below freezing. This was done to mitigate a positive snow bias and an artificial snow depth increase found in some Arctic locations during melting conditions.
+
+::
 
 The coupler, CIME
 ~~~~~~~~~~~~~~~~~
