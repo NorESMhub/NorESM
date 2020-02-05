@@ -1,7 +1,7 @@
-Model configuration
+.. _configurations:
+
+Model Configurations
 ====================
-
-
 
 Running NorESM2 on different platforms
 ''''''''''''''''''''''''''''''''''''''
@@ -284,5 +284,3 @@ CAM_CONFIG_OPTS='-cosp'), the following 57 output variables (of which 7
 are 4 D) are added to the output (+ ca. 10% CPU-time):
 
 :ref:`cosp_extra_output`
-
-
