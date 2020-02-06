@@ -28,7 +28,7 @@ Configuration files for Tetralith are not yet distributed with the code. Configu
 
 ::
 
-    /proj/cesm_input-data/tetralith_config_noresm2
+/proj/cesm_input-data/tetralith_config_noresm2
     
 ::
 
