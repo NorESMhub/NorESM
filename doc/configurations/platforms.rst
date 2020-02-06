@@ -132,12 +132,12 @@ Machine example with PBS batch system
 
 ::
 
- config_compilers.xml
- ^^^^^^^^^^^^^^^^^^^^
+config_compilers.xml
+^^^^^^^^^^^^^^^^^^^^
  
- Add a compiler entry in this file for your platform with appropriate settings. See examples below.
+Add a compiler entry in this file for your platform with appropriate settings. See examples below.
  
- ::
+::
  
    <compiler MACH="tetralith" COMPILER="intel">
     <MPICC> mpiicc  </MPICC>
@@ -163,7 +163,7 @@ Machine example with PBS batch system
     </LDFLAGS>
   </compiler>
  
- ::
+::
  
  
  
@@ -171,12 +171,12 @@ Machine example with PBS batch system
  
  
  
- config_machines.xml
- ^^^^^^^^^^^^^^^^^^^
+config_machines.xml
+^^^^^^^^^^^^^^^^^^^
  
- Add a machine entry in this file for your platform with appropriate settings. See examples below.
+Add a machine entry in this file for your platform with appropriate settings. See examples below.
  
- ::
+::
  
    <machine MACH="tetralith">
     <DESC>Tetralith Linux Cluster (NSC, Sweden), 32 pes/node, batch system SLURM</DESC>
@@ -204,7 +204,7 @@ Machine example with PBS batch system
     </module_system>
   </machine>
  
- ::
+::
  
  
  
