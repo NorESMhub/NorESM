@@ -36,8 +36,11 @@ Apply for membership in CESM climate model shared data storage (SNIC 2019/32-10)
 
 Copy the files in the above folder to:
 
+::
+
     cd <noresm-base>/cesm2.1.0/cime/config/cesm/machines/
     cp /proj/cesm_input-data/tetralith_config_noresm2/* .
+
 ::
 
 Input data is stored /proj/cesm_input-data/ 
@@ -46,17 +49,21 @@ Before configring and compiling the model, clear your environment and load the f
 
 
 ::
+
   module purge 
   module load buildenv-intel/2018.u1-bare 
   module load netCDF/4.4.1.1-HDF5-1.8.19-nsc1-intel-2018a-eb 
   module load HDF5/1.8.19-nsc1-intel-2018a-eb 
   module load PnetCDF/1.8.1-nsc1-intel-2018a-eb
+
 ::
 
 Create a new case:
 
 ::
-  ./create_newcase –case ../cases/<casename> -mach triolith –res <resolution> -compset <compset_name> -pecount M -ccsm_out <NorESM_ouput_folder>
+
+./create_newcase –case ../cases/<casename> -mach triolith –res <resolution> -compset <compset_name> -pecount M -ccsm_out <NorESM_ouput_folder>
+
 ::
 
 Adding a new platform
@@ -65,15 +72,19 @@ Adding a new platform
 Edit the following files:
 
 ::
+
   config_batch.xml  
   config_compilers.xml  
   config_machines.xml
+
 ::  
 
 located in
 
 ::
-  <noresm-base>/cesm2.1.0/cime/config/cesm/machines/
+
+<noresm-base>/cesm2.1.0/cime/config/cesm/machines/
+
 ::
 
 config_batch.xml
@@ -84,6 +95,7 @@ Add a batch_system entry in this file for your platform with appropriate setting
 Machine example with SLURM batch system
 
 ::
+
   <batch_system type="slurm" MACH="tetralith">
     <batch_submit>sbatch</batch_submit>
     <submit_args>
@@ -95,11 +107,13 @@ Machine example with SLURM batch system
       <queue walltimemax="01:00:00" nodemin="1" nodemax="4" >development</queue>
     </queues>
   </batch_system>
+
 ::
 
 Machine example with PBS batch system
 
 ::
+
   <batch_system MACH="vilje" type="pbs">
     <submit_args>
       <arg flag="-N cesmRun"/>
@@ -115,6 +129,7 @@ Machine example with PBS batch system
                             <walltime default="true">00:59:00</walltime>
     </walltimes-->
   </batch_system>
+
 ::
 
  config_compilers.xml
@@ -122,7 +137,8 @@ Machine example with PBS batch system
  
  Add a compiler entry in this file for your platform with appropriate settings. See examples below.
  
- :: 
+ ::
+ 
    <compiler MACH="tetralith" COMPILER="intel">
     <MPICC> mpiicc  </MPICC>
     <MPICXX> mpiicpc </MPICXX>
@@ -161,6 +177,7 @@ Machine example with PBS batch system
  Add a machine entry in this file for your platform with appropriate settings. See examples below.
  
  ::
+ 
    <machine MACH="tetralith">
     <DESC>Tetralith Linux Cluster (NSC, Sweden), 32 pes/node, batch system SLURM</DESC>
     <OS>LINUX</OS>
