@@ -8,13 +8,14 @@ Basic case set up, compilation and job submission with NorESM
 
 This is a general description/checklist for how to create a new experiment with NorESM. For a quick start guide, see also ref:newbie-guide.rst The case creation step is explained in more detail below.
 
-- 1. Create a case
+- 1 Create a case
 
 
 ::
-cd <noresm-base>/cime/scripts
 
-./create_newcase --case <path_to_case_dir/casename> --walltime <time> --compset <compset_name> --res <resolution> --machine <machine_name> --project snic2019-1-2 --output-root <path_to_run_dir/NorESM> --run-unsupported
+  cd <noresm-base>/cime/scripts
+
+  ./create_newcase --case <path_to_case_dir/casename> --walltime <time> --compset <compset_name> --res <resolution> --machine <machine_name> --project snic2019-1-2 --output-root <path_to_run_dir/NorESM> --run-unsupported
 
 ::
 
