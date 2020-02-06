@@ -28,6 +28,7 @@ Configuration files for Tetralith are not yet distributed with the code. Configu
 
 
     /proj/cesm_input-data/tetralith_config_noresm2
+    
 ::
 
 Apply for membership in CESM climate model shared data storage (SNIC 2019/32-10) for access to the folder.
