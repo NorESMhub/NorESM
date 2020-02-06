@@ -55,7 +55,7 @@ Before configring and compiling the model, clear your environment and load the f
 Create a new case:
 
 ::
-./create_newcase –case ../cases/<casename> -mach triolith –res <resolution> -compset <compset_name> -pecount M -ccsm_out <NorESM_ouput_folder>
+  ./create_newcase –case ../cases/<casename> -mach triolith –res <resolution> -compset <compset_name> -pecount M -ccsm_out <NorESM_ouput_folder>
 ::
 
 Adding a new platform
@@ -72,6 +72,7 @@ located in
 
 ::
   <noresm-base>/cesm2.1.0/cime/config/cesm/machines/
+::
 
 config_batch.xml
 ^^^^^^^^^^^^^^^^
@@ -92,7 +93,7 @@ Machine example with SLURM batch system
       <queue walltimemax="01:00:00" nodemin="1" nodemax="4" >development</queue>
     </queues>
   </batch_system>
-
+::
 
 Machine example with PBS batch system
 
@@ -112,7 +113,7 @@ Machine example with PBS batch system
                             <walltime default="true">00:59:00</walltime>
     </walltimes-->
   </batch_system>
-
+::
 
  config_compilers.xml
  ^^^^^^^^^^^^^^^^^^^^
@@ -144,7 +145,7 @@ Machine example with PBS batch system
     </LDFLAGS>
   </compiler>
  
- 
+ ::
  
  
  
@@ -184,7 +185,7 @@ Machine example with PBS batch system
     </module_system>
   </machine>
  
- 
+ ::
  
  
  
