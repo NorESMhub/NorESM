@@ -12,7 +12,6 @@ This is a general description/checklist for how to create a new experiment with 
 
 
 ::
-
 cd <noresm-base>/cime/scripts
 
 ./create_newcase --case <path_to_case_dir/casename> --walltime <time> --compset <compset_name> --res <resolution> --machine <machine_name> --project snic2019-1-2 --output-root <path_to_run_dir/NorESM> --run-unsupported
