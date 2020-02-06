@@ -1,3 +1,4 @@
+.. _configurations:
 
 
 Model Configurations
