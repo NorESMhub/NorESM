@@ -10,6 +10,7 @@ This is a general description/checklist for how to create a new experiment with 
 
 - 1. Create a case
 
+
 ::
 
 cd <noresm-base>/cime/scripts
@@ -17,6 +18,7 @@ cd <noresm-base>/cime/scripts
 ./create_newcase --case <path_to_case_dir/casename> --walltime <time> --compset <compset_name> --res <resolution> --machine <machine_name> --project snic2019-1-2 --output-root <path_to_run_dir/NorESM> --run-unsupported
 
 ::
+
 
 Example of case creation on Tetralith:
 
@@ -30,6 +32,7 @@ Example of case creation on Tetralith:
 
 - 2 Configure case
 
+
 ::
 
 cd <path_to_case_dir/casename>
@@ -37,9 +40,11 @@ cd <path_to_case_dir/casename>
 
 ::
 
+
 - 3 Add code changes
 
 Copy your code changes to the folder
+
 
 ::
 
@@ -47,7 +52,9 @@ Copy your code changes to the folder
 
 ::
 
+
 - 4 Build model
+
 
 ::
 
@@ -55,13 +62,16 @@ Copy your code changes to the folder
 
 ::
 
+
 - 5 Edit namelist
+
 
 ::
 
 <path_to_case_dir/casename>/user_nl_<component>
 
 ::
+
 
 - 6 Edit run configuration
 
