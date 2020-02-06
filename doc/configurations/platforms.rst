@@ -27,16 +27,15 @@ Tetralith @ NSC
 Configuration files for Tetralith are not yet distributed with the code. Configuration and input files for running NorESM2 are stored in the following folder on Tetralith:
 
 
-  /proj/cesm_input-data/tetralith_config_noresm2
+    /proj/cesm_input-data/tetralith_config_noresm2
 ::
 
 Apply for membership in CESM climate model shared data storage (SNIC 2019/32-10) for access to the folder.
 
 Copy the files in the above folder to:
 
-::
-  cd <noresm-base>/cesm2.1.0/cime/config/cesm/machines/
-  cp /proj/cesm_input-data/tetralith_config_noresm2/* .
+    cd <noresm-base>/cesm2.1.0/cime/config/cesm/machines/
+    cp /proj/cesm_input-data/tetralith_config_noresm2/* .
 ::
 
 Input data is stored /proj/cesm_input-data/ 
