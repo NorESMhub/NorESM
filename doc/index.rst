@@ -8,10 +8,8 @@ Welcome to NorESM documentation!
 
 The purpose of the norESM documentation is to provide a common place for NorESM users and developers to share information. How is the code organised? What tools are you using? Which version should I run for what purpose? etc.
 
-This documentation is currently being re-organized
+This is the NorESM2 documentation which is currently being re-organized, under revision.
 
-| NorESM2 documentation under revision is currently in the branch noresm2 
-| https://github.com/NorESMhub/NorESM/tree/noresm2/doc
 | The corresponding NorESM2 ReadTheDocs can be found here
 | https://noresm-docs.readthedocs.io/en/noresm2/
 
