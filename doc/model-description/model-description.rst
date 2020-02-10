@@ -91,6 +91,10 @@ https://doi.org/10.1002/jame.20039, 2013.
 Schwinger, J., Goris, N., Tjiputra, J. F., Kriest, I., Bentsen, M., Bethke, I., Ilicak, M., Assmann, K. M., and Heinze, C.: Evaluation of NorESM-OC (versions 1 and 1.2), the ocean carbon-cycle stand-alone configuration of the Norwegian Earth System Model (NorESM1),
 Geoscientific Model Development, 9, 2589–2622, https://doi.org/10.5194/gmd-9-2589-2016, 2016.
 
+Seland, Ø., Bentsen, M., Seland Graff, L., Olivié, D., Toniazzo, T., Gjermundsen, A., Debernard, J. B., Gupta, A. K., He, Y., Kirkevåg, A., Schwinger, J., Tjiputra, J., Schancke Aas, K., Bethke, I., Fan, Y., Griesfeller, J., Grini, A., Guo, C., Ilicak, M., Hafsahl Karset, I. H., Landgren, O., Liakka, J., Onsum Moseid, K., Nummelin, A., Spensberger, C., Tang, H., Zhang, Z., Heinze, C., Iverson, T., and Schulz, M.: The Norwegian Earth System Model, NorESM2 – Evaluation of theCMIP6 DECK and historical simulations, Geosci. Model Dev. Discuss., https://www.geosci-model-dev-discuss.net/gmd-2019-378/, 2020.
+
+Tjiputra, J. F., Schwinger, J., Bentsen, M., Morée, A. L., Gao, S., Bethke, I., Heinze, C., Goris, N., Gupta, A., He, Y., Olivié, D., Seland, Ø., and Schulz, M.: Ocean biogeochemistry in the Norwegian Earth System Model version 2 (NorESM2), Geosci. Model Dev. Discuss., https://doi.org/10.5194/gmd-2019-347, in review, 2020.
+
 Toniazzo, T., Bentsen, M., Craig, C., Eaton, B., Edwards, J., Goldhaber, J., Jablonowski, C., and Lauritzen, P. J.: Enforcing con-
 servation of axial angular momentum in the atmospheric general circulation model CAM6, Geosc. Model Devel. Discussions,
 https://doi.org/10.5194/gmd-2019-254, 2019.
