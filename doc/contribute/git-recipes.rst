@@ -1,4 +1,7 @@
+.. _gitrecipes:
+
 Git Recipes
+============================
 
 Before doing things locally
 git status
