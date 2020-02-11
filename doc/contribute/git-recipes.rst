@@ -1,4 +1,4 @@
-.. _gitrecipes:
+.. _git-recipes:
 
 Git Recipes
 ============================
