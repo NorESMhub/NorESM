@@ -23,7 +23,7 @@ This is a general description/checklist for how to create a new experiment with 
 Example of case creation on Tetralith:
 
 
-::
+
 
 ./create_newcase --case ../cases/test1910_1 --walltime 24:00:00 --compset N1850 --res f19_tn14 --machine tetralith --project snic2019-1-2 --output-root /proj/bolinc/users/${USER}/NorESM2/noresm2_out --run-unsupported
 
