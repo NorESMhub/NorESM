@@ -8,10 +8,10 @@ Basic case set up, compilation and job submission with NorESM
 
 This is a general description/checklist for how to create a new experiment with NorESM. For a quick start guide, see also ref:newbie-guide.rst The case creation step is explained in more detail below.
 
-- 1 Create a case
+- Create a case
 
 
-::
+
 
   cd <noresm-base>/cime/scripts
 
@@ -30,10 +30,10 @@ Example of case creation on Tetralith:
 ::
 
 
-- 2 Configure case
+- Configure case
 
 
-::
+
 
 cd <path_to_case_dir/casename>
 ./case.setup
