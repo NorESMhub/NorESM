@@ -2,14 +2,6 @@
 
 Model Configurations
 ====================
-.. toctree::
-   :maxdepth: 2
-   :caption: Content:
-
-   configurations/platforms.rst
-   configurations/experiments.rst
-
-
 
 
 Running / Configuring the model
