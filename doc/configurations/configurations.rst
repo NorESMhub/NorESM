@@ -7,11 +7,11 @@ Model Configurations
 Running / Configuring the model
 '''''''''''''''''''''''''''''''
 
-- :ref:`platforms`
-- :ref:`experiments`
-- :ref:`input`
-- :ref:`output`
-- :ref:`quality_control`
+- :ref:`configurations/platforms`
+- :ref:`configurations/experiments`
+- :ref:`configurations/input`
+- :ref:`configurations/output`
+- :ref:`configurations/quality_control`
 
 
 
