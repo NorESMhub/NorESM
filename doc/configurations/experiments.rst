@@ -13,7 +13,7 @@ This is a general description/checklist for how to create a new experiment with 
     cd <noresm-base>/cime/scripts
     ./create_newcase --case <path_to_case_dir/casename> --walltime <time> --compset <compset_name> --res <resolution> --machine <machine_name> --project snic2019-1-2 --output-root <path_to_run_dir/NorESM> --run-unsupported 
 
-Example of case creation on Tetralith:::
+Example of case creation on Tetralith::
 
   ./create_newcase --case ../cases/test1910_1 --walltime 24:00:00 --compset N1850 --res f19_tn14 --machine tetralith  --project snic2019-1-2 --output-root /proj/bolinc/users/${USER}/NorESM2/noresm2_out --run-unsupported
 
@@ -55,7 +55,7 @@ Create new case
 
 To start a new experiment you need to create a case. When creating a case a case folder <path_to_case_dir/casename> will be created that contains all the settings for your experiment
 
-The case creation contains a compset option. A compset is a collection of predefined setting that defines your experiment setup. Some of the available compsets are described below.
+The case creation contains a compset option. A compset is a collection of predefined setting that defines your experiment setup, including which model components that are activated. Some of the available compsets are described below.
 
 The case folder contains predefined namelist (with namelist settings partly depending on compset option). The default namelist options for the case can be overwritten by changing/adding the new namelist options in the user_nl_<component>
 
@@ -74,10 +74,14 @@ For more details about the user-mod-dir options, chck this folder::
 
 Compsets
 ''''''''
-Below some compsets are listed. All predefined comsets can be found in::
+Below some compsets are listed. All predefined compsets for coupled simulations can be found in::
 
   <noresm_base>/cime_config/config_compsets.xml
+  
+And predefined compsets for AMIP/atmsophere only simulations can be found in::  
 
+  <noresm_base>/components/cam/cime_config/config_compsets.xml
+  
 
 N1850 and N1850frc2 (uses differently organized emission files : FRC2)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -94,6 +98,8 @@ Future scenario compsets from 2015(?) to 2100(?)
 
 Choosing components
 ^^^^^^^^^^^^^^^^^^^
+
+The compsets starting with N are NorESM coupled configurations. Compsets starting with NF are NorESM AMIP/atmosphere only configurations. 
 
 Creating your own compset
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -146,6 +152,12 @@ Choosing output
 
 
 
+Setting up an AMIP simulation
+'''''''''''''''''''''''''''''
+
+
+Setting up a nudged simulation
+''''''''''''''''''''''''''''''
 
 
 
