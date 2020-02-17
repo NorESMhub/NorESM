@@ -1,4 +1,4 @@
-.. _configurations:
+.. _platforms:
 
 
 Model Configurations
