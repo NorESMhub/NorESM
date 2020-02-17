@@ -170,31 +170,34 @@ Model resolution is set when the case is created. Below some common resolutions 
 
 Atmospheric grids
 ^^^^^^^^^^^^^^^^^
-f19_f19 - atm lnd 1.9x2.5
-f09_f09 - atm lnd 0.9x1.25
+
+
+| f19_f19 - atm lnd 1.9x2.5  
+| f09_f09 - atm lnd 0.9x1.25  
+
 
 Ocean grids
 ^^^^^^^^^^^
 Which ocean grid is recommended?
 
-tnx1v1 tripole v1 1-deg grid
-tnx1v3 tripole v3 1-deg grid
-tn14(?)tripole v4 1-deg grid  tripole ocean grid
-tnx2v1 tripole v1 2-deg grid
-tx1v1 tripole v1 1-deg grid: testing proxy for high-res tripole ocean grids- do not use for scientific experiments
+| tnx1v1 tripole v1 1-deg grid  
+| tnx1v3 tripole v3 1-deg grid  
+| tn14(?)tripole v4 1-deg grid  tripole ocean grid  
+| tnx2v1 tripole v1 2-deg grid  
+| tx1v1 tripole v1 1-deg grid: testing proxy for high-res tripole ocean grids- do not use for scientific experiments  
 
 Coupled
 ^^^^^^^
 Which is the CMIP6 grid?
 
-f09_tn11   - atm lnd 0.9x1.25, ocnice tnx1v1
-f09_tn13   - atm lnd 0.9x1.25, ocnice tnx1v3
-f09_tn14   - atm lnd 0.9x1.25, ocnice tnx1v4
-f09_tn0251 - atm lnd 0.9x1.25, ocnice tnx0.25v1
-f09_tn0253 - atm lnd 0.9x1.25, ocnice tnx0.25v3
-f19_tn11   - atm lnd 1.9x2.5, ocnice tnx1v1
-f19_tn13   - atm lnd 1.9x2.5, ocnice tnx1v3
-f19_tn14   - atm lnd 1.9x2.5, ocnice tnx1v4
+| f09_tn11   - atm lnd 0.9x1.25, ocnice tnx1v1
+| f09_tn13   - atm lnd 0.9x1.25, ocnice tnx1v3
+| f09_tn14   - atm lnd 0.9x1.25, ocnice tnx1v4
+| f09_tn0251 - atm lnd 0.9x1.25, ocnice tnx0.25v1
+| f09_tn0253 - atm lnd 0.9x1.25, ocnice tnx0.25v3
+| f19_tn11   - atm lnd 1.9x2.5, ocnice tnx1v1
+| f19_tn13   - atm lnd 1.9x2.5, ocnice tnx1v3
+| f19_tn14   - atm lnd 1.9x2.5, ocnice tnx1v4
 
 Simulation period
 ''''''''''''''''''''''''''
@@ -282,8 +285,7 @@ First run the NorESM to produce 6 hourly data. The following namelist settings a
     hist_mfilt = 1,4 hist_nhtfrq = 0,-6
     hist_avgflag_pertape = 'A','I' hist_fincl2 = 'SNOWDP','H2OSNO','H2OSOI'
 
-Use the met-data in another run
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Use the met-data in another run**
 
 (The following instructions are not valid any more? It's CAM5, not CAM6? Which is the new compset for nudged simulations?)
 
@@ -313,24 +315,6 @@ This file can be created at the place where you put the metdata with this comman
   alfgr@hexagon-4:/work/shared/noresm/inputForNudging/FAMIPC5NudgeOut/atm/hist>
   ls -d -1 $PWD/*.h1.*.nc > fileList.txt
 
-Namelist options
-^^^^^^^^^^^^^^^^
-
-When looking at aerosol indirect effects, it's recommended to nudge only U, V and PS: 
-
-::
-
-  user_nl_cam
-    &metdata_nl
-    met_nudge_only_uvps = .true.
-
-Choose relaxation time (hours). Use the same time as dt in met_data_file: 
-
-::
-
-  user_nl_cam
-    &metdata_nl
-    met_rlx_time = 6
 
 
 
@@ -339,31 +323,6 @@ Setting up a hybrid simulation
 ''''''''''''''''''''''''''''''
 
 Step by step guide for hybrid simulation/restart.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
