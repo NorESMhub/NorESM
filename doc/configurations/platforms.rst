@@ -3,6 +3,9 @@
 Running NorESM2 on different platforms
 ======================================
 
+Platforms
+'''''''''
+
 Below is a list of platforms where NorESM2 has been installed, including platform specific intructions. 
 
 Vilje @ Sigma2
