@@ -3,68 +3,21 @@
 Model Configurations
 ====================
 
-Running NorESM2 on different platforms
-''''''''''''''''''''''''''''''''''''''
 
-Below is a list of platforms where NorESM2 has been installed, including platform specific intructions. 
+Running / Configuring the model
+'''''''''''''''''''''''''''''''
 
-Vilje @ Sigma2
-^^^^^^^^^^^^^^
-Add instructions here
-
-Fram @ Sigma2
-^^^^^^^^^^^^^
-Add instructions here
-
-Nebula @ NSC
-^^^^^^^^^^^^
-Add instructions here
-
-Tetralith @ NSC
-^^^^^^^^^^^^^^^
-
-Configuration files for Tetralith are not yet distributed with the code. Configuration and input files for running NorESM2 are stored in the following folder on Tetralith:
-
-::
-/proj/cesm_input-data/tetralith_config_noresm2
-::
-
-Apply for membership in PROJECT for access to the folder.
-
-Copy the files in the above folder to:
-
-::
-cd <noresm-base>/cesm2.1.0/cime/config/cesm/machines/
-cp /proj/cesm_input-data/tetralith_config_noresm2/* .
-::
-
-Input data is stored /proj/cesm_input-data/. Apply for access 
-
-Before configring and compiling the model, clear your environment and load the following modules:
+- :ref:`platforms`
+- :ref:`experiments`
+- :ref:`input`
+- :ref:`output`
+- :ref:`quality_control`
 
 
-::
-module purge 
-module load buildenv-intel/2018.u1-bare 
-module load netCDF/4.4.1.1-HDF5-1.8.19-nsc1-intel-2018a-eb 
-module load HDF5/1.8.19-nsc1-intel-2018a-eb 
-module load PnetCDF/1.8.1-nsc1-intel-2018a-eb
-::
-
-Create a new case:
-
-::
-./create_newcase –case ../cases/<casename> -mach triolith –res <resolution> -compset <compset_name> -pecount M -ccsm_out <NorESM_ouput_folder>
-::
 
 
-General configuration
-'''''''''''''''''''''
-For quick start, check the newbie's guide to rinning NorESM2
 
 
-Compsets
-''''''''
 
 Creating new compsets
 ^^^^^^^^^^^^^^^^^^^^^
