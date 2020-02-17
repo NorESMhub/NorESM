@@ -1,11 +1,7 @@
 .. _platforms:
 
-
-Model Configurations
-====================
-
 Running NorESM2 on different platforms
-''''''''''''''''''''''''''''''''''''''
+======================================
 
 Below is a list of platforms where NorESM2 has been installed, including platform specific intructions. 
 
