@@ -12,14 +12,28 @@ This sections lists the computers where NorESM2 has been installed, including pl
 :ref:`platforms`
 
 
-- :ref:`input`
-- :ref:`output`
-- :ref:`quality_control`
+
+
+
 
 Setting up an experiment
 ''''''''''''''''''''''''
+
+Basic case set up, compilation and job submission with NorESM
+
 :ref:`experiments`
 
+Input data
+''''''''''
+:ref:`input`
+
+Output data
+'''''''''''
+:ref:`output`
+
+Quality control
+'''''''''''''''
+:ref:`quality_control`
 
 
 Creating new compsets
