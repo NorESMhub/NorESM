@@ -4,18 +4,21 @@ Model Configurations
 ====================
 
 
-Running / Configuring the model
-'''''''''''''''''''''''''''''''
+Running NorESM2 on different platforms
+''''''''''''''''''''''''''''''''''''''
 
-- :ref:`platforms`
-- :ref:`experiments`
+This sections lists the computers where NorESM2 has been installed, including platform specific settings, and instructions for adding new platforms.
+
+:ref:`platforms`
+
+
 - :ref:`input`
 - :ref:`output`
 - :ref:`quality_control`
 
-
-
-
+Setting up an experiment
+''''''''''''''''''''''''
+:ref:`experiments`
 
 
 
