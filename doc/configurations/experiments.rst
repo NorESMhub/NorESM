@@ -15,40 +15,40 @@ This is a general description/checklist for how to create a new experiment with 
 
 Example of case creation on Tetralith::
 
-  ./create_newcase --case ../cases/test1910_1 --walltime 24:00:00 --compset N1850 --res f19_tn14 --machine tetralith  --project snic2019-1-2 --output-root /proj/bolinc/users/${USER}/NorESM2/noresm2_out --run-unsupported
+    ./create_newcase --case ../cases/test1910_1 --walltime 24:00:00 --compset N1850 --res f19_tn14 --machine tetralith  --project snic2019-1-2 --output-root /proj/bolinc/users/${USER}/NorESM2/noresm2_out --run-unsupported
 
 - Configure case::
 
-  cd <path_to_case_dir/casename>
-  ./case.setup
+    cd <path_to_case_dir>/casename
+    ./case.setup
 
 
 - Add code changes
 
 Copy your code changes to the folder::
 
-  <path_to_case_dir/casename>/SourceMods/src.<component>
+    <path_to_case_dir>/casename>/SourceMods/src.<component>
 
 
 - Build model::
 
-  ./case.build
+    ./case.build
 
 
 - Edit namelist::
 
-  <path_to_case_dir/casename>/user_nl_<component>
+    <path_to_case_dir>/casename>/user_nl_<component>
 
 - Edit run configuration::
 
-  env_run.xml
+    env_run.xml
 
-- Copy restart files to run directory::
+- Copy restart files to run directory
 
 
 - Submit job::
 
-./case.submit
+    ./case.submit
 
 Create new case
 ^^^^^^^^^^^^^^^
