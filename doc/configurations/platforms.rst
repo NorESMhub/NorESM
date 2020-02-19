@@ -23,7 +23,7 @@ Add instructions here
 Tetralith @ NSC
 ^^^^^^^^^^^^^^^
 
-Configuration files for Tetralith are not yet distributed with the code. Configuration and input files for running NorESM2 are stored in the following folder on Tetralith:
+Configuration files for running NorESM2 on Tetralith are distributed in the featureCESM2.1.0-OsloDevelopment branch. If Tetralith configurations are missing in your copy of the model the files can be found in the following folder on Tetralith:
 
 ::
 
