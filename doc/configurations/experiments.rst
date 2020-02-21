@@ -3,12 +3,12 @@
 Experimets
 ==========
 
-NorESM is part of the CESM family of earth system models and shares a lot of the configuration options with CESM. Many of the simulation configuration settigns are defined by the so called compsets.
+NorESM is part of the CESM family of earth system models and shares a lot of the configuration options with CESM. Many of the simulation configuration settings are defined by the so called compsets.
 
 Basic case set up, compilation and job submission with NorESM
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-This is a general description/checklist for how to create a new experiment with NorESM. For a quick start guide, see also ref:newbie-guide.rst The case creation step is explained in more detail below.
+This is a general description/checklist for how to create a new experiment with NorESM. For a quick start guide, see also :ref:`newbie-guide`. The case creation step is explained in more detail below.
 
 - Create a case::
 
@@ -65,10 +65,11 @@ For extra aerosol output add the following configuration option
 
 --user-mods-dir cmip6_noresm_*
 
-cmip6_noresm_DECK  
-cmip6_noresm_hifreq  
-cmip6_noresm_hifreq_xaer  
-cmip6_noresm_xaer  
+
+| cmip6_noresm_DECK  
+| cmip6_noresm_hifreq  
+| cmip6_noresm_hifreq_xaer  
+| cmip6_noresm_xaer  
 
 For more details about the user-mod-dir options, chck this folder::
 
@@ -174,7 +175,7 @@ Atmospheric grids
 
 | f19_f19 - atm lnd 1.9x2.5  
 | f09_f09 - atm lnd 0.9x1.25  
-
+| f09_f09_mg17
 
 Ocean grids
 ^^^^^^^^^^^
@@ -192,7 +193,7 @@ Which is the CMIP6 grid?
 
 | f09_tn11   - atm lnd 0.9x1.25, ocnice tnx1v1
 | f09_tn13   - atm lnd 0.9x1.25, ocnice tnx1v3
-| f09_tn14   - atm lnd 0.9x1.25, ocnice tnx1v4
+| f09_tn14   - atm lnd 0.9x1.25, ocnice tnx1v4  CMIP6 grid?
 | f09_tn0251 - atm lnd 0.9x1.25, ocnice tnx0.25v1
 | f09_tn0253 - atm lnd 0.9x1.25, ocnice tnx0.25v3
 | f19_tn11   - atm lnd 1.9x2.5, ocnice tnx1v1
@@ -218,6 +219,10 @@ Setting up an AMIP simulation
 
 Step by step guide for AMIP/fixed SST simulation.
 
+Use a NF compset. Default SST and sea ice is ::
+
+  sst_HadOIBl_bc_0.9x1.25_1850_2017_c180507.nc
+
 
 Setting up a nudged simulation
 ''''''''''''''''''''''''''''''
@@ -232,9 +237,14 @@ ERA-interim nudging data for the time period 2000-01-01 to 2018-03-31 (f09f09_30
   <cesm_input_data>/inputdata/noresm-only/inputForNudging/ERA_f09f09_30L_days
 
 
-Create a new case with a compset that supports nudging. Which is this for NorESM2/CAM6?
+Create a new case with a compset that supports nudging e.g. NFHISTnorpddmsbcsdyn.
 
-Add info here when available!!!
+Example case creation for nudged simulation:
+::
+
+  ./create_newcase --case /path/to/cases/<nudged_case_name> --compset NFHISTnorpddmsbcsdyn --res f09_f09_mg17 --mach <machine> --run-unsupported --user-mods-dir cmip6_noresm_fsst_xaer
+
+Edit `env_run.xml` to change initial conditions. See below for configuring a hybrid simulation.
 
 Link to the ERA-interim metdata in the user namelist for cam, user_nl_cam. Remember to choose the files corresponding to your resolution (examples below are for f09_f09 and 32(?? Isn't it 30?) levels in the vertical). Link also to the ERA-topography file: 
 
@@ -324,10 +334,31 @@ Setting up a hybrid simulation
 
 Step by step guide for hybrid simulation/restart.
 
+When the case is created and compiled, edit `env_run.xml`. Below is an example for restart with CMIP6 historical initial conditions::
 
 
 
+    <entry id="RUN_TYPE" value="hybrid">
+
+    <entry id="RUN_REFDIR" value="path/to/restars">                  # does this work?
+
+    <entry id="RUN_REFCASE" value="NHISTfrc2_f09_tn14_20191025">     # Experiment name for restart files
+
+    <entry id="RUN_REFDATE" value="2015-01-01">                      # date of restart files
+
+    <entry id="RUN_STARTDATE" value="2015-01-01">                    # date in simulation
+
+    <entry id="GET_REFCASE" value="TRUE">                            # get refcase from outside rundir
+
+If it is not possible to link directly to restarts, copy the restart files and rpointer files to the run directory. Below is example changes to `env_run.xml`::
 
 
+    <entry id="RUN_TYPE" value="hybrid">
 
+    <entry id="RUN_REFCASE" value="NHISTfrc2_f09_tn14_20191025">     # Experiment name for restart files
 
+    <entry id="RUN_REFDATE" value="2015-01-01">                      # date of restart files
+    
+    <entry id="RUN_STARTDATE" value="2015-01-01">                    # date in simulation
+    
+    <entry id="GET_REFCASE" value="FALSE">                           # get refcase from outside rundir
