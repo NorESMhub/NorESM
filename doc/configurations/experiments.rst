@@ -232,30 +232,35 @@ Step by step guide for nudged simulation.
 Nudge to ERA-interim reanalysis
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-ERA-interim nudging data for the time period 2000-01-01 to 2018-03-31 (f09f09_30L) is available from the NorESM input data repository. This data was prepared by Inger Helene Karset who should be acknowledged when this data is used. The path to the nudging data in the cesm input data folder is typically::
+ERA-interim nudging data for the time period 2000-01-01 to 2018-03-31 (f09f09_30L) and 2001-01-01 to 2016-01-31 (f09f09_32L) is available from the NorESM input data repository. This data was prepared by Inger Helene Karset who should be acknowledged when this data is used. The path to the nudging data in the cesm input data folder is typically::
 
-  <cesm_input_data>/inputdata/noresm-only/inputForNudging/ERA_f09f09_30L_days
+  <cesm_input_data>/inputdata/noresm-only/inputForNudging/ERA_f09f09_32L_days
 
 
 Create a new case with a compset that supports nudging e.g. NFHISTnorpddmsbcsdyn.
 
-Example case creation for nudged simulation:
+Example case creation for nudged simulation with NorESM2:
 ::
 
   ./create_newcase --case /path/to/cases/<nudged_case_name> --compset NFHISTnorpddmsbcsdyn --res f09_f09_mg17 --mach <machine> --run-unsupported --user-mods-dir cmip6_noresm_fsst_xaer
 
-Edit `env_run.xml` to change initial conditions. See below for configuring a hybrid simulation.
+Edit ``env_run.xml`` to change initial conditions. See below for configuring a hybrid simulation.
 
-Link to the ERA-interim metdata in the user namelist for cam, user_nl_cam. Remember to choose the files corresponding to your resolution (examples below are for f09_f09 and 32(?? Isn't it 30?) levels in the vertical). Link also to the ERA-topography file: 
+Link to the ERA-interim metdata in the user namelist for cam, user_nl_cam. Remember to choose the files corresponding to your resolution (examples below are for f09_f09 and 32 levels in the vertical for NorESM2). Link also to the ERA-topography file: 
 
 ::
 
   user_nl_cam
     &metdata_nl
-    met_data_file = '/work/shared/noresm/inputdata/noresm-only/inputForNudging/ERA_f09f09_30L_days/2001-01-01.nc'
-    met_filenames_list = '/work/shared/noresm/inputdata/noresm-only/inputForNudging/ERA_f09f09_30L_days/fileList2001-2015.txt'
+    met_data_file = '/work/shared/noresm/inputdata/noresm-only/inputForNudging/ERA_f09f09_32L_days/2001-01-01.nc'
+    met_filenames_list = '/work/shared/noresm/inputdata/noresm-only/inputForNudging/ERA_f09f09_32L_days/fileList2001-2015.txt'
     &cam_inparm
-    bnd_topo = '/work/shared/noresm/inputdata/noresm-only/inputForNudging/ERA_f09f09_30L_days/ERA_bnd_topo.nc'
+    bnd_topo = '/work/shared/noresm/inputdata/noresm-only/inputForNudging/ERA_f09f09_32L_days/ERA_bnd_topo_noresm2_20191023.nc
+
+
+If no appropriate ``met_filenames_list`` is available, you can creat one::
+  
+  ls -d -1 $PWD/<pattern>*.nc > fileList.txt
 
 
 When looking at aerosol indirect effects, it's recommended to nudge only U, V and PS: 
@@ -334,31 +339,22 @@ Setting up a hybrid simulation
 
 Step by step guide for hybrid simulation/restart.
 
-When the case is created and compiled, edit `env_run.xml`. Below is an example for restart with CMIP6 historical initial conditions::
+When the case is created and compiled, edit ``env_run.xml``. Below is an example for restart with CMIP6 historical initial conditions::
 
 
 
     <entry id="RUN_TYPE" value="hybrid">
-
-    <entry id="RUN_REFDIR" value="path/to/restars">                  # does this work?
-
-    <entry id="RUN_REFCASE" value="NHISTfrc2_f09_tn14_20191025">     # Experiment name for restart files
-
+    <entry id="RUN_REFDIR" value="path/to/restars">                  # path to restarts
+    <entry id="RUN_REFCASE" value="NHISTfrc2_f09_tn14_20191025">     # experiment name for restart files
     <entry id="RUN_REFDATE" value="2015-01-01">                      # date of restart files
-
     <entry id="RUN_STARTDATE" value="2015-01-01">                    # date in simulation
-
     <entry id="GET_REFCASE" value="TRUE">                            # get refcase from outside rundir
 
-If it is not possible to link directly to restarts, copy the restart files and rpointer files to the run directory. Below is example changes to `env_run.xml`::
+If it is not possible to link directly to restarts, copy the restart files and rpointer files to the run directory. Below is example changes to ``env_run.xml``::
 
 
     <entry id="RUN_TYPE" value="hybrid">
-
     <entry id="RUN_REFCASE" value="NHISTfrc2_f09_tn14_20191025">     # Experiment name for restart files
-
     <entry id="RUN_REFDATE" value="2015-01-01">                      # date of restart files
-    
     <entry id="RUN_STARTDATE" value="2015-01-01">                    # date in simulation
-    
     <entry id="GET_REFCASE" value="FALSE">                           # get refcase from outside rundir
