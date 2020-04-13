@@ -38,7 +38,7 @@ defines what compset you will be using. A list of compsets can be found **here**
 a creation of a new case can look like this
 :: 
 
-  ./create_newcase -case ../../cases/$CASENAME -mach $MACHINE -res f19_g16 -compset $COMPSET
+  ./create_newcase --case ../../cases/$CASENAME --mach $MACHINE --res f19_g16 --compset $COMPSET
 
 3. Configure the case
 ---------------------
