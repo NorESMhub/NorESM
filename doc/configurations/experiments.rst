@@ -129,17 +129,40 @@ The essential file to edit for a new coupled NorESM compset is::
 and for a new AMIP NorESM compset is:: 
 
   <noresm_base>/components/cam/cime_config/config_compsets.xml
+  
+This examples shows how to simply add a to the "N1850frc2" compset: The N1850frc2 is set as::
 
-This examples shows how to simply add a to the "F_AMIP_CAM5" compset:
+  <compset>
+    <alias>N1850frc2</alias>
+    <lname>1850_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_MICOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+  </compset>
+ 
+where '_' seperate between model components::
+  _<MODEL>
 
-Under " ", add
+and '%' sets the component-specific configuration::
 
- AMIP_CAM5%OSLO_CLM40%SP_CICE%PRES_DOCN%DOM_RTM_SGLC_SWAV
+  %MODEL_CONFIGURATION
 
-The "CAM5%OSLO" options have to be defined, so a line like this is
-needed:
+E.g. 1850_CAM60%NORESM%FRC2
+  - Forcing and input files read from pre-industrial conditions
+  - Build CAM6 (the atmosphere model) with NorESM configuration and FRC2 organized emission files
+CLM50%BGC-CROP
+  - Build CLM5 (land model) with Biogeochemistry and prognotic crop package 
+CICE%NORESM-CMIP6
+  - Build CICE (sea-ice model) with NorESM2-CMIP6 setup 
+MICOM%ECO
+  - Build MICOM (ocean model BLOM) including the iHAMOCC
+MOSART
+  - Build MOSART (river runoff model) with default configurations
+SGLC_SWAV
+  - The SGLC (land-ice) and SWAV (ocean-wave) models are - not interactive, but used only to satisy the interface requirements 
+BGC%BDRDDMS
+   - ocean biogeochemistry model iHAMOCC run with interactive DMS
 
- -phys cam5 -cam_oslo aerlife
+
+
+NEED TO INCLUDE AN AMIP COMPSET AS WELL
 
 The compset needs a description, we also need the line cam 5 physcs and
 oslo aerosols
