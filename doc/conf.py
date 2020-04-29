@@ -19,7 +19,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'norESM'
+project = 'NorESM'
 copyright = '2018, Anne Fouilloux'
 author = 'Anne Fouilloux'
 

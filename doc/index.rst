@@ -8,11 +8,14 @@ Welcome to NorESM documentation!
 
 The purpose of the norESM documentation is to provide a common place for NorESM users and developers to share information. How is the code organised? What tools are you using? Which version should I run for what purpose? etc.
 
-| The NorESM2 documentation is currently under revision in the github branch noresm2 
-| And rhe corresponding NorESM2 ReadTheDocs can be found here
+
+This is the NorESM2 documentation which is currently being re-organized, under revision.
+
+| The corresponding NorESM2 ReadTheDocs can be found here
 | https://noresm-docs.readthedocs.io/en/noresm2/
 
 If you have any questions or interested in actively participate in the reorganization, create a new issue on github at https://github.com/NorESMhub/NorESM/issues
+
 
 How to contribute
 ------------------
@@ -24,31 +27,14 @@ https://github.com/NorESMhub/NorESM/blob/master/doc/README.md.
 .. toctree::
    :maxdepth: 2
    :caption: Content:
-
+   
    start.rst
-   runmodel/newbie.rst
-   runmodel/advanced.rst
-   runmodel/advancednoresm2.rst
-   runmodel/fluxescrossingboundaries.rst
-   runmodel/cmip6_volcanic_forcing.rst
-   runmodel/cmip6emissionsofshortlivedcomponents.rst
-   runmodel/cmip6greenhousegasConcentrations.rst
-   runmodel/noresm2_output.rst
-   noresm2cesm2.1.0upgrade.rst
-   settingupcamonlinuxpc.rst
-   modeldiagnostics.rst
-   usingtheissuetracker.rst
-   testlist.rst
-   codingguidelinesforhamocc.rst
-   gitbestpractice.rst
-   svnbestpractice.rst
-   svnnorstorehowto.rst
-   uncertainaerosolparameters.rst
-   norstoretape.rst
-   norstorearchive.rst
-   norstoreesgf.rst
-   projects.rst
-   references.rst
+   access/access.rst
+   newbie-guide/newbie-guide.rst
+   configurations/configurations.rst
+   contribute/contribute.rst
+   model-description/model-description.rst
+   faq/faq.rst
 
 
 Search

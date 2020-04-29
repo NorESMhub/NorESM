@@ -1,7 +1,8 @@
 .. _gitbestpractice:
 
-Version control - git/GitHub
+Version control - GitHub
 ============================
+
 
 Obtain a copy of the model (using git)
 ''''''''''''''''''''''''''''''''''''''
