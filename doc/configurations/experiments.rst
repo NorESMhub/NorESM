@@ -13,11 +13,27 @@ This is a general description/checklist for how to create a new experiment with 
 - Create a case::
 
     cd <noresm-base>/cime/scripts
-    ./create_newcase --case <path_to_case_dir/casename> --walltime <time> --compset <compset_name> --res <resolution> --machine <machine_name> --project snic2019-1-2 --output-root <path_to_run_dir/NorESM> --run-unsupported 
+    ./create_newcase --case <path_to_case_dir>/<casename> --walltime <time> --compset <compset_name> --res <resolution> --machine <machine_name> --project <project_name> --user-mods-dir <user_mods_dir> --output-root <path_to_run_dir>/<noresm_run_dir> --run-unsupported 
+   
+  Note!
+  
+  --walltime <time> can be set in env_batch.xml in the case directory after building the new case and is not necessary to include when building a new case
+
+  --output-root <path_to_run_dir>/<noresm_run_dir> only necessary to include if the noresm_run_dir is different from default which is <path_to_run_dir>/noresm/ 
+
+  Example of case creation on Fram::
+
+    ./create_newcase --case ../../../cases/test1910_1 --compset N1850 --res f19_tn14 --machine fram --project snic2019-1-2 --user-mods-dir cmip6_noresm_DECK --run-unsupported
 
   Example of case creation on Tetralith::
 
-    ./create_newcase --case ../cases/test1910_1 --walltime 24:00:00 --compset N1850 --res f19_tn14 --machine tetralith --project snic2019-1-2 --output-root /proj/bolinc/users/${USER}/NorESM2/noresm2_out --run-unsupported
+    ./create_newcase --case ../../../cases/test1910_1 --walltime 24:00:00 --compset N1850 --res f19_tn14 --machine tetralith --project snic2019-1-2 --output-root /proj/bolinc/users/${USER}/NorESM2/noresm2_out --run-unsupported
+    
+- Create a clone::
+  
+    cd <noresm-base>/cime/scripts
+    ./create_clone --case <path_to_case_dir>/<casename> --clone <path_to_case_dir>/<casename_of_clone>
+  
 
 - Configure case::
 
@@ -31,12 +47,6 @@ This is a general description/checklist for how to create a new experiment with 
 
     <path_to_case_dir>/casename>/SourceMods/src.<component>
 
-
-- Build model::
-
-    ./case.build
-
-
 - Edit namelist::
 
     <path_to_case_dir>/casename>/user_nl_<component>
@@ -44,6 +54,13 @@ This is a general description/checklist for how to create a new experiment with 
 - Edit run configuration::
 
     env_run.xml
+
+
+- Build model::
+
+    ./case.build
+
+Note! Make sure to make all modifications to user_nl_*, env_*.xml, SourceMods, before you build
 
 - Copy restart files to run directory
 
@@ -75,8 +92,13 @@ For more details about the user-mod-dir options, chck this folder::
 
 <noresm_base>/cime_config/usermods_dirs
 
+
+Creating a clone case
+^^^^^^^^^^^^^^^^^^^^^
+To create clone cases from a control case can be very useful for e.g. sensitivity studies. If you want to make a copy of a case (i.e. identical ./create_newcase command) that can be done by the use of ./create_clone . You only need to give the casename of the new case and the casename of the case which sholud be cloned (copied). The case will have identical set up (env_*.xml, user_nml<component> files and SourceMods) as the clone, but these files can of course be modified before building the case.
+
 Compsets
-''''''''
+^^^^^^^^
 Below some compsets are listed. All predefined compsets for coupled simulations can be found in::
 
   <noresm_base>/cime_config/config_compsets.xml
@@ -98,8 +120,9 @@ Historical configuration up to year 2015(?)
 
 
 Future scenario compsets from 2015(?) to 2100(?)
-
-
+ 
+  
+  
 Creating your own compset
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
