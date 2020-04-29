@@ -95,7 +95,7 @@ For more details about the user-mod-dir options, chck this folder::
 
 Create a clone case
 ^^^^^^^^^^^^^^^^^^^
-To create clone cases from a control case can be very useful for e.g. sensitivity studies. If you want to make a copy of a case (i.e. identical ./create_newcase command) that can be done by the use of ./create_clone . You only need to give the casename of the new case and the casename of the case which sholud be cloned (copied). The case will have identical set up (env_*.xml, user_nml_<component> files and SourceMods) as the clone, but these files can of course be modified before building the case.
+To create clone cases from a control case can be very useful for e.g. sensitivity studies. If you want to make a copy of a case (i.e. identical ./create_newcase command and identical env_*.xml, user_nml_<component> and SourceMods files) that can be done by the use of ./create_clone . You only need to give the casename of the new case and the casename of the case which sholud be cloned (copied). The case will have identical set up (env_*.xml, user_nml_<component> files and SourceMods) as the clone, but these files can of course be modified before building the case.
 
 Compsets
 ^^^^^^^^
