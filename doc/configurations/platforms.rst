@@ -8,17 +8,137 @@ Platforms
 
 Below is a list of platforms where NorESM2 has been installed, including platform specific intructions. 
 
+<noresm-base>: the name of the folder where the model code has been downloaded (cloned from git)
+
 Vilje @ Sigma2
 ^^^^^^^^^^^^^^
-Add instructions here
+Configuration files for running NorESM2 on Vilje are distributed in all branches of the noresm code.
+
+Input data is stored in /work/shared/noresm/inputdata/
+
+Apply for membership in NorESM shared data storage (manager: mben@norceresearch.no) for access to the folder.
+
+The run and archive directories are stored in /work/<user_name>/
+
+You need to make a run directory called "noresm" and an archive directory called "archive" in the /work/<user_name>/ directory
+
+::
+    
+    mkdir /work/<user_name>/noresm
+    mkdir /work/<user_name>/archive
+
+::
+
+Before configring and compiling the model, add  this code
+
+::
+
+      module ()
+     {
+        eval `/usr/bin/modulecmd bash $*`
+     }
+     module load intelcomp/15.0.1 mpt/2.10 python/2.7.9 netcdf/4.3.2
+     export PATH=$PATH:/opt/pbs/default/bin/
+
+::
+
+
+to your .bashrc
+
+::
+
+    cd
+    vi .bashrc
+
+::
+
+Create a new case:
+
+::
+
+    ./create_newcase –case ../../../cases/<casename> --mach vilje –-res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported  
+
+::
 
 Fram @ Sigma2
 ^^^^^^^^^^^^^
-Add instructions here
+Configuration files for running NorESM2 on Fram are distributed in all branches of the noresm code.
+
+Input data is stored in /cluster/shared/noresm/inputdata/
+
+Apply for membership in NorESM shared data storage (manager: mben@norceresearch.no) for access to the folder.
+
+The run and archive directories are stored /cluster/work/users/<user_name>/
+
+You need to make a run directory called "noresm" and an archive directory called "archive" in the /work/<user_name>/ directory
+
+::
+    
+    mkdir /cluster/work/users/<user_name>/noresm
+    mkdir /cluster/work/users/<user_name>/archive
+
+::
+
+
+Create a new case:
+
+::
+
+    ./create_newcase –case ../../../cases/<casename> --mach fram –-res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported  
+
+::
 
 Nebula @ NSC
 ^^^^^^^^^^^^
-Add instructions here
+Configuration files for running NorESM2 on Nebula are distributed in the featureCESM2.1.0-OsloDevelopment branch. If Nebula configurations are missing in your copy of the model the files can be found in the following folder on Nebula:
+
+::
+
+/nobackup/forsk/noresm/nebula_config_noresm2/
+    
+::
+
+Apply for membership in NorESM shared data storage (manager: adag@met.no) for access to the folder.
+
+Copy the files in the above folder to:
+
+::
+
+    cd <noresm-base>/cime/config/cesm/machines/
+    cp /nobackup/forsk/noresm/nebula_config_noresm2/* .
+
+::
+
+Input data is stored in /nobackup/forsk/noresm/inputdata/
+
+The run and archive directories are stored /nobackup/forsk/<user_name>/
+
+You need to make a run directory called "noresm" and an archive directory called "archive" in the /nobackup/forsk/<user_name>/ directory
+
+::
+    
+    mkdir /nobackup/forsk/<user_name>/noresm
+    mkdir /nobackup/forsk/<user_name>/archive
+
+::
+
+Before configring and compiling the model, add export LMOD_QUIET=1 to your .bashrc
+
+::
+
+    cd
+    vi .bashrc
+
+::
+
+Create a new case:
+
+::
+
+    ./create_newcase –case ../../../cases/<casename> --mach nebula –-res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported  
+
+::
+
 
 Tetralith @ NSC
 ^^^^^^^^^^^^^^^
@@ -82,7 +202,7 @@ located in
 
 ::
 
-<noresm-base>/cesm2.1.0/cime/config/cesm/machines/
+<noresm-base>/cime/config/cesm/machines/
 
 ::
 
@@ -165,11 +285,7 @@ Add a compiler entry in this file for your platform with appropriate settings. S
 ::
  
  
- 
- 
- 
- 
- 
+
 config_machines.xml
 ^^^^^^^^^^^^^^^^^^^
  
