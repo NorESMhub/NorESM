@@ -20,15 +20,6 @@ Apply for membership in NorESM shared data storage (manager: mben@norceresearch.
 
 The run and archive directories are stored in /work/<user_name>/
 
-You need to make a run directory called "noresm" and an archive directory called "archive" in the /work/<user_name>/ directory
-
-::
-    
-    mkdir /work/<user_name>/noresm
-    mkdir /work/<user_name>/archive
-
-::
-
 Before configring and compiling the model, add  this code
 
 ::
@@ -70,15 +61,6 @@ Apply for membership in NorESM shared data storage (manager: mben@norceresearch.
 
 The run and archive directories are stored /cluster/work/users/<user_name>/
 
-You need to make a run directory called "noresm" and an archive directory called "archive" in the /work/<user_name>/ directory
-
-::
-    
-    mkdir /cluster/work/users/<user_name>/noresm
-    mkdir /cluster/work/users/<user_name>/archive
-
-::
-
 
 Create a new case:
 
@@ -112,15 +94,6 @@ Copy the files in the above folder to:
 Input data is stored in /nobackup/forsk/noresm/inputdata/
 
 The run and archive directories are stored /nobackup/forsk/<user_name>/
-
-You need to make a run directory called "noresm" and an archive directory called "archive" in the /nobackup/forsk/<user_name>/ directory
-
-::
-    
-    mkdir /nobackup/forsk/<user_name>/noresm
-    mkdir /nobackup/forsk/<user_name>/archive
-
-::
 
 Before configring and compiling the model, add export LMOD_QUIET=1 to your .bashrc
 
