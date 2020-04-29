@@ -20,7 +20,7 @@ Apply for membership in NorESM shared data storage (manager: mben@norceresearch.
 
 The run and archive directories are stored in /work/<user_name>/
 
-Before configring and compiling the model, add  this code
+Before configuring and compiling the model, add  this code
 
 ::
 
@@ -61,7 +61,6 @@ Apply for membership in NorESM shared data storage (manager: mben@norceresearch.
 
 The run and archive directories are stored /cluster/work/users/<user_name>/
 
-
 Create a new case:
 
 ::
@@ -95,7 +94,7 @@ Input data is stored in /nobackup/forsk/noresm/inputdata/
 
 The run and archive directories are stored /nobackup/forsk/<user_name>/
 
-Before configring and compiling the model, add export LMOD_QUIET=1 to your .bashrc
+Before configuring and compiling the model, add export LMOD_QUIET=1 to your .bashrc
 
 ::
 
@@ -130,14 +129,14 @@ Copy the files in the above folder to:
 
 ::
 
-    cd <noresm-base>/cesm2.1.0/cime/config/cesm/machines/
+    cd <noresm-base>/cime/config/cesm/machines/
     cp /proj/cesm_input-data/tetralith_config_noresm2/* .
 
 ::
 
 Input data is stored /proj/cesm_input-data/ 
 
-Before configring and compiling the model, clear your environment and load the following modules:
+Before configuring and compiling the model, clear your environment and load the following modules:
 
 
 ::
@@ -154,7 +153,7 @@ Create a new case:
 
 ::
 
-./create_newcase –case ../cases/<casename> -mach triolith –res <resolution> -compset <compset_name> -pecount M -ccsm_out <NorESM_ouput_folder>
+./create_newcase –case ../../../cases/<casename> -mach triolith –res <resolution> -compset <compset_name> -pecount M -ccsm_out <NorESM_ouput_folder>
 
 ::
 
