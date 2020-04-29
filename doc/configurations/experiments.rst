@@ -1,7 +1,7 @@
 .. _experiments:
 
-Experimets
-==========
+Experiments
+===========
 
 NorESM is part of the CESM family of earth system models and shares a lot of the configuration options with CESM. Many of the simulation configuration settings are defined by the so called compsets.
 
@@ -19,7 +19,7 @@ This is a general description/checklist for how to create a new experiment with 
   
   --walltime <time> can be set in env_batch.xml in the case directory after building the new case and is not necessary to include when building a new case
 
-  --output-root <path_to_run_dir>/<noresm_run_dir> only necessary to include if the noresm_run_dir is different from default which is <path_to_run_dir>/noresm/ 
+  --output-root <path_to_run_dir>/<noresm_run_dir> only necessary to include if the noresm_run_dir differ from default <path_to_run_dir>/noresm/ 
 
   Example of case creation on Fram::
 
@@ -60,9 +60,9 @@ This is a general description/checklist for how to create a new experiment with 
 
     ./case.build
 
-Note! Make sure to make all modifications to user_nl_*, env_*.xml, SourceMods, before you build
+Make sure to include all modifications to user_nl_*, env_*.xml, SourceMods etc. before you build
 
-- Copy restart files to run directory
+- Copy restart files to run directory (if the case is a branch or a hybrid experiment) 
 
 
 - Submit job::
@@ -93,9 +93,9 @@ For more details about the user-mod-dir options, chck this folder::
 <noresm_base>/cime_config/usermods_dirs
 
 
-Creating a clone case
-^^^^^^^^^^^^^^^^^^^^^
-To create clone cases from a control case can be very useful for e.g. sensitivity studies. If you want to make a copy of a case (i.e. identical ./create_newcase command) that can be done by the use of ./create_clone . You only need to give the casename of the new case and the casename of the case which sholud be cloned (copied). The case will have identical set up (env_*.xml, user_nml<component> files and SourceMods) as the clone, but these files can of course be modified before building the case.
+Create a clone case
+^^^^^^^^^^^^^^^^^^^
+To create clone cases from a control case can be very useful for e.g. sensitivity studies. If you want to make a copy of a case (i.e. identical ./create_newcase command) that can be done by the use of ./create_clone . You only need to give the casename of the new case and the casename of the case which sholud be cloned (copied). The case will have identical set up (env_*.xml, user_nml_<component> files and SourceMods) as the clone, but these files can of course be modified before building the case.
 
 Compsets
 ^^^^^^^^
