@@ -72,23 +72,24 @@ Make sure to include all modifications to user_nl_*, env_*.xml, SourceMods etc. 
 Create new case
 ^^^^^^^^^^^^^^^
 
-To start a new experiment you need to create a case. When creating a case a case folder <path_to_case_dir/casename> will be created that contains all the settings for your experiment
+To start a new experiment you need to create a case. When creating a case a case folder <path_to_case_dir>/<casename> will be created that contains all the settings for your experiment
 
 The case creation contains a compset option. A compset is a collection of predefined setting that defines your experiment setup, including which model components that are activated. Some of the available compsets are described below.
 
 The case folder contains predefined namelist (with namelist settings partly depending on compset option). The default namelist options for the case can be overwritten by changing/adding the new namelist options in the user_nl_<component>
 
-For extra aerosol output add the following configuration option
+Several configuration options are available in the usermods directories in <noresm_base>/cime_config/usermods_dirs/  . These folders contain information about output variables and frequencies from clm (land) and cam (atmosphere). In addition one SourceMod is included in SourceMods/src.cam/preprocessorDefinitions.h to define if AEROFFL and AEROCOM are included for extra aerosol diagnostics (for more details about the aerosol diagnostics see )
 
---user-mods-dir cmip6_noresm_*
+Remeber that the amount of diagnostics and the output frequency have a huge impact on both the run time and storage. 
 
+--user-mods-dir cmip6_noresm_* ::
 
-| cmip6_noresm_DECK  
-| cmip6_noresm_hifreq  
-| cmip6_noresm_hifreq_xaer  
-| cmip6_noresm_xaer  
+  cmip6_noresm_DECK (AEROFFL)    
+  cmip6_noresm_hifreq (high frequency output, AEROFFL)    
+  cmip6_noresm_hifreq_xaer (high frecuency output, AEROFFL and AEROCOM)   
+  cmip6_noresm_xaer (AEROFFLand AEROCOM)    
 
-For more details about the user-mod-dir options, chck this folder::
+For more details about the user-mod-dir options, check this folder::
 
 <noresm_base>/cime_config/usermods_dirs
 
@@ -103,34 +104,31 @@ Below some compsets are listed. All predefined compsets for coupled simulations 
 
   <noresm_base>/cime_config/config_compsets.xml
   
-And predefined compsets for AMIP/atmsophere only simulations can be found in::  
+And predefined compsets for AMIP (atmsophere only) simulations can be found in::  
 
   <noresm_base>/components/cam/cime_config/config_compsets.xml
   
-The compsets starting with N are NorESM coupled configurations. Compsets starting with NF are NorESM AMIP/atmosphere only configurations.  
+The compsets starting with N are NorESM coupled configurations. Compsets starting with NF are NorESM AMIP (atmosphere only) configurations.  
 
-**N1850 and N1850frc2 (uses differently organized emission files : FRC2)**
-Coupled configuration for NorESM for pre-industrial conditions.
+**N1850 and N1850frc2 (uses differently organized emission files : FRC2)**  
+  Coupled configuration for NorESM for pre-industrial conditions.
 
-**NHIST and NHISTfrc2  (uses differently organized emission files : FRC2)**
+**NHIST and NHISTfrc2  (uses differently organized emission files : FRC2)**  
+  Historical configuration up to year 2015
 
-Historical configuration up to year 2015(?)
-
-**NSSP126frc2, NSSP245frc2, NSSP370frc2, NSSP585frc2**
-
-
-Future scenario compsets from 2015(?) to 2100(?)
+**NSSP126frc2, NSSP245frc2, NSSP370frc2, NSSP585frc2**  
+  Future scenario compsets from 2015 to 2100
  
-  
   
 Creating your own compset
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+The essential file to edit for a new coupled NorESM compset is:: 
 
--  NOTE THAT THE COMPSETS MENTIONED IN THIS EXAMPLE ARE NO LONGER
-      MAINTAINED! THE GENERAL EXPLANATION AND IDEAS ARE STILL VALID!
+  <noresm_base>/cime_config/config_compsets.xml
+  
+and for a new AMIP NorESM compset is:: 
 
-The essential file to edit is
-~/noresm/scripts/ccsm_utils/Case.template/config_compsets.xml
+  <noresm_base>/components/cam/cime_config/config_compsets.xml
 
 This examples shows how to simply add a to the "F_AMIP_CAM5" compset:
 
