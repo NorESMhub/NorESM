@@ -185,6 +185,31 @@ Add a batch_system entry in this file for your platform with appropriate setting
 
 Machine example with SLURM batch system
 
+on Fram:
+
+::
+
+  <batch_system MACH="fram" type="slurm">
+    <batch_submit>sbatch</batch_submit>
+    <submit_args>
+      <arg flag="--time" name="$JOB_WALLCLOCK_TIME"/>
+      <arg flag="-p" name="$JOB_QUEUE"/>
+      <arg flag="--account" name="$PROJECT"/>
+    </submit_args>
+    <directives>
+      <directive> --ntasks={{ total_tasks }}</directive>
+      <directive> --export=ALL</directive>
+      <directive> --switches=1</directive>
+    </directives>
+    <queues>
+      <queue walltimemax="00:59:00" nodemin="1" nodemax="288" default="true">normal</queue>
+    </queues>
+  </batch_system>
+
+::
+
+On Tetralith:
+
 ::
 
   <batch_system type="slurm" MACH="tetralith">
