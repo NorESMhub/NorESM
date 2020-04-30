@@ -13,33 +13,22 @@ This sections lists the computers where NorESM2 has been installed, including pl
 
 
 
-
-
-
 Setting up an experiment
 ''''''''''''''''''''''''
 
-Basic case set up, compilation and job submission with NorESM
+Basic case creation, set up, compilation and job submission with NorESM
 
 :ref:`experiments`
 
-Input data
-''''''''''
-:ref:`input`
+Setting the environment for the experiment
+''''''''''''''''''''''''''''''''''''''''''
+Set the environment for an experiment with NorESM2. E.g. number of nodes to use, initial conditions, length of simulation, creation of restart files, set run time and archiving time, code changes +++
 
-Output data
-'''''''''''
-:ref:`output`
+:ref:`experiment_environment`
 
 Quality control
 '''''''''''''''
 :ref:`quality_control`
-
-
-
- 
-
-
 
 
 Atmosphere only (AMIP) simulations
