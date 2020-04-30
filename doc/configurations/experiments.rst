@@ -17,7 +17,7 @@ This is a general description/checklist for how to create a new experiment with 
    
   Note!
   
-  --walltime <time> can be set in env_batch.xml in the case directory after building the new case and is not necessary to include when building a new case
+  --walltime <time> can be set in env_batch.xml in the case directory after building the new case and is not necessary to include when creating a new case
 
   --output-root <path_to_run_dir>/<noresm_run_dir> only necessary to include if the noresm_run_dir differ from default <path_to_run_dir>/noresm/ 
 
@@ -130,80 +130,72 @@ and for a new AMIP NorESM compset is::
 
   <noresm_base>/components/cam/cime_config/config_compsets.xml
   
-This examples shows how to simply add a to the "N1850frc2" compset: The N1850frc2 is set as::
+This examples shows how to simply add the "N1850frc2" compset to config_compsets.xml . In <noresm_base>/cime_config/config_compsets.xml the N1850frc2 is set as::
 
   <compset>
     <alias>N1850frc2</alias>
     <lname>1850_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_MICOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
   </compset>
  
-where '_' seperate between model components::
-  _<MODEL>
+where 
 
+<alias>COMPSETNAME</alias> 
+sets the compsets name used when building a new case. Make sure to use a new and unique compset name. The details of the compset i.e. which models components and component-specific configurations to use are set in 
+
+<lname>1850_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_MICOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>. It is also possible to just add that line (without the <lname>) when creating a new case. 
+
+'_' seperates between model components::
+  _<MODEL>
+  
 and '%' sets the component-specific configuration::
 
-  %MODEL_CONFIGURATION
+ %MODEL_CONFIGURATION
 
-E.g. 1850_CAM60%NORESM%FRC2
-  - Forcing and input files read from pre-industrial conditions
-  - Build CAM6 (the atmosphere model) with NorESM configuration and FRC2 organized emission files
-CLM50%BGC-CROP
-  - Build CLM5 (land model) with Biogeochemistry and prognotic crop package 
-CICE%NORESM-CMIP6
-  - Build CICE (sea-ice model) with NorESM2-CMIP6 setup 
-MICOM%ECO
-  - Build MICOM (ocean model BLOM) including the iHAMOCC
-MOSART
-  - Build MOSART (river runoff model) with default configurations
-SGLC_SWAV
-  - The SGLC (land-ice) and SWAV (ocean-wave) models are - not interactive, but used only to satisy the interface requirements 
-BGC%BDRDDMS
+E.g. 
+
+- 1850_CAM60%NORESM%FRC2
+   - Forcing and input files read from pre-industrial conditions (1850). If you need a historical run replace 1850 with HIST
+   - Build CAM6.0 (the atmosphere model) with NorESM configuration and FRC2 organized emission files
+- CLM50%BGC-CROP
+   - Build CLM5 (land model) with Biogeochemistry and prognotic crop package 
+- CICE%NORESM-CMIP6
+   - Build CICE (sea-ice model) with NorESM2-CMIP6 setup 
+- MICOM%ECO
+   - Build MICOM (ocean model BLOM) including the iHAMOCC
+- MOSART
+   - Build MOSART (river runoff model) with default configurations
+- SGLC_SWAV
+   - The SGLC (land-ice) and SWAV (ocean-wave) models are not interactive, but used only to satisy the interface requirements 
+- BGC%BDRDDMS
    - ocean biogeochemistry model iHAMOCC run with interactive DMS
 
 
-
-NEED TO INCLUDE AN AMIP COMPSET AS WELL
-
-The compset needs a description, we also need the line cam 5 physcs and
-oslo aerosols
-
-We could also define a specific use-case (namelist) for our compset.
-This would need a line like:
-
-::
-
-  my_namelist 
-
-::
-
-This would only work if the file my_namelist.xml exists as
-
-::
-
-  noresm/models/atm/cam/bld/namelist_files/use_cases/my_namelist.xml
-::
   
-**(I don't understand what this describes) Why does it work to change config_compsets.xml ?**
+This examples shows how to simply add the "NFHIST" compset to config_components.xml. In <noresm_base>/components/cam/cime_config/config_compsets.xml the NFHIST is set as::
+    
 
+ <compset>
+    <alias>NFHIST</alias>
+    <lname>HIST_CAM60%NORESM%FRC2_CLM50%SP_CICE%PRES_DOCN%DOM_MOSART_SGLC_SWAV</lname>
+    <!--science_support grid="f09_f09_mg17"/-->
+ </compset>  
 
-In NorESM there are 3 new config-options for CAM:
+E.g. 
 
-| `` * -cam-oslo aerlife (turns on transport of oslo tracers)``
-| `` * -cam-oslo dirind  (also turns on interaction with radiation)``
-| `` * -cam-oslo warmclouds (also turns on interaction with warm clouds)``
-
-They change number of tracers and turn on different preprocessor flags
-in in a perl script called "configure", see:
-models/atm/cam/bld/configure
-
-To understand the implementation do: svn diff -r 202
-models/atm/cam/bld/configure
-
-The new oslo-options also need to be defined, see
-models/atm/cam/bld/config_files/definition.xml
-
-To see how these new options were added, do: svn diff -r 202
-models/atm/cam/bld/config_files/definition.xml
+- HIST_CAM60%NORESM%FRC2
+   - Forcing and input files read from historical conditions (1850 - 2015)
+   - Build CAM6.0 (the atmosphere model) with NorESM configuration and FRC2 organized emission files
+   - Note for some AMIP compsets CAM60%PTAERO may be used instead of CAM60%NORESM. Don't worry, those are identical.
+- CLM50%SP
+   - Build CLM5 (land model) with satellite phenology, prescribed vegetation
+- CICE%PRES
+   - Build CICE (sea-ice model) with prescribed sea-ice
+- DOCN%DOM
+   - Build data ocean with fixed SSTs. Which SST files to use can be set in user_nl_cice after in the case directory after creating the case if different from the default files. If you want to run with a slab ocean slab: DOCN%SOM
+- MOSART
+   - Build MOSART (river runoff model) with default configurations
+- SGLC_SWAV
+   - The SGLC (land-ice) and SWAV (ocean-wave) models are not interactive, but used only to satisy the interface requirements 
 
 
 Resolution
