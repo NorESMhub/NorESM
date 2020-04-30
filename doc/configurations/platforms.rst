@@ -227,7 +227,40 @@ config_compilers.xml
 ^^^^^^^^^^^^^^^^^^^^
  
 Add a compiler entry in this file for your platform with appropriate settings. See examples below.
- 
+
+On Fram:
+
+::
+
+   <compiler MACH="fram">
+     <CPPDEFS>
+       <append> -D$(OS) </append>
+     </CPPDEFS>
+     <FFLAGS>
+       <append> -xCORE-AVX2 -no-fma </append>
+     </FFLAGS>
+     <NETCDF_PATH>$(EBROOTNETCDFMINFORTRAN)</NETCDF_PATH>
+     <PNETCDF_PATH>$(EBROOTPNETCDF)</PNETCDF_PATH>
+     <MPI_PATH>$(MPI_ROOT)</MPI_PATH>
+     <MPI_LIB_NAME>mpi</MPI_LIB_NAME>
+     <FFLAGS>
+       <append DEBUG="FALSE"> -O2 </append>
+       <append MODEL="micom"> -r8 </append>
+       <append MODEL="cam"> -init=zero,arrays </append>
+     </FFLAGS>
+     <MPICC> mpiicc </MPICC>
+     <MPICXX> mpiicpc </MPICXX>
+     <MPIFC> mpiifort </MPIFC>
+     <PIO_FILESYSTEM_HINTS>lustre</PIO_FILESYSTEM_HINTS>
+     <SLIBS>
+       <append>-mkl=sequential -lnetcdff -lnetcdf</append>
+     </SLIBS>
+  </compiler>
+
+::
+
+On Tetralith:
+
 ::
  
    <compiler MACH="tetralith" COMPILER="intel">
@@ -262,7 +295,74 @@ config_machines.xml
 ^^^^^^^^^^^^^^^^^^^
  
 Add a machine entry in this file for your platform with appropriate settings. See examples below.
- 
+
+On Fram:
+
+::
+
+  <machine MACH="fram">
+    <DESC>Lenovo NeXtScale M5, 32-way nodes, dual 16-core Xeon E5-2683@2.10GHz, 64 GiB per node, os is Linux, batch system       is SLURM</DESC>
+    <OS>LINUX</OS>
+    <COMPILERS>intel</COMPILERS>
+    <MPILIBS>impi</MPILIBS>
+    <CIME_OUTPUT_ROOT>/cluster/work/users/$USER/noresm</CIME_OUTPUT_ROOT>
+    <DIN_LOC_ROOT>/cluster/shared/noresm/inputdata</DIN_LOC_ROOT>
+    <DIN_LOC_ROOT_CLMFORC>UNSET</DIN_LOC_ROOT_CLMFORC>
+    <DOUT_S_ROOT>/cluster/work/users/$USER/archive/$CASE</DOUT_S_ROOT>
+    <DOUT_L_ROOT>/projects/NS2345K/noresm/cases</DOUT_L_ROOT>
+    <DOUT_L_HOSTNAME>login.nird.sigma2.no</DOUT_L_HOSTNAME>
+    <!--DOUT_L_MSROOT>UNSET</DOUT_L_MSROOT-->
+    <BASELINE_ROOT>UNSET</BASELINE_ROOT>
+    <CCSM_CPRNC>UNSET</CCSM_CPRNC>
+    <GMAKE_J>8</GMAKE_J>
+    <BATCH_SYSTEM>slurm</BATCH_SYSTEM>
+    <SUPPORTED_BY>noresmCommunity</SUPPORTED_BY>
+    <MAX_TASKS_PER_NODE>32</MAX_TASKS_PER_NODE>
+    <MAX_MPITASKS_PER_NODE>32</MAX_MPITASKS_PER_NODE>
+    <PROJECT_REQUIRED>TRUE</PROJECT_REQUIRED>
+    <mpirun mpilib="mpi-serial">
+      <executable></executable>
+    </mpirun>
+    <mpirun mpilib="default">
+      <executable>mpirun</executable>
+    </mpirun>
+    <module_system type="module">
+      <init_path lang="perl">/cluster/software/lmod/lmod/init/perl</init_path>
+      <init_path lang="python">/cluster/software/lmod/lmod/init/env_modules_python.py</init_path>
+      <init_path lang="csh">/cluster/software/lmod/lmod/init/csh</init_path>
+      <init_path lang="sh">/cluster/software/lmod/lmod/init/sh</init_path>
+      <cmd_path lang="perl">/cluster/software/lmod/lmod/libexec/lmod perl</cmd_path>
+      <cmd_path lang="python">/cluster/software/lmod/lmod/libexec/lmod python</cmd_path>
+      <cmd_path lang="sh">module</cmd_path>
+      <cmd_path lang="csh">module</cmd_path>
+      <modules>
+        <command name="purge">--force</command>
+        <command name="load">StdEnv</command>
+        <!-- djlo Deactivated THT settings -->
+        <!--command name="load">intel/2016a</command-->
+        <!--command name="load">netCDF-Fortran/4.4.3-intel-2016a</command-->
+        <!--command name="load">PnetCDF/1.8.1-intel-2016a</command-->
+        <!--command name="load">CMake/3.5.2-intel-2016a</command-->
+        <command name="load">intel/2018a</command>
+        <command name="load">netCDF-Fortran/4.4.4-intel-2018a-HDF5-1.8.19</command>
+        <command name="load">PnetCDF/1.8.1-intel-2018a</command>
+        <command name="load">CMake/3.9.1</command>
+      </modules>
+    </module_system>
+    <environment_variables>
+      <env name="KMP_STACKSIZE">64M</env>
+      <env name="I_MPI_EXTRA_FILESYSTEM_LIST">lustre</env>
+      <env name="I_MPI_EXTRA_FILESYSTEM">on</env>
+    </environment_variables>
+    <resource_limits>
+      <resource name="RLIMIT_STACK">-1</resource>
+    </resource_limits>
+  </machine>
+
+::
+
+On Tetralith:
+
 ::
  
    <machine MACH="tetralith">
