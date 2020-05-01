@@ -33,6 +33,11 @@ Quality control
 
 Atmosphere only (AMIP) simulations
 ''''''''''''''''''''''''''''''''''
+:ref:'amips'
+
+Setting up a nudged simulation
+''''''''''''''''''''''''''''''
+:ref:'nudged_simulations'
 
 Running with offline aerosols
 '''''''''''''''''''''''''''''
