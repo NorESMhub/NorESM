@@ -1,20 +1,27 @@
 .. _amips:
 
-Setting up an AMIP simulation:
-==============================
+AMIP (Atmosphere only) simulations:
+===================================
 
 Setting up an AMIP simulation
-'''''''''''''''''''''''''''''
-
-Step by step guide for AMIP/fixed SST simulation.
-
-Use a NF compset. Default SST and sea ice is ::
-
-  sst_HadOIBl_bc_0.9x1.25_1850_2017_c180507.nc
+''''''''''''''''''''''''''''''
+The AMIP simulation is created in the same manner as a coupled simulation, but using compsets starting with NF. 
 
 
+AMIP compsets
+'''''''''''''
 
-**AMIP simulation**
+Compsets starting with NF are NorESM AMIP (atmosphere only) configurations.  Predefined compsets for AMIP (atmsophere only) simulations can be found in::  
+
+  <noresm_base>/components/cam/cime_config/config_compsets.xml
+  
+
+Creating your own compset for AMIP simulations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The essential file to edit for a new AMIP NorESM compset is:: 
+
+  <noresm_base>/components/cam/cime_config/config_compsets.xml
 
 This examples shows how to simply add the "NFHIST" compset to config_components.xml. In <noresm_base>/components/cam/cime_config/config_compsets.xml the NFHIST is set as
 
@@ -46,7 +53,9 @@ E.g.
 - SGLC_SWAV
    - The SGLC (land-ice) and SWAV (ocean-wave) models are not interactive, but used only to satisy the interface requirements 
 
-**NorESM2 derived boundary conditions for AMIP simulations**
+
+NorESM2 derived boundary conditions for AMIP simulations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In atmosphere-only simulations, one wants to use boundary conditions as close as possible to the coupled simulations. In NorESM2 atmosphere-only simulations, one therefor uses prescribed boundary conditions for SST, sea-icecover and upper-ocean DMS concentrations (all three fields taken from the fully-coupled simulation), combined within principle the same flux-parameterisation is in the full-coupled simulation. 
 
