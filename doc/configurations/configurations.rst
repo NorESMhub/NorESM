@@ -40,6 +40,11 @@ Atmosphere only (AMIP) simulations
 ''''''''''''''''''''''''''''''''''
 :ref:`amips`
 
+Ocean and sea-ice only (OMIP) simulations
+''''''''''''''''''''''''''''''''''''''''''
+:ref:`omips`
+
+
 Running ensamble simulations
 ''''''''''''''''''''''''''''
 
