@@ -1,4 +1,4 @@
 .. _access:
 
-How to get access
+How to download
 =================
