@@ -17,9 +17,11 @@ This is a general description/checklist for how to create a new experiment with 
    
   Note!
   
-  --walltime <time> can be set in env_batch.xml in the case directory after building the new case and is not necessary to include when creating a new case
+  **--walltime <time>** can be set in env_batch.xml in the case directory after building the new case and is not necessary to include when creating a new case
 
-  --output-root <path_to_run_dir>/<noresm_run_dir> only necessary to include if the noresm_run_dir differ from default <path_to_run_dir>/noresm/ 
+  **--output-root <path_to_run_dir>/<noresm_run_dir>** only required if the noresm_run_dir differ from default <path_to_run_dir>/noresm/ 
+  
+  **--run-unsupported** required if the grid resolution is not supported in the compset (see detailed description below)
 
   Example of case creation on Fram::
 
@@ -114,12 +116,27 @@ The compsets starting with N are NorESM coupled configurations. Compsets startin
   Coupled configuration for NorESM for pre-industrial conditions.
 
 **NHIST and NHISTfrc2  (uses differently organized emission files : FRC2)**  
-  Historical configuration up to year 2015
+  Historical configuration up to year 2015 (see detailed description below; 'Create your own compsets for AMIP simulations')
 
 **NSSP126frc2, NSSP245frc2, NSSP370frc2, NSSP585frc2**  
   Future scenario compsets from 2015 to 2100
  
-  
+**Supported grids**
+
+Most compsets contain a science_support grid which state what grid configurations we support::
+
+<science_support grid="xxx"/> fields
+
+and a case can be created without the option::
+
+  --run-unsupported 
+
+If you want a different grid configuration or the grid configuration is not included in the definition of the compset, the::
+
+  --run-unsupported
+
+option is required when a case is created.
+
 Creating your own compset
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 The essential file to edit for a new coupled NorESM compset is:: 
@@ -130,6 +147,9 @@ and for a new AMIP NorESM compset is::
 
   <noresm_base>/components/cam/cime_config/config_compsets.xml
   
+
+**Coupled simulation** 
+
 This examples shows how to simply add the "N1850frc2" compset to config_compsets.xml . In <noresm_base>/cime_config/config_compsets.xml the N1850frc2 is set as::
 
   <compset>
@@ -145,11 +165,12 @@ sets the compsets name used when building a new case. Make sure to use a new and
 <lname>1850_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_MICOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>. It is also possible to just add that line (without the <lname>) when creating a new case. 
 
 '_' seperates between model components::
-  _<MODEL>
+
+_<MODEL>
   
 and '%' sets the component-specific configuration::
 
- %MODEL_CONFIGURATION
+%MODEL_CONFIGURATION
 
 E.g. 
 
@@ -170,21 +191,26 @@ E.g.
    - ocean biogeochemistry model iHAMOCC run with interactive DMS
 
 
-  
-This examples shows how to simply add the "NFHIST" compset to config_components.xml. In <noresm_base>/components/cam/cime_config/config_compsets.xml the NFHIST is set as::
-    
+**AMIP simulation**
 
- <compset>
-    <alias>NFHIST</alias>
-    <lname>HIST_CAM60%NORESM%FRC2_CLM50%SP_CICE%PRES_DOCN%DOM_MOSART_SGLC_SWAV</lname>
-    <!--science_support grid="f09_f09_mg17"/-->
- </compset>  
+This examples shows how to simply add the "NFHIST" compset to config_components.xml. In <noresm_base>/components/cam/cime_config/config_compsets.xml the NFHIST is set as
+
+::
+    
+  <!-- fSST : evolving NorESM derived ; DMS: evolving NorESM derived -->
+  <compset>
+    <alias>NFHISTnorbc</alias>
+    <lname>HIST_CAM60%NORESM%NORBC_CLM50%BGC-CROP_CICE%PRES_DOCN%DOM_MOSART_SGLC_SWAV</lname>
+    <science_support grid="f09_f09_mg17"/>
+  </compset>  
+
+::
 
 E.g. 
 
-- HIST_CAM60%NORESM%FRC2
+- HIST_CAM60%NORESM%NORNC
    - Forcing and input files read from historical conditions (1850 - 2015)
-   - Build CAM6.0 (the atmosphere model) with NorESM configuration and FRC2 organized emission files
+   - Build CAM6.0 (the atmosphere model) with NorESM derived boundary conditions i.e. fixed SST files from the coupled CMIP6 simulation (see explonation below).
    - Note for some AMIP compsets CAM60%PTAERO may be used instead of CAM60%NORESM. Don't worry, those are identical.
 - CLM50%SP
    - Build CLM5 (land model) with satellite phenology, prescribed vegetation
@@ -197,6 +223,8 @@ E.g.
 - SGLC_SWAV
    - The SGLC (land-ice) and SWAV (ocean-wave) models are not interactive, but used only to satisy the interface requirements 
 
+for more details please see 
+:ref:`amips`
 
 Resolution
 ''''''''''
@@ -243,131 +271,17 @@ Some compsets only go with certain time periods?
 
 Forcing
 ''''''''''''''''
+Please see :ref:`input`
+
 
 Choosing output
 '''''''''''''''
-
-More informatin can be found in 
-
-
-Setting up an AMIP simulation
-'''''''''''''''''''''''''''''
-
-Step by step guide for AMIP/fixed SST simulation.
-
-Use a NF compset. Default SST and sea ice is ::
-
-  sst_HadOIBl_bc_0.9x1.25_1850_2017_c180507.nc
-
+please see :ref:`output`
 
 Setting up a nudged simulation
 ''''''''''''''''''''''''''''''
 
-Step by step guide for nudged simulation.
-
-Nudge to ERA-interim reanalysis
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-ERA-interim nudging data for the time period 2000-01-01 to 2018-03-31 (f09f09_30L) and 2001-01-01 to 2016-01-31 (f09f09_32L) is available from the NorESM input data repository. This data was prepared by Inger Helene Karset who should be acknowledged when this data is used. The path to the nudging data in the cesm input data folder is typically::
-
-  <cesm_input_data>/inputdata/noresm-only/inputForNudging/ERA_f09f09_32L_days
-
-
-Create a new case with a compset that supports nudging e.g. NFHISTnorpddmsbcsdyn.
-
-Example case creation for nudged simulation with NorESM2:
-::
-
-  ./create_newcase --case /path/to/cases/<nudged_case_name> --compset NFHISTnorpddmsbcsdyn --res f09_f09_mg17 --mach <machine> --run-unsupported --user-mods-dir cmip6_noresm_fsst_xaer
-
-Edit ``env_run.xml`` to change initial conditions. See below for configuring a hybrid simulation.
-
-Link to the ERA-interim metdata in the user namelist for cam, user_nl_cam. Remember to choose the files corresponding to your resolution (examples below are for f09_f09 and 32 levels in the vertical for NorESM2). Link also to the ERA-topography file: 
-
-::
-
-  user_nl_cam
-    &metdata_nl
-    met_data_file = '/work/shared/noresm/inputdata/noresm-only/inputForNudging/ERA_f09f09_32L_days/2001-01-01.nc'
-    met_filenames_list = '/work/shared/noresm/inputdata/noresm-only/inputForNudging/ERA_f09f09_32L_days/fileList2001-2015.txt'
-    &cam_inparm
-    bnd_topo = '/work/shared/noresm/inputdata/noresm-only/inputForNudging/ERA_f09f09_32L_days/ERA_bnd_topo_noresm2_20191023.nc
-
-
-If no appropriate ``met_filenames_list`` is available, you can creat one::
-  
-  ls -d -1 $PWD/<pattern>*.nc > fileList.txt
-
-
-When looking at aerosol indirect effects, it's recommended to nudge only U, V and PS: 
-
-::
-
-  user_nl_cam
-    &metdata_nl
-    met_nudge_only_uvps = .true.
-
-Choose relaxation time (hours). Use the same time as dt in met_data_file: 
-
-::
-
-  user_nl_cam
-    &metdata_nl
-    met_rlx_time = 6
-
-
-
-
-Create the met-data from a NorESM simulation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-To produce your own nudging data from a NorESM simulation.
-
-First run the NorESM to produce 6 hourly data. The following namelist settings are needed::
-
-  user_nl_cam 
-    &camexp 
-    mfilt = 1, 4, nhtfrq = 0, -6, 
-    avgflag_pertape='A','I', 
-    fincl2 ='PS','U','V','TAUX','TAUY','FSDS','TS','T','Q','PHIS','QFLX','SHFLX'
-
-  user_nl_clm 
-    &clmexp 
-    hist_mfilt = 1,4 hist_nhtfrq = 0,-6
-    hist_avgflag_pertape = 'A','I' hist_fincl2 = 'SNOWDP','H2OSNO','H2OSOI'
-
-**Use the met-data in another run**
-
-(The following instructions are not valid any more? It's CAM5, not CAM6? Which is the new compset for nudged simulations?)
-
-*First create a compset which has the configure-option "-offline_dyn". Check in config_compsets.xml which compsets have this configure-option added. See for example the compset NFAMIPNUDGEPTAERO in https://svn.met.no/NorESM/noresm/branches/featureCAM5-OsloDevelopment_trunk2.0-1/noresm/scripts/ccsm_utils/Case.template/config_compsets.xml*
-
-
-Then use this compset to create a case. You need the following user-input in the user_nl_cam
-:: 
-
-  user_nl_cam
-    &metdata_nl
-    met_data_file='/work/shared/noresm/inputForNudging/FAMIPC5NudgeOut/atm/hist/FAMIPC5NudgeOut.cam.h1.1979-01-01-00000.nc'
-    met_filenames_list ='/work/shared/noresm/inputForNudging/FAMIPC5NudgeOut/atm/hist/fileList.txt'
-
-The  ``met_data_file`` is the first met-data file to read and ``met_filenames_list`` is a list of all files to be read for the nudged simulation. The first lines of the file should look something like this (guess what the rest of the file should look like? 8-o: )
-
-::
-
-  /work/shared/noresm/inputForNudging/FAMIPC5NudgeOut/atm/hist/FAMIPC5NudgeOut.cam.h1.1979-01-01-00000.nc
-  /work/shared/noresm/inputForNudging/FAMIPC5NudgeOut/atm/hist/FAMIPC5NudgeOut.cam.h1.1979-01-02-00000.nc
-  /work/shared/noresm/inputForNudging/FAMIPC5NudgeOut/atm/hist/FAMIPC5NudgeOut.cam.h1.1979-01-03-00000.nc
-
-This file can be created at the place where you put the metdata with this command:
-
-::
-
-  alfgr@hexagon-4:/work/shared/noresm/inputForNudging/FAMIPC5NudgeOut/atm/hist>
-  ls -d -1 $PWD/*.h1.*.nc > fileList.txt
-
-
-
+please see :ref:`nudged_simulations`
 
 
 Setting up a hybrid simulation
