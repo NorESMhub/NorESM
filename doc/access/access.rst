@@ -72,7 +72,7 @@ Now you have a complete copy of the NorESM code in the directory <noresm-base>. 
 
 
 Downloading input data
-======================
+^^^^^^^^^^^^^^^^^^^^^^
 
 Input datasets are needed to run the model. We don't recommend downloading the entire dataset because of the size (~TB). and since the input data sets needed for a specific case and configuration will be automatically downloaded when you build the case. We also recommend to only have one input directory on a machine which is shared for all users. 
 
@@ -89,7 +89,7 @@ Make sure that the input data files are write-protected.
 
 
 NorESM specific inputdata
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 PLEASE ADD
 
