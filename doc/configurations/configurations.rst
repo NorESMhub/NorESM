@@ -6,7 +6,7 @@ Running NorESM2
 A newbies guide to running NorESM2
 ''''''''''''''''''''''''''''''''
 
-:ref:`newbies-guide`
+:ref:`newbie-guide`
 
 
 Setting up an experiment
