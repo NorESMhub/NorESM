@@ -32,8 +32,14 @@ user_nl_cam_0005  user_nl_cice_0005  user_nl_clm_0005  user_nl_docn_0004  user_n
 
 The namelists can be used to control various settings and to add output. Note that changes are made individually for the separate members, so if you for instance add extra output fields to user_nl_cam_0001 these fields will only be written out for member 1. To also get the extra output for members 2-5, modify the four other user namelists from cam. 
 
+Something to keep in mind: the number of tasks set in env_mach_pes.xml corresponds to the number of tasks that one members will use. The total number of tasks used when running the experiment will thus be the tasks used by one member multiplied by the number of members. 
 
-Perturbing the ensemble members:
+
+Perturbing the ensemble members: PERTLIM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For the ensemble members to actually be different it is necessary to somehow perturb the initial condition of the member. **Note that the perturbation must be unique for each member**. 
+For the ensemble members to actually be different it is necessary to somehow perturb the initial condition of the member. Note that the perturbation must be unique for each member. 
+
+One way of doing this is to use the CAM namelist parameter **PERTLIM**. The default value of PERTLIM is 0.0. By choosing a non-zero value, a random parturbation with a size up to that given by the PERTLIM value will be added to the initial temperature field. The value could be round-off error size, for instance 1e-14. **The PERTLIM value must be unique for each ensemble member.**
+
+**Note also that PERTLIM only works for startup or hybrid runs.** It is not possible to use PERTLIM when doing a branch run. 
