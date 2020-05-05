@@ -60,6 +60,8 @@ Then you need to launch the download
 
 ::
 
+If you run into several SVN-related errors when launching the model, you may want to try to change required=True to required=False for pop2 and ww3 in Externals.cfg. POP2 and WW3 are not needed in NorESM2. Then try again.
+
 To confirm a successful download of all components, you can run checkout_externals with the status flag -S to show the status of the externals or --logging to get a log of reported errors (if any):
 
 ::
@@ -71,7 +73,6 @@ To confirm a successful download of all components, you can run checkout_externa
 
 
 The checkout_externals script will read the configuration file called Externals.cfg and will download all the external component models and CIME into /path/to/<noresm-base>.
-
 
 Now you have a complete copy of the NorESM code in the directory <noresm-base>.  There you can co go in the subdirectory cime/scripts and start creating a case :ref:`experiments`.
 
