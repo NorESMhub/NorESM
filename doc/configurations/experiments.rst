@@ -193,38 +193,7 @@ E.g.
 
 **AMIP simulation**
 
-This examples shows how to simply add the "NFHIST" compset to config_components.xml. In <noresm_base>/components/cam/cime_config/config_compsets.xml the NFHIST is set as
-
-::
-    
-  <!-- fSST : evolving NorESM derived ; DMS: evolving NorESM derived -->
-  <compset>
-    <alias>NFHISTnorbc</alias>
-    <lname>HIST_CAM60%NORESM%NORBC_CLM50%BGC-CROP_CICE%PRES_DOCN%DOM_MOSART_SGLC_SWAV</lname>
-    <science_support grid="f09_f09_mg17"/>
-  </compset>  
-
-::
-
-E.g. 
-
-- HIST_CAM60%NORESM%NORNC
-   - Forcing and input files read from historical conditions (1850 - 2015)
-   - Build CAM6.0 (the atmosphere model) with NorESM derived boundary conditions i.e. fixed SST files from the coupled CMIP6 simulation (see explonation below).
-   - Note for some AMIP compsets CAM60%PTAERO may be used instead of CAM60%NORESM. Don't worry, those are identical.
-- CLM50%SP
-   - Build CLM5 (land model) with satellite phenology, prescribed vegetation
-- CICE%PRES
-   - Build CICE (sea-ice model) with prescribed sea-ice
-- DOCN%DOM
-   - Build data ocean with fixed SSTs. Which SST files to use can be set in user_nl_cice after in the case directory after creating the case if different from the default files. If you want to run with a slab ocean slab: DOCN%SOM
-- MOSART
-   - Build MOSART (river runoff model) with default configurations
-- SGLC_SWAV
-   - The SGLC (land-ice) and SWAV (ocean-wave) models are not interactive, but used only to satisy the interface requirements 
-
-for more details please see 
-:ref:`amips`
+For details about AMIP simulation compsets, please see :ref:`amips`
 
 Resolution
 ''''''''''
@@ -253,16 +222,14 @@ Which ocean grid is recommended?
 
 Coupled
 ^^^^^^^
-Which is the CMIP6 grid?
-
 | f09_tn11   - atm lnd 0.9x1.25, ocnice tnx1v1
 | f09_tn13   - atm lnd 0.9x1.25, ocnice tnx1v3
-| f09_tn14   - atm lnd 0.9x1.25, ocnice tnx1v4  CMIP6 grid?
+| f09_tn14   - atm lnd 0.9x1.25, ocnice tnx1v4  [CMIP6 grid]
 | f09_tn0251 - atm lnd 0.9x1.25, ocnice tnx0.25v1
 | f09_tn0253 - atm lnd 0.9x1.25, ocnice tnx0.25v3
 | f19_tn11   - atm lnd 1.9x2.5, ocnice tnx1v1
 | f19_tn13   - atm lnd 1.9x2.5, ocnice tnx1v3
-| f19_tn14   - atm lnd 1.9x2.5, ocnice tnx1v4
+| f19_tn14   - atm lnd 1.9x2.5, ocnice tnx1v4  [CMIP6 grid]
 
 Simulation period
 ''''''''''''''''''''''''''
@@ -272,7 +239,6 @@ Some compsets only go with certain time periods?
 Forcing
 ''''''''''''''''
 Please see :ref:`input`
-
 
 Choosing output
 '''''''''''''''
