@@ -12,11 +12,11 @@ To set up an experiment with 5 members, invoke the create_newcase script with th
 
 :: 
 
-   ./create_newcase --case $HOME/noresm_cases/NAME_OF_MY_AWESOME_ENSEMBLE_EXP --multi-driver --ninst 5 --res f19_f19_mg17 --mach vilje --compset NFHISTnorpddmsbc --run-unsupported --project <YOUR-PROJECT-FOR-CPU-HOURS-ON-VILJE>nnk
+   ./create_newcase --case $HOME/noresm_cases/MY_AWESOME_ENSEMBLE_EXP --multi-driver --ninst 5 --res f19_f19_mg17 --mach vilje --compset NFHISTnorpddmsbc --run-unsupported --project <YOUR-PROJECT-FOR-CPU-HOURS-ON-VILJE>nnk
    
 ::
 
-will create a new case in the folder $HOME/noresm_cases/NAME_OF_MY_AWESOME_ENSEMBLE_EXP with 5 ensemble members, the f19_f19_mg17 resolution, the NFHISTnorpddmsbc compset, with machine settings for Vilje, and using CPU hours from YOUR-PROJECT-FOR-CPU-HOURS-ON-VILJE. 
+will create a new case in the folder $HOME/noresm_cases/MY_AWESOME_ENSEMBLE_EXP with 5 ensemble members, the f19_f19_mg17 resolution, the NFHISTnorpddmsbc compset, with machine settings for Vilje, and using CPU hours from YOUR-PROJECT-FOR-CPU-HOURS-ON-VILJE. 
 
 When using the multi-instance component, *you will get one user namelist for each member and for each component* after running the script **case_setup** from your case folder. For the above case, these namelists are: 
 
@@ -44,7 +44,7 @@ One way of doing this is to use the CAM namelist parameter **PERTLIM**. The defa
 
 **PERTLIM only works for startup or hybrid runs.** It is not possible to use PERTLIM when doing a branch run. 
 
-Creating 5 namelists with five different PERTLIM values is doable, but if you want to run say 25 different members you want to do this in an automated way. The following script provides an example of how to do this. The script assumes that you have already created a template namelist called user_nl_cam_template which contains at least the following line:
+While it is perhaps do-able to manyally create 5 different namelists with five different PERTLIM values, you will probably want to do this in a more automated way if you want to run say 25 different members. The approach described below provides an example of how to do this. It is assumed that you have already created a template namelist called user_nl_cam_template which contains at least the following line:
 
 ::
 
@@ -52,7 +52,7 @@ Creating 5 namelists with five different PERTLIM values is doable, but if you wa
 
 ::
 
-The nice thing about this approach is that you can add any other content to the user_nl_cam_template that you want to apply to all members, such as additional output, and then you can create a set of namelists afterwards that only differ by their PERTLIM value using the script below:
+The nice thing about using a template namelist is that you can add various content to the user_nl_cam_template that you want to apply to all members, such as additional output, and then you can create a set of namelists afterwards that only differ by their PERTLIM value using the script below:
 
 ::
 
@@ -93,11 +93,73 @@ The nice thing about this approach is that you can add any other content to the 
 
 ::
 
-The above script puts the namelists in a folder called namelists_perturber, but the namelists must be moved to the case folder when you are happy with them.
+The above script puts the namelists in a folder called namelists_perturberd, located in your current working directory. Remember that the namelists must be moved to the case folder when you are happy with them.
 
 
 
 Starting an ensemble run from a deterministic run:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+In some cases, you may want to start an ensemble run as a hybrid run from a deterministic run (that is, a case with only one member). To achieve this, some manual interference is required to make sure that there are restart files and rpointers for each member. The script below provides an example of how to do this automatically for the case MY_AWESOME_ENSEMBLE_EXP:
+
+::
+
+   #!/bin/sh
+
+   # Input data
+   path2restfiles=<PATH-TO-RESTART-FILES-YOU-WANT-TO-USE>
+
+   # You can list several cases here
+   cases='MY_AWESOME_ENSEMBLE_EXP'
+
+   for case in $cases ; do                                                                                                   
+       path2runDir=<PATH-TO-RUN-DIRECTORY-OF-CASE>                                                                             
+                                                                                                                             
+       compsNetcdf='cam cpl cice clm2 docn mosart'                                                                           
+       compsRpointers='atm drv ice lnd ocn rof'                                                                              
+                                                                                                                             
+       for comp in $compsNetcdf ; do                                                                                         
+        files=$(ls $path2restfiles/*$comp*)                                                                                  
+        for file in $files ; do                                                                                              
+            ln -sf $file $path2runDir/.                                                                                      
+            for mem in $(seq -w 0001 0025) ; do                                                                              
+                ln -sf $file $path2runDir/$(basename ${file/$comp/${comp}_${mem}})                                           
+            done                                                                                                             
+        done                                                                                                                 
+       done                                                                                                                  
+                                                                                                                             
+       for comp in $compsRpointers ; do                                                                                      
+        files=$(ls $path2restfiles/rpointer*$comp*)                                                                          
+        for file in $files ; do                                                                                              
+            echo $file                                                                                                       
+            for mem in $(seq -w 0001 0025) ; do                                                                              
+                cp $file $path2runDir/$(basename ${file/$comp/${comp}_${mem}})                                               
+                if [ $comp == "atm" ] ; then                                                                                 
+                    sed -i -e 's/cam/cam_'"$mem"'/g' \                                                                       
+                        $path2runDir/$(basename ${file/$comp/${comp}_${mem}})                                                
+                fi                                                                                                           
+                if [ $comp == "drv" ] ; then                                                                                 
+                    sed -i -e 's/cpl/cpl_'"$mem"'/g' \                                                                       
+                        $path2runDir/$(basename ${file/$comp/${comp}_${mem}})                                                
+                fi                                                                                                           
+                if [ $comp == "ice" ] ; then                                                                                 
+                    sed -i -e 's/cice/cice_'"$mem"'/g' \                                                                     
+                        $path2runDir/$(basename ${file/$comp/${comp}_${mem}})                                                
+                fi                                                                                                           
+                if [ $comp == "lnd" ] ; then                                                                                 
+                    sed -i -e 's/clm2/clm2_'"$mem"'/g' \                                                                     
+                        $path2runDir/$(basename ${file/$comp/${comp}_${mem}})                                                
+                fi                                                                                                           
+                if [ $comp == "ocn" ] ; then                                                                                 
+                    sed -i -e 's/docn/docn_'"$mem"'/g' \                                                                     
+                        $path2runDir/$(basename ${file/$comp/${comp}_${mem}})                                                
+                fi                         
+                   if [ $comp == "rof" ] ; then                                                                                 
+                    sed -i -e 's/mosart/mosart_'"$mem"'/g' \                                                                 
+                        $path2runDir/$(basename ${file/$comp/${comp}_${mem}})                                                
+                fi                                                                                                           
+            done                                                                                                             
+        done                                                                                                                 
+       done                                                                                                                  
+   done      
 
