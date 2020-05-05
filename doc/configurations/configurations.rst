@@ -1,7 +1,7 @@
 .. _configurations:
 
-Model Configurations
-====================
+Running NorESM2
+===============
 
 
 Setting up an experiment
@@ -36,6 +36,7 @@ Atmosphere only (AMIP) simulations
 
 Running ensamble simulations
 ''''''''''''''''''''''''''''
+
 :ref:`ensemble_runs`
 
 
