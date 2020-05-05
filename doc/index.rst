@@ -30,7 +30,6 @@ https://github.com/NorESMhub/NorESM/blob/master/doc/README.md.
    
    start.rst
    access/access.rst
-   newbie-guide/newbie-guide.rst
    configurations/configurations.rst
    contribute/contribute.rst
    model-description/model-description.rst
