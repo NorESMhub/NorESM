@@ -58,8 +58,13 @@ Output data and standard results
 If your model simulation was successful, you should find the following line in slurm.out (or similar) in your cse folder 
 
 ::
-Tue Feb 9 21:41:33 CET 2016 -- CSM EXECUTION BEGINS HERE Wed Feb 10 13:37:56 CET 2016 -- CSM EXECUTION HAS FINISHED (seq_mct_drv): =============== SUCCESSFUL TERMINATION OF CPL7-CCSM =============== 
+
+  Tue Feb 9 21:41:33 CET 2016 -- CSM EXECUTION BEGINS HERE Wed Feb 10 13:37:56 CET 2016 -- CSM EXECUTION HAS FINISHED  
+  (seq_mct_drv): =============== SUCCESSFUL TERMINATION OF CPL7-CCSM =============== 
+
 ::
+
+A description of NorESM2 output:
 
 :ref:`output`
 
