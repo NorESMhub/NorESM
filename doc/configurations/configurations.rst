@@ -5,6 +5,7 @@ Running NorESM2
 
 A newbies guide to running NorESM2
 ''''''''''''''''''''''''''''''''
+This page will show you how to set up and run a standard case of NorESM2 without any modifications
 
 :ref:`newbie-guide`
 
