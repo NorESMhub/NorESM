@@ -5,13 +5,14 @@ AMIP (Atmosphere only) simulations:
 
 Setting up an AMIP simulation
 ''''''''''''''''''''''''''''''
-The AMIP simulation is created in the same manner as a coupled simulation, but using compsets starting with NF. 
+In addition to an active atmosphere component, the AMIP simulations contain an active land model component. Also, the sea-ice component is active, but whenever there is sea-ice, the sea-ice is assumed to have a thickness of 1 meter. 
 
+The AMIP simulation is created in the same manner as a coupled simulation, but using compsets starting with NF. 
 
 AMIP compsets
 '''''''''''''
 
-Compsets starting with NF are NorESM AMIP (atmosphere only) configurations.  Predefined compsets for AMIP (atmsophere only) simulations can be found in::  
+Compsets starting with NF are NorESM AMIP (atmosphere only) configurations.  Predefined compsets for AMIP simulations can be found in::  
 
   <noresm_base>/components/cam/cime_config/config_compsets.xml
   
@@ -40,7 +41,7 @@ E.g.
 
 - HIST_CAM60%NORESM%NORNC
    - Forcing and input files read from historical conditions (1850 - 2015)
-   - Build CAM6.0 (the atmosphere model) with NorESM derived boundary conditions i.e. fixed SST files from the coupled CMIP6 simulation (see explonation below).
+   - Build CAM6.0 (the atmosphere model) with NorESM specific additions and NorESM derived boundary conditions  (for the boundary conditions, please see explonation below).
    - Note for some AMIP compsets CAM60%PTAERO may be used instead of CAM60%NORESM. Don't worry, those are identical.
 - CLM50%SP
    - Build CLM5 (land model) with satellite phenology, prescribed vegetation
@@ -56,8 +57,20 @@ E.g.
 
 NorESM2 derived boundary conditions for AMIP simulations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+n the coupled NorESM2 simulations, the flux parameterization used for the transfer of heat, moisture and momentum between the ocean and atmosphere is the so-called COARE flux parameterization. This choice is activated by::
 
-In atmosphere-only simulations, one wants to use boundary conditions as close as possible to the coupled simulations. In NorESM2 atmosphere-only simulations, one therefor uses prescribed boundary conditions for SST, sea-icecover and upper-ocean DMS concentrations (all three fields taken from the fully-coupled simulation), combined within principle the same flux-parameterisation is in the full-coupled simulation. 
+  FLUXSCHEME=1 
+
+in envrun.xml, and ends up in the driverin namelist as::
+
+  fluxscheme=1. 
+
+This parameterisationis different from the standard flux-parameterzation used in CESM, which is activated by::
+
+  FLUXSCHEME=0.
+  
+In atmosphere-only simulations, one wants to use boundary conditions as close as possible to the coupled simulations. In NorESM2 atmosphere-only simulations, one therefor uses prescribed boundary conditions for SST, sea-ice cover and upper-ocean DMS concentrations (all three fields taken from the fully-coupled simulation), combined within principle the same flux-parameterisation is in the fully-coupled simulation.
+
 
 For the atmosphere-only simulations to be run, boundary conditions have to be generated to describe the apparentstate of the imaginary underlying ocean. The model needs boundary conditions for sea-surface temperature (SST),sea-ice cover, and upper ocean DMS concentration. Up to now, 4 sets of boundary conditions have been made:
 
@@ -79,4 +92,6 @@ For the atmosphere-only simulations to be run, boundary conditions have to be ge
   - this climatology is used for ssp370SST simulations (86 year longsimulations).  
   - the climatologies for piClim-control have been based on a 30-year snapshot of piControl (year 1751–1780 and 1351–1380 as mentioned above).  
   - for comparison of piClim-control and piControl, one should focus on those 30-year periods, due to inter-decadal variability or drifts in piControl  
+  
+  
   
