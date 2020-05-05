@@ -16,10 +16,11 @@ The case folder contains:
   - CaseDocs: here you find the namelists containing all the subroutines and parameters used. These files will be modifiedafter rebuild. *You should never have to edit the contents of this directory*. If you wish to make changes to the namelists you use:
   - user made namelists: you can place your own namelists for the different models where you can change parameters and model settings and so on (i.e. user\_nl\_cam, user\_nl\_cice, user\_nl\_clm, user\_nl\_micon, user\_nl\_cpl)
   - LockedFiles: Directory that holds copies of files that should not be changed. *You should never edit the contents of this directory*
-  - Tools: Directory containing support utility scripts. *You should never need to edit the contents of this directory.*
+  - Tools: Directory containing support utility scripts. 
 
 User namelists:
 ^^^^^^^^^^^^^^^
+
 
 Code modifications:
 ^^^^^^^^^^^^^^^^^^^
@@ -36,7 +37,29 @@ The file
   
 ::
 
-sets component machine-specific processor layout. The settings are critical to a well-load-balanced simulation. Here you set the number of cpus used for each model component (e.g. atm 1024, ocn 154, usually land + ice + rof (river run off) = atm = 1024) and the coupler.
+sets component machine-specific processor layout. The settings are critical to a well-load-balanced simulation. Here you set the number of cpus used for each model component (e.g. usually land + ice + rof (river run off) = atm = ) and the coupler. An example of sunch an env_mach_pes.xml file:
+
+::
+  
+  <entry id="NTASKS">
+      <type>integer</type>
+      <values>
+        <value compclass="ATM">768</value>
+        <value compclass="CPL">768</value>
+        <value compclass="OCN">186</value>
+        <value compclass="WAV">300</value>
+        <value compclass="GLC">768</value>
+        <value compclass="ICE">504</value>
+        <value compclass="ROF">8</value>
+        <value compclass="LND">256</value>
+        <value compclass="ESP">1</value>
+      </values>
+      <desc>number of tasks for each component</desc>
+    </entry>
+
+
+::
+
 
 Run environment:
 ^^^^^^^^^^^^^^^^
@@ -50,7 +73,17 @@ The file
 
 sets the configuration details for the experiment. E.g. time settings such as length of run, frequency of restart files produced, output of coupler diagnostics, and short-term and long-term restart file archiving. 
 
-Some common configuration settings:
+**NorESM2 specific additons**
+
+- FLUXSCHEME=1 
+
+  - In the coupled NorESM2 simulations, the flux parameterization used for the transfer of heat, moisture and momen-tum between the ocean and atmosphere is the so-called COARE flux parameterization. This choice is activated by FLUXSCHEME=1 in envrun.xml, and ends up in the driver_in namelist as fluxscheme=1. This parameterisationis different from the standard flux-parameterzation used in CESM, which is activated by FLUXSCHEME=0.
+ 
+- ALBCOSZAVG=.true. 
+
+  - a feature of the coupled NorESM2 simulations, i.e., taking into account the fact that the solar zenith angle used for the calculation of the surface albedo changes over the atmospheric model time step of 30 minutes 
+
+**Some common configuration settings:**
 
 - RUN_TYPE:
 
@@ -105,7 +138,8 @@ Some common configuration settings:
  
   - Logical to archive all the produced restart files and not just those at the end of the simulation. Default is FALSE.
   
-
+ 
+ 
 Run and archiving time environment:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The file
