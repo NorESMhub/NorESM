@@ -3,6 +3,11 @@
 Running NorESM2
 ===============
 
+A newbies guide to running NorESM2
+''''''''''''''''''''''''''''''''
+
+:ref:`newbies-guide`
+
 
 Setting up an experiment
 ''''''''''''''''''''''''
