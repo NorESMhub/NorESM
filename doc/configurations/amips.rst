@@ -1,18 +1,18 @@
 .. _amips:
 
-AMIP (Atmosphere only) simulations:
+AMIP (atmosphere/land-only) simulations:
 ===================================
 
 Setting up an AMIP simulation
 ''''''''''''''''''''''''''''''
-In addition to an active atmosphere component, the AMIP simulations contain an active land model component. Also, the sea-ice component is active, but whenever there is sea-ice, the sea-ice is assumed to have a thickness of 1 meter. 
+Atmospheric Model Intercomparison Project (AMIP) style runs are runs in which the **atmosphere and land components are active while values for sea surface temperatures and sea ice are prescribed** (that is, read from a file). The sea-ice model CICE then runs in a simplified mode and computes surface fluxes, snow depth, albedo, and surface temperatures using 1D thermodynamics without conserving energy. The sea-ice thickness is assumed to be 2 m in the Northern Hemisphere and 1 m in the Southern Hemisphere. 
 
 The AMIP simulation is created in the same manner as a coupled simulation, but using compsets starting with NF. 
 
 AMIP compsets
 '''''''''''''
 
-Compsets starting with NF are NorESM AMIP (atmosphere only) configurations.  Predefined compsets for AMIP simulations can be found in::  
+Compsets starting with NF are NorESM AMIP (atmosphere/land-only) configurations.  Predefined compsets for AMIP simulations can be found in::  
 
   <noresm_base>/components/cam/cime_config/config_compsets.xml
   
@@ -48,12 +48,13 @@ E.g.
 - CICE%PRES
    - Build CICE (sea-ice model) with prescribed sea-ice
 - DOCN%DOM
-   - Build data ocean with fixed SSTs. Which SST files to use can be set in user_nl_cice after in the case directory after creating the case if different from the default files. If you want to run with a slab ocean slab: DOCN%SOM
+   - Build data ocean with fixed SSTs. If you want to run with a slab ocean slab: DOCN%SOM
 - MOSART
    - Build MOSART (river runoff model) with default configurations
 - SGLC_SWAV
-   - The SGLC (land-ice) and SWAV (ocean-wave) models are not interactive, but used only to satisy the interface requirements 
+   - The SGLC (land-ice) and SWAV (ocean-wave) models are not interactive, but used only to satisfy the interface requirements 
 
+To use different prescribed fields for SSTs and sea-ice cover than the default, change the value of the variable **SSTICE_DATA_FILENAME** in the evn_run.xml file to the full path of a different file that complies to the requirements of the CICE and the data-ocean model.
 
 NorESM2 derived boundary conditions for AMIP simulations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
