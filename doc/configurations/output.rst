@@ -8,13 +8,13 @@ NorESM2 output
 
 During a model run, each component (i.e. atm, lnd, ocn, cice, rof) produces its own output datasets consisting of history, restart and output log files. By default, each component periodically writes
 
- - history files (usually monthly) in netCDF format 
+- history files (usually monthly) in netCDF format 
    
- - writes netCDF or binary restart files in the RUNDIR directory. The history and log files are controlled independently by each component. History output control (i.e. output fields and frequency) is set in the Build-conf/component.buildnml.csh files.
+- writes netCDF or binary restart files in the RUNDIR directory. The history and log files are controlled independently by each component. History output control (i.e. output fields and frequency) is set in the Build-conf/component.buildnml.csh files.
    
- - Component history files and restart files are in netCDF format. 
+- Component history files and restart files are in netCDF format. 
  
- - Restart files are used to either restart the model or to serve as initial conditions for other model cases.
+- Restart files are used to either restart the model or to serve as initial conditions for other model cases.
 
 For details about how to change the output, please see **User namelists** in :ref:`experiment_environment`. 
 
