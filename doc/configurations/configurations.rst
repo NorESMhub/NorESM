@@ -47,7 +47,6 @@ Ocean and sea-ice only (OMIP) simulations
 
 Running ensamble simulations
 ''''''''''''''''''''''''''''
-
 :ref:`ensemble_runs`
 
 
@@ -55,8 +54,8 @@ Setting up a nudged simulation
 ''''''''''''''''''''''''''''''
 :ref:`nudged_simulations`
 
-Running with offline aerosols
-'''''''''''''''''''''''''''''
+Running with extra aerosol output
+'''''''''''''''''''''''''''''''''
 :ref:`aerosol`
 
 Input data and forcing
