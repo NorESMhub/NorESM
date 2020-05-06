@@ -58,7 +58,7 @@ To use different prescribed fields for SSTs and sea-ice cover than the default, 
 
 NorESM2-derived boundary conditions for AMIP simulations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-n the coupled NorESM2 simulations, the flux parameterization used for the transfer of heat, moisture and momentum between the ocean and atmosphere is the so-called COARE flux parameterization. This choice is activated by::
+In the coupled NorESM2 simulations, the flux parameterization used for the transfer of heat, moisture and momentum between the ocean and atmosphere is the so-called COARE flux parameterization. This choice is activated by::
 
   OCN_FLUX_SCHEME=1 
 
