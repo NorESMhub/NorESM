@@ -57,6 +57,7 @@ Setting up a nudged simulation
 
 Running with offline aerosols
 '''''''''''''''''''''''''''''
+:ref:`aerosol`
 
 Input data and forcing
 ''''''''''''''''''''''
