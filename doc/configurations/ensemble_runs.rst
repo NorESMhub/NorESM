@@ -12,11 +12,11 @@ To set up an experiment with 5 members, invoke the create_newcase script with th
 
 :: 
 
-   ./create_newcase --case $HOME/noresm_cases/MY_AWESOME_ENSEMBLE_EXP --multi-driver --ninst 5 --res f19_f19_mg17 --mach vilje --compset NFHISTnorpddmsbc --run-unsupported --project <YOUR-PROJECT-FOR-CPU-HOURS-ON-VILJE>nnk
+   ./create_newcase --case $HOME/noresm_cases/MY_AWESOME_ENSEMBLE_EXP --multi-driver --ninst 5 --res f19_f19_mg17 --mach vilje --compset NFHISTnorpddmsbc --run-unsupported --project <YOUR-PROJECT-FOR-CPU-HOURS-ON-VILJE>
    
 ::
 
-will create a new case in the folder $HOME/noresm_cases/MY_AWESOME_ENSEMBLE_EXP with 5 ensemble members, the f19_f19_mg17 resolution, the NFHISTnorpddmsbc compset, with machine settings for Vilje, and using CPU hours from YOUR-PROJECT-FOR-CPU-HOURS-ON-VILJE. 
+will create a new case in the folder $HOME/noresm_cases/MY_AWESOME_ENSEMBLE_EXP with 5 ensemble members, the f19_f19_mg17 resolution, the NFHISTnorpddmsbc compset, with machine settings for Vilje, and using CPU hours from YOUR-PROJECT-FOR-CPU-HOURS-ON-VILJE. NFHISTnorpddmsbc is the compset for the CMIP6 AMIP experiment in which sea surface temperatures and sea ice are prescribed to observed values.
 
 When using the multi-instance component, *you will get one user namelist for each member and for each component* after running the script **case_setup** from your case folder. For the above case, these namelists are: 
 
@@ -32,19 +32,19 @@ When using the multi-instance component, *you will get one user namelist for eac
 
 The namelists can be used to control various settings and to add output. Note that changes are made individually for the separate members, so if you for instance add extra output fields to user_nl_cam_0001 these fields will only be written out for member 1. To also get the extra output for members 2-5, modify the four other user namelists from cam. 
 
-Something to keep in mind: the number of tasks set in env_mach_pes.xml corresponds to the number of tasks that one members will use. The total number of tasks used when running the experiment will thus be the tasks used by one member multiplied by the number of members. If you want to run a very large number of members, it might be a good idea to divide them into separate cases to avoid using too many CUPs for each case. 
+Something to keep in mind: the number of tasks set in env_mach_pes.xml corresponds to the number of tasks that one member will use. The total number of tasks used when running the experiment will thus be the tasks used by one member multiplied by the number of members. If you want to run a very large number of members, it might be a good idea to divide them into separate cases to make sure that you don't use too many CPUs per case. 
 
 
 Perturbing the ensemble members: PERTLIM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For the ensemble members to actually be different it is necessary to somehow perturb the initial condition of the member. The perturbation must be unique for each member. 
+For the ensemble members to actually be different it is necessary to somehow perturb the initial condition of each member. The perturbation must be unique for each member. 
 
-One way of doing this is to use the CAM namelist parameter **PERTLIM**. The default value of PERTLIM is 0.0. By choosing a non-zero value, a random parturbation with a size up to that given by the PERTLIM value will be added to the initial temperature field. The value could be round-off error size, for instance 1e-14. **The PERTLIM value must be unique for each ensemble member.**
+One way of doing this is to use the CAM namelist parameter **PERTLIM**. The default value of PERTLIM is 0.0. By choosing a non-zero value, a random parturbation with a size up to that given by the PERTLIM value will be added to the initial temperature field in the atmosphere. The value could be round-off error size, for instance 1e-14. **The PERTLIM value must be unique for each ensemble member.**
 
 **PERTLIM only works for startup or hybrid runs.** It is not possible to use PERTLIM when doing a branch run. 
 
-While it is perhaps do-able to manyally create 5 different namelists with five different PERTLIM values, you will probably want to do this in a more automated way if you want to run say 25 different members. The approach described below provides an example of how to do this. It is assumed that you have already created a template namelist called user_nl_cam_template which contains at least the following line:
+While it is perhaps do-able to manually create 5 different namelists with five different PERTLIM values, you will probably want to do this in a more automated way if you want to run, say, 25 different members. The approach described below provides an example of how to do this. It is assumed that you have already created a template namelist called user_nl_cam_template which contains at least the following line:
 
 ::
 
@@ -78,17 +78,17 @@ The nice thing about using a template namelist is that you can add various conte
    # Create nmems unique values for PERTLIM
    random=$(shuf -i 500-1500 -n $nmems)
 
-   # Loop through values in random and make a new namelist file for cam for each
+   # Loop through values random and make a new namelist file for cam for each
    # value where the default PERTLIM value is replaced
    counter=1
    for val in $random ; do
        echo $counter
-      x=$(bc -l <<< $(echo $val/1000))
-      camNamelist=$camNamelistStr$(printf "%04d" $counter)
-      pertlimNew=$(printf "%.02f" $x)$pertlimSuffix
-      cp $camNamelistTemplate $path2camNamelist/$camNamelist
-      sed -i -e 's/'"$pertlimTemplate"'/'"$pertlimNew"'/g' $path2camNamelist/$camNamelist
-      counter=$(($counter+1))
+       x=$(bc -l <<< $(echo $val/1000))
+       camNamelist=$camNamelistStr$(printf "%04d" $counter)
+       pertlimNew=$(printf "%.02f" $x)$pertlimSuffix
+       cp $camNamelistTemplate $path2camNamelist/$camNamelist
+       sed -i -e 's/'"$pertlimTemplate"'/'"$pertlimNew"'/g' $path2camNamelist/$camNamelist
+       counter=$(($counter+1))
    done
 
 ::
@@ -113,8 +113,7 @@ In some cases, you may want to start an ensemble run as a hybrid run from a dete
    cases='MY_AWESOME_ENSEMBLE_EXP'
 
    for case in $cases ; do                                                                                                   
-       path2runDir=<PATH-TO-RUN-DIRECTORY-OF-CASE>                                                                             
-                                                                                                                             
+       path2runDir=<PATH-TO-RUN-DIRECTORY-OF-CASE>                                                                                                                                                                                                         
        compsNetcdf='cam cpl cice clm2 docn mosart'                                                                           
        compsRpointers='atm drv ice lnd ocn rof'                                                                              
                                                                                                                              
@@ -122,7 +121,7 @@ In some cases, you may want to start an ensemble run as a hybrid run from a dete
         files=$(ls $path2restfiles/*$comp*)                                                                                  
         for file in $files ; do                                                                                              
             ln -sf $file $path2runDir/.                                                                                      
-            for mem in $(seq -w 0001 0025) ; do                                                                              
+            for mem in $(seq -w 0001 0005) ; do                                                                              
                 ln -sf $file $path2runDir/$(basename ${file/$comp/${comp}_${mem}})                                           
             done                                                                                                             
         done                                                                                                                 
@@ -132,7 +131,7 @@ In some cases, you may want to start an ensemble run as a hybrid run from a dete
         files=$(ls $path2restfiles/rpointer*$comp*)                                                                          
         for file in $files ; do                                                                                              
             echo $file                                                                                                       
-            for mem in $(seq -w 0001 0025) ; do                                                                              
+            for mem in $(seq -w 0001 0005) ; do                                                                              
                 cp $file $path2runDir/$(basename ${file/$comp/${comp}_${mem}})                                               
                 if [ $comp == "atm" ] ; then                                                                                 
                     sed -i -e 's/cam/cam_'"$mem"'/g' \                                                                       
