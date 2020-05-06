@@ -68,7 +68,8 @@ While the prescribed values used in atmosphere-only simulations are often based 
    - based on a 30-year period (years 1751–1780) from the CMIP6 pre-industrial control (piControl) simulation with 2x2 degree resolution (NorESM2-LM).  
    - was used for the CMIP6 simulation piClim-control, and all simulations that are perturbation runs based on piClim-control, with NorESM2-LM (mostly 30-year long simulations) 
   
-- a pre-industrial climatology with 1-degree resolution: as above but on 1x1 resolution in the horizontal, and based on years 1351-1380 from the CMIP6 piControl simulation with 1x1 degree resolution (NorESM2-MM)
+- a pre-industrial climatology with 1-degree resolution 
+   - as above but on 1x1 resolution in the horizontal, and based on years 1351-1380 from the CMIP6 piControl simulation with 1x1 degree resolution (NorESM2-MM)
 
 - the historical period 
    - 2x2 degree resolution in the horizontal
