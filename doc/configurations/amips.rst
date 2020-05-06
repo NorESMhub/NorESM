@@ -60,7 +60,7 @@ To use different prescribed fields for SSTs and sea-ice cover than the default, 
 NorESM2-derived boundary conditions for AMIP-style simulations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-While the prescribed values used in atmosphere-only simulations are often based on observations, one might also want to use valies that resemble those from a fully-coupled simulation with NorESM2. To achieve this, it is necessary to use prescribed boundary conditions for SST, sea-ice cover and upper-ocean DMS concentrations (all three fields taken from the fully-coupled simulation). Up to now, 4 sets of boundary conditions have been made:
+While the prescribed values used in atmosphere-only simulations are often based on observations, one might also want to use values that resemble those from a fully-coupled simulation with NorESM2. To achieve this, it is necessary to use prescribed boundary conditions for SST, sea-ice cover and upper-ocean DMS concentrations (all three fields taken from the fully-coupled simulation). Up to now, 4 sets of boundary conditions have been made:
 
 - a pre-industrial climatology with 2-degree resolution 
    - 2x2 degree resolution in the horizontal
