@@ -56,43 +56,45 @@ E.g.
 
 To use different prescribed fields for SSTs and sea-ice cover than the default, change the value of the variable **SSTICE_DATA_FILENAME** in the **evn_run.xml** file to the full path of a different file that complies to the requirements of the CICE and the data-ocean model.
 
-NorESM2-derived boundary conditions for AMIP simulations
+
+NorESM2-derived boundary conditions for AMIP-style simulations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-In the coupled NorESM2 simulations, the flux parameterization used for the transfer of heat, moisture and momentum between the ocean and atmosphere is the so-called COARE flux parameterization. This choice is activated by::
 
-  OCN_FLUX_SCHEME=1 
+While the prescribed values used in atmosphere-only simulations are often based on observations, one might also want to use valies that resemble those from a fully-coupled simulation with NorESM2. To achieve this, it is necessary to use prescribed boundary conditions for SST, sea-ice cover and upper-ocean DMS concentrations (all three fields taken from the fully-coupled simulation). Up to now, 4 sets of boundary conditions have been made:
 
-in env_run.xml, and ends up in the drv_in namelist as::
+- a pre-industrial climatology with 2-degree resolution 
+   - 2x2 degree resolution in the horizontal
+   - contains 12 monthly values
+   - based on a 30-year period (years 1751–1780) from the CMIP6 pre-industrial control (piControl) simulation with 2x2 degree resolution (NorESM2-LM).  
+   - was used for the CMIP6 simulation piClim-control, and all simulations that are perturbation runs based on piClim-control, with NorESM2-LM (mostly 30-year long simulations) 
+  
+- a pre-industrial climatology with 1-degree resolution: as above but on 1x1 resolution in the horizontal, and based on years 1351-1380 from the CMIP6 piControl simulation with 1x1 degree resolution (NorESM2-MM)
+
+- the historical period 
+   - 2x2 degree resolution in the horizontal
+   - contains monthly values for years 1849-20155
+   - based on the period 1850–2014 from the CMIP6 historical simulation with 2x2 degree resolution (NorESM2-LM).  
+   - was used for the CMIP6 simulation histSST, and all simulations that are perturbation runs based on sstHIST, with NorESM2-LM (165-year long simulations). 
+ 
+- a future period based on SSP3-7.0
+   - 2x2 degree resolution in the horizontal
+   - contains monthly values for years 2014-2101
+   - based on years 2015-2100 frm the CMIP6 SSP3-7.0 simulation with 2-degree resolution (NorESM2-LM).  
+   - was used for the CMIP6 simulation ssp370SST, and all simulations that are perturbation runs based on ssp370SST, with NorESM2-LM (86-year longs imulations).  
+   - for comparison of piClim-control and piControl, one should focus on the 30-year periods mentioned above (year 1751–1780 and 1351–1380 ) due to inter-decadal variability and/or drifts in piControl  
+
+
+Another thing that must be kept in mind when doing AMIP-style simulations that should resemble the coupled NorESM2 climate as closely as possible is the choice of flux parameterization used for the transfer of heat, moisture and momentum between the ocean and atmosphere, the so-called COARE flux parameterization. The flux parameterization is controlled by the variable **OCN_FLUX_SCHEME** in the env_run.xml file. The standard choice in CESM is::
+
+  OCN_FLUX_SCHEME=0 
+
+This parameterisation is different from the standard flux parameterization used in NorESM2, which is activated by::
+
+  OCN_FLUX_SCHEME=1.
+  
+and ends up in the drv_in namelist as::
 
   flux_scheme=1. 
-
-This parameterisationis different from the standard flux-parameterzation used in CESM, which is activated by::
-
-  OCN_FLUX_SCHEME=0.
-  
-In atmosphere-only simulations, one wants to use boundary conditions as close as possible to the coupled simulations. In NorESM2 atmosphere-only simulations, one therefore uses prescribed boundary conditions for SST, sea-ice cover and upper-ocean DMS concentrations (all three fields taken from the fully-coupled simulation), combined within principle the same flux-parameterisation is in the fully-coupled simulation.
-
-
-For the atmosphere-only simulations to be run, boundary conditions have to be generated to describe the apparent state of the imaginary underlying ocean. The model needs boundary conditions for sea-surface temperature (SST), sea-ice cover, and upper-ocean DMS concentration. Up to now, 4 sets of boundary conditions have been made:
-
-- A pre-industrial climatology (containing 12 months)
-
-  - on 2x2 degree based on a 30-year period of 2x2 degree resolution and piControl (years 1751–1780).  
-  - this climatology is used for piClim-control (and all type of perturbations) CMIP6 simulations (these are mostly 30-year long simulations).  
-  
-- As above but on 1x1 resolution, and based on 1◦x1◦piControl (years 1351-1380).
-
-- A historical climatology 
-
-  - (1849-2015, monthly) on 2x2 degree resolution, based on the period 1850–2014 of historical.  
-  - this climatology is used for histSST (and perturbations) CMIP6 simulations (165 year long simulations).  
- 
-- A scenario ssp3-7.0 climatology
-
-  - (2014–2101, monthly) on 2x2 resolution, based on years 2015-2100 of ssp3-7.0.  
-  - this climatology is used for ssp370SST simulations (86 year longsimulations).  
-  - the climatologies for piClim-control have been based on a 30-year snapshot of piControl (year 1751–1780 and 1351–1380 as mentioned above).  
-  - for comparison of piClim-control and piControl, one should focus on those 30-year periods, due to inter-decadal variability or drifts in piControl  
   
   
   
