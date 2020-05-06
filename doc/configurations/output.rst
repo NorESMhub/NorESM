@@ -1,9 +1,21 @@
 .. _output:
 
-NorESM2 output and standard results:
+NorESM2 output and standard results
 ===================================
 
-.. _noresm2_output:
+NorESM2 output
+^^^^^^^^^^^^^^
+
+During a model run, each component (i.e. atm, lnd, ocn, cice, rof) produces its own output datasets consisting of history, restart and output log files. By default, each component periodically writes
+   - history files (usually monthly) in netCDF format 
+   - writes netCDF or binary restart files in the RUNDIR directory. The history and log files are controlled independently by each component. History output control (i.e. output fields and frequency) is set in the Build-conf/component.buildnml.csh files.
+ - Component history files and restart files are in netCDF format. 
+ - Restart files are used to either restart the model or to serve as initial conditions for other model cases.
+
+For details about how to change the output, please see **User namelists** in :ref:`experiment_environment`. 
+
+Archiving is a phase of the model run where the generated output data is moved from RUNDIR to the archive folder. This job needs its own cpu time which is set in env_batch.xml. 
+
 
 Atmospheric output for some commonly used configurations of NorESM2
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -11,8 +23,8 @@ Atmospheric output for some commonly used configurations of NorESM2
 In preparation for CMIP6 and the required model output for the various 
 MIPs, NorESM2 has been set up with different configurations, all run as 
 AMIP using the compset NF2000climo (on 2 degrees) in noresm-dev (2.0: 
-commit 7757f2d8258d5f84e960db12f840afebc69d7856 from October 30'th 2018; 
-(2.1: COMMIT 35b90aab78c2cceee636539894c9ff9015355f2f from March 25'th 
+commit 7757f2d from October 30'th 2018; 
+(2.1: COMMIT 35b90aab from March 25'th 
 2019) The given estimates in CPU-time increase are based on 1 month 
 simulations, including model initialization, and are therefore low end 
 estimates. 
