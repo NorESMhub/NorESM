@@ -132,18 +132,89 @@ Some common configuration settings
   
  
 User namelists
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
+
 Aerosol diagnostics
 -------------------
+Adding::
+
+  history_aerosol = .true. 
+
+to user_nl_cam gives additional 577 variables (+ ca. 13 % CPU-time). For a detailed description of additional aerosol output, please see :ref:`aerosol`
 
 
 Frequency of output
 -------------------
 
+There are plenty of default output variables which are automatically written,
+
+The variables specified in the namelists will be written as output automatically, but if you need to customize the output fields you can eddit the user_nl_<component> lists
+
+E.g. if you eddit user_nl_cam and add the following lines at the end of the file::
+
+            avgflag_pertape = ’A’,’I’
+            nhtfrq = 0 ,-6
+            mfilt = 1 , 30
+            ndens = 2 , 2
+            fincl1 = ’FSN200’,’FSN200C’,’FLN200’,
+            ’FLN200C’,’QFLX’,’PRECTMX:X’,’TREFMXAV:X’,’TREFMNAV:M’,
+            ’TSMN:M’,’TSMX:X’
+            fincl2 = ’T’,’Z3’,’U’,’V’,’PSL’,’PS’,’TS’,’PHIS’
+
+- avgflag_pertape
+
+  Sets the averaging flag for all variables on a particular history file series. Default is to use default averaging flags for each variable. Average (A), Instantaneous (I), Maximum (X), and Minimum (M). 
+  
+- nhtfrq
+
+  Array of write frequencies for each history files series.
+  
+  - nhtfrq = 0, the file will be a monthly average. Only the first file series may be a monthly average. 
+  - nhtfrq > 0, frequency is input as number of timesteps.
+  - nhtfrq < 0, frequency is input as number of hours.
+
+- mfilt
+
+  Array of number of time samples to write to each history file series (a time sample is the history output from a given timestep)
+  
+- nden
+
+  Array specifying output format for each history file series. Valid values are 1 or 2. '1' implies output real values are 8-byte and '2' implies output real values are 4-byte. Default: 2
+   
+- fincl1
+
+  List of fields to add to the primary history file. 
+ 
+- fincl2
+
+  List of fields to add to the auxiliary history file. 
+
+
+For a detailed description of NorESM2 output, please see :ref:`output`
+
 
 Parameter settings
 ------------------
+If you need to change some variable values or activate/deactive flags, that can also be done in user_nl_<component>. The syntax is::
 
+  &namelist_group
+    namelist_var = new_namelist_value
+
+E.g for a quadrupling of the atmospheric CO2 concentration
+
+::
+
+  &chem_surfvals_nl
+    co2vmr         =    1137.28e-6
+
+::
+
+Note that BLOM uses a different sytax than the rest. In user_nl_blom::
+
+  set BDMC2    = .15
+  set NIWGF = .5
+
+you need to include **set** before the name of the variable and it does not matter what namelist group the valiable belong.
 
 Input data
 -----------
@@ -160,6 +231,20 @@ Input data is handled by the build process as follows:
 Code modifications
 ^^^^^^^^^^^^^^^^^^^
 
+Including::
+
+  #define AEROFFL 
+  
+to preprocessorDefinitions.h in SourceMods/src.cam/ gives 8 additionally variables (+ ca. 5% CPU-time)
+
+Including::
+
+  #define AEROCOM 
+
+
+to preprocessorDefinitions.h in SourceMods/src.cam/, gives 149 additionally variables (+ ca. 13% CPU-time)
+
+For a detailed description of additional aerosol output, please see :ref:`aerosol`
 
 
 Run and archiving time environment
