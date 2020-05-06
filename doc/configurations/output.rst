@@ -16,7 +16,7 @@ During a model run, each component (i.e. atm, lnd, ocn, cice, rof) produces its 
  
 - Restart files are used to either restart the model or to serve as initial conditions for other model cases.
 
-For details about how to change the output, please see **User namelists** in :ref:`experiment_environment`. 
+For details about how to modify the user namelists to modify the output, please see **User namelists** in :ref:`experiment_environment`. 
 
 Archiving is a phase of the model run where the generated output data is moved from RUNDIR to the archive folder. This job needs its own cpu time which is set in env_batch.xml. 
 
