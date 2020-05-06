@@ -3,107 +3,136 @@
 Setting up a nudged simulation:
 ===============================
 
-Step by step guide for nudged simulation.
+Step by step guide for nudged simulation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Nudge to ERA-interim reanalysis
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+1. Create a new case 
+--------------------
 
-ERA-interim nudging data for the time period 2000-01-01 to 2018-03-31 (f09f09_30L) and 2001-01-01 to 2016-01-31 (f09f09_32L) is available from the NorESM input data repository. This data was prepared by Inger Helene Karset who should be acknowledged when this data is used. The path to the nudging data in the cesm input data folder is typically::
+with a compset that supports nudging e.g. NFHISTnorpddmsbcsdyn, or 
+use your own compset and add::
 
-  <cesm_input_data>/inputdata/noresm-only/inputForNudging/ERA_f09f09_32L_days
-
-
-Create a new case with a compset that supports nudging e.g. NFHISTnorpddmsbcsdyn.
-
-Example case creation for nudged simulation with NorESM2:
-::
-
-  ./create_newcase --case /path/to/cases/<nudged_case_name> --compset NFHISTnorpddmsbcsdyn --res f09_f09_mg17 --mach <machine> --run-unsupported --user-mods-dir cmip6_noresm_fsst_xaer
-
-Edit ``env_run.xml`` to change initial conditions. See below for configuring a hybrid simulation.
-
-Link to the ERA-interim metdata in the user namelist for cam, user_nl_cam. Remember to choose the files corresponding to your resolution (examples below are for f09_f09 and 32 levels in the vertical for NorESM2). Link also to the ERA-topography file: 
-
-::
-
-  user_nl_cam
-    &metdata_nl
-    met_data_file = '/work/shared/noresm/inputdata/noresm-only/inputForNudging/ERA_f09f09_32L_days/2001-01-01.nc'
-    met_filenames_list = '/work/shared/noresm/inputdata/noresm-only/inputForNudging/ERA_f09f09_32L_days/fileList2001-2015.txt'
-    &cam_inparm
-    bnd_topo = '/work/shared/noresm/inputdata/noresm-only/inputForNudging/ERA_f09f09_32L_days/ERA_bnd_topo_noresm2_20191023.nc
-
-
-If no appropriate ``met_filenames_list`` is available, you can creat one::
+  -offline_dyn 
   
-  ls -d -1 $PWD/<pattern>*.nc > fileList.txt
+to CAM_CONFIG_OPTS in env_build.xml after creating a case.
 
+2. Meteorology
+---------------
+Modify user_nl_cam include information about the meteorology you want to nudge to
 
-When looking at aerosol indirect effects, it's recommended to nudge only U, V and PS: 
+::
+  
+  &metdata_nl 
+    met_filenames_list = '/cluster/shared/noresm/inputdata/noresm-only/inputForNudging/ERA_f09f09_32L_days/ fileList2001-2015.txt' 
+    met_data_file = '/cluster/shared/noresm/inputdata/noresm-only/inputForNudging/ERA_f09f09_32L_days/ 2014-01-01.nc' 
+
 
 ::
 
-  user_nl_cam
-    &metdata_nl
-    met_nudge_only_uvps = .true.
+met_filenames_list points to a txt-file that must include all the meteorological nudging data that will be used for the entire simulation. The met_data_file points to the file in this list that includes the starting date of your simulation. The example above shows how to point to ERA-Interim data, created by Inger Helene Hafsahl Karset (https://www.duo.uio.no/handle/ 10852/72779). You can also create your own model produced data (explanation further down in this document). 
 
-Choose relaxation time (hours). Use the same time as dt in met_data_file: 
+3. Nudging strength
+-------------------
 
-::
+Modify user_nl_cam to include information about the strength of the nudging::
 
-  user_nl_cam
-    &metdata_nl
-    met_rlx_time = 6
+  met_rlx_time = 6 
+  
+  
+met_rlx_time is the relaxation time scale. If the timestep of the model is 0.5 hrs, a relaxation time scale of 6 corresponds to a nudging strength of 0.5/6 ~ 0.083 = 8.3 %, meaning that 8.3 % of the nudged component (for example the wind) comes from the value in the met_data_file, while 93.7 % will come from the model itself. It is recommended to set met_rlx_time to the same value as the time frequency of the nudging data.
 
+4. Vertical levels
+------------------
 
-
-Create the met-data from a NorESM simulation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-To produce your own nudging data from a NorESM simulation.
-
-First run the NorESM to produce 6 hourly data. The following namelist settings are needed::
-
-  user_nl_cam 
-    &camexp 
-    mfilt = 1, 4, nhtfrq = 0, -6, 
-    avgflag_pertape='A','I', 
-    fincl2 ='PS','U','V','TAUX','TAUY','FSDS','TS','T','Q','PHIS','QFLX','SHFLX'
-
-  user_nl_clm 
-    &clmexp 
-    hist_mfilt = 1,4 hist_nhtfrq = 0,-6
-    hist_avgflag_pertape = 'A','I' hist_fincl2 = 'SNOWDP','H2OSNO','H2OSOI'
-
-**Use the met-data in another run**
-
-(The following instructions are not valid any more? It's CAM5, not CAM6? Which is the new compset for nudged simulations?)
-
-*First create a compset which has the configure-option "-offline_dyn". Check in config_compsets.xml which compsets have this configure-option added. See for example the compset NFAMIPNUDGEPTAERO in https://svn.met.no/NorESM/noresm/branches/featureCAM5-OsloDevelopment_trunk2.0-1/noresm/scripts/ccsm_utils/Case.template/config_compsets.xml*
-
-
-Then use this compset to create a case. You need the following user-input in the user_nl_cam
-:: 
-
-  user_nl_cam
-    &metdata_nl
-    met_data_file='/work/shared/noresm/inputForNudging/FAMIPC5NudgeOut/atm/hist/FAMIPC5NudgeOut.cam.h1.1979-01-01-00000.nc'
-    met_filenames_list ='/work/shared/noresm/inputForNudging/FAMIPC5NudgeOut/atm/hist/fileList.txt'
-
-The  ``met_data_file`` is the first met-data file to read and ``met_filenames_list`` is a list of all files to be read for the nudged simulation. The first lines of the file should look something like this (guess what the rest of the file should look like? 8-o: )
+Modify user_nl_cam to include information about which levels in the vertical the nudging 
+should apply to
 
 ::
 
-  /work/shared/noresm/inputForNudging/FAMIPC5NudgeOut/atm/hist/FAMIPC5NudgeOut.cam.h1.1979-01-01-00000.nc
-  /work/shared/noresm/inputForNudging/FAMIPC5NudgeOut/atm/hist/FAMIPC5NudgeOut.cam.h1.1979-01-02-00000.nc
-  /work/shared/noresm/inputForNudging/FAMIPC5NudgeOut/atm/hist/FAMIPC5NudgeOut.cam.h1.1979-01-03-00000.nc
-
-This file can be created at the place where you put the metdata with this command:
+  met_rlx_bot = 60 
+  met_rlx_top = 70 
+  met_rlx_bot_bot = 0 
+  met_rlx_bot_top = 0 
 
 ::
 
-  alfgr@hexagon-4:/work/shared/noresm/inputForNudging/FAMIPC5NudgeOut/atm/hist>
-  ls -d -1 $PWD/*.h1.*.nc > fileList.txt
+By using the values in the example above, nudging will be applied to all levels in the vertical. If met_rlx_bot_bot and met_rlx_bot_top is set to heights (given in km) above the bottom layer of the model (0 km), met_rlx_time will decrease exponentially from met_rlx_bot_top (where it will have the value of met_rlx_time) to met_rlx_bot_bot (where it will be zero from this level and all the way down to the ground). If you want to dampen or turn off the nudging intensity higher up, the same can be done to met_rlx_bot and met_rlx_top by setting these values to be lower in the atmosphere than the model top. 
 
 
+5. Nudging only winds and surface pressure
+------------------------------------------
+Modify user_nl_cam if you only want to nudge winds and surface pressure::
+
+  met_nudge_only_uvps = .true.
+  
+  
+This is recommended when looking at aerosol-cloud interactions, especially when nudging to meteorology that is not produced by the model itself (Zhang et al., 2014). 
+
+
+6. Appropriate topography
+--------------------------
+
+Modify user_nl_cam to point to an appropriate topography file if nudging to meteorology 
+from ERA-Interim or other meteorology that is not produced by the model itself. It is the field named ‘PHIS’ in the topography file that need to correspond to the source of the nudging data. 
+&cam_inparm bnd_topo = '/cluster/shared/noresm/inputdata/noresm-only/inputForNudging/ERA_f09f09_32L_days/ ERA_bnd_topo_noresm2_20191023.nc' 
+
+
+
+7. Correct calender
+-------------------
+
+If nudging to reanalysis data, CALENDAR in env_build.xml should be changed from 
+NO_LEAP to GREGORIAN. 
+
+8. Correct start date
+---------------------
+
+Modify env_run.xml to have the same RUN_STARTDATE as given in the met_data_file. 
+
+9. Ready-steady-go
+------------------
+
+You are now ready to setup, build and submit your case. 
+
+
+
+How to generate your own nudging inputdata
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Create a case
+-----------------
+
+Create a case you want to generate data from
+
+2. Modify user_nl_cam
+---------------------
+
+Modify user_nl_cam and/or other user namelists to output the preferred nudging data
+
+::
+
+  &camexp
+    mfilt = 1, 4, 
+    nhtfrq = 0, -6,
+    avgflag_pertape='A','I',
+    fincl2 ='PS','U','V','T'
+
+::
+
+The example above will output ordinary h0 monthly mean files, one pr month, but also h1-
+files with instantaneous values of PS, U, V and T every six hours, four pr file.
+
+3. Move the nudging data to a preferred folder
+-----------------------------------------------
+
+Move the nudging data (the h1-files) over to a preferred folder and create a txt-file including
+a list of all the nudging data files that later can be pointed to as met_filenames_list:
+ls -d -1 $PWD/*.h1.*.nc > fileList.txt
+
+For more information, look into the file where most of the nudging code is found::
+
+  /components/cam/src/NorESM/fv/metdata.F90. 
+  
+There are also other options for namelist modifications regarding nudging:
+http://www.cesm.ucar.edu/models/cesm2/settings/current/cam_nml.html and search for “met_”
 
