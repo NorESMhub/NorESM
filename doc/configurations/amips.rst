@@ -1,6 +1,6 @@
 .. _amips:
 
-AMIP (atmosphere/land-only) simulations:
+AMIP (atmosphere-only) simulations:
 ===================================
 
 Setting up an AMIP simulation
@@ -54,31 +54,31 @@ E.g.
 - SGLC_SWAV
    - The SGLC (land-ice) and SWAV (ocean-wave) models are not interactive, but used only to satisfy the interface requirements 
 
-To use different prescribed fields for SSTs and sea-ice cover than the default, change the value of the variable **SSTICE_DATA_FILENAME** in the evn_run.xml file to the full path of a different file that complies to the requirements of the CICE and the data-ocean model.
+To use different prescribed fields for SSTs and sea-ice cover than the default, change the value of the variable **SSTICE_DATA_FILENAME** in the **evn_run.xml** file to the full path of a different file that complies to the requirements of the CICE and the data-ocean model.
 
-NorESM2 derived boundary conditions for AMIP simulations
+NorESM2-derived boundary conditions for AMIP simulations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 n the coupled NorESM2 simulations, the flux parameterization used for the transfer of heat, moisture and momentum between the ocean and atmosphere is the so-called COARE flux parameterization. This choice is activated by::
 
-  FLUXSCHEME=1 
+  OCN_FLUX_SCHEME=1 
 
-in envrun.xml, and ends up in the driverin namelist as::
+in env_run.xml, and ends up in the drv_in namelist as::
 
-  fluxscheme=1. 
+  flux_scheme=1. 
 
 This parameterisationis different from the standard flux-parameterzation used in CESM, which is activated by::
 
-  FLUXSCHEME=0.
+  OCN_FLUX_SCHEME=0.
   
-In atmosphere-only simulations, one wants to use boundary conditions as close as possible to the coupled simulations. In NorESM2 atmosphere-only simulations, one therefor uses prescribed boundary conditions for SST, sea-ice cover and upper-ocean DMS concentrations (all three fields taken from the fully-coupled simulation), combined within principle the same flux-parameterisation is in the fully-coupled simulation.
+In atmosphere-only simulations, one wants to use boundary conditions as close as possible to the coupled simulations. In NorESM2 atmosphere-only simulations, one therefore uses prescribed boundary conditions for SST, sea-ice cover and upper-ocean DMS concentrations (all three fields taken from the fully-coupled simulation), combined within principle the same flux-parameterisation is in the fully-coupled simulation.
 
 
-For the atmosphere-only simulations to be run, boundary conditions have to be generated to describe the apparentstate of the imaginary underlying ocean. The model needs boundary conditions for sea-surface temperature (SST),sea-ice cover, and upper ocean DMS concentration. Up to now, 4 sets of boundary conditions have been made:
+For the atmosphere-only simulations to be run, boundary conditions have to be generated to describe the apparent state of the imaginary underlying ocean. The model needs boundary conditions for sea-surface temperature (SST), sea-ice cover, and upper-ocean DMS concentration. Up to now, 4 sets of boundary conditions have been made:
 
 - A pre-industrial climatology (containing 12 months)
 
-  - on 2x2 degree based on a 30-year period of 2x2 degree resolution and piControl(years 1751–1780).  
-  - this climatology is used for piClim-control (and all type of perturbations) CMIP6 simulations(these are mostly 30-year long simulations).  
+  - on 2x2 degree based on a 30-year period of 2x2 degree resolution and piControl (years 1751–1780).  
+  - this climatology is used for piClim-control (and all type of perturbations) CMIP6 simulations (these are mostly 30-year long simulations).  
   
 - As above but on 1x1 resolution, and based on 1◦x1◦piControl (years 1351-1380).
 
