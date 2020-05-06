@@ -5,30 +5,22 @@ Setting the experiment environments
 
 After creating a case (see :ref:`experiments`) the environment settings can be modified in  the env_*.xml files contained in the case folder
 
-The case folder:
-^^^^^^^^^^^^^^^^
-
 The case folder contains:
-  - README.case: File detailing your create_newcase usage. This is a good place for you to keep track of runtime problems and changes.
-  - CaseStatus: File containing a list of operations done in the current case.
-  - Buildconf: Directory containing scripts to generate component namelists and component and utility libraries (e.g., PIO, MCT). *You should never have to edit the contents of this directory*
-  - SourceMods: Directory where you can place modified source code. In SourceMods there are subfolders for the different models; cam, clm, cice, micom, mosart and so on . If you want to change the e.g. code or add subroutines, you place them here. 
-  - CaseDocs: here you find the namelists containing all the subroutines and parameters used. These files will be modifiedafter rebuild. *You should never have to edit the contents of this directory*. If you wish to make changes to the namelists you use:
-  - user made namelists: you can place your own namelists for the different models where you can change parameters and model settings and so on (i.e. user\_nl\_cam, user\_nl\_cice, user\_nl\_clm, user\_nl\_micon, user\_nl\_cpl)
-  - LockedFiles: Directory that holds copies of files that should not be changed. *You should never edit the contents of this directory*
-  - Tools: Directory containing support utility scripts. 
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-User namelists:
-^^^^^^^^^^^^^^^
-
-
-Code modifications:
-^^^^^^^^^^^^^^^^^^^
+  - **README.case:** File detailing your create_newcase usage. This is a good place for you to keep track of runtime problems and changes. The file contains information about e.g. how the case was created, compset details, grid information and which branch, git commit and model code were used for case creation.
+  - **CaseStatus:** File containing a list of operations done in the current case.
+  - **Buildconf:** Directory containing scripts to generate component namelists and component and utility libraries (e.g., PIO, MCT). *You should never have to edit the contents of this directory*
+  - **SourceMods:** Directory where you can place modified source code. In SourceMods there are subfolders for the different models; cam, clm, cice, micom, mosart and so on . If you want to change the code or add subroutines, you place copies of the fortran files here. 
+  - **user made namelists:** you can place your own namelists for the different models where you can change parameters and model settings and so on (i.e. user\_nl\_cam, user\_nl\_cice, user\_nl\_clm, user\_nl\_micon, user\_nl\_cpl). See details below. 
+  - **CaseDocs:** here you find the namelists containing all the subroutines and parameters used. These files will be modified after rebuild. The details of parameter values and input files are listed in the <component>_in files. *You should never have to edit the contents of this directory*. If you wish to make changes to the <component>_in files, you change the user_nl_<component> and rebuild.
+  - **LockedFiles:** Directory that holds copies of files that should not be changed. *You should never edit the contents of this directory*
+  - **Tools:** Directory containing support utility scripts. 
 
 
+Machine specific environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Machine specific environment:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The file
 
 ::
@@ -37,7 +29,7 @@ The file
   
 ::
 
-sets component machine-specific processor layout. The settings are critical to a well-load-balanced simulation. Here you set the number of cpus used for each model component (e.g. usually land + ice + rof (river run off) = atm = ) and the coupler. An example of sunch an env_mach_pes.xml file:
+sets component machine-specific processor layout. The settings are critical to a well-load-balanced simulation. Here you set the number of cpus used for each model component and the coupler (usually land + ice + rof (river run off) = atm = coupler). An example of sunch an env_mach_pes.xml file:
 
 ::
   
@@ -61,7 +53,7 @@ sets component machine-specific processor layout. The settings are critical to a
 ::
 
 
-Run environment:
+Run environment
 ^^^^^^^^^^^^^^^^
 The file
 
@@ -73,8 +65,8 @@ The file
 
 sets the configuration details for the experiment. E.g. time settings such as length of run, frequency of restart files produced, output of coupler diagnostics, and short-term and long-term restart file archiving. 
 
-**NorESM2 specific additons**
-
+NorESM2 specific configuration settings
+---------------------------------------
 - FLUXSCHEME=1 
 
   - In the coupled NorESM2 simulations, the flux parameterization used for the transfer of heat, moisture and momen-tum between the ocean and atmosphere is the so-called COARE flux parameterization. This choice is activated by FLUXSCHEME=1 in envrun.xml, and ends up in the driver_in namelist as fluxscheme=1. This parameterisationis different from the standard flux-parameterzation used in CESM, which is activated by FLUXSCHEME=0.
@@ -83,7 +75,8 @@ sets the configuration details for the experiment. E.g. time settings such as le
 
   - a feature of the coupled NorESM2 simulations, i.e., taking into account the fact that the solar zenith angle used for the calculation of the surface albedo changes over the atmospheric model time step of 30 minutes 
 
-**Some common configuration settings:**
+Some common configuration settings
+----------------------------------
 
 - RUN_TYPE:
 
@@ -123,8 +116,7 @@ sets the configuration details for the experiment. E.g. time settings such as le
   
 - CONTINUE_RUN:
    
-  - Needs to be FALSE when you first begin the run. When you successfully run and get a restart
-      file (if the model crashes after the restart file is produced you can set CONTINUE_RUN to TRUE as well), you will need to change CONTINUE_RUN to TRUE for the remainder of your simulation. 
+  - Needs to be FALSE when you first begin the run. When you successfully run and get a restart file (if the model crashes after the restart file is produced you can set CONTINUE_RUN to TRUE as well), you will need to change CONTINUE_RUN to TRUE for the remainder of your simulation. 
       
 - RESUBMIT:
 
@@ -139,9 +131,39 @@ sets the configuration details for the experiment. E.g. time settings such as le
   - Logical to archive all the produced restart files and not just those at the end of the simulation. Default is FALSE.
   
  
- 
-Run and archiving time environment:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+User namelists
+^^^^^^^^^^^^^^^
+Aerosol diagnostics
+-------------------
+
+
+Frequency of output
+-------------------
+
+
+Parameter settings
+------------------
+
+
+Input data
+-----------
+All active and data components use input data sets. A local disk needs DIN_LOC_ROOT to be populated with input data in order to run NorESM. You can make links to the input data sets in the user_nl_<components>. 
+Input data is handled by the build process as follows:
+
+  - The buildnml scripts in Buildconf/ create listings of required component input datasets in the Buildconf/<component>.input_data_list files
+  
+  - ./case.build checks for the presence of the required input data files in the root directory DIN_LOC_ROOT. If all required data sets are found on local disk, then the build can proceed.
+  
+  - If any of the required input data sets are not found, the build script will abort and the files that are missing will be listed. At this point, you must obtain the required data from the input data server using check_input_data with the -export option. 
+
+
+Code modifications
+^^^^^^^^^^^^^^^^^^^
+
+
+
+Run and archiving time environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The file
 
 ::
@@ -165,8 +187,8 @@ There are also other env_ files which you usually don't need to or can't change:
 Build and submit the experiment
 ===============================
 
-Building the case:
-^^^^^^^^^^^^^^^^^^^^
+Building the case
+^^^^^^^^^^^^^^^^^^
 The case is build by:
 
 ::
@@ -196,8 +218,8 @@ Running this is completely optional: these checks will be done
 automatically when running case.submit. However, you can run this if you
 want to perform these checks without actually submitting the case.
 
-Submitting the case:
-^^^^^^^^^^^^^^^^^^^^
+Submitting the case
+^^^^^^^^^^^^^^^^^^^
 The case is submitted by:
 
 ::
