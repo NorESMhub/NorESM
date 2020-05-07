@@ -35,6 +35,7 @@ https://github.com/NorESMhub/NorESM/blob/master/doc/README.md.
    contribute/contribute.rst
    model-description/model-description.rst
    faq/faq.rst
+   data/data.rst
 
 
 Search
