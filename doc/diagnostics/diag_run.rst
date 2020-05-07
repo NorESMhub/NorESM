@@ -12,7 +12,8 @@ At the moment diag_run is only available on NIRD:
 /projects/NS2345K/noresm_diagnostics/bin/diag_run
 
 Description
------------
+------------
+
 diag_run is a wrapper script, which is used to run the diagnostics for each NorESM component
 (cam, clm, cice, micom, and hamocc). The diagnostic packages can be used to plot model results
 with respect to either observations (so-called model-obs diagnostics), or to another simulation
@@ -82,6 +83,103 @@ The (semi-configured) run script has then been copied to
 and all information about the configuration is contained in
 /projects/NS2345K/noresm_diagnostics/out/<username>/CLM_DIAG/config.log
 
+
+Options
+-------
+diag_run options (flags) typically come in both short (single-letter) and long forms. A complete
+description of all options is given below in alphabetical order of the short option letter. When
+invoked without options, diag_run prints a table containing all options along with some examples
+(see also below).::
+
+  -c case_name (-c1, --case, --case1)
+  
+Name of the test case experiment that you want to run diagnostics for. This option is required if you
+want to use diag_run in active-mode.::
+
+  -c2 case_name2 (--case2)
+ 
+Name of the control case experiment. This option is required if you want to run model1-model2
+diagnostics in active-mode.::
+
+  -e end_year (-e1,--end_yr,--end_yr1)
+  
+If –type=time_series, this option refers to the end year of time-series for case_name. Otherwise, it
+refers to the end year of climatology. This option is optional if –type=time_series, but required for
+active-mode diagnostics if –type=climo or if type is not invoked.::
+
+  -e2 end_year (--end_yr2)
+  
+If –type=time_series, this option refers to the end year of time-series for case_name2. Otherwise, it
+refers to the end year of climatology. This option is optional if –type=time_series, but required for
+active-mode model1-model2 diagnostics if –type=climo or if type is not invoked.::
+
+  -i input_dir (-i1, --input-dir, --input-dir1)
+  
+Name of the root directory of the monthly history files for case_name. For example, if your micom
+history files are located in /this/is/a/directory/case1/ocn/hist, this option should be set to
+input_dir=/this/is/a/directory. Default is input_dir=/projects/NS2345K/noresm/cases ::
+
+  -i2 input-dir2 (--input-dir2)
+  
+Name of the root directory of the monthly history files for case_name2. Also here, default is
+input_dir2=/projects/NS2345K/noresm/cases ::
+
+  -m model (--model)
+
+Name of the model you want to run the diagnostics for. Valid options are cam, clm, cice, micom,
+hamocc and all. This is the only option that is required for both the active and passive mode. If you
+invoke the “all” option, the cam, clm, cice, micom and hamocc diagnostics will be run
+subsequently. It is also possible to combine different models as you wish within this option: for
+example, if you only want to run cam and clm diagnostics, you can simply add the names of those
+models and separate them with a comma (-m cam,clm)::
+
+  --no-atm
+  
+This option, which takes no argument, skips the usage of CAM history files in the CLM
+diagnostics. This option is necessary for offline CLM simulations.::
+
+  -o output_dir (--output_dir)
+  
+Root directory where you want to store the output from the diagnostics (i.e. the climatology and
+time-series files). For example, if you set output_dir=/just/another/directory, the climatology and
+time-series files from the micom diagnostics will be stored in::
+
+  /just/another/directory/MICOM_DIAG/. 
+  
+Default is::
+
+  output_dir=/projects/NS2345K/noresm_diagnostics/out/$USER
+  
+where $USER is your user name on NIRD.::
+
+  -p, --passive-mode
+  
+This option, which takes no argument, forces diag_run into passive-mode. This means, even if you
+have given sufficient information to run in active-mode, the diagnostic scripts will not be executed.::
+
+ -s start_year (-s1,--start_yr,--start_yr1)
+ 
+If –type=time_series, this option refers to the start year of time-series for case_name. Otherwise, it
+refers to the start year of climatology. This option is optional if –type=time_series, but required for
+active-mode diagnostics if –type=climo or if type is not invoked.::
+
+  -s2 start_year2 (--start_yr2)
+  
+If –type=time_series, this option refers to the start year of time-series for case_name2. Otherwise, it
+refers to the start year of climatology. This option is optional if –type=time_series, but required for
+active-mode model1-model2 diagnostics if –type=climo or if type is not invoked.::
+
+  -t type (--type)
+  
+Specifies if you only run climatology or time-series diagnostics: valid options are --type=climo and
+--type=time_series. Default is to run both.::
+
+  -w webdir (--web-dir)
+  
+Specifies the directory where the html should be stored. This directory should preferably be linked
+to a web server so that one can look at the results with a web browser. Default is::
+
+  --web-dir=/projects/NS2345K/www/noresm_diagnostics/.
 
 Add to .bashrc
 --------------
