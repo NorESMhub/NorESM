@@ -31,12 +31,12 @@ A set of DECK experiments and scenario experiments were carried out with NorESM1
       - aerosols and aerosol precursor emissions (the **Aerosol only** experiment)
       - natural solar radiation and vulcanos (the **Natural only** experiment)
    - RCP scenario experiments in which the radiative forcing at the end of the 21st century corresponds to
-      - 2.6 w/m^2 (the **RCP2.6** experiment)
-      - 4.5 W/m^2 (the **RCP4.5** experiment)
-      - 8.5 W/m^2 (the **RCP8.5** experiment)
-   - experiments in forcings are as in the pre-industrial climate except the CO2 concentrations which are
-      - instantly quadroupled at the beginning of the experiment (the **abrupt-4xCO2** experiment)
-      - increased by 1% per year untill quadroupling and then held constant (the *gradual-4xCO2** experiment)
+      - 2.6 W/m\ :sup:`2`\  (the **RCP2.6** experiment)
+      - 4.5 W/m\ :sup:`2`\  (the **RCP4.5** experiment)
+      - 8.5 W/m\ :sup:`2`\  (the **RCP8.5** experiment)
+   - experiments in forcings are as in the pre-industrial climate except the CO\ :sub:`2`\   concentrations which are
+      - instantly quadroupled at the beginning of the experiment (the **abrupt-4xCO\ :sub:`2`\ ** experiment)
+      - increased by 1% per year untill quadroupling and then held constant (the *gradual-4xCO\ :sub:`2`\ ** experiment)
 **References**
 
 Lise S. Graff, Trond Iversen, Ingo Bethke, Jens B. Debernard, Øyvind Seland, Mats Bentsen, Alf Kirkevåg, Camille Li, and Dirk J. L. Olivié: Arctic amplification under global warming of 1.5 and 2 °C in NorESM1-Happi, Earth Syst. Dynam., 10, 569–598, https://doi.org/10.5194/esd-10-569-2019, 2019
