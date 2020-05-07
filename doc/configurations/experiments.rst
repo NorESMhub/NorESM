@@ -195,6 +195,52 @@ E.g.
 
 For details about AMIP simulation compsets, please see :ref:`amips`
 
+
+
+
+Building the case
+^^^^^^^^^^^^^^^^^^
+The case is build by:
+
+::
+
+  ./case.build
+
+::
+
+All user modifications to env_run.xml, env_mach_pes.xml, env_batch.xml must be done before case.build is invoked. This is also the case for the aforementioned user made name lists: i.e. user_nl_cam, user_nl_cice, user_nl_clm, user_nl_micon, user_nl_cpl).
+
+
+If you want to ensure your case is ready for submission, you can run:
+
+::
+  
+  ./check_case
+  
+::
+
+which will:
+
+- Ensure that all of the env xml files are in sync with the locked files
+- Create namelists (thus verifying that there will be no problems with namelist generation)
+- Ensure that the build is complete
+
+Running this is completely optional: these checks will be done
+automatically when running case.submit. However, you can run this if you
+want to perform these checks without actually submitting the case.
+
+Submitting the case
+^^^^^^^^^^^^^^^^^^^
+The case is submitted by:
+
+::
+
+  ./case.submit
+
+::
+
+
+
 Resolution
 ''''''''''
 
