@@ -1,8 +1,15 @@
 .. _start:
 
+
+Introduction
+=============
+
+
 NorESM2 User's Guide
-====================
+^^^^^^^^^^^^^^^^^^^^
+
 This guide instructs both novice and experienced users on building and running NorESM2 for various experiment set ups. The chapters attempt to provide relatively detailed information about how to make, set up, build, run and modify experiments using NorESM2.
+
 
 NorESM2
 ^^^^^^^^
@@ -29,9 +36,8 @@ https://noresm-docs.readthedocs.io/en/noresm1/
 
 
 CMIP6 archive of NorESM results
-'''''''''''''''''''''''''''''''
-
-See :ref:`data`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+For a detailed overview on how to access NorESM data please see :ref:`data`
 
 
 
