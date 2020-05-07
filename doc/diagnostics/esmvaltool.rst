@@ -1,4 +1,8 @@
 .. _esmvaltool:
 
-Earth System Model eValuation Tool (ESMValTool)
-===============================================
+ESMValTool
+==========
+
+
+Earth System Model eValuation Tool 
+----------------------------------
