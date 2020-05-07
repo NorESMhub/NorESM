@@ -1,7 +1,7 @@
 .. _nudged_simulations:
 
-Nudging NorESM2
-================
+Nudged experiments
+==================
 
 Step by step guide for setting up a nudged simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
