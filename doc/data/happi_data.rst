@@ -1,6 +1,6 @@
 .. _happi_data.rst
 
-HAPPI data et al.
+HAPPI and HappiEVA data
 =============
 
 1.5 and 2.0 degree warming experiments 
@@ -29,28 +29,42 @@ as a part of the HAPPI initiative (Half A degree additional warming, Prognosis a
 Fully-coupled experiments
 +++++++++++
 
+Fully-coupled experiments targeting 
+   - 1.5 degree warming (relative to pre-industrial conditions) and
+   - 2.0 degree warming 
+were conducted with NorESM1-Happi. See Graff et al. (2019) for details.
+
+**The data (raw model output) can be retrieved from the NIRD research data archive: https://doi.org/10.11582/2020.00021**
+
 Slab-ocean experiments
 ++++++++++
+
+Slab-ocean experiments were conducted for 
+   - a present-day climate that is as similar to that in the NorESM1-Happi All-Hist experiment as possible
+   - a 1.5 degree warmer climate (relative to the pre-industrial) that is as similar to that in the NorESM1-Happi Plus15-Future experiment as possible
+   - a 2.0 degree warmer climate (relative to the pre-industrial) that is as similar to that in the NorESM1-Happi Plus20-Future experimet as possible
+
+**The data (raw model output) can be retrieved from the NIRD research data archive: https://doi.org/10.11582/2020.00013**
+
 
 
 CMIP5 DECK and scenario experiments with NorESM1-Happi
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-A set of DECK experiments and scenario experiments were carried out with NorESM1-Happi (Graff et al., 2019) to enable an extensive validation of the model in line with the CMIP5 protocol (note that these experiments are not a part of the official CMIP5 data set):
+A set of fully-coupled DECK experiments and scenario experiments were carried out with NorESM1-Happi (Graff et al., 2019) to enable an extensive validation of the model in line with the CMIP5 protocol (note that these experiments are not a part of the official CMIP5 data set):
 
    - a pre-industrial control simulation (the **piControl** experiment)
    - three historical members for the time period 1850-2005 (the **Hist1**, **Hist2**, and **Hist3** experiments)
    - Hist1 with external forcings as in 1850, but with with varying (historical)
    
-      - greenhouse gases (the **GHG only** experiment)
-      - aerosols and aerosol precursor emissions (the **Aerosol only** experiment)
-      - natural solar radiation and vulcanos (the **Natural only** experiment)
+      - greenhouse gases 
+      - aerosols and aerosol precursor emissions 
+      - natural solar radiation and vulcanos 
    - RCP scenario experiments in which the radiative forcing at the end of the 21st century corresponds to
    
-   - 2.6 W/m\ :sup:`2`\  (the **RCP2.6** experiment)
-   
-      - 4.5 W/m\ :sup:`2`\  (the **RCP4.5** experiment)
-      - 8.5 W/m\ :sup:`2`\  (the **RCP8.5** experiment)
+      - 2.6 W/m\ :sup:`2`\  
+      - 4.5 W/m\ :sup:`2`\  
+      - 8.5 W/m\ :sup:`2`\  
    - experiments in forcings are as in the pre-industrial climate except the CO\ :sub:`2`\   concentrations which are
    
    - instantly quadroupled at the beginning of the experiment (the **abrupt-4xCO**\ :sub:`2`\ experiment)
@@ -59,6 +73,12 @@ A set of DECK experiments and scenario experiments were carried out with NorESM1
 
 **The data (raw model output) can be retrieved from the NIRD research data archive: https://doi.org/10.11582/2020.00021**
 
+In addition, a set of slab-ocean experiments were conducted to assess the climate sensitivity of NorESM1-Happi under the slab-ocean configuration (for details, see Graff et al., 2019). These include
+   - a pre-industrial (1850) control simulation  
+   - a 2xCO\ :sub:`2`\  experiment 
+   - a 4xCO\ :sub:`2`\  experiment
+   
+**Data from the slab-ocean experiments can be retrieved from: https://doi.org/10.11582/2020.00014**
 
 
 References
