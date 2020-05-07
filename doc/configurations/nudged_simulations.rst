@@ -1,6 +1,6 @@
 .. _nudged_simulations:
 
-Setting up a nudged simulation:
+Setting up a nudged simulation
 ===============================
 
 Step by step guide for nudged simulation
