@@ -14,9 +14,13 @@ A set of AMIP-style large ensemble experiments (125 members) were carried out wi
 
 as a part of the HAPPI initiative (Half A degree additional warming, Prognosis and Projected Impacts; happimip.org; Mitchell et al., 2017). 
 
-In addition to NorESM1-HAPPI, the HAPPI dataset comprises data from several other climate models. 
+CMOR-ized data for NorESM1-Happi and the other participating models can be retrieved from http://portal.nersc.gov/c20c/data.html
 
-Data can be retrieved from http://portal.nersc.gov/c20c/data.html
+Raw model output for NorESM1-Happi can be retrived from the NIRD research data archive:
+
+   - https://doi.org/10.11582/2019.00006 (All-Hist)
+   - https://doi.org/10.11582/2019.00002 (Plus15-Future)
+   - https://doi.org/10.11582/2019.00003 (Plus20-Future)
 
 
 CMIP5 DECK and scenario experiments with NorESM1-Happi
@@ -35,8 +39,11 @@ A set of DECK experiments and scenario experiments were carried out with NorESM1
       - 4.5 W/m\ :sup:`2`\  (the **RCP4.5** experiment)
       - 8.5 W/m\ :sup:`2`\  (the **RCP8.5** experiment)
    - experiments in forcings are as in the pre-industrial climate except the CO\ :sub:`2`\   concentrations which are
-      - instantly quadroupled at the beginning of the experiment (the **abrupt-4xCO\ :sub:`2`\ ** experiment)
-      - increased by 1% per year untill quadroupling and then held constant (the *gradual-4xCO\ :sub:`2`\ ** experiment)
+      - instantly quadroupled at the beginning of the experiment (the **abrupt-4xCO**\ :sub:`2`\ experiment)
+      - increased by 1% per year untill quadroupling and then held constant (the **gradual-4xCO**\ :sub:`2`\   experiment)
+
+The data (raw model output) can be retrieved from the NIRD research data archive: https://doi.org/10.11582/2020.00021
+
 **References**
 
 Lise S. Graff, Trond Iversen, Ingo Bethke, Jens B. Debernard, Øyvind Seland, Mats Bentsen, Alf Kirkevåg, Camille Li, and Dirk J. L. Olivié: Arctic amplification under global warming of 1.5 and 2 °C in NorESM1-Happi, Earth Syst. Dynam., 10, 569–598, https://doi.org/10.5194/esd-10-569-2019, 2019
