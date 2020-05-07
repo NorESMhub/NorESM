@@ -1,7 +1,7 @@
 .. _aerosol:
 
-Running NorESM2 with extra aerosol diagnostics
-==============================================
+Extra aerosol diagnostics
+==========================
 
 
 Configuring a run with more aerosol diagnostics in NorESM2
