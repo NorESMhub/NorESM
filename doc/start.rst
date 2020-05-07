@@ -8,7 +8,7 @@ Introduction
 NorESM2 User's Guide
 ^^^^^^^^^^^^^^^^^^^^
 
-This guide instructs both novice and experienced users on building and running NorESM2 for various experiment set ups. The chapters attempt to provide relatively detailed information about how to make, set up, build, run and modify experiments using NorESM2.
+This guide instructs both novice and experienced users on building and running NorESM2 for various experiment set ups. The chapters attempt to provide relatively detailed information on how to make, set up, build, run and modify experiments using NorESM2.
 
 
 NorESM2
@@ -23,13 +23,13 @@ The NorESM specific development is led by the Norwegian Meteorological Institute
 
   - Atmospheric chemistry/aerosol/cloud module: OsloAero6  (Kirkevåg et al. GMD, 2018)
   - Atmospheric dynamics/physics: Improved conservation of energy and angular momentum (Toniazzo et al. GMD, 2020)
-  - Parameterization of turbulent air-sea fluxes (see :ref:`amips` for mode details)
+  - Parameterization of turbulent air-sea fluxes (see :ref:`amips` for more details)
   
 - Sea-ice model:
 
   - Wind drift of snow
-- Ocean model : Isopycnic coordinate model BLOM (see :ref:`omips` for mode details)
-- Ocean biogeochemical model : iHAMOCC (see :ref:`omips` for mode details)
+- Ocean model : Isopycnic coordinate model BLOM (see :ref:`omips` for more details)
+- Ocean biogeochemical model : iHAMOCC (see :ref:`omips` for more details)
 
 For a short description of the model components, please see :ref:`model-description`
 
@@ -54,20 +54,19 @@ For a short description of the model components, please see :ref:`model-descript
   - CO2 emission driven, used for interactive carbon-cycle studies
    
  
-| NorESM2 contributes to the 6th phase of the Coupled Model Intercomparison Project (CMIP6).
-| https://www.wcrp-climate.org/wgcm-cmip/wgcm-cmip6
-| 
-| Scientific documentation in the GMD – Special issue "The Norwegian Earth System Model: NorESM"  
-| http://www.geosci-model-dev.net/special_issue20.html  
-| 
-| 
-| NorESM1 Documentation is found here:  
-| https://noresm-docs.readthedocs.io/en/noresm1/
+ 
+NorESM2 contributes to the 6th phase of the Coupled Model Intercomparison Project (CMIP6):
+https://www.wcrp-climate.org/wgcm-cmip/wgcm-cmip6
+
+Scientific documentation in the GMD – Special issue "The Norwegian Earth System Model: NorESM":  
+http://www.geosci-model-dev.net/special_issue20.html  
+
+NorESM1 Documentation is found here:  
+https://noresm-docs.readthedocs.io/en/noresm1/
 
 
-
-CMIP6 archive of NorESM results
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Archive of NorESM results
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 For a detailed overview on how and where to access NorESM data please see :ref:`data`
 
 
