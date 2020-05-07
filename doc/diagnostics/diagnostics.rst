@@ -1,7 +1,7 @@
 .. _diagnostics:
 
- NorESM2 diagnostics
-====================
+NorESM2 diagnostics
+===================
 
 .. toctree::
    :maxdepth: 2
