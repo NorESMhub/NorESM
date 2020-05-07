@@ -47,6 +47,12 @@ For a short description of the model components, please see :ref:`model-descript
   - 2 degree resolution for the atmosphere and land components
   - 1 degree resolution for the ocean and sea-ice components
   - CO2 concentration driven
+  
+- **NorESM2-MH**
+ 
+  - 1 degree resolution for the atmosphere and land components
+  - 0.25 degree resolution for the ocean and sea-ice components
+  - CO2 concentration driven
  
 - **NorESM2-LME**
     
