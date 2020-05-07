@@ -6,7 +6,7 @@ Nudged experiments
 **Step by step guide for setting up a nudged simulation**
 
 
-1. Create a new case 
+Create a new case 
 --------------------
 
 with a compset that supports nudging e.g. NFHISTnorpddmsbcsdyn, or 
@@ -16,7 +16,7 @@ use your own compset and add::
   
 to CAM_CONFIG_OPTS in env_build.xml after creating a case.
 
-2. Meteorology
+Meteorology
 ---------------
 Modify user_nl_cam include information about the meteorology you want to nudge to
 
@@ -31,7 +31,7 @@ Modify user_nl_cam include information about the meteorology you want to nudge t
 
 met_filenames_list points to a txt-file that must include all the meteorological nudging data that will be used for the entire simulation. The met_data_file points to the file in this list that includes the starting date of your simulation. The example above shows how to point to ERA-Interim data, created by Inger Helene Hafsahl Karset (https://www.duo.uio.no/handle/ 10852/72779). You can also create your own model produced data (explanation further down in this document). 
 
-3. Nudging strength
+Nudging strength
 -------------------
 
 Modify user_nl_cam to include information about the strength of the nudging::
@@ -41,7 +41,7 @@ Modify user_nl_cam to include information about the strength of the nudging::
   
 met_rlx_time is the relaxation time scale. If the timestep of the model is 0.5 hrs, a relaxation time scale of 6 corresponds to a nudging strength of 0.5/6 ~ 0.083 = 8.3 %, meaning that 8.3 % of the nudged component (for example the wind) comes from the value in the met_data_file, while 93.7 % will come from the model itself. It is recommended to set met_rlx_time to the same value as the time frequency of the nudging data.
 
-4. Vertical levels
+Vertical levels
 ------------------
 
 Modify user_nl_cam to include information about which levels in the vertical the nudging 
@@ -59,7 +59,7 @@ should apply to
 By using the values in the example above, nudging will be applied to all levels in the vertical. If met_rlx_bot_bot and met_rlx_bot_top is set to heights (given in km) above the bottom layer of the model (0 km), met_rlx_time will decrease exponentially from met_rlx_bot_top (where it will have the value of met_rlx_time) to met_rlx_bot_bot (where it will be zero from this level and all the way down to the ground). If you want to dampen or turn off the nudging intensity higher up, the same can be done to met_rlx_bot and met_rlx_top by setting these values to be lower in the atmosphere than the model top. 
 
 
-5. Nudging only winds and surface pressure
+Nudging only winds and surface pressure
 ------------------------------------------
 Modify user_nl_cam if you only want to nudge winds and surface pressure::
 
@@ -69,7 +69,7 @@ Modify user_nl_cam if you only want to nudge winds and surface pressure::
 This is recommended when looking at aerosol-cloud interactions, especially when nudging to meteorology that is not produced by the model itself (Zhang et al., 2014). 
 
 
-6. Appropriate topography
+Appropriate topography
 --------------------------
 
 Modify user_nl_cam to point to an appropriate topography file if nudging to meteorology 
@@ -78,18 +78,18 @@ from ERA-Interim or other meteorology that is not produced by the model itself. 
 
 
 
-7. Correct calender
+Correct calender
 -------------------
 
 If nudging to reanalysis data, CALENDAR in env_build.xml should be changed from 
 NO_LEAP to GREGORIAN. 
 
-8. Correct start date
+Correct start date
 ---------------------
 
 Modify env_run.xml to have the same RUN_STARTDATE as given in the met_data_file. 
 
-9. Ready-steady-go
+Ready-steady-go
 ------------------
 
 You are now ready to setup, build and submit your case. 
@@ -99,12 +99,12 @@ You are now ready to setup, build and submit your case.
 How to generate your own nudging inputdata
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Create a case
+Create a case
 -----------------
 
 Create a case you want to generate data from
 
-2. Modify user_nl_cam
+Modify user_nl_cam
 ---------------------
 
 Modify user_nl_cam and/or other user namelists to output the preferred nudging data
@@ -122,7 +122,7 @@ Modify user_nl_cam and/or other user namelists to output the preferred nudging d
 The example above will output ordinary h0 monthly mean files, one pr month, but also h1-
 files with instantaneous values of PS, U, V and T every six hours, four pr file.
 
-3. Move the nudging data to a preferred folder
+Move the nudging data to a preferred folder
 -----------------------------------------------
 
 Move the nudging data (the h1-files) over to a preferred folder and create a txt-file including
