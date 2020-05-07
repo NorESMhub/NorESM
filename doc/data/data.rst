@@ -1,6 +1,6 @@
 .. _data:
 
-Access NorESM data
+Access NorESM data: CMIP and other
 ===================
 
 .. toctree::
