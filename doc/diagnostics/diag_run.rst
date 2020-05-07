@@ -26,8 +26,61 @@ https://github.com/johiak/NoresmDiagnostics
 
 The NorESM ocean component BLOM used to be called micom. In diag_run the model name of the ocean component is still micom (and not blom) and will be called micom in all the examples below. However, the model which will be analyzed is blom.  
 
-Description of diag_run - a wrapper script for NorESM diagnostics
------------------------------------------------------------------
+
+diag_run - a wrapper script for NorESM diagnostics
+---------------------------------------------------
+
+Each package can be run/configured from the command line using the program diag_run: 
+
+::
+
+  ----------------------------------------------------------------------------- 
+  Program:
+  /projects/NS2345K/noresm_diagnostics/bin/diag_run
+  Version: 6.0
+  -------------------------------------------------
+  Short description:
+  A wrapper script for NorESM diagnostic packages.
+
+  Basic usage:
+  diag_run -m [model] -c [test case name] -s [test case start yr] -e [test case end yr] # Run model-obs diagnostics
+  diag_run -m [model] -c [test case name] -s [test case start yr] -e [test case end yr] -c2 [cntl case name] -s2 [cntl case start yr] -e2 [cntl case end yr] # Run model1-model2 diagnostics
+  nohup /projects/NS2345K/noresm_diagnostics/bin/diag_run -m [model] -c [test case name] -s [test case start yr] -e [test case end yr] &> out & # Run model-obs diagnostics in the background with nohup
+
+  Command-line options:
+  -m, --model=MODEL                             Specify the diagnostics package (REQUIRED).
+                                                Valid arguments:
+                                                  cam    : atmospheric package (AMWG)
+                                                  clm    : land package (LMWG)
+                                                  cice   : sea-ice package
+                                                  micom  : ocean package
+                                                  hamocc : biogeochemistry package
+                                                  all    : configure all available packages.
+  -c, -c1, --case=CASE1, --case1=CASE1          Test case simulation (OPTIONAL).
+  -s, -s1, --start_yr=SYR1, --start_yr1=SYR1    Start year of test case climatology (OPTIONAL).
+  -e, -e1, --end_yr=EYR1, --end_yr1=EYR1        End year of test case climatology (OPTIONAL).
+  -c2, --case2=CASE2                            Control case simulation (OPTIONAL).
+  -s2, --start_yr2=SYR2                         Start year of control case climatology (OPTIONAL).
+  -e2, --end_yr2=EYR2                           End year of control case climatology (OPTIONAL).
+  -i, -i1, --input-dir=DIR, --input-dir1=DIR    Specify the directory where the test case history files are located (OPTIONAL).
+                                                Default is --input-dir=/projects/NS2345K/noresm/cases
+  -i2, --input-dir2=DIR                         Specify the directory where the control case history files are located (OPTIONAL).
+                                                Default is --input-dir=/projects/NS2345K/noresm/cases
+  -o, --output-dir=DIR                          Specify the directory where the package(s) the climatology and time-series files should be stored (OPTIONAL).
+                                                Default is --output-dir=/projects/NS2345K/noresm_diagnostics/out/$USER
+  -p, --passive-mode                            Run the script in passive mode: the diagnostic script will be configured but not executed (OPTIONAL).
+  -t, --type=TYPE                               Specify climatology or time series diagnostics (OPTIONAL): valid options are --type=climo and --type=time_series.
+                                                Default is to run both. Note that the time series are computed over the entire simulation.
+  -w, --web-dir=DIR                             Specify the directory where the html should be published (OPTIONAL).
+                                                Default is --web-dir=/projects/NS2345K/www/noresm_diagnostics
+  --no-atm                                      Run CLM diagnostics without CAM data. Must be used for offline CLM simulations.
+ 
+
+::
+
+
+Description
+------------
 
 diag_run is a wrapper script, which is used to run the diagnostics for each NorESM component
 (cam, clm, cice, micom, and hamocc). The diagnostic packages can be used to plot model results
@@ -286,6 +339,7 @@ Model-obs time-series diagnostics in MICOM for all years the model output direct
   
   
 Configure (but do not run) model-obs diagnostics for CICE: ::
+
   diag_run -m cice -c N1850_f19_tn11_exp1 -s 21 -e 50 -p
   
 Model1-model2 diagnostics for CLM with user-specified history file directories: ::
