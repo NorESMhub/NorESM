@@ -1,4 +1,4 @@
-.. _faq:
+.. _aero_faq:
 
 Frequently asked questions
 =========================
