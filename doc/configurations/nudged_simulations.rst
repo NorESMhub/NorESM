@@ -3,8 +3,8 @@
 Nudged experiments
 ==================
 
-Step by step guide for setting up a nudged simulation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Step by step guide for setting up a nudged simulation**
+
 
 1. Create a new case 
 --------------------
