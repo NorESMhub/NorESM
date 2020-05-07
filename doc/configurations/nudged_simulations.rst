@@ -1,10 +1,10 @@
 .. _nudged_simulations:
 
-Setting up a nudged simulation
-===============================
+Nudging NorESM2
+================
 
-Step by step guide for nudged simulation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step by step guide for setting up a nudged simulation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Create a new case 
 --------------------
