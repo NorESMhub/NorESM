@@ -1,7 +1,7 @@
 .. _aero_faq:
 
-Frequently asked questions
-=========================
+Aerosol FAQ
+============
 
 
 **All NorESM users and developers are here invited to submit questions and/or answers about topics not covered elsewhere in NorESM-doc.**
