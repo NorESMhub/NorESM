@@ -1,7 +1,10 @@
-.. _aerotab:
+.. _aero_diag:
+
+Aerosol diagnostics
+===================
 
 NCL Model Version Comparison package
-====================================
+------------------------------------
 
 Making ncl plots of often used aerosol and cloud fields, including ERFs, for two model versions (CAM-Oslo only)
 
