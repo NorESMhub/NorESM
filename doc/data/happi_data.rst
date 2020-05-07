@@ -3,7 +3,7 @@
 HAPPI and HappiEVA data
 =============
 
-1.5 and 2.0 degree warming experiments 
+Experiments for 1.5 and 2.0 degree warming 
 ^^^^^^^^^^^^^
 
 AMIP-style HAPPI experiments
