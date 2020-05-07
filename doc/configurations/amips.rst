@@ -1,6 +1,6 @@
 .. _amips:
 
-AMIP-type experiments:
+AMIP-type experiments
 ===================================
 
 Setting up an AMIP simulation
