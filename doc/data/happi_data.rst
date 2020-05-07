@@ -15,15 +15,15 @@ A set of AMIP-style large ensemble experiments (125 members) were carried out wi
    - a climate that is 1.5 degrees warmer than pre-industrial conditions (the Plus15-Future experiment), and 
    - a climate that is 2.0 degrees warmer than the pre-industrial (the Plus20-Future experiments) 
 
-as a part of the HAPPI initiative (Half A degree additional warming, Prognosis and Projected Impacts; happimip.org; Mitchell et al., 2017). 
+as a part of the HAPPI initiative (Half A degree additional warming, Prognosis and Projected Impacts; http://happimip.org; Mitchell et al., 2017). 
 
-**CMOR-ized data for NorESM1-Happi and the other participating models can be retrieved from http://portal.nersc.gov/c20c/data.html**
+**CMOR-ized data for NorESM1-Happi and the other participating models can be retrieved from** http://portal.nersc.gov/c20c/data.html
 
 **Raw model output for NorESM1-Happi can be retrived from the NIRD research data archive:**
 
-   - **https://doi.org/10.11582/2019.00006 (All-Hist)**
-   - **https://doi.org/10.11582/2019.00002 (Plus15-Future)**
-   - **https://doi.org/10.11582/2019.00003 (Plus20-Future)**
+   - https://doi.org/10.11582/2019.00006 (All-Hist)
+   - https://doi.org/10.11582/2019.00002 (Plus15-Future)
+   - https://doi.org/10.11582/2019.00003 (Plus20-Future)
 
 
 Fully-coupled experiments
@@ -34,7 +34,7 @@ Fully-coupled experiments targeting
    - 2.0 degree warming 
 were conducted with NorESM1-Happi. See Graff et al. (2019) for details.
 
-**The data (raw model output) can be retrieved from the NIRD research data archive: https://doi.org/10.11582/2020.00021**
+**The data (raw model output) can be retrieved from the NIRD research data archive:** https://doi.org/10.11582/2020.00021
 
 Slab-ocean experiments
 ++++++++++
@@ -44,7 +44,7 @@ Slab-ocean experiments were conducted for
    - a 1.5 degree warmer climate (relative to the pre-industrial) that is as similar to that in the NorESM1-Happi Plus15-Future experiment as possible
    - a 2.0 degree warmer climate (relative to the pre-industrial) that is as similar to that in the NorESM1-Happi Plus20-Future experimet as possible
 
-**The data (raw model output) can be retrieved from the NIRD research data archive: https://doi.org/10.11582/2020.00013**
+**The data (raw model output) can be retrieved from the NIRD research data archive:** https://doi.org/10.11582/2020.00013
 
 
 
@@ -71,14 +71,14 @@ A set of fully-coupled DECK experiments and scenario experiments were carried ou
    
       - increased by 1% per year untill quadroupling and then held constant (the **gradual-4xCO**\ :sub:`2`\   experiment)
 
-**The data (raw model output) can be retrieved from the NIRD research data archive: https://doi.org/10.11582/2020.00021**
+**The data (raw model output) can be retrieved from the NIRD research data archive:** https://doi.org/10.11582/2020.00021
 
 In addition, a set of slab-ocean experiments were conducted to assess the climate sensitivity of NorESM1-Happi under the slab-ocean configuration (for details, see Graff et al., 2019). These include
    - a pre-industrial (1850) control simulation  
    - a 2xCO\ :sub:`2`\  experiment 
    - a 4xCO\ :sub:`2`\  experiment
    
-**Data from the slab-ocean experiments can be retrieved from: https://doi.org/10.11582/2020.00014**
+**Data from the slab-ocean experiments can be retrieved from the NIRD research data archive:** https://doi.org/10.11582/2020.00014
 
 
 References
