@@ -1,6 +1,6 @@
 .. _download_code:
 
-Downloading NorESM2 model code
+Downloading the model code
 ==============================
 
 The NorESM2 model code is available through a  public GitHUB repository: 
