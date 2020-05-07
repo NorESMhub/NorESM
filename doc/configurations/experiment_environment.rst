@@ -1,6 +1,6 @@
 .. _experiment_environment:
 
-Setting the experiment environments
+Experiment environments
 ===================================
 
 After creating a case (see :ref:`experiments`) the environment settings can be modified in  the env_*.xml files contained in the case folder
