@@ -10,10 +10,10 @@ Running NorESM2
    newbie-guide.rst
    experiments.rst
    experiment_environment.rst
+   platforms.rst
    aerosol.rst
    input.rst
    output.rst
-   platforms.rst
    amips.rst
    omips.rst
    clm.rst
