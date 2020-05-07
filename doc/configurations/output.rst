@@ -1,6 +1,6 @@
 .. _output:
 
-NorESM2 output and standard results
+Output and standard results
 ===================================
 
 NorESM2 output
