@@ -13,7 +13,6 @@ Running NorESM2
    platforms.rst
    aerosol.rst
    input.rst
-   output.rst
    amips.rst
    omips.rst
    clm.rst
