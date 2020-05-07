@@ -9,5 +9,5 @@ NorESM2 diagnostics
 
    esmvaltool.rst
    diag_run.rst
-   aerotab.rst
+   aero_diag.rst
   
