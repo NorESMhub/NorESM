@@ -2,6 +2,7 @@
 
 Input and forcing data
 ==============================
+WILL BE UPDATED BY dirkjlo@met.no 
 
 The complete input data set is stored on Fram @ Sigma2. For access contact mben@norceresearch.no.
 
