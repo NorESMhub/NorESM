@@ -3,6 +3,8 @@
 Aerosol diagnostics
 ===================
 
+WILL BE UPDATED BY alfk@met.no
+
 NCL Model Version Comparison package
 ------------------------------------
 
