@@ -3,6 +3,8 @@
 OMIP-type experiments
 ==========================================
 
+WILL BE UPDATED BY chgu@norceresearch.no 
+
 Setting up an OMIP simulation
 ''''''''''''''''''''''''''''''
 
