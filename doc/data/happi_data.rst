@@ -1,9 +1,12 @@
 .. _happi_data.rst
 
-HAPPI data
+HAPPI data et al.
 =============
 
-Large ensemble experiments (125 members) were carried out with NorESM1-Happi (Graff et al., 2019) for 
+AMIP-style experiments carried out for the HAPPI initiative
+^^^^^^^^^^^^^
+
+A set of AMIP-style large ensemble experiments (125 members) were carried out with NorESM1-Happi (Graff et al., 2019) for three climate states: 
 
    - the present-day climate (the All-Hist experiment), 
    - a climate that is 1.5 degrees warmer than pre-industrial conditions (the Plus15-Future experiment), and 
@@ -11,8 +14,29 @@ Large ensemble experiments (125 members) were carried out with NorESM1-Happi (Gr
 
 as a part of the HAPPI initiative (Half A degree additional warming, Prognosis and Projected Impacts; happimip.org; Mitchell et al., 2017). 
 
+In addition to NorESM1-HAPPI, the HAPPI dataset comprises data from several other climate models. 
+
 Data can be retrieved from http://portal.nersc.gov/c20c/data.html
 
+
+CMIP5 DECK and scenario experiments with NorESM1-Happi
+^^^^^^^^^^^^^^^^^^^^^^^
+
+A set of DECK experiments and scenario experiments were carried out with NorESM1-Happi to enable an extensive validation of the model in line with the CMIP5 protocol (note that these experiments are not a part of the official CMIP5 data set):
+
+   - a pre-industrial control simulation (the **piControl** experiment)
+   - three historical members for the time period 1850-2005 (the **Hist1**, **Hist2**, and **Hist3** experiments)
+   - Hist1 with external forcings as in 1850, but with with varying (historical) 
+      - greenhouse gases (the **GHG only** experiment)
+      - aerosols and aerosol precursor emissions (the **Aerosol only** experiment)
+      - natural solar radiation and vulcanos (the **Natural only** experiment)
+   - RCP scenario experiments in which the radiative forcing at the end of the 21st century corresponds to
+      - 2.6 w/m^2 (the **RCP2.6** experiment)
+      - 4.5 W/m^2 (the **RCP4.5** experiment)
+      - 8.5 W/m^2 (the **RCP8.5** experiment)
+   - experiments in forcings are as in the pre-industrial climate except the CO2 concentrations which are
+      - instantly quadroupled at the beginning of the experiment (the **abrupt-4xCO2** experiment)
+      - increased by 1% per year untill quadroupling and then held constant (the *gradual-4xCO2** experiment)
 **References**
 
 Lise S. Graff, Trond Iversen, Ingo Bethke, Jens B. Debernard, Øyvind Seland, Mats Bentsen, Alf Kirkevåg, Camille Li, and Dirk J. L. Olivié: Arctic amplification under global warming of 1.5 and 2 °C in NorESM1-Happi, Earth Syst. Dynam., 10, 569–598, https://doi.org/10.5194/esd-10-569-2019, 2019
