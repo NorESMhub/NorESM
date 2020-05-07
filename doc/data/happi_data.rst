@@ -3,7 +3,7 @@
 HAPPI data et al.
 =============
 
-AMIP-style experiments carried out for the HAPPI initiative
+1.5 and 2.0 degree warming: AMIP-style HAPPI experiments
 ^^^^^^^^^^^^^
 
 A set of AMIP-style large ensemble experiments (125 members) were carried out with NorESM1-Happi (Graff et al., 2019) for three climate states: 
@@ -21,6 +21,13 @@ as a part of the HAPPI initiative (Half A degree additional warming, Prognosis a
    - **https://doi.org/10.11582/2019.00006 (All-Hist)**
    - **https://doi.org/10.11582/2019.00002 (Plus15-Future)**
    - **https://doi.org/10.11582/2019.00003 (Plus20-Future)**
+
+
+1.5 and 2.0 degree warming: fully-coupled experiments
+^^^^^
+
+1.5 and 2.0 degree warming: slab-ocean experiments
+^^^^
 
 
 CMIP5 DECK and scenario experiments with NorESM1-Happi
@@ -48,7 +55,6 @@ A set of DECK experiments and scenario experiments were carried out with NorESM1
       - increased by 1% per year untill quadroupling and then held constant (the **gradual-4xCO**\ :sub:`2`\   experiment)
 
 **The data (raw model output) can be retrieved from the NIRD research data archive: https://doi.org/10.11582/2020.00021**
-
 
 
 
