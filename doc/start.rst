@@ -55,14 +55,13 @@ For a short description of the model components, please see :ref:`model-descript
    
  
  
-NorESM2 contributes to the 6th phase of the Coupled Model Intercomparison Project (CMIP6):
-https://www.wcrp-climate.org/wgcm-cmip/wgcm-cmip6
+| NorESM2 contributes to the 6th phase of the Coupled Model Intercomparison Project (CMIP6):  
+| https://www.wcrp-climate.org/wgcm-cmip/wgcm-cmip6  
 
-Scientific documentation in the GMD – Special issue "The Norwegian Earth System Model: NorESM":  
-http://www.geosci-model-dev.net/special_issue20.html  
+| Scientific documentation in the GMD – Special issue "The Norwegian Earth System Model: NorESM":    
+| http://www.geosci-model-dev.net/special_issue20.html    
 
-NorESM1 Documentation is found here:  
-https://noresm-docs.readthedocs.io/en/noresm1/
+NorESM1 Documentation is found here: https://noresm-docs.readthedocs.io/en/noresm1/  
 
 
 Archive of NorESM results
