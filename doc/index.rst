@@ -32,11 +32,11 @@ https://github.com/NorESMhub/NorESM/blob/master/doc/README.md.
    access/access.rst
    configurations/configurations.rst
    diagnostics/diagnostics.rst
+   data/data.rst
    contribute/contribute.rst
    model-description/model-description.rst
    faq/faq.rst
-   data/data.rst
-
+   
 
 Search
 ==================
