@@ -25,8 +25,8 @@ CMIP6 archive of NorESM results
 | **All data is public available:**
 | https://esg-dn1.nsc.liu.se/search/cmip6-liu/
 
-DECK contribution
-^^^^^
+DECK contributions
+^^^^^^^^^^^^^^^^^^
 NorESM2 contributions to CMIP Diagnostic, Evaluation and Characterization of Klima (DECK) and CMIP6 historical simulations
 
 .. list-table:: 
@@ -53,8 +53,8 @@ NorESM2 contributions to CMIP Diagnostic, Evaluation and Characterization of Kli
      - NorESM2-LM (1), NorESM2-MM (1)
 
 
-MIPs contribution
-^^^^^
+MIPs contributions
+^^^^^^^^^^^^^^^^^
 
 .. list-table:: 
    :widths: 25 25 50
