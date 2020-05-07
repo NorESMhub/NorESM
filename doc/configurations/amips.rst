@@ -1,6 +1,6 @@
 .. _amips:
 
-AMIP (atmosphere-only) simulations:
+AMIP-type experiments:
 ===================================
 
 Setting up an AMIP simulation
