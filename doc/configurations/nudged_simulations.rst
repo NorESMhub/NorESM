@@ -97,7 +97,6 @@ Ready-steady-go
 You are now ready to setup, build and submit your case. 
 
 
-
 How to generate your own nudging inputdata
 -----------------------------------------
 
