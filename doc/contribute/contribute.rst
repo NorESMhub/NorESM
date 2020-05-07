@@ -5,5 +5,10 @@ Contribute to NorESM2
 
 Recipes for GIT usage
 
-- :ref:`git-recipes`
-- :ref:`gitbestpractice`
+.. toctree::
+   :maxdepth: 2
+   :numbered:
+
+   git-recipes.rst
+   gitbestpractice.rst
+
