@@ -1,6 +1,6 @@
 .. _input:
 
-Input and forcing data:
+Input and forcing data
 ==============================
 
 The complete input data set is stored on Fram @ Sigma2. For access contact mben@norceresearch.no.
