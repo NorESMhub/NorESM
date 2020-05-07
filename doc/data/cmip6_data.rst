@@ -3,9 +3,11 @@
 CMIP6 archive of NorESM results
 ===================
 
+
 | NorESM2 contributes to the 6th phase of the Coupled Model Intercomparison Project (CMIP6):   
 | https://www.wcrp-climate.org/wgcm-cmip/wgcm-cmip6   
 | 
+
 
 **CMIP6:** 
 
@@ -23,9 +25,107 @@ CMIP6 archive of NorESM results
 | **All data is public available:**
 | https://esg-dn1.nsc.liu.se/search/cmip6-liu/
 
+DECK contribution
+^^^^^
+NorESM2 contributions to CMIP Diagnostic, Evaluation and Characterization of Klima (DECK) and CMIP6 historical simulations
+
+.. list-table:: 
+   :widths: 25 35 40
+   :header-rows: 1
+    
+   * - Exp. short name
+     - Exp. long name
+     - NorESM2 version (members)
+   *  - amip
+      - a historical Atmospheric MIP simulation
+      - NorESM2-LM (1), NorESM2-MM (1)
+   * - pi-Control
+     - pre-industrial control simulation
+     - NorESM2-LM (1), NorESM2-MM (1)
+   * - historical
+     - historical 
+     - NorESM2-LM (3), NorESM2-MM (1)
+   * - abrupt-4xCO2
+     - forced by an abrupt quadrupling of atmospheric CO2
+     - NorESM2-LM (1), NorESM2-MM (1)
+   * - 1pctCO2
+     - forced by a 1 % pr. year atmospheric CO2 increase
+     - NorESM2-LM (1), NorESM2-MM (1)
+
 
 MIPs contribution
 ^^^^^
+
+.. list-table:: 
+   :widths: 25 25 50
+   :header-rows: 1
+
+   * - MIP short name
+     - MIP long name
+     - NorESM2 version
+   * - CMIP
+     - Coupled MIP
+     - NorESM2-LM, NorESM2-MM
+   * - AerChemMIP
+     - Aerosols and Chemistry MIP
+     - NorESM2-LM
+   * - C4MIP
+     - Coupled Climate Carbon Cycle MIP
+     - NorESM2-LME
+   * - CDRMIP	   
+     - The Carbon Dioxide Removal MIP
+     - NorESM2-LME
+   * - CFMIP
+     - Cloud Feedback MIP
+     - NorESM2-LM
+   * - DAMIP
+     - Detection and Attribution MIP
+     - NorESM2-LM
+   * - DCPP
+     - Decadal Climate Prediction Project
+     - NorESM2-LM, NorESM2-MM
+   * - DynVarMIP
+     - Dynamics and Variability MIP
+     - NorESM2-LM
+   * - FAFMIP
+     - Flux-Anomaly-Forced MIP
+     - NorESM2-LM
+   * - GMMIP
+     - Global Monsoons MIP
+     - NorESM2-LM
+   * - GeoMIP
+     - Geoengineering MIP
+     - NorESM2-LM
+   * - HighResMIP
+     - High-Resolution MIP
+     - NorESM2-MH?
+   * - ISMIP6
+     - Ice Sheet MIP
+     - NorESM2-LM
+   * - LS3MIP
+     - Land Surface, Snow and Soil Moisture 
+     - NorESM2-LM
+   * - LUMIP
+     - Land-Use MIP
+     - NorESM2-LM
+   * - OMIP
+     - Ocean MIP
+     - NorESM2-MM
+   * - PAMIP
+     - Polar Amplification MIP
+     - NorESM2-MM
+   * - RFMIP
+     - Radiative Forcing MIP
+     - NorESM2-LM
+   * - ScenarioMIP
+     - Scenario MIP
+     - NorESM2-LM, NorESM2-MM
+   * - SIMIP
+     - Sea Ice MIP
+     - NorESM2-LM, NorESM2-MM
+   * - VolMIP
+     - Volcanic Forcings MIP
+     - NorESM2-LM
 
 
 | Overview CMIP6-Endorsed MIPs:
