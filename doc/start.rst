@@ -4,7 +4,6 @@
 Introduction
 =============
 
-
 NorESM2 User's Guide
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -37,31 +36,31 @@ For a short description of the model components, please see :ref:`model-descript
 
 
 **NorESM2 exists in three versions:**
- 
-- NorESM2-MM
+
+- **NorESM2-MM**
    
   - 1 degree resolution for all model components
   - CO2 concentration driven
    
-- NorESM2-MM
+- **NorESM2-MM**
  
   - 2 degree resolution for the atmosphere and land components
   - 1 degree resolution for the ocean and sea-ice components
   - CO2 concentration driven
  
-- NorESM2-LME
+- **NorESM2-LME**
     
   - 2 degree resolution for the atmosphere and land components
   - 1 degree resolution for the ocean and sea-ice components
   - CO2 emission driven, used for interactive carbon-cycle studies
    
- 
- 
-| NorESM2 contributes to the 6th phase of the Coupled Model Intercomparison Project (CMIP6):  
-| https://www.wcrp-climate.org/wgcm-cmip/wgcm-cmip6  
 
-| Scientific documentation in the GMD – Special issue "The Norwegian Earth System Model: NorESM":    
-| http://www.geosci-model-dev.net/special_issue20.html    
+
+| NorESM2 contributes to the 6th phase of the Coupled Model Intercomparison Project (CMIP6):   
+| https://www.wcrp-climate.org/wgcm-cmip/wgcm-cmip6   
+
+| Scientific documentation in the GMD – Special issue "The Norwegian Earth System Model: NorESM":     
+| http://www.geosci-model-dev.net/special_issue20.html     
 
 NorESM1 Documentation is found here: https://noresm-docs.readthedocs.io/en/noresm1/  
 
