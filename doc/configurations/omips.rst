@@ -1,6 +1,6 @@
 .. _omips:
 
-OMIP-type experiments:
+OMIP-type experiments
 ==========================================
 
 Setting up an OMIP simulation
