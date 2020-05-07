@@ -1,4 +1,4 @@
 .. _clm:
 
-CLM (land only) simulations
+Land-only experiments
 ===========================
