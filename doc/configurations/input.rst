@@ -9,6 +9,27 @@ The complete input data set is stored on Fram @ Sigma2. For access contact mben@
 Input data sets
 ^^^^^^^^^^^^^^^
 
+Solar forcing
+
+GHG concentrations : CO2
+
+Ozone concentrations
+
+Oxidant concentrations : OH, ozone, NO3-radical, HO2.  
+
+Emissions of short-lived species : anthropogenic, biomass burning, continuous outgassing of SO2 by volcanoes 
+
+Water vapour emissions (from methane oxidation)
+
+Stratospheric aerosol
+
+Upper-ocean POM concentrations
+
+Sea-surface temperature
+
+Sea ice cover
+
+
 
 Forcing
 ^^^^^^^^
