@@ -1,6 +1,6 @@
 .. _omips:
 
-OMIP (Ocean and sea-ice only) simulations:
+OMIP-type experiments:
 ==========================================
 
 Setting up an OMIP simulation
