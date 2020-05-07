@@ -5,6 +5,8 @@ OMIP-type experiments
 
 WILL BE UPDATED BY chgu@norceresearch.no 
 
+Oceanic Model Intercomparison Project (OMIP) style runs are runs in which the ocean and sea-ice components are active while values for atmospheric near surface air temperature, wind stress ++??, land?? are prescribed (that is, read from a file). 
+
 Setting up an OMIP simulation
 ''''''''''''''''''''''''''''''
 
