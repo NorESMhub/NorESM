@@ -17,7 +17,7 @@ NorESM2
 NorESM2 is the Norwegian Earth System model used for CMIP6. The model is
 based on the CESM framework (http://www.cesm.ucar.edu/models/cesm2/)
 
-NorESM has special features developed by Norwegian researchers,
+NorESM has special features developed by Norwegian research groups,
 including (but not limited to)
 
 - Atmosphere model : CAM6-Nor replaces standard CAM
