@@ -1,6 +1,6 @@
 .. _newbie-guide:
 
-Newbies guide to running NorESM2
+Newbies guide
 ================================            
 This page will show you how to set up and run a standard case of NorESM2.
 
