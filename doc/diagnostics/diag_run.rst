@@ -5,14 +5,29 @@ NorESM2 specific diagnostics
 
 The diagnostics packages are currently available on NIRD. Each package can be run/configured from the command line using the program diag_run
 
-Location
---------
+**Location**
 
 At the moment diag_run is only available on NIRD:
 /projects/NS2345K/noresm_diagnostics/bin/diag_run
 
-Description
-------------
+**Add to .bashrc**
+
+It is useful to add diag_run as an alias in $HOME/.bashrc, 
+so that you do not need to write out the whole path every time you run it:: 
+
+  alias diag_run=’/projects/NS2345K/noresm_diagnostics/bin/diag_run’
+
+**NorESM diagnostics on GitHub**
+
+The NorESM diagnostics packages and diag_run are included in the Git version control repository:
+https://github.com/johiak/NoresmDiagnostics
+
+**micom = blom**
+
+The NorESM ocean component BLOM used to be called micom. In diag_run the model name of the ocean component is still micom (and not blom) and will be called micom in all the examples below. However, the model which will be analyzed is blom.  
+
+Description of diag_run - a wrapper script for NorESM diagnostics
+-----------------------------------------------------------------
 
 diag_run is a wrapper script, which is used to run the diagnostics for each NorESM component
 (cam, clm, cice, micom, and hamocc). The diagnostic packages can be used to plot model results
@@ -22,8 +37,9 @@ with respect to either observations (so-called model-obs diagnostics), or to ano
 in the climatology and time-series computations. The ocean (micom) and its biogeochemistry
 (hamocc) have been developed in-house.
 diag_run has two modes: 
-- (i) an “active-mode”, for which diag_run runs the diagnostic scripts 
-- (ii) a “passive-mode”, for which diag_run only configures the scripts. 
+
+-  an “active-mode”, for which diag_run runs the diagnostic scripts 
+-  a “passive-mode”, for which diag_run only configures the scripts. 
 
 In the passive-mode the
 diagnostic scripts have to be run manually by the user. By default, diag_run is always in the active-mode, 
@@ -32,6 +48,73 @@ but switches into passive-mode if at least one of these two criteria are fulfill
 - 1. The user invokes the option -p (see below), or
 - 2. The user does not give enough information needed to run the diagnostics (next subsection).
 
+Active-mode
+-------------
+
+If you want to use diag_run to run the full (climatology and time-series) diagnostics, the minimum
+requirement is to specify the options model, case_name, start_yr and end_yr
+(-m, -c, -s and -e), e.g.: ::
+
+  diag_run -m cam -c N1850_f19_tn14_191017 -s 21 -e 50
+  
+This command runs atmospheric model-obs diagnostics of the case N1850_f19_tn14_191017 using
+a climatology between model years 21 and 50. It is assumed that the N1850_f19_tn14_191017
+history files are located in /projects/NS2345K/noresm/cases. The resulting plots and html will be
+stored in ::
+
+  /projects/NS2345K/www/noresm_diagnostics/N1850_f19_tn14_191017/CAM_DIAG,
+  
+which links to the following URL: 
+http://ns2345k.web.sigma2.no/noresm_diagnostics/N1850_f19_tn14_191017/CAM_DIAG/yrs21to50-obs.html.
+
+The climatology and time-series files in /projects/NS2345K/noresm_diagnostics/out/$USER/CAM_DIAG (where $USER is your NIRD username).
+
+
+If you want to run model1-model2 diagnostics, you also need to specify case_name2, start_yr2 and
+end_yr2 (-c2, -s2, -e2) in addition, i.e.: ::
+
+  diag_run -m cam -c N1850_f19_tn14_191017 -s 21 -e 50 -c2 B1850MICOM_f09_tn14_01 -s2 21 -e2 50
+  
+would be the same as in Example 1 above, except for comparing N1850_f19_tn14_191017 to
+B1850MICOM_f09_tn14_01 instead of observations.
+In Example 1 and Example 2 the options -s and -e (as well as -s2, -e2) refer to the start and end
+years of the climatology. The time-series are calculated from all the history files in the case
+directory (input_dir). This is always the case unless the user invokes the option -t time_series. If
+this option is invoked, start_yr and end_yr refer to the beginning and end of the time series instead
+of the climatology, hence:
+Example 3:
+diag_run -m micom -c N1850_f19_tn14_191017 -t time_series -s 1 -e 20
+would produce micom time-series plots between years 1 and 20. Note that omitting start_yr and
+end_yr when the option -t time_series is invoked computes the time-series over the entire
+experiment (all history files in the case directory, input_dir): ::
+
+   diag_run -m cam -c N1850_f19_tn14_191017 -t time_series
+   
+   
+diag_run uses some template scripts for each of the model components. When diag_run is executed,
+these scripts are changed according to the user-specified settings and renamed with a time stamp.
+For example, if you run the micom diagnostics, the run script template (micom_diag_template.sh)
+will be renamed with a time-stamp as micom_diag_YYMMDD_HHMMSS.
+diag_run also creates a config and output file with the same time stamp
+(config_YYMMDD_HHMMSS and out_YYMMDD_HHMMSS, respectively). The config file
+stores information about changes in the diagnostics scripts invoked by the user, and the output file
+contains the standard output and error (i.e. what is shown in your terminal during runtime).
+When the diagnostics a component is finished the run scripts are copied to: ::
+
+  output_dir/$USER/model_diag/config/case_name/run_scripts
+  
+and the config and output files to: ::
+
+  output_dir/$USER/model_diag/config/case_name/logs
+  
+Hence, for Example 1 above, the run scripts are saved in: ::
+
+  /projects/NS2345K/noresm_diagnostics/out/ $USER/CAM_DIAG/config/N1850_f19_tn14_191017/run_scripts
+  
+  
+and the config and out files in: ::
+
+  /projects/NS2345K/noresm_diagnostics/out/$USER/CAM_DIAG/config/N1850_f19_tn14_191017/logs
 
 Passive-mode
 -------------
@@ -50,6 +133,7 @@ the following command::
 the following will appear on the screen:
 
 ::
+
   [johiak@tos-spw08 ~]$ /projects/NS2345K/noresm_diagnostics/diag_run -m clm
   -------------------------------------------------
   Program:
@@ -83,46 +167,45 @@ The (semi-configured) run script has then been copied to
 and all information about the configuration is contained in
 /projects/NS2345K/noresm_diagnostics/out/<username>/CLM_DIAG/config.log
 
-
 Options
 -------
 diag_run options (flags) typically come in both short (single-letter) and long forms. A complete
 description of all options is given below in alphabetical order of the short option letter. When
 invoked without options, diag_run prints a table containing all options along with some examples
-(see also below).::
+(see also below). ::
 
   -c case_name (-c1, --case, --case1)
   
 Name of the test case experiment that you want to run diagnostics for. This option is required if you
-want to use diag_run in active-mode.::
+want to use diag_run in active-mode. ::
 
   -c2 case_name2 (--case2)
  
 Name of the control case experiment. This option is required if you want to run model1-model2
-diagnostics in active-mode.::
+diagnostics in active-mode. ::
 
   -e end_year (-e1,--end_yr,--end_yr1)
   
 If –type=time_series, this option refers to the end year of time-series for case_name. Otherwise, it
 refers to the end year of climatology. This option is optional if –type=time_series, but required for
-active-mode diagnostics if –type=climo or if type is not invoked.::
+active-mode diagnostics if –type=climo or if type is not invoked. ::
 
   -e2 end_year (--end_yr2)
   
 If –type=time_series, this option refers to the end year of time-series for case_name2. Otherwise, it
 refers to the end year of climatology. This option is optional if –type=time_series, but required for
-active-mode model1-model2 diagnostics if –type=climo or if type is not invoked.::
+active-mode model1-model2 diagnostics if –type=climo or if type is not invoked. ::
 
   -i input_dir (-i1, --input-dir, --input-dir1)
   
 Name of the root directory of the monthly history files for case_name. For example, if your micom
 history files are located in /this/is/a/directory/case1/ocn/hist, this option should be set to
-input_dir=/this/is/a/directory. Default is input_dir=/projects/NS2345K/noresm/cases ::
+input_dir=/this/is/a/directory. Default is input_dir=/projects/NS2345K/noresm/cases . ::
 
   -i2 input-dir2 (--input-dir2)
   
 Name of the root directory of the monthly history files for case_name2. Also here, default is
-input_dir2=/projects/NS2345K/noresm/cases ::
+input_dir2=/projects/NS2345K/noresm/cases . ::
 
   -m model (--model)
 
@@ -131,12 +214,12 @@ hamocc and all. This is the only option that is required for both the active and
 invoke the “all” option, the cam, clm, cice, micom and hamocc diagnostics will be run
 subsequently. It is also possible to combine different models as you wish within this option: for
 example, if you only want to run cam and clm diagnostics, you can simply add the names of those
-models and separate them with a comma (-m cam,clm)::
+models and separate them with a comma (-m cam,clm). ::
 
   --no-atm
   
 This option, which takes no argument, skips the usage of CAM history files in the CLM
-diagnostics. This option is necessary for offline CLM simulations.::
+diagnostics. This option is necessary for offline CLM simulations. ::
 
   -o output_dir (--output_dir)
   
@@ -150,51 +233,86 @@ Default is::
 
   output_dir=/projects/NS2345K/noresm_diagnostics/out/$USER
   
-where $USER is your user name on NIRD.::
+where $USER is your user name on NIRD. ::
 
   -p, --passive-mode
   
 This option, which takes no argument, forces diag_run into passive-mode. This means, even if you
-have given sufficient information to run in active-mode, the diagnostic scripts will not be executed.::
+have given sufficient information to run in active-mode, the diagnostic scripts will not be executed. ::
 
  -s start_year (-s1,--start_yr,--start_yr1)
  
 If –type=time_series, this option refers to the start year of time-series for case_name. Otherwise, it
 refers to the start year of climatology. This option is optional if –type=time_series, but required for
-active-mode diagnostics if –type=climo or if type is not invoked.::
+active-mode diagnostics if –type=climo or if type is not invoked. ::
 
   -s2 start_year2 (--start_yr2)
   
 If –type=time_series, this option refers to the start year of time-series for case_name2. Otherwise, it
 refers to the start year of climatology. This option is optional if –type=time_series, but required for
-active-mode model1-model2 diagnostics if –type=climo or if type is not invoked.::
+active-mode model1-model2 diagnostics if –type=climo or if type is not invoked. ::
 
   -t type (--type)
   
 Specifies if you only run climatology or time-series diagnostics: valid options are --type=climo and
---type=time_series. Default is to run both.::
+--type=time_series. Default is to run both. ::
 
   -w webdir (--web-dir)
   
 Specifies the directory where the html should be stored. This directory should preferably be linked
 to a web server so that one can look at the results with a web browser. Default is::
 
-  --web-dir=/projects/NS2345K/www/noresm_diagnostics/.
+  --web-dir=/projects/NS2345K/www/noresm_diagnostics/
+  
 
-Add to .bashrc
---------------
-It is useful to add diag_run as an alias in $HOME/.bashrc, 
-so that you do not need to write out the whole path every time you run it:: 
+Examples
+--------
 
-  alias diag_run=’/projects/NS2345K/noresm_diagnostics/bin/diag_run’
+Model-obs diagnostics of case=N1850_f19_tn11_exp1 (climatology between yrs 21 and 50) for all
+model components: ::
 
-NorESM diagnostics on GitHub
-----------------------------
+  diag_run -m all -c N1850_f19_tn11_exp1 -s 21 -e 50
+  
+  
+Model-obs diagnostics in CAM, publish the html in /path/to/my/html: ::
 
-The NorESM diagnostics packages and diag_run are included in the Git version control repository:
-https://github.com/johiak/NoresmDiagnostics
+  diag_run -m cam -c N1850_f19_tn11_exp1 -s 21 -e 50 -w /path/to/my/html
+  
+  
+Model-obs time-series diagnostics in MICOM for all years the model output directory
+(/projects/NS2345K/noresm/cases/N1850_f19_tn11_exp1/ocn/hist/): ::
 
-Aerosol and Chemistry, Clouds and Forcing Diagnostics
-In both the default CAM5-aerosol packages (MAM3,MAM7) and the Oslo-aerosol packages, the budget terms can be taken out using a variable in the namelist :
+  diag_run -m micom -c N1850_f19_tn11_exp1 -t time_series
+  
+  
+Configure (but do not run) model-obs diagnostics for CICE: ::
+  diag_run -m cice -c N1850_f19_tn11_exp1 -s 21 -e 50 -p
+  
+Model1-model2 diagnostics for CLM with user-specified history file directories: ::
 
-Contact person: 
+  diag_run -m clm -c N1850_f19_tn11_exp1 -s 21 -e 50 -i /input/directory1 -c2
+  
+  
+N1850_f19_tn11_exp2 -s2 21 -e2 50 -i2 /input/directory2
+Model-obs climatology diagnostics (no time series) for MICOM: ::
+
+  diag_run -m micom -c N1850_f19_tn11_exp1 -s 21 -e 50 -t climo
+  
+  
+Install CAM diagnostics in /my/dir with minimal configuration: ::
+
+  diag_run -m cam -o /my/dir
+  
+Model-obs diagnostics for MICOM and HAMOCC: ::
+
+  diag_run -m micom,hamocc -c N1850OC_f19_tn11_exp1 -s 21 -e 50
+  
+Model-obs time-series diagnostics for an offline (uncoupled) CLM simulation: ::
+
+  diag_run -m clm -c N1850_f19_tn11_clmexp1 -s 71 -e 100 --no-atm
+  
+Model-obs time-series diagnostics in HAMOCC between yrs 31 and 100: ::
+
+  diag_run -m hamocc -c N1850OC_f19_tn11_exp1 -s 31 -e 100 -t time_series
+  
+
