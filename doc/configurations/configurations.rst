@@ -3,8 +3,6 @@
 Running NorESM2
 ===============
 
-:ref:`output`
-
 .. toctree::
    :maxdepth: 2
    :numbered:
