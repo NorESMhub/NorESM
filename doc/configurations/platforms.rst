@@ -1,6 +1,6 @@
 .. _platforms:
 
-Running NorESM2 on different platforms
+Running on different platforms
 ======================================
 
 Platforms
