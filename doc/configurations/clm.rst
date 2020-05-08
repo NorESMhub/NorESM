@@ -71,7 +71,16 @@ will use CESM2 treatment of the surface water in CLM (see previous description).
 
 CLM5 model configurations available in NorESM2
 ^^^^^^^^^
+CLM5 can be run with a prognostic crop model with prognostic vegetation state and active biogeochemistry. 
+The global crop model is on in BGC default configuration with 8 temperate and tropical crop types and has the capability to dynamically simulate crop management and crop management change through time. 
+The BGC-CROP option is used in all NorESM2 CMIP6 experiments and is activated in the compset by::
 
+  CLM50%BGC-CROP
+
+
+CLM5 in NorESM2 can also be run with a prescribed satellite vegetation phenology model. This option can be activated in the compset by::
+
+ CLM50%SP
 
 
 Spin up of CLM5 
