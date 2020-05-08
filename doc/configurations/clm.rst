@@ -6,7 +6,7 @@ Land and river run off
 | The land model used in NorESM2 is the Community Land Model version 5 (CLM5):
 | http://www.cesm.ucar.edu/models/clm/
 | 
-| Specific questions about CLM can be addressed: leca@norceresearch.no
+| Specific questions about CLM can be addressed Lei Cai, email:leca@norceresearch.no
 
 CLM5 model configurations available in NorESM2
 ---------------------
