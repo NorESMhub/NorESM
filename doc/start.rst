@@ -35,7 +35,7 @@ The NorESM specific development is led by the Norwegian Meteorological Institute
 For a short description of the model components, please see :ref:`model-description`
 
 
-**NorESM2 exists in three versions:**
+**NorESM2 exists in four versions:**
 
 - **NorESM2-MM**
    
