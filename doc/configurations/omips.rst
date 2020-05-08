@@ -1,14 +1,18 @@
 .. _omips:
 
-OMIP-type experiments
+
 ==========================================
+
+
+
+OMIP-type experiments
+''''''''''''''''''''''''''''''
+
 
 WILL BE UPDATED BY chgu@norceresearch.no 
 
 Oceanic Model Intercomparison Project (OMIP) style runs are runs in which the ocean and sea-ice components are active while values for atmospheric near surface air temperature, wind stress ++??, land?? are prescribed (that is, read from a file). 
 
-Setting up an OMIP simulation
-''''''''''''''''''''''''''''''
 
 Creating an OMPI case
 ^^^^^^^^^^^^^^^^^^^^^
@@ -36,9 +40,26 @@ Forcing sets
 - **JRA-55**
 
 
-Modify user name lists for BLOM and CICE
-''''''''''''''''''''''''''''''''''''''''
-
+Modify user name lists for BLOM
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 iHAMOCC
 ''''''''
+
+Modify user name lists for iHAMOCC
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+CICE
+''''''
+
+NorESM2 specific addions
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Modify user name lists for CICE
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+CICE User Guide:
+https://cice-consortium-cice.readthedocs.io/en/master/user_guide/
+
+
