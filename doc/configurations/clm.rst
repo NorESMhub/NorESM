@@ -6,6 +6,37 @@ Land and river run off
 | The land model used in NorESM2 is the Community Land Model version 5 (CLM5):
 | http://www.cesm.ucar.edu/models/clm/
 
+
+NorESM2 specific additions
+^^^^^^^^^
+Remove infiltration excess water as runoff if the temperature of the surface water pool is below freezing.
+For details please see :ref:`model-description/lnd_model`
+
+The NorESM2 specific addition can be tuned on/off by a flag in the user_nl_clm in the case folder. Setting::
+
+  reset_snow = .true.
+  
+will use NorESM2 treatment of the surface water in CLM (see previous description).
+
+Setting::
+
+  reset_snow = .false.
+  
+will use CESM2 treatment of the surface water in CLM (see previous description).
+
+CLM5 model configurations available in NorESM2
+^^^^^^^^^
+CLM5 can be run with a prognostic crop model with prognostic vegetation state and active biogeochemistry. 
+The global crop model is on in BGC default configuration with 8 temperate and tropical crop types and has the capability to dynamically simulate crop management and crop management change through time. 
+The BGC-CROP option is used in all NorESM2 CMIP6 experiments and is activated in the compset by::
+
+  CLM50%BGC-CROP
+
+
+CLM5 in NorESM2 can also be run with a prescribed satellite vegetation phenology model. This option can be activated in the compset by::
+
+ CLM50%SP
+
 The inital state
 ^^^^^^^
 
@@ -54,38 +85,6 @@ For example if STOP_N=50 years, you can set::
 -8760 means one average value per year, and 50 years in one file.
 
 
-
-NorESM2 specific additions
-^^^^^^^^^
-Remove infiltration excess water as runoff if the temperature of the surface water pool is below freezing.
-For details please see :ref:`model-description/lnd_model`
-
-The NorESM2 specific addition can be tuned on/off by a flag in the user_nl_clm in the case folder. Setting::
-
-  reset_snow = .true.
-  
-will use NorESM2 treatment of the surface water in CLM (see previous description).
-
-Setting::
-
-  reset_snow = .false.
-  
-will use CESM2 treatment of the surface water in CLM (see previous description).
-
-CLM5 model configurations available in NorESM2
-^^^^^^^^^
-CLM5 can be run with a prognostic crop model with prognostic vegetation state and active biogeochemistry. 
-The global crop model is on in BGC default configuration with 8 temperate and tropical crop types and has the capability to dynamically simulate crop management and crop management change through time. 
-The BGC-CROP option is used in all NorESM2 CMIP6 experiments and is activated in the compset by::
-
-  CLM50%BGC-CROP
-
-
-CLM5 in NorESM2 can also be run with a prescribed satellite vegetation phenology model. This option can be activated in the compset by::
-
- CLM50%SP
-
-
 Spin up of CLM5 
 ^^^^^^^^^
 A long spin up of CLM5 is necessary to achive e.g. land carbon balance. Such a spin up can be done partly uncoupled from NorESM2 in order to save computation time.
@@ -111,6 +110,12 @@ To generate forcing data from the coupled simulation to run CLM5 stand alone wit
 NorESM2 can then be recoupled to the spun up land experiment by the use of restart files. I.e. in the fully coupled case set the restartfile from the CLM5 stand alone spin up experiment in user_nl_clm::
 
   finidat = '<path_to_inputdata>/inputdata/<path_to_file>/CLM_SPINUP_FILENAME.clm2.r.YR-01-01-00000.nc'
+  
+
+Code modification
+^^^^^
+
+If you want to make more subtantial changes to the codes than what is possible by the change of user_nl_clm, you need to copy the source code (the fortran file you want to modify) to the SourceMods/src.clm folder in the case directory, then make the modifications needed and build the model. **Do not change the source code in the <noresm-base> folder!**
 
 Land-only experiments
 ^^^^^^^^^
