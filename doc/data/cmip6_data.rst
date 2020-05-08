@@ -18,8 +18,7 @@ CMIP6 archive of NorESM results
 
 **Advantages:**
 
-- Homogenized and standardized outputs
-- Same variable name
+- Homogenized and standardized outputs (including variable names)
 - Same experiments
 
 | **All data is public available:**
@@ -27,7 +26,7 @@ CMIP6 archive of NorESM results
 
 DECK contributions
 ^^^^^^^^^^^^^^^^^^
-NorESM2 contributions to CMIP Diagnostic, Evaluation and Characterization of Klima (DECK) and CMIP6 historical simulations
+NorESM2 contributions to the CMIP6 Diagnostic, Evaluation and Characterization of Klima (DECK) and CMIP6 historical simulations
 
 .. list-table:: 
    :widths: 25 35 40
@@ -39,7 +38,7 @@ NorESM2 contributions to CMIP Diagnostic, Evaluation and Characterization of Kli
    *  - amip
       - a historical Atmospheric MIP simulation
       - NorESM2-LM (1), NorESM2-MM (1)
-   * - pi-Control
+   * - piControl
      - pre-industrial control simulation
      - NorESM2-LM (1), NorESM2-MM (1)
    * - historical
@@ -72,9 +71,6 @@ MIPs contributions
    * - C4MIP
      - Coupled Climate Carbon Cycle MIP
      - NorESM2-LME
-   * - CDRMIP	   
-     - The Carbon Dioxide Removal MIP
-     - NorESM2-LME
    * - CFMIP
      - Cloud Feedback MIP
      - NorESM2-LM
@@ -84,26 +80,8 @@ MIPs contributions
    * - DCPP
      - Decadal Climate Prediction Project
      - NorESM2-LM, NorESM2-MM
-   * - DynVarMIP
-     - Dynamics and Variability MIP
-     - NorESM2-LM
-   * - FAFMIP
-     - Flux-Anomaly-Forced MIP
-     - NorESM2-LM
-   * - GMMIP
-     - Global Monsoons MIP
-     - NorESM2-LM
    * - GeoMIP
      - Geoengineering MIP
-     - NorESM2-LM
-   * - HighResMIP
-     - High-Resolution MIP
-     - NorESM2-MH?
-   * - ISMIP6
-     - Ice Sheet MIP
-     - NorESM2-LM
-   * - LS3MIP
-     - Land Surface, Snow and Soil Moisture 
      - NorESM2-LM
    * - LUMIP
      - Land-Use MIP
@@ -123,9 +101,6 @@ MIPs contributions
    * - SIMIP
      - Sea Ice MIP
      - NorESM2-LM, NorESM2-MM
-   * - VolMIP
-     - Volcanic Forcings MIP
-     - NorESM2-LM
 
 
 | Overview CMIP6-Endorsed MIPs:
