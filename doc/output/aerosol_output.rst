@@ -1,4 +1,4 @@
-.. _aerosol:
+.. _aerosol_output:
 
 Extra aerosol diagnostics
 ==========================
@@ -40,7 +40,7 @@ with::
   #define AEROFFL
 
 The AEROFFL-token tells the model to do additional radiation-diagnostics for aerosol indirect effect. Including #define AEROFFL to preprocessorDefinitions.h gives 8 additionally variables (+ ca. 5% CPU-time)
-Please see an overview of the additional output variables: :ref:`aeroffl_extra_output`
+Please see an overview of the additional output variables: :ref:`aerosol_output_aeroffl_variables`
 
 
 Enable diagnostics for AEROCOM
@@ -62,7 +62,7 @@ with::
 
 
 The AEROCOM-token turns on diagnostics needed for AEROCOM. If #define AEROCOM is activated, we additionally get 149 variables (+ ca. 13% CPU-time). Please see an overview of the additional output variables:
-:ref:`aerocom_extra_output`
+:ref:`aerosol_output_aerocom_variables`
 
 
 **The model may be run with any combination of these options: with AEROFFL only, with AEROCOM only, or with AEROFFL and AEROCOM activated at the same time.**
