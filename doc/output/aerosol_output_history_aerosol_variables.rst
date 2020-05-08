@@ -1,6 +1,6 @@
 .. _history_aerosol_extra_output:
  
-history_aerosol extra output
+Additional output when history_aerosol=.true.
 ''''''''''''''''''''''''''''
 
 | AQSO4_H2O2:long_name = "SO4 aqueous phase chemistry due to H2O2"  
