@@ -1,4 +1,4 @@
-.. _history_aerosol_extra_output:
+.. _aerosol_output_history_aerosol_variables:
  
 Additional output when history_aerosol=.true.
 ''''''''''''''''''''''''''''
