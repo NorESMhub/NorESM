@@ -34,8 +34,48 @@ github.
   * **Make sure you have a version of git >= 2.0** (add the line "module load git" to your .bashrc files on hexagon, vilje)
   * **git config - -global push.default simple** (Will edit your ~/.gitconfig file to a safer way to share your modifications, see http://stackoverflow.com/questions/13148066/warning-push-default-is-unset-its-implicit-value-is-changing-in-git-2-0)
 
-Note that with git, the main branch is no longer called "trunk", it is
-called "master"!
+Note that with git, the main branch is no longer called "trunk", it is called "master"!
+
+
+Git workflows - centralized or fork-and-branch workflow
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Before you start to clone the repository to your local machine, decide which workflow which is best suited for your work. See https://www.atlassian.com/git/tutorials/comparing-workflows. 
+
+When working with documentation and text which is not critical i.e. breaking any software or build, a simple workflow like the **Centralized Workflow** should work well. However, when collaborating on a software development project, it is recommended to use the **Forking Workflow** https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow.
+
+There are many advantages with this workflow, e.g. you cannot mess up the official repository, only your own, but the greatest benefit is that instead of pushing directly to the official repository, you instead create a **merge request** a.k.a. **pull request** to the upstream repository. This allows commits/branches to be reviewed by others and create a discussion thread before the MR is merged into the upstream repository.
+
+Basically, the "fork and branch" workflow looks something like this:
+
+  * Fork a GitHub repository.
+  * Clone the forked repository to your local system.
+  * Add a Git remote for the original repository.
+  * Create a feature branch in which to place your changes.
+  * Make your changes to the new branch.
+  * Commit the changes to the branch.
+  * Push the branch to GitHub.
+  * Open a pull request from the new branch to the original repo.
+  * Clean up after your pull request is merged.
+  
+To start off:
+
+  * Press the Fork button in the project, and clone the forked project.
+  * Add the remote upstream repository that you pull from, in order to keep your forked updated with the main development, e.g.
+::
+
+  git remote add upstream https://github.com/NorESMhub/NorESM.git
+  git remote -v                 # check that you are tracking the right repositories (origin and upstream)
+  git pull upstream master      # pull latest from the upstream master branch; do it often if possible
+  git push origin master        # do this when upstream is ahead of you local (origin) repos, to stay in sync.
+  git checkout -b some-feature  # create and switch to a new branch "some-feature".
+  ...                           # edit some code
+  git commit -a -m "Add first draft of some feature"
+  git push
+
+You are now ready to make a merge request (MR) of some-feature branch. This can by done from github after you pushed. Remember that after the MR is created and reviewed by others, you may need to go back and fix things before it is accepted and can be merged.
+After merging the MR, you should normally delete the feature branch and update you local repos. to keep things clean.
+
+Note: If your feature branch has many commits, it may be smart to "squach" the history before creating the MR, so that it is easier to review the full changes by others (and yourself). This can be done by the git rebase command, but is not covered here.
 
 Verify that you have the correct checkout
 '''''''''''''''''''''''''''''''''''''''''
