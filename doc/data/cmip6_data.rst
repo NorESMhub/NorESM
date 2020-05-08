@@ -73,7 +73,7 @@ MIPs contributions
      - NorESM2-LME
    * - CDRMIP	   
      - The Carbon Dioxide Removal MIP
-     - NorESM2-LME
+     - NorESM2-LM
    * - CFMIP
      - Cloud Feedback MIP
      - No contribution yet
@@ -82,7 +82,7 @@ MIPs contributions
      - NorESM2-LM
    * - DCPP
      - Decadal Climate Prediction Project
-     - NorESM2-LM, NorESM2-MM
+     - NorCPM1
    * - GeoMIP
      - Geoengineering MIP
      - No contribution yet
@@ -91,13 +91,13 @@ MIPs contributions
      - No contribution yet
    * - OMIP
      - Ocean MIP
-     - NorESM2-MM
+     - NorESM2-LM
    * - PAMIP
      - Polar Amplification MIP
-     - NorESM2-MM
+     - NorESM2-LM
    * - RFMIP
      - Radiative Forcing MIP
-     - NorESM2-LM
+     - NorESM2-LM, NorESM2-MM
    * - ScenarioMIP
      - Scenario MIP
      - NorESM2-LM, NorESM2-MM
