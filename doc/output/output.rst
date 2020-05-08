@@ -1,6 +1,7 @@
 .. _output:
 
 NorESM2 output
+============
 
 .. toctree::
    :maxdepth: 2
