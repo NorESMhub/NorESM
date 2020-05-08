@@ -230,6 +230,10 @@ Input data is handled by the build process as follows:
 
 Code modifications
 ^^^^^^^^^^^^^^^^^^^
+If you want to make more subtantial changes to the codes than what is possible by the use of user_nl_<component>, you need to copy the source code (the fortran file you want to modify) to the SourceMods/src.<component> folder in the case directory, then make the modifications needed before building the model. Make sure that you use the source code from the same commit as you used to create the case (for commit details see README.case in the case folder). **Do not change the source code in the <noresm-base> folder!**  
+
+
+**Extra aerosol diagnostics:**
 
 Including::
 
