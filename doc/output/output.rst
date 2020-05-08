@@ -7,4 +7,5 @@ NorESM2 output
    :numbered:
 
    standard_output.rst
+   aerosol.rst
   
