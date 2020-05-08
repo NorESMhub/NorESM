@@ -88,7 +88,7 @@ CLM5 in NorESM2 can also be run with a prescribed satellite vegetation phenology
 
 Spin up of CLM5 
 ^^^^^^^^^
-A long spin up of CLM5 is necessary to achive e.g. land carbon balance. 
+A long spin up of CLM5 is necessary to achive e.g. land carbon balance. Such a spin up can be done partly uncoupled from NorESM2 in order to save computation time.
 
 To generate forcing data from the coupled simulation to run CLM5 stand alone with NorESM2 forcing, a full couple history needs to be turned on. For producing forcing data, please try adding this to user_nl_cpl in the coupled simulation of interest:
 
@@ -107,6 +107,10 @@ To generate forcing data from the coupled simulation to run CLM5 stand alone wit
 
 
 ::
+
+NorESM2 can then be recoupled to the spun up land experiment by the use of restart files. I.e. in the fully coupled case set the restartfile from the CLM5 stand alone spin up experiment in user_nl_clm::
+
+  finidat = '<path_to_inputdata>/inputdata/<path_to_file>/CLM_SPINUP_FILENAME.clm2.r.YR-01-01-00000.nc'
 
 Land-only experiments
 ^^^^^^^^^
