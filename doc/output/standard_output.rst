@@ -21,15 +21,16 @@ Archiving is a phase of the model run where the generated output data is moved f
 
 Atmospheric output for some commonly used configurations of NorESM2
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-In preparation for CMIP6 and the required model output for the various 
-MIPs, NorESM2 has been set up with different configurations, all run as 
-AMIP using the compset NF2000climo (on 2 degrees) in noresm-dev (2.0: 
-commit 7757f2d from October 30'th 2018; 
-(2.1: COMMIT 35b90aab from March 25'th 
-2019) The given estimates in CPU-time increase are based on 1 month 
-simulations, including model initialization, and are therefore low end 
-estimates. 
+..
+   In preparation for CMIP6 and the required model output for the various 
+   MIPs, NorESM2 has been set up with different configurations, all run as 
+   AMIP using the compset NF2000climo (on 2 degrees) in noresm-dev (2.0: 
+   commit 7757f2d from October 30'th 2018; 
+   (2.1: COMMIT 35b90aab from March 25'th 
+   2019) The given estimates in CPU-time increase are based on 1 month 
+   simulations, including model initialization, and are therefore low end 
+   estimates. 
+..
 
 With standard set-up of the model, the monthly output variables (1, 2
 and 3 D) are:
