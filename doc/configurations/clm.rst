@@ -3,13 +3,17 @@
 Land and river run off
 ================
 
+
+CLM5
+------
+
 | The land model used in NorESM2 is the Community Land Model version 5 (CLM5):
 | http://www.cesm.ucar.edu/models/clm/
 | 
 | Specific questions about CLM can be addressed Lei Cai, email: leca@norceresearch.no
 
 CLM5 model configurations available in NorESM2
----------------------
+^^^^^^
 CLM5 can be run with a prognostic crop model with prognostic vegetation state and active biogeochemistry. 
 The global crop model is on in BGC default configuration with 8 temperate and tropical crop types and has the capability to dynamically simulate crop management and crop management change through time. 
 The BGC-CROP option is used in all NorESM2 CMIP6 experiments and is activated in the compset by::
@@ -22,7 +26,7 @@ CLM5 in NorESM2 can also be run with a prescribed satellite vegetation phenology
  CLM50%SP
 
 The inital state
-------------
+^^^^^^
 
 The land model needs to read in the inital state from a restart file set in user_nl_clm in the case folder ::
 
@@ -50,7 +54,7 @@ and in the Run folder::
 
 
 Spin up of CLM5 
--------------
+^^^^^^
 A long spin up of CLM5 is necessary to achive e.g. land carbon balance. Such a spin up can be done partly uncoupled from NorESM2 in order to save computation time.
 
 To generate forcing data from the coupled simulation to run CLM5 stand alone with NorESM2 forcing, a full couple history needs to be turned on. For producing forcing data, please try adding this to user_nl_cpl in the coupled simulation of interest:
@@ -77,7 +81,7 @@ NorESM2 can then be recoupled to the spun up land experiment by the use of resta
  
  
 User name list modifications
----------------------
+^^^^^^
 An example of how you can modify user_nl_clm. This adds four auxilary history files in addition to the standard monthly files. The first two are daily, and the last two are six and three hourly::
 
       hist_mfilt   = 1,365,30,120,240        
@@ -98,18 +102,18 @@ For example if STOP_N=50 years, you can set::
 
 
 Code modification
--------------
+^^^^^^
 
 If you want to make more subtantial changes to the codes than what is possible by the use of user_nl_clm, you need to copy the source code (the fortran file you want to modify) to the SourceMods/src.clm folder in the case directory, then make the modifications needed before building the model. **Do not change the source code in the <noresm-base> folder!**
 
 Land-only experiments
----------------------
+^^^^^^
 
 **For land-only simulations**, there is no difference in running the CLM5 in CESM2 and that in NorESM2. For a detailed description on how to set up, modify, build and run CLM5 stand alone experiments, please see
 the CLM5.0 users guide: https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/setting-up-and-running-a-case/choosing-a-compset.html (last accessed 7th May 2020)
 
 NorESM2 specific additions
------------------------
+^^^^^^
 Remove infiltration excess water as runoff if the temperature of the surface water pool is below freezing.
 For details please see :ref:`model-description/lnd_model`
 
@@ -126,8 +130,8 @@ Setting::
 will use CESM2 treatment of the surface water in CLM (see previous description).
 
 
-Mosart
-^^^^^^
+MOSART
+-------------
 
 | The Model for Scale Adaptive River Transport (MOSART) is the default river model for CESM2, CLM5 and NorESM2. For more information please see:  
 | http://www.cesm.ucar.edu/models/cesm2/river/  
