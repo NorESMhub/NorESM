@@ -5,14 +5,15 @@ Experiments
 
 NorESM is part of the CESM family of earth system models and shares a lot of the configuration options with CESM. Many of the simulation configuration settings are defined by the so called compsets.
 
-For a quick-start guide on how to create, configure, build, and submit a NorESM experiment, see the :ref:`newbie-guide`.
+For a quick-start guide on how to create, configure, build, and submit a NorESM experiment, see the :ref:`newbie-guide`. More details are provided below, for the advanced more users. 
 
-Create new case
+
+Create and configure a new case
 ^^^^^^^^^^^^^^^
 
-To start a new experiment you need to create a case. When creating a case a case folder <path_to_case_dir>/<casename> will be created that contains all the settings for your experiment
+To start a new experiment you need to create and configure a case. After running the **create_newcase** script, a case folder <path_to_case_dir>/<casename> is created that contains set-up files for your experiment
 
-The case creation contains a compset option. A compset is a collection of predefined setting that defines your experiment setup, including which model components that are activated. Some of the available compsets are described below.
+The create_newcase script includes a --compset option. A compset is a collection of predefined setting that defines your experiment set-up, including which model components that should be activated. Some of the available compsets are described below.
 
 The case folder contains predefined namelist (with namelist settings partly depending on compset option). The default namelist options for the case can be overwritten by changing/adding the new namelist options in the user_nl_<component>
 
