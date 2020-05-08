@@ -60,10 +60,9 @@ Here we use the N1850 compset, which configures the case as a 1850 pre-industria
 
 
 The following example creates a case (also called test1910_1), but on the machine Tetralith::
-
 ::
 
-  ./create_newcase --case ../../../cases/test1910_1 --walltime 24:00:00 --compset N1850 --res f19_tn14 --machine tetralith --project snic2019-1-2 --output-root /proj/bolinc/users/${USER}/NorESM2/noresm2_out --run-unsupported
+    ./create_newcase --case ../../../cases/test1910_1 --walltime 24:00:00 --compset N1850 --res f19_tn14 --machine tetralith --project snic2019-1-2 --output-root /proj/bolinc/users/${USER}/NorESM2/noresm2_out --run-unsupported
     
 Note that here we use the argument **--output-root**, which is only required if the noresm_run_dir (the running directory of the mode) differs from default running directory <path_to_run_dir>/noresm/ 
 
