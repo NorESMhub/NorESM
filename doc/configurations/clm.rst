@@ -106,6 +106,11 @@ Code modification
 
 If you want to make more subtantial changes to the codes than what is possible by the use of user_nl_clm, you need to copy the source code (the fortran file you want to modify) to the SourceMods/src.clm folder in the case directory, then make the modifications needed before building the model. **Do not change the source code in the <noresm-base> folder!**
 
+The CLM5 source code is located in::
+  
+  <noresm-base>/components/clm/src/
+
+
 Land-only experiments
 ^^^^^^
 
@@ -138,7 +143,8 @@ MOSART
 |   
 | For a techincal user guide, please see:  
 | https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/tech_note/MOSART/CLM50_Tech_Note_MOSART.html  
-|   
+
+
 The methods and syntax for modifying the user namelist and code in MOSART are similar to CLM5, so the previous description can be used. The user namelist for MOSART is user_nl_mosart and source code files should be copied to SourceMods/src.mosart/ in the case folder.
 
 The MOSART source code is located in::
