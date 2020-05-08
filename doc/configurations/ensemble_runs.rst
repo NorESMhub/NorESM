@@ -4,7 +4,7 @@ Ensemble experiments
 ===================
 **How to run several members at once**
 
-Running several ensemble members in a single model experiment (case) is possible using the built-in **multi-instance component functionality**. This allows you to run multiple component instances under one model excecutable.  
+Running several ensemble members in a single model experiment (case) is possible using the built-in **multi-instance component functionality**. This allows you to run multiple component instances under one model executable.  
 
 Creating an ensemble experiment:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
