@@ -19,7 +19,9 @@ Create a new case
 The **create_newcase** script is an excecutable python script located in:
 
 ::
+
   <noresm-base>/cime/script
+
 ::
 
 The script for creating a new case takes several command line arguments as input to know how to configure your case.
@@ -36,7 +38,7 @@ Some of the most important arguments are as follows:
 To investigate the full list of arguments, enter the <noresm_base>/cmie/scripts folder and run create_newcase with the --help argument:
 ::
     cd <noresm_base>/cime/scripts/
-  ./create_newcase --case ../../cases/$CASENAME --mach $MACHINE --res f19_g16 --compset $COMPSET
+  ./create_newcase --help
 
 
 To create a new case, enter the scripts directory and run the create_newcase scripts:
@@ -44,17 +46,21 @@ To create a new case, enter the scripts directory and run the create_newcase scr
   cd <noresm_base>/cime/scripts/
   ./create_newcase --case ../../cases/$CASENAME --mach $MACHINE --res f19_g16 --compset $COMPSET
 
+You have now created the case folder <noresm_base>/cases/$CASENAME! Go to the case folder to start configuring your experiment.
 
 Configure the case
 ---------------------
-Enter the casefolder in ``<noresm_base>/cases/$CASENAME/``. This is where you can make changes to the configuration either in ``SourceMods/src.$COMP/`` or is the namelists ``user_nl_$COMP`` where $COMP is a component such as ``cam``, but for now we keep the standard configurations and configure by typing 
+The case folder `<noresm_base>/cases/$CASENAME/`` is where you configure your case by changing enviroment files (such as the <noresm_base>/cases/$CASENAME/env_run.xml file;see :ref:'experiment_environments'), changing the user namelists for the different model components (files named ``user_nl_$COMP`` where $COMP is a model component such as ``cam``), or even add your own code changes to ``SourceMods/src.$COMP/``. But for now we stick to the standard out-of-the-box set up and configure the case as follows:
+
 ::
 
+  cd <noresm_base>/cases/$CASENAME
   ./case.setup
   
+
 Build the case
 -----------------
-After your configuration is finished you build the case by typing 
+After your configuration is finished you can start bulding your case by invoking the case.build script from your case folder: 
 ::
   ./case.build
 
@@ -62,7 +68,7 @@ Which may take a while.
 
 Submit your case
 -------------------
-When your case if finished building you are ready to submit and run your case which is done by typing
+When your case has finished building you are ready to submit and run your case. This is done by invoking the case.submit script from your case folder:
 ::
   ./case.submit
   
