@@ -4,8 +4,6 @@
 Standard output
 ===================================
 
-NorESM2 output
-^^^^^^^^^^^^^^
 
 During a model run, each component (i.e. atm, lnd, ocn, cice, rof) produces its own output datasets consisting of history, restart and output log files. By default, each component periodically writes
 
