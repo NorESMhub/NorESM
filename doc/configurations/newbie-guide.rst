@@ -40,13 +40,32 @@ To investigate the full list of arguments, enter the <noresm_base>/cmie/scripts 
     cd <noresm_base>/cime/scripts/
   ./create_newcase --help
 
-
+  
 To create a new case, enter the scripts directory and run the create_newcase scripts:
 :: 
   cd <noresm_base>/cime/scripts/
   ./create_newcase --case ../../cases/$CASENAME --mach $MACHINE --res f19_g16 --compset $COMPSET
 
 You have now created the case folder <noresm_base>/cases/$CASENAME! Go to the case folder to start configuring your experiment.
+
+More advanced examples
+++++++++
+The following example creates a case (test1910_1) on the machine Fram:
+
+::
+
+    ./create_newcase --case ../../../cases/test1910_1 --compset N1850 --res f19_tn14 --machine fram --project snic2019-1-2 --user-mods-dir cmip6_noresm_DECK --run-unsupported
+
+Here we use the N1850 compset, which configures the case as a 1850 pre-industrial control simulation. Note that we use the argument **--run-unsupported**, which required if the grid resolution is not supported in the compset (see :ref:'experiments'), **--project** to set the id of the project used in the batch system accounting on Fram, **--user-mods-dir**  to set the path to a folder containing files that will further configure your case (like user namelists, shell scripts with xmlchange commands or SourceMods), and **--run-unsupported** which is required if for isntance is not listed supported in the compset.
+
+
+The following example creates a case (also called test1910_1), but on the machine Tetralith::
+
+::
+
+  ./create_newcase --case ../../../cases/test1910_1 --walltime 24:00:00 --compset N1850 --res f19_tn14 --machine tetralith --project snic2019-1-2 --output-root /proj/bolinc/users/${USER}/NorESM2/noresm2_out --run-unsupported
+    
+Note that here we use the argument **--output-root**, which is only required if the noresm_run_dir (the running directory of the mode) differs from default running directory <path_to_run_dir>/noresm/ 
 
 Configure the case
 ---------------------
