@@ -120,7 +120,23 @@ MIPs contributions
      - No contribution yet
      - JBD
 
-\* abbreviations defined here
+\* 
+**MB**: Mats Bentsen <mats.bentsen@uni.no>,
+**FC**: Francois Counillon <francois.counillon@nersc.no>,
+**JBD**: Jens Boldingh Debernard <jensd@met.no>,
+**LSG**: Lise Seland Graff <lisesg@met.no>,
+**YH**: Yanchun He <yanchun.he@nersc.no>,
+**AK**: Alf Kirkevag <alfk@met.no>,
+**NK**: Noel Keenlyside <noel.keenlyside@gfi.uib.no>,
+**HL**: Hanna Lee <hanna.lee@uni.no>,
+**HM**: Helene Muri <helene.muri@ntnu.no>,
+**DJLO**: Dirk Jan Leo Olivie <dirkjlo@met.no>,
+**TT**: Thomas Toniazzo <thomas.toniazzo@uni.no>,
+**JS**: Jörg Schwinger <jorg.schwinger@norceresearch.no>,
+**MS**: Michael Schultz <michaels@met.no>
+**TS**: Trude Storelvmo <trude.storelvmo@geo.uio.no>,
+**ØS**: Øyvind Seland <oyvind.seland@met.no>,
+**JT**: Jerry Tjiputra <Jerry.Tjiputra@uni.no>,
 
 | Overview CMIP6-Endorsed MIPs:
 | https://www.wcrp-climate.org/modelling-wgcm-mip-catalogue/modelling-wgcm-cmip6-endorsed-mips
