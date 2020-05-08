@@ -4,7 +4,7 @@ CMIP6 archive of NorESM results
 ===================
 
 
-| NorESM2 contributes to the 6th phase of the Coupled Model Intercomparison Project (CMIP6):   
+| NorESM2 contributes to the 6th phase of the Coupled Model Intercomparison Project (CMIP6; Eyring et al., 2016):   
 | https://www.wcrp-climate.org/wgcm-cmip/wgcm-cmip6   
 | 
 
@@ -56,54 +56,69 @@ MIPs contributions
 ^^^^^^^^^^^^^^^^^
 
 .. list-table:: 
-   :widths: 25 25 50
+   :widths: 25 25 25 25
    :header-rows: 1
 
    * - MIP short name
      - MIP long name
      - NorESM2 version
+     - Contact persons
    * - CMIP
      - Coupled MIP
      - NorESM2-LM, NorESM2-MM
+     - 
    * - AerChemMIP
      - Aerosols and Chemistry MIP
      - NorESM2-LM
+     - 
    * - C4MIP
      - Coupled Climate Carbon Cycle MIP
      - NorESM2-LME
+     - 
    * - CDRMIP	   
      - The Carbon Dioxide Removal MIP
      - NorESM2-LM
+     - 
    * - CFMIP
      - Cloud Feedback MIP
      - No contribution yet
+     - 
    * - DAMIP
      - Detection and Attribution MIP
      - NorESM2-LM
+     - 
    * - DCPP
      - Decadal Climate Prediction Project
      - NorCPM1
+     - 
    * - GeoMIP
      - Geoengineering MIP
      - No contribution yet
+     - 
    * - LUMIP
      - Land-Use MIP
      - No contribution yet
+     - 
    * - OMIP
      - Ocean MIP
      - NorESM2-LM
+     - 
    * - PAMIP
      - Polar Amplification MIP
      - NorESM2-LM
+     - 
    * - RFMIP
      - Radiative Forcing MIP
      - NorESM2-LM, NorESM2-MM
+     - 
    * - ScenarioMIP
      - Scenario MIP
      - NorESM2-LM, NorESM2-MM
+      -
    * - SIMIP
      - Sea Ice MIP
      - No contribution yet
+     - 
 
 
 | Overview CMIP6-Endorsed MIPs:
