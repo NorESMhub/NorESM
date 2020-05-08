@@ -1,4 +1,4 @@
-.. _aeroffl_extra_output:
+.. _aerosol_output_aeroffl_variables:
 
 AEROFFL extra output
 ''''''''''''''''''''
