@@ -1,4 +1,4 @@
-.. _aerocom_extra_output:
+.. _aerosol_output_aerocom_variables:
 
 AEROCOM extra output
 ''''''''''''''''''''
