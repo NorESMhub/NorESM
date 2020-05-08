@@ -29,33 +29,27 @@ DECK contributions
 NorESM2 contributions to the CMIP6 Diagnostic, Evaluation and Characterization of Klima (DECK) and CMIP6 historical simulations
 
 .. list-table:: 
-   :widths: 25 35 40 15
+   :widths: 25 35 40
    :header-rows: 1
     
    * - Exp. short name
      - Exp. long name
      - NorESM2 version (members)
-     - Contact person(s)
    *  - amip
       - a historical Atmospheric MIP simulation
       - NorESM2-LM (1), NorESM2-MM (1)
-      - xxyy
    * - piControl
      - pre-industrial control simulation
      - NorESM2-LM (1), NorESM2-MM (1)
-     - xxyy
    * - historical
      - historical 
      - NorESM2-LM (3), NorESM2-MM (1)
-     - xxyy
    * - abrupt-4xCO2
      - forced by an abrupt quadrupling of atmospheric CO2
      - NorESM2-LM (1), NorESM2-MM (1)
-     - xxyy
    * - 1pctCO2
      - forced by a 1 % pr. year atmospheric CO2 increase
      - NorESM2-LM (1), NorESM2-MM (1)
-     - xxyy
 
 
 MIPs contributions
@@ -68,19 +62,19 @@ MIPs contributions
    * - MIP short name
      - MIP long name
      - NorESM2 version
-     - Contact persons
+     - Contact person(s)*
    * - CMIP
      - Coupled MIP
      - NorESM2-LM, NorESM2-MM
-     - xxyy
+     - ØS, TT, DJLO
    * - AerChemMIP
      - Aerosols and Chemistry MIP
      - NorESM2-LM
-     - xxyy
+     - DJLO, MS
    * - C4MIP
      - Coupled Climate Carbon Cycle MIP
      - NorESM2-LME
-     - xxyy
+     - JT, JS
    * - CDRMIP	   
      - The Carbon Dioxide Removal MIP
      - NorESM2-LM
@@ -88,44 +82,45 @@ MIPs contributions
    * - CFMIP
      - Cloud Feedback MIP
      - No contribution yet
-     - xxyy
+     - TS, ØS
    * - DAMIP
      - Detection and Attribution MIP
      - NorESM2-LM
-     - xxyy
+     - ØS
    * - DCPP
      - Decadal Climate Prediction Project
      - NorCPM1
-     - xxyy
+     - NK, FC
    * - GeoMIP
      - Geoengineering MIP
      - No contribution yet
-     - xxyy
+     - HM
    * - LUMIP
      - Land-Use MIP
      - No contribution yet
-     - xxyy
+     - HL, YH
    * - OMIP
      - Ocean MIP
      - NorESM2-LM
-     - xxyy
+     - MB, JS
    * - PAMIP
      - Polar Amplification MIP
      - NorESM2-LM
-     - xxyy
+     - LSG, MB
    * - RFMIP
      - Radiative Forcing MIP
      - NorESM2-LM, NorESM2-MM
-     - xxyy
+     - AK, DJLO
    * - ScenarioMIP
      - Scenario MIP
      - NorESM2-LM, NorESM2-MM
-     - xxyy
+     - MB, MS
    * - SIMIP
      - Sea Ice MIP
      - No contribution yet
-     - xxyy
+     - JBD
 
+\* abbreviations defined here
 
 | Overview CMIP6-Endorsed MIPs:
 | https://www.wcrp-climate.org/modelling-wgcm-mip-catalogue/modelling-wgcm-cmip6-endorsed-mips
