@@ -84,7 +84,8 @@ In addition, a set of slab-ocean experiments were conducted to assess the climat
 References
 ^^^^^^
 
-Lise S. Graff, Trond Iversen, Ingo Bethke, Jens B. Debernard, Øyvind Seland, Mats Bentsen, Alf Kirkevåg, Camille Li, and Dirk J. L. Olivié: Arctic amplification under global warming of 1.5 and 2 °C in NorESM1-Happi, Earth Syst. Dynam., 10, 569–598, https://doi.org/10.5194/esd-10-569-2019, 2019
+Graff, L. S., Iversen, T., Bethke, I., Debernard, J. B., Seland, Ø., Bentsen, M., Kirkevåg, A., Li, C., and Olivié, D. J. L.: Arctic amplification under global warming of 1.5 and 2 ◦C in NorESM1-Happi, Earth System Dynamics, 10, 569–598, https://doi.org/10.5194/esd-10-569-2019, 2019.
+
 
 Mitchell, D., AchutaRao, K., Allen, M., Bethke, I., Forster, P., Fuglestvedt, J., Gillett, N., Haustein, K., Iverson, T., Massey, N., Schleussner, C.-F., Scinocca, J., Seland, Ø., Shiogama, H., Shuckburgh, E., Sparrow, S., Stone, D., Wallom, D.,
 Wehner, M., and Zaaboul, R.: Half a degree Additional warming, Projections, Prognosis and Impacts (HAPPI): Background
