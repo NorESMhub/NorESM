@@ -115,7 +115,7 @@ NorESM2 can then be recoupled to the spun up land experiment by the use of resta
 Code modification
 ^^^^^
 
-If you want to make more subtantial changes to the codes than what is possible by the change of user_nl_clm, you need to copy the source code (the fortran file you want to modify) to the SourceMods/src.clm folder in the case directory, then make the modifications needed and build the model. **Do not change the source code in the <noresm-base> folder!**
+If you want to make more subtantial changes to the codes than what is possible by the use of user_nl_clm, you need to copy the source code (the fortran file you want to modify) to the SourceMods/src.clm folder in the case directory, then make the modifications needed and build the model. **Do not change the source code in the <noresm-base> folder!**
 
 Land-only experiments
 ^^^^^^^^^
