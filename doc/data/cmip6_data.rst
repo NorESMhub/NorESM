@@ -71,9 +71,12 @@ MIPs contributions
    * - C4MIP
      - Coupled Climate Carbon Cycle MIP
      - NorESM2-LME
+   * - CDRMIP	   
+     - The Carbon Dioxide Removal MIP
+     - NorESM2-LME
    * - CFMIP
      - Cloud Feedback MIP
-     - NorESM2-LM
+     - No contribution yet
    * - DAMIP
      - Detection and Attribution MIP
      - NorESM2-LM
@@ -82,10 +85,10 @@ MIPs contributions
      - NorESM2-LM, NorESM2-MM
    * - GeoMIP
      - Geoengineering MIP
-     - NorESM2-LM
+     - No contribution yet
    * - LUMIP
      - Land-Use MIP
-     - NorESM2-LM
+     - No contribution yet
    * - OMIP
      - Ocean MIP
      - NorESM2-MM
@@ -100,7 +103,7 @@ MIPs contributions
      - NorESM2-LM, NorESM2-MM
    * - SIMIP
      - Sea Ice MIP
-     - NorESM2-LM, NorESM2-MM
+     - No contribution yet
 
 
 | Overview CMIP6-Endorsed MIPs:
