@@ -19,7 +19,7 @@ To run NorESM2 with more aerosol diagnostics add to user_nl_cam:
 Adding history_aerosol = .true. to user_nl_cam gives 
 additional 577 variables (+ ca. 13 % CPU-time).
 Please see an overview of additional output varibales:
-:ref:`history_aerosol_extra_output`
+:ref:`aerosol_output_history_aerosol_variables`
 
 Decomposition of aerosol direct, semidirect, and indirect radiative forcing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
