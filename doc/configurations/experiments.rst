@@ -5,71 +5,7 @@ Experiments
 
 NorESM is part of the CESM family of earth system models and shares a lot of the configuration options with CESM. Many of the simulation configuration settings are defined by the so called compsets.
 
-Basic case set up, compilation and job submission with NorESM
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-This is a general description/checklist for how to create a new experiment with NorESM. For a quick start guide, see also :ref:`newbie-guide`. The case creation step is explained in more detail below.
-
-- Create a case::
-
-    cd <noresm-base>/cime/scripts
-    ./create_newcase --case <path_to_case_dir>/<casename> --walltime <time> --compset <compset_name> --res <resolution> --machine <machine_name> --project <project_name> --user-mods-dir <user_mods_dir> --output-root <path_to_run_dir>/<noresm_run_dir> --run-unsupported 
-   
-  Note!
-  
-  **--walltime <time>** can be set in env_batch.xml in the case directory after building the new case and is not necessary to include when creating a new case
-
-  **--output-root <path_to_run_dir>/<noresm_run_dir>** only required if the noresm_run_dir differ from default <path_to_run_dir>/noresm/ 
-  
-  **--run-unsupported** required if the grid resolution is not supported in the compset (see detailed description below)
-
-  Example of case creation on Fram::
-
-    ./create_newcase --case ../../../cases/test1910_1 --compset N1850 --res f19_tn14 --machine fram --project snic2019-1-2 --user-mods-dir cmip6_noresm_DECK --run-unsupported
-
-  Example of case creation on Tetralith::
-
-    ./create_newcase --case ../../../cases/test1910_1 --walltime 24:00:00 --compset N1850 --res f19_tn14 --machine tetralith --project snic2019-1-2 --output-root /proj/bolinc/users/${USER}/NorESM2/noresm2_out --run-unsupported
-    
-- Create a clone::
-  
-    cd <noresm-base>/cime/scripts
-    ./create_clone --case <path_to_case_dir>/<casename> --clone <path_to_case_dir>/<casename_of_clone>
-  
-
-- Configure case::
-
-    cd <path_to_case_dir>/casename
-    ./case.setup
-
-
-- Add code changes
-
-  Copy your code changes to the folder::
-
-    <path_to_case_dir>/casename>/SourceMods/src.<component>
-
-- Edit namelist::
-
-    <path_to_case_dir>/casename>/user_nl_<component>
-
-- Edit run configuration::
-
-    env_run.xml
-
-
-- Build model::
-
-    ./case.build
-
-Make sure to include all modifications to user_nl_*, env_*.xml, SourceMods etc. before you build
-
-- Copy restart files to run directory (if the case is a branch or a hybrid experiment) 
-
-
-- Submit job::
-
-    ./case.submit
+For a quick-start guide on how to create, configure, build, and submit a NorESM experiment, see the :ref:`newbie-guide`.
 
 Create new case
 ^^^^^^^^^^^^^^^
@@ -208,7 +144,7 @@ The case is build by:
 
 ::
 
-All user modifications to env_run.xml, env_mach_pes.xml, env_batch.xml must be done before case.build is invoked. This is also the case for the aforementioned user made name lists: i.e. user_nl_cam, user_nl_cice, user_nl_clm, user_nl_micon, user_nl_cpl).
+All user modifications to env_run.xml, env_mach_pes.xml, env_batch.xml must be done before case.build is invoked. This is also the case for the aforementioned user made name lists: i.e. user_nl_cam, user_nl_cice, user_nl_clm, user_nl_micon, user_nl_cpl). 
 
 
 If you want to ensure your case is ready for submission, you can run:
@@ -228,6 +164,9 @@ which will:
 Running this is completely optional: these checks will be done
 automatically when running case.submit. However, you can run this if you
 want to perform these checks without actually submitting the case.
+
+As a last step, remember to copy restart files to run directory if you are running a branch run or a hybrid run 
+
 
 Submitting the case
 ^^^^^^^^^^^^^^^^^^^
