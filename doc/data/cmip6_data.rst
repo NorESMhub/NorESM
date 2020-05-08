@@ -74,11 +74,11 @@ MIPs contributions
    * - C4MIP
      - Coupled Climate Carbon Cycle MIP
      - NorESM2-LME
-     - JT, JS
+     - JS, JT
    * - CDRMIP	   
      - The Carbon Dioxide Removal MIP
      - NorESM2-LM
-     - xxyy
+     - JT, JS
    * - CFMIP
      - Cloud Feedback MIP
      - No contribution yet
@@ -119,6 +119,10 @@ MIPs contributions
      - Sea Ice MIP
      - No contribution yet
      - JBD
+   * - ZECMIP	   
+     - Zero Emissions Commitment MIP
+     - NorESM2-LM
+     - JS, JT
 
 \* 
 **MB**: Mats Bentsen <mats.bentsen@uni.no>,
@@ -136,7 +140,7 @@ MIPs contributions
 **MS**: Michael Schultz <michaels@met.no>
 **TS**: Trude Storelvmo <trude.storelvmo@geo.uio.no>,
 **ØS**: Øyvind Seland <oyvind.seland@met.no>,
-**JT**: Jerry Tjiputra <Jerry.Tjiputra@uni.no>,
+**JT**: Jerry Tjiputra <Jerry.Tjiputra@norceresearch.no>,
 
 | Overview CMIP6-Endorsed MIPs:
 | https://www.wcrp-climate.org/modelling-wgcm-mip-catalogue/modelling-wgcm-cmip6-endorsed-mips
