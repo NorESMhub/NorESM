@@ -3,8 +3,6 @@
 Aerosol diagnostics
 ===================
 
-WILL BE UPDATED BY alfk@met.no
-
 NCL Model Version Comparison package ModIvsModII
 ------------------------------------
 
@@ -25,11 +23,11 @@ ModIvsModII produces plots and global life-cycling data (for use in a table) of 
     
 - Furthermore, to display the plots in an organized form by use of a web browser (only possible if the chosen plot format is png):
     
-    - edit general model info (only) in ModIvsModII.htm, and manually cut and paste the mass budget numbers from the script output into this file (bottom part)
+  - edit general model info (only) in ModIvsModII.htm, and manually cut and paste the mass budget numbers from the script output into this file (bottom part)
     
-    - copy all png (plots) and htm files to the desired output (common) directory
-    - open ModIvsModII.htm in your browser: hyper-links to all other htm files, including plots, are found here
+  - copy all png (plots) and htm files to the desired output (common) directory
+  - open ModIvsModII.htm in your browser: hyper-links to all other htm files, including plots, are found here
     
- Example: http://ns2345k.web.sigma2.no/aerosol_diagnostics/NFHISTnorpddmsbcsdyn_f09_mg17_20191101_vs_NHIST_f19_tn14_20190710/ModIvsModII.htm
+Example: http://ns2345k.web.sigma2.no/aerosol_diagnostics/NFHISTnorpddmsbcsdyn_f09_mg17_20191101_vs_NHIST_f19_tn14_20190710/ModIvsModII.htm
  
 
