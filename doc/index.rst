@@ -31,6 +31,7 @@ https://github.com/NorESMhub/NorESM/blob/master/doc/README.md.
    start.rst
    access/access.rst
    configurations/configurations.rst
+   output/output.rst
    diagnostics/diagnostics.rst
    data/data.rst
    contribute/contribute.rst
