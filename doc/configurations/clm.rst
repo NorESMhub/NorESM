@@ -119,7 +119,7 @@ If you want to make more subtantial changes to the codes than what is possible b
 
 Land-only experiments
 ^^^^^^^^^
-**For land-only simulations**, there is no difference between the CLM5 in CESM2 and CLM5 in NorESM2. For a detailed description on how to set up, modify, build and run CLM5 stand alone experiments, please see
+**For land-only simulations**, there is no difference in running the CLM5 in CESM2 and that in NorESM2. For a detailed description on how to set up, modify, build and run CLM5 stand alone experiments, please see
 the CLM5.0 users guide: https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/setting-up-and-running-a-case/choosing-a-compset.html (last accessed 7th May 2020)
 
 
