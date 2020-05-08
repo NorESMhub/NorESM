@@ -11,9 +11,7 @@ Running NorESM2
    experiments.rst
    experiment_environment.rst
    platforms.rst
-   aerosol.rst
    input.rst
-   output.rst
    amips.rst
    omips.rst
    clm.rst
