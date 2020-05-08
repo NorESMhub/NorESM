@@ -41,9 +41,9 @@ Git workflows - centralized or fork-and-branch workflow
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''
 Before you start to clone the repository to your local machine, decide which workflow which is best suited for your work. See https://www.atlassian.com/git/tutorials/comparing-workflows. 
 
-When working with documentation and text which is not critical i.e. breaking any software or build, a simple workflow like the **Centralized Workflow** should work well. However, when collaborating on a software development project, it is recommended to use the **Forking Workflow** https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow.
+When working with documentation and text which is not critical i.e. breaking any software or build, a simple workflow like the **Centralized Workflow** should work well. However, when collaborating on a software development project, it is recommended to use the **Forking Workflow** https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow.  Note that this includes the **Feature Branch Workflow** https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow.
 
-There are many advantages with this workflow, e.g. you cannot mess up the official repository, only your own, but the greatest benefit is that instead of pushing directly to the official repository, you instead create a **merge request** a.k.a. **pull request** to the upstream repository. This allows commits/branches to be reviewed by others and create a discussion thread before the MR is merged into the upstream repository.
+There are many advantages with forking workflow, e.g. you cannot mess up the official repository, only your own, but the greatest benefit is that instead of pushing directly to the official repository, you instead create a **merge request** a.k.a. **pull request** to the upstream repository. This allows commits/branches to be reviewed by others and create a discussion thread before the MR is merged into the upstream repository.
 
 Basically, the "fork and branch" workflow looks something like this:
 
