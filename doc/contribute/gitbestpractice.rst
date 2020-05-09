@@ -154,6 +154,7 @@ Development branch vs. continous integration tool (CI)
 When working using the forking workflow and committing code through reviewed pull requests, there will still be times when code changes will break the software build for various reasons. It is therefore common to merge PR's into a **development branch** in the upstream repository, rather than directly to **master**. This adds additional management, because administrator must merge the development branch into master frequently and regularly, unless the build is broken. The gain is that **master** *always should work*.
 
 An alternative to this scheme is to configure the workflow using a **CI/CD tool** that automates this process. I.e. when the pull request is created, the branch will automatically checked out on a dedicated build server and built. The pull request will not be published before the build is successful on the build server. On github, this is possible with **Github Actions** https://help.github.com/en/actions. It requires effort to get this in place for complex projects, but is normally worth it for large projects.
+
 Another huge benefit of using a CI-tool is that it can automatically run test-suites in your project. E.g. a limited test-suite after successful build (part of evaluating that the build was OK), and a larger set test-suite after nightly builds.
 
 
