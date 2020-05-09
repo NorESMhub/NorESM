@@ -145,9 +145,9 @@ To start off:
   git push
 
 You are now ready to make a pull request of my-feature branch. This can by done from github after you pushed. Remember that after the PR is created and reviewed by others, you may need to go back and fix things before it is accepted and can be merged.
-After merging the PR, you should normally delete the feature branch and update your local repos. to keep things clean (it will still be seen as a (merged) branch in the upstream repository.
+After merging the PR, you should normally delete the feature branch and update your local repos. to keep things clean. It will still be seen as a (merged) branch in the upstream repository.
 
-**Note**: If your feature branch has many commits, it may be smart to "squach" the history before creating the PR, so that it is easier to review the full changes by others (and yourself). This can be done by the **git rebase** command, but is not covered here.
+**Note**: If your feature branch has many commits, it may be smart to "squach" the history before creating the PR, so that it is easier to review the full changes by others (and yourself). This can be done using the **git rebase** command, but will not be covered here.
 
 Development branch vs. continous integration tool (CI)
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -160,11 +160,11 @@ Another huge benefit of using a CI-tool is that it can automatically run test-su
 
 Tips and Gotcha's when working with Git
 '''''''''''''''''''''''''''''''''''''''
-Git is a very complex system, and combining it with a complex workflows, it can be overwhelming. Here are some tips to make things easier:
+Git is a very complex system, and combining it with a complex workflow, it can be overwhelming. Here are some tips to make things easier:
   
   * **Limit number of simultaneous work branches**. The system can technically handle huge number of branches, but mentally it is very difficult to remember what exactly the different branches contain, espesially if they are not sync with the master branch. Try not to have more than two feature branches alive at any time.
   * **Make branches short-lived**. Unless you are making huge refactoring changes in the code (which should have been accepted by the team beforehand), you should generally always create feature-branches that are small enough to be finished within a day or two. When you are not able to finish the feature this rapid, create a **work-in-progress (WIP) pull request** so that the team is informed about what you work on and its progress.
-  * **Don't underestimate the value of publishing your commits**. Public commits to git is very often the most valuable communication asset to the rest of the team (in some periodes the only way you communicate). To view what others are doing is key to make your own commits consistent and in sync with others and the whole project. This is another important reason why you should avoid working privately on your own branches for prolonged periods. As mentioned above, also unfinished features are worthy a WIP pull request.
+  * **Don't underestimate the value of publishing your commits**. Public commits to git is very often the most valuable communication asset to the rest of the team (in some periodes, the only way you communicate). To view what others are doing is key to make your own commits consistent and in sync with others and the whole project. This is another important reason why you should avoid working privately on your own branches for prolonged periods. As mentioned above, also unfinished features are worthy a WIP pull request.
 
 If you don't understand and want to get back to svn
 '''''''''''''''''''''''''''''''''''''''''''''''''''
