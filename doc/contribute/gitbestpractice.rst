@@ -152,8 +152,8 @@ After merging the PR, you should normally delete the feature branch and update y
 Development branch and continous integration tools (CI)
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''
 When working using the forking workflow and committing code through reviewed pull requests, there will still be times when code changes will break the software build for various reasons. It is therefore common to merge PR's into a **development branch** in the upstream repository, rather than directly to **master**. This adds additional management, because administrator must merge the development branch into master frequently and regularly, unless the build is broken. The gain is that **master** *always should work*.
-An alternative is to configure the workflow to use a **CI/CD tool** to automate this process. On github, this is possible with **Github Actions** https://help.github.com/en/actions. It requires effort to get this in place for complex projects, but is normally worth it for large projects.
 
+An alternative is to configure the workflow to use a **CI/CD tool** to automate this process. On github, this is possible with **Github Actions** https://help.github.com/en/actions. It requires effort to get this in place for complex projects, but is normally worth it for large projects.
 
 
 If you don't understand and want to get back to svn
