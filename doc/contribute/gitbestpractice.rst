@@ -109,7 +109,7 @@ changing another branch than master, you must obviously not write
 "master".)
 
 
-Git workflows - centralized or fork-and-branch workflow
+Git workflows - centralized vs. fork-and-branch workflow
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''
 Before you start to clone the repository to your local machine, decide which workflow which is best suited for your work. See https://www.atlassian.com/git/tutorials/comparing-workflows. 
 
