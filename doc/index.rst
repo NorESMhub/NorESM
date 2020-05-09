@@ -11,8 +11,8 @@ The purpose of the NorESM2 User's Guide is to provide a common place for NorESM2
 
 This is the NorESM2 documentation which is currently being re-organized, under revision.
 
-| The corresponding NorESM2 ReadTheDocs can be found here
-| https://noresm-docs.readthedocs.io/en/noresm2/
+| The NorESM1 version ReadTheDocs can be found here
+| https://noresm-docs.readthedocs.io/en/noresm1/
 
 If you have any questions or interested in actively participate in the reorganization, create a new issue on github at https://github.com/NorESMhub/NorESM/issues
 
