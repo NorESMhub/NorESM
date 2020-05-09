@@ -149,11 +149,11 @@ After merging the PR, you should normally delete the feature branch and update y
 
 **Note**: If your feature branch has many commits, it may be smart to "squach" the history before creating the PR, so that it is easier to review the full changes by others (and yourself). This can be done by the **git rebase** command, but is not covered here.
 
-Development branch and continous integration tools (CI)
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Development branch vs. continous integration tool (CI)
+''''''''''''''''''''''''''''''''''''''''''''''''''''''
 When working using the forking workflow and committing code through reviewed pull requests, there will still be times when code changes will break the software build for various reasons. It is therefore common to merge PR's into a **development branch** in the upstream repository, rather than directly to **master**. This adds additional management, because administrator must merge the development branch into master frequently and regularly, unless the build is broken. The gain is that **master** *always should work*.
 
-An alternative is to configure the workflow to use a **CI/CD tool** to automate this process. On github, this is possible with **Github Actions** https://help.github.com/en/actions. It requires effort to get this in place for complex projects, but is normally worth it for large projects.
+An alternative to this scheme is to configure the workflow using a **CI/CD tool** that automates this process. I.e. when the pull request is created, the branch will automatically checked out on a dedicated build server and built. The pull request will not be published before the build is OK on the build server. On github, this is possible with **Github Actions** https://help.github.com/en/actions. It requires effort to get this in place for complex projects, but is normally worth it for large projects.
 
 
 If you don't understand and want to get back to svn
