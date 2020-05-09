@@ -147,7 +147,7 @@ To start off:
 You are now ready to make a pull request of my-feature branch. This can by done from github after you pushed. Remember that after the PR is created and reviewed by others, you may need to go back and fix things before it is accepted and can be merged.
 After merging the PR, you should normally delete the feature branch and update your local repos. to keep things clean. It will still be seen as a (merged) branch in the upstream repository.
 
-**Note**: If your feature branch has many commits, it may be smart to "squach" the history before creating the PR, so that it is easier to review the full changes by others (and yourself). This can be done using the **git rebase** command, but will not be covered here.
+**Note**: If your feature branch has many commits, it may be smart to "squash" the history before creating the PR, so that it is easier to review the full changes by others (and yourself). This can be done using the **git rebase** command, but this will not be covered here.
 
 Development branch vs. continous integration tool (CI)
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''
