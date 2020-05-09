@@ -37,46 +37,6 @@ github.
 Note that with git, the main branch is no longer called "trunk", it is called "master"!
 
 
-Git workflows - centralized or fork-and-branch workflow
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''
-Before you start to clone the repository to your local machine, decide which workflow which is best suited for your work. See https://www.atlassian.com/git/tutorials/comparing-workflows. 
-
-When working with documentation and text which is not critical i.e. breaking any software or build, a simple workflow like the **Centralized Workflow** should work well. However, when collaborating on a software development project, it is recommended to use the **Forking Workflow** https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow.  Note that this includes the **Feature Branch Workflow** https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow.
-
-There are many advantages with forking workflow, e.g. you cannot mess up the official repository, only your own, but the greatest benefit is that instead of pushing directly to the official repository, you instead create a **merge request** a.k.a. **pull request** to the upstream repository. This allows commits/branches to be reviewed by others and create a discussion thread before the MR is merged into the upstream repository.
-
-Basically, the "fork and branch" workflow looks something like this:
-
-  * Fork a GitHub repository.
-  * Clone the forked repository to your local system.
-  * Add a Git remote for the original repository.
-  * Create a feature branch in which to place your changes.
-  * Make your changes to the new branch.
-  * Commit the changes to the branch.
-  * Push the branch to GitHub.
-  * Open a pull request from the new branch to the original repo.
-  * Clean up after your pull request is merged.
-  
-To start off:
-
-  * Press the Fork button in the project, and clone the forked project.
-  * Add the remote upstream repository that you pull from, in order to keep your forked updated with the main development, e.g.
-::
-
-  git remote add upstream https://github.com/NorESMhub/NorESM.git
-  git remote -v                 # check that you are tracking the right repositories (origin and upstream)
-  git pull upstream master      # pull latest from the upstream master branch; do it often if possible
-  git push origin master        # do this when upstream is ahead of you local (origin) repos, to stay in sync.
-  git checkout -b some-feature  # create and switch to a new branch "some-feature".
-  ...                           # edit some code
-  git commit -a -m "Add first draft of some feature"
-  git push
-
-You are now ready to make a merge request (MR) of some-feature branch. This can by done from github after you pushed. Remember that after the MR is created and reviewed by others, you may need to go back and fix things before it is accepted and can be merged.
-After merging the MR, you should normally delete the feature branch and update you local repos. to keep things clean.
-
-Note: If your feature branch has many commits, it may be smart to "squach" the history before creating the MR, so that it is easier to review the full changes by others (and yourself). This can be done by the git rebase command, but is not covered here.
-
 Verify that you have the correct checkout
 '''''''''''''''''''''''''''''''''''''''''
 
@@ -147,6 +107,54 @@ above command means push my changes to the remote named "origin" from my
 local branch named master to the remote branch named master. If you are
 changing another branch than master, you must obviously not write
 "master".)
+
+
+Git workflows - centralized or fork-and-branch workflow
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Before you start to clone the repository to your local machine, decide which workflow which is best suited for your work. See https://www.atlassian.com/git/tutorials/comparing-workflows. 
+
+When working with documentation and text which is not critical i.e. breaking any software or build, a simple workflow like the **Centralized Workflow** should work well. However, when collaborating on a software development project, it is recommended to use the **Forking Workflow** https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow.  Note that this includes the **Feature Branch Workflow** https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow.
+
+There are many advantages with forking workflow, e.g. you cannot mess up the official repository, only your own, but the greatest benefit is that instead of pushing directly to the official repository, you instead create a **pull request** (PR) a.k.a. **merge request** to the upstream repository. This allows commits/branches to be reviewed by others and create a discussion thread before the PR is merged into the upstream repository.
+
+Basically, the "fork and branch" workflow looks something like this:
+
+  * Fork a GitHub repository.
+  * Clone the forked repository to your local system.
+  * Add a Git remote for the original repository.
+  * Create a feature branch in which to place your changes.
+  * Make your changes to the new branch.
+  * Commit the changes to the branch.
+  * Push the branch to GitHub.
+  * Open a pull request from the new branch to the original repo.
+  * Clean up after your pull request is merged.
+  
+To start off:
+
+  * Press the Fork button in the project, and clone the forked project.
+  * Add the remote upstream repository that you pull from, in order to keep your forked updated with the main development, e.g.
+::
+
+  git remote add upstream https://github.com/NorESMhub/NorESM.git
+  git remote -v                 # check that you are tracking the right repositories (origin and upstream)
+  git pull upstream master      # pull latest from the upstream master branch; do it often if possible
+  git push origin master        # do this when upstream is ahead of you local (origin) repos, to stay in sync.
+  git checkout -b my-feature    # create and switch to a new branch "my-feature".
+  ...                           # edit some code
+  git commit -a -m "Add first draft of my feature"
+  git push
+
+You are now ready to make a pull request of my-feature branch. This can by done from github after you pushed. Remember that after the PR is created and reviewed by others, you may need to go back and fix things before it is accepted and can be merged.
+After merging the PR, you should normally delete the feature branch and update your local repos. to keep things clean (it will still be seen as a (merged) branch in the upstream repository.
+
+**Note**: If your feature branch has many commits, it may be smart to "squach" the history before creating the PR, so that it is easier to review the full changes by others (and yourself). This can be done by the **git rebase** command, but is not covered here.
+
+Development branch and continous integration tools (CI)
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''
+When working using the forking workflow and committing code through reviewed pull requests, there will still be times when code changes will break the software build for various reasons. It is therefore common to merge PR's into a **development branch** in the upstream repository, rather than directly to **master**. This adds additional management, because administrator must merge the development branch into master frequently and regularly, unless the build is broken. The gain is that **master** *always should work*.
+An alternative is to configure the workflow to use a **CI/CD tool** to automate this process. On github, this is possible with **Github Actions** https://help.github.com/en/actions. It requires effort to get this in place for complex projects, but is normally worth it for large projects.
+
+
 
 If you don't understand and want to get back to svn
 '''''''''''''''''''''''''''''''''''''''''''''''''''
