@@ -4,14 +4,13 @@ Aerosol FAQ
 ============
 
 
-**All NorESM users and developers are here invited to submit questions and/or answers about topics not covered elsewhere in NorESM-doc.**
+**All NorESM users and developers are here invited to submit questions and/or answers about aerosol related topics not covered elsewhere in NorESM-doc.**
 
 ---------------------
 
 **How can I get mass and number concentration diagnostics via AeroTab and postprocessing?
 Example a: retrieve the aerocom mass and number smaller than a given size 
 Example b) for FORCES/CRESCENDO, using the SALSA definition of size range for aitken, accumulation, and coarse mode: Nucleation: 3-7.7 nm; Aitken: 7.7-50 nm, Accumulation: 50-700 nm, Coarse: 700-10 000 nm.**
-
 
 Availability of such output mainly follows the AeroCom requirements, which for specific size intervals only concern mass concentrations. For the most accurate calculations of size-specific number concentrations and mass concentrations which are not currently included in AeroTab and AerOslo (NorESM2), this can with some effort be added by extending the code to do so. There are, however, alternative ways to approximate both mass and number concentrations through post-processing. To see what output is generally available from the look-up tables made by AeroTab and directly outputted in NorESM2 when configured with #define AEROCOM, see the AeroTab User’s Guide at NorESMhub: https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/AeroTab-user-guide_v16april2020.pdf
 
@@ -68,3 +67,7 @@ This will be described once the actual SpAer code has been tested and committed 
 **What is needed to add a tracer to the NorESM2 model?**
 
 Øyvind, Dirk, or someone else who has experience with this?
+
+**What is the hygroscopicity for different species in NorESM2, expressed as kappa?**
+
+The aerosol hygroscopicities in NorESM2/CAM6-Nor are the same as in NorESM1.2/CAM5.3-Oslo, and are as described by Kirkevåg et al. (2018) (https://www.geosci-model-dev.net/11/3945/2018/gmd-11-3945-2018.pdf), see Section 2.3. The Kohler equation applied (in AeroTab) is as expressed on pages 4 and 21 in https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/AeroTab-slides-updateJan2020.pdf, where the whole expression marked with an **x** on p. 21 is the sought **kappa** (here summed over all components for an internal mixture). The first NorESM reference is Kirkevåg and Iversen (2001) (https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2001JD000886), but see also Ghan et al. (2001) (J. Geophys. Res., 106, 5295–5316, 2001) or Pruppacher and Klett, Microphysics of Clouds and Precipitation, 954 pp., Kluwer Acad., Norwell, Mass., 1997.
