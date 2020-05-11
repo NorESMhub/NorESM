@@ -3,7 +3,7 @@
 Experiment environments
 ===================================
 
-After creating a case (see :ref:`experiments`) the environment settings can be modified in  the env_*.xml files contained in the case folder
+After creating a case (see :ref:`experiments`) the environment settings can be modified in  the env_*.xml files and the user_nl_<component> files contained in the case folder
 
 The case folder contains:
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -134,14 +134,6 @@ Some common configuration settings
 User namelists
 ^^^^^^^^^^^^^^
 
-Aerosol diagnostics
--------------------
-Adding::
-
-  history_aerosol = .true. 
-
-to user_nl_cam gives additional 577 variables (+ ca. 13 % CPU-time). For a detailed description of additional aerosol output, please see :ref:`aerosol`
-
 
 Frequency of output
 -------------------
@@ -216,6 +208,7 @@ Note that BLOM uses a different sytax than the rest. In user_nl_blom::
 
 you need to include **set** before the name of the variable and it does not matter what namelist group the valiable belong.
 
+
 Input data
 -----------
 All active and data components use input data sets. A local disk needs DIN_LOC_ROOT to be populated with input data in order to run NorESM. You can make links to the input data sets in the user_nl_<components>. 
@@ -228,12 +221,14 @@ Input data is handled by the build process as follows:
   - If any of the required input data sets are not found, the build script will abort and the files that are missing will be listed. At this point, you must obtain the required data from the input data server using check_input_data with the -export option. 
 
 
-Code modifications
+Aerosol diagnostics
 ^^^^^^^^^^^^^^^^^^^
-If you want to make more subtantial changes to the codes than what is possible by the use of user_nl_<component>, you need to copy the source code (the fortran file you want to modify) to the SourceMods/src.<component> folder in the case directory, then make the modifications needed before building the model. Make sure that you use the source code from the same commit as you used to create the case (for commit details see README.case in the case folder). **Do not change the source code in the <noresm-base> folder!**  
 
+Adding::
 
-**Extra aerosol diagnostics:**
+  history_aerosol = .true. 
+
+to user_nl_cam gives additional 577 variables (+ ca. 13 % CPU-time).
 
 Including::
 
@@ -245,10 +240,13 @@ Including::
 
   #define AEROCOM 
 
-
 to preprocessorDefinitions.h in SourceMods/src.cam/, gives 149 additionally variables (+ ca. 13% CPU-time)
+For a detailed description of additional aerosol output, please see :ref:`output/aerosol_output`
 
-For a detailed description of additional aerosol output, please see :ref:`aerosol`
+
+Code modifications
+^^^^^^^^^^^^^^^^^^^
+If you want to make more subtantial changes to the codes than what is possible by the use of user_nl_<component>, you need to copy the source code (the fortran file you want to modify) to the SourceMods/src.<component> folder in the case directory, then make the modifications needed before building the model. Make sure that you use the source code from the same commit as you used to create the case (for commit details see README.case in the case folder). **Do not change the source code in the <noresm-base> folder!**  
 
 
 Run and archiving time environment
