@@ -86,7 +86,13 @@ Initial conditions
 
 The CICE model is initialized from ?
 
-The sea-ice model needs to read in the inital state from a restart file set in user_nl_cice in the case folder :
+::
+
+   /cluster/shared/noresm/inputdata/ice/cice/SOME_FILE??
+
+::
+
+The inital state file can be set in user_nl_cice in the case folder :
 
 ::
 
