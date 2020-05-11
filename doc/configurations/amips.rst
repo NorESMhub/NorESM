@@ -43,8 +43,8 @@ E.g.
    - Forcing and input files read from historical conditions (1850 - 2015)
    - Build CAM6.0 (the atmosphere model) with NorESM specific additions and NorESM derived boundary conditions  (for the boundary conditions, please see explonation below).
    - Note for some AMIP compsets CAM60%PTAERO may be used instead of CAM60%NORESM. Don't worry, those are identical.
-- CLM50%SP
-   - Build CLM5 (land model) with satellite phenology, prescribed vegetation
+- CLM50%BGC-CROP
+   - Build CLM5 (land model) with a global crop model (interactive vegetation)
 - CICE%PRES
    - Build CICE (sea-ice model) with prescribed sea-ice
 - DOCN%DOM
