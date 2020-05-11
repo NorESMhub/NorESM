@@ -61,8 +61,13 @@ with::
   #define AEROCOM
 
 
-The AEROCOM-token turns on diagnostics needed for AEROCOM. If #define AEROCOM is activated, we additionally get 149 variables (+ ca. 13% CPU-time). Please see an overview of the additional output variables:
+| The AEROCOM-token turns on diagnostics needed for AEROCOM.   
+| Please visit the AEROCOM website for more information:  
+| https://aerocom.met.no/index.html  
+
+If #define AEROCOM is activated, we additionally get 149 variables (+ ca. 13% CPU-time). Please see an overview of the additional output variables:
 :ref:`aerosol_output_aerocom_variables`
+
 
 
 **The model may be run with any combination of these options: with AEROFFL only, with AEROCOM only, or with AEROFFL and AEROCOM activated at the same time.**
