@@ -10,7 +10,7 @@ Aerosol FAQ
 
 How can I get mass and number concentration diagnostics via AeroTab and postprocessing?
 ^^^^^
-**Example a: retrieve the aerocom mass and number smaller than a given size**  
+**Example a) retrieve the aerocom mass and number smaller than a given size**  
 
 **Example b) for FORCES/CRESCENDO, using the SALSA definition of size range for aitken, accumulation, and coarse mode: Nucleation: 3-7.7 nm; Aitken: 7.7-50 nm, Accumulation: 50-700 nm, Coarse: 700-10 000 nm.**
 
