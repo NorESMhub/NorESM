@@ -3,8 +3,11 @@
 Ocean and Sea-Ice
 ==================
 
+WILL BE UPDATED BY chgu@norceresearch.no 
+
+
 Initial conditions
-'''''''''''''''''''''
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 The BLOM model is initialized from inicon.nc
 e.g. on Fram @ Simga2 ::
 
@@ -31,10 +34,8 @@ Where are these values taken from? WOA? If so, which version?
 
 
 OMIP-type experiments
-''''''''''''''''''''''''''''''
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-
-WILL BE UPDATED BY chgu@norceresearch.no 
 
 Oceanic Model Intercomparison Project (OMIP) style runs are runs in which the ocean and sea-ice components are active while values for atmospheric near surface air temperature, wind stress ++??, land?? are prescribed (that is, read from a file). 
 
@@ -81,7 +82,7 @@ iHAMOCC
 ''''''''
 
 Initial conditions
-'''''''''''''''''''''
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Modify user name lists for iHAMOCC
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -102,7 +103,7 @@ CICE
 The sea ice model component is based upon version 5.1.2 of the CICE sea ice model of Hunke et al. (2015). 
 
 Initial conditions
-'''''''''''''''''''''
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The CICE model is initialized from ?
 
