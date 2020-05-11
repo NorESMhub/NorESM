@@ -70,7 +70,7 @@ Forcing sets
 
 Modify user name lists for BLOM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-How do you set the initial condition file in user_nl_blom??? And what can you set in user_nl_blom? PLEASE EXPLAIN
+How do you set the initial condition file in user_nl_blom??? And what can you set in user_nl_blom? How do you modify the output? and the output frequency? PLEASE EXPLAIN
 Note that BLOM uses a different sytax than the rest. In user_nl_blom::
 
   set BDMC2   = .15
@@ -96,7 +96,7 @@ Initial conditions
 
 Modify user name lists for iHAMOCC
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+For iHAMOCC you can only set output options via user_nl_blom. Changes of parameter values need to be done as described in the **Code modification**.
 
 Code modification
 ^^^^^^
