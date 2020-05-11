@@ -1,9 +1,19 @@
 .. _amips:
 
-AMIP-type experiments
+Atmosphere
 ===================================
+In NorESM2, the atmospheric model CAM6-Nor replaces standard CAM. The NorESM2 specici additions are:
 
-Setting up an AMIP simulation
+- Atmospheric chemistry/aerosol/cloud module: OsloAero6 (Kirkevåg et al. GMD, 2018)
+
+- Atmospheric dynamics/physics: Improved conservation of energy and angular momentum (Toniazzo et al. GMD, 2020)
+
+- Parameterization of turbulent air-sea fluxes (see AMIP-type experiments for more details)
+
+in addition parameter settings, emissons and input files will differ from standard CAM6 set-up.
+
+
+Setting up an AMIP-type experiment
 ''''''''''''''''''''''''''''''
 Atmospheric Model Intercomparison Project (AMIP) style runs are runs in which the **atmosphere and land components are active while values for sea surface temperatures and sea ice are prescribed** (that is, read from a file). The sea-ice model CICE then runs in a simplified mode and computes surface fluxes, snow depth, albedo, and surface temperatures using 1D thermodynamics without conserving energy. The sea-ice thickness is assumed to be 2 m in the Northern Hemisphere and 1 m in the Southern Hemisphere. 
 
