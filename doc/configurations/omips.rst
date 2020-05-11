@@ -5,6 +5,8 @@ Ocean and Sea-Ice
 
 WILL BE UPDATED BY chgu@norceresearch.no 
 
+BLOM
+'''''''
 
 Initial conditions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -68,6 +70,14 @@ Forcing sets
 
 Modify user name lists for BLOM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+How do you set the initial condition file in user_nl_blom??? And what can you set in user_nl_blom? PLEASE EXPLAIN
+Note that BLOM uses a different sytax than the rest. In user_nl_blom::
+
+  set BDMC2   = .15
+  set NIWGF = .5
+
+you need to include **set** before the name of the variable and it does not matter what namelist group the valiable belong.
+
 
 Code modification
 ^^^^^^
