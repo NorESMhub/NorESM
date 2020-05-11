@@ -18,6 +18,7 @@ Running NorESM2
    hamocc.rst
    ensemble_runs.rst
    nudged_simulations.rst
+   simplified_models.rst
    
    
   
