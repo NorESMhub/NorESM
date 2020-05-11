@@ -108,13 +108,6 @@ and ends up in the drv_in namelist as::
   flux_scheme=1. 
   
   
-  
-Aqua-planet and Slab ocean 
-^^^^^^
-
-The aquaplanet configuration is not available in NorESM2. 
-
-The slab ocean configuration is under development.
-
+ 
 
 
