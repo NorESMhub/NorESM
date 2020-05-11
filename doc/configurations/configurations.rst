@@ -15,7 +15,6 @@ Running NorESM2
    amips.rst
    omips.rst
    clm.rst
-   hamocc.rst
    ensemble_runs.rst
    nudged_simulations.rst
    simplified_models.rst
