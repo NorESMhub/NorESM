@@ -1128,7 +1128,7 @@
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx1v4" >
     <mach name="hexagon|vilje|fram">
-      <pes pesize="any" compset="CAM60%PTAERO.+CLM50%BGC-CROP.+CICE.+MICOM%ECO">
+      <pes pesize="any" compset="CAM60%PTAERO.+CLM50%BGC-CROP.+CICE.+BLOM%ECO">
         <comment>none</comment>
         <ntasks>
           <ntasks_atm>1536</ntasks_atm>
@@ -1166,7 +1166,7 @@
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx1v4" >
     <mach name="hexagon|vilje|fram">
-      <pes pesize="X1" compset="CAM60%PTAERO.+CLM50%BGC-CROP.+CICE.+MICOM%ECO">
+      <pes pesize="X1" compset="CAM60%PTAERO.+CLM50%BGC-CROP.+CICE.+BLOM%ECO">
         <comment>none</comment>
         <ntasks>
           <ntasks_atm>1728</ntasks_atm>
@@ -1204,7 +1204,7 @@
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx1v4" >
     <mach name="hexagon|vilje|fram">
-      <pes pesize="any" compset="CAM60%NORESM.+CLM50%BGC-CROP.+CICE.+MICOM%ECO">
+      <pes pesize="any" compset="CAM60%NORESM.+CLM50%BGC-CROP.+CICE.+BLOM%ECO">
         <comment>none</comment>
         <ntasks>
           <ntasks_atm>1536</ntasks_atm>
@@ -1242,7 +1242,7 @@
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx1v4" >
     <mach name="hexagon|vilje|fram">
-      <pes pesize="X1" compset="CAM60%NORESM.+CLM50%BGC-CROP.+CICE.+MICOM%ECO">
+      <pes pesize="X1" compset="CAM60%NORESM.+CLM50%BGC-CROP.+CICE.+BLOM%ECO">
         <comment>none</comment>
         <ntasks>
           <ntasks_atm>1728</ntasks_atm>
@@ -1509,7 +1509,7 @@
 
   <grid name="a%1.9x2.5.+l%1.9x2.5.+oi%tnx1v4" >
     <mach name="hexagon|vilje|fram">
-      <pes pesize="any" compset="CAM60%PTAERO.+CLM50%BGC-CROP.+CICE.+MICOM%ECO">
+      <pes pesize="any" compset="CAM60%PTAERO.+CLM50%BGC-CROP.+CICE.+BLOM%ECO">
         <comment>none</comment>
         <ntasks>
           <ntasks_atm>768</ntasks_atm>
@@ -1549,7 +1549,7 @@
 
   <grid name="a%1.9x2.5.+l%1.9x2.5.+oi%tnx1v4" >
     <mach name="hexagon|vilje|fram">
-      <pes pesize="any" compset="CAM60%NORESM.+CLM50%BGC-CROP.+CICE.+MICOM%ECO">
+      <pes pesize="any" compset="CAM60%NORESM.+CLM50%BGC-CROP.+CICE.+BLOM%ECO">
         <comment>none</comment>
         <ntasks>
           <ntasks_atm>768</ntasks_atm>
@@ -1815,7 +1815,7 @@
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx0.25v4" >
     <mach name="hexagon|vilje|fram">
-      <pes pesize="any" compset="CAM60%NORESM.+CLM50%BGC-CROP.+CICE.+MICOM%ECO">
+      <pes pesize="any" compset="CAM60%NORESM.+CLM50%BGC-CROP.+CICE.+BLOM%ECO">
         <comment>none</comment>
         <ntasks>
           <ntasks_atm>1024</ntasks_atm>
