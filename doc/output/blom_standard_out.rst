@@ -1,6 +1,6 @@
 .. blom_standard_out:
 
-BLOM standard output:
+BLOM standard set-up output:
 ''''''''''''''''''''''
 
 | abswnd = "Absolute wind speed"
