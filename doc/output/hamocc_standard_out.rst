@@ -1,6 +1,6 @@
 .. _hamocc_standard_out:
 
-iHAMOCC standard set-up output:
+iHAMOCC standard set-up output
 ''''''''''''''''''''''''''''''''''
 
 Monthly averaged output
