@@ -2,7 +2,7 @@
 
 Atmosphere
 ===================================
-In NorESM2, the atmospheric model CAM6-Nor replaces standard CAM. The NorESM2 specici additions are:
+In NorESM2, the atmospheric model CAM6-Nor replaces standard CAM. The NorESM2 specific additions are:
 
 - Atmospheric chemistry/aerosol/cloud module: OsloAero6 (Kirkevåg et al. GMD, 2018)
 
