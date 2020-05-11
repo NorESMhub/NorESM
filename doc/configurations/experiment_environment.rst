@@ -8,14 +8,21 @@ After creating a case (see :ref:`experiments`) the environment settings can be m
 The case folder contains:
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-  - **README.case:** File detailing your create_newcase usage. This is a good place for you to keep track of runtime problems and changes. The file contains information about e.g. how the case was created, compset details, grid information and which branch, git commit and model code were used for case creation.
-  - **CaseStatus:** File containing a list of operations done in the current case.
-  - **Buildconf:** Directory containing scripts to generate component namelists and component and utility libraries (e.g., PIO, MCT). *You should never have to edit the contents of this directory*
-  - **SourceMods:** Directory where you can place modified source code. In SourceMods there are subfolders for the different models; cam, clm, cice, micom, mosart and so on . If you want to change the code or add subroutines, you place copies of the fortran files here. 
-  - **user made namelists:** you can place your own namelists for the different models where you can change parameters and model settings and so on (i.e. user\_nl\_cam, user\_nl\_cice, user\_nl\_clm, user\_nl\_micon, user\_nl\_cpl). See details below. 
-  - **CaseDocs:** here you find the namelists containing all the subroutines and parameters used. These files will be modified after rebuild. The details of parameter values and input files are listed in the <component>_in files. *You should never have to edit the contents of this directory*. If you wish to make changes to the <component>_in files, you change the user_nl_<component> and rebuild.
-  - **LockedFiles:** Directory that holds copies of files that should not be changed. *You should never edit the contents of this directory*
-  - **Tools:** Directory containing support utility scripts. 
+- **README.case:** File detailing your create_newcase usage. This is a good place for you to keep track of runtime problems and changes. The file contains information about e.g. how the case was created, compset details, grid information and which branch, git commit and model code were used for case creation.
+
+- **CaseStatus:** File containing a list of operations done in the current case.
+
+- **Buildconf:** Directory containing scripts to generate component namelists and component and utility libraries (e.g., PIO, MCT). *You should never have to edit the contents of this directory*
+
+- **SourceMods:** Directory where you can place modified source code. In SourceMods there are subfolders for the different models; cam, clm, cice, micom, mosart and so on . If you want to change the code or add subroutines, you place copies of the fortran files here. 
+
+- **user made namelists:** you can place your own namelists for the different models where you can change parameters and model settings and so on (i.e. user\_nl\_cam, user\_nl\_cice, user\_nl\_clm, user\_nl\_micon, user\_nl\_cpl). See details below. 
+
+- **CaseDocs:** here you find the namelists containing all the subroutines and parameters used. These files will be modified after rebuild. The details of parameter values and input files are listed in the <component>_in files. *You should never have to edit the contents of this directory*. If you wish to make changes to the <component>_in files, you change the user_nl_<component> and rebuild.
+
+- **LockedFiles:** Directory that holds copies of files that should not be changed. *You should never edit the contents of this directory*
+
+- **Tools:** Directory containing support utility scripts. 
 
 
 Machine specific environment
@@ -247,11 +254,11 @@ COSP
 ^^^^
 The CFMIP Observation Simulator Package (COSP) is an integrated part of the Community Atmosphere Model (CAM) and hence NorESM2. COSP calculates model cloud diagnostics that can be directly compared with satellite observations from ISCCP, CloudSat, CALIOP, MISR, and MODIS. The use of COSP facilitates "apples-to-apples" comparison of observed cloud data and model-simulated clouds, but an increase the run time of an experiment is expected. 
 
-To activate cosp, run xmlchange in the case forlder::
+To activate cosp, run xmlchange in the case folder (before building the model)::
 
   ./xmlchange --append CAM_CONFIG_OPTS='-cosp'
   
-or you can add -cosp to CAM_CONFIG_OPTS in  env_build.xml::
+or you can add -cosp to CAM_CONFIG_OPTS in  env_build.xml  (before building the model)::
 
   <entry id="CAM_CONFIG_OPTS" value="-phys cam6 -co2_cycle -chem trop_mam_oslo -cosp">
   
