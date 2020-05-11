@@ -109,3 +109,5 @@ and ends up in the drv_in namelist as::
   
   
   
+Aqua-planet and Slab ocean 
+^^^^^^
