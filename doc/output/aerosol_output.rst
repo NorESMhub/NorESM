@@ -1,6 +1,6 @@
 .. _aerosol_output:
 
-Extra aerosol diagnostics
+Aerosol diagnostics and output
 ==========================
 
 
