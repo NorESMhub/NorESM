@@ -57,27 +57,33 @@ BLOM standard set-up output:
 
 | massgs = "Sea water mass"
 | maxmld = "Maximum mixed layer depth"
+| 
 | mhfld = "Meridional heat flux due to lateral diffusion"
 | mhflx = "Meridional heat flux"
 | mhftd = "Meridional heat flux due to thickness diffusion"
+| 
 | mld = "Mixed layer depth"
 | mlts = "Mixed layer thickness defined by sigma t"
 | mltsmn = "Minimum mixed layer thickness defined by sigma t"
 | mltsmx = "Maximum mixed layer thickness defined by sigma t"
 | mltssq = "Maximum mixed layer thickness squared defined by sigma t"
+| 
 | mmflxd = "Overturning stream-function on z-levels"
 | mmflxl = "Overturning stream-function on isopycnic layers"
 | mmftdd = "Overturning stream-function due to thickness diffusion on z-levels"
 | mmftdl = "Overturning stream-function due to thickness diffusion on isopycnic layers"
+| 
 | msfld = "Meridional salt flux due to lateral diffusion"
 | msflx = "Meridional salt flux"
 | msftd = "Meridional salt flux due to thickness diffusion"
+| 
 | mtkebf = "Mixed layer turbulent kinetic energy tendency per unit area related to buoyancy forcing"
 | mtkeke = "Mixed layer turbulent kinetic energy tendency per unit area related to kinetic energy change"
 | mtkeni = "Mixed layer turbulent kinetic energy tendency per unit area related to near inertial motions"
 | mtkepe = "Mixed layer turbulent kinetic energy tendency per unit area related to potential energy change"
 | mtkers = "Mixed layer turbulent kinetic energy tendency per unit area related to eddy restratification"
 | mtkeus = "Mixed layer turbulent kinetic energy tendency per unit area related to friction velocity"
+| 
 | mty = "Wind stress y-component"
 | mxlu = "Mixed layer velocity x-component"
 | mxlv = "Mixed layer velocity y-component"
