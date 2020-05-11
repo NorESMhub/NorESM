@@ -35,7 +35,7 @@ Atmospheric output for some commonly used configurations of NorESM2
 With standard set-up of the model, the monthly output variables (1, 2
 and 3 D) are:
 
-:ref:`standard_output`
+:ref:`cam_standard_out`
 
 Adding history_aerosol = .true. to user_nl_cam gives the following
 additional 577 variables (+ ca. 13 % CPU-time)
