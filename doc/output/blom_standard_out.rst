@@ -1,17 +1,21 @@
-.. blom_standard_out:
+.. _blom_standard_out:
 
-BLOM standard set-up output:
+BLOM standard set-up output:    
 ''''''''''''''''''''''
 
-| abswnd = "Absolute wind speed"
+
+Monthly averaged output  
+^^^^^^^^
+
+| abswnd = "Absolute wind speed"    
 
 ------------------------------------------------------
 
-| bflx = "Brine flux"
-| bfsq = "Squared buoyancy frequency"
-| bfsqlvl = "Squared buoyancy frequancy"
-| brnpd = "Brine plume depth"
-| btmstr = "Barotropic mass streamfunction"
+| bflx = "Brine flux"    
+| bfsq = "Squared buoyancy frequency"     
+| bfsqlvl = "Squared buoyancy frequancy"    
+| brnpd = "Brine plume depth"    
+| btmstr = "Barotropic mass streamfunction"    
 
 ----------------------------------------------------------------
 
@@ -180,3 +184,30 @@ BLOM standard set-up output:
 | ztx = "Wind stress x-component"
 
 ----------------------------------------------------
+
+
+Daily averaged output
+^^^^^^^^
+
+---------------------------------
+
+| depth_bnds  
+
+-------------------------------------
+
+| maxmld = "Maximum mixed layer depth"    
+| mlts = "Mixed layer thickness defined by sigma t"    
+
+-----------------------------------------
+
+| sealv = "Sea level"    
+| sss = "Ocean surface salinity"    
+| ssssq = "Ocean surface salinity squared"     
+| sst = "Ocean surface temperature"   
+| sstsq = "Ocean surface temperature squared"   
+
+---------------------------------------
+
+| t20d = "20C isoterm depth"   
+
+-------------------------------
