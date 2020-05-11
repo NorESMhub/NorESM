@@ -58,7 +58,7 @@ E.g.
 - CICE%PRES
    - Build CICE (sea-ice model) with prescribed sea-ice
 - DOCN%DOM
-   - Build data ocean with fixed SSTs. If you want to run with a slab ocean slab: DOCN%SOM
+   - Build data ocean with fixed SSTs. 
 - MOSART
    - Build MOSART (river runoff model) with default configurations
 - SGLC_SWAV
@@ -111,3 +111,10 @@ and ends up in the drv_in namelist as::
   
 Aqua-planet and Slab ocean 
 ^^^^^^
+
+The auaplanet configuration is not available in NorESM2. 
+
+The slab ocean configuration is under development.
+
+
+
