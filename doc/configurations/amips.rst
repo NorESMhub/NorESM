@@ -10,7 +10,7 @@ In NorESM2, the atmospheric model CAM6-Nor replaces standard CAM. The NorESM2 sp
 
 - Parameterization of turbulent air-sea fluxes (see AMIP-type experiments for more details)
 
-in addition parameter settings, emisson and input files might differ from standard CAM6 set-up.
+in addition some parameter settings, emisson and input files will differ from standard CAM6 set-up.
 
 
 Setting up an AMIP-type experiment
