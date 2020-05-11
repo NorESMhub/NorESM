@@ -21,7 +21,7 @@ additional 577 variables (+ ca. 13 % CPU-time).
 Please see an overview of additional output varibales:
 :ref:`aerosol_output_history_aerosol_variables`
 
-Decomposition of aerosol direct, semidirect, and indirect radiative forcing
+Decomposition of aerosol direct, semidirect and indirect radiative forcing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For effective radiative forcing estimates, multiple calls to the radiation code are necessary (see Ghan et al. 2012 for a detailed explanation).
