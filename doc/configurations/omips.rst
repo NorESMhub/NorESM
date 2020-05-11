@@ -44,7 +44,7 @@ Oceanic Model Intercomparison Project (OMIP) style runs are runs in which the oc
 
 Creating an OMPI case
 ^^^^^^^^^^^^^^^^^^^^^
-
+PLEASE change the compset description below!
 ::
 
    cd <noresm-base>/cime/scripts
@@ -76,7 +76,7 @@ Note that BLOM uses a different sytax than the rest. In user_nl_blom::
   set BDMC2   = .15
   set NIWGF = .5
 
-you need to include **set** before the name of the variable and it does not matter what namelist group the valiable belong.
+you need to include **set** before the name of the variable and it does not matter what namelist group the variable belong.
 
 
 Code modification
