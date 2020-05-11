@@ -1,6 +1,6 @@
 .. _cam_standard_out:
 
-CAM6-Nor: standard set-up output
+CAM6-Nor standard set-up output
 ''''''''''''''''''''''
 | zlon_bnds = "zlon bounds"
 | gw = "latitude weights"
