@@ -1,6 +1,6 @@
 .. _blom_standard_out:
 
-BLOM standard set-up output:    
+BLOM standard set-up output  
 ''''''''''''''''''''''
 
 
