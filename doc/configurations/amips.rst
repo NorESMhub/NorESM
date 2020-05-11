@@ -112,7 +112,7 @@ and ends up in the drv_in namelist as::
 Aqua-planet and Slab ocean 
 ^^^^^^
 
-The auaplanet configuration is not available in NorESM2. 
+The aquaplanet configuration is not available in NorESM2. 
 
 The slab ocean configuration is under development.
 
