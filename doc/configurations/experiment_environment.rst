@@ -221,11 +221,11 @@ Input data
 All active and data components use input data sets. A local disk needs DIN_LOC_ROOT to be populated with input data in order to run NorESM. You can make links to the input data sets in the user_nl_<components>. 
 Input data is handled by the build process as follows:
 
-  - The buildnml scripts in Buildconf/ create listings of required component input datasets in the Buildconf/<component>.input_data_list files
+- The buildnml scripts in Buildconf/ create listings of required component input datasets in the Buildconf/<component>.input_data_list files
   
-  - ./case.build checks for the presence of the required input data files in the root directory DIN_LOC_ROOT. If all required data sets are found on local disk, then the build can proceed.
+- ./case.build checks for the presence of the required input data files in the root directory DIN_LOC_ROOT. If all required data sets are found on local disk, then the build can proceed.
   
-  - If any of the required input data sets are not found, the build script will abort and the files that are missing will be listed. At this point, you must obtain the required data from the input data server using check_input_data with the -export option. 
+- If any of the required input data sets are not found, the build script will abort and the files that are missing will be listed. At this point, you must obtain the required data from the input data server using check_input_data with the -export option. 
 
 
 Aerosol diagnostics
