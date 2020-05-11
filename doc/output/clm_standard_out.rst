@@ -1,6 +1,6 @@
 .. _clm_standard_out:
 
-CLM5 standard set-up output:
+CLM5 standard set-up output
 ''''''''''''''''''''''''''''
 
 | mcdate = "current date (YYYYMMDD)"
