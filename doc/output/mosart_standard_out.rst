@@ -1,6 +1,6 @@
 .. _mosart_standard_out:
 
-MOSART standart set-up output:
+MOSART standard set-up output:
 ''''''''''''''''''''''''''''''
 | mcdate = "current date (YYYYMMDD)"
 | mcsec = "current seconds of current date"
