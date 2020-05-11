@@ -18,6 +18,9 @@ For details about how to modify the user namelists to modify the output, please 
 
 Archiving is a phase of the model run where the generated output data is moved from RUNDIR to the archive folder. This job needs its own cpu time which is set in env_batch.xml. 
 
+
+Standard output for the model components in NorESM2
+
 For lists of output from standard set-up model configurations:
 
 - **CAM6-Nor** (atmosphere): :ref:`cam_standard_out`
