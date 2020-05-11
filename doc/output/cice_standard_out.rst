@@ -1,6 +1,6 @@
 .. _cice_standard_out:
 
-CICE stadard set-up out:
+CICE stadard set-up output
 '''''''''''''''''''''''''''''
 
 | aice = "ice area  (aggregate)"
