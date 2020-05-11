@@ -1,9 +1,7 @@
 .. _cam_standard_out:
 
-
 CAM6-Nor: standard set-up output
 ''''''''''''''''''''''
-
 | zlon_bnds = "zlon bounds"
 | gw = "latitude weights"
 | hyam = "hybrid A coefficient at layer midpoints"
@@ -33,6 +31,7 @@ CAM6-Nor: standard set-up output
 
 --------------------------------------------------------------------------------------
 
+
 | ABSVIS = "Aerosol absorptive optical depth at 0.442-0.625um"
 | ABSVVOLC = "CMIP6 volcanic aerosol absorptive optical depth at 0.442-0.625um"
 | ACTNI = "Average Cloud Top ice number"
@@ -56,6 +55,7 @@ CAM6-Nor: standard set-up output
 | AWNI = "Average cloud ice number conc"
 
 ------------------------------------------------------------------------
+
 
 | BC_A = "BC_A concentration"
 | BC_AC = "BC_AC concentration"
@@ -206,14 +206,13 @@ CAM6-Nor: standard set-up output
 | N_AER = "Aerosol number concentration"
 
 -----------------------------------------------------
+
 | OCNFRAC = "Fraction of sfc area covered by ocean"
 | OH_aft = "OH invariants after adding diurnal variations"
 | OH_bef = "OH invariants before adding diurnal variations"
 | OMEGA = "Vertical velocity (pressure)"
 | OMEGAT = "Vertical heat flux"
-
--------------------------------------------------------------------
-
+| 
 | OM_AC = "OM_AC concentration"
 | OM_AC_OCW = "OM_AC_OCW in cloud water"
 | OM_AC_SRF = "OM_AC in bottom layer"
@@ -238,6 +237,7 @@ CAM6-Nor: standard set-up output
 | PSL = "Sea level pressure"
 
 ---------------------------------------
+
 | Q = "Specific humidity"
 | QFLX = "Surface water flux"
 | QREFHT = "Reference height humidity"
@@ -245,7 +245,6 @@ CAM6-Nor: standard set-up output
 | QRS = "Solar heating rate"
 | QT = "Total water mixing ratio"
 
-----------------------------------------------------------
 
 | RAINQM = "Grid box averaged rain amount"
 | RCMINLAYER_CLUBB = "Cloud Water in Layer"
@@ -260,7 +259,6 @@ CAM6-Nor: standard set-up output
 | RVMTEND_CLUBB = "Water vapor tendency"
 
 -----------------------------------------------------------
-
 
 | SFBC_A = "BC_A surface flux"
 | SFBC_AC = "BC_AC surface flux"
@@ -293,31 +291,22 @@ CAM6-Nor: standard set-up output
 | SFSS_A1 = "SS_A1 surface flux"
 | SFSS_A2 = "SS_A2 surface flux"
 | SFSS_A3 = "SS_A3 surface flux"
-------------------------------------------------------
-
+| 
 | SFisoprene = "isoprene surface flux"
 | SFmonoterp = "monoterp surface flux"
-
-------------------------------------------------------
-
+| 
 | SHFLX = "Surface sensible heat flux"
 | SL = "Liquid water static energy"
-
----------------------------------------------------
-
+| 
 | SNOWHICE = "Snow depth over ice"
 | SNOWHLND = "Water equivalent snow depth"
 | SNOWQM = "Grid box averaged snow amount"
-
--------------------------------------------------------
-
+| 
 | SO2 = "SO2 concentration"
 | SO2_CLXF = "vertically integrated external forcing for SO2"
 | SO2_CMXF = "vertically integrated external forcing for SO2"
 | SO2_SRF = "SO2 in bottom layer"
-
--------------------------------------------------------------------
-
+| 
 | SO4_A1 = "SO4_A1 concentration"
 | SO4_A1_OCW = "SO4_A1_OCW in cloud water"
 | SO4_A1_SRF = "SO4_A1 in bottom layer"
@@ -345,14 +334,10 @@ CAM6-Nor: standard set-up output
 | SOA_NA_SRF = "SOA_NA in bottom layer"
 | SOA_SV = "SOA_SV concentration"
 | SOA_SV_SRF = "SOA_SV in bottom layer"
-
---------------------------------------------------
-
+| 
 | SOLIN = "Solar insolation"
 | SSAVIS = "Aerosol single scattering albedo in visible wavelength band"
-
-----------------------------------------------------------
-
+| 
 | SS_A1 = "SS_A1 concentration"
 | SS_A1_OCW = "SS_A1_OCW in cloud water"
 | SS_A1_SRF = "SS_A1 in bottom layer"
@@ -362,9 +347,7 @@ CAM6-Nor: standard set-up output
 | SS_A3 = "SS_A3 concentration"
 | SS_A3_OCW = "SS_A3_OCW in cloud water"
 | SS_A3_SRF = "SS_A3 in bottom layer"
-
-----------------------------------------------------------
-
+| 
 | STEND_CLUBB = "Temperature tendency"
 | SWCF = "Shortwave cloud forcing"
 
@@ -534,4 +517,5 @@ CAM6-Nor: standard set-up output
 | mmr_SULFATE = "mmr_SULFATE mmr of aerosol type"
 | monoterp = "monoterp concentration"
 | monoterp_SRF = "monoterp in bottom layer"
+
 -------------------------------------------------------------------------------
