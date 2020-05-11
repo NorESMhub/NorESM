@@ -16,6 +16,9 @@ In <noresm-base>/cime_config/config_compsets.xml
   
 ::
 
+**Modifications to user namelists**
+
+
 Aqua-planet 
 ^^^^^^
 
@@ -28,3 +31,5 @@ In <noresm-base>/cime_config/config_compsets.xml
   OCN%AQUA
   
 ::
+
+**Modifications to user namelists**
