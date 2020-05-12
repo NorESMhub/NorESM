@@ -69,6 +69,11 @@ Create a new case:
 
 ::
 
+
+| For a detailed guide on how to set up, submit and choosing the right job see:   
+| https://documentation.sigma2.no/jobs/choosing_job_types.html  
+
+
 Nebula @ NSC
 ^^^^^^^^^^^^
 Configuration files for running NorESM2 on Nebula are distributed in the featureCESM2.1.0-OsloDevelopment branch. If Nebula configurations are missing in your copy of the model the files can be found in the following folder on Nebula:
