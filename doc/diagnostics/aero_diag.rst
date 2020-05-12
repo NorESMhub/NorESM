@@ -3,9 +3,7 @@
 Aerosol diagnostics
 ===================
 
-For utilizing the comparison package described below, NorESM2 should be run with extra aerosol diagnostics and output, i.e. 
-adding history_aerosol = .true. in user_nl_cam and enabling AROFFL and AEROCOM in preprocessorDefinitions.h  
-| For a more detailed description, please see: :ref:`aerosol_output`  
+For utilizing the comparison package described below, NorESM2 should be run with extra aerosol diagnostics and output, i.e. adding history_aerosol = .true. in user_nl_cam and enabling AROFFL and AEROCOM in preprocessorDefinitions.h . For a more detailed description, please see: :ref:`aerosol_output`  
 
 NCL Model Version Comparison package ModIvsModII
 ------------------------------------
