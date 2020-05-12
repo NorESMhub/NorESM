@@ -262,6 +262,13 @@ or you can add -cosp to CAM_CONFIG_OPTS in  env_build.xml  (before building the 
 
   <entry id="CAM_CONFIG_OPTS" value="-phys cam6 -co2_cycle -chem trop_mam_oslo -cosp">
   
+To the user_nl_cam, add::
+
+ &cospsimulator_nl
+   docosp         = .true.
+   cosp_amwg      = .true.
+
+  
 | For a detailed description of COSP, please see
 | https://climatedataguide.ucar.edu/climate-data/cosp-cloud-feedback-model-intercomparison-project-cfmip-observation-simulator-package
 
