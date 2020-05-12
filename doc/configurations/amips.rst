@@ -25,7 +25,21 @@ AMIP compsets
 Compsets starting with NF are NorESM AMIP (atmosphere/land-only) configurations.  Predefined compsets for AMIP simulations can be found in::  
 
   <noresm_base>/components/cam/cime_config/config_compsets.xml
+
+
+To create an AMIP-type experiment::
+
+  ./create_newcase --case <PAT_TO_CASEFOLDER>/CASENAME --compset NFHISTnorbc --res f19_f19 --mach fram --run-unsupported --project nn2345k --user-mods-dir cmip6_noresm_fsst_xaer
   
+Defined user-mod-dirs are available in::
+
+  <noresm-base>/components/cam/cime_config/usermods_dirs/
+  
+Available user-mod-dir options for NorESM2 used in CMIP6:
+ 
+- cmip6_noresm_fsst_xaer (AEROFFL and AEROCOM)  
+- cmip6_noresm_fsst_hifreq_xaer (high frecuency output, AEROFFL and AEROCOM)  
+
 
 Creating your own compset for AMIP simulations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
