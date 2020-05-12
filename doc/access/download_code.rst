@@ -61,13 +61,11 @@ or
  
 ::
 
-Then you need to launch the download
-
-:: 
+Then you need to launch the download:: 
 
    ./manage_externals/checkout_externals  [this will take one to a few minutes ...]
 
-::
+
 
 **If you run into several SVN-related errors when launching the model, you may want to try to change required=True to required=False for pop2 and ww3 in Externals.cfg. POP2 and WW3 are not needed in NorESM2. Then try again.**
 
