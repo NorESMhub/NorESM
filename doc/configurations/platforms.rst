@@ -67,7 +67,8 @@ Create a new case: ::
 
 
 
-| For a detailed guide on how to set up, submit and choosing the right job see:   
+| For a detailed guide on how to set up, submit and choosing the right job see: 
+| https://documentation.sigma2.no/jobs/submitting.html  
 | https://documentation.sigma2.no/jobs/choosing_job_types.html  
 
 
