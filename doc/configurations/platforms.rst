@@ -61,13 +61,10 @@ Apply for membership in NorESM shared data storage (manager: mben@norceresearch.
 
 The run and archive directories are stored /cluster/work/users/<user_name>/
 
-Create a new case:
-
-::
+Create a new case: ::
 
     ./create_newcase –case ../../../cases/<casename> --mach fram –-res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported  
 
-::
 
 
 | For a detailed guide on how to set up, submit and choosing the right job see:   
