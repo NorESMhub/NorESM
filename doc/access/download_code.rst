@@ -3,13 +3,13 @@
 Downloading the model code
 ==============================
 
-The NorESM2 model code is available through a  public GitHUB repository: 
+The NorESM2 model code is available through a public GitHub repository: 
 https://github.com/NorESMhub/NorESM
 
 
-You need access to a git command line client on the machine where NorESM2 is build and run. First, you need a git user and permissons to obtain the code:
+To download the model, you need access to a git command-line client on the machine where you want NorESM2 to build and run. You also need a git user and permissons to obtain the code:
 
-- **Create a github user:** You can create the github user yourself. Go to https://github.com/join and create a user (Make user-name which is easy to understand, for example FirstnameLastname. You can attach several email-addresses to the same user.)
+- **Create a github user:** You can create the github user yourself. Go to https://github.com/join and create a user. (Choose a user name which is easy to understand, for example FirstnameLastname. You can attach several email-addresses to the same user.)
 
 - Visit this page:
   https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
@@ -19,7 +19,7 @@ You need access to a git command line client on the machine where NorESM2 is bui
 - When you have the right permissions, you can obtain the code.
 
 
-To download the code, make a clone of the NorESM2 repository
+To download the code, make a clone of the NorESM2 repository using the command-line git client on the appropriate machine:
 
 ::
   
@@ -27,8 +27,9 @@ To download the code, make a clone of the NorESM2 repository
   
 ::
 
+where <noresm-base> is the name of the directory where the latest version of the releasted code will be stored. You can replace <noresm-base> with the directory name you like. 
 
-instead of <noresm-base>, you can use the directory name you like. The <noresm-base> folder contains the latest version of the released code. 
+Enter the <noresm-base> folder:
 
 ::
 
@@ -81,4 +82,4 @@ To confirm a successful download of all components, you can run checkout_externa
 
 The checkout_externals script will read the configuration file called Externals.cfg and will download all the external component models and CIME into /path/to/<noresm-base>.
 
-Now you have a complete copy of the NorESM code in the directory <noresm-base>.  There you can co go in the subdirectory cime/scripts and start creating a case :ref:`experiments`.
+Now you have a complete copy of the NorESM code in the directory <noresm-base>.  Now you can to the subdirectory cime/scripts and start creating a case! (see :ref:`experiments`).
