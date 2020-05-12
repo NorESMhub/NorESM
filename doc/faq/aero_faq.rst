@@ -54,13 +54,13 @@ PM1 is also produced by NorESM2, and can be added to the create-aerocom script. 
 
 Concerning number and mass concentrations for various size intervals: Modified, aged (but dry) size distributions in AeroTab are fitted to lognormal size-distributions for use in cloud droplet activation, giving modal median radii R and standards deviations SIGMA, in addition to the modal number concentrations. From this, approximate mass and number concentrations for any (dry) size range can be calculated by integration over the given size range. A good example/template for this is the fortran code made for use in the PNSD (particle number size distribution) experiment for AeroCom, with the main program file pnsd.f (see link below). This has been used only with NorESM1.2/CAM5.3-Oslo data (the experiment was never followed through and published), and may need to be modified.  
 
-Where is the example script which produces with aerotab the tables necessary to postprocess diagnostics for eg  mass and number below a certain diameter?
+Where is the example script which produces with AeroTab the tables necessary to postprocess diagnostics for eg  mass and number below a certain diameter?
 ^^^^
 
 For general AeroCom use:
 /components/cam/tools/aerocom/createaerocom-NorESM2.sh
 
-For the PNSD experiment:
+For the PNSD experiment (number concentrations):
 /components/cam/tools/aerocom3-PNSD_scripts-and-code/pnsd/
 
 Where is the documentation for doing an EasyAerosol simulation? Compset, input, etc.
@@ -71,9 +71,24 @@ This will be described once the actual SpAer code has been tested and committed 
 What is needed to add a tracer to the NorESM2 model?
 ^^^^^
 
-Øyvind, Dirk, or someone else who has experience with this?
+Øyvind, Dirk, or someone else who has experience with this?...
 
 What is the hygroscopicity for different species in NorESM2, expressed as kappa?
 ^^^^^
 
 The aerosol hygroscopicities in NorESM2/CAM6-Nor are the same as in NorESM1.2/CAM5.3-Oslo, and are as described by Kirkevåg et al. (2018) (https://www.geosci-model-dev.net/11/3945/2018/gmd-11-3945-2018.pdf), see Section 2.3. The Kohler equation applied (in AeroTab) is as expressed on pages 4 and 21 in https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/AeroTab-slides-updateJan2020.pdf, where the whole expression marked with an **x** on p. 21 is the sought **kappa** (here summed over all components for an internal mixture). The first NorESM reference is Kirkevåg and Iversen (2001) (https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2001JD000886), but see also Ghan et al. (2001) (J. Geophys. Res., 106, 5295–5316, 2001) or Pruppacher and Klett, Microphysics of Clouds and Precipitation, 954 pp., Kluwer Acad., Norwell, Mass., 1997.
+
+Is there enhancement of absorption due to organic coating of BC or Organic aerosols in NorESM2 (AeroTab6)?
+^^^^^
+
+internal mixtures of OM or water with BC is taken into account in the optics calculations, but with the assumption that the mixture
+for a certain size is homogeneous (but size-dependent). There is therefore no lensing effect, which is most important here, I think, 
+since this requires a core-shell treatment (and a different, more advanced Mie code).
+
+In NorESM1.2/CAM5.3-Oslo simulations for AeroCom's in-situ optics study, it was surprisngly little (almost no) absorption enhancement from increased hygroscopic swelling (for vthe arious prescribed RH values). There is probably quite little enhancement also for OM, although that is not so readily seen without doing special sensitivity tests (similar to optics the in-situ study, but with varying OM instead of water).  
+
+Which types of AeroTab tables are read in when running NorESM2?
+^^^^^
+
+It is explained for which configurations the various AeroTab look-up tables (LUT) are used in Sect. 5 of the AeroTab User's Guide at https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/AeroTab-user-guide_v16april2020.pdf. Also the nature and content of these are described there. It is not mentioned there, but the LUT are only read in by the model for configurations where they are actually used. 
+
