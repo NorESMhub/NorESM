@@ -6,7 +6,22 @@ Downloading the model code
 The NorESM2 model code is available through a  public GitHUB repository: 
 https://github.com/NorESMhub/NorESM
 
-You need access to a git command line client on the machine where NorESM2 is build and run. To download the code, make a clone of the NorESM2 repository
+
+Obtain a copy of the model (using git)
+''''''''''''''''''''''''''''''''''''''
+You need access to a git command line client on the machine where NorESM2 is build and run.
+
+- **Create a github user:** You can create the github user yourself. Go to https://github.com/join and create a user (Make user-name which is easy to understand, for example FirstnameLastname. You can attach several email-addresses to the same user.)
+
+- Visit this page:
+  https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
+
+- Send email to oyvind.seland@met.no to get the right permissions for the new github user (The email must contain who you are and the github username).
+
+- When you have the right permissions, you can obtain the code.
+
+
+To download the code, make a clone of the NorESM2 repository
 
 ::
   
