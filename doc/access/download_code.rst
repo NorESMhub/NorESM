@@ -7,9 +7,7 @@ The NorESM2 model code is available through a  public GitHUB repository:
 https://github.com/NorESMhub/NorESM
 
 
-Obtain a copy of the model (using git)
-''''''''''''''''''''''''''''''''''''''
-You need access to a git command line client on the machine where NorESM2 is build and run.
+You need access to a git command line client on the machine where NorESM2 is build and run. First, you need a git user and permissons to obtain the code:
 
 - **Create a github user:** You can create the github user yourself. Go to https://github.com/join and create a user (Make user-name which is easy to understand, for example FirstnameLastname. You can attach several email-addresses to the same user.)
 
