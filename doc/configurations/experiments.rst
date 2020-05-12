@@ -19,7 +19,7 @@ The case folder contains predefined namelist (with namelist settings partly depe
 
 Several configuration options are available in the usermods directories in <noresm_base>/cime_config/usermods_dirs/  . These folders contain information about output variables and frequencies from clm (land) and cam (atmosphere). In addition one SourceMod is included in SourceMods/src.cam/preprocessorDefinitions.h to define if AEROFFL and AEROCOM are included for extra aerosol diagnostics (for more details about the aerosol diagnostics see )
 
-Remeber that the amount of diagnostics and the output frequency have a huge impact on both the run time and storage. 
+Remember that the amount of diagnostics and the output frequency have a huge impact on both the run time and storage. 
 
 --user-mods-dir cmip6_noresm_* ::
 
