@@ -69,7 +69,7 @@ Then you need to launch the download
 
 ::
 
-If you run into several SVN-related errors when launching the model, you may want to try to change required=True to required=False for pop2 and ww3 in Externals.cfg. POP2 and WW3 are not needed in NorESM2. Then try again.
+**If you run into several SVN-related errors when launching the model, you may want to try to change required=True to required=False for pop2 and ww3 in Externals.cfg. POP2 and WW3 are not needed in NorESM2. Then try again.**
 
 To confirm a successful download of all components, you can run checkout_externals with the status flag -S to show the status of the externals or --logging to get a log of reported errors (if any):
 
