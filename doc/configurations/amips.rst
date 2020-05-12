@@ -37,8 +37,8 @@ Defined user-mod-dirs are available in::
   
 Available user-mod-dir options for NorESM2 used in CMIP6:
  
-- cmip6_noresm_fsst_xaer (AEROFFL and AEROCOM defined)  
-- cmip6_noresm_fsst_hifreq_xaer (high frecuency output, AEROFFL and AEROCOM defined)  
+- cmip6_noresm_fsst_xaer (history_aerosol=.true. , AEROFFL and AEROCOM defined)  
+- cmip6_noresm_fsst_hifreq_xaer (high frecuency output,history_aerosol=.true. , AEROFFL and AEROCOM defined)  
 
 
 Creating your own compset for AMIP simulations
