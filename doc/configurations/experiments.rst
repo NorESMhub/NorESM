@@ -60,7 +60,11 @@ The compsets starting with N are NorESM coupled configurations. Compsets startin
   
   
 **frc2 emission files**
-  The frc2 option uses differently organized emission files. A new set of emission files have been made to avoid the occurence of random mid-month model crashes. These crashes are related to the reading of emission files, but are still under investigation. To use the newest emission files choose compsets including *frc2* or if you  want to create a new copset add::
+  The frc2 option uses differently organized emission files. The frc2 files are located in::
+  
+  <PATH_TO_INPUTDATA>/noresm/inputdata/atm/cam/chem/emis/cmip6_emissions_version20190808
+  
+  A new set of emission files have been made to avoid the occurence of random mid-month model crashes. These crashes are related to the reading of emission files, but are still under investigation. To use the newest emission files choose compsets including *frc2* or if you  want to create a new copset add::
 
   %FRC2
  
