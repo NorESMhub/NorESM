@@ -16,7 +16,8 @@ The Norwegian Earth System Model version 2 (NorESM2) is an coupled Earth System 
 
 The NorESM specific development is led by the Norwegian Meteorological Institute and NORCE Norwegian Research Centre AS. Other partners involved are the University of Oslo (UiO), CICERO, Nansen Environmental and Remote Sensing Center (NERSC) and the University of Bergen (UiB). 
 
-**NorESM2 specific additions to CESM2 includes (but is not limited to):**
+NorESM2 specific additions to CESM2 includes (but is not limited to):
+++++++++++++++++++
 
 - Atmosphere model : CAM6-Nor replaces standard CAM
 
@@ -35,7 +36,8 @@ The NorESM specific development is led by the Norwegian Meteorological Institute
 For a short description of the model components, please see :ref:`model-description`
 
 
-**NorESM2 exists in four versions:**
+NorESM2 exists in four versions:
+++++++++++++++++
 
 - **NorESM2-MM**
    
