@@ -83,9 +83,6 @@ To use different prescribed fields for SSTs and sea-ice cover than the default, 
 
 AMIP-style simulations with observed SSTs and frc2 emission files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**observed SSTs**
-
 The compsets using observed sea suface temperatures include compset names with *fsst*:
 
 ::
@@ -98,11 +95,11 @@ The compsets using observed sea suface temperatures include compset names with *
 
 ::
 
-**frc2 emission files**
 
 The frc2 option uses differently organized emission files. A new set of emission files have been made to avoid the occurence of random mid-month model crashes. These crashes are related to the reading of emission files, but are still under investigation. To use the newest emission files choose compset names with *frc2* or if you want to create a new copset add *%FRC2*:
 
 ::
+
   <compset>
     <alias>NFHISTfsstfrc2</alias>
     <lname>HIST_CAM60%NORESM%FSST%FRC2_CLM50%BGC-CROP_CICE%PRES_DOCN%DOM_MOSART_SGLC_SWAV</lname>
