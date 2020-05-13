@@ -69,6 +69,7 @@ E.g.
    - Note for some AMIP compsets CAM60%PTAERO may be used instead of CAM60%NORESM. Don't worry, those are identical.
 - CLM50%BGC-CROP
    - Build CLM5 (land model) with a global crop model (interactive vegetation)
+   - If you want pre-described vegetation, use CLM50%SP
 - CICE%PRES
    - Build CICE (sea-ice model) with prescribed sea-ice
 - DOCN%DOM
@@ -79,6 +80,36 @@ E.g.
    - The SGLC (land-ice) and SWAV (ocean-wave) models are not interactive, but used only to satisfy the interface requirements 
 
 To use different prescribed fields for SSTs and sea-ice cover than the default, change the value of the variable **SSTICE_DATA_FILENAME** in the **evn_run.xml** file to the full path of a different file that complies to the requirements of the CICE and the data-ocean model.
+
+AMIP-style simulations with observed SSTs and frc2 emission files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**observed SSTs**
+
+The compsets using observed sea suface temperatures include compset names with *fsst*:
+
+::
+
+  <compset>
+    <alias>NFHISTfsst</alias>
+    <lname>HIST_CAM60%NORESM%FSST_CLM50%BGC-CROP_CICE%PRES_DOCN%DOM_MOSART_SGLC_SWAV</lname>
+    <science_support grid="f09_f09_mg17"/>
+  </compset>
+
+::
+
+**frc2 emission files**
+
+The frc2 option uses differently organized emission files. A new set of emission files have been made to avoid the occurence of random mid-month model crashes. These crashes are related to the reading of emission files, but are still under investigation. To use the newest emission files choose compset names with *frc2* or if you want to create a new copset add *%FRC2*:
+
+::
+  <compset>
+    <alias>NFHISTfsstfrc2</alias>
+    <lname>HIST_CAM60%NORESM%FSST%FRC2_CLM50%BGC-CROP_CICE%PRES_DOCN%DOM_MOSART_SGLC_SWAV</lname>
+    <science_support grid="f09_f09_mg17"/>
+  </compset>
+
+::
 
 
 NorESM2-derived boundary conditions for AMIP-style simulations
