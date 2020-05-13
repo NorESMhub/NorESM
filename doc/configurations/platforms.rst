@@ -66,7 +66,25 @@ Create a new case: ::
     ./create_newcase –case ../../../cases/<casename> --mach fram –-res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported  
 
 
+On fram there are different queues for testing and development experiments (usually short runs on few nodes) and longer experiments. If you want to run simulations on different queues than *normal*, you need to add to  cime/config/cesm/machines/config_batch.xml::
 
+  <queue walltimemax="00:30:00" nodemin="1" nodemax="4" default="false">devel</queue>
+  
+for the development queue and ::
+
+  <queue walltimemax="02:00:00" nodemin="1" nodemax="10" default="false">short</queue>
+  
+for the short queue, under the line for default to be "normal". E.g.: ::
+
+    <queues>
+      <queue walltimemax="00:59:00" nodemin="1" nodemax="288" default="true">normal</queue>
+      <queue walltimemax="00:30:00" nodemin="1" nodemax="4" default="false">devel</queue>
+      <queue walltimemax="02:00:00" nodemin="1" nodemax="10" default="false">short</queue>
+    </queues>
+
+
+
+  
 | For a detailed guide on how to set up, submit and choosing the right job see: 
 | https://documentation.sigma2.no/jobs/submitting.html  
 | https://documentation.sigma2.no/jobs/choosing_job_types.html  
