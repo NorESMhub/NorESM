@@ -92,7 +92,7 @@ for the short queue, under the line for default to be "normal". E.g.: ::
 
 Nebula @ NSC
 ^^^^^^^^^^^^
-Configuration files for running NorESM2 on Nebula are distributed in the featureCESM2.1.0-OsloDevelopment branch. If Nebula configurations are missing in your copy of the model the files can be found in the following folder on Nebula:
+Configuration files for running NorESM2 on Nebula are distributed in the release tags release-noresm2* and in the noresm2 origin/noresm2 branch. If Nebula configurations are missing in your copy of the model, the files can be found in the following folder on Nebula:
 
 ::
 
