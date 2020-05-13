@@ -25,7 +25,9 @@ CLM5 in NorESM2 can also be run with a prescribed satellite vegetation phenology
 
  CLM50%SP
 
-The inital state
+Note that the BGC-CROP option is more expensive than SP (+ca 10-15% CPU time)
+
+The inital state 
 ^^^^^^
 
 The land model needs to read in the inital state from a restart file set in user_nl_clm in the case folder ::
