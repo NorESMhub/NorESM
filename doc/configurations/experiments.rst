@@ -49,14 +49,22 @@ And predefined compsets for AMIP (atmsophere only) simulations can be found in::
   
 The compsets starting with N are NorESM coupled configurations. Compsets starting with NF are NorESM AMIP (atmosphere only) configurations.  
 
-**N1850 and N1850frc2 (uses differently organized emission files : FRC2)**  
+**N1850 and N1850frc2**  
   Coupled configuration for NorESM for pre-industrial conditions.
 
-**NHIST and NHISTfrc2  (uses differently organized emission files : FRC2)**  
+**NHIST and NHISTfrc2**
   Historical configuration up to year 2015 (see detailed description below; 'Create your own compsets for AMIP simulations')
 
 **NSSP126frc2, NSSP245frc2, NSSP370frc2, NSSP585frc2**  
   Future scenario compsets from 2015 to 2100
+  
+  
+**frc2 emission files**
+  The frc2 option uses differently organized emission files. A new set of emission files have been made to avoid the occurence of random mid-month model crashes. These crashes are related to the reading of emission files, but are still under investigation. To use the newest emission files choose compsets including *frc2* or if you  want to create a new copset add::
+
+  %FRC2
+ 
+to NORESM2. For a detailed description, see **Creating your own compset** below.
  
 **Supported grids**
 
