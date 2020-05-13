@@ -10,12 +10,15 @@ BLOM
 
 Initial conditions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-The BLOM model is initialized from inicon.nc
-e.g. on Fram @ Simga2 ::
+
+In the OMIP-type experiments, the ocean was initialized from rest, and the initial ocean temperature and salinity were from the Polar Science Center Hydrographic Climatology (PHC) 3.0, updated from Steele et al. (2001). **[note by CG: the following needs to be checked by ocean BGC people]** For initialization of the ocean biogeochemical fields, we use the climatological fields from the World Ocean Atlas (WOA; i.e., for oxygen, nitrate, silicate, and phosphate; Garcia et al., 2010a, b) and the Global Ocean Data Analysis Project (GLODAP; i.e., for alkalinity and pre-industrial dissolved inorganic carbon; Key et al., 2004).
+
+
+The initial condition file containing ocean temperature and salinity is located at (on Fram) ::
 
   /cluster/shared/noresm/inputdata/ocn/micom/tnx1v4/20170601/inicon.nc
   
-The file contains values for thickness (sigma: density - 1000), temperature (temp), salinity (saln) and depth (dz):
+The file contains values for layered potential density (sigma: sigma2 - 1000), potential temperature (temp), salinity (saln) and thickness (dz):
 
 :: 
 
@@ -29,8 +32,6 @@ The file contains values for thickness (sigma: density - 1000), temperature (tem
           double saln(z, y, x) ;
           double dz(z, y, x) ;
 ::
-
-Where are these values taken from? WOA? If so, which version?
 
 
 
@@ -231,3 +232,5 @@ Hunke, E. C., et al. "CICE: The Los Alamos Sea ice Model Documentation and Softw
 Hunke, Elizabeth, Lipscomb, William, Jones, Philip, Turner, Adrian, Jeffery, Nicole, and Elliott, Scott. CICE, The Los Alamos Sea Ice Model. Computer software. https://www.osti.gov//servlets/purl/1364126. 
 
 Lecomte, O., T. Fichefet, M. Vancoppenolle, F. Domine, F. Massonnet, P. Mathiot, S. Morin, and P.Y. Barriat (2013), On theformulation of snow thermal conductivity in large-scale sea ice models, J. Adv. Model. Earth Syst., 5, 542–557, doi:10.1002/jame.20039
+
+Steele, M., Morley, R., and Ermold, W.: PHC: A Global Ocean Hydrography with a High-Quality Arctic Ocean, J. Climate, 14, 2079–2087, 2001.
