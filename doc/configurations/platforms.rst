@@ -65,6 +65,63 @@ Create a new case: ::
 
     ./create_newcase –case ../../../cases/<casename> --mach fram –-res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported  
 
+On fram there are different queues for testing and development experiments (usually short runs on few nodes) and longer experiments. If you want to run simulations on different queues than *normal*, you need to add new machine options to   cime/config/cesm/machines/config_batch.xml. Method (we are currently working on an improvment of this):
+
+- 1. Copy the settings for Fram :
+::
+
+   <batch_system MACH="fram" type="slurm">
+    <batch_submit>sbatch</batch_submit>
+    <submit_args>
+      <arg flag="--time" name="$JOB_WALLCLOCK_TIME"/>
+      <arg flag="-p" name="$JOB_QUEUE"/>
+      <arg flag="--account" name="$PROJECT"/>
+    </submit_args>
+    <directives> 
+      <directive> --ntasks={{ total_tasks }}</directive>
+      <directive> --export=ALL</directive>
+      <directive> --switches=1</directive>
+    </directives>
+    <queues>
+      <queue walltimemax="00:59:00" nodemin="1" nodemax="288" default="true">normal</queue>
+    </queues>
+  </batch_system>
+
+:: '
+
+- 2. Change "fram" to "fram_devel" or "fram_short"
+ 
+- 3. Change the line
+
+::
+
+    <queue walltimemax="00:59:00" nodemin="1" nodemax="288" default="true">normal</queue>
+    
+::
+
+to::
+ 
+  <queue walltimemax="00:30:00" nodemin="1" nodemax="4" default="true">devel</queue>
+
+for the development queue and ::
+
+  <queue walltimemax="02:00:00" nodemin="1" nodemax="10" default="true">short</queue>
+  
+for the short queue. **You need to make one config_batch setting for each queue. Hopefullt this will improve very soon.**
+
+
+After, you can use the new machine settings when creating a new case: For the development queue:::
+
+    ./create_newcase –case ../../../cases/<casename> **--mach fram_devel** –-res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported  
+    
+and for the short queue::
+
+       ./create_newcase –case ../../../cases/<casename> **--mach fram_short** –-res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported  
+
+| For a detailed guide on how to set up, submit and choosing the right job see: 
+| https://documentation.sigma2.no/jobs/submitting.html  
+| https://documentation.sigma2.no/jobs/choosing_job_types.html  
+| 
 
 Nebula @ NSC
 ^^^^^^^^^^^^
@@ -205,36 +262,6 @@ on Fram:
 
 ::
 
-
-On fram there are different queues for testing and development experiments (usually short runs on few nodes) and longer experiments. If you want to run simulations on different queues than *normal*, you need to add new machine options to   cime/config/cesm/machines/config_batch.xml. Method (we are currently working on an improvment of this):
-
-- 1. Copy the settings for Fram (see the code example above) :
-
-- 2. Change "fram" to "fram_devel" or "fram_short"
- 
-- 3. Change the line
-
-::
-
-    <queue walltimemax="00:59:00" nodemin="1" nodemax="288" default="true">normal</queue>
-    
-::
-
-to::
- 
-  <queue walltimemax="00:30:00" nodemin="1" nodemax="4" default="true">devel</queue>
-
-for the development que and ::
-
-  <queue walltimemax="02:00:00" nodemin="1" nodemax="10" default="true">short</queue>
-  
-for the short queue
-Note. You need to make one config_batch setting for each queue. Hopefullt this will improve very soon.
-
-| For a detailed guide on how to set up, submit and choosing the right job see: 
-| https://documentation.sigma2.no/jobs/submitting.html  
-| https://documentation.sigma2.no/jobs/choosing_job_types.html  
-| 
 
 On Tetralith:
 
