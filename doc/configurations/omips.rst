@@ -100,13 +100,15 @@ Forcing datasets
 
 Modify user name lists for BLOM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-How do you set the initial condition file in user_nl_blom??? And what can you set in user_nl_blom? How do you modify the output? and the output frequency? PLEASE EXPLAIN
-Note that BLOM uses a different sytax than the rest. In user_nl_blom::
+
+Modifications of certain model parameters and model output that are different from default should be done in user_nl_blom under the case directory. The default user namelist setup is in CaseDocs/ocn_in, which specifies a number of physical parameters (such as vertical and horizontal mixing), as well as saved model output frequencies, including options for daily (hd), monthly (hm), and yearly (hy) output. **[note by CG: this needs to be doulbe checked by Mats]**
+
+Note that BLOM uses a different sytax than the rest. For example, in user_nl_blom::
 
   set BDMC2   = .15
   set NIWGF = .5
 
-you need to include **set** before the name of the variable and it does not matter what namelist group the variable belong.
+One needs to include **set** before the name of the variable and it does not matter what namelist group the variable belong.
 
 
 Code modification
@@ -116,7 +118,7 @@ If you want to make more subtantial changes to the codes than what is possible b
 
 The BLOM source code is located in::
   
-  <noresm-base>/components/blom/??/
+  <noresm-base>/components/blom/
   
 iHAMOCC
 ''''''''
