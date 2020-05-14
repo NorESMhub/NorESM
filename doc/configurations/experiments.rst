@@ -11,7 +11,15 @@ For a quick-start guide on how to create, configure, build, and submit a NorESM 
 Create and configure a new case
 ^^^^^^^^^^^^^^^
 
-To start a new experiment you need to create and configure a case. After running the **create_newcase** script, a case folder <path_to_case_dir>/<casename> is created that contains set-up files for your experiment
+To start a new experiment you need to create and configure a case. After running the::
+
+  ./create_newcase
+  
+ script, a case folder <path_to_case_dir>/<casename> is created that contains set-up files for your experiment. Then, after running the::
+ 
+  ./case.setup
+  
+script, several other files and directories needed to build the case are created, including the user user namelists files.
 
 The create_newcase script includes a --compset option. A compset, or component set, is a collection of predefined setting that defines your experiment set-up, including which model components that should be activated. Some of the available compsets are described below.
 
@@ -78,6 +86,8 @@ The compsets starting with N are NorESM coupled configurations. Compsets startin
 **NSSP126frc2, NSSP245frc2, NSSP370frc2, NSSP585frc2**  
   Future scenario compsets from 2015 to 2100
   
+**NFHISTnorpddmsbc**  
+  AMIP simulation with time-evolving prescribed observed values for SSTs and sea ice and upper-ocean DMS values derived from a fully coupled NorESM2 simulation for present-day conditions
   
 **frc2 emission files**
   The frc2 option uses differently organized emission files. The frc2 files are located in::
