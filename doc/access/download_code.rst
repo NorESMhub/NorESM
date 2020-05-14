@@ -46,7 +46,7 @@ Now you can check which remote servers you have configured:
 
 ::
 
-And check which branch you are using:
+And check which branch you are using::
 
   > git branch
 
