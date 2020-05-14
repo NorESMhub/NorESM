@@ -88,15 +88,20 @@ On fram there are different queues for testing and development experiments (usua
       <queue walltimemax="00:59:00" nodemin="1" nodemax="288" default="true">normal</queue>
     </queues>
    </batch_system>
-::
+   
+::-
 
 
 - 2. Change "fram" to "fram_devel" or "fram_short"
  
-- 3. Change the line::
+- 3. Change the line
 
- <queue walltimemax="00:59:00" nodemin="1" nodemax="288" default="true">normal</queue>
-   
+::
+
+    <queue walltimemax="00:59:00" nodemin="1" nodemax="288" default="true">normal</queue>
+    
+::
+
 to::
  
   <queue walltimemax="00:30:00" nodemin="1" nodemax="4" default="true">devel</queue>
