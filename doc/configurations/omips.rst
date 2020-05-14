@@ -50,30 +50,52 @@ The readers are referred to Large and Yeager (2009) and Tsujino et al. (2018) fo
 
 
 
-Creating an OMPI case
+Creating an OMIP case
 ^^^^^^^^^^^^^^^^^^^^^
-PLEASE change the compset description below!
+General syntax:
+
 ::
 
    cd <noresm-base>/cime/scripts
    ./create_newcase --case <path_to_case_dir>/<casename> --walltime <time> --compset <compset_name> --res <resolution> --machine <machine_name> --project <project_name> --user-mods-dir <user_mods_dir> --output-root <path_to_run_dir>/<noresm_run_dir> --run-unsupported 
    
+An example for creating the OMIP-1 case:
 
 ::
 
+   ./create_newcase --case ../../cases/NOIIAOC20TR_T62_tn14_20190628 --compset NOIIAOC20TR --res T62_tn14 --machine vilje --project nn2345k --run-unsupported
+   
+An example for creating the OMIP-2 case:
+
+::
+
+   ./create_newcase --case ../../cases/NOIIAJRAOC20TR_TL319_tn14_20190710 --compset NOIIAJRAOC20TR --res TL319_tn14 --machine vilje --project nn2345k --run-unsupported
+   
 
 OMIP compsets
 ^^^^^^^^^^^^^
 
+- OMIP-1/CORE-II:   NOIIAOC20TR
+- OMIP-2/JRA55-do:  NOIIAJRAOC20TR
 
-Forcing sets
+
+Forcing datasets
 ^^^^^^^^^^^^^
 
 
-- **CORE-II forcing**
+- **OMIP-1/CORE-II**
   
+  Forcing dataset described in detail by Large and Yeager (2009). The forcing files are located at (on Fram) ::
+  
+  /cluster/shared/noresm/inputdata/ocn/iaf/
 
-- **JRA-55**
+
+- **OMIP-2/JRA55-do**
+
+  Forcing dataset described in detail by Tsujino et al. (2018). The forcing files are located at (on Fram) ::
+
+  /cluster/shared/noresm/inputdata/ocn/jra55/v1.3_noleap/
+
 
 
 Modify user name lists for BLOM
