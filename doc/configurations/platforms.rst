@@ -65,6 +65,8 @@ Create a new case: ::
 
     ./create_newcase –case ../../../cases/<casename> --mach fram –-res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported  
 
+Queue options on Fram
+------------------------
 On fram there are different queues for testing and development experiments (usually short runs on few nodes) and longer experiments. If you want to run simulations on different queues than *normal*, you need to add new machine options to   cime/config/cesm/machines/config_batch.xml. Method (we are currently working on an improvment of this):
 
 - 1. Copy the settings for Fram :
@@ -108,7 +110,65 @@ for the development queue and ::
   <queue walltimemax="02:00:00" nodemin="1" nodemax="10" default="true">short</queue>
   
 for the short queue. **You need to make one config_batch setting for each queue. Hopefullt this will improve very soon.**
+The resulting <noresm-base>/cime/config/cesm/machines/config_batch.xml. file:
 
+::
+
+
+  <batch_system MACH="fram" type="slurm">
+    <batch_submit>sbatch</batch_submit>
+    <submit_args>
+      <arg flag="--time" name="$JOB_WALLCLOCK_TIME"/>
+      <arg flag="-p" name="$JOB_QUEUE"/>
+      <arg flag="--account" name="$PROJECT"/>
+    </submit_args>
+    <directives> 
+      <directive> --ntasks={{ total_tasks }}</directive>
+      <directive> --export=ALL</directive>
+      <directive> --switches=1</directive>
+    </directives>
+    <queues>
+      <queue walltimemax="00:59:00" nodemin="1" nodemax="288" default="true">normal</queue>
+    </queues>
+  </batch_system>
+
+  <batch_system MACH="fram_devel" type="slurm">
+    <batch_submit>sbatch</batch_submit>
+    <submit_args>
+      <arg flag="--time" name="$JOB_WALLCLOCK_TIME"/>
+      <arg flag="-p" name="$JOB_QUEUE"/>
+      <arg flag="--account" name="$PROJECT"/>
+    </submit_args>
+    <directives> 
+      <directive> --ntasks={{ total_tasks }}</directive>
+      <directive> --export=ALL</directive>
+      <directive> --switches=1</directive>
+    </directives>
+    <queues>
+      <queue walltimemax="00:30:00" nodemin="1" nodemax="4" default="true">devel</queue>
+    </queues>
+  </batch_system>
+
+  <batch_system MACH="fram_short" type="slurm">
+    <batch_submit>sbatch</batch_submit>
+    <submit_args>
+      <arg flag="--time" name="$JOB_WALLCLOCK_TIME"/>
+      <arg flag="-p" name="$JOB_QUEUE"/>
+      <arg flag="--account" name="$PROJECT"/>
+    </submit_args>
+    <directives> 
+      <directive> --ntasks={{ total_tasks }}</directive>
+      <directive> --export=ALL</directive>
+      <directive> --switches=1</directive>
+    </directives>
+    <queues>
+      <queue walltimemax="02:00:00" nodemin="1" nodemax="10" default="true">short</queue>
+    </queues>
+  </batch_system>
+
+::
+
+   
 
 After, you can use the new machine settings when creating a new case: For the development queue:::
 
