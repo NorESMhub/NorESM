@@ -40,9 +40,7 @@ To create clone cases from a control case can be very useful for e.g. sensitivit
 Compsets
 ^^^^^^^^
 
-Compsets, or component sets, specify which component models will be used in your simulation along with which forcing files, and even which physics options to use. Each compset has a long name (lname) and an alias. For instance N1850 is the alias for the NorESM compset for pre-industrial (1850) conditions. 
-
-The long name for N1850 is ::
+Compsets, or component sets, specify which component models will be used in your simulation along with which forcing files, and even which physics options to use. Each compset has a long name (lname) and an alias. For instance N1850 is the alias for the NorESM compset for pre-industrial (1850) conditions. The long name for N1850 is ::
   
   1850_CAM60%NORESM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_MICOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS. 
   
@@ -171,7 +169,7 @@ For details about AMIP simulation compsets, please see :ref:`amips`
 
 Building the case
 ^^^^^^^^^^^^^^^^^^
-The case is build by:
+The case is built by:
 
 ::
 
@@ -179,7 +177,7 @@ The case is build by:
 
 ::
 
-All user modifications to env_run.xml, env_mach_pes.xml, env_batch.xml must be done before case.build is invoked. This is also the case for the aforementioned user made name lists: i.e. user_nl_cam, user_nl_cice, user_nl_clm, user_nl_micon, user_nl_cpl). 
+All user modifications to env_run.xml, env_mach_pes.xml, env_batch.xml must be done before case.build is invoked. This is also the case for the aforementioned user-made namelists: i.e. user_nl_cam, user_nl_cice, user_nl_clm, user_nl_micon, user_nl_cpl). 
 
 
 If you want to ensure your case is ready for submission, you can run:
