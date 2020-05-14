@@ -81,11 +81,10 @@ The aerosol hygroscopicities in NorESM2/CAM6-Nor are the same as in NorESM1.2/CA
 Is there enhancement of absorption due to organic coating of BC or Organic aerosols in NorESM2 (AeroTab6)?
 ^^^^^
 
-internal mixtures of OM or water with BC is taken into account in the optics calculations, but with the assumption that the mixture
-for a certain size is homogeneous (but size-dependent). There is therefore no lensing effect, which is most important here, I think, 
-since this requires a core-shell treatment (and a different, more advanced Mie code).
+Internal mixtures of OM or water with BC is taken into account in the optics calculations, but with the assumption that the mixture
+for a certain size is homogeneous (but size-dependent). There is therefore no lensing effect,  since this requires a core-shell treatment (and a different, more advanced Mie code).
 
-In NorESM1.2/CAM5.3-Oslo simulations for AeroCom's in-situ optics study, it was surprisngly little (almost no) absorption enhancement from increased hygroscopic swelling (for vthe arious prescribed RH values). There is probably quite little enhancement also for OM, although that is not so readily seen without doing special sensitivity tests (similar to optics the in-situ study, but with varying OM instead of water).  
+In NorESM1.2/CAM5.3-Oslo simulations for AeroCom's in-situ optics study, it was surprisingly little (almost no) absorption enhancement from increased hygroscopic swelling (for the arious prescribed RH values). There is probably quite little enhancement also for OM, although that is not so readily seen without doing special sensitivity tests (similar to optics the in-situ study, but with varying OM instead of water).  
 
 Which types of AeroTab tables are read in when running NorESM2?
 ^^^^^
