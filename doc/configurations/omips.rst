@@ -71,9 +71,10 @@ Forcing sets
 
 
 - **CORE-II forcing**
-  
+  PLEASE ADD PATH TO forcing set and modifications needed in the user_nl_blom (if any) or compsets  
 
 - **JRA-55**
+  PLEASE ADD PATH TO forcing set and modifications needed in the user_nl_blom (if any) or compsets  
 
 
 Modify user name lists for BLOM
