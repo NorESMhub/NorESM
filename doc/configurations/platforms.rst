@@ -172,11 +172,11 @@ The resulting <noresm-base>/cime/config/cesm/machines/config_batch.xml. file:
 
 After, you can use the new machine settings when creating a new case: For the development queue:::
 
-    ./create_newcase –case ../../../cases/<casename> **--mach fram_devel** –-res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported  
+    ./create_newcase –case ../../../cases/<casename> --mach fram_devel –-res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported  
     
 and for the short queue::
 
-       ./create_newcase –case ../../../cases/<casename> **--mach fram_short** –-res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported  
+       ./create_newcase –case ../../../cases/<casename> --mach fram_short –-res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported  
 
 | For a detailed guide on how to set up, submit and choosing the right job see: 
 | https://documentation.sigma2.no/jobs/submitting.html  
