@@ -14,7 +14,7 @@ Initial conditions
 In the OMIP-type experiments, the ocean was initialized from rest, and the initial ocean temperature and salinity were from the Polar Science Center Hydrographic Climatology (PHC) 3.0, updated from Steele et al. (2001). **[note by CG: the following needs to be checked by ocean BGC people]** For initialization of the ocean biogeochemical fields, we use the climatological fields from the World Ocean Atlas (WOA; i.e., for oxygen, nitrate, silicate, and phosphate; Garcia et al., 2010a, b) and the Global Ocean Data Analysis Project (GLODAP; i.e., for alkalinity and pre-industrial dissolved inorganic carbon; Key et al., 2004).
 
 
-The initial condition file containing ocean temperature and salinity is located at (on Fram) ::
+The initial condition file containing ocean temperature and salinity for the one-degree OMIP experiments is located at (on Fram) ::
 
   /cluster/shared/noresm/inputdata/ocn/micom/tnx1v4/20170601/inicon.nc
   
@@ -40,33 +40,62 @@ OMIP-type experiments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-Oceanic Model Intercomparison Project (OMIP) style runs are runs in which the ocean and sea-ice components are active while values for atmospheric near surface air temperature, wind stress ++??, land?? are prescribed (that is, read from a file). 
+The Ocean Model Intercomparison Project (OMIP; Griffies et al., 2016) is an endorsed project in the CMIP6. OMIP provides a protocol for global ocean/sea-ice models forced by a common prescribed atmospheric forcing, and a protocol for ocean diagnostics to be saved as part of CMIP6. OMIP includes a physical component (Griffies et al., 2016) and a biogeochemistry component (Orr et al. 2017).
+
+Prior to OMIP, the framework of the Coordinated Ocean-ice Reference Experiments (CORE) provides ocean and climate modellers with a common protocol for running coupled ocean/sea-ice models with boundary forcing derived from common atmospheric datasets. The CORE forcing dataset was described by Large and Yeager (2004, 2009), which is largely based on the surface-atmospheric fields derived from NCEP/NCAR atmospheric reanalysis . CORE has subsequently evolved into phase 1 of the physical part of OMIP (OMIP-1). The OMIP1/CORE-II experiment forces the ocean through use of the interannually varying atmospheric state of Large and Yeager (2009), along with river runoff data based on Dai et al. (2009).
+
+The Large and Yeager (2009) forcing dataset covers the period from 1948 to 2009, and has not been updated since 2009. Thereafter, Tsujino et al. (2018) developed a surface atmospheric dataset based on the Japanese 55-year atmospheric reanalysis (JRA-55; Kobayashi et al., 2015), referred to as JRA55-do, which has been endorsed under the protocol for phase 2 of OMIP (OMIP-2). Currently, JRA55-do covers the period from 1958 to 2018 with planned continuous annual updates. Comparing to CORE-II, the JRA55-do forcing has an increased temporal frequency (from 6 hours to 3 hours), and a refined horizontal resolution (from 1.875° to 0.5625°).
+
+The readers are referred to Large and Yeager (2009) and Tsujino et al. (2018) for a detailed description of the CORE-II and JRA55-do forcing, respectively, including the bulk formulae used for computing turbulent fluxes for heat and momentum. An evaluation and comparison of the simulated ocean and sea ice mean states and variability from 11 state-of-the-art global ocean/sea-ice models (including NorESM-BLOM), based on OMIP-1/CORE-II and OMIP-2/JRA55-do, is presented by Tsujino et al. (2020).
 
 
-Creating an OMPI case
+
+Creating an OMIP case
 ^^^^^^^^^^^^^^^^^^^^^
-PLEASE change the compset description below!
+General syntax:
+
 ::
 
    cd <noresm-base>/cime/scripts
    ./create_newcase --case <path_to_case_dir>/<casename> --walltime <time> --compset <compset_name> --res <resolution> --machine <machine_name> --project <project_name> --user-mods-dir <user_mods_dir> --output-root <path_to_run_dir>/<noresm_run_dir> --run-unsupported 
    
+An example for creating the OMIP-1 case:
 
 ::
 
+   ./create_newcase --case ../../cases/NOIIAOC20TR_T62_tn14_20190628 --compset NOIIAOC20TR --res T62_tn14 --machine vilje --project nn2345k --run-unsupported
+   
+An example for creating the OMIP-2 case:
+
+::
+
+   ./create_newcase --case ../../cases/NOIIAJRAOC20TR_TL319_tn14_20190710 --compset NOIIAJRAOC20TR --res TL319_tn14 --machine vilje --project nn2345k --run-unsupported
+   
 
 OMIP compsets
 ^^^^^^^^^^^^^
 
+- OMIP-1/CORE-II:   NOIIAOC20TR
+- OMIP-2/JRA55-do:  NOIIAJRAOC20TR
 
-Forcing sets
+
+Forcing datasets
 ^^^^^^^^^^^^^
 
 
-- **CORE-II forcing**
+- **OMIP-1/CORE-II**
   
+  Forcing dataset described in detail by Large and Yeager (2009). The forcing files are located at (on Fram) ::
+  
+  /cluster/shared/noresm/inputdata/ocn/iaf/
 
-- **JRA-55**
+
+- **OMIP-2/JRA55-do**
+
+  Forcing dataset described in detail by Tsujino et al. (2018). The forcing files are located at (on Fram) ::
+
+  /cluster/shared/noresm/inputdata/ocn/jra55/v1.3_noleap/
+
 
 
 Modify user name lists for BLOM
@@ -227,10 +256,27 @@ https://cice-consortium-cice.readthedocs.io/en/master/user_guide/
 
 References
 ^^^^^^^^^^
+
+Dai, A., Qian, T., Trenberth, K. E., and Milliman, J. D.: Changes in continental freshwater discharge from 1948 to 2004, J. Climate, 22, 2773–2792, https://doi.org/10.1175/2008JCLI2592.1, 2009.
+
+Griffies et al., Coordinated Ocean-ice Reference Experiments (COREs), Ocean Model., 26, 1–46, doi:10.1016/j.ocemod.2008.08.007, 2009.
+
+Griffies et al., OMIP contribution to CMIP6: experimental and diagnostic protocol for the physical component of the Ocean Model Intercomparison Project, Geosci. Model Dev., 9, 3231–3296, https://doi.org/10.5194/gmd-9-3231-2016, 2016.
+
 Hunke, E. C., et al. "CICE: The Los Alamos Sea ice Model Documentation and Software User’s Manual Version 5 (Tech. Rep. LA-CC-06–012)." Los Alamos, NM: Los Alamos National Laboratory (2015).
 
 Hunke, Elizabeth, Lipscomb, William, Jones, Philip, Turner, Adrian, Jeffery, Nicole, and Elliott, Scott. CICE, The Los Alamos Sea Ice Model. Computer software. https://www.osti.gov//servlets/purl/1364126. 
 
+Large, W. and S. Yeager, 2004: Diurnal to decadal global forcing for ocean and sea-ice models: the datasets and flux climatologies. NCAR Technical Note: NCAR/TN-460+STR, CGD Division of the National Centre for Atmospheric Research.
+
+Large, W.G. and S.G. Yeager. 2009: The global climatology of an interannually varying air-sea flux data set. Climate Dynamics, 33, 341-364, doi:10.1007/s00382-008-0441-3.
+
 Lecomte, O., T. Fichefet, M. Vancoppenolle, F. Domine, F. Massonnet, P. Mathiot, S. Morin, and P.Y. Barriat (2013), On theformulation of snow thermal conductivity in large-scale sea ice models, J. Adv. Model. Earth Syst., 5, 542–557, doi:10.1002/jame.20039
 
+Orr et al., Biogeochemical protocols and diagnostics for the CMIP6 Ocean Model Intercomparison Project (OMIP), Geosci. Model Dev., 10, 2169–2199, https://doi.org/10.5194/gmd-10-2169-2017, 2017.
+
 Steele, M., Morley, R., and Ermold, W.: PHC: A Global Ocean Hydrography with a High-Quality Arctic Ocean, J. Climate, 14, 2079–2087, 2001.
+
+Tsujino et al., Evaluation of global ocean–sea-ice model simulations based on the experimental protocols of the Ocean Model Intercomparison Project phase 2 (OMIP-2), Geosci. Model Dev. Discuss., https://doi.org/10.5194/gmd-2019-363, in review, 2020.
+
+

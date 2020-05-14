@@ -11,9 +11,17 @@ For a quick-start guide on how to create, configure, build, and submit a NorESM 
 Create and configure a new case
 ^^^^^^^^^^^^^^^
 
-To start a new experiment you need to create and configure a case. After running the **create_newcase** script, a case folder <path_to_case_dir>/<casename> is created that contains set-up files for your experiment
+To start a new experiment you need to create and configure a case. After running the::
 
-The create_newcase script includes a --compset option. A compset is a collection of predefined setting that defines your experiment set-up, including which model components that should be activated. Some of the available compsets are described below.
+  ./create_newcase
+  
+ script, a case folder <path_to_case_dir>/<casename> is created that contains set-up files for your experiment. Then, after running the::
+ 
+  ./case.setup
+  
+script, several other files and directories needed to build the case are created, including the user user namelists files.
+
+The create_newcase script includes a --compset option. A compset, or component set, is a collection of predefined setting that defines your experiment set-up, including which model components that should be activated. Some of the available compsets are described below.
 
 The case folder contains predefined namelist (with namelist settings partly depending on compset option). The default namelist options for the case can be overwritten by changing/adding the new namelist options in the user_nl_<component>
 
@@ -39,25 +47,47 @@ To create clone cases from a control case can be very useful for e.g. sensitivit
 
 Compsets
 ^^^^^^^^
-Below some compsets are listed. All predefined compsets for coupled simulations can be found in::
+
+Compsets, or component sets, specify which component models will be used in your simulation along with which forcing files, and even which physics options to use. Each compset has a long name (lname) and an alias. For instance N1850 is the alias for the NorESM compset for pre-industrial (1850) conditions. The long name for N1850 is ::
+  
+  1850_CAM60%NORESM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_MICOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS. 
+  
+The long name generally follows the notation: TIME_ATM[%phys]_LND[%phys]_ICE[%phys]_OCN[%phys]_ROF[%phys]_GLC[%phys]_WAV[%phys][_ESP%phys][_BGC%phys] (see the help section of the file <noresm_base>/cime_config/config_compsets.xml for details). The compsets can also include information on which grids are scientifcally supported (see below for details). 
+
+All predefined compsets for **coupled simulations** can be found in::
 
   <noresm_base>/cime_config/config_compsets.xml
-  
-And predefined compsets for AMIP (atmsophere only) simulations can be found in::  
+
+Predefined compsets for **AMIP-type (atmsophere/land-only) simulations** can be found in::  
 
   <noresm_base>/components/cam/cime_config/config_compsets.xml
   
-The compsets starting with N are NorESM coupled configurations. Compsets starting with NF are NorESM AMIP (atmosphere only) configurations.  
+Predefined compsets for running the sea-ice model as a stand-alone model cam be found in::
+
+  <noresm_base>/components/cice/cime_config/config_compsets.xml
+
+Predefined compsets for running the land model as a stand-alone model can be found in::
+
+  <noresm_base>/components/clm/cime_config/config_compsets.xml
+  
+Predefined compsets for running the ocean model as a stand-alone model can be found in::
+
+  <noresm_base>/components/blom/cime_config/config_compsets.xml
+  
+
+The compsets starting with N are NorESM coupled configurations. Compsets starting with NF are NorESM AMIP (atmosphere only) configurations. Some examples are given below.
 
 **N1850 and N1850frc2**  
-  Coupled configuration for NorESM for pre-industrial conditions.
+  Coupled configuration for NorESM for pre-industrial (1850) conditions.
 
 **NHIST and NHISTfrc2**
-  Historical configuration up to year 2015 (see detailed description below; 'Create your own compsets for AMIP simulations')
+  Historical configuration from 1850 up to year 2015 (see detailed description below; 'Create your own compsets for AMIP simulations')
 
 **NSSP126frc2, NSSP245frc2, NSSP370frc2, NSSP585frc2**  
   Future scenario compsets from 2015 to 2100
   
+**NFHISTnorpddmsbc**  
+  AMIP simulation with time-evolving prescribed observed values for SSTs and sea ice and upper-ocean DMS values derived from a fully coupled NorESM2 simulation for present-day conditions
   
 **frc2 emission files**
   The frc2 option uses differently organized emission files. The frc2 files are located in::
@@ -69,22 +99,22 @@ The compsets starting with N are NorESM coupled configurations. Compsets startin
   %FRC2
  
 to NORESM2. For a detailed description, see **Creating your own compset** below.
- 
+
+For an overview of the compsets provided for CESM2, please see: http://www.cesm.ucar.edu/models/cesm2/config/compsets.html.
+
+
 **Supported grids**
 
-Most compsets contain a science_support grid which state what grid configurations we support::
+Most compsets contain an entries listing which which grid(s) are scientifically supported for that compset::
 
 <science_support grid="xxx"/> fields
 
-and a case can be created without the option::
-
-  --run-unsupported 
-
-If you want a different grid configuration or the grid configuration is not included in the definition of the compset, the::
+When a compset has a scientifically-supported grid, you can create a new case (with the create_newcase script) without having to use the option **--run-unsupported**. If the compset does not list any scientifically-supported grids, or if you want to use a grid configuration is not included in the definition of the compset, the::
 
   --run-unsupported
 
-option is required when a case is created.
+option is required when a case is created or the create_newcase script will fail.
+
 
 Creating your own compset
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -96,7 +126,7 @@ and for a new AMIP NorESM compset is::
 
   <noresm_base>/components/cam/cime_config/config_compsets.xml
   
-
+  
 **Coupled simulation** 
 
 This examples shows how to simply add the "N1850frc2" compset to config_compsets.xml . In <noresm_base>/cime_config/config_compsets.xml the N1850frc2 is set as::
@@ -149,7 +179,7 @@ For details about AMIP simulation compsets, please see :ref:`amips`
 
 Building the case
 ^^^^^^^^^^^^^^^^^^
-The case is build by:
+The case is built by:
 
 ::
 
@@ -157,7 +187,7 @@ The case is build by:
 
 ::
 
-All user modifications to env_run.xml, env_mach_pes.xml, env_batch.xml must be done before case.build is invoked. This is also the case for the aforementioned user made name lists: i.e. user_nl_cam, user_nl_cice, user_nl_clm, user_nl_micon, user_nl_cpl). 
+All user modifications to env_run.xml, env_mach_pes.xml, env_batch.xml must be done before case.build is invoked. This is also the case for the aforementioned user-made namelists: i.e. user_nl_cam, user_nl_cice, user_nl_clm, user_nl_micon, user_nl_cpl). 
 
 
 If you want to ensure your case is ready for submission, you can run:

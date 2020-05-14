@@ -65,30 +65,123 @@ Create a new case: ::
 
     ./create_newcase –case ../../../cases/<casename> --mach fram –-res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported  
 
+Queue options on Fram
+------------------------
+On fram there are different queues for testing and development experiments (usually short runs on few nodes) and longer experiments. If you want to run simulations using different queue options than *normal*, you can add new machine options to   <noresm-base>/cime/config/cesm/machines/config_batch.xml. Method (we are currently working on an improvment of this):
 
-On fram there are different queues for testing and development experiments (usually short runs on few nodes) and longer experiments. If you want to run simulations on different queues than *normal*, you need to add to  cime/config/cesm/machines/config_batch.xml::
+- 1. Copy the settings for Fram :
+::
 
-  <queue walltimemax="00:30:00" nodemin="1" nodemax="4" default="false">devel</queue>
-  
-for the development queue and ::
-
-  <queue walltimemax="02:00:00" nodemin="1" nodemax="10" default="false">short</queue>
-  
-for the short queue, under the line for default to be "normal". E.g.: ::
-
+   <batch_system MACH="fram" type="slurm">
+    <batch_submit>sbatch</batch_submit>
+    <submit_args>
+      <arg flag="--time" name="$JOB_WALLCLOCK_TIME"/>
+      <arg flag="-p" name="$JOB_QUEUE"/>
+      <arg flag="--account" name="$PROJECT"/>
+    </submit_args>
+    <directives> 
+      <directive> --ntasks={{ total_tasks }}</directive>
+      <directive> --export=ALL</directive>
+      <directive> --switches=1</directive>
+    </directives>
     <queues>
       <queue walltimemax="00:59:00" nodemin="1" nodemax="288" default="true">normal</queue>
-      <queue walltimemax="00:30:00" nodemin="1" nodemax="4" default="false">devel</queue>
-      <queue walltimemax="02:00:00" nodemin="1" nodemax="10" default="false">short</queue>
     </queues>
+  </batch_system>
 
+:: '
 
+- 2. Change "fram" to "fram_devel" or "fram_short"
+ 
+- 3. Change the line
 
+::
+
+    <queue walltimemax="00:59:00" nodemin="1" nodemax="288" default="true">normal</queue>
+    
+::
+
+to::
+ 
+  <queue walltimemax="00:30:00" nodemin="1" nodemax="4" default="true">devel</queue>
+
+for the development queue and ::
+
+  <queue walltimemax="02:00:00" nodemin="1" nodemax="10" default="true">short</queue>
   
+for the short queue. **You need to make one config_batch setting for each queue option. You also need to add fram_devel and fram_short to config_machines.xml and config_** Hopefullt this will improve very soon.
+The resulting <noresm-base>/cime/config/cesm/machines/config_batch.xml. file:
+
+::
+
+
+  <batch_system MACH="fram" type="slurm">
+    <batch_submit>sbatch</batch_submit>
+    <submit_args>
+      <arg flag="--time" name="$JOB_WALLCLOCK_TIME"/>
+      <arg flag="-p" name="$JOB_QUEUE"/>
+      <arg flag="--account" name="$PROJECT"/>
+    </submit_args>
+    <directives> 
+      <directive> --ntasks={{ total_tasks }}</directive>
+      <directive> --export=ALL</directive>
+      <directive> --switches=1</directive>
+    </directives>
+    <queues>
+      <queue walltimemax="00:59:00" nodemin="1" nodemax="288" default="true">normal</queue>
+    </queues>
+  </batch_system>
+
+  <batch_system MACH="fram_devel" type="slurm">
+    <batch_submit>sbatch</batch_submit>
+    <submit_args>
+      <arg flag="--time" name="$JOB_WALLCLOCK_TIME"/>
+      <arg flag="-p" name="$JOB_QUEUE"/>
+      <arg flag="--account" name="$PROJECT"/>
+    </submit_args>
+    <directives> 
+      <directive> --ntasks={{ total_tasks }}</directive>
+      <directive> --export=ALL</directive>
+      <directive> --switches=1</directive>
+    </directives>
+    <queues>
+      <queue walltimemax="00:30:00" nodemin="1" nodemax="4" default="true">devel</queue>
+    </queues>
+  </batch_system>
+
+  <batch_system MACH="fram_short" type="slurm">
+    <batch_submit>sbatch</batch_submit>
+    <submit_args>
+      <arg flag="--time" name="$JOB_WALLCLOCK_TIME"/>
+      <arg flag="-p" name="$JOB_QUEUE"/>
+      <arg flag="--account" name="$PROJECT"/>
+    </submit_args>
+    <directives> 
+      <directive> --ntasks={{ total_tasks }}</directive>
+      <directive> --export=ALL</directive>
+      <directive> --switches=1</directive>
+    </directives>
+    <queues>
+      <queue walltimemax="02:00:00" nodemin="1" nodemax="10" default="true">short</queue>
+    </queues>
+  </batch_system>
+
+::
+
+   
+
+After, you can use the new machine settings when creating a new case: For the development queue:::
+
+    ./create_newcase –case ../../../cases/<casename> --mach fram_devel –-res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported  
+    
+and for the short queue::
+
+       ./create_newcase –case ../../../cases/<casename> --mach fram_short –-res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported  
+
 | For a detailed guide on how to set up, submit and choosing the right job see: 
 | https://documentation.sigma2.no/jobs/submitting.html  
 | https://documentation.sigma2.no/jobs/choosing_job_types.html  
-
+| 
 
 Nebula @ NSC
 ^^^^^^^^^^^^
@@ -228,6 +321,7 @@ on Fram:
   </batch_system>
 
 ::
+
 
 On Tetralith:
 
