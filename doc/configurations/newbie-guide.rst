@@ -20,7 +20,7 @@ The **create_newcase** script is an excecutable python script located in:
 
 ::
 
-  <noresm-base>/cime/script
+  <noresm-base>/cime/scripts/
 
 ::
 
