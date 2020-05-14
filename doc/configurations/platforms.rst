@@ -67,7 +67,7 @@ Create a new case: ::
 
 Queue options on Fram
 ------------------------
-On fram there are different queues for testing and development experiments (usually short runs on few nodes) and longer experiments. If you want to run simulations using different queue options than *normal*, you can add new machine options to   cime/config/cesm/machines/config_batch.xml. Method (we are currently working on an improvment of this):
+On fram there are different queues for testing and development experiments (usually short runs on few nodes) and longer experiments. If you want to run simulations using different queue options than *normal*, you can add new machine options to   <noresm-base>/cime/config/cesm/machines/config_batch.xml. Method (we are currently working on an improvment of this):
 
 - 1. Copy the settings for Fram :
 ::
@@ -109,7 +109,7 @@ for the development queue and ::
 
   <queue walltimemax="02:00:00" nodemin="1" nodemax="10" default="true">short</queue>
   
-for the short queue. **You need to make one config_batch setting for each queue. Hopefullt this will improve very soon.**
+for the short queue. **You need to make one config_batch setting for each queue option.** Hopefullt this will improve very soon.
 The resulting <noresm-base>/cime/config/cesm/machines/config_batch.xml. file:
 
 ::
