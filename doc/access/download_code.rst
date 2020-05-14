@@ -6,61 +6,80 @@ Downloading the model code
 The NorESM2 model code is available through a public GitHub repository: 
 https://github.com/NorESMhub/NorESM
 
+Git and GitHub
++++++++++++
 
 To download the model, you need access to a git command-line client on the machine where you want NorESM2 to build and run. You also need a git user and permissons to obtain the code:
 
 - **Create a github user:** You can create the github user yourself. Go to https://github.com/join and create a user. (Choose a user name which is easy to understand, for example FirstnameLastname. You can attach several email-addresses to the same user.)
 
-- Visit this page:
+- Visit this page to learn how to **configure git** (for instance setting your name and email adress, this will be used in git commits):
   https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
 
-- Send email to oyvind.seland@met.no to get the right permissions for the new github user (The email must contain who you are and the github username).
+- Send email to oyvind.seland@met.no to **get the right permissions** for the new github user (The email must contain who you are and the github username).
 
 - When you have the right permissions, you can obtain the code.
 
 
-To download the code, make a clone of the NorESM2 repository using the command-line git client on the appropriate machine:
+Make a clone of the NorESM2 repository
++++++++++++
 
-::
+You can obtain the code using the command-line git client on the appropriate machine as follows::
   
   git clone https://github.com/NorESMhub/NorESM.git <noresm-base> 
   
-::
 
-where <noresm-base> is the name of the directory where the latest version of the releasted code will be stored. You can replace <noresm-base> with the directory name you like. 
+where <noresm-base> is the name of the directory where the latest version of the released code will be stored. You can replace <noresm-base> with the directory name you like. 
 
-Enter the <noresm-base> folder:
-
-::
+Enter the <noresm-base> folder::
 
    cd <noresm-base>
 
-::
 
-To use a previous version of the code, you can checkout a specific tag or a branch
-
-* if you want a specific tag
-
+Now you can check which remote servers you have configured:
 
 ::
 
-  git tag --list                   [gives you all the possible tags]
-  git checkout release-noresm2.0.1 [e.g, you checkout now the "release-noresm2.0.1" tag]
-
-
-:: 
-
-or  
-
-* if you want a specific branch
-
+  > git remote -v 
+  origin	https://github.com/NorESMhub/NorESM.git (fetch)
+  origin	https://github.com/NorESMhub/NorESM.git (push)
 
 ::
 
-   git branch --all                       [gives you all the possible branches]
-   git checkout -b noresm2 origin/noresm2 [e.g, you checkout the "noresm2" branch]
- 
-::
+And check which branch you are using:
+
+  > git branch
+
+
+
+To use another version of the code, you can check out a specific tag or a branch.
+
+
+Check out a spacific tag or branch
++++++++++++++++
+
+List all available tags::
+
+  > git tag --list 
+  
+
+To check out a specific tag, use **git checkout <tag-name>** where tag-name is a tag for the list, for instance release-noresm2.0.1::
+
+  > git checkout release-noresm2.0.1 
+
+List all available branches::
+
+  > git branch --list              
+
+To check out a specific branch, for instance noresm2::
+
+  > git checkout -b noresm2 origin/noresm2 
+  
+You can now inspect which tag or branch you are using by invoking the **git branch** command again. You can also inspect the commits log by invoking the **git log** command (to for instance only see the 3 commits, apply the **-n 3** option). 
+
+
+Manage externals
+++++++++++++
 
 Then you need to launch the download:: 
 
@@ -70,7 +89,7 @@ Then you need to launch the download::
 
 **If you run into several SVN-related errors when launching the model, you may want to try to change required=True to required=False for pop2 and ww3 in Externals.cfg. POP2 and WW3 are not needed in NorESM2. Then try again.**
 
-To confirm a successful download of all components, you can run checkout_externals with the status flag -S to show the status of the externals or --logging to get a log of reported errors (if any):
+**To confirm a successful download of all components**, you can run checkout_externals with the status flag -S to show the status of the externals or --logging to get a log of reported errors (if any):
 
 ::
 
