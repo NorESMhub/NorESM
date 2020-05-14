@@ -109,7 +109,7 @@ for the development queue and ::
 
   <queue walltimemax="02:00:00" nodemin="1" nodemax="10" default="true">short</queue>
   
-for the short queue. **You need to make one config_batch setting for each queue option. You also need to add fram_devel and fram_short to config_machines.xml and config_** Hopefullt this will improve very soon.
+for the short queue. **You need to make one config_batch setting for each queue option. You also need to add fram_devel and fram_short to config_machines.xml and config_compilers.xml** To do so, you just copy-paste the settings for fram and change the name *fram* to *fram_devel* and/or *fram_short*. Hopefullt this will improve very soon, but the good thing is that you only need to do it once.
 The resulting <noresm-base>/cime/config/cesm/machines/config_batch.xml. file:
 
 ::
