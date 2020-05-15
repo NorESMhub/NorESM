@@ -231,11 +231,11 @@ Input data is handled by the build process as follows:
 Aerosol diagnostics
 ^^^^^^^^^^
 
-The model can be set up to take out AeroCom-specific output, effective forcing estimates, and other additional aerosol output. See :ref:'../output/aerosol_output.rst' for details. 
+The model can be set up to take out AeroCom-specific output, effective forcing estimates, and other additional aerosol output. See :ref:`../output/aerosol_output.rst` for details. 
 
 COSP
 ^^^^^^^
-NorESM2 can be run with the CFMIP Observation Simulator Package (COSP) to calculates model cloud diagnostics that can be directly compared with satellite observations from ISCCP, CloudSat, CALIOP, MISR, and MODIS. Please see :ref:'../output/cosp_out.rst' for details.
+NorESM2 can be run with the CFMIP Observation Simulator Package (COSP) to calculates model cloud diagnostics that can be directly compared with satellite observations from ISCCP, CloudSat, CALIOP, MISR, and MODIS. Please see :ref:`../output/cosp_out.rst` for details.
 
 
 Code modifications
