@@ -18,11 +18,33 @@ CMIP6 archive of NorESM results
 
 **Advantages:**
 
-- Homogenized and standardized outputs (including variable names)
-- Same experiments
+- Several models perform the same experiments (enabeling comparisons across models and multi-model ensembles)
+- Homogenized and standardized outputs (including variable names). More specifically, all data is in compliance with the standards of the Climate Model Output Rewriter (CMOR).
 
-| **All data is public available:**
-| https://esg-dn1.nsc.liu.se/search/cmip6-liu/
+Data access
+^^^^^^^
+
+The Earth System Grid Fascilities (ESGF):
+++++++++++++++++
+
+**All data is CMOR-ized and public available here:**
+https://esg-dn1.nsc.liu.se/search/cmip6-liu/
+
+The (Norwegian) National Infrastructure for Research Data (NIRD)
++++++++++++++++
+ 
+**All NIRD users** can access the archive of CMOR-ized CMIP6 NorESM data under project NS9034K::
+
+   /projects/NS9034K/CMIP6
+   
+Note data is organized by the different contributions/MIPs. The DECK and historical simulations are located under "CMIP".
+
+**NIRD users that are members of NS9252K** (NFR storage project for KeyCLIM) can access CMOR-ized CMIP6 data from multiple models under:: 
+
+   /projects/NS9252K/CMIP6
+
+Note this data has a different structure than the data residing in /projects/NS9034K/CMIP6.
+
 
 DECK contributions
 ^^^^^^^^^^^^^^^^^^
