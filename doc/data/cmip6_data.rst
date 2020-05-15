@@ -24,7 +24,7 @@ CMIP6 archive of NorESM results
 Data access
 ^^^^^^^
 
-The Earth System Grid Fascilities (ESGF):
+The Earth System Grid Federation (ESGF):
 ++++++++++++++++
 
 **All data is CMOR-ized and public available here:**
