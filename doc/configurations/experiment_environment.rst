@@ -229,26 +229,9 @@ Input data is handled by the build process as follows:
 
 
 Aerosol diagnostics
-^^^^^^^^^^^^^^^^^^^
+--------------
 
-Adding::
-
-  history_aerosol = .true. 
-
-to user_nl_cam gives additional 577 variables (+ ca. 13 % CPU-time).
-
-Including::
-
-  #define AEROFFL 
-  
-to preprocessorDefinitions.h in SourceMods/src.cam/ gives 8 additionally variables (+ ca. 5% CPU-time)
-
-Including::
-
-  #define AEROCOM 
-
-to preprocessorDefinitions.h in SourceMods/src.cam/, gives 149 additionally variables (+ ca. 13% CPU-time)
-For a detailed description of additional aerosol output, please see :ref:`output/aerosol_output`
+The model can be set up to take out AeroCom-specific output, effective forcing estimates, and other additional aerosol output. See :ref:'../output/aerosol_output.rst' for details. 
 
 COSP
 ^^^^
