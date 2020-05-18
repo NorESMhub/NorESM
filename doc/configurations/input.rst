@@ -46,5 +46,26 @@ A user's guide for the AeroTab code, with some additional information about Oslo
 This AeroTab presentation https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/AeroTab-slides-updateJan2020.pdf may be useful as a first introduction. For questions about AeroTab, contakt Alf Kirkevåg (alfk at met.no) or Øyvind Seland (oyvinds at met.no).      
 
 
+Ocean carbon cycle specific input data
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The ocean carbon cycle in NorESM2 (iHAMOCC) requires three input data sets to run: 1) monthly climatological dust deposition based on Mahowald et al. (2005), 2) riverine inputs, which contain annual climatology (nomalized to year 2000) fluxes of organic and inorganic carbon and nutrient constituents based on the Global-NEWS2 model and other datasets (Mayorga et al., 2010; Hartmann, 2009; Chester, 1990), and 3) atmospheric nitrogen deposition, provided through the CMIP6 protocol in monthly deposition fields of wet or dry and oxidized or reduced nitrogen deposition rates, all of which are added to the nitrate pool in the top-most ocean layer.  
+
+By default, these external inputs are activated, but user can choose not to include riverine and nitrogen deposition by setting BLOM_RIVER_NUTRIENTS and BLOM_N_DEPOSITION to FALSE in user namelist (user_bl_blom) file.
+
+These datasets have been prepared for the ocean model (BLOM) grid configuration of ~1 degree resolution. For other resolutions, these files may need to be created and tested. 
+
+
+References
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Chester, R.: Marine Geochemistry, 1st ed., 702p, Springer, Netherlands, 1990.
+
+Hartmann, J.: Bicarbonate-fluxes and CO2-consumption by chemical weathering on the Japanese Archipelago – Application of a multi-
+lithological model framework, Chemical Geology, 265, 237–271, 2009.
+
+Mahowald, N., Baker, A., Bergametti, G., Brooks, N., Duce, R., Jickells, T., Kubilay, N., Prospero, J., and Tegen, I.: Atmospheric global dust cycle and iron inputs to the ocean, Global Biogeochem. Cycles, 19, 4025, https://doi.org/10.1029/2004GB002402, 2005.
+
+Mayorga, E., Seitzinger, S. P., Harrison, J. A., Dumont, E., Beusen, A. H. W., Bouwman, A. F., Fekete, B. M., Kroeze, C., and Van Drecht, G.: Global Nutrient Export from WaterSheds 2 (NEWS 2): Model development and implementation, Environmental Modelling and Software, 25, 837–853, 2010.
+
 Add new inputfiles
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
