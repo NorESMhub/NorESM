@@ -80,7 +80,15 @@ To generate forcing data from the coupled simulation to run CLM5 stand alone wit
 ::
 
 **Running CLM stand alone with NorESM2 forcing data**
-PLEASE ADD @ Lei Cai
+PLEASE ADD 
+
+- Which compset and resolution to use
+
+- How to create a case::
+  
+- Where to put the forcing data and the link to the location for the model to read
+
+- ++
 
 **Recoupling**
 
