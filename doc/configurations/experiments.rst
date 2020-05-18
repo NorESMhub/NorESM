@@ -40,6 +40,18 @@ For more details about the user-mod-dir options, check this folder::
 
 <noresm_base>/cime_config/usermods_dirs
 
+The xmlchange and xmlquery scripts
+^^^^^^^^^^^
+
+The xmlchange and xmlquery scripts are located in your case folder and lets you change or query the contents of variables in the evn_*.xml files without entering the files. There are two advantages of using xmlchange to edit the xml files rather than doing by hand: (1) the xmlchange script checks that the new setting is valid and (2) the change is echoed to the CaseStatus file, thus automatically documented. To change from the default ndays to nmonths::
+
+  ./xmlchange STOP_OPTION=nmonths
+  
+It's also possible to change several variables at once, for instance::
+
+  ./xmlchange STOP_OPTION=nmonths,STOP_N=14
+
+See the header of xmlchange and xmlquery for more details and examples.
 
 Create a clone case
 ^^^^^^^^^^^^^^^^^^^

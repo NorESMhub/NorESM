@@ -15,12 +15,25 @@ CMIP5 archive of NorESM results
 
 **Advantages:**
 
-- Homogenized and standardized outputs
-- Same variable name
-- Same experiments
+- Several models perform the same experiments (enabeling comparisons across models and multi-model ensembles)
+- Homogenized and standardized outputs (including variable names). More specifically, all data is in compliance with the standards of the Climate Model Output Rewriter (CMOR).
 
-| **All data available from:**
+
+Data access
+^^^^^^^
+
+The Earth System Grid Federation (ESGF):
+++++++++++++++++
+
+| **All data is CMOR-ized and available from:**
 | https://esgf-node.llnl.gov/search/cmip5/
+
+The (Norwegian) National Infrastructure for Research Data (NIRD)
++++++++++++++++
+
+**All NIRD users** can access the archive of CMOR-ized CMIP5 NorESM data under project NS9034K::
+
+  /projects/NS9034K/CMIP5/
 
 
 References
