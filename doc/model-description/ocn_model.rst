@@ -3,6 +3,7 @@
 The ocean model
 =====================
 
+
 The ocean component Bergen Layered Ocean Model (**BLOM**; Bentsen et al., 2020, *in prep.*) employs an isopycnic vertical coordinate, with near-isopycnic interior layers and variable density layers in the surface mixed boundary layer. BLOM originates from the Miami Isopycnic Coordinate Ocean Model (MICOM; Bleck and Smith, 1990; Bleck et al., 1992), with largely modified codes compared to the original MICOM (Bentsen, 2013; 2020, *in prep.*). 
 
 - BLOM uses a C-grid discretization with 51 isopycnic layers referenced at 2000 dbar, and a surface mixed layer divided into two non-isopycnic layers. A tripolar grid is used instead of the bipolar grid in CMIP5 version of NorESM1, allowing for approximately a doubling of the model time step. For the CMIP6 configuration of NorESM, the BLOM grid resolution is 1° zonally and 1/4° meridionally at the equator, gradually approaching more isotropic grid cells at higher latitudes. The model bathymetry is found by averaging the S2004 (Marks and Smith, 2006) data points contained in each model grid cell with additional editing of sills and passages to their actual depths. The metric scale factors are edited to the realistic width of the Strait of Gibraltar so that strong velocity shears can be formed, enabling realistic mixing of Mediterranean water entering the Atlantic Ocean.
@@ -18,3 +19,4 @@ The ocean component Bergen Layered Ocean Model (**BLOM**; Bentsen et al., 2020, 
 - The penetration profile of shortwave radiation is modified, leading to a shallower absorption in NorESM2 compared to NorESM1. 
 
 - With respect to coupling to the sea ice model, BLOM and CICE now use a consistent salinity dependent seawater freezing temperature (Assur, 1958). Selective damping of external inertia–gravity waves in shallow regions is enabled to mitigate an issue with unphysical oceanic variability in high latitude shelf regions, causing excessive sea ice formation due to breakup and ridging in CMIP5 versions of NorESM1. 
+
