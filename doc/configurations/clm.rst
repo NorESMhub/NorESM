@@ -59,6 +59,8 @@ Spin up of CLM5
 ^^^^^^
 A long spin up of CLM5 is necessary to achive e.g. land carbon balance. Such a spin up can be done partly uncoupled from NorESM2 in order to save computation time.
 
+**Forcing data**
+
 To generate forcing data from the coupled simulation to run CLM5 stand alone with NorESM2 forcing, a full couple history needs to be turned on. For producing forcing data, please try adding this to user_nl_cpl in the coupled simulation of interest:
 
 ::
@@ -76,6 +78,11 @@ To generate forcing data from the coupled simulation to run CLM5 stand alone wit
 
 
 ::
+
+**Running CLM stand alone with NorESM2 forcing data**
+PLEASE ADD @ Lei Cai
+
+**Recoupling**
 
 NorESM2 can then be recoupled to the spun up land experiment by the use of restart files. I.e. in the fully coupled case set the restartfile from the CLM5 stand alone spin up experiment in user_nl_clm::
 
