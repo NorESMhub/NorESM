@@ -111,7 +111,7 @@ for the development queue and ::
   
 for the short queue. 
 
-- 4. Add to the diectives::
+- 4. Add to the directives::
 
   <directive> --qos=devel</directive>
 
