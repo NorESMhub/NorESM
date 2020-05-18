@@ -18,7 +18,7 @@ The ocean component Bergen Layered Ocean Model (**BLOM**; Bentsen et al., 2020, 
   The parameterisation of mesoscale eddy-induced transport is modified to more faithfully comply with the Gent and McWilliams (1990) formulation. The estimation of diffusivity for eddy-induced transport and isopycnic eddy diffusion of tracers is based on the Eden et al. (2009) implementation of Eden and Greatbatch (2008) with their diagnostic equation for the eddy length scale, but modified to give a spatially smoother and generally reduced diffusivity. The isopycnal eddy diffusivity is set equal to the thickness diffusivity.                                                                                          
 
 
-- **Mixed layer physics** 
+- **Mixed layer physics:** 
   Mixed layer physics have been improved compared to the CMIP5 version of NorESM1, in part to enable sub-diurnal coupling of the ocean. The hourly coupling now used has made it possible to add additional energy sources for upper ocean vertical mixing such as wind work on near-inertial motions and surface turbulent kinetic energy source due to wind stirring to the k-ε model.
   
 
