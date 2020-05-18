@@ -49,6 +49,16 @@ The Large and Yeager (2009) forcing dataset covers the period from 1948 to 2009,
 The readers are referred to Large and Yeager (2009) and Tsujino et al. (2018) for a detailed description of the CORE-II and JRA55-do forcing, respectively, including the bulk formulae used for computing turbulent fluxes for heat and momentum. An evaluation and comparison of the simulated ocean and sea ice mean states and variability from 11 state-of-the-art global ocean/sea-ice models (including NorESM-BLOM), based on OMIP-1/CORE-II and OMIP-2/JRA55-do, is presented by Tsujino et al. (2020).
 
 
+BLOM OMIP specifics
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- In the BLOM OMIP simulations, sea surface salinity is restored to monthly climatology with a piston velocity of 50 m per 300 days applied globally for both OMIP-1 and OMIP-2 simulations. The restoring salt flux is normalized so that the global area weighted sum of the restoring flux is zero. 
+
+- A dimensionless parameter 𝛼=1 is used in the estimation of the near-surface wind correction, e.g. **𝛥𝑈** = **𝑈** \ :sub:`atm`\-𝛼 **𝑈** :sub:`ocn`\, to account for the imprint of the ocean currents on the surface wind stress in an ocean/sea-ice model. The OMIP community has not reached a consensus on the way α should be imposed; for a discussion of α and its values among other OMIP models, refer to Tsujino et al. (2020).
+
+- The OMIP-1 and OMIP-2 simulations of BLOM have completed 6 repeating forcing cycles of the forcing periods 1948-2009 and 1958-2018, respectively.
+
+
 
 Creating an OMIP case
 ^^^^^^^^^^^^^^^^^^^^^
