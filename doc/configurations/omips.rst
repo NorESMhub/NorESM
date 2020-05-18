@@ -3,8 +3,6 @@
 Ocean and Sea-Ice
 ==================
 
-WILL BE UPDATED BY chgu@norceresearch.no 
-
 BLOM
 '''''''
 
@@ -113,12 +111,37 @@ Modify user name lists for BLOM
 
 Modifications of certain model parameters and model output that are different from default should be done in user_nl_blom under the case directory. The default user namelist setup is in CaseDocs/ocn_in, which specifies a number of physical parameters (such as vertical and horizontal mixing), as well as saved model output frequencies, including options for daily (hd), monthly (hm), and yearly (hy) output. **[note by CG: this needs to be doulbe checked by Mats]**
 
-Note that BLOM uses a different sytax than the rest. For example, in user_nl_blom::
+Note that BLOM uses a different syntax than the rest. For example, in user_nl_blom::
 
   set BDMC2   = .15
   set NIWGF = .5
 
 One needs to include **set** before the name of the variable and it does not matter what namelist group the variable belong.
+
+For changing the output in BLOM, below shows an example of how to change the monthly mean (default) to yearly mean layered ocean temperature.
+
+The default parameter is::
+
+   &DIAPHY
+     GLB_FNAMETAG = 'hd','hm','hy',
+     GLB_AVEPERIO = 1,  30, 365,
+     ...
+     LYR_TEMP     = 0,   4,   0,
+     ...
+
+
+which means that the model layered temperature has a monthly mean output with single precision (4-byte;real4), e.g. ::
+
+   0    - variable is not written
+   2    - variable is written as int2 with scale factor and offset
+   4    - variable is written as real4
+   8    - variable is written as real8
+
+
+If one would like an output of yearly mean layered temperature, simply change LYR_TEMP in user_nl_blom to::
+
+   set LYR_TEMP     = 0,   0,   4,
+
 
 
 Code modification
