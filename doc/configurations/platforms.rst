@@ -109,7 +109,20 @@ for the development queue and ::
 
   <queue walltimemax="02:00:00" nodemin="1" nodemax="10" default="true">short</queue>
   
-for the short queue. **You need to make one config_batch setting for each queue option. You also need to add fram_devel and fram_short to config_machines.xml and config_compilers.xml** To do so, you just copy-paste the settings for fram and change the name *fram* to *fram_devel* and/or *fram_short*. Hopefullt this will improve very soon, but the good thing is that you only need to do it once.
+for the short queue. 
+
+- 4. Add to the diectives::
+
+  <directive> --qos=devel</directive>
+
+for the development queue and ::
+
+  <directive> --qos=short</directive>
+
+for the short queue option. 
+
+**You need to make one config_batch setting for each queue option. You also need to add fram_devel and fram_short to config_machines.xml and config_compilers.xml** To do so, you just copy-paste the settings for fram and change the name *fram* to *fram_devel* and/or *fram_short* in the files config_machines.xml and config_compilers.xml. Hopefullt this will improve very soon, but the good thing is that you only need to do it once.
+
 The resulting <noresm-base>/cime/config/cesm/machines/config_batch.xml. file:
 
 ::
@@ -143,6 +156,7 @@ The resulting <noresm-base>/cime/config/cesm/machines/config_batch.xml. file:
       <directive> --ntasks={{ total_tasks }}</directive>
       <directive> --export=ALL</directive>
       <directive> --switches=1</directive>
+      <directive> --qos=devel</directive>
     </directives>
     <queues>
       <queue walltimemax="00:30:00" nodemin="1" nodemax="4" default="true">devel</queue>
@@ -160,6 +174,7 @@ The resulting <noresm-base>/cime/config/cesm/machines/config_batch.xml. file:
       <directive> --ntasks={{ total_tasks }}</directive>
       <directive> --export=ALL</directive>
       <directive> --switches=1</directive>
+      <directive> --qos=short</directive>
     </directives>
     <queues>
       <queue walltimemax="02:00:00" nodemin="1" nodemax="10" default="true">short</queue>
