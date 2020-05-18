@@ -56,6 +56,7 @@ BLOM OMIP specifics
 
 - The OMIP-1 and OMIP-2 simulations of BLOM have completed 6 repeating forcing cycles of the forcing periods 1948-2009 and 1958-2018, respectively.
 
+- The OMIP-1/CORE-II experiment is documented by Bentsen et al. (2020, *in prep.*), including a comparison to a previous CORE-II experiment simulated by the CMIP5 version of NorESM1. In addition, a number of common global ocean and sea ice metrics simulated by BLOM (including both OMIP-1 and OMIP-2 experiments) is included and evaluated in the multi-model synthesis paper of Tsujino et al. (2020).
 
 
 Creating an OMIP case
