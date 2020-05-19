@@ -80,15 +80,23 @@ To generate forcing data from the coupled simulation to run CLM5 stand alone wit
 ::
 
 **Running CLM stand alone with NorESM2 forcing data**
-PLEASE ADD 
 
-- Which compset and resolution to use
 
-- How to create a case::
-  
-- Where to put the forcing data and the link to the location for the model to read
+To create a new case for stand alone CLM5 spin up with NorESM2 forcing data, one should choose the same resolution as the coupled simulation (f19_tn14 for NorESM2-LM and f09_tn14 for NorESM2-MM). The compset to use is I1850BgcCropCmip6. For example, to create a new NorESM2-LM case, 
 
-- ++
+:: 
+
+./create_newcase --case <PAT_TO_CASEFOLDER>/CASENAME --compset N1850BgcCropCmip6 --res f19_tn14 --mach fram --project nn9560k 
+
+::
+
+To use NorESM2 history files as the forcing, CPLHISTForcing mode needs to be activated. In CPLHISTForcing mode, the model is assumed to have 3-hourly for a global grid from a previous simulation. The data atmophere (datm) forcing is divided into three streams: precipitation, solar, and everything else. The time-stamps for Coupler history files is at the end of the interval, so ``offset`` in the datm.streams files needs to be set in order to adjust the time-stamps to what it needs to be for the tintalgo settings. 
+
+For precipitation ``tintalgo`` is set to ``nearest`` so the ``offset`` is set to ``-5400`` seconds so that the ending time-step is adjusted by an hour and half to the middle of the interval. 
+For solar ``tintalgo`` is set to ``coszen`` so the ``offset`` is set to ``-10800`` seconds so that the ending time-step is adjust by three hours to the beginning of the interval. 
+For everything else ``tintalgo`` is set to ``linear`` so the ``offset`` is set to ``-5400`` seconds so that the ending time-step is adjusted by an hour and half to the middle of the interval.
+
+The link to forcing data is set also by editing datm.streams files.
 
 **Recoupling**
 
