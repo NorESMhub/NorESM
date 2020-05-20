@@ -12,6 +12,54 @@ CLM5
 | 
 | Specific questions about CLM can be addressed Lei Cai, email: leca@norceresearch.no
 
+CLM5 specifics
+^^^^^
+
+- There is no information exchange within the CLM model between sub-grid tiles (landunits, columns, plant functional types (PFTs)). 
+- Sub-grid tiles only exchange information with the atmosphere. In the current CLM, there is no advection of heat and water at depth. 
+- The horizontal resolution of the CLM keeps the same as for the atmosphere (f19, f09). 
+- Vertically, there are four soil structures to set in the CLM namelist file. CLM5 model configurations available in NorESM2:
+
+::
+
+  10SL_3.5m    = standard CLM4 and CLM4.5 version
+  23SL_3.5m    = more vertical layers for permafrost simulations 
+  49SL_10m     = 49 layer soil column, 10m of soil, 5 bedrock layers
+  20SL_8.5m    = 20 layer soil column, 8m of soil, 5 bedrock layers
+
+::
+
+By default, 20SL_8.5m is employed.
+
+
+CLM5 atmospheric coupling
+^^^^^
+The current state of the atmospheric component, CAM6-Nor, at a given time step is used to force the land model. The land model then initiates a full set of calculations for surface energy, constituent, momentum, and radiative fluxes. The land model calculations are implemented in two steps:
+
+- 1. The land model proceeds with the calculation of surface energy, constituent, momentum, and radiative fluxes using the snow and soil hydrologic states from the previous time step. 
+
+- 2. The land model then updates the soil and snow hydrology calculations based on these fluxes. These fields are passed to the atmosphere. The albedos sent to the atmosphere are for the solar zenith angle at the next time step but with surface conditions from the current time step.
+
+From CLM5 user guide: https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/tech_note/Ecosystem/CLM50_Tech_Note_Ecosystem.html#atmospheric-coupling
+
+CLM5 surface data
+^^^^
+Required surface data for each land grid cell include: 
+
+- the glacier, lake, and urban fractions of the grid cell (vegetated and crop occupy the remainder)
+- the fractional cover of each plant functional type (PFT), monthly leaf and stem area index and canopy top and bottom heights for each PFT, 
+- soil color, soil texture, soil organic matter density, 
+- maximum fractional saturated area, slope, elevation, 
+- biogenic volatile organic compounds (BVOCs) emissions factors, 
+- population density 
+- gross domestic production 
+- peat area fraction
+- peak month of agricultural burning. Optional surface data include crop irrigation and managed crops.
+
+All fields are aggregated to the model’s grid from high-resolution input datasets ( Table 2.2.6) that are obtained from a variety of sources described below.
+
+From CLM5 user guide: https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/tech_note/Ecosystem/CLM50_Tech_Note_Ecosystem.html#surface-data:
+
 CLM5 model configurations available in NorESM2
 ^^^^^^
 CLM5 can be run with a prognostic crop model with prognostic vegetation state and active biogeochemistry. 
@@ -121,6 +169,7 @@ For example if STOP_N=50 years, you can set::
  
 -8760 means one average value per year, and 50 years in one file.
 
+- The full namelist definitions and defaults in the CLM5: http://www.cesm.ucar.edu/models/cesm2/settings/current/clm5_0_nml.html
 
 Code modification
 ^^^^^^
