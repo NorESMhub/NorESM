@@ -61,9 +61,7 @@ A long spin up of CLM5 is necessary to achive e.g. land carbon balance. Such a s
 
 **Forcing data**
 
-To generate forcing data from the coupled simulation to run CLM5 stand alone with NorESM2 forcing, a full couple history needs to be turned on. For producing forcing data, please try adding this to user_nl_cpl in the coupled simulation of interest:
-
-::
+To generate forcing data from the coupled simulation to run CLM5 stand alone with NorESM2 forcing, a full couple history needs to be turned on. For producing forcing data, please try adding this to user_nl_cpl in the coupled simulation of interest:::
 
   &seq_infodata_inparm
     histaux_a2x      = .true.  
@@ -76,8 +74,6 @@ To generate forcing data from the coupled simulation to run CLM5 stand alone wit
     histaux_l2x1yrg = .true.
     histaux_r2x     = .true.
 
-
-::
 
 **Running CLM stand alone with NorESM2 forcing data**
 
