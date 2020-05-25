@@ -11,25 +11,18 @@ The iHAMOCC prognostically simulates five key ocean biogeochemical cycle process
 
   The carbon chemistry formulation in iHAMOCC is based on the Ocean Carbon cycle Model Intercomparison Project (OCMIP) protocols. It computes the partial pressure of CO2 gas in surface layer (pCO2) based on the temperature, salinity, dissolved inorganic carbon and alkalinity concentrations. The pCO2 is used to estimate the air-sea CO2 fluxes. In addition to surface pCO2, water column pH, carbonate ion, and calcite saturation state are also computed.                                                                                                                         
 |  
-
 - **2. NPZD-type ecosystem module**
 
   In the euphotic layer of the model (top 100 m), the lower trophic ecosystem dynamic is simulated using an NPZD (Nutrient Phytoplankton Zooplankton Detritus) ecosystem module (Six and Maier-Reimer, 1996). One phytoplankton and one zooplankton bulk compartments are simulated together with multiple limiting nutrients (nitrate, phosphate, and dissolved iron), dissolved organic carbon and particulate matters. In addition nutrient, the primary production is also limited by light availability and temperature. A fixed stoichiometry Redfield Ratio is used to govern the fluxes of nutrients and carbon among the different ecosystem compartments.                                                                                                        
 |  
-  
-
 - **3. Air-sea gas exchange**
 
   The air-sea gas exchange formulation according to Wanninkhof (2014) is applied to compute fluxes of CO2, O2, DMS, N2, N2O, CFC-11, CFC-12, and SF6 gases. The fluxes of these gases are computed as a function of surface wind speed, Schmidt number, gas solubility, and partial pressure difference of the respective gases. For DMS, the flux is always from the ocean to the atmosphere.                                                                                                                    
 |  
-  
-
 - **4. Vertical fluxes of inorganic and organic particles**
 
-  The particulate matters produced by the biological activity in the upper ocean are transported vertically and remineralized in the water column (Schwinger et al., 2018). For particulate organic carbon, the sinking speed is increased with depth while a constant remineralization rates is used throughout the water column. For biogenic silica (opal), both constant vertical sinking speed and dissolution rate are used. For particulate inorganic carbon (CaCO3), a constant sinking speed is used while the dissolution is formulated as a function of calcite saturation state.                                                                          
-  
+  The particulate matters produced by the biological activity in the upper ocean are transported vertically and remineralized in the water column (Schwinger et al., 2018). For particulate organic carbon, the sinking speed is increased with depth while a constant remineralization rates is used throughout the water column. For biogenic silica (opal), both constant vertical sinking speed and dissolution rate are used. For particulate inorganic carbon (CaCO3), a constant sinking speed is used while the dissolution is formulated as a function of calcite saturation state.                                                                           
 |  
-
 - **5. Sediment biogeochemistry**
 
 
