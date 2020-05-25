@@ -82,7 +82,7 @@ Is there enhancement of absorption due to organic coating of BC or Organic aeros
 ^^^^^
 
 Internal mixtures of OM or water with BC is taken into account in the optics calculations, but with the assumption that the mixture
-for a certain size is homogeneous (but size-dependent). There is therefore no lensing effect,  since this requires a core-shell treatment (and a different, more advanced Mie code).
+for a certain size is homogeneous (but size-dependent). There is therefore no lensing effect,  since this requires a core-shell treatment (and a different, more advanced Mie code). More specifically, AeroTab calculates complex refractiv indices for an internal mixture of aerosol components based on the component specific refractive indices, where the method used is simple volume mixing for all components (including water) except BC. For mixing of BC with the rest, the Maxwell Garnett mixing rule is applied (see Kirkevåg et al., 2005: https://www.researchgate.net/publication/265111344_Revised_schemes_for_aerosol_optical_parameters_and_cloud_condensation_nuclei_in_CCM-Oslo).
 
 In NorESM1.2/CAM5.3-Oslo simulations for AeroCom's in-situ optics study, it was surprisingly little (almost no) absorption enhancement from increased hygroscopic swelling (for the arious prescribed RH values). There is probably quite little enhancement also for OM, although that is not so readily seen without doing special sensitivity tests (similar to optics the in-situ study, but with varying OM instead of water).  
 
