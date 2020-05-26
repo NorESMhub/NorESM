@@ -13,6 +13,12 @@ In NorESM2, the atmospheric model CAM6-Nor replaces standard CAM. The NorESM2 sp
 in addition some parameter settings, emisson and input files will differ from standard CAM6 set-up.
 
 
+Initial conditions
+''''''''''''''''
+- Cold start?
+
+- The stratosphere
+
 Setting up an AMIP-type experiment
 ''''''''''''''''''''''''''''''
 Atmospheric Model Intercomparison Project (AMIP) style runs are runs in which the **atmosphere and land components are active while values for sea surface temperatures and sea ice are prescribed** (that is, read from a file). The sea-ice model CICE then runs in a simplified mode and computes surface fluxes, snow depth, albedo, and surface temperatures using 1D thermodynamics without conserving energy. The sea-ice thickness is assumed to be 2 m in the Northern Hemisphere and 1 m in the Southern Hemisphere. 
