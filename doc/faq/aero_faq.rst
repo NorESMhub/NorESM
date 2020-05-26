@@ -89,5 +89,14 @@ In NorESM1.2/CAM5.3-Oslo simulations for AeroCom's in-situ optics study, it was 
 Which types of AeroTab tables are read in when running NorESM2?
 ^^^^^
 
-It is explained for which configurations the various AeroTab look-up tables (LUT) are used in Sect. 5 of the AeroTab User's Guide at https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/AeroTab-user-guide_v16april2020.pdf. Also the nature and content of these are described there. It is not mentioned there, but the LUT are only read in by the model for configurations where they are actually used. 
+An overview of which AeroTab look-up tables (LUT) are used for the various model configurations is found in Sect. 5 of the AeroTab User's Guide at https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/AeroTab-user-guide_v16april2020.pdf. Also the nature and content of the LUT are described there. Not specifically mentioned there is that a specific set of LUT is only read in by the model for the configurations where they are actually used. 
+
+How to invoke and activate the different levels of aerosol diagnostics in a NorESM model run?
+^^^^^
+
+In particular: **Which namelist arguments do what? Do they overlap, complement each other?**
+
+This is covered here: https://noresm-docs.readthedocs.io/en/noresm2/output/aerosol_output.html#aerosol-output.
+An exception is the namelist option "history_budget=.true.", which produces a budget for cloud water mass and number analysis, but has not been technically or scientifically tested in NorESM2. If still working, this should work as in earlier versions of NorESM, and is described at 
+https://noresm-docs.readthedocs.io/en/noresm1/modeldiagnostics.html#cloud-water-mass-and-number-analysis-budgets.
 
