@@ -1,43 +1,51 @@
 .. _diag_run:
 
-NorESM2 specific diagnostics
-============================
+****************************
+NorESM2 Diagnostics Package
+****************************
 
-The diagnostics packages are currently available on NIRD. Each package can be run/configured from the command line using the program diag_run
+Introduction
+============
 
-**Location**
+The NorESM Diagnostic Package:
+  is a NorESM model evaluation tool written with a set of scripts (bash, NCL etc) to provide a general evaluation and quick preview of the model performance with only one command line.
 
-At the moment diag_run is only available on NIRD:
-/projects/NS2345K/noresm_diagnostics/bin/diag_run
+**The tool package consists of:**
 
-**Add to .bashrc**
-
-It is useful to add diag_run as an alias in $HOME/.bashrc, 
-so that you do not need to write out the whole path every time you run it:: 
-
-  alias diag_run=’/projects/NS2345K/noresm_diagnostics/bin/diag_run’
+* CAM_DIAG: (NCAR's AMWG Diagnostics Package)
+* CLM_DIAG: (CESM Land Model Diagnostics Package)
+* CICE_DIAG: snow/sea ice volume/area
+* HAMOCC_DIAG: time series, climaotology, zonal mean, regional mean
+* MICOM_DIAG: time series, climatologies, zonal mean, fluxes, etc
 
 **NorESM diagnostics on GitHub**
 
-The NorESM diagnostics packages and diag_run are included in the Git version control repository:
-https://github.com/johiak/NoresmDiagnostics
+The NorESM diagnostics packages (only including the source files, but not data files) are developed and maintained in the Git version control repository:
+https://github.com/NordicESMhub/NoresmDiagnostics
 
-**micom = blom**
+**NorESM diagnostics on NIRD**
 
-The NorESM ocean component BLOM used to be called micom. In diag_run the model name of the ocean component is still micom (and not blom) and will be called micom in all the examples below. However, the model which will be analyzed is blom.  
+The full diagnostic package (including source files and data files) are currently hosted on NIRD: /projects/NS2345K/noresm_diagnostics
 
+Installation
+============
 
-diag_run - a wrapper script for NorESM diagnostics
----------------------------------------------------
+You don't need to install this diagnostic package, but you can call it as a command line directly on NIRD. As a prerequiste, you should have access permission to the NS2345K project on NIRD. There is no need to install the diagnostic packages, but just add the ``diag_run`` to your search path, or add it as an alias in ``$HOME/.bashrc``, 
+:: 
 
-Each package can be run/configured from the command line using the program diag_run: 
+  alias diag_run=’/projects/NS2345K/noresm_diagnostics/bin/diag_run’
+
+Run the diagnostic tool
+=======================
+
+Each package can be run/configured from the command line using the wrapper script for NorESM diagnosticsprogram ``diag_run``: 
 
 ::
 
   ----------------------------------------------------------------------------- 
   Program:
   /projects/NS2345K/noresm_diagnostics/bin/diag_run
-  Version: 6.0
+  Version: x.x
   -------------------------------------------------
   Short description:
   A wrapper script for NorESM diagnostic packages.
@@ -53,7 +61,7 @@ Each package can be run/configured from the command line using the program diag_
                                                   cam    : atmospheric package (AMWG)
                                                   clm    : land package (LMWG)
                                                   cice   : sea-ice package
-                                                  micom  : ocean package
+                                              blom/micom : ocean package (micom is the precedent of blom)
                                                   hamocc : biogeochemistry package
                                                   all    : configure all available packages.
   -c, -c1, --case=CASE1, --case1=CASE1          Test case simulation (OPTIONAL).
@@ -83,12 +91,15 @@ Description
 ------------
 
 diag_run is a wrapper script, which is used to run the diagnostics for each NorESM component
-(cam, clm, cice, micom, and hamocc). The diagnostic packages can be used to plot model results
+(cam, clm, cice, blom/micom, and hamocc). The diagnostic packages can be used to plot model results
 with respect to either observations (so-called model-obs diagnostics), or to another simulation
 (model1-model2 diagnostics). The diagnostics for the atmosphere (cam), land (clm) and sea-ice
 (cice) are based on the NCAR packages, but has undergone some major improvements, particularly
 in the climatology and time-series computations. The ocean (micom) and its biogeochemistry
 (hamocc) have been developed in-house.
+
+Please note, the NorESM ocean component BLOM used to be called MICOM. In ``diag_run`` the model name of the ocean component is still micom (and not blom) and will be called micom in all the examples below. However, the model which will be analyzed is blom.  
+
 diag_run has two modes: 
 
 -  an “active-mode”, for which diag_run runs the diagnostic scripts 
@@ -98,8 +109,8 @@ In the passive-mode the
 diagnostic scripts have to be run manually by the user. By default, diag_run is always in the active-mode, 
 but switches into passive-mode if at least one of these two criteria are fulfilled:
 
-- 1. The user invokes the option -p (see below), or
-- 2. The user does not give enough information needed to run the diagnostics (next subsection).
+1. The user invokes the option -p (see below), or
+2. The user does not give enough information needed to run the diagnostics (next subsection).
 
 Active-mode
 -------------
@@ -143,8 +154,7 @@ experiment (all history files in the case directory, input_dir): ::
 
    diag_run -m cam -c N1850_f19_tn14_191017 -t time_series
    
-   
-diag_run uses some template scripts for each of the model components. When diag_run is executed,
+``diag_run`` uses some template scripts for each of the model components. When diag_run is executed,
 these scripts are changed according to the user-specified settings and renamed with a time stamp.
 For example, if you run the micom diagnostics, the run script template (micom_diag_template.sh)
 will be renamed with a time-stamp as micom_diag_YYMMDD_HHMMSS.
@@ -163,7 +173,6 @@ and the config and output files to: ::
 Hence, for Example 1 above, the run scripts are saved in: ::
 
   /projects/NS2345K/noresm_diagnostics/out/ $USER/CAM_DIAG/config/N1850_f19_tn14_191017/run_scripts
-  
   
 and the config and out files in: ::
 
@@ -187,11 +196,11 @@ the following will appear on the screen:
 
 ::
 
-  [johiak@tos-spw08 ~]$ /projects/NS2345K/noresm_diagnostics/diag_run -m clm
+  [nird@login0 ~]$ /projects/NS2345K/noresm_diagnostics/diag_run -m clm
   -------------------------------------------------
   Program:
   /projects/NS2345K/noresm_diagnostics/bin/diag_run
-  Version: 4.3
+  Version: x.x
   -------------------------------------------------
   -CHANGING DIAGNOSTICS DIRECTORY to
   /projects/NS2345K/noresm_diagnostics/out/johiak/CLM_DIAG in lnd_template.csh
@@ -202,10 +211,10 @@ the following will appear on the screen:
   lnd_template.csh
   -SETTING UP TIME-SERIES DIAGNOSTICS FOR ENTIRE EXPERIMENT
   CLM DIAGNOSTICS SUCCESSFULLY CONFIGURED in
-  /projects/NS2345K/noresm_diagnostics/out/johiak/CLM_DIAG
+  /projects/NS2345K/noresm_diagnostics/out/xxx/CLM_DIAG
   -------------------------------------------------
   lnd_template.csh IS NOT RUNNING: NOT ALL REQUIRED VARIABLES HAVE BEEN CONFIGURED
-  (see /projects/NS2345K/noresm_diagnostics/out/johiak/CLM_DIAG/config.log).
+  (see /projects/NS2345K/noresm_diagnostics/out/xxx/CLM_DIAG/config.log).
   -------------------------------------------------
   -------------------------------------------------
   TOTAL diag_run RUNTIME: 0m2s
@@ -351,7 +360,6 @@ N1850_f19_tn11_exp2 -s2 21 -e2 50 -i2 /input/directory2
 Model-obs climatology diagnostics (no time series) for MICOM: ::
 
   diag_run -m micom -c N1850_f19_tn11_exp1 -s 21 -e 50 -t climo
-  
   
 Install CAM diagnostics in /my/dir with minimal configuration: ::
 
