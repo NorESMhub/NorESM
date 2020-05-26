@@ -8,7 +8,7 @@ Introduction
 ============
 
 The NorESM Diagnostic Package:
-  is a NorESM model evaluation tool written with a set of scripts (bash, NCL etc) to provide a general evaluation and quick preview of the model performance with only one command line.
+  is a NorESM model evaluation tool written with a set of scripts (bash, NCL etc) to provide a general evaluation and quick preview of the model performance with only one command line. This toolpackage works on the original model output and has NorESM-specific diagnostics.
 
 **The tool package consists of:**
 
