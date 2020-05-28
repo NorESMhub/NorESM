@@ -85,7 +85,7 @@ Then you need to launch the download::
 
    ./manage_externals/checkout_externals  [this will take one to a few minutes ...]
 
-this will use the repositories, tags, branches as specified in Externals.cfg (see below for its manipulation=
+this will use the repositories, tags, branches as specified in Externals.cfg (see below for its manipulation)
 
 **If you run into several SVN-related errors when launching the model, you may want to try to change required=True to required=False for pop2 and ww3 in Externals.cfg. POP2 and WW3 are not needed in NorESM2. Then try again.**
 
@@ -106,9 +106,10 @@ Now you have a complete copy of the NorESM code in the directory <noresm-base>. 
 Configure Externals.cfg
 ++++++++++++
 
-The file can be modified to use another fork or branch for any of the model components.
+The file can be modified to use another repo, fork, branch or tag or release for any of the model components.
 
-Example:
+See more info here: 
+https://github.com/ESCOMP/CESM/blob/master/README.rst
 
 
 .
