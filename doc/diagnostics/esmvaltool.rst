@@ -18,28 +18,28 @@ Activate
 
 An example of steps to run the ESMValTool on ipcc.nird.sigma2.no
 
-1. login in the ipcc node::
+1. login in the ipcc node: ::
 
-ssh -l username ipcc.nird.sigma2.no
+  ssh -l username ipcc.nird.sigma2.no
 
-2. load ESMValTool on nird::
+2. load ESMValTool on nird: ::
 
-conda active /conda/esmvaltool/2.0.0b4/
+  conda active /conda/esmvaltool/2.0.0b4/
 
 (note, the esmvaltool may be upgraded in the future. Therefore, use ``ls /conda/esmvaltoo/`` to check the currently installed vesion if 2.0.0b4 does not exist.)
 
-3. copy the following config file and recipe to your favourite place::
+3. copy the following config file and recipe to your favourite place: ::
 
-/projects/NS9252K/share/yanchun/esmvaltool/config_heyc.yml
-/projects/NS9252K/share/yanchun/esmvaltool/recipe_seaice.yml
+  /projects/NS9252K/share/yanchun/esmvaltool/config_heyc.yml
+  /projects/NS9252K/share/yanchun/esmvaltool/recipe_seaice.yml
 
-4. run ``esmvaltool``::
+4. run ``esmvaltool``: ::
 
-esmvaltool -c config_heyc.yml ./recipe_seaice.yml
+  esmvaltool -c config_heyc.yml ./recipe_seaice.yml
 
 5. An sample result under:
 
-`<http://ns2345k.web.sigma2.no/diagnostics/esmvaltool_output/yanchun>`
+  `<http://ns2345k.web.sigma2.no/diagnostics/esmvaltool_output/yanchun>`
 
 Synda
 -----
@@ -55,7 +55,7 @@ If you do want to use Synda, there are two major steps you need to do:
 
 It is install with `Conda`, so you can add ``synda`` exectable to your search path, e.g., ::
 
-export PATH:$PATH:/projects/NS9252K/conda/synda/bin/synda
+  export PATH:$PATH:/projects/NS9252K/conda/synda/bin/synda
 
 Then it should be availabe in your command windown by the ``synda`` command.
 
@@ -67,25 +67,34 @@ Then it should be availabe in your command windown by the ``synda`` command.
 
 3. configure ``synda`` parameters in ``~/.synda/conf/sdt.conf``, use my setting as template.
 
-4. maybe you need get `globus token`.
+4. maybe you need get `globus token`. Run the following command: ::
 
-running the following command: ::
-
-synda token -p globus renew
+  synda token -p globus renew
 
 it will give out something like: ::
 
-Native App Authorization URL:
-https://auth.globus.org/v2/oauth2/authorize?code_challenge=BrmiBhFVVuHVNyGDj6hn5N8M1-EKJNnNgptobIsbTqI&state=_default&redirect_uri=https%3A%2F%2Fauth.globus.org%2Fv2%2Fweb%2Fauth-code&response_type=code&client_id=83ec00c1-e67a-4356-9f1f-f7e31177e31a&scope=openid+email+profile+urn%3Aglobus%3Aauth%3Ascope%3Atransfer.api.globus.org%3Aall&code_challenge_method=S256&access_type=offline
-Enter the auth code:
+  Native App Authorization URL:
+  https://auth.globus.org/v2/oauth2/authorize?code_challenge=BrmiBhFVVuHVNyGDj6hn5N8M1-EKJNnNgptobIsbTqI&state=_default&redirect_uri=https%3A%2F%2Fauth.globus.org%2Fv2%2Fweb%2Fauth-code&response_type=code&client_id=83ec00c1-e67a-4356-9f1f-f7e31177e31a&scope=openid+email+profile+urn%3Aglobus%3Aauth%3Ascope%3Atransfer.api.globus.org%3Aall&code_challenge_method=S256&access_type=offline
+  Enter the auth code:
 
-paste the above https address to browser, and you will find a authen code, and past back to the command line.
+Paste the above https address to browser, and you will find a authen code, and past back to the command line.
  
 
 Run ESMVAlTool on Jupyterhub
 ============================
 
 The ESMValTool is also installed as a service at the NIRD Toolkit Service (`<https://apps.sigma2.no>`_)
-(more details to come...)
+
+To install the docker image you need access to the Nird Toolkit service through a project, and install a new instance of "jupyter": ::
+
+    https://apps.sigma2.no/nird
+
+On the installation page you select whatever standard settings you like (application name, projectspace, persistent storage, machine type), and then select "Show advances configuration..." and replace the standard dockerimage with: ::
+
+    tomastorsvik/nird_jupyter-spark_esmvaltool:latest
+
+One can activate the "JupyterLab" option in the configuration (but it is may not necessary to do so to run ESMValTool). To test if the image is installed correctly (provided the jupyter notebook environment builds without errors) you can open a terminal in the environment and type ``esmvaltool -h``, which should give you the help page for the tool in the terminal window.
+
+(Some details about how to access the NS9034K project area for NorESM CMIP5/CMIP6 model experiments are still missing...)
 
 
