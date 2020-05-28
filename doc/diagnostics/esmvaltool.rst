@@ -32,14 +32,16 @@ An example of steps to run the ESMValTool on ipcc.nird.sigma2.no
 
     /projects/NS9252K/share/yanchun/esmvaltool/config_heyc.yml
     /projects/NS9252K/share/yanchun/esmvaltool/recipe_seaice.yml
+    
+You should copy and modify the config_heyc.yml file to store some intermediate data files and final plots to your own directory.
 
 4. run ``esmvaltool``: ::
 
-    esmvaltool -c config_heyc.yml ./recipe_seaice.yml
+    esmvaltool -c config_xxx.yml ./recipe_seaice.yml
 
-5. An sample result under:
+5. A sample result under:
 
-    `<http://ns2345k.web.sigma2.no/diagnostics/esmvaltool_output/yanchun>`
+    `<http://ns2345k.web.sigma2.no/diagnostics/esmvaltool_output/yanchun>`_
 
 Download data automatically with Synda
 --------------------------------------
