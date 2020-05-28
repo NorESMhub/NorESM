@@ -4,7 +4,7 @@ NorESM2 Model Description
 =========================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :numbered:
 
    overview.rst
