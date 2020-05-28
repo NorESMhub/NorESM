@@ -20,26 +20,26 @@ An example of steps to run the ESMValTool on ipcc.nird.sigma2.no
 
 1. login in the ipcc node: ::
 
-  ssh -l username ipcc.nird.sigma2.no
+    ssh -l username ipcc.nird.sigma2.no
 
 2. load ESMValTool on nird: ::
 
-  conda active /conda/esmvaltool/2.0.0b4/
+    conda active /conda/esmvaltool/2.0.0b4/
 
 (note, the esmvaltool may be upgraded in the future. Therefore, use ``ls /conda/esmvaltoo/`` to check the currently installed vesion if 2.0.0b4 does not exist.)
 
 3. copy the following config file and recipe to your favourite place: ::
 
-  /projects/NS9252K/share/yanchun/esmvaltool/config_heyc.yml
-  /projects/NS9252K/share/yanchun/esmvaltool/recipe_seaice.yml
+    /projects/NS9252K/share/yanchun/esmvaltool/config_heyc.yml
+    /projects/NS9252K/share/yanchun/esmvaltool/recipe_seaice.yml
 
 4. run ``esmvaltool``: ::
 
-  esmvaltool -c config_heyc.yml ./recipe_seaice.yml
+    esmvaltool -c config_heyc.yml ./recipe_seaice.yml
 
 5. An sample result under:
 
-  `<http://ns2345k.web.sigma2.no/diagnostics/esmvaltool_output/yanchun>`
+    `<http://ns2345k.web.sigma2.no/diagnostics/esmvaltool_output/yanchun>`
 
 Synda
 -----
@@ -69,7 +69,7 @@ Then it should be availabe in your command windown by the ``synda`` command.
 
 4. maybe you need get `globus token`. Run the following command: ::
 
-  synda token -p globus renew
+    synda token -p globus renew
 
 it will give out something like: ::
 
