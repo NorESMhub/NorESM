@@ -8,10 +8,10 @@ The Earth System Model eValuation Tool (`ESMValTool <https://esmvaltool.readthed
   is a community-development that aims at improving diagnosing and understanding of the causes and effects of model biases and inter-model spread. The ESMValTool can process multiple model outputs, including NorESM, but these model output need to be post-processed to conform with the CMIP data standard (i.e., `CMOR <https://cmor.llnl.gov>`_). ESMValTool support all the published model data output on the `ESGF <https://esgf-data.dkrz.de>`_ 
 
 
-Run ESMVAlTool on NIRD
-======================
+Run ESMVAlTool on NIRD service node
+===================================
 
-The ESMValTool is currently installed under the dedicated IPCC service node (ipcc.nird.sigma2.no) for data post-processing.
+The ESMValTool is currently installed under the dedicated IPCC service node (`<ipcc.nird.sigma2.no>_) for data post-processing.
 
 Activate and run ESMValTool
 ----------------
@@ -80,8 +80,8 @@ it will give out something like: ::
 Paste the above https address to browser, and you will find a authen code, and past back to the command line.
  
 
-Run ESMVAlTool on Jupyterhub
-============================
+Run ESMVAlTool on NIRD toolkit service
+======================================
 
 The ESMValTool is also installed as a service at the NIRD Toolkit Service (`<https://apps.sigma2.no>`_)
 
