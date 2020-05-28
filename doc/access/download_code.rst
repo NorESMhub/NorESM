@@ -21,7 +21,7 @@ To download the model, you need access to a git command-line client on the machi
 - When you have the right permissions, you can obtain the code.
 
 
-Make a clone of the NorESM2 repository
+Make a clone of the NorESM repository
 +++++++++++
 
 You can obtain the code using the command-line git client on the appropriate machine as follows::
@@ -55,7 +55,7 @@ And check which branch you are using::
 To use another version of the code, you can check out a specific tag or a branch.
 
 
-Check out a spacific tag or branch
+Check out a specific NorESM branch, eg NorESM2.0.1
 +++++++++++++++
 
 List all available tags::
@@ -85,7 +85,7 @@ Then you need to launch the download::
 
    ./manage_externals/checkout_externals  [this will take one to a few minutes ...]
 
-
+this will use the repositories, tags, branches as specified in Externals.cfg (see below for its manipulation=
 
 **If you run into several SVN-related errors when launching the model, you may want to try to change required=True to required=False for pop2 and ww3 in Externals.cfg. POP2 and WW3 are not needed in NorESM2. Then try again.**
 
@@ -101,4 +101,14 @@ Then you need to launch the download::
 
 The checkout_externals script will read the configuration file called Externals.cfg and will download all the external component models and CIME into /path/to/<noresm-base>.
 
-Now you have a complete copy of the NorESM code in the directory <noresm-base>.  Now you can to the subdirectory cime/scripts and start creating a case! (see :ref:`experiments`).
+Now you have a complete copy of the NorESM code in the directory <noresm-base>.  Now you can to the subdirectory cime/scripts and start creating a case! (see :ref:`experiments`)
+
+Configure Externals.cfg
+++++++++++++
+
+The file can be modified to use another fork or branch for any of the model components.
+
+Example:
+
+
+.
