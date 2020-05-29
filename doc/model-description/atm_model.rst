@@ -13,7 +13,7 @@ Initial states
 
 Startup runs
 ^^^^^^^
-If your experiment is a **startup** run, the atmosphere is initialized using basestate files. The full pathname of the bastestate file is given in the namelist variable **ncdata** which is set by build-namelist. For NorESM2-LM, the default basestate file is located in the inputdata folder (on Fram this is /cluster/shared/noresm/inputdata/)::
+If your experiment is a **startup** run, the atmosphere is initialized using basestate files. The full pathname of the bastestate file is given in the cam namelist variable **ncdata** which is set by build-namelist. For NorESM2-LM, the default basestate file is located in the inputdata folder (on Fram this is /cluster/shared/noresm/inputdata/)::
 
   atm/cam/inic/fv/cami-mam3_0000-01-01_1.9x2.5_L32_c150407.nc
   
@@ -25,11 +25,12 @@ See the following file in your NorESM2 repository for a full list of basestate f
   
   <noresm>/components/cam/bld/namelist_files/namelist_defaults_cam.
   
-Alternatively, as NorESM2 and CESM2 has the same default files, the different default basestate files can be inspected by looking at the entry for **ncdata** in the CESM2 documentation for CAM6.0 Fortran Namelist Definitions:: http://www.cesm.ucar.edu/models/cesm2/settings/current/cam_nml.html
+Alternatively, as NorESM2 and CESM2 has the same default files, the different default basestate files can be inspected by looking at the entry for **ncdata** in the CESM2 documentation for CAM6.0 Fortran Namelist Definitions: http://www.cesm.ucar.edu/models/cesm2/settings/current/cam_nml.html
   
   
 Branch runs  
 ^^^^^^^
+If your experiment is a **branch** run, the atmosphere is initialized using the restart files from a previous run. The restart file is determined by the variables RUN_REFCASE and RUN_REFDATE in env_run.xml. The full pathname of the restart file  is given by the cam namelist variable **cam_branch_file**. This variable does not have a default value. 
 
 Hybrid runs
 ^^^^^
