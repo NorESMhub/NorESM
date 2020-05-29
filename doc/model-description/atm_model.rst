@@ -35,7 +35,7 @@ If your experiment is a **branch** run, the atmosphere is initialized using the 
 Hybrid runs
 ^^^^^
   
-  
+If your experiment is a **hybrid** run, the different model components are initialized as if it was a startup, but using initialization files from a previous case at a given date (again set by the RUN_REFCASE and RUN_REFDATE variables). CAM is initialized using a initial-condition file from the previous case. The full pathname of the initial-condition file will be set in the cam namelist variable **ncdata**. 
   
 
 
