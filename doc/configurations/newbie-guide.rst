@@ -10,7 +10,7 @@ This guide provides basic instructions on how set up and run a standard NorESM c
   - build case (the **case_build** script)
   - submit case (the **case_submit** script). 
   
-It is assumed that you need to have sucsessfully downloaded the model (see :ref:`../access/access`), which means you have a copy of the model on your computer in a folder with a name of your choice. For simplicity we call this folder ``<noresm-base>`` in this guide.
+It is assumed that you need to have sucsessfully downloaded the model (see :ref:`download_code`), which means you have a copy of the model on your computer in a folder with a name of your choice. For simplicity we call this folder ``<noresm-base>`` in this guide.
 
 
 Create a new case
