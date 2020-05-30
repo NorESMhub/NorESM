@@ -9,25 +9,35 @@ The complete input data set is stored on Fram @ Sigma2. For access contact mben@
 Input data sets
 ^^^^^^^^^^^^^^^
 
-Solar forcing
+- **Solar forcing**
 
-GHG concentrations : CO2
+- **GHG concentrations : CO2, CH4, N2O, CFC1-eq, CFC12**  Green-house concentrations are used in the radiative transfer calculations.  The prescribed concentrations are assumed to represent the surface concentrations.  Latitudinal and species dependent profiles are used to calculate the concentrations at different altitudes.
 
-Ozone concentrations
 
-Oxidant concentrations : OH, ozone, NO3-radical, HO2.  
 
-Emissions of short-lived species : anthropogenic, biomass burning, continuous outgassing of SO2 by volcanoes 
+- **Ozone concentrations**  Ozone concentration climatologies are used in the radiative transfer calculations.  The ozone climatologies used in NorESM2 have a 5-day frequency, vary in height and latitude, but have no longitudinal dependce.  They are based in simulations with CESM2-WACCM.
 
-Water vapour emissions (from methane oxidation)
 
-Stratospheric aerosol
 
-Upper-ocean POM concentrations
+- **Oxidant concentrations : OH, ozone, NO3-radical, HO2** The oxidant concentrations are used in the description of secondary aerosol formation (sulfate and SOA).  OH, ozone, NO3 and H2O2 (formed by HO2) are relevant for the oxidation of DMS, SO2, isoprene, and monoterpenes.
 
-Sea-surface temperature
 
-Sea ice cover
+
+- **Emissions of short-lived species : BC, OM and SO2**
+Emissions of BC, OM and SO2 consists in contributions from anthropogenic sources, biomass burning, and continuous outgassing of SO2 by volcanoes.  The anthropogenic sources are given as 9 different sectors : emissions of agricultural activity, transport, domestic heating, solvents, waste and shipping are emitted at the surface; emissions from the energy and industrial sectors are emitted between 150 and 350 m height; aircraft emissions can go up to around 15 km.  The biomass burning sources are give as 6 different categories, and emission heights differ among them : 0-100 m for agricultural waste burning and peat burning, 0-1 km for savannah burning and deforestation, 0-2 km for temperate forests, and 0-3 km for Boreal forests.  
+
+Emission inventories provide emission strengths for OC.  For fossil fuel combustions we assumed an OM:OC ratio of 1.4, and for biomass burning of 2.6.
+Part of the SO2 (2.5% equivalent S) is emitted as SO4. 
+Emission fields are provided both on the 1.9x2.5 and 0.9x1.25 horizontal grid.
+
+- **Water vapour emissions (from methane oxidation)**
+Production of H2O from methane oxidation are prescribed climatologies based on simulations with CESM2-WACCM.  This source is especially relevant in the stratosphere.
+
+- **Stratospheric aerosol**
+
+- **Upper-ocean POM concentrations**
+
+- **Sea-surface temperature and sea-ice cover**
 
 
 
