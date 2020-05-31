@@ -52,9 +52,6 @@ This AeroTab presentation https://github.com/NorESMhub/NorESM/blob/noresm2/doc/c
 Ocean specific input data
 ^^^^^
 
-Initial conditions
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 In the OMIP-type experiments, the ocean is initialized from rest, and the initial ocean temperature and salinity are from the Polar Science Center Hydrographic Climatology (PHC) 3.0, updated from Steele et al. (2001). The initial condition file containing ocean temperature and salinity for the one-degree OMIP experiments is located at (on Fram) ::
 
   /cluster/shared/noresm/inputdata/ocn/micom/tnx1v4/20170601/inicon.nc
