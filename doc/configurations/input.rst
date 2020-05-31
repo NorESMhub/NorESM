@@ -1,9 +1,7 @@
 .. _input:
 
-Input and forcing data
+Atmospheric specific input data
 ==============================
-WILL BE UPDATED BY dirkjlo@met.no 
-
 The complete input data set is stored on Fram @ Sigma2. For access contact mben@norceresearch.no.
 
 Input data sets
@@ -41,11 +39,6 @@ Production of H2O from methane oxidation are prescribed climatologies based on s
 
 
 
-Forcing
-^^^^^^^^
-
-
-
 
 Aerosol specific input data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -54,6 +47,31 @@ Some of the input data, the look-up tables (LUT) for NorESM specific aerosol opt
 
 A user's guide for the AeroTab code, with some additional information about OsloAero code (in CAM6-Nor) which makes use of the AeroTab LUT, can be found at https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/AeroTab-user-guide_v16april2020.pdf.
 This AeroTab presentation https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/AeroTab-slides-updateJan2020.pdf may be useful as a first introduction. For questions about AeroTab, contakt Alf Kirkevåg (alfk at met.no) or Øyvind Seland (oyvinds at met.no).      
+
+Ocean specific input data
+^^^^^
+
+Initial conditions
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In the OMIP-type experiments, the ocean is initialized from rest, and the initial ocean temperature and salinity are from the Polar Science Center Hydrographic Climatology (PHC) 3.0, updated from Steele et al. (2001). The initial condition file containing ocean temperature and salinity for the one-degree OMIP experiments is located at (on Fram) ::
+
+  /cluster/shared/noresm/inputdata/ocn/micom/tnx1v4/20170601/inicon.nc
+  
+The file contains values for layered potential density (sigma: sigma2 - 1000), potential temperature (temp), salinity (saln) and thickness (dz):
+
+:: 
+
+  dimensions:
+          x = 360 ;
+          y = 385 ;
+          z = 53 ;
+  variables:
+          double sigma(z, y, x) ;
+          double temp(z, y, x) ;
+          double saln(z, y, x) ;
+          double dz(z, y, x) ;
+::
 
 
 Ocean carbon cycle specific input data
