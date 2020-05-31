@@ -29,7 +29,7 @@ Some of the most important arguments are as follows:
 
   - ``-case`` defines a casename of your choice and created a folder by that name in <noresm-base>/cases/.
 
-  - ``-mach`` defines the machine you will run the model on. The model NorESM2 has been configured to be run on a set of different machines which is listed here :ref:`platforms`. If you are running the model on a machine not listed you will need to configure the model beyond this newbie guide. 
+  - ``-mach`` defines the machine you will run the model on. The model NorESM2 has been configured to be run on a set of different machines (see list at :ref:`platforms`). If you are running the model on a machine not listed you will need to configure the model beyond this newbie guide. 
 
   - ``-res`` defines the resolution of your run. See :ref:`experiments` for more details.
 
