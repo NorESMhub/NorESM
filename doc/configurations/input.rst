@@ -1,10 +1,11 @@
 .. _input:
 
-Atmospheric specific input data
+
+Input data sets
 ==============================
 The complete input data set is stored on Fram @ Sigma2. For access contact mben@norceresearch.no.
 
-Input data sets
+Atmospheric specific input data
 ^^^^^^^^^^^^^^^
 
 - **Solar forcing**
