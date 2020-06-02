@@ -61,13 +61,13 @@ If your experiment is a **branch** run, the atmosphere is initialized using the 
 If your experiment is a **hybrid** run, the different model components are initialized as if it was a startup, but using initialization files from a previous case at a given date (again set by the RUN_REFCASE and RUN_REFDATE variables). CAM is initialized using a initial-condition file from the previous case. The full pathname of the initial-condition file will be set in the cam namelist variable **ncdata**. 
 
 Setting up an AMIP-type experiment
-''''''''''''''''''''''''''''''
+^^^^^^^^^^^^^^
 Atmospheric Model Intercomparison Project (AMIP) style runs are runs in which the **atmosphere and land components are active while values for sea surface temperatures and sea ice are prescribed** (that is, read from a file). The sea-ice model CICE then runs in a simplified mode and computes surface fluxes, snow depth, albedo, and surface temperatures using 1D thermodynamics without conserving energy. The sea-ice thickness is assumed to be 2 m in the Northern Hemisphere and 1 m in the Southern Hemisphere. 
 
 The AMIP simulation is created in the same manner as a coupled simulation, but using compsets starting with NF. 
 
 AMIP compsets
-^^^^^^^^^^
+'''''''
 
 Compsets starting with NF are NorESM AMIP (atmosphere/land-only) configurations.  Predefined compsets for AMIP simulations can be found in::  
 
@@ -89,7 +89,7 @@ Available user-mod-dir options for NorESM2 used in CMIP6:
 
 
 Creating your own compset for AMIP simulations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+''''''''''''''''''''''
 
 The essential file to edit for a new AMIP NorESM compset is:: 
 
