@@ -60,7 +60,8 @@ From CLM5 user guide: https://escomp.github.io/ctsm-docs/versions/release-clm5.0
 
 **Steps to create a complete set of files for input to CLM**
 
-A technical description on how to create new surface data sets is found here: https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/Steps%20to%20make%20surface%20dataset-CLM5.pdf
+A technical description on how to create new surface data sets is found here: 
+https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/clm_surfdata.pdf
 
 
 CLM5 model configurations available in NorESM2
