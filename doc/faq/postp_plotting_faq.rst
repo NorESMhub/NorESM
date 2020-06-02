@@ -4,7 +4,7 @@ Post-processing and plotting FAQ
 ================
 
 
-How to I compute a weighted average
+How to I compute a weighted average?
 ---------------------
 
 **Using NCL**
