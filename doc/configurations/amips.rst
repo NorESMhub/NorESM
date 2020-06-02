@@ -12,7 +12,7 @@ In NorESM2, the atmospheric model CAM6-Nor replaces standard CAM. The NorESM2 sp
 
 in addition some parameter settings, emisson and input files will differ from standard CAM6 set-up.
 
-Code modification
+Code modifications
 '''''''''
 CAM6-Nor differs from CAM6 in several ways. Some of the changes are modifications to existing files (scripts, xml-files, F90-files), some code changes are made by copying original files in a different directory and modifying them, and some changes are really new code. In the F90 files, some of the changes are actived by #CAMOSLO . Below some differences are described
 
