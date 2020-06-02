@@ -2,24 +2,12 @@
 
 Atmosphere
 ===================================
-In NorESM2, the atmospheric model CAM6-Nor replaces standard CAM. The NorESM2 specific additions are:
-
-- Atmospheric chemistry/aerosol/cloud module: OsloAero6 (Kirkevåg et al. GMD, 2018)
-
-- Atmospheric dynamics/physics: Improved conservation of energy and angular momentum (Toniazzo et al. GMD, 2020)
-
-- Parameterization of turbulent air-sea fluxes (see AMIP-type experiments for more details)
-
-in addition some parameter settings, emisson and input files will differ from standard CAM6 set-up.
-
-Code modifications
-'''''''''
-CAM6-Nor differs from CAM6 in several ways. Some of the changes are modifications to existing files (scripts, xml-files, F90-files), some code changes are made by copying original files in a different directory and modifying them, and some changes are really new code. In the F90 files, some of the changes are actived by #CAMOSLO . Below some differences are described
+In NorESM2, the atmospheric model CAM6-Nor replaces standard CAM. CAM6-Nor differs from CAM6 in several ways. Some of the changes are modifications to existing files (scripts, xml-files, F90-files), some code changes are made by copying original files in a different directory and modifying them, and some changes are really new code. In the F90 files, some of the changes are actived by #CAMOSLO . Below some differences are described
 
 
 The main differences in the code:
 
-**CAM-Oslo aerosol scheme**
+**Atmospheric chemistry/aerosol/cloud module: OsloAero6**
 
 A different aerosol scheme is included in CAM6-Nor.  The code for this scheme can be mainly be found in the following directories under <noresm-base>:
 
@@ -34,10 +22,11 @@ A different aerosol scheme is included in CAM6-Nor.  The code for this scheme ca
 
 Some modifications in CAM (which are not related to the CAM-Oslo aerosol scheme) are implemented in the original code, but with namelist choices such that the modifications can be activated/deactivated:
 
-- flux parameterisation for ocean-atmosphere exchange (OCN_FLUX_SCHEME=1. in env_run.xml)
-- averaging over (changing) zenith angle during one model time step
-- energy conservation
-- angular momentum conservation [this is now default in CAM]
+- Parameterization of turbulent air-sea fluxes (see AMIP-type experiments for more details)
+- Averaging over (changing) zenith angle during one model time step
+- Improved conservation of energy and angular momentum [this is now default in CAM]
+
+In addition some parameter settings, emisson and input files will differ from standard CAM6 set-up.
 
 
 Initial conditions
@@ -208,6 +197,11 @@ and ends up in the drv_in namelist as::
   flux_scheme=1. 
   
  
+Code modifications
+'''''''''
 
+If you want to make more subtantial changes to the codes than what is possible by the use of user_nl_cam, you need to copy the source code (the fortran file you want to modify) to the SourceMods/src.cam folder in the case directory, then make the modifications needed before building the model. Do not change the source code in the <noresm-base> folder!
 
+The CAM6/CAM6-Nor source code is located in::
 
+<noresm-base>/components/cam/
