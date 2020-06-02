@@ -3,7 +3,7 @@
 Atmosphere 
 ===================================
 CAM6-Nor
-^^^^
+^^^^^^^^^^^^^^
 
 In NorESM2, the atmospheric model CAM6-Nor replaces standard CAM. CAM6-Nor differs from CAM6 in several ways. Some of the changes are modifications to existing files (scripts, xml-files, F90-files), some code changes are made by copying original files in a different directory and modifying them, and some changes are really new code. In the F90 files, some of the changes are actived by #CAMOSLO . Below some differences are described
 
@@ -33,7 +33,7 @@ In addition some parameter settings, emisson and input files will differ from st
 
 
 Initial conditions
-''''''''''''''''
+^^^^^^^^^^^^^^
 
 **Startup runs**
 
@@ -70,7 +70,7 @@ Atmospheric Model Intercomparison Project (AMIP) style runs are runs in which th
 The AMIP simulation is created in the same manner as a coupled simulation, but using compsets starting with NF. 
 
 AMIP compsets
-'''''''''''''
+^^^^^^^^^^
 
 Compsets starting with NF are NorESM AMIP (atmosphere/land-only) configurations.  Predefined compsets for AMIP simulations can be found in::  
 
@@ -201,7 +201,7 @@ and ends up in the drv_in namelist as::
   
  
 Code modifications
-'''''''''
+^^^^^^^^^^^^^^
 
 If you want to make more subtantial changes to the codes than what is possible by the use of user_nl_cam, you need to copy the source code (the fortran file you want to modify) to the SourceMods/src.cam folder in the case directory, then make the modifications needed before building the model. Do not change the source code in the <noresm-base> folder!
 
