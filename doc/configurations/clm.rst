@@ -3,14 +3,14 @@
 Land and river run off
 ================
 
-
 CLM5
 ------
 
-| The land model used in NorESM2 is the Community Land Model version 5 (CLM5):
-| http://www.cesm.ucar.edu/models/clm/
-| 
-| Specific questions about CLM can be addressed Lei Cai, email: leca@norceresearch.no
+The land model used in NorESM2 is the Community Land Model version 5 (CLM5):
+http://www.cesm.ucar.edu/models/clm/
+
+
+Specific questions about CLM can be addressed Lei Cai, email: leca@norceresearch.no
 
 CLM5 specifics
 ^^^^^
@@ -56,9 +56,12 @@ Required surface data for each land grid cell include:
 - peat area fraction
 - peak month of agricultural burning. Optional surface data include crop irrigation and managed crops.
 
-All fields are aggregated to the model’s grid from high-resolution input datasets ( Table 2.2.6) that are obtained from a variety of sources described below.
-
 From CLM5 user guide: https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/tech_note/Ecosystem/CLM50_Tech_Note_Ecosystem.html#surface-data:
+
+**Steps to create a complete set of files for input to CLM**
+
+A technical description on how to create new surface data sets is found here: https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/Steps%20to%20make%20surface%20dataset-CLM5.pdf
+
 
 CLM5 model configurations available in NorESM2
 ^^^^^^
@@ -102,53 +105,6 @@ and in the Run folder::
 
   <RUN_DIR>/case/run/lnd_in
 
-
-Spin up of CLM5 
-^^^^^^
-A long spin up of CLM5 is necessary to achive e.g. land carbon balance. Such a spin up can be done partly uncoupled from NorESM2 in order to save computation time.
-
-**Forcing data**
-
-To generate forcing data from the coupled simulation to run CLM5 stand alone with NorESM2 forcing, a full couple history needs to be turned on. For producing forcing data, please try adding this to user_nl_cpl in the coupled simulation of interest:::
-
-  &seq_infodata_inparm
-    histaux_a2x      = .true.  
-    histaux_a2x1hr   = .true. 
-    histaux_a2x1hri  = .true.
-    histaux_a2x3hr   = .true.
-    histaux_a2x3hrp = .false.
-    histaux_a2x24hr = .true.
-    histaux_l2x     = .true.
-    histaux_l2x1yrg = .true.
-    histaux_r2x     = .true.
-
-
-**Running CLM stand alone with NorESM2 forcing data**
-
-
-To create a new case for stand alone CLM5 spin up with NorESM2 forcing data, one should choose the same resolution as the coupled simulation (f19_tn14 for NorESM2-LM and f09_tn14 for NorESM2-MM). The compset to use is I1850BgcCropCmip6. For example, to create a new NorESM2-LM case, 
-
-:: 
-
-./create_newcase --case <PAT_TO_CASEFOLDER>/CASENAME --compset N1850BgcCropCmip6 --res f19_tn14 --mach fram --project nn9560k 
-
-::
-
-To use NorESM2 history files as the forcing, CPLHISTForcing mode needs to be activated. In CPLHISTForcing mode, the model is assumed to have 3-hourly for a global grid from a previous simulation. The data atmophere (datm) forcing is divided into three streams: precipitation, solar, and everything else. The time-stamps for Coupler history files is at the end of the interval, so ``offset`` in the datm.streams files needs to be set in order to adjust the time-stamps to what it needs to be for the tintalgo settings. 
-
-For precipitation ``tintalgo`` is set to ``nearest`` so the ``offset`` is set to ``-5400`` seconds so that the ending time-step is adjusted by an hour and half to the middle of the interval. 
-For solar ``tintalgo`` is set to ``coszen`` so the ``offset`` is set to ``-10800`` seconds so that the ending time-step is adjust by three hours to the beginning of the interval. 
-For everything else ``tintalgo`` is set to ``linear`` so the ``offset`` is set to ``-5400`` seconds so that the ending time-step is adjusted by an hour and half to the middle of the interval.
-
-The link to forcing data is set also by editing datm.streams files.
-
-**Recoupling**
-
-NorESM2 can then be recoupled to the spun up land experiment by the use of restart files. I.e. in the fully coupled case set the restartfile from the CLM5 stand alone spin up experiment in user_nl_clm::
-
-  finidat = '<path_to_inputdata>/inputdata/<path_to_file>/CLM_SPINUP_FILENAME.clm2.r.YR-01-01-00000.nc'
- 
- 
 User name list modifications
 ^^^^^^
 An example of how you can modify user_nl_clm. This adds four auxilary history files in addition to the standard monthly files. The first two are daily, and the last two are six and three hourly::
@@ -170,6 +126,77 @@ For example if STOP_N=50 years, you can set::
 -8760 means one average value per year, and 50 years in one file.
 
 - The full namelist definitions and defaults in the CLM5: http://www.cesm.ucar.edu/models/cesm2/settings/current/clm5_0_nml.html
+
+Spin up of CLM5 
+^^^^^^
+A long spin up of CLM5 is necessary to achive e.g. land carbon balance. Such a spin up can be done partly uncoupled from NorESM2 in order to save computation time.
+
+
+**Forcing data**
+
+To generate forcing data from the coupled simulation to run CLM5 stand alone with NorESM2 forcing, a full couple history needs to be turned on. For producing forcing data, please try adding this to user_nl_cpl in the coupled simulation of interest:::
+
+  &seq_infodata_inparm
+    histaux_a2x      = .true.  
+    histaux_a2x1hr   = .true. 
+    histaux_a2x1hri  = .true.
+    histaux_a2x3hr   = .true.
+    histaux_a2x3hrp = .false.
+    histaux_a2x24hr = .true.
+    histaux_l2x     = .true.
+    histaux_l2x1yrg = .true.
+    histaux_r2x     = .true.
+
+
+**Running CLM stand alone with NorESM2 forcing data**
+
+To use NorESM2 history files as the forcing, CPLHISTForcing mode needs to be activated. In CPLHISTForcing mode, the model is assumed to have 3-hourly for a global grid from a previous simulation (see description above). The data atmophere (datm) forcing is divided into three streams: precipitation, solar, and everything else.
+
+To create a new case for stand alone CLM5 spin up with NorESM2 forcing data, one should choose the same resolution as the coupled simulation (f19_tn14 for NorESM2-LM and f09_tn14 for NorESM2-MM). The compset to use is I1850BgcCropCmip6. For example, to create a new NorESM2-LM case, 
+
+:: 
+
+./create_newcase --case <PAT_TO_CASEFOLDER>/CASENAME --compset N1850BgcCropCmip6 --res f19_tn14 --mach fram --project nn9560k 
+
+::
+
+Using the CPLHIST forcing, the offline spin up needs to be run in two steps:
+
+- **1. Accelerated:** 
+
+When entering “Accelerated Spinup” mode, soil carbon pools will be
+scaled down by a factor ~40, vegetation pools scaled down by ~5
+In env_run.xml, include::
+
+./xmlchange RUN_TYPE="startup",STOP_N=400,STOP_OPTION="nyears",REST_N=50
+./xmlchange CLM_ACCELERATED_SPINUP="on"
+./xmlchange CLM_FORCE_COLDSTART="on"
+./xmlchange DATM_MODE=CPLHIST,DATM_PRESAERO=cplhist,DATM_TOPO=cplhist
+./xmlchange DATM_CPLHIST_DIR=/cluster/shared/noresm/inputdata/cplhist/N1850_f09_tn14_20190726_751-850
+./xmlchange DATM_CPLHIST_CASE=N1850_f09_tn14_20190726
+./xmlchange DATM_CPLHIST_YR_ALIGN=751,DATM_CPLHIST_YR_START=751,DATM_CPLHIST_YR_END=850
+
+Note. The casename for the CPLHIT (N1850_f09_tn14_20190726, N1850_f09_tn14_20190726_751-850) and all numbers need to be changed for the simulation of interest. 
+
+In user_nl_clm set output frequency to every 50 or 100 years <= REST_N::
+ hist_mfilt = 50
+ hist_nhtfrq = -8760
+
+- **2. Post-accelerated:** 
+
+When exiting Accelerated Spinup and entering normal spinup, the
+carbon pools will be scaled up back to normal levels
+
+
+**Recoupling**
+
+NorESM2 can then be recoupled to the spun up land experiment by the use of restart files. To incorporating CLM final spinup restart in user_nl_clm::
+
+  finidat = '<path_to_inputdata>/inputdata/<path_to_file>/CLM_SPINUP_FILENAME.clm2.r.YR-01-01-00000.nc'
+ 
+ 
+A description of the NorESM2 CLM5 spin up, recoupling and diagnostics can be found here:
+https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/NorESM-CLM-memo.pdf
 
 Code modification
 ^^^^^^
