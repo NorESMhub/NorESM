@@ -10,7 +10,7 @@ This guide provides basic instructions on how set up and run a standard NorESM c
   - build case (the **case_build** script)
   - submit case (the **case_submit** script). 
   
-It is assumed that you need to have sucsessfully downloaded the model (see :ref:`../access/access`), which means you have a copy of the model on your computer in a folder with a name of your choice. For simplicity we call this folder ``<noresm-base>`` in this guide.
+It is assumed that you have sucsessfully downloaded the model (see :ref:`download_code`), which means you have a copy of the model on your computer in a folder with a name of your choice. For simplicity we call this folder ``<noresm-base>`` in this guide.
 
 
 Create a new case
@@ -29,11 +29,11 @@ Some of the most important arguments are as follows:
 
   - ``-case`` defines a casename of your choice and created a folder by that name in <noresm-base>/cases/.
 
-  - ``-mach`` defines the machine you will run the model on. The model NorESM2 has been configured to be run on a set of different machines which is listed here :ref:`platforms`. If you are running the model on a machine not listed you will need to configure the model beyond this newbie guide. 
+  - ``-mach`` defines the machine you will run the model on. The model NorESM2 has been configured to be run on a set of different machines (see list at :ref:`platforms`). If you are running the model on a machine not listed you will need to configure the model beyond this newbie guide. 
 
   - ``-res`` defines the resolution of your run. See :ref:`experiments` for more details.
 
-  - ``-compset`` defines what compset you will be using. A list of compsets for fully-coupled configurations can be found in the file <noresm_base>/cime_config/config_compsets.xml (see :ref:'amips' for compsets for AMIP-type simulations)
+  - ``-compset`` defines what compset you will be using. A list of compsets for fully-coupled configurations can be found in the file <noresm_base>/cime_config/config_compsets.xml (see :ref:`amips` for compsets for AMIP-type simulations)
 
 To investigate the full list of arguments, enter the <noresm_base>/cmie/scripts folder and run create_newcase with the --help argument:
 ::
@@ -56,7 +56,7 @@ The following example creates a case (test1910_1) on the machine Fram:
 
     ./create_newcase --case ../../cases/test1910_1 --compset N1850 --res f19_tn14 --machine fram --project snic2019-1-2 --user-mods-dir cmip6_noresm_DECK --run-unsupported
 
-Here we use the N1850 compset, which configures the case as a 1850 pre-industrial control simulation. Note that we use the argument **--run-unsupported**, which required if the grid resolution is not supported in the compset (see :ref:'experiments'), **--project** to set the id of the project used in the batch system accounting on Fram, **--user-mods-dir**  to set the path to a folder containing files that will further configure your case (like user namelists, shell scripts with xmlchange commands or SourceMods), and **--run-unsupported** which is required if for isntance is not listed supported in the compset.
+Here we use the N1850 compset, which configures the case as a 1850 pre-industrial control simulation. Note that we use the argument **--run-unsupported**, which required if the grid resolution is not supported in the compset (see :ref:`experiments`), **--project** to set the id of the project used in the batch system accounting on Fram, **--user-mods-dir**  to set the path to a folder containing files that will further configure your case (like user namelists, shell scripts with xmlchange commands or SourceMods), and **--run-unsupported** which is required if for isntance is not listed supported in the compset.
 
 
 The following example creates a case (also called test1910_1), but on the machine Tetralith::
@@ -68,7 +68,7 @@ Note that here we use the argument **--output-root**, which is only required if 
 
 Configure the case
 ---------------------
-The case folder `<noresm_base>/cases/$CASENAME/`` is where you configure your case by changing enviroment files (such as the <noresm_base>/cases/$CASENAME/env_run.xml file;see :ref:'experiment_environments'), changing the user namelists for the different model components (files named ``user_nl_$COMP`` where $COMP is a model component such as ``cam``), or even add your own code changes to ``SourceMods/src.$COMP/``. But for now we stick to the standard out-of-the-box set up and configure the case as follows:
+The case folder `<noresm_base>/cases/$CASENAME/`` is where you configure your case by changing enviroment files (such as the <noresm_base>/cases/$CASENAME/env_run.xml file;see :ref:`experiment_environments`), changing the user namelists for the different model components (files named ``user_nl_$COMP`` where $COMP is a model component such as ``cam``), or even add your own code changes to ``SourceMods/src.$COMP/``. But for now we stick to the standard out-of-the-box set up and configure the case as follows:
 
 ::
 
