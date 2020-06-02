@@ -24,7 +24,7 @@ Some modifications in CAM (which are not related to the CAM-Oslo aerosol scheme)
 
 - Parameterization of turbulent air-sea fluxes (see AMIP-type experiments for more details)
 - Averaging over (changing) zenith angle during one model time step
-- Improved conservation of energy and angular momentum [this is now default in CAM]
+- Improved conservation of energy and angular momentum 
 
 In addition some parameter settings, emisson and input files will differ from standard CAM6 set-up.
 
