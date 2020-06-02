@@ -77,6 +77,9 @@ Archive of NorESM results
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 For a detailed overview on how and where to access NorESM data please see :ref:`data`
 
+For a detailed overview of the NorESM2 spin up and CMIP6 simulations, also see: 
+https://noresmhub.github.io/noresm-exp/intro.html
+
 
 References
 ^^^^^^
