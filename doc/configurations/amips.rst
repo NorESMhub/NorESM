@@ -200,7 +200,7 @@ and ends up in the drv_in namelist as::
 Code modifications
 ^^^^^^^^^^^^^^
 
-If you want to make more subtantial changes to the codes than what is possible by the use of user_nl_cam, you need to copy the source code (the fortran file you want to modify) to the SourceMods/src.cam folder in the case directory, then make the modifications needed before building the model. Do not change the source code in the <noresm-base> folder!
+If you want to make more subtantial changes to the code than what is possible by the use of user_nl_cam, you need to copy the source code (the fortran file you want to modify) to the SourceMods/src.cam folder in the case directory, then make the modifications needed before building the model. Do not change the source code in the <noresm-base> folder!
 
 The CAM6/CAM6-Nor source code is located in::
 
