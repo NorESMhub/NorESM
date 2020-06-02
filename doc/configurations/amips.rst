@@ -35,8 +35,8 @@ In addition some parameter settings, emisson and input files will differ from st
 Initial conditions
 ''''''''''''''''
 
-Startup runs
-^^^^
+**Startup runs**
+
 
 If your experiment is a **startup** run, the atmosphere is initialized using basestate files. The full pathname of the bastestate file is given in the cam namelist variable **ncdata** which is set by build-namelist. For NorESM2-LM, the default basestate file is located in the inputdata folder (on Fram this is /cluster/shared/noresm/inputdata/)::
 
@@ -53,13 +53,13 @@ See the following file in your NorESM2 repository for a full list of basestate f
 Alternatively, as NorESM2 and CESM2 has the same default files, the different default basestate files can be inspected by looking at the entry for **ncdata** in the CESM2 documentation for CAM6.0 Fortran Namelist Definitions: http://www.cesm.ucar.edu/models/cesm2/settings/current/cam_nml.html
   
   
-Branch runs  
-^^^^
+**Branch runs**  
+
 
 If your experiment is a **branch** run, the atmosphere is initialized using the restart files from a previous run. The restart file is determined by the variables RUN_REFCASE and RUN_REFDATE in env_run.xml. The full pathname of the restart file  is given by the cam namelist variable **cam_branch_file**. This variable does not have a default value. 
 
-Hybrid runs
-^^^^
+**Hybrid runs**
+
 
 If your experiment is a **hybrid** run, the different model components are initialized as if it was a startup, but using initialization files from a previous case at a given date (again set by the RUN_REFCASE and RUN_REFDATE variables). CAM is initialized using a initial-condition file from the previous case. The full pathname of the initial-condition file will be set in the cam namelist variable **ncdata**. 
 
