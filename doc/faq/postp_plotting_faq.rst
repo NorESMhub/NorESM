@@ -15,12 +15,14 @@ How do I compute a weighted average?
 
 **Using python**
 
-The monthly files in NorESM2 (not BLOM files) are written *after* the last time step of the month. Consequently, the date in the netcdf file is the first of the following month. E.g. The date in FILENAME.cam.h0.0001-01.nc will be 01-02-0001 (the first of *February* and not January). This needs to be taken into account when calculating annual averages. 
-
 When calculating annual averages from NorESM2 data it is important use appropriate monthly weights, especially for individual radiative fluxes (can have errors of the order of 0.5-1 W/m^2 if not used). 
 
+The monthly files in NorESM2 (not BLOM/MICOM/iHAMOCC files) are written *after* the last time step of the month. Consequently, the date in the netcdf file is the first of the following month. E.g. The date in FILENAME.cam.h0.0001-01.nc will be 01-02-0001 (the first of *February* and not January). This needs to be taken into account when calculating annual averages using python packages like xarray and iris. 
 
 **xarray**
+
+
+For BLOM/MICOM/iHAMOCC files there are no issues with the time variable, and annual averages can be calculated:
 
 ::
 
@@ -35,8 +37,35 @@ When calculating annual averages from NorESM2 data it is important use appropria
         annual_mean.rename(var.name).to_dataset().to_netcdf(fname)
       
 ::
- -
- 
+
+One way to handle the time issue is to take annual averages by looping over 12 files at the time (slow method):
+
+::
+
+  def area_avg(ds, var, monthw = np.array([31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31])):
+    '''
+    Calculate global and annual means from monthly means
+    '''
+    field = ds[var].mean(dim = 'lon')
+    return np.sum(monthw*[ np.nansum((field[i,:]*ds.gw[0]).values)/
+                          np.nansum(ds.gw[0]) for i in range(0,len(ds[var].time))])/np.sum(monthw)
+                          
+::
+
+Weights for ocean calculations:
+
+::
+
+  gridpath = 'ocngrid/tnx1v4/' # path to grid files
+  grid = xr.open_mfdataset(gridpath + 'grid.nc')
+  parea =  grid.parea
+  pmask =  grid.pmask
+  pweight = parea*pmask
+  
+::
+
+-
+
 **iris**
 It is also possible to use iris for analysing and visualising NorESM2 data
 Documentation: https://scitools.org.uk/iris/docs/latest/
@@ -44,6 +73,9 @@ Documentation: https://scitools.org.uk/iris/docs/latest/
 ::
 
   def get_cube_varname(cube_list, var_name):
+      '''
+      Subtract cube with name var_name from the cube_list
+      '''
       if type(var_name) is list:
           var_cube = iris.cube.CubeList()
           for name in var_name:
@@ -58,6 +90,9 @@ Documentation: https://scitools.org.uk/iris/docs/latest/
                   return cube
 
   def subtract_second_timedim(cube):
+      '''
+      Fix time issue by subtracting one second from the time array
+      '''
       time = cube.coord("time")
       new_points = time.points - 1/86400
       new_time = DimCoord(new_points, standard_name="time", 
@@ -67,6 +102,9 @@ Documentation: https://scitools.org.uk/iris/docs/latest/
       return cube
     
   def annual_weighted_avg(path,file, varname):
+      '''
+      Calculate global and annual means from monthly means
+      '''
       cube = iris.load(path + file)
       ts = get_cube_varname(cube, varname)
       cube = subtract_second_timedim(ts)
@@ -81,7 +119,10 @@ Documentation: https://scitools.org.uk/iris/docs/latest/
       monthw=[31,28,31,30,31,30,31,31,30,31,30,31]
       monthw = np.tile(monthw, 30)
       monthw=monthw/np.sum(monthw)
-      cube_aa = cube_collapsed.collapsed('time', aggregator= iris.analysis.MEAN,weights=monthw)
-      return cube_aa
+      n=len(monthw)
+      tmp = [cube_collapsed[i:i+n].collapsed('time', aggregator= iris.analysis.MEAN,weights=monthw) for i in range(0,n*yrs,n)]
+      cubes_aa = iris.cube.CubeList(tmp).merge()
+      return cubes_aa[0]
+  
 
 ::
