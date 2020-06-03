@@ -32,6 +32,7 @@ https://github.com/NorESMhub/NorESM/blob/master/doc/README.md.
    output/output.rst
    diagnostics/diagnostics.rst
    model-description/model-description.rst
+   keyruns/keyruns.rst
    data/data.rst
    contribute/contribute.rst
    faq/faq.rst
