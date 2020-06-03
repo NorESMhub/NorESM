@@ -6,9 +6,8 @@ https://noresmhub.github.io/noresm-exp/intro.html
 
 
 .. figure:: spinup.png
-    :width: 200px
+    :width: 100%
     :align: center
-    :height: 100px
     :alt: alternate text
     :figclass: align-center
 
