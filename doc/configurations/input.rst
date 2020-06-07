@@ -8,6 +8,8 @@ The complete input data set is stored on Fram @ Sigma2. For access contact mben@
 Atmospheric specific input data
 ^^^^^^^^^^^^^^^
 
+Various external input data sets are used by the atmosphere model.  These data sets often describe "boundary conditions" needed during the integration of the model (solar forcing, GHG concentrations, ozone concentrations, oxidant concentrations, emissions of short-lived species, production rate of H2O from CH4 oxidation, stratospheric aerosol, upper ocean chlorophyl-a concentration, sea-surface temperature and sea-ice concentration).  The boundary conditions can be constant, cyclic (often one annual cycle), or evolve according to a historical or future scenario.
+
 - **Solar forcing** The solar forcing is prescribed following Matthes et al. (2017).
 
 - **GHG concentrations : CO2, CH4, N2O, CFC1-eq, CFC12**  Green-house concentrations are used in the radiative transfer calculations, and the values are taken from Meinshausen et al. (2017).  The prescribed concentrations are assumed to represent the surface concentrations.  Latitudinal and species dependent profiles are used to calculate the concentrations at different altitudes.
@@ -16,20 +18,15 @@ Atmospheric specific input data
 
 - **Oxidant concentrations : OH, ozone, NO3-radical, HO2** The oxidant concentrations are used in the description of secondary aerosol formation (sulfate and SOA).  OH, ozone, NO3 and H2O2 (formed by HO2) are relevant for the oxidation of DMS, SO2, isoprene, and monoterpenes.  These climatologies have a monthly frequency, and a 3-dimensional spatial distribution.  They are based on simulations with CESM2-WACCM (Danabasoglu et al., 2019).
 
-- **Emissions of short-lived species : BC, OM and SO2** Emissions of BC, OM and SO2 consists in contributions from anthropogenic sources, biomass burning, and continuous outgassing of SO2 by volcanoes.  The anthropogenic sources (Hoesly et al., 2018) are given as 9 different sectors : emissions of agricultural activity, transport, domestic heating, solvents, waste and shipping are emitted at the surface; emissions from the energy and industrial sectors are emitted between 150 and 350 m height; aircraft emissions can go up to around 15 km.  The biomass burning sources (van Marle et al., 2017) are give as 6 different categories, and emission heights differ among them : 0-100 m for agricultural waste burning and peat burning, 0-1 km for savannah burning and deforestation, 0-2 km for temperate forests, and 0-3 km for Boreal forests (Dentener et al., 2006).  A fixed climatology of continuous tropospheric outgassing of SO2 by volcanoes is also included (Dentener et al., 2006).   Emission inventories provide emission strengths for OC.  For fossil fuel combustions we assumed an OM:OC ratio of 1.4, and for biomass burning of 2.6.
-Part of the SO2 (2.5% equivalent S) is emitted as SO4. 
-Emission fields are provided both on the 1.9x2.5 and 0.9x1.25 horizontal grid.
+- **Emissions of short-lived species : BC, OM and SO2** Emissions of BC, OM and SO2 consists in contributions from anthropogenic sources, biomass burning, and continuous outgassing of SO2 by volcanoes.  The anthropogenic sources (Hoesly et al., 2018) are given as 9 different sectors : emissions of agricultural activity, transport, domestic heating, solvents, waste and shipping are emitted at the surface; emissions from the energy and industrial sectors are emitted between 150 and 350 m height; aircraft emissions can go up to around 15 km.  The biomass burning sources (van Marle et al., 2017) are give as 6 different categories, and emission heights differ among them : 0-100 m for agricultural waste burning and peat burning, 0-1 km for savannah burning and deforestation, 0-2 km for temperate forests, and 0-3 km for Boreal forests (Dentener et al., 2006).  A fixed climatology of continuous tropospheric outgassing of SO2 by volcanoes is also included (Dentener et al., 2006).   Emission inventories provide emission strengths for OC.  For fossil fuel combustions we assumed an OM:OC ratio of 1.4, and for biomass burning of 2.6.  Part of the SO2 (2.5% equivalent S) is emitted as SO4.  Emission fields are provided both on the 1.9x2.5 and 0.9x1.25 horizontal grid.
 
-- **Water vapour emissions (from methane oxidation)**
-Production of H2O from methane oxidation is prescribed using a climatologies based on simulations with CESM2-WACCM.  This source is especially relevant in the stratosphere.  These climatologies have a monthly frequency, and a 3-dimensional spatial distribution.  They are based on simulations with CESM2-WACCM (Danabasoglu et al., 2019).
+- **Water vapour emissions (from methane oxidation)** Production of H2O from methane oxidation is prescribed using a climatologies based on simulations with CESM2-WACCM.  This source is especially relevant in the stratosphere.  These climatologies have a monthly frequency, and a 3-dimensional spatial distribution.  They are based on simulations with CESM2-WACCM (Danabasoglu et al., 2019).
 
 - **Stratospheric aerosol**  To describe the impact of volcanic SO2 emissions reaching the stratosphere and forming SO4 aerosol, monthly varying climatologies of stratospheric aerosol properties are used.
 
 - **Upper-ocean POM concentrations**  To describe the emission strength of marine primary organic matter from the ocean, a monthly varying climatology of upper-ocean chlorophyl-a concentration is used.
 
 - **Sea-surface temperature and sea-ice cover**  In atmosphere-only simulations, the sea-surface temperature and sea-ice concentrations are prescribed as monthly varying climatologies.  One can use climatologies that are based on observations (Hurrell et al., 2008), or climatologies derived from fully-coupled NorESM2 simulations.
-
-
 
 
 Aerosol specific input data
