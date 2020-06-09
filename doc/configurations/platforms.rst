@@ -286,6 +286,256 @@ Create a new case:
 
 ::
 
+Virtual Machine with Conda (@ https://www.nrec.no/ for example)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This section describes how to install all the software environment (including compilers and libraries) needed to run CESM/NorESM on a Virtual Machine (like those available on the Norwegian Research and Education Cloud, the Coogle Cloud Platform, etc.), but a similar process allows to run the models on a personal computer, laptop or desktop running **Centos7** (this distribution is convenient to use since it already contains most of the essential software packages).
+
+The objective here is not to compete against HPCs in terms of sheer computing power, but to satisfy the everyday needs of the vast majority of CESM/NorESM developpers in terms of model development, debugging or testing, as well as for training/teaching purposes.
+
+For this example we start with a completely empty machine with the Centos7 Linux Distribution, 16x Intel Core Processors (Haswell, no TSX), 128GB RAM, and a 100GiB volume (disk) attached on **/dev/sdb**.
+
+The name of the user is **centos** (if your user name is different you will have to use your *username* instead).
+
+The first step is to format the volume (if your disk is already formated and/or contains data, skip this step, but still create the **/opt/uio** folder since this is where the model is configured to read/write).
+
+::
+
+  sudo mkfs.ext4 /dev/sdb
+
+::
+
+then mount it at /opt/uio
+
+::
+
+  sudo mkdir /opt/uio
+
+  sudo chown -R centos /opt/uio
+
+  sudo chgrp -R centos /opt/uio
+
+  sudo mount /dev/sdb /opt/uio
+
+  cd /opt/uio
+
+::
+
+and create the following folders:
+
+::
+
+  mkdir /opt/uio/inputdata
+
+  mkdir /opt/uio/work
+
+  mkdir /opt/uio/archive
+
+  mkdir /opt/uio/archive/cases
+
+::
+
+Now we can install a few packages which will be needed later (to get the model, etc.) and miniconda (accept the terms of the license and accept the default location **/home/centos/miniconda3**, then answer yes to the question "Do you wish the installer to initialize Miniconda3 by running conda init", exit the virtual machine and re-login).
+
+::
+
+  sudo yum install wget git subversion csh -y
+
+  wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+  bash Miniconda3-latest-Linux-x86_64.sh
+
+  exit 
+
+::
+
+Youi will notice the next time you login the Virtual Machine that the prompt starts with *(base)* which indicates that you are in the base conda environment (since you accepted it during the miniconda install).
+
+Now we recommend to create a new **esm** conda environment before adding the **bioconda** and **conda-forge** channels (in this order) and installing cesm
+
+::
+
+  conda create -n esm
+
+  conda activate esm
+
+  conda config --add channels bioconda
+
+  conda config --add channels conda-forge
+
+  conda install cesm=2.1.3 
+
+::
+
+Now the prompt should start with *(esm)* indicating that the esm conda environment has been activated, and every time you login you will have to type **conda activate esm** to be able to run the model(s).
+
+This will have installed CESM2.1.3 as well as all the necessary compilers and libraries (HDF5, NetCDF, MKL, etc.) and their dependencies, and the very same environment can be used with NorESM.
+
+In order to run the model you still need configuration files (namely *config*, *config_machines.xml* and *config_compilers.xml*). These will eventually come with NorESM, but for the sake of convenience we provide hereafter an example of such files which have to be located in a **.cime* folder in your home directory (simply copy & past the content of the following cell to generate the files automatically and be carefull not to add any odd characters of lines since CESM/NorESM are extremely picky about it).
+
+Notice that you only need to do this once, since both CESM and NorESM will use these configurations, and that the name of the machine created is **espresso**. 
+
+::
+
+  cd /home/centos
+
+  mkdir .cime
+
+  cd .cime
+
+  cat >> config << EOF
+  [main]
+  CIME_MODEL=cesm
+  EOF
+
+  cat >> config_machines.xml << EOF
+  <?xml version="1.0"?>
+  <config_machines>
+    <machine MACH="espresso">
+      <DESC> Virtual Machine with 16 VCPUs and 128GiB memory
+             OS is Centos7, Conda CESM environment
+      </DESC>
+      <NODENAME_REGEX>UNSET</NODENAME_REGEX>
+      <OS>LINUX</OS>
+      <PROXY>UNSET</PROXY>
+      <COMPILERS>gnu</COMPILERS>
+      <MPILIBS>mpich</MPILIBS>
+      <SAVE_TIMING_DIR>UNSET</SAVE_TIMING_DIR>
+      <CIME_OUTPUT_ROOT>/opt/uio/work</CIME_OUTPUT_ROOT>
+      <DIN_LOC_ROOT>/opt/uio/inputdata</DIN_LOC_ROOT>
+      <DIN_LOC_ROOT_CLMFORC>UNSET</DIN_LOC_ROOT_CLMFORC>
+      <DOUT_S_ROOT>/opt/uio/archive/$CASE</DOUT_S_ROOT>
+      <BASELINE_ROOT>UNSET</BASELINE_ROOT>
+      <CCSM_CPRNC>UNSET</CCSM_CPRNC>
+      <GMAKE_J>16</GMAKE_J>
+      <BATCH_SYSTEM>none</BATCH_SYSTEM>
+      <SUPPORTED_BY>noresmCommunity</SUPPORTED_BY>
+      <MAX_TASKS_PER_NODE>16</MAX_TASKS_PER_NODE>
+      <MAX_MPITASKS_PER_NODE>16</MAX_MPITASKS_PER_NODE>
+      <PROJECT_REQUIRED>FALSE</PROJECT_REQUIRED>
+      <mpirun mpilib="default">
+        <executable>mpiexec</executable>
+        <arguments>
+          <arg name="anum_tasks"> -np $TOTALPES</arg>
+        </arguments>
+      </mpirun>
+      <module_system type="none"/>
+      <environment_variables>
+        <env name="KMP_STACKSIZE">64M</env>
+      </environment_variables>
+      <resource_limits>
+        <resource name="RLIMIT_STACK">-1</resource>
+      </resource_limits>
+    </machine>
+  </config_machines>
+  EOF
+
+  cat >> config_compilers.xml << EOF
+  <?xml version="1.0"?>
+  <config_compilers version="2.0">
+    <compiler MACH="espresso">
+      <LD>mpifort</LD>
+      <AR>x86_64-conda_cos6-linux-gnu-ar</AR>
+      <SFC>x86_64-conda_cos6-linux-gnu-gfortran</SFC>
+      <SCC>x86_64-conda_cos6-linux-gnu-cc</SCC>
+      <SCXX>x86_64-conda_cos6-linux-gnu-c++</SCXX>
+      <MPIFC>mpifort</MPIFC>
+      <MPICC>mpicc</MPICC>
+      <MPICXX>mpicxx</MPICXX>
+      <NETCDF_PATH>/home/centos/miniconda3/envs/esm</NETCDF_PATH>
+      <FFLAGS>
+        <append DEBUG="FALSE"> -O2 </append>
+        <append MODEL="blom"> -fdefault-real-8 </append>
+        <append MODEL="cam"> -finit-local-zero </append>
+      </FFLAGS>
+      <SLIBS>
+        <append> -L\$(NETCDF_PATH)/lib -lnetcdff -lnetcdf -ldl </append>
+        <append> -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lomp -lpthread -lm </append>
+      </SLIBS>
+    </compiler>
+  </config_compilers>
+  EOF
+
+::
+
+To create a new CESM case F2000climo at resolution f19_g17 and run it for **1 day**, and because (for CESM only) *create_newcase* has been added to the *PATH*, simply type (from anywhere on the machine):
+
+::
+
+  create_newcase --case /opt/uio/archive/cases/conda_CESM213_F2000climo_f19_g17 --compset F2000climo --res f19_g17 --machine espresso --run-unsupported
+
+  cd /opt/uio/archive/cases/conda_CESM213_F2000climo_f19_g17
+
+  NUMNODES=-1
+
+  ./xmlchange --file env_mach_pes.xml --id NTASKS --val ${NUMNODES}
+
+  ./xmlchange --file env_mach_pes.xml --id NTASKS_ESP --val 1
+
+  ./xmlchange --file env_mach_pes.xml --id ROOTPE --val 0
+
+  ./xmlchange STOP_N=1
+
+  ./xmlchange STOP_OPTION=ndays
+
+  ./case.setup
+
+  ./case.build
+
+  ./case.submit
+
+::
+
+Hopefully this should create the case, configure it, compile it (for this particular machine the compilation time is less then 3 minutes) and run it (starting with the download of the necessary input files the first time you run it).
+
+For NorESM you first have to clone the github repository, here in /opt/uio/**noresm2**, do as follows (be careful: you have to be in the **(base)** conda environment for that):
+
+::
+
+  cd /opt/uio
+
+  git clone -b noresm2 https://github.com/NorESMhub/NorESM.git noresm2
+
+  cd noresm2/
+
+  sed -i.bak "s/'checkout'/'checkout', '--trust-server-cert'/" ./manage_externals/manic/repository_svn.py
+ 
+  ./manage_externals/checkout_externals -v 
+
+::
+
+To create a "similar" NorESM case NF2000climo at resolution f19_tn14 and also run it for **1 day**, and after having activated the **(esm)** environment (if you are not already in it), do:
+
+::
+
+  cd /opt/uio/noresm2/cime/scripts
+
+  ./create_newcase --case /opt/uio/archive/cases/conda_NorESM_NF2000climo_f19_tn14 --compset NF2000climo --res f19_tn14 --machine espresso --run-unsupported
+
+  cd /opt/uio/archive/cases/conda_NorESM_NF2000climo_f19_tn14
+
+  NUMNODES=-1
+
+  ./xmlchange --file env_mach_pes.xml --id NTASKS --val ${NUMNODES}
+
+  ./xmlchange --file env_mach_pes.xml --id NTASKS_ESP --val 1
+
+  ./xmlchange --file env_mach_pes.xml --id ROOTPE --val 0
+
+  ./xmlchange STOP_N=1
+
+  ./xmlchange STOP_OPTION=ndays
+
+  ./case.setup
+
+  ./case.build
+
+  ./case.submit
+
+::
+
+On our machine the compilation takes less then 3 minutes, and if everything went well the input files should download automatically before the run starts.
+
 Adding a new platform
 '''''''''''''''''''''
 
