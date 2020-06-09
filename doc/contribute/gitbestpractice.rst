@@ -43,67 +43,107 @@ Verify that you have the correct checkout
 When you have cloned the model, check that you have gotten what you
 wanted!
 
-Check that your favourite branch is available using the command git
-branch --all 
+Check that your favourite branch is available using the command 
+::
+
+  git branch --all 
+
 (You should see the branch "master" on top with a star next
 to it. This is the branch you get by default. The other branches are
 listed below with remotes/origin/branchName, but you can not work on
 them until you check them out, see below)
 
 To check out (locally) your favourite branch and to start working on it,
-write git checkout -b myBranchName origin/myBranchName (Note that
-myBranchName must be one of the branches listed by the above command)
+write 
+::
+
+  git checkout -b myBranchName origin/myBranchName 
+
+(Note that myBranchName must be one of the branches listed by the above 
+command)
 
 If you don't user the "-b" option, you will get something which is not
-correct. Make sure you are tracking a remote branch. You can write git
-branch -vv to see which remote branch you are tracking. The output will
-be something like: \* myCheckedOutBranchName 1a08184
-[origin/myCheckedOutBranchname] LatestCommitMessageOnBranch
+correct. Make sure you are tracking a remote branch. You can write 
+::
+
+git branch -vv 
+
+to see which remote branch you are tracking. The output will
+be something like: 
+::
+
+  \* myCheckedOutBranchName 1a08184 [origin/myCheckedOutBranchname] LatestCommitMessageOnBranch
 
 Note that once a branch has been checked out using the -b option, you
 can switch between any of your checked out branches using the command
-git checkout aCheckedOutBranchName
+::
+
+  git checkout aCheckedOutBranchName
 
 Note that in git, switching to a new branch change the files in your
 working directory. Git will warn you if you have any modified files
 before switching to a new branch. This is different from how svn works.
 
+
 Modify files
 ''''''''''''
 
 Modify the code (for example a file named myChangedFile.F90) and send
-back to your local repository through git add myChangedFile.F90 git
-commit -m "aMessage"
+back to your local repository through 
+::
+
+  git add myChangedFile.F90 
+  git commit -m "aMessage"
 
 The message should link to the issue on github, so if you fix issue
 number 100 by this code change, you would probably write something like
-git commit -am "Did part of the work to resolve metno/noresm#100"
+::
+
+  git commit -am "Did part of the work to resolve metno/noresm#100"
 
 Verify, using the tool "gitk" that the changes make sense.
+
 
 Get modifications from github
 '''''''''''''''''''''''''''''
 
+Get modification from remote source by
 ::
 
   git pull
 
 To be absolutely sure about branch names etc, you can do
+::
 
-git pull remoteName remoteBranchName:myLocalBranchName which if your are
-picking up changes the master-branch would translate to git pull origin
-master:master
+  git pull remoteName remoteBranchName:myLocalBranchName 
+
+which if your are picking up changes the master-branch would 
+translate to 
+::
+
+  git pull origin master:master
+
 
 Send modifications to github
 ''''''''''''''''''''''''''''
 
 This command assumes that your changes go to the remote branch named
-like your branch (which is most of the times the case) git push
+like your branch (which is most of the times the case) 
+::
 
-You can also do (to be completely sure): git push remoteName
-myLocalBranchName:remoteBranchName which if your are changing the
-master-branch would translate to git push origin master:master (The
-above command means push my changes to the remote named "origin" from my
+  git push
+
+You can also do (to be completely sure): 
+::
+
+  git push remoteName myLocalBranchName:remoteBranchName 
+  
+which if your are changing the master-branch would translate to 
+::
+
+  git push origin master:master 
+  
+(The above command means push my changes to the remote named "origin" from my
 local branch named master to the remote branch named master. If you are
 changing another branch than master, you must obviously not write
 "master".)
@@ -165,6 +205,7 @@ Git is a very complex system, and combining it with a complex workflow, it can b
   * **Limit number of simultaneous work branches**. The system can technically handle huge number of branches, but mentally it is very difficult to remember what exactly the different branches contain, espesially if they are not sync with the master branch. Try not to have more than two feature branches alive at any time.
   * **Make branches short-lived**. Unless you are making huge refactoring changes in the code (which should have been accepted by the team beforehand), you should generally always create feature-branches that are small enough to be finished within a day or two. When you are not able to finish the feature this rapid, create a **work-in-progress (WIP) pull request** so that the team is informed about what you work on and its progress.
   * **Don't underestimate the value of publishing your commits**. Public commits to git is very often the most valuable communication asset to the rest of the team (in some periodes, the only way you communicate). To view what others are doing is key to make your own commits consistent and in sync with others and the whole project. This is another important reason why you should avoid working privately on your own branches for prolonged periods. As mentioned above, also unfinished features are worthy a WIP pull request.
+
 
 If you don't understand and want to get back to svn
 '''''''''''''''''''''''''''''''''''''''''''''''''''
