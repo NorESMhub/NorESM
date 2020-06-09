@@ -289,7 +289,7 @@ Create a new case:
 Virtual Machine with Conda (@ https://www.nrec.no/ for example)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This section describes how to install all the software environment (including compilers and libraries) needed to run CESM/NorESM on a Virtual Machine (like those available on the Norwegian Research and Education Cloud, the Coogle Cloud Platform, etc.), but a similar process allows to run the models on a personal computer, laptop or desktop running **Centos7** (this distribution is convenient to use since it already contains most of the essential software packages).
+This section describes how to install all the software environment (including compilers and libraries) needed to run CESM/NorESM on a Virtual Machine (like those available on the Norwegian Research and Education Cloud, the Google Cloud Platform, etc.), but a similar process allows to run the model(s) on a personal computer, laptop or desktop running **Centos7** (this distribution is convenient to use since it already contains most of the essential software packages).
 
 The objective here is not to compete against HPCs in terms of sheer computing power, but to satisfy the everyday needs of the vast majority of CESM/NorESM developpers in terms of model development, debugging or testing, as well as for training/teaching purposes.
 
@@ -297,7 +297,7 @@ For this example we start with a completely empty machine with the Centos7 Linux
 
 The name of the user is **centos** (if your user name is different you will have to use your *username* instead).
 
-The first step is to format the volume (if your disk is already formated and/or contains data, skip this step, but still create the **/opt/uio** folder since this is where the model is configured to read/write).
+The first step is to format the volume (if your disk is already formated and/or contains data, skip this step, but still create the **/opt/uio** folder since this is where the model(s) are configured to read/write).
 
 ::
 
@@ -335,7 +335,7 @@ and create the following folders:
 
 ::
 
-Now we can install a few packages which will be needed later (to get the model, etc.) and miniconda (accept the terms of the license and accept the default location **/home/centos/miniconda3**, then answer yes to the question "Do you wish the installer to initialize Miniconda3 by running conda init", exit the virtual machine and re-login).
+Now we can install a few packages which will be needed later (to get the model(s), etc.) and miniconda (accept the terms of the license and accept the default location **/home/centos/miniconda3**, then answer yes to the question *"Do you wish the installer to initialize Miniconda3 by running conda init"*, exit the virtual machine and re-login).
 
 ::
 
@@ -349,9 +349,9 @@ Now we can install a few packages which will be needed later (to get the model, 
 
 ::
 
-Youi will notice the next time you login the Virtual Machine that the prompt starts with *(base)* which indicates that you are in the base conda environment (since you accepted it during the miniconda install).
+You will notice the next time you login the Virtual Machine that the prompt starts with *(base)* which indicates that you are in the base conda environment (since you accepted it during the miniconda install).
 
-Now we recommend to create a new **esm** conda environment before adding the **bioconda** and **conda-forge** channels (in this order) and installing cesm
+We recommend to create a new **esm** conda environment before adding the **bioconda** and **conda-forge** channels (in this order) and installing cesm
 
 ::
 
@@ -367,11 +367,11 @@ Now we recommend to create a new **esm** conda environment before adding the **b
 
 ::
 
-Now the prompt should start with *(esm)* indicating that the esm conda environment has been activated, and every time you login you will have to type **conda activate esm** to be able to run the model(s).
+The prompt should start with *(esm)* indicating that the esm conda environment has been activated, and every time you login you will have to type **conda activate esm** to be able to run the model(s).
 
 This will have installed CESM2.1.3 as well as all the necessary compilers and libraries (HDF5, NetCDF, MKL, etc.) and their dependencies, and the very same environment can be used with NorESM.
 
-In order to run the model you still need configuration files (namely *config*, *config_machines.xml* and *config_compilers.xml*). These will eventually come with NorESM, but for the sake of convenience we provide hereafter an example of such files which have to be located in a **.cime* folder in your home directory (simply copy & past the content of the following cell to generate the files automatically and be carefull not to add any odd characters of lines since CESM/NorESM are extremely picky about it).
+In order to run the model(s) you still need configuration files (namely *config*, *config_machines.xml* and *config_compilers.xml*). These will eventually come with NorESM, but for the sake of convenience we provide hereafter an example of such files which have to be located in a **.cime** folder in your home directory (simply copy & past the content of the following cell to generate the files automatically and be carefull not to add any odd characters of lines since CESM/NorESM are extremely picky about it).
 
 Notice that you only need to do this once, since both CESM and NorESM will use these configurations, and that the name of the machine created is **espresso**. 
 
@@ -488,7 +488,7 @@ To create a new CESM case F2000climo at resolution f19_g17 and run it for **1 da
 
 Hopefully this should create the case, configure it, compile it (for this particular machine the compilation time is less then 3 minutes) and run it (starting with the download of the necessary input files the first time you run it).
 
-For NorESM you first have to clone the github repository, here in /opt/uio/**noresm2**, do as follows (be careful: you have to be in the **(base)** conda environment for that):
+For NorESM, first clone the github repository, here in /opt/uio/**noresm2**, as follows (be careful: you have to be in the **(base)** conda environment for that):
 
 ::
 
