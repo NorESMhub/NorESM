@@ -3,8 +3,8 @@
 Running on different platforms
 ======================================
 
-Platforms
-'''''''''
+HPC platforms
+'''''''''''''
 
 Below is a list of platforms where NorESM2 has been installed, including platform specific intructions. 
 
@@ -287,7 +287,7 @@ Create a new case:
 ::
 
 Virtual Machine with Conda (@ https://www.nrec.no/ for example)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 This section describes how to install all the software environment (including compilers and libraries) needed to run CESM/NorESM on a Virtual Machine (like those available on the Norwegian Research and Education Cloud, the Google Cloud Platform, etc.), but a similar process allows to run the model(s) on a personal computer, laptop or desktop running **Centos7** (this distribution is convenient to use since it already contains most of the essential software packages).
 
@@ -371,7 +371,7 @@ The prompt should start with *(esm)* indicating that the esm conda environment h
 
 This will have installed CESM2.1.3 as well as all the necessary compilers and libraries (HDF5, NetCDF, MKL, etc.) and their dependencies, and the very same environment can be used with NorESM.
 
-In order to run the model(s) you still need configuration files (namely *config*, *config_machines.xml* and *config_compilers.xml*). These will eventually come with NorESM, but for the sake of convenience we provide hereafter an example of such files which have to be located in a **.cime** folder in your home directory (simply copy & past the content of the following cell to generate the files automatically and be carefull not to add any odd characters of lines since CESM/NorESM are extremely picky about it).
+In order to run the model(s) you still need configuration files (namely *config*, *config_machines.xml* and *config_compilers.xml*). These will eventually come with NorESM, but for the sake of convenience we provide hereafter an example of such files which have to be located in a **.cime** folder in your home directory (simply copy & past the content of the following cell to generate the files automatically and be carefull not to add any odd characters or lines since CESM/NorESM are extremely picky about it).
 
 Notice that you only need to do this once, since both CESM and NorESM will use these configurations, and that the name of the machine created is **espresso**. 
 
