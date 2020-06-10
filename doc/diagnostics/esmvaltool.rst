@@ -92,14 +92,21 @@ The ESMValTool is also available from `NIRD Toolkit <https://apps.sigma2.no>`_ a
 `NIRD Toolkit <https://www.sigma2.no/nird-toolkit>`_ is a cloud infrastructure that gives access to compute nodes on Nird. The service is managed by `Kubernetes <https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/>`_ which launches applications from `Docker containers <https://docs.docker.com/get-started/overview/>`_.
 
 Access to the NIRD Toolkit service is provided according to a 3 tier ranking
-- **Owner** : a project leader/executive officer of a NSxxxxK project
-- **Admin** : a person authorized by an **owner** to manage NIRD Toolkit applications
-- **Member** : a person authorized by the **owner** or **admin** to access a NIRD Toolkit application
+
+1. **Owner** : a project leader/executive officer of a NSxxxxK project
+
+2. **Admin** : a person authorized by an **owner** to manage NIRD Toolkit applications
+
+3. **Member** : a person authorized by the **owner** or **admin** to access a NIRD Toolkit application
 
 In order to use NIRD Toolkit, an **owner** of of a NSxxxxK project should create a group in `dataporten <https://minside.dataporten.no/#userinfo>`_, and invite **members** to join, who may be given **admin** status by the **owner** or existing **admin** people. See Sigma2 information page about `deploing service <https://www.sigma2.no/get-ready-deploy-service-through-nird-toolkit>`_ for details about the procedure.
 
 Install and run an application
 ------------------------------
+
+Applications in NIRD Toolkit are available from::
+
+    https://apps.sigma2.no/nird
 
 
 
