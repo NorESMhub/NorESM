@@ -108,21 +108,48 @@ Applications in NIRD Toolkit are available from::
 
     https://apps.sigma2.no/nird
 
-
-
+An owner/admin can launch a new application by installing it, and request resources to be made available to the application via the Kybernetes management system. A member can launch an existing application that has previously been set up by an owner/admin. The application setup allows access to storage areas under NSxxxxK storage volumes (read-only by default) and a user storage area under a specific NSxxxxK/subfolder with write access, but only applications pre-defined in the docker image provided to the Kybernetes system can be used.
 
 Install ESMValTool docker image
 -------------------------------
 
-To install the docker image you need access to the Nird Toolkit service through a project, and install a new instance of "jupyter": ::
+ESMValTool is not included in the default docker images provided by Sigma2, but has been installed in modified docker images. These are created by building ESMValTool on top of an official Sigma2 docker image, and package in a new docker container. Such modified docker images are available for `jupyter` and `jupyterhub` applications.
 
-    https://apps.sigma2.no/nird
+1. **jupyterhub:** nordicesmhub/jupyterhub-nird-toolkit
+  - *source* : https://github.com/NorESMhub/jupyterhub-nird-toolkit
+  - *docker* : https://hub.docker.com/r/nordicesmhub/jupyterhub-nird-toolkit ::
 
-On the installation page you select whatever standard settings you like (application name, projectspace, persistent storage, machine type), and then select "Show advances configuration..." and replace the standard dockerimage with: ::
+   nordicesmhub/jupyterhub-nird-toolkit:latest
+
+2. **jupyterhub:** tomastorsvik/nird_jupyterhub-singleuser_esmvaltool
+  - *source* : https://github.com/TomasTorsvik/jupyterhub-nird-toolkit
+  - *docker* : https://hub.docker.com/repository/docker/tomastorsvik/nird_jupyterhub-singleuser_esmvaltool ::
+
+   tomastorsvik/nird_jupyterhub-singleuser_esmvaltool:latest
+
+3. **jupyter:** tomastorsvik/nird_jupyter-spark_esmvaltool
+  - *source* : https://github.com/TomasTorsvik/jupyter-spark-nird-toolkit
+  - *docker* : https://hub.docker.com/repository/docker/tomastorsvik/nird_jupyter-spark_esmvaltool ::
+
+     tomastorsvik/nird_jupyter-spark_esmvaltool:latest
+
+
+To install the docker image you need access to the Nird Toolkit service through a project, and install a new instance of e.g. "jupyter". On the installation page you select whatever standard settings you like (application name, projectspace, persistent storage, machine type), and then select "Show advances configuration..." and replace the standard dockerimage with: ::
 
     tomastorsvik/nird_jupyter-spark_esmvaltool:latest
 
 One can activate the "JupyterLab" option in the configuration (but it is may not necessary to do so to run ESMValTool). To test if the image is installed correctly (provided the jupyter notebook environment builds without errors) you can open a terminal in the environment and type ``esmvaltool -h``, which should give you the help page for the tool in the terminal window.
+
+As the development of ESMValTool and the updating of the NIRD Toolkit base system are not syncronous, there may sometimes be conflits in the package dependencies of what ESMValTool wants and what NIRD Toolkit provides. Hence, it is sometimes necessary to build ``esmvaltool`` in a separate ``conda`` environment (not "base"). If ``esmvaltool -h`` fails to give the expected output, check if there exist any alternative environments by doing ::
+
+  conda env --list
+
+If you find an ``esmvaltool`` environment, this can be activated by ::
+
+  source activate esmvaltool
+
+At the time of writing, the preferred activation method ``conda activate esmvaltool`` is not recognized inside a NIRD Toolkit application.
+
 
 (Some details about how to access the NS9034K project area for NorESM CMIP5/CMIP6 model experiments are still missing...)
 
