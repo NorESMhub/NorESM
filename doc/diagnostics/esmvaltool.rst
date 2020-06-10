@@ -87,7 +87,25 @@ Paste the above https address to browser, and you will find a authen code, and p
 Run ESMValTool on NIRD toolkit service
 ======================================
 
-The ESMValTool is also installed as a service at the NIRD Toolkit Service (`<https://apps.sigma2.no>`_)
+The ESMValTool is also available from `NIRD Toolkit <https://apps.sigma2.no>`_ applications (Jupyter and JupyterHub), provided by Docker images.
+
+`NIRD Toolkit <https://www.sigma2.no/nird-toolkit>`_ is a cloud infrastructure that gives access to compute nodes on Nird. The service is managed by `Kubernetes <https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/>`_ which launches applications from `Docker containers <https://docs.docker.com/get-started/overview/>`_.
+
+Access to the NIRD Toolkit service is provided according to a 3 tier ranking
+- **Owner** : a project leader/executive officer of a NSxxxxK project
+- **Admin** : a person authorized by an **owner** to manage NIRD Toolkit applications
+- **Member** : a person authorized by the **owner** or **admin** to access a NIRD Toolkit application
+
+In order to use NIRD Toolkit, an **owner** of of a NSxxxxK project should create a group in `dataporten <https://minside.dataporten.no/#userinfo>`_, and invite **members** to join, who may be given **admin** status by the **owner** or existing **admin** people. See Sigma2 information page about `deploing service <https://www.sigma2.no/get-ready-deploy-service-through-nird-toolkit>`_ for details about the procedure.
+
+Install and run an application
+------------------------------
+
+
+
+
+Install ESMValTool docker image
+-------------------------------
 
 To install the docker image you need access to the Nird Toolkit service through a project, and install a new instance of "jupyter": ::
 
