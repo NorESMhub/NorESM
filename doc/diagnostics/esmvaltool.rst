@@ -8,7 +8,7 @@ The Earth System Model eValuation Tool (`ESMValTool <https://esmvaltool.readthed
   is a community-development that aims at improving diagnosing and understanding of the causes and effects of model biases and inter-model spread. The ESMValTool can process multiple model outputs, including NorESM, but these model output need to be post-processed to conform with the CMIP data standard (i.e., `CMOR <https://cmor.llnl.gov>`_). ESMValTool support all the published model data output on the `ESGF <https://esgf-data.dkrz.de>`_ 
 
 
-Run ESMVAlTool on NIRD service node
+Run ESMValTool on NIRD service node
 ===================================
 
 The ESMValTool is currently installed under the dedicated IPCC service node (`<ipcc.nird.sigma2.no>_) for data post-processing.
@@ -26,7 +26,7 @@ An example of steps to run the ESMValTool on ipcc.nird.sigma2.no
 
     conda active /conda/esmvaltool/2.0.0b4/
 
-(note, the esmvaltool may be upgraded in the future. Therefore, use ``ls /conda/esmvaltoo/`` to check the currently installed vesion if 2.0.0b4 does not exist.)
+(note, the esmvaltool may be upgraded in the future. Therefore, use ``ls /conda/esmvaltool/`` to check the currently installed vesion if 2.0.0b4 does not exist.)
 
 3. copy the following config file and recipe to your favourite place: ::
 
@@ -47,15 +47,17 @@ Download data automatically with Synda
 --------------------------------------
 
 `Synda <https://esmvaltool.readthedocs.io/en/latest/quickstart/running.html?highlight=synda#running>`_
-  is a tool to download and manage model data form the `ESGF <https://esgf-data.dkrz.de>`_, it can be called by the ``esmvaltool`` as a command line option ``--synda`` so that it can automatically download necessary model data as specified in the receipe of ESMValTool. For example, ``esmvaltool -c config_heyc.yml ./recipe_seaice.yml --synda``.
+  is a tool to download and manage model data form the `ESGF <https://esgf-data.dkrz.de>`_, it can be called by the ``esmvaltool`` as a command line option ``--synda`` so that it can automatically download necessary model data as specified in the receipe of ESMValTool. For example, ::
+
+   esmvaltool -c config_heyc.yml ./recipe_seaice.yml --synda
 
 Note, it is OPTIONAL to use synda to download data automatically during the runtime of ESMValTool. One can download the data by some other tools or scripts before running the ESMValTool.
 
-If you do want to use Synda, there are two major steps you need to do:
+If you do want to use ``synda``, there are two major steps you need to do:
 
 **Activate the tool**
 
-It is install with `Conda`, so you can add ``synda`` exectable to your search path, e.g., ::
+It is install with ``conda``, so you can add ``synda`` exectable to your search path, e.g., ::
 
   export PATH:$PATH:/projects/NS9252K/conda/synda/bin/synda
 
@@ -63,7 +65,7 @@ Then it should be availabe in your command windown by the ``synda`` command.
 
 **Set up your credentials**
 
-1. register (one of) the [ESGF node](https://esgf-data.dkrz.de/projects/esgf-dkrz/) and [Globus transfer](https://www.globus.org) (not toally sure if account on globus is mandatory if this option will not be used, but seem yes according to my experience, you can firstly try without it)
+1. register (one of) the `ESGF node <https://esgf-data.dkrz.de/projects/esgf-dkrz/>`_ and `Globus transfer <https://www.globus.org>`_ (not toally sure if account on globus is mandatory if this option will not be used, but seem yes according to my experience, you can firstly try without it)
 
 2. paste your username and password to in ``~/.synda/conf/credentials.conf``
 
@@ -82,7 +84,7 @@ it will give out something like: ::
 Paste the above https address to browser, and you will find a authen code, and past back to the command line.
  
 
-Run ESMVAlTool on NIRD toolkit service
+Run ESMValTool on NIRD toolkit service
 ======================================
 
 The ESMValTool is also installed as a service at the NIRD Toolkit Service (`<https://apps.sigma2.no>`_)
