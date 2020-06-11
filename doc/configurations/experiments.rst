@@ -62,7 +62,7 @@ Compsets
 
 Compsets, or component sets, specify which component models will be used in your simulation along with which forcing files, and even which physics options to use. Each compset has a long name (lname) and an alias. For instance N1850 is the alias for the NorESM compset for pre-industrial (1850) conditions. The long name for N1850 is ::
   
-  1850_CAM60%NORESM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_MICOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS. 
+  1850_CAM60%NORESM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS. 
   
 The long name generally follows the notation: TIME_ATM[%phys]_LND[%phys]_ICE[%phys]_OCN[%phys]_ROF[%phys]_GLC[%phys]_WAV[%phys][_ESP%phys][_BGC%phys] (see the help section of the file <noresm_base>/cime_config/config_compsets.xml for details). The compsets can also include information on which grids are scientifcally supported (see below for details). 
 
@@ -145,7 +145,7 @@ This examples shows how to simply add the "N1850frc2" compset to config_compsets
 
   <compset>
     <alias>N1850frc2</alias>
-    <lname>1850_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_MICOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+    <lname>1850_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
   </compset>
  
 where 
@@ -153,7 +153,7 @@ where
 <alias>COMPSETNAME</alias> 
 sets the compsets name used when building a new case. Make sure to use a new and unique compset name. The details of the compset i.e. which models components and component-specific configurations to use are set in 
 
-<lname>1850_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_MICOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>. It is also possible to just add that line (without the <lname>) when creating a new case. 
+<lname>1850_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>. It is also possible to just add that line (without the <lname>) when creating a new case. 
 
 '_' seperates between model components::
 
@@ -172,8 +172,8 @@ E.g.
    - Build CLM5 (land model) with Biogeochemistry and prognotic crop package 
 - CICE%NORESM-CMIP6
    - Build CICE (sea-ice model) with NorESM2-CMIP6 setup 
-- MICOM%ECO
-   - Build MICOM (ocean model BLOM) including the iHAMOCC
+- BLOM%ECO
+   - Build BLOM (ocean model) including iHAMOCC biogeochemistry model
 - MOSART
    - Build MOSART (river runoff model) with default configurations
 - SGLC_SWAV
