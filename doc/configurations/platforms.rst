@@ -416,7 +416,7 @@ Notice that you only need to do this once, since both CESM and NorESM will use t
       <mpirun mpilib="default">
         <executable>mpiexec</executable>
         <arguments>
-          <arg name="anum_tasks"> -np $TOTALPES</arg>
+          <arg name="anum_tasks"> -np \$TOTALPES</arg>
         </arguments>
       </mpirun>
       <module_system type="none"/>
