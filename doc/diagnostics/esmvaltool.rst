@@ -150,4 +150,4 @@ If you find an ``esmvaltool`` environment, this can be activated by ::
 
   source activate esmvaltool
 
-At the time of writing, the preferred activation method ``conda activate esmvaltool`` is not recognized inside a NIRD Toolkit application.
+At the time of writing (10 June 2020), the preferred activation method ``conda activate esmvaltool`` is not recognized inside a NIRD Toolkit application.
