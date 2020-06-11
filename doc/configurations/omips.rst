@@ -139,15 +139,16 @@ The sea ice model component is based upon version 5.1.2 of the CICE sea ice mode
 Initial conditions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The CICE model is initialized from ?
+By default, the CICE model is initialized with a 'default', simplified, sea ice field with sea ice in cold regions (air temperature below 0 degree C), north of 70 N and south of 60 S. The sea ice thickness in these regions is horizontal homogeneous, with a uniform snow cover. This behavior is given by the ice_ic variable in the namelist. This can be changed to start without sea ice by setting:
 
 ::
 
-   /cluster/shared/noresm/inputdata/ice/cice/SOME_FILE??
+  &setup_nml
+    ice_ic = "none"
 
 ::
 
-The inital state file can be set in user_nl_cice in the case folder :
+in the user_nl_cice in the case folder, or by specifying a restart file which would give the desired sea ice state:
 
 ::
 
@@ -171,7 +172,9 @@ and in the Run folder::
 
   <RUN_DIR>/case/run/ice_in
   
-NorESM2 specific addions
+This information is also written to the ice.log.* file generated during the run.   
+  
+NorESM2 specific addition
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 A NorESM2-specific change is including the effect of wind drift of snow into ocean following Lecomte et al. (2013)
 This change can be tuned on/off in the user_nl_cice in the case folder. Default is::
@@ -191,13 +194,12 @@ and will use NorESM2 treatment of wind drift of snow. Setting
 
 ::
 
-will reset the NorESM2 specific addition and the effect of wind drift of snow into ocean will not be included. 
+will reset the NorESM2 specific addition and the effect of wind drift of snow into ocean will not be included. It is also possible to change the snow density ``rhos`` and the snow thermal conductivity ``ksno``. Be aware that this will influence the overall tuning of the coupled model. 
 
 Modify user name lists for CICE
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Syntax - same as cam? or same as blom?
 
-An example of how you can modify user_nl_cice. PLEASE EXPLAIN!
+Output from the model is changed by controlling the user_nl_cice file in your casefolder. By default, the file typically looks like this: 
 ::
 
    histfreq = 'm','d','x','x','x'
@@ -225,27 +227,43 @@ An example of how you can modify user_nl_cice. PLEASE EXPLAIN!
    f_aicen="mxxxx"
    f_snowfracn="mxxxx"
 
-
-
 ::
+
+where the ``f_*`` flags are used to change the writing of specific variables, and the ``histfreq`` and ``histfreq_n`` variables are used to specify type of history files written, and their frequency. The ``f_CMIP`` flag activates the specific SIMIP/CMIP variables used the CMIP6 runs. By default, the model writes extensive output with a monthly frequency, and more limited at daily basis. 
+
+The easiest way to turn of daily output from CICE is to put
+::
+
+   histfreq = 'm','x','x','x','x'
+
+:: 
+
+in the user_nl_cice file. 
+
+High-frequency output can be achieved by manipulating the  ``histfreq`` and ``histfreq_n`` variables, together with the specific variable should be at higher frequency. To use 3-hourly output of the sea ice velocity from the model set
+::
+   histfreq = 'm','d','h','x','x'
+   histfreq_n = 1,1,3,1,1
+   f_siu = 'm,d,h,x,x'
+   f_siv = 'm,d,h,x,x'
+::
+
+Be aware that the model writes one file per time step. Therefore, this should be done for short runs, only, and the high-frequency output should be collected together in one (or a few) larger files after the model run, e.g. by using the ``ncrcat`` command. 
+
+
 
 Code modification
 ^^^^^^
 
-If you want to make more subtantial changes to the codes than what is possible by the use of user_nl_cice, you need to copy the source code (the fortran file you want to modify) to the SourceMods/src.cice folder in the case directory, then make the modifications needed before building the model. **Do not change the source code in the <noresm-base> folder!**
+If you want to make more substantial changes to the codes than what is possible by the use of user_nl_cice, you need to copy the source code (the fortran file you want to modify) to the SourceMods/src.cice folder in the case directory, then make the modifications needed before building the model. **Do not change the source code in the <noresm-base> folder!**
 
 The CICE source code is located in::
   
   <noresm-base>/components/cice/src/
   
-and what about::
 
-  components/micom/icedyn/ ??
-
-
-
-CICE User Guide:
-https://cice-consortium-cice.readthedocs.io/en/master/user_guide/
+More information is found in the CESM-CICE User Guide:
+https://cesmcice.readthedocs.io/en/latest/
 
 
 References
