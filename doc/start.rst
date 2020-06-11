@@ -48,7 +48,6 @@ NorESM2 exists in three versions:
   - 2 degree resolution for the atmosphere and land components
   - 1 degree resolution for the ocean and sea-ice components
   - CO2 concentration driven (default)
-  - Possible to run CO2 emission driven, used for interactive carbon-cycle studies (**NorESM2-LME**)
   
 - **NorESM2-MH**
  
@@ -56,7 +55,9 @@ NorESM2 exists in three versions:
   - 0.25 degree resolution for the ocean and sea-ice components
 
    
-
+NorESM2 can be run in emission driven mode for interactive carbon-cycle
+studies. Currently, this configuration is only supported for the
+LM-resolution
 
 | NorESM2 contributes to the 6th phase of the Coupled Model Intercomparison Project (CMIP6):   
 | https://www.wcrp-climate.org/wgcm-cmip/wgcm-cmip6   
