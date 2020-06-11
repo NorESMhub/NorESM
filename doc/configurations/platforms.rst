@@ -400,7 +400,7 @@ On Fram:
      <MPI_LIB_NAME>mpi</MPI_LIB_NAME>
      <FFLAGS>
        <append DEBUG="FALSE"> -O2 </append>
-       <append MODEL="micom"> -r8 </append>
+       <append MODEL="blom"> -r8 </append>
        <append MODEL="cam"> -init=zero,arrays </append>
      </FFLAGS>
      <MPICC> mpiicc </MPICC>
@@ -432,7 +432,7 @@ On Tetralith:
     </FFLAGS>
     <FFLAGS>
       <append DEBUG="FALSE"> -O0 -xAVX </append>
-      <append MODEL="micom"> -r8 </append>
+      <append MODEL="blom"> -r8 </append>
     </FFLAGS>
     <CFLAGS>
       <append> -xHost -fPIC -mcmodel=large </append>
