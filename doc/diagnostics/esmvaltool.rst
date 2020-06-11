@@ -13,7 +13,7 @@ The `esmvaltool-on-nird <https://github.com/orgs/NorESMhub/teams/esmvaltool-on-n
 Run ESMValTool on NIRD service node
 ===================================
 
-The ESMValTool is currently installed under the dedicated IPCC service node (`<ipcc.nird.sigma2.no>_) for data post-processing.
+The ESMValTool is currently installed under the dedicated IPCC service node (`<ipcc.nird.sigma2.no>_) for data post-processing. The following NIRD project areas are mounted under /projects of the ``IPCC`` node: NS2345K, NS9034K, NS9039K, NS9252K, NS9560K, NS9588K.
 
 Activate and run ESMValTool
 ---------------------------
