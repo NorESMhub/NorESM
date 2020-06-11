@@ -269,6 +269,17 @@
   </compset>
 
   <compset>
+    <alias>N1850esm</alias>
+    <lname>1850_CAM60%NORESM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BPRPDMS</lname>
+  </compset>
+
+  <!-- uses differently organized emission files : FRC2 -->
+  <compset>
+    <alias>N1850frc2esm</alias>
+    <lname>1850_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BPRPDMS</lname>
+  </compset>
+
+  <compset>
     <alias>NHIST</alias>
     <lname>HIST_CAM60%NORESM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
   </compset>
@@ -277,6 +288,17 @@
   <compset>
     <alias>NHISTfrc2</alias>
     <lname>HIST_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+  </compset>
+
+   <compset>
+    <alias>NHISTesm</alias>
+    <lname>HIST_CAM60%NORESM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BPRPDMS</lname>
+  </compset>
+
+  <!--uses differently organized emission files : FRC2 -->
+  <compset>
+    <alias>NHISTfrc2esm</alias>
+    <lname>HIST_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BPRPDMS</lname>
   </compset>
 
   <compset>
@@ -339,6 +361,11 @@
   </compset>
 
   <compset>
+    <alias>NSSP126frc2ext</alias>
+    <lname>SSP126_CAM60%NORESM%FRC2EXT_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+  </compset>
+
+  <compset>
     <alias>NSSP245frc2</alias>
     <lname>SSP245_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
   </compset>
@@ -351,6 +378,11 @@
   <compset>
     <alias>NSSP585frc2</alias>
     <lname>SSP585_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+  </compset>
+
+  <compset>
+    <alias>NSSP585frc2ext</alias>
+    <lname>SSP585_CAM60%NORESM%FRC2EXT_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
   </compset>
 
   <!-- NorESM scenarios -->
@@ -556,8 +588,11 @@
         <!-- Need because ref case is non-transient -->
         <value grid="a%0.9x1.25_l%0.9x1.25_oi%gx1v7_r%r05_g%gland4_w%ww3a_m%gx1v7" compset="HIST_CAM60%WC.*_CLM50%BGC-CROP.*_CICE.*_POP2%ECO.*_MOSART_CISM2%NOEVOLVE_WW3">use_init_interp=.true.</value>
 
-      <value compset="HIST_CAM60%NORESM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS">use_init_interp=.true.</value>
-
+        <!-- NorESM historical simulation for CMIP6 (concentration and emission driven, applies for all grids), set use_init_interp because ref case is non-transient -->
+        <value compset="HIST_CAM60%NORESM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS">use_init_interp=.true.</value>
+        <value compset="HIST_CAM60%NORESM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BPRPDMS">use_init_interp=.true.</value>
+        <value compset="HIST_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS">use_init_interp=.true.</value>
+        <value compset="HIST_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BPRPDMS">use_init_interp=.true.</value>
       </values>
 
     </entry>
