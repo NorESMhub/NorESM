@@ -36,7 +36,7 @@ NorESM2 specific additions to CESM2 includes (but is not limited to):
 For a short description of the model components, please see :ref:`model-description`
 
 
-NorESM2 exists in four versions:
+NorESM2 exists in three versions:
 ++++++++++++++++
 
 - **NorESM2-MM**
@@ -44,11 +44,12 @@ NorESM2 exists in four versions:
   - 1 degree resolution for all model components
   - CO2 concentration driven
    
-- **NorESM2-MM**
+- **NorESM2-LM**
  
   - 2 degree resolution for the atmosphere and land components
   - 1 degree resolution for the ocean and sea-ice components
-  - CO2 concentration driven
+  - CO2 concentration driven (default)
+  - Possible to run CO2 emission driven, used for interactive carbon-cycle studies (**NorESM2-LME**)
   
 - **NorESM2-MH**
  
@@ -56,11 +57,7 @@ NorESM2 exists in four versions:
   - 0.25 degree resolution for the ocean and sea-ice components
   - CO2 concentration driven
  
-- **NorESM2-LME**
-    
-  - 2 degree resolution for the atmosphere and land components
-  - 1 degree resolution for the ocean and sea-ice components
-  - CO2 emission driven, used for interactive carbon-cycle studies
+  
    
 
 
