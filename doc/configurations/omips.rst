@@ -6,37 +6,11 @@ Ocean and Sea-Ice
 BLOM
 '''''''
 
-Initial conditions
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-In the OMIP-type experiments, the ocean was initialized from rest, and the initial ocean temperature and salinity were from the Polar Science Center Hydrographic Climatology (PHC) 3.0, updated from Steele et al. (2001). **[note by CG: the following needs to be checked by ocean BGC people]** For initialization of the ocean biogeochemical fields, we use the climatological fields from the World Ocean Atlas (WOA; i.e., for oxygen, nitrate, silicate, and phosphate; Garcia et al., 2010a, b) and the Global Ocean Data Analysis Project (GLODAP; i.e., for alkalinity and pre-industrial dissolved inorganic carbon; Key et al., 2004).
-
-
-The initial condition file containing ocean temperature and salinity for the one-degree OMIP experiments is located at (on Fram) ::
-
-  /cluster/shared/noresm/inputdata/ocn/micom/tnx1v4/20170601/inicon.nc
-  
-The file contains values for layered potential density (sigma: sigma2 - 1000), potential temperature (temp), salinity (saln) and thickness (dz):
-
-:: 
-
-  dimensions:
-          x = 360 ;
-          y = 385 ;
-          z = 53 ;
-  variables:
-          double sigma(z, y, x) ;
-          double temp(z, y, x) ;
-          double saln(z, y, x) ;
-          double dz(z, y, x) ;
-::
-
-
+In NorESM2, the ocean component BLOM/iHAMOCC can be either run fully coupled to the other model components, or in ocean carbon-cycle stand alone configuration. The latter setup follows the CMIP6-OMIP protocol (see below) and is driven by atmospheric input data derived from reanalysis products (called *data-atmosphere*, DATM).
 
 
 OMIP-type experiments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 
 The Ocean Model Intercomparison Project (OMIP; Griffies et al., 2016) is an endorsed project in the CMIP6. OMIP provides a protocol for global ocean/sea-ice models forced by a common prescribed atmospheric forcing, and a protocol for ocean diagnostics to be saved as part of CMIP6. OMIP includes a physical component (Griffies et al., 2016) and a biogeochemistry component (Orr et al. 2017).
 
@@ -94,34 +68,33 @@ Forcing datasets
 
 - **OMIP-1/CORE-II**
   
-  Forcing dataset described in detail by Large and Yeager (2009). The forcing files are located at (on Fram) ::
+  Forcing dataset described in detail by Large and Yeager (2009). The forcing files are located in ::
   
-  /cluster/shared/noresm/inputdata/ocn/iaf/
+  /DIN_LOC_ROOT/ocn/iaf/,
+  
+  where DIN_LOC_ROOT is the base input data directory, which depends on the machine (on fram it is /cluster/shared/noresm/inputdata/).
 
 
 - **OMIP-2/JRA55-do**
 
   Forcing dataset described in detail by Tsujino et al. (2018). The forcing files are located at (on Fram) ::
 
-  /cluster/shared/noresm/inputdata/ocn/jra55/v1.3_noleap/
+  /DIN_LOC_ROOT/ocn/jra55/v1.3_noleap/
 
 
 
-Modify user name lists for BLOM
+Modify user namelist for BLOM/iHAMOCC
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Modifications of certain model parameters and model output that are different from default should be done in user_nl_blom under the case directory. The default user namelist setup is in CaseDocs/ocn_in, which specifies a number of physical parameters (such as vertical and horizontal mixing), as well as saved model output frequencies, including options for daily (hd), monthly (hm), and yearly (hy) output. **[note by CG: this needs to be doulbe checked by Mats]**
+Model parameters and adjusting model output can be done in user_nl_blom, which is present in the case directory after ./case.setup has been excecuted. The resolved namelist for BLOM/iHAMOCC is saved in CaseDocs/ocn_in, and specifies a number of physical parameters (such as vertical and horizontal mixing), as well as model output settings and frequencies. Output settings include options for daily (hd/hbgcd), monthly (hm/hbgcm), and yearly (hy/hbgcy) output, where the files containing 'bgc' in their filenames are iHAMOCC output files. Note that the resolved namelist (CaseDocs/ocn_in) should **never** be used to place user defined changes, since this file is re-created (overwritten) every time the model is submitted. User defined namelist changes need to be placed in user_nl_blom, for example
+::
+  BDMC2 = .15
+  NIWGF = .5
 
-Note that BLOM uses a different syntax than the rest. For example, in user_nl_blom::
+Note that it does not matter which namelist group the variables belong (namelist groups must not be specified in user_nl_blom).  BLOM parameters that can be changed via namelist settings are documented in the resolved namelist file (see CaseDocs/ocn_in after running ./preview_namelists or building the case). In iHAMOCC, model parameters are currently hard-coded, i.e. they cannot be changed through namelist settings. To change iHAMOCC model parameters, please see below under 'Code modifications'.
 
-  set BDMC2   = .15
-  set NIWGF = .5
-
-One needs to include **set** before the name of the variable and it does not matter what namelist group the variable belong.
-
-For changing the output in BLOM, below shows an example of how to change the monthly mean (default) to yearly mean layered ocean temperature.
-
-The default parameter is::
+For changing the output in BLOM or iHAMOCC, the example below shows how to change the monthly mean (default) to yearly mean layered ocean temperature. The default setting (as can be seen in CaseDocs/ocn_in after running ./preview_namelists or building the case) is
+::
 
    &DIAPHY
      GLB_FNAMETAG = 'hd','hm','hy',
@@ -129,7 +102,6 @@ The default parameter is::
      ...
      LYR_TEMP     = 0,   4,   0,
      ...
-
 
 which means that the model layered temperature has a monthly mean output with single precision (4-byte;real4), e.g. ::
 
@@ -139,40 +111,26 @@ which means that the model layered temperature has a monthly mean output with si
    8    - variable is written as real8
 
 
-If one would like an output of yearly mean layered temperature, simply change LYR_TEMP in user_nl_blom to::
+If one would like output of yearly mean layered temperature, simply change LYR_TEMP in user_nl_blom to::
 
-   set LYR_TEMP     = 0,   0,   4,
+   LYR_TEMP     = 0,   0,   4,
 
+Available output variables for BLOM and iHAMOCC are documented in the resolved namelist file (see CaseDocs/ocn_in after running ./preview_namelists or building the case).
 
 
 Code modification
 ^^^^^^
 
-If you want to make more subtantial changes to the codes than what is possible by the use of user_nl_blom, you need to copy the source code (the fortran file you want to modify) to the SourceMods/src.blom folder in the case directory, then make the modifications needed before building the model. **Do not change the source code in the <noresm-base> folder!**
+If you need to make changes to the BLOM/iHAMOCC code, you need to copy the source code (the fortran file you want to modify) to the folder SourceMods/src.blom in the case directory, then make the modifications needed before building the model. **Do not change the source code in the <noresm-base> folder!** As mentioned above, if you need to change a model parameter for iHMAOCC you need to modify the source code. All iHAMOCC parameters are defined in the routine beleg_parm.F90.
 
 The BLOM source code is located in::
   
   <noresm-base>/components/blom/
-  
-iHAMOCC
-''''''''
-
-Initial conditions
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Modify user name lists for iHAMOCC
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-For iHAMOCC you can only set output options via user_nl_blom. Changes of parameter values need to be done as described in the **Code modification**.
-
-Code modification
-^^^^^^
-
-If you want to make more subtantial changes to the codes than what is possible by the use of user_nl_blom, you need to copy the source code (the fortran file you want to modify) to the SourceMods/src.blom folder in the case directory, then make the modifications needed before building the model. **Do not change the source code in the <noresm-base> folder!**
 
 The iHAMOCC source code is located in::
-  
-  <noresm-base>/components/blom/hamocc/
 
+  <noresm-base>/components/blom/hamocc
+  
 
 CICE
 ''''''
