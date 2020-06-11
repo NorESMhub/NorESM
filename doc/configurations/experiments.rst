@@ -242,34 +242,34 @@ Model resolution is set when the case is created. Below some common resolutions 
   
   <noresm_base>/cime/config/cesm/config_grids.xml
 
+
 Atmospheric grids
 ^^^^^^^^^^^^^^^^^
+::
 
+  f19_f19 - atm lnd 1.9x2.5
+  f09_f09 - atm lnd 0.9x1.25  
+  f09_f09_mg17
 
-| f19_f19 - atm lnd 1.9x2.5  
-| f09_f09 - atm lnd 0.9x1.25  
-| f09_f09_mg17
 
 Ocean grids
 ^^^^^^^^^^^
-Which ocean grid is recommended?
+Currently, BLOM supports three resolutions, nominal 2,1, and 1/4 degrees in a tripolar grid configuration:
+::
 
-| tnx1v1 tripole v1 1-deg grid  
-| tnx1v3 tripole v3 1-deg grid  
-| tn14(?)tripole v4 1-deg grid  tripole ocean grid  
-| tnx2v1 tripole v1 2-deg grid  
-| tx1v1 tripole v1 1-deg grid: testing proxy for high-res tripole ocean grids- do not use for scientific experiments  
+  tnx1v4   - tripolar ocn ice 1-degree grid  
+  tnx2v1   - tripolar ocn ice 2-degree grid  
+  tx0.25v4 - tripolar ocn ice 1/4-degree grid  
+
 
 Coupled
 ^^^^^^^
-| f09_tn11   - atm lnd 0.9x1.25, ocnice tnx1v1
-| f09_tn13   - atm lnd 0.9x1.25, ocnice tnx1v3
-| f09_tn14   - atm lnd 0.9x1.25, ocnice tnx1v4  [CMIP6 grid]
-| f09_tn0251 - atm lnd 0.9x1.25, ocnice tnx0.25v1
-| f09_tn0253 - atm lnd 0.9x1.25, ocnice tnx0.25v3
-| f19_tn11   - atm lnd 1.9x2.5, ocnice tnx1v1
-| f19_tn13   - atm lnd 1.9x2.5, ocnice tnx1v3
-| f19_tn14   - atm lnd 1.9x2.5, ocnice tnx1v4  [CMIP6 grid]
+::
+
+  f19_tn14   - atm lnd 1.9x2.5, ocnice tnx1v4  [CMIP6 grid, NorESM2-LM]  
+  f09_tn14   - atm lnd 0.9x1.25, ocnice tnx1v4  [CMIP6 grid, NorESM2-MM]  
+  f09_tn0254 - atm lnd 0.9x1.25, ocnice tnx0.25v4  
+
 
 Simulation period
 ''''''''''''''''''''''''''

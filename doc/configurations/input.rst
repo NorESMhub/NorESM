@@ -40,12 +40,12 @@ This AeroTab presentation https://github.com/NorESMhub/NorESM/blob/noresm2/doc/c
 Ocean specific input data
 ^^^^^
 
-In the OMIP-type experiments, the ocean is initialized from rest, and the initial ocean temperature and salinity are from the Polar Science Center Hydrographic Climatology (PHC) 3.0, updated from Steele et al. (2001). The initial condition file containing ocean temperature and salinity for the one-degree OMIP experiments is located at (on Fram) ::
+In case of a startup run (i.e. if the model is not re-started from a prvious simulation) the ocean is initialized from rest, and the initial ocean temperature and salinity are from the Polar Science Center Hydrographic Climatology (PHC) 3.0, updated from Steele et al. (2001). The initial condition files containing ocean temperature and salinity are located in the directory
+::
 
-  /cluster/shared/noresm/inputdata/ocn/micom/tnx1v4/20170601/inicon.nc
-  
-The file contains values for layered potential density (sigma: sigma2 - 1000), potential temperature (temp), salinity (saln) and thickness (dz):
+  /DIN_LOC_ROOT/ocn/blom/inicon/inicon_<gridspec>_<date>.nc,
 
+where DIN_LOC_ROOT is the base input data directory (depends on the machine; on fram it is /cluster/shared/noresm/inputdata), *gridspec* specifies the ocean grid used, and *date* specifies a date tag for the file. The files contains values for layered potential density (sigma), potential temperature (temp), salinity (saln) and layer thickness (dz):
 :: 
 
   dimensions:
@@ -57,17 +57,33 @@ The file contains values for layered potential density (sigma: sigma2 - 1000), p
           double temp(z, y, x) ;
           double saln(z, y, x) ;
           double dz(z, y, x) ;
+
+Boundary conditions for the ocean component (e.g. tidal dissipation, SSS climatologies for OMIP configuration) are located in 
 ::
 
+   /DIN_LOC_ROOT/ocn/blom/bndcon/,
 
+and grid specific information (grid input file, files defining ocean basins and sections) are located in 
+::
+
+   /DIN_LOC_ROOT/ocn/blom/grid/.
+   
+   
 Ocean carbon cycle specific input data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The ocean carbon cycle in NorESM2 (iHAMOCC) requires three input data sets to run: 1) monthly climatological dust deposition based on Mahowald et al. (2005), 2) riverine inputs, which contain annual climatology (nomalized to year 2000) fluxes of organic and inorganic carbon and nutrient constituents based on the Global-NEWS2 model and other datasets (Mayorga et al., 2010; Hartmann, 2009; Chester, 1990), and 3) atmospheric nitrogen deposition, provided through the CMIP6 protocol in monthly deposition fields of wet or dry and oxidized or reduced nitrogen deposition rates, all of which are added to the nitrate pool in the top-most ocean layer.  
+The ocean carbon cycle in NorESM2 (iHAMOCC) is initialized from gridded observation based data sets for DIC, alkalinity, phosphate, nitrate, oxygen, and silica. These data sets have been provided by CMIP6-OMIP (Orr et al. 2017), and are located in the same directory as the BLOM initial conditions.
 
-By default, these external inputs are activated, but user can choose not to include riverine and nitrogen deposition by setting BLOM_RIVER_NUTRIENTS and BLOM_N_DEPOSITION to FALSE in user namelist (user_bl_blom) file.
+Further, iHAMOCC requires three input data sets specifying boundary conditions: 1) monthly climatological dust deposition based on Mahowald et al. (2006), 2) riverine inputs, which contain an annual climatology (normalized to year 2000) of fluxes of organic and inorganic carbon and nutrient constituents based on the Global-NEWS2 model and other datasets (Mayorga et al., 2010; Hartmann, 2009; Chester, 1990), and 3) atmospheric nitrogen deposition, provided through the CMIP6 protocol in monthly deposition fields of wet or dry and oxidized or reduced nitrogen deposition rates, all of which are added to the nitrate pool in the top-most ocean layer.  
 
-These datasets have been prepared for the ocean model (BLOM) grid configuration of ~1 degree resolution. For other resolutions, these files may need to be created and tested. 
+By default, these external inputs are activated, but the user can choose not to include riverine and nitrogen deposition by setting BLOM_RIVER_NUTRIENTS and BLOM_N_DEPOSITION to FALSE in in env_run.xml.
+
+While the initial conditions are interpolated by the model (using nearest neighbor interpolation), the boundary condition datasets need to be pre-interpolated to the ocean grid used. These data sets are available for 2, 1, and 1/4 degree resolution (the tnx2v1, tnx1v4, and tnx0.25v4 grids). Note however, that for running CMIP scenario simulations, specific N-deposition data sets are necessary. These might not be available for a given grid, so they may need to be created and tested. 
+
+
+Adding new inputfiles
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+All BLOM/iHAMOCC input file names are specified via namelist (including the full path name). If a user would like to use a different input file, it is recommended to place this file in the user's work directory, and specify the corresponding file name (icluding the full path) as a namelist option in user_nl_blom (see :ref:`omips`).
 
 
 References
@@ -93,7 +109,7 @@ Mayorga, E., Seitzinger, S. P., Harrison, J. A., Dumont, E., Beusen, A. H. W., B
 
 Meinshausen, M., Vogel, E., Nauels, A., Lorbacher, K., Meinshausen, N., Etheridge, D. M., Fraser, P. J., Montzka, S. A., Rayner, P. J., Trudinger, C. M., Krummel, P. B., Beyerle, U., Canadell, J. G., Daniel, J. S., Enting, I. G., Law, R. M., Lunder, C. R., O’Doherty, S., Prinn, R. G., Reimann, S., Rubino, M., Velders, G. J. M., Vollmer, M. K., Wang, R. H. J., and Weiss, R.: Historical greenhouse gas concentrations for climate modelling (CMIP6), Geoscientific Model Development, 10, 2057–2116, https://doi.org/10.5194/gmd-10-2057-2017, 2017.
 
+Orr, J. C., Najjar, R. G., Aumont, O., Bopp, L., Bullister, J. L., Danabasoglu, G., Doney, S. C., Dunne, J. P., Dutay, J.-C., Graven, H., Griffies, S. M., John, J. G., Joos, F., Levin, I., Lindsay, K., Matear, R. J., McKinley, G. A., Mouchet, A., Oschlies, A., Romanou, A., Schlitzer, R., Tagliabue, A., Tanhua, T., and Yool, A.: Biogeochemical protocols and diagnostics for the CMIP6 Ocean Model Intercomparison Project (OMIP), Geosci. Model Dev., 10, 2169–2199, https://doi.org/10.5194/gmd-10-2169-2017, 2017. 
+ 
 van Marle, M. J. E., Kloster, S., Magi, B. I., Marlon, J. R., Daniau, A.-L., Field, R. D., Arneth, A., Forrest, M., Hantson, S., Kehrwald, N. M., Knorr, W., Lasslop, G., Li, F., Mangeon, S., Yue, C., Kaiser, J. W., and van der Werf, G. R.: Historic global biomass burning emissions for CMIP6 (BB4CMIP) based on merging satellite observations with proxies and fire models (1750–2015), Geoscientific Model Development, 10, 3329–3357, https://doi.org/10.5194/gmd-10-3329-2017, 2017.
 
-Add new inputfiles
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
