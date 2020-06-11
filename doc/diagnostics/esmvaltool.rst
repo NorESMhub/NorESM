@@ -151,8 +151,3 @@ If you find an ``esmvaltool`` environment, this can be activated by ::
   source activate esmvaltool
 
 At the time of writing, the preferred activation method ``conda activate esmvaltool`` is not recognized inside a NIRD Toolkit application.
-
-
-(Some details about how to access the NS9034K project area for NorESM CMIP5/CMIP6 model experiments are still missing...)
-
-
