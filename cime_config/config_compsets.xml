@@ -267,7 +267,7 @@
 	As a general rule :
 	(i) f09 resolution : all simulations have been done WITH frc2.
 	(ii) f19 resolution : 
-       		piControl + historical + perturbed historical (hist-aer, hist-GHG, hist-nat) have been done WITH frc2
+       		piControl + historical + perturbed historical (hist-aer, hist-GHG, hist-nat) have been done WITHOUT frc2
 		scenarios + perturbed scenarions : have been done WITH frc2 -->
 
   <compset>
