@@ -4,13 +4,13 @@ Ocean and Sea-Ice
 ==================
 
 BLOM
-'''''''
+''''
 
 In NorESM2, the ocean component BLOM/iHAMOCC can be either run fully coupled to the other model components, or in ocean carbon-cycle stand alone configuration. The latter setup follows the CMIP6-OMIP protocol (see below) and is driven by atmospheric input data derived from reanalysis products (called *data-atmosphere*, DATM).
 
 
 OMIP-type experiments
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 The Ocean Model Intercomparison Project (OMIP; Griffies et al., 2016) is an endorsed project in the CMIP6. OMIP provides a protocol for global ocean/sea-ice models forced by a common prescribed atmospheric forcing, and a protocol for ocean diagnostics to be saved as part of CMIP6. OMIP includes a physical component (Griffies et al., 2016) and a biogeochemistry component (Orr et al. 2017).
 
@@ -22,7 +22,7 @@ The readers are referred to Large and Yeager (2009) and Tsujino et al. (2018) fo
 
 
 BLOM OMIP specifics
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 - In the BLOM OMIP simulations, sea surface salinity is restored to monthly climatology with a piston velocity of 50 m per 300 days applied globally for both OMIP-1 and OMIP-2 simulations. The restoring salt flux is normalized so that the global area weighted sum of the restoring flux is zero. 
 
@@ -63,7 +63,7 @@ OMIP compsets
 
 
 Forcing datasets
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 
 - **OMIP-1/CORE-II**
@@ -84,7 +84,7 @@ Forcing datasets
 
 
 Modify user namelist for BLOM/iHAMOCC
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Model parameters and adjusting model output can be done in user_nl_blom, which is present in the case directory after ./case.setup has been excecuted. The resolved namelist for BLOM/iHAMOCC is saved in CaseDocs/ocn_in, and specifies a number of physical parameters (such as vertical and horizontal mixing), as well as model output settings and frequencies. Output settings include options for daily (hd/hbgcd), monthly (hm/hbgcm), and yearly (hy/hbgcy) output, where the files containing 'bgc' in their filenames are iHAMOCC output files. Note that the resolved namelist (CaseDocs/ocn_in) should **never** be used to place user defined changes, since this file is re-created (overwritten) every time the model is submitted. User defined namelist changes need to be placed in user_nl_blom, for example
 ::
@@ -119,9 +119,9 @@ Available output variables for BLOM and iHAMOCC are documented in the resolved n
 
 
 Code modification
-^^^^^^
+^^^^^^^^^^^^^^^^^
 
-If you need to make changes to the BLOM/iHAMOCC code, you need to copy the source code (the fortran file you want to modify) to the folder SourceMods/src.blom in the case directory, then make the modifications needed before building the model. **Do not change the source code in the <noresm-base> folder!** As mentioned above, if you need to change a model parameter for iHMAOCC you need to modify the source code. All iHAMOCC parameters are defined in the routine beleg_parm.F90.
+If you need to make changes to the BLOM/iHAMOCC code, you need to copy the source code (the fortran file you want to modify) to the folder SourceMods/src.blom in the case directory, then make the modifications needed before building the model. **Do not change the source code in the <noresm-base> folder!** As mentioned above, if you need to change a model parameter for iHAMOCC you need to modify the source code. All iHAMOCC parameters are defined in the routine beleg_parm.F90.
 
 The BLOM source code is located in::
   
@@ -133,11 +133,11 @@ The iHAMOCC source code is located in::
   
 
 CICE
-''''''
+''''
 The sea ice model component is based upon version 5.1.2 of the CICE sea ice model of Hunke et al. (2015). 
 
 Initial conditions
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 By default, the CICE model is initialized with a 'default', simplified, sea ice field with sea ice in cold regions (air temperature below 0 degree C), north of 70 N and south of 60 S. The sea ice thickness in these regions is horizontal homogeneous, with a uniform snow cover. This behavior is given by the ice_ic variable in the namelist. This can be changed to start without sea ice by setting:
 
@@ -175,7 +175,7 @@ and in the Run folder::
 This information is also written to the ice.log.* file generated during the run.   
   
 NorESM2 specific addition
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
 A NorESM2-specific change is including the effect of wind drift of snow into ocean following Lecomte et al. (2013)
 This change can be tuned on/off in the user_nl_cice in the case folder. Default is::
 
@@ -197,7 +197,7 @@ and will use NorESM2 treatment of wind drift of snow. Setting
 will reset the NorESM2 specific addition and the effect of wind drift of snow into ocean will not be included. It is also possible to change the snow density ``rhos`` and the snow thermal conductivity ``ksno``. Be aware that this will influence the overall tuning of the coupled model. 
 
 Modify user name lists for CICE
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Output from the model is changed by controlling the user_nl_cice file in your casefolder. By default, the file typically looks like this: 
 ::
@@ -253,7 +253,7 @@ Be aware that the model writes one file per time step. Therefore, this should be
 
 
 Code modification
-^^^^^^
+^^^^^^^^^^^^^^^^^
 
 If you want to make more substantial changes to the codes than what is possible by the use of user_nl_cice, you need to copy the source code (the fortran file you want to modify) to the SourceMods/src.cice folder in the case directory, then make the modifications needed before building the model. **Do not change the source code in the <noresm-base> folder!**
 
