@@ -536,6 +536,8 @@ To create a "similar" NorESM case NF2000climo at resolution f19_tn14 and also ru
 
 On our machine the compilation takes less then 3 minutes, and if everything went well the input files should download automatically before the run starts.
 
+Note: AeroTab is supposed to be a folder, if a file has been created instead simply add a "trailing slash" (/) at line 1946 in components/cam/bld/namelist_files/namelist_defaults_cam.xml (which has to be written as: <aerotab_table_dir>noresm-only/atm/cam/camoslo/AeroTab_8jun17/</aerotab_table_dir>) and resubmit.
+
 Adding a new platform
 '''''''''''''''''''''
 
