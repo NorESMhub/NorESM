@@ -21,6 +21,7 @@ If you have any questions or interested in actively participate in the code or d
 Further information on how to contribute to this documentation can be found at 
 https://github.com/NorESMhub/NorESM/blob/master/doc/README.md.
 
+For obtaining news per email register to users@noresm.org at https://www.noresm.org or via this `link <https://www.noresm.org/mailman/listinfo/users_noresm.org>`_.
 
 .. toctree::
    :maxdepth: 2
