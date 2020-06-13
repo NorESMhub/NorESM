@@ -44,5 +44,21 @@ The ocean component Bergen Layered Ocean Model (**BLOM**; Bentsen et al., 2020, 
 
 References
 ^^^^^^
+Assur, A.: “Composition of Sea Ice and its Tensile Strength,” pp. 106–138, in Arctic Sea Ice, U.S. National Academy of Sciences-National Research Council Pub. 598, 1958.
 
-*[references to be added..]*
+Bentsen, M., Bethke, I., Debernard, J. B., Iversen, T., Kirkevåg, A., Seland, Ø., Drange, H., Roelandt, C., Seierstad, I. A., Hoose, C., and Kristjánsson, J. E.: The Norwegian Earth System Model, NorESM1-M – Part 1: Description and basic evaluation of the physical climate, Geosci. Model Dev., 6, 687–720, https://doi.org/10.5194/gmd-6-687-2013, 2013.
+
+Bleck, R., Smith, L. T.: A wind‐driven isopycnic coordinate model of the north and equatorial Atlantic Ocean: 1. Model development and supporting experiments. J. Geophys. Res., 95C, 3273–3285, https://doi.org/10.1029/JC095iC03p03273, 1990.
+
+Bleck, R., Rooth, C., Hu, D., and Smith, L. T.: Salinity-driven Thermocline Transients in a Wind- and Thermohaline-forced Isopycnic Coordinate Model of the North Atlantic. J. Phys. Oceanogr., 22, 1486–1505, https://doi.org/10.1175/1520-0485(1992)0222.0.CO;2, 1992.
+
+Eden, C. and Greatbatch, R. J.: Towards a mesoscale eddy closure, Ocean Model., 20, 223–239, https://doi.org/10.1016/j.ocemod.2007.09.002, 2008.
+
+Eden, C., Jochum, M., and Danabasoglu, G.: Effects of different closures for thickness diffusivity, Ocean Model., 26, 47–59, https://doi.org/10.1016/j.ocemod.2008.08.004, 2009.
+
+Gent, P. R., and Mcwilliams, J. C.: Isopycnal Mixing in Ocean Circulation Models. J. Phys. Oceanogr., 20, 150–155, https://doi.org/10.1175/1520-0485(1990)020<0150:IMIOCM>2.0.CO;2, 1990.
+
+Large, W. G., McWilliams, J. C., and Doney, S. C.: Oceanic vertical mixing: a review and a model with a nonlocal boundary layer parameterization, Rev. Geophys., 32, 363–403, 1994.
+
+Marks, K. and Smith, W.: An evaluation of publicly available global bathymetry grids, Mar. Geophys. Res., 27, 19–34, https://doi.org/10.1007/s11001-005-2095-4, 2006.
+
