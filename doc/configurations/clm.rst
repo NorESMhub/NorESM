@@ -143,7 +143,7 @@ To create a new case for stand alone CLM5 spin up with NorESM2 forcing data, one
 
 Using the CPLHIST forcing, the offline spin up needs to be run in two steps:
 
-- **1. Accelerated spinup (??? How long?):** 
+- **1. Accelerated spinup (300 years):** 
 
 When entering “Accelerated Spinup” mode, soil carbon pools will be
 scaled down by a factor ~40, vegetation pools scaled down by ~5
@@ -163,7 +163,7 @@ In user_nl_clm set output frequency to every 50 or 100 years <= REST_N::
  hist_mfilt = 50
  hist_nhtfrq = -8760
 
-- **2. Normal spinup (??? How long?):** 
+- **2. Normal spinup (1800 years):** 
 
 When exiting Accelerated Spinup and entering normal spinup, the
 carbon pools will be scaled up back to normal levels
@@ -179,10 +179,13 @@ NorESM2 can then be run with CLM5 using the restart file from the end of the spi
 A description of the NorESM2 CLM5 spin up, recoupling and diagnostics can be found here:
 https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/NorESM-CLM-memo.pdf
 
-Code modification (???? I doubt this is a good suggestion. Since we are using github to track all the changes, it seems to be better to modify codes directly in the source code folder.)
+Code modification 
 ^^^^^^
+To make more subtantial modification to the code than what is possible by the use of user_nl_clm, there are two methods:
 
-If you want to make more subtantial changes to the codes than what is possible by the use of user_nl_clm, you need to copy the source code (the fortran file you want to modify) to the SourceMods/src.clm folder in the case directory, then make the modifications needed before building the model. **Do not change the source code in the <noresm-base> folder!**
+1. Make a branch from the version (branch or release) you want to modify, checkout this branch in order to make code changes directly in the source code folder.
+
+2. Copy the source code (the fortran file(s) you want to modify) to the SourceMods/src.clm folder in the case directory, and then make the modifications needed before building the model. By the use of this method, you will not change the source code in the <noresm-base> folder.
 
 The CLM5 source code is located in::
   
