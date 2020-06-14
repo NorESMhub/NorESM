@@ -17,7 +17,3 @@ Running NorESM2
    clm.rst
    ensemble_runs.rst
    nudged_simulations.rst
-   simplified_models.rst
-   
-   
-  
