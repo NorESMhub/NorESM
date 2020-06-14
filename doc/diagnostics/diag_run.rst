@@ -25,15 +25,30 @@ https://github.com/NordicESMhub/NoresmDiagnostics
 
 **NorESM diagnostics on NIRD**
 
-The full diagnostic package (including source files and data files) are currently hosted on NIRD: /projects/NS2345K/noresm_diagnostics
+The full diagnostic package (including source files and data files) are currently hosted on NIRD: ``/projects/NS2345K/noresm_diagnostics``
 
 Installation
 ============
+
+Use the preinstalled package
+----------------------------
 
 You don't need to install this diagnostic package, but you can call it as a command line directly on NIRD. As a prerequiste, you should have access permission to the NS2345K project on NIRD. There is no need to install the diagnostic packages, but just add the ``diag_run`` to your search path, or add it as an alias in ``$HOME/.bashrc``, 
 :: 
 
   alias diag_run=’/projects/NS2345K/noresm_diagnostics/bin/diag_run’
+  
+DO NOT make changes direclty in this preinstalled package.
+
+Clone and run your own copy
+---------------------------
+If you wanto make some changes of the diagnostic package for your own purpuse or/and want to contribute to the development of it, you can installed it on NIRD or FRAM at your preferred location (NOTE, only these two platforms are currently supported). Briefly, there are several steps for this:
+
+1. Fork the NorESM Diagnostic Package `Github repository <https://github.com/NordicESMhub/NoresmDiagnostics>`_ to your own Github respository 
+2. Change to your preferred location, and ``git clone https://github.com/NordicESMhub/NoresmDiagnostics``
+3. Run ``bin/linkdata.sh`` to link all necessary data to your clone.
+4. Make changes to the code/scripts for your purpose. And call ``diag_run`` with the modified scripts.
+5. If you would like to contribute your function enhancements or bug fixes to the original diagnostic package, you should firstly make these changes in a new git branch, and commit the changes to your fork repository, then create an Issue at the `Github repository <https://github.com/NordicESMhub/NoresmDiagnostics>`_, and finally make a ``pull`` request to the original Github repository to incorporate your changes.
 
 Run the diagnostic tool
 =======================
@@ -98,7 +113,7 @@ with respect to either observations (so-called model-obs diagnostics), or to ano
 in the climatology and time-series computations. The ocean (blom) and its biogeochemistry
 (hamocc) have been developed in-house.
 
-Please note, the ocean component of the NorESM version 1 is MICOM. For back-ward compatibility of NorESM1 experiments, `-m micom` should be used in the command line option for ``diag_run``.  
+Please note, the ocean component of the NorESM2, BLOM, is an updated version of MICOM. It is named MICOM in in NorESM1 for CMIP5 experiments and NorESM2.01 for CMIP6 experiments. Therefore, for experiments with MICOM as the ocean component of NOrESM, `-m micom` should be used in the command line option for ``diag_run``.  
 
 diag_run has two modes: 
 
