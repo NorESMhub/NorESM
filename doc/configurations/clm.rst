@@ -181,9 +181,9 @@ https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/NorESM-CLM-m
 
 Code modification 
 ^^^^^^
-To make more subtantial modification to the code than what is possible by the use of user_nl_clm, there are two methods:
+To make more subtantial modification to the BLOM/iHAMOCC code than what is possible by the use of user_nl_clm, there are two methods:
 
-1. Make a branch from the version (branch or release) you want to modify, checkout this branch in order to make code changes directly in the source code folder.
+1. Make a branch from the NorESM2 version (branch or release) you want to modify, checkout this branch in order to make code changes directly in the source code folder.
 
 2. Copy the source code (the fortran file(s) you want to modify) to the SourceMods/src.clm folder in the case directory, and then make the modifications needed before building the model. By the use of this method, you will not change the source code in the <noresm-base> folder.
 
