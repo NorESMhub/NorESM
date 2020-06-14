@@ -137,7 +137,31 @@ Some common configuration settings
  
   - Logical to archive all the produced restart files and not just those at the end of the simulation. Default is FALSE.
   
- 
+Setting up a hybrid simulation
+^^^^^
+Step by step guide for hybrid simulation/restart.
+
+When the case is created and compiled, edit ``env_run.xml``. Below is an example for restart with CMIP6 historical initial conditions::
+
+
+
+    <entry id="RUN_TYPE" value="hybrid">
+    <entry id="RUN_REFDIR" value="path/to/restars">                  # path to restarts
+    <entry id="RUN_REFCASE" value="NHISTfrc2_f09_tn14_20191025">     # experiment name for restart files
+    <entry id="RUN_REFDATE" value="2015-01-01">                      # date of restart files
+    <entry id="RUN_STARTDATE" value="2015-01-01">                    # date in simulation
+    <entry id="GET_REFCASE" value="TRUE">                            # get refcase from outside rundir
+
+If it is not possible to link directly to restarts, copy the restart files and rpointer files to the run directory. Below is example changes to ``env_run.xml``::
+
+
+    <entry id="RUN_TYPE" value="hybrid">
+    <entry id="RUN_REFCASE" value="NHISTfrc2_f09_tn14_20191025">     # Experiment name for restart files
+    <entry id="RUN_REFDATE" value="2015-01-01">                      # date of restart files
+    <entry id="RUN_STARTDATE" value="2015-01-01">                    # date in simulation
+    <entry id="GET_REFCASE" value="FALSE">                           # get refcase from outside rundir
+
+
 User namelists
 ^^^^^^^^^^^^^^
 
