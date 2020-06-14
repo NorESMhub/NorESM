@@ -12,25 +12,20 @@ http://www.cesm.ucar.edu/models/clm/
 
 Specific questions about CLM can be addressed Lei Cai, email: leca@norceresearch.no
 
-CLM5 specifics
-^^^^^
+CLM5 model configurations available in NorESM2
+^^^^^^
+CLM5 can be run with a prognostic crop model with prognostic vegetation state and active biogeochemistry. 
+The global crop model is on in BGC default configuration with 8 temperate and tropical crop types and has the capability to dynamically simulate crop management and crop management change through time. 
+The BGC-CROP option is used in all NorESM2 CMIP6 experiments and is activated in the compset by::
 
-- There is no information exchange within the CLM model between sub-grid tiles (landunits, columns, plant functional types (PFTs)). 
-- Sub-grid tiles only exchange information with the atmosphere. In the current CLM, there is no advection of heat and water at depth. 
-- The horizontal resolution of the CLM keeps the same as for the atmosphere (f19, f09). 
-- Vertically, there are four soil structures to set in the CLM namelist file. CLM5 model configurations available in NorESM2:
+  CLM50%BGC-CROP
 
-::
 
-  10SL_3.5m    = standard CLM4 and CLM4.5 version
-  23SL_3.5m    = more vertical layers for permafrost simulations 
-  49SL_10m     = 49 layer soil column, 10m of soil, 5 bedrock layers
-  20SL_8.5m    = 20 layer soil column, 8m of soil, 5 bedrock layers
+CLM5 in NorESM2 can also be run with a prescribed satellite vegetation phenology model. This option can be activated in the compset by::
 
-::
+ CLM50%SP
 
-By default, 20SL_8.5m is employed.
-
+Note that the BGC-CROP option is more expensive than SP (+ca 10-15% CPU time)
 
 CLM5 atmospheric coupling
 ^^^^^
@@ -41,6 +36,7 @@ The current state of the atmospheric component, CAM6-Nor, at a given time step i
 - 2. The land model then updates the soil and snow hydrology calculations based on these fluxes. These fields are passed to the atmosphere. The albedos sent to the atmosphere are for the solar zenith angle at the next time step but with surface conditions from the current time step.
 
 From CLM5 user guide: https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/tech_note/Ecosystem/CLM50_Tech_Note_Ecosystem.html#atmospheric-coupling
+
 
 CLM5 surface data
 ^^^^
@@ -58,31 +54,16 @@ Required surface data for each land grid cell include:
 
 From CLM5 user guide: https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/tech_note/Ecosystem/CLM50_Tech_Note_Ecosystem.html#surface-data:
 
-**Steps to create a complete set of files for input to CLM**
+**Steps to create a complete set of surface data files for CLM**
 
 A technical description on how to create new surface data sets is found here: 
 https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/clm_surfdata.pdf
 
 
-CLM5 model configurations available in NorESM2
-^^^^^^
-CLM5 can be run with a prognostic crop model with prognostic vegetation state and active biogeochemistry. 
-The global crop model is on in BGC default configuration with 8 temperate and tropical crop types and has the capability to dynamically simulate crop management and crop management change through time. 
-The BGC-CROP option is used in all NorESM2 CMIP6 experiments and is activated in the compset by::
-
-  CLM50%BGC-CROP
-
-
-CLM5 in NorESM2 can also be run with a prescribed satellite vegetation phenology model. This option can be activated in the compset by::
-
- CLM50%SP
-
-Note that the BGC-CROP option is more expensive than SP (+ca 10-15% CPU time)
-
-The inital state 
+The inital state of CLM5
 ^^^^^^
 
-The land model needs to read in the inital state from a restart file set in user_nl_clm in the case folder ::
+The land model needs to read in the inital state from a restart file. This can be customized in user_nl_clm in the case folder ::
 
   finidat = '<path_to_inputdata>/inputdata/<path_to_file>/CLMFILENAME.clm2.r.YR-01-01-00000.nc'
 
@@ -130,12 +111,11 @@ For example if STOP_N=50 years, you can set::
 
 Spin up of CLM5 
 ^^^^^^
-A long spin up of CLM5 is necessary to achive e.g. land carbon balance. Such a spin up can be done partly uncoupled from NorESM2 in order to save computation time.
+A long spin up is required for running NorESM2 with CLM50%BGC-CROP to achive e.g. land carbon balance. Therefore, an off-line spin up of CLM50%BGC-CROP has to be performed in order to save computation time.
 
+**Generating atmospheric forcing data**
 
-**Forcing data**
-
-To generate forcing data from the coupled simulation to run CLM5 stand alone with NorESM2 forcing, a full couple history needs to be turned on. For producing forcing data, please try adding this to user_nl_cpl in the coupled simulation of interest:::
+Atmospheric forcing data from the coupled NorESM2 simulation are used to run CLM5 stand alone spin up. To output such atmospheric forcing data, the following commands have to be added to user_nl_cpl in the coupled simulation of interest:::
 
   &seq_infodata_inparm
     histaux_a2x      = .true.  
@@ -163,7 +143,7 @@ To create a new case for stand alone CLM5 spin up with NorESM2 forcing data, one
 
 Using the CPLHIST forcing, the offline spin up needs to be run in two steps:
 
-- **1. Accelerated:** 
+- **1. Accelerated spinup (??? How long?):** 
 
 When entering “Accelerated Spinup” mode, soil carbon pools will be
 scaled down by a factor ~40, vegetation pools scaled down by ~5
@@ -183,15 +163,15 @@ In user_nl_clm set output frequency to every 50 or 100 years <= REST_N::
  hist_mfilt = 50
  hist_nhtfrq = -8760
 
-- **2. Post-accelerated:** 
+- **2. Normal spinup (??? How long?):** 
 
 When exiting Accelerated Spinup and entering normal spinup, the
 carbon pools will be scaled up back to normal levels
 
 
-**Recoupling**
+**Recoupling CLM5 with NorESM2**
 
-NorESM2 can then be recoupled to the spun up land experiment by the use of restart files. To incorporating CLM final spinup restart in user_nl_clm::
+NorESM2 can then be run with CLM5 using the restart file from the end of the spinup as the initial file. To do this, modify the set up in user_nl_clm::
 
   finidat = '<path_to_inputdata>/inputdata/<path_to_file>/CLM_SPINUP_FILENAME.clm2.r.YR-01-01-00000.nc'
  
@@ -199,7 +179,7 @@ NorESM2 can then be recoupled to the spun up land experiment by the use of resta
 A description of the NorESM2 CLM5 spin up, recoupling and diagnostics can be found here:
 https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/NorESM-CLM-memo.pdf
 
-Code modification
+Code modification (???? I doubt this is a good suggestion. Since we are using github to track all the changes, it seems to be better to modify codes directly in the source code folder.)
 ^^^^^^
 
 If you want to make more subtantial changes to the codes than what is possible by the use of user_nl_clm, you need to copy the source code (the fortran file you want to modify) to the SourceMods/src.clm folder in the case directory, then make the modifications needed before building the model. **Do not change the source code in the <noresm-base> folder!**
@@ -231,6 +211,25 @@ Setting::
   reset_snow = .false.
   
 will use CESM2 treatment of the surface water in CLM (see previous description).
+
+CLM5 specifics
+^^^^^
+
+- There is no information exchange within the CLM model between sub-grid tiles (landunits, columns, plant functional types (PFTs)). 
+- Sub-grid tiles only exchange information with the atmosphere. In the current CLM, there is no advection of heat and water at depth. 
+- The horizontal resolution of the CLM keeps the same as for the atmosphere (f19, f09). 
+- Vertically, there are four soil structures to set in the CLM namelist file. CLM5 model configurations available in NorESM2:
+
+::
+
+  10SL_3.5m    = standard CLM4 and CLM4.5 version
+  23SL_3.5m    = more vertical layers for permafrost simulations 
+  49SL_10m     = 49 layer soil column, 10m of soil, 5 bedrock layers
+  20SL_8.5m    = 20 layer soil column, 8m of soil, 5 bedrock layers
+
+::
+
+By default, 20SL_8.5m is employed.
 
 
 MOSART
