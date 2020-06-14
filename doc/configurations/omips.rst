@@ -121,7 +121,13 @@ Available output variables for BLOM and iHAMOCC are documented in the resolved n
 Code modification
 ^^^^^^^^^^^^^^^^^
 
-If you need to make changes to the BLOM/iHAMOCC code, you need to copy the source code (the fortran file you want to modify) to the folder SourceMods/src.blom in the case directory, then make the modifications needed before building the model. **Do not change the source code in the <noresm-base> folder!** As mentioned above, if you need to change a model parameter for iHAMOCC you need to modify the source code. All iHAMOCC parameters are defined in the routine beleg_parm.F90.
+To make more subtantial modification to the BLOM/iHAMOCC code than what is possible by the use of user_nl_blom, there are two methods:
+
+1. Make a branch from the NorESM2 version (branch or release) you want to modify, checkout this branch in order to make code changes directly in the source code folder.
+
+2. Copy the source code (the fortran file(s) you want to modify) to the SourceMods/src.blom folder in the case directory, and then make the modifications needed before building the model. By the use of this method, you will not change the source code in the <noresm-base> folder.
+
+As mentioned above, if you need to change a model parameter for iHAMOCC you need to modify the source code. All iHAMOCC parameters are defined in the routine beleg_parm.F90.
 
 The BLOM source code is located in::
   
@@ -254,8 +260,11 @@ Be aware that the model writes one file per time step. Therefore, this should be
 
 Code modification
 ^^^^^^^^^^^^^^^^^
+To make more subtantial modification to the code than what is possible by the use of user_nl_cice, there are two methods:
 
-If you want to make more substantial changes to the codes than what is possible by the use of user_nl_cice, you need to copy the source code (the fortran file you want to modify) to the SourceMods/src.cice folder in the case directory, then make the modifications needed before building the model. **Do not change the source code in the <noresm-base> folder!**
+1. Make a branch from the NorESM2 version (branch or release) you want to modify, checkout this branch in order to make code changes directly in the source code folder.
+
+2. Copy the source code (the fortran file(s) you want to modify) to the SourceMods/src.cice folder in the case directory, and then make the modifications needed before building the model. By the use of this method, you will not change the source code in the <noresm-base> folder.
 
 The CICE source code is located in::
   
