@@ -16,7 +16,7 @@ The NorESM Diagnostic Package:
 * CLM_DIAG: (CESM Land Model Diagnostics Package)
 * CICE_DIAG: snow/sea ice volume/area
 * HAMOCC_DIAG: time series, climaotology, zonal mean, regional mean
-* MICOM_DIAG: time series, climatologies, zonal mean, fluxes, etc
+* BLOM_DIAG: time series, climatologies, zonal mean, fluxes, etc
 
 **NorESM diagnostics on GitHub**
 
@@ -25,15 +25,30 @@ https://github.com/NordicESMhub/NoresmDiagnostics
 
 **NorESM diagnostics on NIRD**
 
-The full diagnostic package (including source files and data files) are currently hosted on NIRD: /projects/NS2345K/noresm_diagnostics
+The full diagnostic package (including source files and data files) are currently hosted on NIRD: ``/projects/NS2345K/noresm_diagnostics``
 
 Installation
 ============
+
+Use the preinstalled package
+----------------------------
 
 You don't need to install this diagnostic package, but you can call it as a command line directly on NIRD. As a prerequiste, you should have access permission to the NS2345K project on NIRD. There is no need to install the diagnostic packages, but just add the ``diag_run`` to your search path, or add it as an alias in ``$HOME/.bashrc``, 
 :: 
 
   alias diag_run=’/projects/NS2345K/noresm_diagnostics/bin/diag_run’
+  
+DO NOT make changes direclty in this preinstalled package.
+
+Clone and run your own copy
+---------------------------
+If you wanto make some changes of the diagnostic package for your own purpuse or/and want to contribute to the development of it, you can installed it on NIRD or FRAM at your preferred location (NOTE, only these two platforms are currently supported). Briefly, there are several steps for this:
+
+1. Fork the NorESM Diagnostic Package `Github repository <https://github.com/NordicESMhub/NoresmDiagnostics>`_ to your own Github respository 
+2. Change to your preferred location, and ``git clone https://github.com/NordicESMhub/NoresmDiagnostics``
+3. Run ``bin/linkdata.sh`` to link all necessary data to your clone.
+4. Make changes to the code/scripts for your purpose. And call ``diag_run`` with the modified scripts.
+5. If you would like to contribute your function enhancements or bug fixes to the original diagnostic package, you should firstly make these changes in a new git branch, and commit the changes to your fork repository, then create an Issue at the `Github repository <https://github.com/NordicESMhub/NoresmDiagnostics>`_, and finally make a ``pull`` request to the original Github repository to incorporate your changes.
 
 Run the diagnostic tool
 =======================
@@ -45,7 +60,7 @@ Each package can be run/configured from the command line using the wrapper scrip
   ----------------------------------------------------------------------------- 
   Program:
   /projects/NS2345K/noresm_diagnostics/bin/diag_run
-  Version: x.x
+  Version: 2.0
   -------------------------------------------------
   Short description:
   A wrapper script for NorESM diagnostic packages.
@@ -61,7 +76,7 @@ Each package can be run/configured from the command line using the wrapper scrip
                                                   cam    : atmospheric package (AMWG)
                                                   clm    : land package (LMWG)
                                                   cice   : sea-ice package
-                                              blom/micom : ocean package (micom is the precedent of blom)
+                                                  blom   : ocean package
                                                   hamocc : biogeochemistry package
                                                   all    : configure all available packages.
   -c, -c1, --case=CASE1, --case1=CASE1          Test case simulation (OPTIONAL).
@@ -91,14 +106,14 @@ Description
 ------------
 
 diag_run is a wrapper script, which is used to run the diagnostics for each NorESM component
-(cam, clm, cice, blom/micom, and hamocc). The diagnostic packages can be used to plot model results
+(cam, clm, cice, blom, and hamocc). The diagnostic packages can be used to plot model results
 with respect to either observations (so-called model-obs diagnostics), or to another simulation
 (model1-model2 diagnostics). The diagnostics for the atmosphere (cam), land (clm) and sea-ice
 (cice) are based on the NCAR packages, but has undergone some major improvements, particularly
-in the climatology and time-series computations. The ocean (micom) and its biogeochemistry
+in the climatology and time-series computations. The ocean (blom) and its biogeochemistry
 (hamocc) have been developed in-house.
 
-Please note, the NorESM ocean component BLOM used to be called MICOM. In ``diag_run`` the model name of the ocean component is still micom (and not blom) and will be called micom in all the examples below. However, the model which will be analyzed is blom.  
+Please note, the ocean component of the NorESM2, BLOM, is an updated version of MICOM. It is named MICOM in NorESM1 for CMIP5 experiments and in NorESM2 for many (but not all) CMIP6 experiments. Therefore, for experiments with MICOM as the ocean component of NorESM, `-m micom` should be used in the command line option for ``diag_run``.  
 
 diag_run has two modes: 
 
@@ -133,7 +148,6 @@ http://ns2345k.web.sigma2.no/noresm_diagnostics/N1850_f19_tn14_191017/CAM_DIAG/y
 
 The climatology and time-series files in /projects/NS2345K/noresm_diagnostics/out/$USER/CAM_DIAG (where $USER is your NIRD username).
 
-
 If you want to run model1-model2 diagnostics, you also need to specify case_name2, start_yr2 and
 end_yr2 (-c2, -s2, -e2) in addition, i.e.: ::
 
@@ -141,25 +155,30 @@ end_yr2 (-c2, -s2, -e2) in addition, i.e.: ::
   
 would be the same as in Example 1 above, except for comparing N1850_f19_tn14_191017 to
 B1850MICOM_f09_tn14_01 instead of observations.
-In Example 1 and Example 2 the options -s and -e (as well as -s2, -e2) refer to the start and end
+
+In Example 1 and Example 2 the options ``-s`` and ``-e`` (as well as ``-s2``, ``-e2``) refer to the start and end
 years of the climatology. The time-series are calculated from all the history files in the case
-directory (input_dir). This is always the case unless the user invokes the option -t time_series. If
+directory (input_dir). This is always the case unless the user invokes the option ``-t time_series``. If
 this option is invoked, start_yr and end_yr refer to the beginning and end of the time series instead
 of the climatology, hence:
-Example 3:
-diag_run -m micom -c N1850_f19_tn14_191017 -t time_series -s 1 -e 20
-would produce micom time-series plots between years 1 and 20. Note that omitting start_yr and
-end_yr when the option -t time_series is invoked computes the time-series over the entire
+
+Example 3: ::
+
+  diag_run -m blom -c N1850_f19_tn14_blom_20200608 -t time_series -s 1 -e 10
+
+would produce blom time-series plots between years 1 and 20. Note that omitting start_yr and
+end_yr when the option ``-t time_series`` is invoked computes the time-series over the entire
 experiment (all history files in the case directory, input_dir): ::
 
    diag_run -m cam -c N1850_f19_tn14_191017 -t time_series
    
 ``diag_run`` uses some template scripts for each of the model components. When diag_run is executed,
 these scripts are changed according to the user-specified settings and renamed with a time stamp.
-For example, if you run the micom diagnostics, the run script template (micom_diag_template.sh)
-will be renamed with a time-stamp as micom_diag_YYMMDD_HHMMSS.
-diag_run also creates a config and output file with the same time stamp
-(config_YYMMDD_HHMMSS and out_YYMMDD_HHMMSS, respectively). The config file
+For example, if you run the blom diagnostics, the run script template (``blom_diag_template.sh``)
+will be renamed with a time-stamp as *blom_diag_YYMMDD_HHMMSS*.
+
+``diag_run`` also creates a config and output file with the same time stamp
+(*config_YYMMDD_HHMMSS* and *out_YYMMDD_HHMMSS*, respectively). The config file
 stores information about changes in the diagnostics scripts invoked by the user, and the output file
 contains the standard output and error (i.e. what is shown in your terminal during runtime).
 When the diagnostics a component is finished the run scripts are copied to: ::
@@ -200,7 +219,7 @@ the following will appear on the screen:
   -------------------------------------------------
   Program:
   /projects/NS2345K/noresm_diagnostics/bin/diag_run
-  Version: x.x
+  Version: 2.0
   -------------------------------------------------
   -CHANGING DIAGNOSTICS DIRECTORY to
   /projects/NS2345K/noresm_diagnostics/out/johiak/CLM_DIAG in lnd_template.csh
@@ -260,7 +279,7 @@ active-mode model1-model2 diagnostics if –type=climo or if type is not invoked
 
   -i input_dir (-i1, --input-dir, --input-dir1)
   
-Name of the root directory of the monthly history files for case_name. For example, if your micom
+Name of the root directory of the monthly history files for case_name. For example, if your blom
 history files are located in /this/is/a/directory/case1/ocn/hist, this option should be set to
 input_dir=/this/is/a/directory. Default is input_dir=/projects/NS2345K/noresm/cases . ::
 
@@ -271,9 +290,9 @@ input_dir2=/projects/NS2345K/noresm/cases . ::
 
   -m model (--model)
 
-Name of the model you want to run the diagnostics for. Valid options are cam, clm, cice, micom,
+Name of the model you want to run the diagnostics for. Valid options are cam, clm, cice, blom,
 hamocc and all. This is the only option that is required for both the active and passive mode. If you
-invoke the “all” option, the cam, clm, cice, micom and hamocc diagnostics will be run
+invoke the “all” option, the cam, clm, cice, blom and hamocc diagnostics will be run
 subsequently. It is also possible to combine different models as you wish within this option: for
 example, if you only want to run cam and clm diagnostics, you can simply add the names of those
 models and separate them with a comma (-m cam,clm). ::
@@ -287,9 +306,9 @@ diagnostics. This option is necessary for offline CLM simulations. ::
   
 Root directory where you want to store the output from the diagnostics (i.e. the climatology and
 time-series files). For example, if you set output_dir=/just/another/directory, the climatology and
-time-series files from the micom diagnostics will be stored in::
+time-series files from the blom diagnostics will be stored in::
 
-  /just/another/directory/MICOM_DIAG/. 
+  /just/another/directory/BLOM_DIAG/. 
   
 Default is::
 
@@ -341,10 +360,10 @@ Model-obs diagnostics in CAM, publish the html in /path/to/my/html: ::
   diag_run -m cam -c N1850_f19_tn11_exp1 -s 21 -e 50 -w /path/to/my/html
   
   
-Model-obs time-series diagnostics in MICOM for all years the model output directory
-(/projects/NS2345K/noresm/cases/N1850_f19_tn11_exp1/ocn/hist/): ::
+Model-obs time-series diagnostics in BLOM for all years the model output directory
+(/projects/NS2345K/noresm/cases/N1850_f19_tn14_blom_20200608/ocn/hist/): ::
 
-  diag_run -m micom -c N1850_f19_tn11_exp1 -t time_series
+  diag_run -m blom -c N1850_f19_tn14_blom_20200608 -t time_series
   
   
 Configure (but do not run) model-obs diagnostics for CICE: ::
@@ -357,17 +376,17 @@ Model1-model2 diagnostics for CLM with user-specified history file directories: 
   
   
 N1850_f19_tn11_exp2 -s2 21 -e2 50 -i2 /input/directory2
-Model-obs climatology diagnostics (no time series) for MICOM: ::
+Model-obs climatology diagnostics (no time series) for BLOM: ::
 
-  diag_run -m micom -c N1850_f19_tn11_exp1 -s 21 -e 50 -t climo
+  diag_run -m blom -c N1850_f19_tn14_blom_20200608 -s 1 -e 10 -t climo
   
 Install CAM diagnostics in /my/dir with minimal configuration: ::
 
   diag_run -m cam -o /my/dir
   
-Model-obs diagnostics for MICOM and HAMOCC: ::
+Model-obs diagnostics for BLOM and HAMOCC: ::
 
-  diag_run -m micom,hamocc -c N1850OC_f19_tn11_exp1 -s 21 -e 50
+  diag_run -m blom,hamocc -c N1850_f19_tn14_blom_20200608 -s 1 -e 10
   
 Model-obs time-series diagnostics for an offline (uncoupled) CLM simulation: ::
 
@@ -377,4 +396,5 @@ Model-obs time-series diagnostics in HAMOCC between yrs 31 and 100: ::
 
   diag_run -m hamocc -c N1850OC_f19_tn11_exp1 -s 31 -e 100 -t time_series
   
+
 
