@@ -15,6 +15,8 @@ The input data needs to be stored in a local directory on the machine the model 
   
 ::
 
+The download location with the highest priority is https://noresm.org/inputdata/ from where the downloading request 
+will be redirected to the real location.
 
 Make sure that the input data files are write-protected. 
 
