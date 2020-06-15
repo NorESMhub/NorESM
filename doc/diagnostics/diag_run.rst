@@ -113,7 +113,7 @@ with respect to either observations (so-called model-obs diagnostics), or to ano
 in the climatology and time-series computations. The ocean (blom) and its biogeochemistry
 (hamocc) have been developed in-house.
 
-Please note, the ocean component of the NorESM2, BLOM, is an updated version of MICOM. It is named MICOM in in NorESM1 for CMIP5 experiments and many (but not all) NorESM2 experiments for CMIP6 experiments. Therefore, for experiments with MICOM as the ocean component of NOrESM, `-m micom` should be used in the command line option for ``diag_run``.  
+Please note, the ocean component of the NorESM2, BLOM, is an updated version of MICOM. It is named MICOM in NorESM1 for CMIP5 experiments and in NorESM2 for many (but not all) CMIP6 experiments. Therefore, for experiments with MICOM as the ocean component of NorESM, `-m micom` should be used in the command line option for ``diag_run``.  
 
 diag_run has two modes: 
 
