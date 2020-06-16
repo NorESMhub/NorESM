@@ -35,6 +35,11 @@ NorESM2 specific additions to CESM2 includes (but is not limited to):
 
 For a short description of the model components, please see :ref:`model-description`
 
+::
+
+   Ocean model component in NorESM2:
+   BLOM/iHAMOCC replaces MICOM/HAMOCC as the combined physical and biogeochemical ocean model component in NorESM2. BLOM/iHAMOCC is publically available soure code licensed under a LGPLv3 license, but is otherwise a direct descendant of the MICOM/HAMOCC model component. New applications of NorESM2 will only use BLOM/iHAMOCC, but older data sets may still refer to MICOM/HAMOCC.
+
 
 NorESM2 exists in three versions:
 ++++++++++++++++
