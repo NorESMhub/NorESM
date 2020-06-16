@@ -425,6 +425,18 @@
   </compset>
 
   <compset>
+    <alias>NSSP370LOWNTCFfrc2</alias>
+    <lname>SSP370LOWNTCF_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+    <science_support grid="f19_tn14"/>
+  </compset>
+
+  <compset>
+    <alias>NSSP370REFGHGLOWNTCFfrc2</alias>
+    <lname>SSP370REFGHGLOWNTCF_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+    <science_support grid="f19_tn14"/>
+  </compset>
+
+  <compset>
     <alias>NSSP585frc2</alias>
     <lname>SSP585_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
     <science_support grid="f09_tn14"/>
