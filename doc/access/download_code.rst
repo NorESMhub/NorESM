@@ -94,7 +94,7 @@ this will use the repositories, tags, branches as specified in Externals.cfg (se
 ::
 
   ./manage_externals/checkout_externals -S             [-S shows status of externals]
-  ./manage_externals/checkout_externals --loggong      [write log of errors in manage_externals.log]
+  ./manage_externals/checkout_externals --logging      [write log of errors in manage_externals.log]
 
 ::
 
