@@ -69,7 +69,7 @@ To check out a specific tag, use **git checkout <tag-name>** where tag-name is a
 
 List all available branches::
 
-  > git branch --list              
+  > git branch --all              
 
 To check out a specific branch, for instance noresm2::
 
