@@ -45,11 +45,11 @@ This is the same data that you can access through the ESGF. Note data is organiz
 
 Note this data has a different structure than the data residing in /projects/NS9034K/CMIP6/. If you want to make a request for data or for more data to be downloaded to this folder, contact jang@met.no. If you are a NIRD user, but not a member of this project and would like to request access, contact michaels@met.no.
 
-**NIRD users that are members of NS9252 (NFR storage project for INES) can access most of the raw (non-CMOR-ized) model data under**::
+**NIRD users that are members of NS9560K (NFR storage project for INES) can access most of the raw (non-CMOR-ized) model data under**::
 
    /projects/NS9560K/noresm/cases/ 
    
-If you are a NIRD user, but not a member of this project and would like to request access, contact mben@norceresearch.no.
+If you are a NIRD user, but not a member of this project, and would like to request access, contact mben@norceresearch.no.
 
 DECK contributions
 ^^^^^^^^^^^^^^^^^^
