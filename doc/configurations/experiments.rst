@@ -112,7 +112,7 @@ The compsets starting with N are NorESM coupled configurations. Compsets startin
   
   <PATH_TO_INPUTDATA>/noresm/inputdata/atm/cam/chem/emis/cmip6_emissions_version20190808
   
-A new set of emission files have been made to avoid the occurence of random mid-month model crashes. These crashes are related to the reading of emission files, but are still under investigation. To use the newest emission files choose compsets including *frc2* or if you  want to create a new copset add ::
+A new set of emission files have been made to avoid the occurence of random mid-month model crashes. These crashes are related to the reading of emission files, but are still under investigation. To use the newest emission files choose compsets including *frc2* or if you  want to create a new compset add ::
 
   %FRC2
  
