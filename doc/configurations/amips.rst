@@ -105,7 +105,7 @@ Compsets starting with NF are NorESM AMIP (atmosphere/land-only) configurations.
 
 To create an AMIP-type experiment::
 
-  ./create_newcase --case <PAT_TO_CASEFOLDER>/CASENAME --compset NFHISTnorbc --res f19_f19 --mach fram --run-unsupported --project nn2345k --user-mods-dir cmip6_noresm_fsst_xaer
+  ./create_newcase --case <PAT_TO_CASEFOLDER>/CASENAME --compset NFHISTnorbc --res f19_f19 --mach fram --project nn2345k --user-mods-dir cmip6_noresm_fsst_xaer
   
 Defined user-mod-dirs are available in::
 
