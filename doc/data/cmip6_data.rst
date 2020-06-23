@@ -134,6 +134,10 @@ MIPs contributions
      - Polar Amplification MIP
      - NorESM2-LM
      - LSG, MB
+   * - PMIP
+     - Paleoclimate MIP
+     - NorESM1-F, NorESM2-LM
+     - CG, ZZ
    * - RFMIP
      - Radiative Forcing MIP
      - NorESM2-LM, NorESM2-MM
@@ -168,6 +172,8 @@ MIPs contributions
 **TS**: Trude Storelvmo <trude.storelvmo@geo.uio.no>,
 **ØS**: Øyvind Seland <oyvind.seland@met.no>,
 **JT**: Jerry Tjiputra <Jerry.Tjiputra@norceresearch.no>,
+**CG**: Chuncheng Guo <chgu@norceresearch.no>,
+**ZZ**: Zhongshi Zhang <zhzh@norceresearch.no>,
 
 | Overview CMIP6-Endorsed MIPs:
 | https://www.wcrp-climate.org/modelling-wgcm-mip-catalogue/modelling-wgcm-cmip6-endorsed-mips
