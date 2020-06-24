@@ -8,7 +8,10 @@ Introduction
 ============
 
 The NorESM Diagnostic Package:
-  is a NorESM model evaluation tool written with a set of scripts (bash, NCL etc) to provide a general evaluation and quick preview of the model performance with only one command line. This toolpackage works on the original model output and has NorESM-specific diagnostics.
+  is a NorESM model evaluation tool written with a set of scripts (bash, NCL etc)
+  to provide a general evaluation and quick preview of the model performance with
+  only one command line. This toolpackage works on the original model output and
+  has NorESM-specific diagnostics.
 
 **The tool package consists of:**
 
@@ -20,12 +23,14 @@ The NorESM Diagnostic Package:
 
 **NorESM diagnostics on GitHub**
 
-The NorESM diagnostics packages (only including the source files, but not data files) are developed and maintained in the Git version control repository:
+The NorESM diagnostics packages (only including the source files, but not data files)
+are developed and maintained in the Git version control repository:
 https://github.com/NordicESMhub/NoresmDiagnostics
 
 **NorESM diagnostics on NIRD**
 
-The full diagnostic package (including source files and data files) are currently hosted on NIRD: ``/projects/NS2345K/noresm_diagnostics``
+The full diagnostic package (including source files and data files) are currently hosted on NIRD:
+``/projects/NS2345K/noresm_diagnostics``
 
 Installation
 ============
@@ -33,7 +38,10 @@ Installation
 Use the preinstalled package
 ----------------------------
 
-You don't need to install this diagnostic package, but you can call it as a command line directly on NIRD. As a prerequiste, you should have access permission to the NS2345K project on NIRD. There is no need to install the diagnostic packages, but just add the ``diag_run`` to your search path, or add it as an alias in ``$HOME/.bashrc``, 
+You don't need to install this diagnostic package, but you can call it as a command line
+directly on NIRD. As a prerequiste, you should have access permission to
+the NS2345K project on NIRD. There is no need to install the diagnostic packages,
+but just add the ``diag_run`` to your search path, or add it as an alias in ``$HOME/.bashrc``, 
 :: 
 
   alias diag_run=’/projects/NS2345K/noresm_diagnostics/bin/diag_run’
@@ -42,7 +50,9 @@ DO NOT make changes direclty in this preinstalled package.
 
 Clone and run your own copy
 ---------------------------
-If you wanto make some changes of the diagnostic package for your own purpuse or/and want to contribute to the development of it, you can installed it on NIRD or FRAM at your preferred location (NOTE, only these two platforms are currently supported). Briefly, there are several steps for this:
+If you wanto make some changes of the diagnostic package for your own purpuse or/and want to
+contribute to the development of it, you can installed it on NIRD or FRAM at your preferred
+location (NOTE, only these two platforms are currently supported). Briefly, there are several steps for this:
 
 1. Fork the NorESM Diagnostic Package `Github repository <https://github.com/NordicESMhub/NoresmDiagnostics>`_ to your own Github respository 
 2. Change to your preferred location, and ``git clone https://github.com/NordicESMhub/NoresmDiagnostics``
@@ -113,9 +123,15 @@ with respect to either observations (so-called model-obs diagnostics), or to ano
 in the climatology and time-series computations. The ocean (blom) and its biogeochemistry
 (hamocc) have been developed in-house.
 
-Please note, the ocean component of the NorESM2, BLOM, is an updated version of MICOM. It is named MICOM in NorESM1 for CMIP5 experiments and in NorESM2 for many (but not all) CMIP6 experiments. Therefore, for experiments with MICOM as the ocean component of NorESM, `-m micom` should be used in the command line option for ``diag_run``.  
+Please note, the ocean component of the NorESM2, BLOM, is an updated version of MICOM.
+It is named MICOM in NorESM1 for CMIP5 experiments and in NorESM2 for many (but not all)
+CMIP6 experiments.
+Therefore, for experiments with MICOM as the ocean component of NorESM,
+`-m micom` can be used in the command line option for ``diag_run``.
+To compare a simulation with either MICOM or BLOM to the other (`model1-model2` diagnostics),
+you can either use `-m micom` or `-m blom`. Both options should work.
 
-diag_run has two modes: 
+#`diag_run` has two modes: 
 
 -  an “active-mode”, for which diag_run runs the diagnostic scripts 
 -  a “passive-mode”, for which diag_run only configures the scripts. 
