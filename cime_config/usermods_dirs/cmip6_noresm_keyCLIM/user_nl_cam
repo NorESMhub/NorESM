@@ -1,0 +1,21 @@
+
+history_aerosol=.true.
+
+nhtfrq = 0, -24, -6, -3,  -1,   1, -24,-120,-240 
+
+mfilt  = 1,   5, 20, 40, 120, 240, 365,  73, 365 
+
+ndens  = 2,   2,  2,  2,   2,   2,   1,   1,   1
+
+fincl1 = 'SST','TAUX','TAUY','TAUBLJX','TAUBLJY','BTAUNET','PRECC','PRECL','PRECT','FREQZM','PCONVB','PCONVT','PRECCDZM','Z700','Z500','Z200','Z300','Z100','Z050','U200','U850','V200','V850','T200','T500',   'T700','T1000','OMEGA500','OMEGA850','VTHzm','WTHzm','UVzm','UWzm','Uzm','Vzm','THzm','Wzm','dUzm','dVzm','dUazm','dVazm','dUfzm','U','V','T','Q','Z3','dU','dV','dUa','dVa','dUf','EFLX','PTTEND','IETEND_DME', 'PTTEND_DME','TFIX','EFIX','EP','QFLX','MEANPTOP','MEANTTOP','MEANTAU','TCLDAREA','RHREFHT','TREFMXAV','TREFMNAV','ozone','O3','TROP_P','TROP_T','TROP_Z','VT100'
+
+
+fincl2 = 'ABSVIS:A', 'ACTNL:A', 'ACTREL:A', 'AOD_VIS:A', 'cb_BC:A', 'cb_DMS:A', 'cb_DUST:A', 'cb_OM:A', 'cb_SALT:A', 'cb_SO2:A', 'cb_SULFATE:A',
+   'CDNUMC:A', 'CLDICE:A', 'CLDLIQ:A', 'CLDTOT:A', 'CLOUD:A', 'CMFMC:A', 'CMFMCDZM:A', 'DAYFOC:A', 'FCTL:A', 'FLDS:A', 'FLDSC:A', 'FLNR:A', 'FLNS:A', 'FLNSC:A', 
+   'FLNT:A', 'FLNTC:A', 'FLUT:A', 'FLUTC:A', 'FSDS:A', 'FSDSC:A', 'FSNR:A', 'FSNS:A', 'FSNSC:A', 'FSNTOA:A', 'FSNTOAC:A', 'ICEFRAC:A' , 'LHFLX:A', 'MASS:A', 'OMEGA:A', 
+   'OMEGA500:A', 'PBLH:A', 'PDELDRY:A', 'PRECC:A', 'PRECT:A', 'PS:A', 'PSL:A', 'Q:A', 'QREFHT:A', 'QSNOW:A', 'RHREFHT:A', 'SHFLX:A', 
+   'SOLIN:A', 'SOLLD:A', 'SOLSD:A', 'SST:A' ,'T:A', 'T500:A', 'T700:A', 'T850:A', 'TAUBLJX:A', 'TAUBLJY:A', 'TAUGWX:A', 'TAUGWY:A', 'TAUX:A', 'TAUY:A', 
+   'TGCLDIWP:A', 'TGCLDLWP:A', 'TMQ:A', 'TREFHT:A', 'TREFHTMN:M', 'TREFHTMX:X', 'TS:A', 'TSMN:M', 'TSMX:X', 'U10:A', 'UTGWORO:A',
+    'Z500:A'
+
+
