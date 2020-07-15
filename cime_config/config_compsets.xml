@@ -418,6 +418,31 @@
   </compset>
 
   <compset>
+    <alias>NSSP245frc2covbaslin</alias>
+    <lname>SSP245_CAM60%NORESM%COVBASLIN%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+  </compset>
+
+  <compset>
+    <alias>NSSP245frc2covfosfue</alias>
+    <lname>SSP245_CAM60%NORESM%COVFOSFUE%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+  </compset>
+
+  <compset>
+    <alias>NSSP245frc2covmodgre</alias>
+    <lname>SSP245_CAM60%NORESM%COVMODGRE%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+  </compset>
+
+  <compset>
+    <alias>NSSP245frc2covstrgre</alias>
+    <lname>SSP245_CAM60%NORESM%COVSTRGRE%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+  </compset>
+
+  <compset>
+    <alias>NSSP245frc2covtwobli</alias>
+    <lname>SSP245_CAM60%NORESM%COVTWOBLI%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+  </compset>
+
+  <compset>
     <alias>NSSP370frc2</alias>
     <lname>SSP370_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
     <science_support grid="f09_tn14"/>
@@ -434,31 +459,6 @@
     <alias>NSSP370REFGHGLOWNTCFfrc2</alias>
     <lname>SSP370REFGHGLOWNTCF_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
     <science_support grid="f19_tn14"/>
-  </compset>
-
-  <compset>
-    <alias>NSSP370frc2covbaslin</alias>
-    <lname>SSP370_CAM60%NORESM%COVBASLIN%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-  </compset>
-
-  <compset>
-    <alias>NSSP370frc2covfosfue</alias>
-    <lname>SSP370_CAM60%NORESM%COVFOSFUE%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-  </compset>
-
-  <compset>
-    <alias>NSSP370frc2covmodgre</alias>
-    <lname>SSP370_CAM60%NORESM%COVMODGRE%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-  </compset>
-
-  <compset>
-    <alias>NSSP370frc2covstrgre</alias>
-    <lname>SSP370_CAM60%NORESM%COVSTRGRE%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-  </compset>
-
-  <compset>
-    <alias>NSSP370frc2covtwobli</alias>
-    <lname>SSP370_CAM60%NORESM%COVTWOBLI%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
   </compset>
 
   <compset>
