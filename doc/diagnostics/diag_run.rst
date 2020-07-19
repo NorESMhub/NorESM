@@ -8,10 +8,7 @@ Introduction
 ============
 
 The NorESM Diagnostic Package:
-  is a NorESM model evaluation tool written with a set of scripts (bash, NCL etc)
-  to provide a general evaluation and quick preview of the model performance with
-  only one command line. This toolpackage works on the original model output and
-  has NorESM-specific diagnostics.
+  is a NorESM model evaluation tool written with a set of scripts (bash, NCL etc) to provide a general evaluation and quick preview of the model performance with only one command line. This toolpackage works on the original model output and has NorESM-specific diagnostics.
 
 **The tool package consists of:**
 
@@ -23,14 +20,15 @@ The NorESM Diagnostic Package:
 
 **NorESM diagnostics on GitHub**
 
-The NorESM diagnostics packages (only including the source files, but not data files)
-are developed and maintained in the Git version control repository:
-https://github.com/NordicESMhub/NoresmDiagnostics
+The source codes of the NorESM diagnostics packages are developed and maintained in the Git version control repository:
+https://github.com/NordicESMhub/noresmdiagnostics.
+
+And the observation dataset and grid files are hosted at:
+https://www.noresm.org/diagnostics, with a total size of ~100 GB.
 
 **NorESM diagnostics on NIRD**
 
-The full diagnostic package (including source files and data files) are currently hosted on NIRD:
-``/projects/NS2345K/noresm_diagnostics``
+The full diagnostic package (including source files and data files) are currently hosted on NIRD: ``/projects/NS2345K/diagnostics/noresmdiagnostics``
 
 Installation
 ============
@@ -38,27 +36,24 @@ Installation
 Use the preinstalled package
 ----------------------------
 
-You don't need to install this diagnostic package, but you can call it as a command line
-directly on NIRD. As a prerequiste, you should have access permission to
-the NS2345K project on NIRD. There is no need to install the diagnostic packages,
-but just add the ``diag_run`` to your search path, or add it as an alias in ``$HOME/.bashrc``, 
+You don't need to install this diagnostic package, but you can call it as a command line directly on NIRD. As a prerequiste, you should have access permission to the NS2345K project on NIRD. There is no need to install the diagnostic packages, but just add the ``diag_run`` to your search path, or add it as an alias in ``$HOME/.bashrc``, 
 :: 
 
-  alias diag_run=’/projects/NS2345K/noresm_diagnostics/bin/diag_run’
+  alias diag_run=’/projects/NS2345K/diagnostics/noresmdiagnostics/bin’
   
 DO NOT make changes direclty in this preinstalled package.
 
 Clone and run your own copy
 ---------------------------
-If you wanto make some changes of the diagnostic package for your own purpuse or/and want to
-contribute to the development of it, you can installed it on NIRD or FRAM at your preferred
-location (NOTE, only these two platforms are currently supported). Briefly, there are several steps for this:
+If you wanto make some changes of the diagnostic package for your own purpuse or/and want to contribute to the development of it, you can installed it on NIRD under your personal folder or your own project area (i.e., /projects/NSxxxxK). Briefly, there are several steps to install it:
 
-1. Fork the NorESM Diagnostic Package `Github repository <https://github.com/NordicESMhub/NoresmDiagnostics>`_ to your own Github respository 
-2. Change to your preferred location, and ``git clone https://github.com/NordicESMhub/NoresmDiagnostics``
-3. Run ``bin/linkdata.sh`` to link all necessary data to your clone.
-4. Make changes to the code/scripts for your purpose. And call ``diag_run`` with the modified scripts.
-5. If you would like to contribute your function enhancements or bug fixes to the original diagnostic package, you should firstly make these changes in a new git branch, and commit the changes to your fork repository, then create an Issue at the `Github repository <https://github.com/NordicESMhub/NoresmDiagnostics>`_, and finally make a ``pull`` request to the original Github repository to incorporate your changes.
+1. Fork the NorESM Diagnostic Package ``Github repository <https://github.com/NordicESMhub/noresmdiagnostics>``_ to your own Github respository. For example, https://github.com/YOU_GITHUB_USERNAME/noresmdiagnostics
+2. Change to your preferred location, say DIAGROOT, where you want to install the tool, and ``git clone https://github.com/YOU_GITHUB_USERNAME/noresmdiagnostics``
+3. Change to $DIAGROOT/bin, and Link or download all the observation and grid data files.
+  - If you are installing the tool on NIRD, you just need to link all the data to your clone by running the script ``linkdata.sh``, given you have access to the /project/NS2345K project
+  - If you are not memember of NS2345K or you are installing it on platforms other than NIRD, you should download all the data to your clone by executing ``dloaddata.sh``. If you are not running it on NIRD, you should have CDO, NCO and NCL installed.
+4. Make changes to the code/scripts for your purpose. And call ``diag_run`` of your own clone.
+5. If you would like to contribute your function enhancements or bug fixes to the original diagnostic package, you should firstly make these changes in a new git branch, and commit the changes to your fork repository, then create an Issue at the `Github repository <https://github.com/NordicESMhub/noresmdiagnostics>`_, and finally make a ``pull`` request to the original Github repository to incorporate your changes.
 
 Run the diagnostic tool
 =======================
@@ -123,15 +118,9 @@ with respect to either observations (so-called model-obs diagnostics), or to ano
 in the climatology and time-series computations. The ocean (blom) and its biogeochemistry
 (hamocc) have been developed in-house.
 
-Please note, the ocean component of the NorESM2, BLOM, is an updated version of MICOM.
-It is named MICOM in NorESM1 for CMIP5 experiments and in NorESM2 for many (but not all)
-CMIP6 experiments.
-Therefore, for experiments with MICOM as the ocean component of NorESM,
-`-m micom` can be used in the command line option for ``diag_run``.
-To compare a simulation with either MICOM or BLOM to the other (`model1-model2` diagnostics),
-you can either use `-m micom` or `-m blom`. Both options should work.
+Please note, the ocean component of the NorESM2, BLOM, is an updated version of MICOM. It is named MICOM in NorESM1 for CMIP5 experiments and in NorESM2 for many (but not all) CMIP6 experiments. Therefore, for experiments with MICOM as the ocean component of NorESM, ``-m micom`` can be used in the command line option for ``diag_run``. To compare a simulation with either MICOM or BLOM to the other (model1-model2 diagnostics), you can either use ``-m micom`` or ``-m blom``. Both options should work.  
 
-#`diag_run` has two modes: 
+``diag_run`` has two modes: 
 
 -  an “active-mode”, for which diag_run runs the diagnostic scripts 
 -  a “passive-mode”, for which diag_run only configures the scripts. 
@@ -154,15 +143,15 @@ requirement is to specify the options model, case_name, start_yr and end_yr
   
 This command runs atmospheric model-obs diagnostics of the case N1850_f19_tn14_191017 using
 a climatology between model years 21 and 50. It is assumed that the N1850_f19_tn14_191017
-history files are located in /projects/NS2345K/noresm/cases. The resulting plots and html will be
+history files are located in /projects/NS2345K/noresm/cases. By default, the resulting plots and html will be
 stored in ::
 
-  /projects/NS2345K/www/noresm_diagnostics/N1850_f19_tn14_191017/CAM_DIAG,
+  /projects/NS2345K/www/diagnostics/noresmdiagnostics/$USER/N1850_f19_tn14_191017/CAM_DIAG,
   
-which links to the following URL: 
-http://ns2345k.web.sigma2.no/noresm_diagnostics/N1850_f19_tn14_191017/CAM_DIAG/yrs21to50-obs.html.
+or, if you specify to store them under a command folder, i.e. with ``-w /projects/NS2345K/www/diagnostics/noresmdiagnostics/common``. It links to links to the following URL: 
+http://ns2345k.web.sigma2.no/diagnostics/noresmdiagnostics/common/N1850_f19_tn14_191017/CAM_DIAG/yrs21to50-obs.html.
 
-The climatology and time-series files in /projects/NS2345K/noresm_diagnostics/out/$USER/CAM_DIAG (where $USER is your NIRD username).
+The climatology and time-series files in /projects/NS2345K/diagnostics/noresmdiagnostics/out/$USER/CAM_DIAG (where $USER is your NIRD username).
 
 If you want to run model1-model2 diagnostics, you also need to specify case_name2, start_yr2 and
 end_yr2 (-c2, -s2, -e2) in addition, i.e.: ::
@@ -207,11 +196,11 @@ and the config and output files to: ::
   
 Hence, for Example 1 above, the run scripts are saved in: ::
 
-  /projects/NS2345K/noresm_diagnostics/out/ $USER/CAM_DIAG/config/N1850_f19_tn14_191017/run_scripts
+  /projects/NS2345K/diagnostics/noresmdiagnostics/out/ $USER/CAM_DIAG/config/N1850_f19_tn14_191017/run_scripts
   
 and the config and out files in: ::
 
-  /projects/NS2345K/noresm_diagnostics/out/$USER/CAM_DIAG/config/N1850_f19_tn14_191017/logs
+  /projects/NS2345K/diagnostics/noresmdiagnostics/out/$USER/CAM_DIAG/config/N1850_f19_tn14_191017/logs
 
 Passive-mode
 -------------
@@ -231,25 +220,25 @@ the following will appear on the screen:
 
 ::
 
-  [nird@login0 ~]$ /projects/NS2345K/noresm_diagnostics/diag_run -m clm
+  [nird@login0 ~]$ /projects/NS2345K/diagnostics/noresmdiagnostics/diag_run -m clm
   -------------------------------------------------
   Program:
   /projects/NS2345K/noresm_diagnostics/bin/diag_run
   Version: 2.0
   -------------------------------------------------
   -CHANGING DIAGNOSTICS DIRECTORY to
-  /projects/NS2345K/noresm_diagnostics/out/johiak/CLM_DIAG in lnd_template.csh
+  /projects/NS2345K/diagnostics/noresmdiagnostics/out/xxx/CLM_DIAG in lnd_template.csh
   -CHANGING ROOT DIRECTORY FOR CODE AND DATA to
-  /projects/NS2345K/noresm_diagnostics/packages/CLM_DIAG in lnd_template.csh
+  /projects/NS2345K/diagnostics/noresmdiagnostics/packages/CLM_DIAG in lnd_template.csh
   -CHANGING INPUT DIR 1 to /projects/NS2345K/noresm/cases in lnd_template.csh
-  -CHANGING publish_html_root to /projects/NS2345K/www/noresm_diagnostics in
+  -CHANGING publish_html_root to /projects/NS2345K/www/diagnostics/noresmdiagnosticss in
   lnd_template.csh
   -SETTING UP TIME-SERIES DIAGNOSTICS FOR ENTIRE EXPERIMENT
   CLM DIAGNOSTICS SUCCESSFULLY CONFIGURED in
-  /projects/NS2345K/noresm_diagnostics/out/xxx/CLM_DIAG
+  /projects/NS2345K/diagnostics/noresmdiagnostics/out/xxx/CLM_DIAG
   -------------------------------------------------
   lnd_template.csh IS NOT RUNNING: NOT ALL REQUIRED VARIABLES HAVE BEEN CONFIGURED
-  (see /projects/NS2345K/noresm_diagnostics/out/xxx/CLM_DIAG/config.log).
+  (see /projects/NS2345K/diagnostics/noresmdiagnostics/out/xxx/CLM_DIAG/config.log).
   -------------------------------------------------
   -------------------------------------------------
   TOTAL diag_run RUNTIME: 0m2s
@@ -260,9 +249,9 @@ the following will appear on the screen:
 ::
 
 The (semi-configured) run script has then been copied to
-/projects/NS2345K/noresm_diagnostics/out/<username>/CLM_DIAG/lnd_template.csh,
+/projects/NS2345K/diagnostics/noresmdiagnostics/out/<username>/CLM_DIAG/lnd_template.csh,
 and all information about the configuration is contained in
-/projects/NS2345K/noresm_diagnostics/out/<username>/CLM_DIAG/config.log
+/projects/NS2345K/diagnostics/noresmdiagnostics/out/<username>/CLM_DIAG/config.log
 
 Options
 -------
@@ -328,7 +317,7 @@ time-series files from the blom diagnostics will be stored in::
   
 Default is::
 
-  output_dir=/projects/NS2345K/noresm_diagnostics/out/$USER
+  output_dir=/projects/NS2345K/diagnostics/noresmdiagnostics/out/$USER
   
 where $USER is your user name on NIRD. ::
 
@@ -359,7 +348,7 @@ Specifies if you only run climatology or time-series diagnostics: valid options 
 Specifies the directory where the html should be stored. This directory should preferably be linked
 to a web server so that one can look at the results with a web browser. Default is::
 
-  --web-dir=/projects/NS2345K/www/noresm_diagnostics/
+  --web-dir=/projects/NS2345K/www/diagnostics/noresmdiagnostics/
   
 
 Examples
@@ -414,3 +403,7 @@ Model-obs time-series diagnostics in HAMOCC between yrs 31 and 100: ::
   
 
 
+
+move the tool package to /projects/NS2345K/diagnostics/noresmdiagnostics
+
+move the observational data and grid data to: /projects/NS2345K/www/diagnostics/inputdata/, and add tools to link or download the data
