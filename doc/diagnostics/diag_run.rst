@@ -36,20 +36,22 @@ Installation
 Use the preinstalled package
 ----------------------------
 
-You don't need to install this diagnostic package, but you can call it as a command line directly on NIRD. As a prerequiste, you should have access permission to the NS2345K project on NIRD. There is no need to install the diagnostic packages, but just add the ``diag_run`` to your search path, or add it as an alias in ``$HOME/.bashrc``, 
+You don't need to install this diagnostic package, but you can call it as a command line directly on NIRD. As a prerequiste, you should have access permission to the NS2345K project on NIRD. There is no need to install the diagnostic packages, but just add the ``diag_run`` to your search path, or add it as an alias in ``$HOME/.bashrc`` (assuming you are using Bash Shell), 
 :: 
 
-  alias diag_run=’/projects/NS2345K/diagnostics/noresmdiagnostics/bin’
+  alias diag_run="/projects/NS2345K/diagnostics/noresmdiagnostics/bin/diag_run"
   
-DO NOT make changes direclty in this preinstalled package.
+``source ~/.bashrc`` or close and reopen your terminal to make these changes take effect.
+
+**DO NOT** make changes direclty in this preinstalled package.
 
 Clone and run your own copy
 ---------------------------
 If you wanto make some changes of the diagnostic package for your own purpuse or/and want to contribute to the development of it, you can installed it on NIRD under your personal folder or your own project area (i.e., /projects/NSxxxxK). Briefly, there are several steps to install it:
 
-1. Fork the NorESM Diagnostic Package ``Github repository <https://github.com/NordicESMhub/noresmdiagnostics>``_ to your own Github respository. For example, https://github.com/YOU_GITHUB_USERNAME/noresmdiagnostics
+1. Fork the NorESM Diagnostic Package `Github repository <https://github.com/NordicESMhub/noresmdiagnostics>`_ to your own Github respository. For example, https://github.com/YOU_GITHUB_USERNAME/noresmdiagnostics
 2. Change to your preferred location, say DIAGROOT, where you want to install the tool, and ``git clone https://github.com/YOU_GITHUB_USERNAME/noresmdiagnostics``
-3. Change to $DIAGROOT/bin, and Link or download all the observation and grid data files.
+3. Change to $DIAGROOT/bin, and link or download all the observation and grid data files.
   - If you are installing the tool on NIRD, you just need to link all the data to your clone by running the script ``linkdata.sh``, given you have access to the /project/NS2345K project
   - If you are not memember of NS2345K or you are installing it on platforms other than NIRD, you should download all the data to your clone by executing ``dloaddata.sh``. If you are not running it on NIRD, you should have CDO, NCO and NCL installed.
 4. Make changes to the code/scripts for your purpose. And call ``diag_run`` of your own clone.
@@ -401,9 +403,3 @@ Model-obs time-series diagnostics in HAMOCC between yrs 31 and 100: ::
 
   diag_run -m hamocc -c N1850OC_f19_tn11_exp1 -s 31 -e 100 -t time_series
   
-
-
-
-move the tool package to /projects/NS2345K/diagnostics/noresmdiagnostics
-
-move the observational data and grid data to: /projects/NS2345K/www/diagnostics/inputdata/, and add tools to link or download the data
