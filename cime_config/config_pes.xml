@@ -1128,7 +1128,7 @@
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx1v4" >
     <mach name="hexagon|vilje|fram">
-      <pes pesize="any" compset="CAM60%PTAERO.+CLM50%BGC-CROP.+CICE.+MICOM%ECO">
+      <pes pesize="any" compset="CAM60%PTAERO.+CLM50%BGC-CROP.+CICE.+BLOM%ECO">
         <comment>none</comment>
         <ntasks>
           <ntasks_atm>1536</ntasks_atm>
@@ -1165,8 +1165,46 @@
   </grid>
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx1v4" >
+    <mach name="betzy">
+      <pes pesize="any" compset="1850_CAM60%NORESM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO">
+        <comment>none</comment>
+        <ntasks>
+          <ntasks_atm>1792</ntasks_atm>
+          <ntasks_lnd>900</ntasks_lnd>
+          <ntasks_rof>20</ntasks_rof>
+          <ntasks_ice>872</ntasks_ice>
+          <ntasks_ocn>123</ntasks_ocn>
+          <ntasks_glc>1792</ntasks_glc>
+          <ntasks_wav>300</ntasks_wav>
+          <ntasks_cpl>1792</ntasks_cpl>
+        </ntasks>
+        <nthrds>
+          <nthrds_atm>1</nthrds_atm>
+          <nthrds_lnd>1</nthrds_lnd>
+          <nthrds_rof>1</nthrds_rof>
+          <nthrds_ice>1</nthrds_ice>
+          <nthrds_ocn>1</nthrds_ocn>
+          <nthrds_glc>1</nthrds_glc>
+          <nthrds_wav>1</nthrds_wav>
+          <nthrds_cpl>1</nthrds_cpl>
+        </nthrds>
+        <rootpe>
+          <rootpe_atm>0</rootpe_atm>
+          <rootpe_lnd>0</rootpe_lnd>
+          <rootpe_rof>900</rootpe_rof>
+          <rootpe_ice>920</rootpe_ice>
+          <rootpe_ocn>1792</rootpe_ocn>
+          <rootpe_glc>0</rootpe_glc>
+          <rootpe_wav>0</rootpe_wav>
+          <rootpe_cpl>0</rootpe_cpl>
+        </rootpe>
+      </pes>
+    </mach>
+  </grid>
+
+  <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx1v4" >
     <mach name="hexagon|vilje|fram">
-      <pes pesize="X1" compset="CAM60%PTAERO.+CLM50%BGC-CROP.+CICE.+MICOM%ECO">
+      <pes pesize="X1" compset="CAM60%PTAERO.+CLM50%BGC-CROP.+CICE.+BLOM%ECO">
         <comment>none</comment>
         <ntasks>
           <ntasks_atm>1728</ntasks_atm>
@@ -1204,7 +1242,7 @@
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx1v4" >
     <mach name="hexagon|vilje|fram">
-      <pes pesize="any" compset="CAM60%NORESM.+CLM50%BGC-CROP.+CICE.+MICOM%ECO">
+      <pes pesize="any" compset="CAM60%NORESM.+CLM50%BGC-CROP.+CICE.+BLOM%ECO">
         <comment>none</comment>
         <ntasks>
           <ntasks_atm>1536</ntasks_atm>
@@ -1242,7 +1280,7 @@
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx1v4" >
     <mach name="hexagon|vilje|fram">
-      <pes pesize="X1" compset="CAM60%NORESM.+CLM50%BGC-CROP.+CICE.+MICOM%ECO">
+      <pes pesize="X1" compset="CAM60%NORESM.+CLM50%BGC-CROP.+CICE.+BLOM%ECO">
         <comment>none</comment>
         <ntasks>
           <ntasks_atm>1728</ntasks_atm>
@@ -1509,7 +1547,7 @@
 
   <grid name="a%1.9x2.5.+l%1.9x2.5.+oi%tnx1v4" >
     <mach name="hexagon|vilje|fram">
-      <pes pesize="any" compset="CAM60%PTAERO.+CLM50%BGC-CROP.+CICE.+MICOM%ECO">
+      <pes pesize="any" compset="CAM60%PTAERO.+CLM50%BGC-CROP.+CICE.+BLOM%ECO">
         <comment>none</comment>
         <ntasks>
           <ntasks_atm>768</ntasks_atm>
@@ -1549,7 +1587,7 @@
 
   <grid name="a%1.9x2.5.+l%1.9x2.5.+oi%tnx1v4" >
     <mach name="hexagon|vilje|fram">
-      <pes pesize="any" compset="CAM60%NORESM.+CLM50%BGC-CROP.+CICE.+MICOM%ECO">
+      <pes pesize="any" compset="CAM60%NORESM.+CLM50%BGC-CROP.+CICE.+BLOM%ECO">
         <comment>none</comment>
         <ntasks>
           <ntasks_atm>768</ntasks_atm>
@@ -1815,7 +1853,7 @@
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx0.25v4" >
     <mach name="hexagon|vilje|fram">
-      <pes pesize="any" compset="CAM60%NORESM.+CLM50%BGC-CROP.+CICE.+MICOM%ECO">
+      <pes pesize="any" compset="CAM60%NORESM.+CLM50%BGC-CROP.+CICE.+BLOM%ECO">
         <comment>none</comment>
         <ntasks>
           <ntasks_atm>1024</ntasks_atm>

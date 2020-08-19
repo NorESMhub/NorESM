@@ -1,208 +1,88 @@
 .. _start:
 
+
 Introduction
-============
-           
+=============
 
-NorESM1 is the Norwegian Earth System model used for CMIP5. The model is
-based on the CCSM framework
-(http://en.wikipedia.org/wiki/Community_Climate_System_Model). However,
-NorESM has special features developed by Norwegian researchers,
-including (but not limited to)
+NorESM2 User's Guide
+^^^^^^^^^^^^^^^^^^^^
 
-- Atmosphere module : CAM-Oslo replaces standard CAM
-- Ocean module : Based on the isopycnic coordinate model MICOM
-
-Main references are:
-
-GMD – Special issue The Norwegian Earth System Model: NorESM; basic
-development, validation, scientific analyses, and climate scenarios.
-
-http://www.geosci-model-dev.net/special_issue20.html
-:cite:`gmd-6-687-2013`
-:cite:`gmd-6-389-2013`
-:cite:`gmd-6-207-2013`
-:cite:`gmd-6-301-2013`
-
-The next version of the model NorESM2 is built on a update version of
-the CCSM framework, CESM2. (http://www.cesm.ucar.edu/models/cesm2/) ;
-(https://en.wikipedia.org/wiki/Community_Earth_System_Model). Its
-aerosol module is based on OsloAero5.3 of NorESM1.2 / CAM5.3-Oslo
-:cite:`gmd-11-3945-2018`.
-
-This website contains information shared between NorESM developers and
-users
-
-Obtaining a version of the model
-''''''''''''''''''''''''''''''''
-
--  The development version has been moved to git: Obtain a
-   copy through ``git clone https://<githubUserName>@github.com/metno/noresm-dev.git``. 
-   You first need to be registered as a noresm user on github 
-   (see detailed info in :ref:`gitbestpractice`).
-
-If you are on a normal Ubuntu PC and want the source code, you might see
-that "svn checkout" complains about "gnome keyring". If you see this
-problem, the solution is here:
-http://askubuntu.com/questions/206604/svn-and-gnome-keyring
+This guide instructs both novice and experienced users on building and running NorESM2 for various experiment set ups. The chapters attempt to provide relatively detailed information on how to make, set up, build, run and modify experiments using NorESM2.
 
 
--  Need access to other versions: Special access document**:
-      https://docs.google.com/a/met.no/document/d/1G1ezxtBhzDyNWwrKJYWmp8gn402bOWThe_6gN00PDMQ/edit?usp=sharing
+NorESM2
+^^^^^^^^
+The Norwegian Earth System Model version 2 (NorESM2) is an coupled Earth System Model developed by the Norwegian Climate  Consortium (NCC). NorESM2 is based on the second version of the Community Earth System Model, CESM2 (http://www.cesm.ucar.edu/models/cesm2/), developed and operated at the National Center for Atmospheric Research (NCAR), Boulder, US. 
 
-Running / Configuring the model
-'''''''''''''''''''''''''''''''
+The NorESM specific development is led by the Norwegian Meteorological Institute and NORCE Norwegian Research Centre AS. Other partners involved are the University of Oslo (UiO), CICERO, Nansen Environmental and Remote Sensing Center (NERSC) and the University of Bergen (UiB). 
 
-- :ref:`newbie`
-- :ref:`advanced`
-- :ref:`advancednoresm2`
-- :ref:`fluxescrossingboundaries`
-- :ref:`cmip6_volcanic_forcing`
-- :ref:`cmip6emissionsofshortlivedcomponents`
-- :ref:`cmip6greenhouseGasConcentrations`
-- :ref:`noresm2_output` (Oct 30'th 2018)
+NorESM2 specific additions to CESM2 includes (but is not limited to):
+++++++++++++++++++
 
-Develop the model
-'''''''''''''''''
+- Atmosphere model : CAM6-Nor replaces standard CAM
 
-Setting up at different machines
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  - Atmospheric chemistry/aerosol/cloud module: OsloAero6  (Kirkevåg et al. GMD, 2018)
+  - Atmospheric dynamics/physics: Improved conservation of energy and angular momentum (Toniazzo et al. GMD, 2020)
+  - Parameterization of turbulent air-sea fluxes (see :ref:`amips` for more details)
+  
+- Sea-ice model:
 
-Most developers compile and run NorESM on hexagon (hexagon.bccs.uib.no).
-That machine uses the portland group fortran compiler. Most developers
-develop the code on that machine using "develop/compile/run/analyze
-print statments" on that machine.
+  - Wind drift of snow
+- Ocean model : Isopycnic coordinate model BLOM 
+- Ocean biogeochemical model : iHAMOCC
 
-Some experiments have also been done with compiling running CAM on a
-normal Linux PC in order to use interactive debuggers. (see below)
+  - HAMburg Ocean Carbon Cycle model (HAMOCC) adopted for use with the isopycnic ocean model BLOM and further developed (Tjiputra et al. GMD, 2020)
 
-:ref:`settingupcamonlinuxpc` 
+For a short description of the model components, please see :ref:`model-description`
 
-Issue tracker
-^^^^^^^^^^^^^
+Ocean model component in NorESM2:
+'''''''''''''''''''''''''''''''''
+BLOM/iHAMOCC replaces MICOM/HAMOCC as the combined physical and biogeochemical ocean model component in NorESM2. BLOM/iHAMOCC is publically available soure code licensed under a LGPLv3 license, but is otherwise a direct descendant of the MICOM/HAMOCC model component. New applications of NorESM2 will only use BLOM/iHAMOCC, but older data sets may still refer to MICOM/HAMOCC.
 
-Any development should ideally be agreed with the NorESM development
-team and be properly described in the issue tracker, see the link below
 
-:ref:`usingtheissuetracker`
+NorESM2 exists in three versions:
+++++++++++++++++
 
-If you have changed the model and want to merge your changes to the
-trunk, your model has to pass some tests:
+- **NorESM2-MM**
+   
+  - 1 degree resolution for all model components
+   
+- **NorESM2-LM**
+ 
+  - 2 degree resolution for the atmosphere and land components
+  - 1 degree resolution for the ocean and sea-ice components
+  - CO2 concentration driven (default)
+  
+- **NorESM2-MH**
+ 
+  - 1 degree resolution for the atmosphere and land components
+  - 0.25 degree resolution for the ocean and sea-ice components
 
-Testing
-^^^^^^^
+   
+NorESM2 can be run in emission driven mode for interactive carbon-cycle
+studies. Currently, this configuration is only supported for the
+LM-resolution
 
-:ref:`testlist`
+| NorESM2 contributes to the 6th phase of the Coupled Model Intercomparison Project (CMIP6):   
+| https://www.wcrp-climate.org/wgcm-cmip/wgcm-cmip6   
+| 
+| Scientific documentation in the GMD – Special issue "The Norwegian Earth System Model: NorESM":     
+| http://www.geosci-model-dev.net/special_issue20.html     
+| 
+| NorESM1 Documentation is found here: https://noresm-docs.readthedocs.io/en/noresm1/  
 
-Version control best practices
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  NEW**: After switching to git (13th november 2015) the
-      svn-repository is read-only. Some advice on how to use the new
-      git-repository are available here:
-      :ref:`gitbestpractice`
 
-Some guidelines for modifying NorESM’s subversion repository:
-:ref:`svnbestpractice`
 
-How-to for setting up svn repositories on NorStore:
-:ref:`svnnorstorehowto`
+References
+^^^^^^
+Seland, Ø., Bentsen, M., Seland Graff, L., Olivié, D., Toniazzo, T., Gjermundsen, A., Debernard, J. B., Gupta, A. K., He, Y., Kirkevåg, A., Schwinger, J., Tjiputra, J., Schancke Aas, K., Bethke, I., Fan, Y., Griesfeller, J., Grini, A., Guo, C., Ilicak, M., Hafsahl Karset, I. H., Landgren, O., Liakka, J., Onsum Moseid, K., Nummelin, A., Spensberger, C., Tang, H., Zhang, Z., Heinze, C., Iverson, T., and Schulz, M.: The Norwegian Earth System Model, NorESM2 – Evaluation of theCMIP6 DECK and historical simulations, Geosci. Model Dev. Discuss., https://doi.org/10.5194/gmd-2019-378, in review, 2020.
 
-NorESM2 branches in active development
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Tjiputra, J. F., Schwinger, J., Bentsen, M., Morée, A. L., Gao, S., Bethke, I., Heinze, C., Goris, N., Gupta, A., He, Y.-C., Olivié, D., Seland, Ø., and Schulz, M.: Ocean biogeochemistry in the Norwegian Earth System Model version 2 (NorESM2), Geosci. Model Dev., 13, 2393–2431, https://doi.org/10.5194/gmd-13-2393-2020, 2020.
 
-- https://github.com/metno/noresm/: master (this is the trunk/master version)
-- https://github.com/metno/noresm/: featureCAM5-OsloDevelopment_trunk2.0-6 (Main development branch for CAM-Oslo aerosol features)
-- https://github.com/metno/noresm/: feature-classnuc-ice_featureCAM5-OsloDevelopment-2 (ice nucleation feature branch)
-- https://github.com/metno/noresm/: featureNitrate_featureCAM5-OsloDevelopment-2/ (aerosol nitrate feature branch)
+Toniazzo, T., Bentsen, M., Craig, C., Eaton, B. E., Edwards, J., Goldhaber, S., Jablonowski, C., and Lauritzen, P. H.: Enforcing conservation of axial angular momentum in the atmospheric general circulation model CAM6, Geosci. Model Dev., 13, 685–705, https://doi.org/10.5194/gmd-13-685-2020, 2020.
 
-NorESM1 branches in active development
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-- https://github.com/metno/noresm/  noresm-ver1-cmip5/ (Original NorESM1-M CMIP5 version. Only technical updates)
-- https://github.com/metno/noresm/: noresm-ver1_r112-r169/ (Further development from the CMIP5 version. Include EU-ACCESS project improvements)
-
-You obtain the model code through checking it out. The command would be
-
-::
-
-   git clone https://<githubUserName>@github.com/metno/noresm-dev.git
-   git checkout -b aBranchName origin/aBranchName 
-
-This gives the code in your directory.
-
-Uncertain parameters in the aerosol model
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Developing the model also involves setting some uncertain numbers into
-the model. Not all of these are available from namelists. Go to the link
-below to understand where main uncertainties are.
-
-:ref:`uncertainaerosolparameters`
-
-Analyze model results
-'''''''''''''''''''''
-
-:ref:`modeldiagnostics`
-
-Several tools are shared among NorESM users
-
-- :ref:`noresm2nc4mpi`
-- :ref:`noresm2nc4norstore`
-- :ref:`modeldiagnostics`
-- :ref:`esmvaltool`
-
-Archive model results
-'''''''''''''''''''''
-
-Long-term archiving is normally done on NorStore's disk resources (e.g,
-in /projects/NS2345K/noresm/cases).
-
-To avoid loss of data, another copy should be placed on tape. For
-instructions, see `Norstore Tape <NORESM:NorstoreTape>`__
-
-Data that builds the basis of publications should be migrated to
-NorStore's Research Data Archive in order to guarantee preservation and
-also to offload the project area. For specific NorESM instructions, see
-:ref:`norstorearchive`
-
-CMIP5 archive of NorESM results
-'''''''''''''''''''''''''''''''
-
-:ref:`norstorearchive`
-
-Share model results
-'''''''''''''''''''
-
-Model output and derived data products can be shared via the Norwegian
-Earth System Grid data portal http://noresg.norstore.no (see
-:ref:`norstoreesg`
-for instructions).
-
-Some aerosol and cloud-relevant output for the development version of
-NorESM2 is available for those with MET Norway affiliation through VpN
-at /vol/fou/emep/People/alfk/CAM-Oslo-diagnostics/
-
-Past and ongoing work
-'''''''''''''''''''''
-
-Several simulations have been performed with NorESM. A list of available
-simulations and runs can be found here.
-:ref:`listofruns`. The page also contains an
-overview of planned simulations. A fairly extensive description of the
-model and to some extent also the CMIP5 runs can be found at
-http://pcmdi9.llnl.gov/esgf-web-fe/
-
-Choose one of the links. Search for NorESM1-M CMIP5 in the search
-fields. Choose the link model documentation
-
-NorESM is also used in several projects:
-:ref:`projects`
-
-Resources
-'''''''''
-
-* TaiESM CCliCS workshop in Taipei 2016 – Ingo Bethke
+Kirkevåg, A., Grini, A., Olivié, D., Seland, Ø., Alterskjær, K., Hummel, M., Karset, I. H. H., Lewinschal, A., Liu, X., Makkonen, R., Bethke, I., Griesfeller, J., Schulz, M., and Iversen, T.: A production-tagged aerosol module for Earth system models, OsloAero5.3 – extensions and updates for CAM5.3-Oslo, Geosci. Model Dev., 11, 3945–3982, https://doi.org/10.5194/gmd-11-3945-2018, 2018.
 
 .. bibliography:: references_noresm.bib
    :cited:

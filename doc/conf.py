@@ -19,9 +19,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'norESM'
-copyright = '2018, Anne Fouilloux'
-author = 'Anne Fouilloux'
+project = 'NorESM'
+copyright = '2020, The NorESM developers group'
+author = 'The NorESM developers group'
 
 # The short X.Y version
 version = ''
@@ -133,7 +133,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'norESMdocumentation.tex', 'norESM documentation Documentation',
-     'Anne Fouilloux', 'manual'),
+     'The NorESM developers group', 'manual'),
 ]
 
 
