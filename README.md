@@ -20,3 +20,5 @@ This repository has the following NorESM branches:
   - release-noresm2.0.1 - NorESM2 version, initial preliminary release of CMIP6 version, April  2020
 
   - release-noresm2.0.2 - Release of NorESM2.0.2 20 July 2020, available to reproduce CMIP6 results of NorESM2
+  
+* noresm2.1 - contains development branch for NorESM2, based on NorESM2.0.2
