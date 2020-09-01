@@ -9,7 +9,7 @@
 
 This repository has the following NorESM branches:
 
-* master - contains the latest release NorESM2.0.2 
+* master - combines and contains recent developments, based on the latest release (at this stage NorESM2.0.2)
 
 * master_cesm - Community Earth System Model master fork
 
@@ -21,4 +21,3 @@ This repository has the following NorESM branches:
 
   - release-noresm2.0.2 - Release of NorESM2.0.2 20 July 2020, available to reproduce CMIP6 results of NorESM2
   
-* noresm2.1 - contains development branch for NorESM2, based on NorESM2.0.2
