@@ -1,0 +1,30 @@
+!----------------------------------------------------------------------------------
+! Users should add all user specific namelist changes below in the form of 
+! namelist_var = new_namelist_value 
+!
+! EXCEPTIONS: 
+! Set use_cndv           by the compset you use and the CLM_BLDNML_OPTS -dynamic_vegetation setting
+! Set use_vichydro       by the compset you use and the CLM_BLDNML_OPTS -vichydro           setting
+! Set use_cn             by the compset you use and CLM_BLDNML_OPTS -bgc  setting
+! Set use_crop           by the compset you use and CLM_BLDNML_OPTS -crop setting
+! Set spinup_state       by the CLM_BLDNML_OPTS -bgc_spinup      setting
+! Set irrigate           by the CLM_BLDNML_OPTS -irrig .true.    setting
+! Set co2_ppmv           with CCSM_CO2_PPMV                      option
+! Set dtime              with L_NCPL                             option
+! Set fatmlndfrc         with LND_DOMAIN_PATH/LND_DOMAIN_FILE    options
+! Set finidat            with RUN_REFCASE/RUN_REFDATE/RUN_REFTOD options for hybrid or branch cases
+!                        (includes $inst_string for multi-ensemble cases)
+!                        or with CLM_FORCE_COLDSTART to do a cold start
+!                        or set it with an explicit filename here.
+! Set maxpatch_glcmec    with GLC_NEC                            option
+! Set glc_do_dynglacier  with GLC_TWO_WAY_COUPLING               env variable
+!----------------------------------------------------------------------------------
+
+
+hist_nhtfrq = 0, -24, -6, -3
+
+hist_mfilt  = 1,   5, 20, 40
+
+hist_fincl1 = 'FERT_TO_SMINN','NFIX_TO_SMINN','LITFIRE','LITR1C_TO_SOIL1C','LITR2C_TO_SOIL1C','LITR3C_TO_SOIL2C','M_LEAFC_TO_LITTER','M_FROOTC_TO_LITTER','M_LIVESTEMC_TO_LITTER','M_DEADSTEMC_TO_LITTER','M_LIVECROOTC_TO_LITTER','M_DEADCROOTC_TO_LITTER'
+
+ hist_fincl2 = 'QRUNOFF', 'SOILLIQ', 'SOILICE', 'SOILWATER_10CM', 'TSA', 'TSL', 'GPP', 'AR', 'HR'
