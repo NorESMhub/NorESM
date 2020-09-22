@@ -2,5 +2,3 @@
 
 Technical FAQ
 =============
-
-We need to add examples of common crashes 
