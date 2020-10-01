@@ -347,6 +347,12 @@
     <science_support grid="f19_tn14"/>
   </compset>
 
+ <compset>
+    <alias>NHISTfrc2piaeroxid</alias>
+    <lname>HIST_CAM60%NORESM%PIAEROXID%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+    <science_support grid="f19_tn14"/>
+  </compset>
+
   <compset>
     <alias>NCO2x4cmip6</alias>
     <lname>1850_CAM60%NORESM%4xCO2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
@@ -464,6 +470,13 @@
   <compset>
     <alias>NSSP585frc2</alias>
     <lname>SSP585_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+    <science_support grid="f09_tn14"/>
+    <science_support grid="f19_tn14"/>
+  </compset>
+
+  <compset>
+    <alias>NSSP585frc2piaeroxid</alias>
+    <lname>SSP585_CAM60%NORESM%PIAEROXID%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
     <science_support grid="f09_tn14"/>
     <science_support grid="f19_tn14"/>
   </compset>
