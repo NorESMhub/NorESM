@@ -1,5 +1,7 @@
 ![NorESM logo](doc/img/NORESM-logo.png)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3905091.svg)](https://doi.org/10.5281/zenodo.3905091)
+
 # Norwegian Earth System Model (NorESM)
 
 The Norwegian Earth System Model (NorESM) has been developed since 2007 and has been an important tool for Norwegian climate researchers in the study of the past, present and future climate. NorESM has also contributed to climate simulation that has been used in research assessed in the IPCC’s fifth main report.
