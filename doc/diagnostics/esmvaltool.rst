@@ -30,24 +30,24 @@ An example of steps to run the ESMValTool on ipcc.nird.sigma2.no
 
 (note, the esmvaltool may be upgraded in the future. Therefore, use ``ls /conda/esmvaltool/`` to check the currently installed vesion if 2.0.0 does not exist.)
 
-3a  run initialisation : ::
+3.  run initialisation : ::
     esmvaltool config get_config_user
 
-3b. copy the following config file to ~/.esmvaltool/::
-    /projects/NS9252K/share/esmvaltool/config/config-ipcc.yml
-    /projects/NS9252K/share/esmvaltool/config/config-developer.yml
-
-You should copy and modify the config-ipcc.yml file to store some intermediate data files and final plots to your own directory.
-e.g. change path of config-developer.yml in config-ipcc.yml
- 
-3c. copy the following recipe to ~/your-recipes/::
-    /projects/NS9252K/share/esmvaltool/config/recipe_validation_CMIP6.yml
+4. copy the following config file to ~/.esmvaltool/::
+    cp /projects/NS9252K/share/esmvaltool/config/config-ipcc.yml ~/.esmvaltool/
     
-4. run ``esmvaltool``: ::
+You should copy and modify the config-ipcc.yml file to store some intermediate data files and final plots to your own directory.
+ 
+5. copy a recipe to ~/your-recipes/::
+    eg 
+    mkdir ~/your-recipes
+    cp /projects/NS9252K/share/esmvaltool/config/recipe_validation_CMIP6.yml ~/your-recipes/
+    
+6. run ``esmvaltool``: ::
 
     esmvaltool run --config_file .esmvaltool/config-ipcc.yml ./your-recipes/recipe_validation_CMIP6.yml
 
-5. A sample result under:
+7. Check for results, eg a sample result is under:
 
     `<http://ns2345k.web.sigma2.no/diagnostics/esmvaltool_output/yanchun>`_
 
