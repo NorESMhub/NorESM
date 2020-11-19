@@ -26,24 +26,32 @@ An example of steps to run the ESMValTool on ipcc.nird.sigma2.no
 
 2. load ESMValTool on nird: ::
 
-    conda active /conda/esmvaltool/2.0.0b4/
+    conda activate /conda/esmvaltool/2.0.0/
 
-(note, the esmvaltool may be upgraded in the future. Therefore, use ``ls /conda/esmvaltool/`` to check the currently installed vesion if 2.0.0b4 does not exist.)
+(note, the esmvaltool may be upgraded in the future. Therefore, use ``ls /conda/esmvaltool/`` to check the currently installed vesion if 2.0.0 does not exist.)
 
-3. copy the following config file and recipe to your favourite place: ::
+3.  run initialisation: ::
 
-    /projects/NS9252K/share/yanchun/esmvaltool/config_heyc.yml
-    /projects/NS9252K/share/yanchun/esmvaltool/recipe_seaice.yml
+     esmvaltool config get_config_user
+
+4. copy the following config file to ~/.esmvaltool/: ::
+
+    cp /projects/NS9252K/share/esmvaltool/config/config-ipcc.yml ~/.esmvaltool/
     
-You should copy and modify the config_heyc.yml file to store some intermediate data files and final plots to your own directory.
+You may copy and modify the config-ipcc.yml file to store some intermediate data files and final plots to your own directory.
+ 
+5. copy a recipe to ~/your-recipes/: ::
 
-4. run ``esmvaltool``: ::
+    mkdir ~/your-recipes
+    cp /projects/NS9252K/share/esmvaltool/recipes/recipe_validation_CMIP6.yml ~/your-recipes/
+    
+6. run ``esmvaltool``: ::
 
-    esmvaltool -c config_xxx.yml ./recipe_seaice.yml
+    esmvaltool run --config_file .esmvaltool/config-ipcc.yml ./your-recipes/recipe_validation_CMIP6.yml
 
-5. A sample result under:
+7. Check for results, sample results are under:
 
-    `<http://ns2345k.web.sigma2.no/diagnostics/esmvaltool_output/yanchun>`_
+    `<http://ns2345k.web.sigma2.no/diagnostics/esmvaltool/>`_
 
 Download data automatically with Synda
 --------------------------------------
