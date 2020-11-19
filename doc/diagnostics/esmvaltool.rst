@@ -30,18 +30,20 @@ An example of steps to run the ESMValTool on ipcc.nird.sigma2.no
 
 (note, the esmvaltool may be upgraded in the future. Therefore, use ``ls /conda/esmvaltool/`` to check the currently installed vesion if 2.0.0 does not exist.)
 
-3.  run initialisation : ::
+3.  run initialisation: ::
+
     esmvaltool config get_config_user
 
-4. copy the following config file to ~/.esmvaltool/::
+4. copy the following config file to ~/.esmvaltool/: ::
+
     cp /projects/NS9252K/share/esmvaltool/config/config-ipcc.yml ~/.esmvaltool/
     
-You should copy and modify the config-ipcc.yml file to store some intermediate data files and final plots to your own directory.
+You may copy and modify the config-ipcc.yml file to store some intermediate data files and final plots to your own directory.
  
-5. copy a recipe to ~/your-recipes/::
-    eg 
+5. copy a recipe to ~/your-recipes/: ::
+
     mkdir ~/your-recipes
-    cp /projects/NS9252K/share/esmvaltool/config/recipe_validation_CMIP6.yml ~/your-recipes/
+    cp /projects/NS9252K/share/esmvaltool/recipes/recipe_validation_CMIP6.yml ~/your-recipes/
     
 6. run ``esmvaltool``: ::
 
