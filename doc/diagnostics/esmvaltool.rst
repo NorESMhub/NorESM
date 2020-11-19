@@ -28,7 +28,7 @@ An example of steps to run the ESMValTool on ipcc.nird.sigma2.no
 
     conda active /conda/esmvaltool/2.0.0/
 
-(note, the esmvaltool may be upgraded in the future. Therefore, use ``ls /conda/esmvaltool/`` to check the currently installed vesion if 2.0.0b4 does not exist.)
+(note, the esmvaltool may be upgraded in the future. Therefore, use ``ls /conda/esmvaltool/`` to check the currently installed vesion if 2.0.0 does not exist.)
 
 3a  run initialisation : ::
     esmvaltool config get_config_user
