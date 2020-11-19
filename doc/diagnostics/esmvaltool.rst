@@ -32,7 +32,7 @@ An example of steps to run the ESMValTool on ipcc.nird.sigma2.no
 
 3.  run initialisation: ::
 
-    esmvaltool config get_config_user
+     esmvaltool config get_config_user
 
 4. copy the following config file to ~/.esmvaltool/: ::
 
