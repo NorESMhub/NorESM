@@ -49,9 +49,9 @@ You may copy and modify the config-ipcc.yml file to store some intermediate data
 
     esmvaltool run --config_file .esmvaltool/config-ipcc.yml ./your-recipes/recipe_validation_CMIP6.yml
 
-7. Check for results, eg a sample result is under:
+7. Check for results, sample results are under:
 
-    `<http://ns2345k.web.sigma2.no/diagnostics/esmvaltool_output/yanchun>`_
+    `<http://ns2345k.web.sigma2.no/diagnostics/esmvaltool/>`_
 
 Download data automatically with Synda
 --------------------------------------
