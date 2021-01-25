@@ -274,7 +274,7 @@
   
   <!--djlo temporarily commented out-->  
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%gx1" >
-    <mach name="hexagon|vilje|fram">
+    <mach name="hexagon|vilje|fram|betzy">
       <pes pesize="any" compset="any">
         <comment>none</comment>
         <ntasks>
@@ -1051,7 +1051,7 @@
 
   <!--djlo temporarily commented out-->
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx1v1" >
-    <mach name="hexagon|vilje|fram">
+    <mach name="hexagon|vilje|fram|betzy">
       <pes pesize="X1" compset="any">
         <comment>none</comment>
         <ntasks>
@@ -1089,7 +1089,7 @@
   </grid>
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx1v1" >
-    <mach name="hexagon|vilje|fram">
+    <mach name="hexagon|vilje|fram|betzy">
       <pes pesize="L" compset="any">
         <comment>none</comment>
         <ntasks>
@@ -1127,7 +1127,7 @@
   </grid>
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx1v4" >
-    <mach name="hexagon|vilje|fram">
+    <mach name="hexagon|vilje|fram|betzy">
       <pes pesize="any" compset="CAM60%PTAERO.+CLM50%BGC-CROP.+CICE.+BLOM%ECO">
         <comment>none</comment>
         <ntasks>
@@ -1203,7 +1203,7 @@
   </grid>
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx1v4" >
-    <mach name="hexagon|vilje|fram">
+    <mach name="hexagon|vilje|fram|betzy">
       <pes pesize="X1" compset="CAM60%PTAERO.+CLM50%BGC-CROP.+CICE.+BLOM%ECO">
         <comment>none</comment>
         <ntasks>
@@ -1241,7 +1241,7 @@
   </grid>
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx1v4" >
-    <mach name="hexagon|vilje|fram">
+    <mach name="hexagon|vilje|fram|betzy">
       <pes pesize="any" compset="CAM60%NORESM.+CLM50%BGC-CROP.+CICE.+BLOM%ECO">
         <comment>none</comment>
         <ntasks>
@@ -1279,7 +1279,7 @@
   </grid>
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx1v4" >
-    <mach name="hexagon|vilje|fram">
+    <mach name="hexagon|vilje|fram|betzy">
       <pes pesize="X1" compset="CAM60%NORESM.+CLM50%BGC-CROP.+CICE.+BLOM%ECO">
         <comment>none</comment>
         <ntasks>
@@ -1317,7 +1317,7 @@
   </grid>
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx1v4" >
-    <mach name="hexagon|vilje|fram">
+    <mach name="hexagon|vilje|fram|betzy">
       <pes pesize="S" compset="any">
         <comment>none</comment>
         <ntasks>
@@ -1355,7 +1355,7 @@
   </grid>
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx1v4" >
-    <mach name="hexagon|vilje|fram">
+    <mach name="hexagon|vilje|fram|betzy">
       <pes pesize="X1" compset="any">
         <comment>none</comment>
         <ntasks>
@@ -1393,7 +1393,7 @@
   </grid>
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx1v4" >
-    <mach name="hexagon|vilje|fram">
+    <mach name="hexagon|vilje|fram|betzy">
       <pes pesize="M" compset="any">
         <comment>none</comment>
         <ntasks>
@@ -1433,7 +1433,7 @@
 
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx1v3" >
-    <mach name="hexagon|vilje|fram">
+    <mach name="hexagon|vilje|fram|betzy">
       <pes pesize="any" compset="any">
         <comment>none</comment>
         <ntasks>
@@ -1471,7 +1471,7 @@
   </grid>
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx1v1" >
-    <mach name="hexagon|vilje|fram">
+    <mach name="hexagon|vilje|fram|betzy">
       <pes pesize="M" compset="any">
         <comment>none</comment>
         <ntasks>
@@ -1508,7 +1508,7 @@
     </mach>
   </grid>
   <grid name="a%1.9x2.5.+l%1.9x2.5.+oi%tnx1v1" >
-    <mach name="hexagon|vilje|fram">
+    <mach name="hexagon|vilje|fram|betzy">
       <pes pesize="any" compset="any">
         <comment>none</comment>
         <ntasks>
@@ -1546,7 +1546,7 @@
   </grid>
 
   <grid name="a%1.9x2.5.+l%1.9x2.5.+oi%tnx1v4" >
-    <mach name="hexagon|vilje|fram">
+    <mach name="hexagon|vilje|fram|betzy">
       <pes pesize="any" compset="CAM60%PTAERO.+CLM50%BGC-CROP.+CICE.+BLOM%ECO">
         <comment>none</comment>
         <ntasks>
@@ -1586,7 +1586,7 @@
 
 
   <grid name="a%1.9x2.5.+l%1.9x2.5.+oi%tnx1v4" >
-    <mach name="hexagon|vilje|fram">
+    <mach name="hexagon|vilje|fram|betzy">
       <pes pesize="any" compset="CAM60%NORESM.+CLM50%BGC-CROP.+CICE.+BLOM%ECO">
         <comment>none</comment>
         <ntasks>
@@ -1625,7 +1625,7 @@
 
 
   <grid name="a%1.9x2.5.+l%1.9x2.5.+oi%tnx1v4" >
-    <mach name="hexagon|vilje|fram">
+    <mach name="hexagon|vilje|fram|betzy">
       <pes pesize="S" compset="any">
         <comment>none</comment>
         <ntasks>
@@ -1662,7 +1662,7 @@
     </mach>
   </grid>
   <grid name="a%1.9x2.5.+l%1.9x2.5.+oi%tnx1v4" >
-    <mach name="hexagon|vilje|fram">
+    <mach name="hexagon|vilje|fram|betzy">
       <pes pesize="any" compset="any">
         <comment>none</comment>
         <ntasks>
@@ -1700,7 +1700,7 @@
   </grid>
 
   <grid name="a%1.9x2.5.+l%1.9x2.5.+oi%tnx1v3" >
-    <mach name="hexagon|vilje|fram">
+    <mach name="hexagon|vilje|fram|betzy">
       <pes pesize="any" compset="any">
         <comment>none</comment>
         <ntasks>
@@ -1738,7 +1738,7 @@
   </grid>
 
   <grid name="a%0.23x0.31.+l%0.23x0.31.+oi%tnx0.25v4" >
-    <mach name="hexagon|vilje|fram">
+    <mach name="hexagon|vilje|fram|betzy">
       <pes pesize="any" compset="any">
         <comment>none</comment>
         <ntasks>
@@ -1776,7 +1776,7 @@
   </grid>
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx0.25v1" >
-    <mach name="hexagon|vilje|fram">
+    <mach name="hexagon|vilje|fram|betzy">
       <pes pesize="any" compset="any">
         <comment>none</comment>
         <ntasks>
@@ -1814,7 +1814,7 @@
   </grid>
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx0.25v3" >
-    <mach name="hexagon|vilje|fram">
+    <mach name="hexagon|vilje|fram|betzy">
       <pes pesize="any" compset="any">
         <comment>none</comment>
         <ntasks>
@@ -1852,7 +1852,7 @@
   </grid>
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx0.25v4" >
-    <mach name="hexagon|vilje|fram">
+    <mach name="hexagon|vilje|fram|betzy">
       <pes pesize="any" compset="CAM60%NORESM.+CLM50%BGC-CROP.+CICE.+BLOM%ECO">
         <comment>none</comment>
         <ntasks>
@@ -1890,7 +1890,7 @@
   </grid>
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx0.25v4" >
-    <mach name="hexagon|vilje|fram">
+    <mach name="hexagon|vilje|fram|betzy">
       <pes pesize="any" compset="any">
         <comment>none</comment>
         <ntasks>
@@ -1929,7 +1929,7 @@
   <!--/djlo-->
 
   <!--grid name="a%0.9x1.25.+l%0.9x1.25.+oi%gx1" >
-    <mach name="hexagon|vilje|fram">
+    <mach name="hexagon|vilje|fram|betzy">
       <pes pesize="any" compset="any">
         <comment>none</comment>
         <ntasks>
@@ -1968,7 +1968,7 @@
 
   <!--djlo commented out-->
   <grid name="a%1.9x2.5.+l%1.9x2.5.+oi%gx1" >
-    <mach name="hexagon|vilje|fram">
+    <mach name="hexagon|vilje|fram|betzy">
       <pes pesize="any" compset="any">
         <comment>none</comment>
         <ntasks>
