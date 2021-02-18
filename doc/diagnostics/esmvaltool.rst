@@ -26,9 +26,9 @@ An example of steps to run the ESMValTool on ipcc.nird.sigma2.no
 
 2. load ESMValTool on nird: ::
 
-    conda active /conda/esmvaltool/2.0.0b4/
+    conda active /conda/esmvaltool/2.1.0
 
-(note, the esmvaltool may be upgraded in the future. Therefore, use ``ls /conda/esmvaltool/`` to check the currently installed vesion if 2.0.0b4 does not exist.)
+(note, the esmvaltool may be upgraded in the future. Therefore, use ``ls /conda/esmvaltool/`` to check the currently installed vesion if 2.1.0 does not exist.)
 
 3. copy the following config file and recipe to your favourite place: ::
 
