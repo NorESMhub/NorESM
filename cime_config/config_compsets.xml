@@ -301,6 +301,20 @@
     <science_support grid="f19_tn14"/>
   </compset>
 
+   <compset>
+    <alias>N2000</alias>
+    <lname>2000_CAM60%NORESM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+    <science_support grid="f09_tn14"/>
+    <science_support grid="f19_tn14"/>
+  </compset>
+
+   <compset>
+    <alias>N2000frc2</alias>
+    <lname>2000_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+    <science_support grid="f09_tn14"/>
+    <science_support grid="f19_tn14"/>
+  </compset>
+
   <compset>
     <alias>NHIST</alias>
     <lname>HIST_CAM60%NORESM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
