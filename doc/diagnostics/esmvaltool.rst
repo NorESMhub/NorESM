@@ -59,7 +59,7 @@ An example of steps to run the ESMValTool on ipcc.nird.sigma2.no
 Download data automatically with Synda
 --------------------------------------
 
-`**Synda** <https://esmvaltool.readthedocs.io/en/latest/quickstart/running.html?highlight=synda#running>`_ is a tool to download and manage model data form the `ESGF <https://esgf-data.dkrz.de>`_, it can be called by the ``esmvaltool`` as a command line option ``--synda`` so that it can automatically download necessary model data as specified in the receipe of ESMValTool. For example, ::
+`Synda <https://esmvaltool.readthedocs.io/en/latest/quickstart/running.html?highlight=synda#running>`_ is a tool to download and manage model data form the `ESGF <https://esgf-data.dkrz.de>`_, it can be called by the ``esmvaltool`` as a command line option ``--synda`` so that it can automatically download necessary model data as specified in the receipe of ESMValTool. For example, ::
 
    esmvaltool -c config_heyc.yml ./recipe_seaice.yml --synda
 
