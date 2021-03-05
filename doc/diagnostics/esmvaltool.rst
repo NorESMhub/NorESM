@@ -51,9 +51,35 @@ An example of steps to run the ESMValTool on ipcc.nird.sigma2.no
 
     esmvaltool run --config_file=~/.esmvaltool/config-ipcc.yml ./your-recipes/recipe_validation_CMIP6.yml
 
-7. Check for results. ESMValTool will create a sub-directory ``esmvaltool_output`` in your run directory to stor the ouptut. Sample results are under:
+7. Check for results. The output directory setting in ``config-ipcc.yml`` is directed to a web directory under the NS2345K project::
+
+    /projects/NS2345K/www/diagnostics/esmvaltool/$USER/tmp
+
+Sample results are under: ::
 
     `<http://ns2345k.web.sigma2.no/diagnostics/esmvaltool/>`_
+
+
+Find sample recipes, model data and observational data
+------------------------------------------------------
+
+Shared resources for esmvaltool on the IPCC node is available from::
+
+    /projects/NS9252K/share/esmvaltool/
+
+The ``config/config-ipcc.yml`` file should provide paths to relevant data on Nird. These settings are probably adequate for most users, but can be altered to include additional model output or observational datasets from other sources. Model data are stored in a directory structure following the DKRZ convention. A list of tested recipes is available in ``list_of_working_recipes.md``.
+
+auxiliary_data/
+  Auxiliary data needed to run some esmvaltool recipes, e.g. shapefiles for map plotting or data extraction.
+
+config/
+  User and developer config files.
+
+recipes/
+  Some recipes that have been tested with esmvaltool for the IPCC node installation.
+
+standard_recipes_NorESM/
+  ESMValTool recipes that have been modified for NorESM model data.
 
 
 Download data automatically with Synda
