@@ -30,16 +30,16 @@ An example of steps to run the ESMValTool on ipcc.nird.sigma2.no
 (note, the esmvaltool may be upgraded in the future. Therefore, use ``ls /conda/esmvaltool/`` to check the currently installed vesion if 2.1.0 does not exist.)
 
 3. configure esmvaltool (first time use):
-   - esmvaltool requires a configuration file with paths to model and observational data files, and some run instructions. By default, esmvaltool will look for this file in ``$HOME/.esmvaltool/config-user.yml``.
-   - esmvaltool can auto-generate a config file, but not the correct path settings, by running ``esmvaltool config get_config_user``.
-   - alternatively, create an empty directory in ``$HOME/.esmvaltool`` to store your own config files.
+   #. esmvaltool requires a configuration file with paths to model and observational data files, and some run instructions. By default, esmvaltool will look for this file in ``$HOME/.esmvaltool/config-user.yml``.
+   #. esmvaltool can auto-generate a config file, but not the correct path settings, by running ``esmvaltool config get_config_user``.
+   #. alternatively, create an empty directory in ``$HOME/.esmvaltool`` to store your own config files.
 
 4. copy the following config file to ~/.esmvaltool/: ::
 
     cp /projects/NS9252K/share/esmvaltool/config/config-ipcc.yml ~/.esmvaltool/
     
-   - You may copy and modify the config-ipcc.yml file to store some intermediate data files and final plots to your own directory.
-   - Rename ``config-ipcc.yml`` to ``config-user.yml`` if you don't want to specify the config file for each run.
+   #. You may copy and modify the config-ipcc.yml file to store some intermediate data files and final plots to your own directory.
+   #. Rename ``config-ipcc.yml`` to ``config-user.yml`` if you don't want to specify the config file for each run.
  
 5. copy a recipe to ~/your-recipes/: ::
 
