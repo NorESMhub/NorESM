@@ -153,22 +153,27 @@ Run a pre-installed jupyterhub application
 
 ESMValTool is not included in the default docker images provided by Sigma2, but has been installed in modified docker images. These are created by building ESMValTool on top of an official Sigma2 docker image, and package in a new docker container. Such modified docker images are available for `jupyter` and `jupyterhub` applications.
 
-A jupyterhub application with pre-installed esmvaltool is available at `https://eosc-nordic.uiogeo-apps.sigma2.no/`_
+A jupyterhub application with pre-installed esmvaltool is available at
+
+    https://eosc-nordic.uiogeo-apps.sigma2.no/
 
 1. Launch a terminal, esmvaltool is designed to run from the command line. 
 
 2. Activate the esmvaltool environment::
 
-   conda activate esmvaltool
+    conda activate esmvaltool
 
 3. Check that esmvaltool is working, and produce output::
 
-   esmvaltool version
+    esmvaltool version
 
 
-To run the pre-installed jupyterhub aplication, a user first needs to become a member of the user group, following the link `https://minside.dataporten.no//#invitation/6d656276-8472-4242-a819-2c47f0e2966e/ae18ab59-31a7-47bc-98a6-4669627cd742`_
+To run the pre-installed jupyterhub aplication, a user first needs to become a member of the user group, following the link
+
+    https://minside.dataporten.no//#invitation/6d656276-8472-4242-a819-2c47f0e2966e/ae18ab59-31a7-47bc-98a6-4669627cd742
 
 To join the group.
+
 - If you don't already have a Feide guest user account (otherwise skip this step), click "Feide guest users".
 - register a new account
 - for the sake of simplicity try to use the same email that you are using for the course
