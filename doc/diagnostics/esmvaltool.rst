@@ -4,7 +4,7 @@
 ESMValTool
 **********
 
-**The Earth System Model eValuation Tool (`ESMValTool <https://esmvaltool.readthedocs.io>`_)** is a community-development that aims at improving diagnosing and understanding of the causes and effects of model biases and inter-model spread. The ESMValTool can process multiple model outputs, including NorESM, but these model output need to be post-processed to conform with the CMIP data standard (i.e., `CMOR <https://cmor.llnl.gov>`_). ESMValTool support all the published model data output on the `ESGF <https://esgf-data.dkrz.de>`_. 
+**The Earth System Model eValuation Tool** (`ESMValTool <https://esmvaltool.readthedocs.io>`_) is a community-development that aims at improving diagnosing and understanding of the causes and effects of model biases and inter-model spread. The ESMValTool can process multiple model outputs, including NorESM, but these model output need to be post-processed to conform with the CMIP data standard (i.e., `CMOR <https://cmor.llnl.gov>`_). ESMValTool support all the published model data output on the `ESGF <https://esgf-data.dkrz.de>`_. 
 
 The `esmvaltool-on-nird <https://github.com/orgs/NorESMhub/teams/esmvaltool-on-nird>`_ discussion group can be a useful resource if you plan to run ESMValTool on Nird.
 
@@ -59,7 +59,7 @@ An example of steps to run the ESMValTool on ipcc.nird.sigma2.no
 Download data automatically with Synda
 --------------------------------------
 
-**`Synda <https://esmvaltool.readthedocs.io/en/latest/quickstart/running.html?highlight=synda#running>`_** is a tool to download and manage model data form the `ESGF <https://esgf-data.dkrz.de>`_, it can be called by the ``esmvaltool`` as a command line option ``--synda`` so that it can automatically download necessary model data as specified in the receipe of ESMValTool. For example, ::
+`**Synda** <https://esmvaltool.readthedocs.io/en/latest/quickstart/running.html?highlight=synda#running>`_ is a tool to download and manage model data form the `ESGF <https://esgf-data.dkrz.de>`_, it can be called by the ``esmvaltool`` as a command line option ``--synda`` so that it can automatically download necessary model data as specified in the receipe of ESMValTool. For example, ::
 
    esmvaltool -c config_heyc.yml ./recipe_seaice.yml --synda
 
