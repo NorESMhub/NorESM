@@ -4,8 +4,7 @@
 ESMValTool
 **********
 
-The Earth System Model eValuation Tool (`ESMValTool <https://esmvaltool.readthedocs.io>`_)
-  is a community-development that aims at improving diagnosing and understanding of the causes and effects of model biases and inter-model spread. The ESMValTool can process multiple model outputs, including NorESM, but these model output need to be post-processed to conform with the CMIP data standard (i.e., `CMOR <https://cmor.llnl.gov>`_). ESMValTool support all the published model data output on the `ESGF <https://esgf-data.dkrz.de>`_ 
+The Earth System Model eValuation Tool (`ESMValTool <https://esmvaltool.readthedocs.io>`_) is a community-development that aims at improving diagnosing and understanding of the causes and effects of model biases and inter-model spread. The ESMValTool can process multiple model outputs, including NorESM, but these model output need to be post-processed to conform with the CMIP data standard (i.e., `CMOR <https://cmor.llnl.gov>`_). ESMValTool support all the published model data output on the `ESGF <https://esgf-data.dkrz.de>`_. 
 
 The `esmvaltool-on-nird <https://github.com/orgs/NorESMhub/teams/esmvaltool-on-nird>`_ discussion group can be a useful resource if you plan to run ESMValTool on Nird.
 
@@ -13,7 +12,7 @@ The `esmvaltool-on-nird <https://github.com/orgs/NorESMhub/teams/esmvaltool-on-n
 Run ESMValTool on NIRD service node
 ===================================
 
-The ESMValTool is currently installed under the dedicated IPCC service node (`<ipcc.nird.sigma2.no>_) for data post-processing. The following NIRD project areas are mounted under /projects of the ``IPCC`` node: NS2345K, NS9034K, NS9039K, NS9252K, NS9560K, NS9588K.
+The ESMValTool is currently installed under the dedicated IPCC service node (``ipcc.nird.sigma2.no``) for data post-processing. The following NIRD project areas are mounted under ``/projects`` of the IPCC node: ``NS2345K, NS9034K, NS9039K, NS9252K, NS9560K, NS9588K``.
 
 Activate and run ESMValTool
 ---------------------------
@@ -30,15 +29,17 @@ An example of steps to run the ESMValTool on ipcc.nird.sigma2.no
 
 (note, the esmvaltool may be upgraded in the future. Therefore, use ``ls /conda/esmvaltool/`` to check the currently installed vesion if 2.1.0 does not exist.)
 
-3.  run initialisation: ::
-
-     esmvaltool config get_config_user
+3. configure esmvaltool (first time use):
+   - esmvaltool requires a configuration file with paths to model and observational data files, and some run instructions. By default, esmvaltool will look for this file in ``$HOME/.esmvaltool/config-user.yml``.
+   - esmvaltool can auto-generate a config file, but not the correct path settings, by running ``esmvaltool config get_config_user``.
+   - alternatively, create an empty directory in ``$HOME/.esmvaltool`` to store your own config files.
 
 4. copy the following config file to ~/.esmvaltool/: ::
 
     cp /projects/NS9252K/share/esmvaltool/config/config-ipcc.yml ~/.esmvaltool/
     
-You may copy and modify the config-ipcc.yml file to store some intermediate data files and final plots to your own directory.
+   - You may copy and modify the config-ipcc.yml file to store some intermediate data files and final plots to your own directory.
+   - Rename ``config-ipcc.yml`` to ``config-user.yml`` if you don't want to specify the config file for each run.
  
 5. copy a recipe to ~/your-recipes/: ::
 
@@ -47,17 +48,17 @@ You may copy and modify the config-ipcc.yml file to store some intermediate data
     
 6. run ``esmvaltool``: ::
 
-    esmvaltool run --config_file .esmvaltool/config-ipcc.yml ./your-recipes/recipe_validation_CMIP6.yml
+    esmvaltool run --config_file=~/.esmvaltool/config-ipcc.yml ./your-recipes/recipe_validation_CMIP6.yml
 
-7. Check for results, sample results are under:
+7. Check for results. ESMValTool will create a sub-directory ``esmvaltool_output`` in your run directory to stor the ouptut. Sample results are under:
 
     `<http://ns2345k.web.sigma2.no/diagnostics/esmvaltool/>`_
+
 
 Download data automatically with Synda
 --------------------------------------
 
-`Synda <https://esmvaltool.readthedocs.io/en/latest/quickstart/running.html?highlight=synda#running>`_
-  is a tool to download and manage model data form the `ESGF <https://esgf-data.dkrz.de>`_, it can be called by the ``esmvaltool`` as a command line option ``--synda`` so that it can automatically download necessary model data as specified in the receipe of ESMValTool. For example, ::
+`Synda <https://esmvaltool.readthedocs.io/en/latest/quickstart/running.html?highlight=synda#running>`_ is a tool to download and manage model data form the `ESGF <https://esgf-data.dkrz.de>`_, it can be called by the ``esmvaltool`` as a command line option ``--synda`` so that it can automatically download necessary model data as specified in the receipe of ESMValTool. For example, ::
 
    esmvaltool -c config_heyc.yml ./recipe_seaice.yml --synda
 
