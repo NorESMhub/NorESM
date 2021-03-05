@@ -148,10 +148,45 @@ Applications in NIRD Toolkit are available from::
 
 An owner/admin can launch a new application by installing it, and request resources to be made available to the application via the Kybernetes management system. A member can launch an existing application that has previously been set up by an owner/admin. The application setup allows access to storage areas under NSxxxxK storage volumes (read-only by default) and a user storage area under a specific NSxxxxK/subfolder with write access, but only applications pre-defined in the docker image provided to the Kybernetes system can be used.
 
-Install ESMValTool docker image
--------------------------------
+Run a pre-installed jupyterhub application
+------------------------------------------
 
 ESMValTool is not included in the default docker images provided by Sigma2, but has been installed in modified docker images. These are created by building ESMValTool on top of an official Sigma2 docker image, and package in a new docker container. Such modified docker images are available for `jupyter` and `jupyterhub` applications.
+
+A jupyterhub application with pre-installed esmvaltool is available at `https://eosc-nordic.uiogeo-apps.sigma2.no/`_
+
+1. Launch a terminal, esmvaltool is designed to run from the command line. 
+
+2. Activate the esmvaltool environment::
+
+   conda activate esmvaltool
+
+3. Check that esmvaltool is working, and produce output::
+
+   esmvaltool version
+
+
+To run the pre-installed jupyterhub aplication, a user first needs to become a member of the user group, following the link `https://minside.dataporten.no//#invitation/6d656276-8472-4242-a819-2c47f0e2966e/ae18ab59-31a7-47bc-98a6-4669627cd742`_
+
+To join the group.
+- If you don't already have a Feide guest user account (otherwise skip this step), click "Feide guest users".
+- register a new account
+- for the sake of simplicity try to use the same email that you are using for the course
+- also try to use the same (or similar) user ID that you have for github
+- finish the registration process
+- click again on the "invitation link" in the email
+- login with "Feide guest users"
+- accept the different policies
+- agree to become a member of the group
+- the browser should display the message "Loading group details"
+- now go to https://eosc-nordic.uiogeo-apps.sigma2.no/
+- click "Sign in with Dataporten"
+- login with Feide Guest User (or linkedin authentication of this is what you used)
+- finally the web browser should display a page with "jupyterlab" on the upper left side
+
+
+Install an ESMValTool docker image from source
+----------------------------------------------
 
 1. **jupyterhub:** nordicesmhub/jupyterhub-nird-toolkit
   - *source* : https://github.com/NorESMhub/jupyterhub-nird-toolkit
