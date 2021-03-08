@@ -57,7 +57,7 @@ An example of steps to run the ESMValTool on ipcc.nird.sigma2.no
 
 Sample results are under: ::
 
-    `<http://ns2345k.web.sigma2.no/diagnostics/esmvaltool/>`_
+    http://ns2345k.web.sigma2.no/diagnostics/esmvaltool/
 
 
 Find sample recipes, model data and observational data
@@ -67,7 +67,7 @@ Shared resources for esmvaltool on the IPCC node is available from::
 
     /projects/NS9252K/share/esmvaltool/
 
-The ``config/config-ipcc.yml`` file should provide paths to relevant data on Nird. These settings are probably adequate for most users, but can be altered to include additional model output or observational datasets from other sources. Model data are stored in a directory structure following the DKRZ convention. A list of tested recipes is available in ``list_of_working_recipes.md``.
+The ``config/config-ipcc.yml`` file should provide paths to relevant data on Nird. These settings are probably adequate for most users, but can be altered to include additional model output or observational datasets from other sources. Model data are stored in a directory structure following the DKRZ convention. A list of tested recipes is available under the ``tested_recipes`` folder.
 
 auxiliary_data/
   Auxiliary data needed to run some esmvaltool recipes, e.g. shapefiles for map plotting or data extraction.
@@ -75,19 +75,15 @@ auxiliary_data/
 config/
   User and developer config files.
 
-recipes/
-  Some recipes that have been tested with esmvaltool for the IPCC node installation.
-
-standard_recipes_NorESM/
-  ESMValTool recipes that have been modified for NorESM model data.
-
+tested_recipes/
+  Some recipes that have been tested with esmvaltool for the IPCC node installation with NorESM1/2 supported.
 
 Download data automatically with Synda
 --------------------------------------
 
-`Synda <https://esmvaltool.readthedocs.io/en/latest/quickstart/running.html?highlight=synda#running>`_ is a tool to download and manage model data form the `ESGF <https://esgf-data.dkrz.de>`_, it can be called by the ``esmvaltool`` as a command line option ``--synda`` so that it can automatically download necessary model data as specified in the receipe of ESMValTool. For example, ::
+`Synda <https://esmvaltool.readthedocs.io/en/latest/quickstart/running.html?highlight=synda#running>`_ is a tool to download and manage model data form the `ESGF <https://esgf-data.dkrz.de>`_, it can be called by the ``esmvaltool`` as a command line option ``--synda_download=TRUE`` so that it can automatically download necessary model data as specified in the receipe of ESMValTool. For example, ::
 
-   esmvaltool -c config_heyc.yml ./recipe_seaice.yml --synda
+   esmvaltool run --config_file=~/.esmvaltool/config-ipcc.yml ./recipe_seaice.yml --synda_download=TRUE
 
 Note, it is OPTIONAL to use synda to download data automatically during the runtime of ESMValTool. One can download the data by some other tools or scripts before running the ESMValTool.
 
@@ -95,11 +91,11 @@ If you do want to use ``synda``, there are two major steps you need to do:
 
 **Activate the tool**
 
-It is install with ``conda``, so you can add ``synda`` exectable to your search path, e.g., ::
+It is installed with ``conda``, so you can add ``synda`` exectable to your search path, e.g., ::
 
   export PATH:$PATH:/projects/NS9252K/conda/synda/bin/synda
 
-Then it should be availabe in your command windown by the ``synda`` command.
+Then the ``synda`` command should be available in your searching path.
 
 **Set up your credentials**
 
@@ -109,7 +105,7 @@ Then it should be availabe in your command windown by the ``synda`` command.
 
 3. configure ``synda`` parameters in ``~/.synda/conf/sdt.conf``, use my setting as template.
 
-4. maybe you need get `globus token`. Run the following command: ::
+4. maybe you need to get `globus token`. Run the following command: ::
 
     synda token -p globus renew
 
@@ -210,3 +206,5 @@ If you find an ``esmvaltool`` environment, this can be activated by ::
   source activate esmvaltool
 
 At the time of writing (10 June 2020), the preferred activation method ``conda activate esmvaltool`` is not recognized inside a NIRD Toolkit application.
+
+(Update: 8 March 2021, ``conda activate esmvaltool`` work on the `<https://eosc-nordic.uiogeo-apps.sigma2.no>`_.)
