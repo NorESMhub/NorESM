@@ -170,23 +170,7 @@ A jupyterhub application with pre-installed esmvaltool is available at
 
 To run the pre-installed jupyterhub aplication, a user first needs to become a member of the user group. To get access to the hub please contact annefou[at]geo.uio.no <mailto:annefou@geo.uio.no> for the invitation URL link, or the noresm-core group.
 
-
 To join the group, and get access to the jupyterhub, follow instuctions in email.
-
-- If you don't already have a Feide guest user account (otherwise skip this step), click "Feide guest users".
-- register a new account
-- for the sake of simplicity try to use the same email that you are using for the course
-- also try to use the same (or similar) user ID that you have for github
-- finish the registration process
-- click again on the "invitation link" in the email
-- login with "Feide guest users"
-- accept the different policies
-- agree to become a member of the group
-- the browser should display the message "Loading group details"
-- now go to https://eosc-nordic.uiogeo-apps.sigma2.no/
-- click "Sign in with Dataporten"
-- login with Feide Guest User (or linkedin authentication of this is what you used)
-- finally the web browser should display a page with "jupyterlab" on the upper left side
 
 
 Install an ESMValTool docker image from source
