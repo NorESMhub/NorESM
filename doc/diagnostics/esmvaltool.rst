@@ -148,7 +148,7 @@ Applications in NIRD Toolkit are available from::
 
 An owner/admin can launch a new application by installing it, and request resources to be made available to the application via the Kybernetes management system. A member can launch an existing application that has previously been set up by an owner/admin. The application setup allows access to storage areas under NSxxxxK storage volumes (read-only by default) and a user storage area under a specific NSxxxxK/subfolder with write access, but only applications pre-defined in the docker image provided to the Kybernetes system can be used.
 
-Run a pre-installed jupyterhub application
+Run a pre-installed jupyterhub application (e.g. EOSC jupyterhub on nird)
 ------------------------------------------
 
 ESMValTool is not included in the default docker images provided by Sigma2, but has been installed in modified docker images. These are created by building ESMValTool on top of an official Sigma2 docker image, and package in a new docker container. Such modified docker images are available for `jupyter` and `jupyterhub` applications.
@@ -171,7 +171,7 @@ A jupyterhub application with pre-installed esmvaltool is available at
 To run the pre-installed jupyterhub aplication, a user first needs to become a member of the user group. To get access to the hub please contact annefou[at]geo.uio.no <mailto:annefou@geo.uio.no> for the invitation URL link, or the noresm-core group.
 
 
-To join the group.
+To join the group, and get access to the jupyterhub, follow instuctions in email.
 
 - If you don't already have a Feide guest user account (otherwise skip this step), click "Feide guest users".
 - register a new account
