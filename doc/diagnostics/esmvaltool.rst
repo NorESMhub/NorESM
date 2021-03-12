@@ -45,7 +45,7 @@ An example of steps to run the ESMValTool on ipcc.nird.sigma2.no
 5. copy a recipe to ~/your-recipes/: ::
 
     mkdir ~/your-recipes
-    cp /projects/NS9252K/share/esmvaltool/recipes/recipe_validation_CMIP6.yml ~/your-recipes/
+    cp /projects/NS9252K/share/esmvaltool/tested_recipes/recipe_validation_CMIP6.yml ~/your-recipes/
     
 6. run ``esmvaltool``: ::
 
