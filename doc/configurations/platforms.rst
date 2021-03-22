@@ -111,13 +111,21 @@ for the development queue and ::
   
 for the short queue. 
 
-- 4. Add to the directives::
+- 4. Add to the directives
+
+::
 
   <directive> --qos=devel</directive>
 
-for the development queue and ::
+::
+
+for the development queue and 
+
+::
 
   <directive> --qos=short</directive>
+
+::
 
 for the short queue option. 
 
