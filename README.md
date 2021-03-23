@@ -36,3 +36,4 @@ This repository has the following NorESM branches:
   
 * **release-noresm2.0.2_keyClim** - NorESM2 version for KeyClim project experiments (started from tag release-noresm2.0.2)
 
+* **noresm_landsits** - NorESM2 version for site-level simulations over land, specifically working with [NorESM_LandSites_Platform](https://github.com/NorESMhub/NorESM_LandSites_Platform) 
