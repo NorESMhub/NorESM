@@ -111,13 +111,21 @@ for the development queue and ::
   
 for the short queue. 
 
-- 4. Add to the directives::
+- 4. Add to the directives
+
+::
 
   <directive> --qos=devel</directive>
 
-for the development queue and ::
+::
+
+for the development queue and 
+
+::
 
   <directive> --qos=short</directive>
+
+::
 
 for the short queue option. 
 
@@ -197,6 +205,21 @@ and for the short queue::
 | https://documentation.sigma2.no/jobs/submitting.html  
 | https://documentation.sigma2.no/jobs/choosing_job_types.html  
 | 
+
+Betzy @ Sigma2
+^^^^^^^^^^^^^
+Configuration files for running NorESM2 on Betzy are currently being put in all branches of the noresm code.
+
+Input data is stored in /cluster/shared/noresm/inputdata/
+
+Apply for membership in NorESM shared data storage (manager: mben@norceresearch.no) for access to the folder.
+
+The run and archive directories are stored /cluster/work/users/<user_name>/
+
+Create a new case: ::
+
+    ./create_newcase –case ../../../cases/<casename> --mach betzy –-res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported  
+
 
 Nebula @ NSC
 ^^^^^^^^^^^^

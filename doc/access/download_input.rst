@@ -23,7 +23,6 @@ might be redirected to another location.
 NorESM specific inputdata
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-WILL BE UPDATED BY adag@met.no
 The recipe to download the complete NorESM2 code is based on how it is done for CESM. For more details please see
 https://escomp.github.io/CESM/release-cesm2/downloading_cesm.html
 
