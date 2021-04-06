@@ -289,10 +289,8 @@
   </compset>
 
   <compset>
-    <alias>N1850frc2NOECO</alias>
-    <lname>1850_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f09_tn14"/>
-    <science_support grid="f19_tn14"/>
+    <alias>N1850frc2NOOBGC</alias>
+    <lname>1850_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM_MOSART_SGLC_SWAV</lname>
   </compset>
 
   <compset>
