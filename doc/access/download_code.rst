@@ -101,9 +101,9 @@ If you run into several SVN-related errors when launching the model, you may wan
 
 The checkout_externals script will read the configuration file called Externals.cfg and will download all the external component models and CIME into /path/to/<noresm-base>.
 
-**Please note that if you checkout a new branch or tag, you will need to rerun checkout_externals**
-
 Now you have a complete copy of the NorESM code in the directory <noresm-base>.  Now you can to the subdirectory cime/scripts and start creating a case! (see :ref:`experiments`)
+
+**Please note that if you checkout a new branch or tag, you will need to rerun checkout_externals in order to download the correct version of the model code**
 
 Betzy
 +++++++++
