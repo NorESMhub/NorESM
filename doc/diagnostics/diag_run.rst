@@ -60,9 +60,11 @@ Fresh install
 ---------------------------
 If you want to change the code for your own purpose, you can installed it on NIRD under your HOME folder or your own project area (i.e., /projects/NSxxxxK). There are several steps to install it:
 
+
 1. Fork the NorESM Diagnostic Package `Github repository <https://github.com/NordicESMhub/noresmdiagnostics>`_ to your own Github respository, e.g., https://github.com/YOU_GITHUB_USERNAME/noresmdiagnostics
 2. Change to your preferred location, denoted as $DIAGROOT, where you want to install the tool, and ``git clone https://github.com/YOU_GITHUB_USERNAME/noresmdiagnostics``
 3. Change to $DIAGROOT/noresmdiagnostics/bin, and link or download all the observation and grid data files.
+
   - If you are installing the tool on NIRD, you just need to link all the data to your clone by running the script ``linkdata.sh``, given you have access to the /project/NS2345K project
   - If you are not memember of NS2345K or you are installing it on platforms other than NIRD, you should download all the data to your clone by executing ``dloaddata.sh``. If you are not running it on NIRD, you should have CDO, NCO and NCL installed.
 4. Make changes to the code/scripts for your purpose. And call ``diag_run`` of your own clone.
