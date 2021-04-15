@@ -10,46 +10,14 @@ Below is a list of platforms where NorESM2 has been installed, including platfor
 
 <noresm-base>: the name of the folder where the model code has been downloaded (cloned from git)
 
-Vilje @ Sigma2
-^^^^^^^^^^^^^^
-Configuration files for running NorESM2 on Vilje are distributed in all branches of the noresm code.
-
-Input data is stored in /work/shared/noresm/inputdata/
-
-Apply for membership in NorESM shared data storage (manager: mben@norceresearch.no) for access to the folder.
-
-The run and archive directories are stored in /work/<user_name>/
-
-Before configuring and compiling the model, add  this code
-
-::
-
-      module ()
-     {
-        eval `/usr/bin/modulecmd bash $*`
-     }
-     module load intelcomp/15.0.1 mpt/2.10 python/2.7.9 netcdf/4.3.2
-     export PATH=$PATH:/opt/pbs/default/bin/
-
-::
-
-
-to your .bashrc
-
-::
-
-    cd
-    vi .bashrc
-
-::
-
-Create a new case:
-
-::
-
-    ./create_newcase –case ../../../cases/<casename> --mach vilje –-res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported  
-
-::
+The configurations files with the platform specific settings are found in ::
+  
+   <noresm-base>/cime/config/cesm/machines/config_machines.xml
+   <noresm-base>/cime/config/cesm/machines/config_compilers.xml
+   <noresm-base>/cime/config/cesm/machines/config_batch.xml
+   
+    
+Usually there is no need to change these files.
 
 Fram @ Sigma2
 ^^^^^^^^^^^^^
@@ -65,141 +33,64 @@ Create a new case: ::
 
     ./create_newcase –case ../../../cases/<casename> --mach fram –-res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported  
 
-Queue options on Fram
+
+Betzy @ Sigma2
+^^^^^^^^^^^^^
+Configuration files for running NorESM2 on Betzy are currently being put in all branches of the noresm code.
+
+Input data is stored in /cluster/shared/noresm/inputdata/
+
+Apply for membership in NorESM shared data storage (manager: mben@norceresearch.no) for access to the folder.
+
+The run and archive directories are stored /cluster/work/users/<user_name>/
+
+Create a new case: ::
+
+    ./create_newcase –case ../../../cases/<casename> --mach betzy –-res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported  
+
+**Please note that the Betzy settings are included in tag noresm2.0.3 and subsequent tags**  
+
+Queue options on Fram and on Betzy
 ------------------------
-On fram there are different queues for testing and development experiments (usually short runs on few nodes) and longer experiments. If you want to run simulations using different queue options than *normal*, you can add new machine options to   <noresm-base>/cime/config/cesm/machines/config_batch.xml. Method (we are currently working on an improvment of this):
+On fram there are different queues for testing and development experiments (usually short runs on few nodes) and longer experiments. If you want to run simulations using different queue options than *normal*, in env_batch.xml:
 
-- 1. Copy the settings for Fram :
-::
-
-   <batch_system MACH="fram" type="slurm">
-    <batch_submit>sbatch</batch_submit>
-    <submit_args>
-      <arg flag="--time" name="$JOB_WALLCLOCK_TIME"/>
-      <arg flag="-p" name="$JOB_QUEUE"/>
-      <arg flag="--account" name="$PROJECT"/>
-    </submit_args>
-    <directives> 
-      <directive> --ntasks={{ total_tasks }}</directive>
-      <directive> --export=ALL</directive>
-      <directive> --switches=1</directive>
-    </directives>
-    <queues>
-      <queue walltimemax="00:59:00" nodemin="1" nodemax="288" default="true">normal</queue>
-    </queues>
-  </batch_system>
-
-:: '
-
-- 2. Change "fram" to "fram_devel" or "fram_short"
- 
-- 3. Change the line
+Add to the directives 
 
 ::
 
-    <queue walltimemax="00:59:00" nodemin="1" nodemax="288" default="true">normal</queue>
+    <directive> --qos=devel</directive>
+
+::
+
+for the development queue and change (only on Fram) the node settings to: 
+
+::
+
+   <queue walltimemax="00:30:00" nodemin="1" nodemax="4" default="true">devel</queue>
+
+::
+
+For the short (Fram) and preproc (Betzy) queue options, add
+
+::
+
+    <directive> --qos=short</directive>
     
+    or 
+    
+    directive> --qos=preproc</directive>
+
 ::
 
-to::
- 
-  <queue walltimemax="00:30:00" nodemin="1" nodemax="4" default="true">devel</queue>
+for the development queue and change (only on Fram) the node settings to: 
 
-for the development queue and ::
+::
 
-  <queue walltimemax="02:00:00" nodemin="1" nodemax="10" default="true">short</queue>
+ <queue walltimemax="02:00:00" nodemin="1" nodemax="10" default="true">short</queue>
   
-for the short queue. 
-
-- 4. Add to the directives
-
 ::
-
-  <directive> --qos=devel</directive>
-
-::
-
-for the development queue and 
-
-::
-
-  <directive> --qos=short</directive>
-
-::
-
-for the short queue option. 
-
-**You need to make one config_batch setting for each queue option. You also need to add fram_devel and fram_short to config_machines.xml and config_compilers.xml** To do so, you just copy-paste the settings for fram and change the name *fram* to *fram_devel* and/or *fram_short* in the files config_machines.xml and config_compilers.xml. Hopefullt this will improve very soon, but the good thing is that you only need to do it once.
-
-The resulting <noresm-base>/cime/config/cesm/machines/config_batch.xml. file:
-
-::
-
-
-  <batch_system MACH="fram" type="slurm">
-    <batch_submit>sbatch</batch_submit>
-    <submit_args>
-      <arg flag="--time" name="$JOB_WALLCLOCK_TIME"/>
-      <arg flag="-p" name="$JOB_QUEUE"/>
-      <arg flag="--account" name="$PROJECT"/>
-    </submit_args>
-    <directives> 
-      <directive> --ntasks={{ total_tasks }}</directive>
-      <directive> --export=ALL</directive>
-      <directive> --switches=1</directive>
-    </directives>
-    <queues>
-      <queue walltimemax="00:59:00" nodemin="1" nodemax="288" default="true">normal</queue>
-    </queues>
-  </batch_system>
-
-  <batch_system MACH="fram_devel" type="slurm">
-    <batch_submit>sbatch</batch_submit>
-    <submit_args>
-      <arg flag="--time" name="$JOB_WALLCLOCK_TIME"/>
-      <arg flag="-p" name="$JOB_QUEUE"/>
-      <arg flag="--account" name="$PROJECT"/>
-    </submit_args>
-    <directives> 
-      <directive> --ntasks={{ total_tasks }}</directive>
-      <directive> --export=ALL</directive>
-      <directive> --switches=1</directive>
-      <directive> --qos=devel</directive>
-    </directives>
-    <queues>
-      <queue walltimemax="00:30:00" nodemin="1" nodemax="4" default="true">devel</queue>
-    </queues>
-  </batch_system>
-
-  <batch_system MACH="fram_short" type="slurm">
-    <batch_submit>sbatch</batch_submit>
-    <submit_args>
-      <arg flag="--time" name="$JOB_WALLCLOCK_TIME"/>
-      <arg flag="-p" name="$JOB_QUEUE"/>
-      <arg flag="--account" name="$PROJECT"/>
-    </submit_args>
-    <directives> 
-      <directive> --ntasks={{ total_tasks }}</directive>
-      <directive> --export=ALL</directive>
-      <directive> --switches=1</directive>
-      <directive> --qos=short</directive>
-    </directives>
-    <queues>
-      <queue walltimemax="02:00:00" nodemin="1" nodemax="10" default="true">short</queue>
-    </queues>
-  </batch_system>
-
-::
-
-   
-
-After, you can use the new machine settings when creating a new case: For the development queue:::
-
-    ./create_newcase –case ../../../cases/<casename> --mach fram_devel –-res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported  
-    
-and for the short queue::
-
-       ./create_newcase –case ../../../cases/<casename> --mach fram_short –-res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported  
+  
+for the short/preproc queue. 
 
 | For a detailed guide on how to set up, submit and choosing the right job see: 
 | https://documentation.sigma2.no/jobs/submitting.html  
