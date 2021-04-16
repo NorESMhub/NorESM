@@ -86,7 +86,7 @@ for the development queue and change (only on Fram) the node settings to:
 
 ::
 
-  <queue walltimemax="02:00:00" nodemin="1" nodemax="10" default="true">short</queue>
+ <queue walltimemax="02:00:00" nodemin="1" nodemax="10" default="true">short</queue>
   
 ::
   
