@@ -28,9 +28,9 @@ If you introduce code changes or new features into NorESM, these need to be docu
 We recommend that you subscribe to the NorESM user mailing list: https://www.noresm.org/mailman/listinfo/users_noresm.org
 where you can ask any question about how to use the NorESM model. You can also raise an issue.
 
-## NorESM2.0 user guide
+### NorESM2.0 user guide
 https://noresm-docs.readthedocs.io/en/noresm2/index.html
 
-## NorESM home page
+### NorESM home page
 https://www.noresm.org/
 
