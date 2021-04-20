@@ -1,13 +1,13 @@
-# Contributing to NorESM:
+# Contributing to NorESM
 We welcome contributions to the NorESM model, including bug reports and fixes, contributions for code improvements, and suggestions for feature enhancements or inclusion of new features. Below we have listed some guidelines, but use your best judgment, and feel free to propose changes to this document in a pull request.
 
 ## What should I know before I get started?
 The NorESM model is made up of several repositories. When you initially consider contributing to NorESM,  you might be unsure about which of those repositories implements the functionality you want to change or report a bug for.  The NorESM team will help you with that through an issue discussion.
 
-# How to contribute:
+# How to contribute
 We recommend that you open an issue (https://github.com/NorESMhub/NorESM/issues) to discuss the changes or additions you want to include. Through the issue discussion, you can work with the NorESM developers to implement the code changes in the correct repository and in the correct branch. 
 
-## Reporting bugs:
+## Reporting bugs
 Please, ensure that the bug was not already reported by searching on https://github.com/NorESMhub/NorESM/issues
 
 If you find bugs, strange output or something puzzling, please raise an issue. No issue is too big nor too small. If you wrote code that fixes the bug, please see the description below.
@@ -28,9 +28,9 @@ If you introduce code changes or new features into NorESM, these need to be docu
 We recommend that you subscribe to the NorESM user mailing list: https://www.noresm.org/mailman/listinfo/users_noresm.org
 where you can ask any question about how to use the NorESM model. You can also raise an issue.
 
-## NorESM2.0 user guide:
+## NorESM2.0 user guide
 https://noresm-docs.readthedocs.io/en/noresm2/index.html
 
-## NorESM home page:
+## NorESM home page
 https://www.noresm.org/
 
