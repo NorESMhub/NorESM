@@ -14,7 +14,7 @@ Visit the [NorESM home page](https://www.noresm.org/) to learn more about the No
 # NorESM documentation
 
 - [NorESM-1 documentation](https://noresm-docs.readthedocs.io/en/noresm1)
-- [NorESM-2 documentation](https://noresm-docs.readthedocs.io/en/noresm2/)
+- [NorESM-2.0 documentation](https://noresm-docs.readthedocs.io/en/noresm2/)
 - [Latest NorESM documentation](https://noresm-docs.readthedocs.io/en/latest) currently showing NorESM2 documentation
 
 
