@@ -55,14 +55,14 @@ Setting number of nodes on Betzy
 In fully coupled setup, for grid f19_tn14 and f09_tn14, various processors configurations are added and can be used by setting --pecount= S, L, M or X1
 when creating a new case.
 
-For NorESM2-MM, using grid f09_tn14, `--pecount` will give following number of nodes: ::
+For NorESM2-MM, using grid f09_tn14, `--pecount` will give the following number of nodes: ::
 
     S = 4
     M = 9
     L = 15
     X1 = 17
 
-and for NorESM2-LM, using grid f19_tn14, `--pecount` it will give following number of nodes: ::
+and for NorESM2-LM, using grid f19_tn14, `--pecount` it will give the following number of nodes: ::
 
     S = 4
     M = 8
