@@ -36,6 +36,8 @@ Create a new case: ::
 
 Betzy @ Sigma2
 ^^^^^^^^^^^^^
+NorESM2 working on BETZY with CIME tag cime5.6.10_cesm2_1_rel_06-Nor_v1.0.4
+
 Configuration files for running NorESM2 on Betzy are currently being put in all branches of the noresm code.
 
 Input data is stored in /cluster/shared/noresm/inputdata/
@@ -48,7 +50,32 @@ Create a new case: ::
 
     ./create_newcase –case ../../../cases/<casename> --mach betzy –-res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported  
 
-**Please note that the Betzy settings are included in tag noresm2.0.3 and subsequent tags**  
+Setting number of nodes on Betzy
+-----------------
+In fully coupled setup, for grid f19_tn14 and f09_tn14, various processors configurations are added and can be used by setting --pecount= S, L, M or X1
+when creating a new case.
+
+For NorESM2-MM, using grid f09_tn14, `--pecount` will give the following number of nodes: ::
+
+    S = 4
+    M = 9
+    L = 15
+    X1 = 17
+
+and for NorESM2-LM, using grid f19_tn14, `--pecount` it will give the following number of nodes: ::
+
+    S = 4
+    M = 8
+    X1 = 10
+
+L does not exists for f19_tn14.
+
+E.g. creating a new case running on 4 nodes ::
+
+    ./create_newcase –case ../../../cases/<casename> --mach betzy –-res <resolution> --compset <compset_name> --project <project_name> --pecount= S --user-mods-dir <user_mods_dir> --run-unsupported  
+    
+ 
+**Please note that these Betzy settings are included in tag noresm2.0.4 and subsequent tags**  
 
 Queue options on Fram and on Betzy
 ------------------------
