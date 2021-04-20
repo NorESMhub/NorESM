@@ -1,9 +1,9 @@
 # The Norwegian Earth System Model version 2 (NorESM2)
-The noresm2 branch contains the NorESM2.0.X documentation, code and configurations as used for most NorESM2-LM and NorESM2-MM CMIP6 simulations
+The **noresm2** branch contains the NorESM2.0.X documentation, code and configurations as used for most NorESM2-LM and NorESM2-MM CMIP6 simulations
 
 The NorESM-2.0 documentation: https://noresm-docs.readthedocs.io/en/noresm2/
 
-## Branches and releases in noresm2
+## Releases in noresm2
 
 * noresm2 - with tags:
 
