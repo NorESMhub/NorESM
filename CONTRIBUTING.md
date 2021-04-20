@@ -15,8 +15,8 @@ If you find bugs, strange output or something puzzling, please raise an issue. N
 ## Suggesting Enhancements
 If you want to submit an enhancement suggestion for NorESM, including completely new features, minor improvements to existing functionality or bug fixes, please read the NorESM documentation on how to contribute: https://noresm-docs.readthedocs.io/en/noresm2/contribute/contribute.html
 You need to:
-- setup your personal NorESM fork in GitHub to put your developments
-- keep up to date with the NorESMhub. 
+- Setup your personal NorESM fork in GitHub to put your developments
+- Keep up to date with the NorESMhub. 
 - Once your changes or additions are sufficiently advanced you can form a Pull Request from your fork to the relevant NorESM branch including a clear description of what you've done. 
 - Please assign reviewers who will  do additional testing of your code and bring the changes to NorESM. 
 
