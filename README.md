@@ -39,3 +39,6 @@ The NorESM-2.0 documentation: https://noresm-docs.readthedocs.io/en/noresm2/
     - https://github.com/NorESMhub/NorESM/releases/tag/release-noresm2.0.1
   
 For a detailed description of the NorESM2.0.X releases, please see https://noresm-docs.readthedocs.io/en/noresm2/releases/
+
+### NorESM1 and CMIP5
+For the NorESM code base used in CMIP5, please see the **noresm1** branch.
