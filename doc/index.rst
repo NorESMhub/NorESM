@@ -29,7 +29,6 @@ For obtaining news per email register to users@noresm.org at https://www.noresm.
    
    start.rst
    access/access.rst
-   releases/releases.rst
    configurations/configurations.rst
    output/output.rst
    diagnostics/diagnostics.rst
