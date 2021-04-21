@@ -12,7 +12,7 @@ The NorESM-2.0 documentation: https://noresm-docs.readthedocs.io/en/noresm2/
 
 ## Releases in noresm2
 - [release-noresm2.0.5](https://github.com/NorESMhub/NorESM/releases/tag/release-noresm2.0.5)
-    - Release of NorESM2.0.5 Xth of April 2021
+    - Release of NorESM2.0.5 April 2021
     - Available to reproduce CMIP6 results of NorESM2
     - Updated NorESM2.0 documentation.
 
