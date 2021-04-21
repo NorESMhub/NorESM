@@ -5,7 +5,8 @@
 [![Documentation Status](https://readthedocs.org/projects/noresm-docs/badge/?version=noresm2)](https://noresm-docs.readthedocs.io/en/noresm2/?badge=latest)
 
 # The Norwegian Earth System Model version 2 (NorESM2)
-The **noresm2** branch contains the NorESM2.0.X documentation, code and configurations as used for most NorESM2-LM and NorESM2-MM CMIP6 simulations
+The **noresm2** branch contains the NorESM2.0.X documentation, code and configurations as used for most  <br />
+NorESM2-LM and NorESM2-MM CMIP6 simulations
 
 The NorESM-2.0 documentation: https://noresm-docs.readthedocs.io/en/noresm2/
 
@@ -38,7 +39,7 @@ The NorESM-2.0 documentation: https://noresm-docs.readthedocs.io/en/noresm2/
     - initial preliminary release of CMIP6 version
     - https://github.com/NorESMhub/NorESM/releases/tag/release-noresm2.0.1
   
-For a detailed description of the NorESM2.0.X releases, please see https://noresm-docs.readthedocs.io/en/noresm2/releases/
+For a detailed description of all NorESM2.0.X releases, please see https://noresm-docs.readthedocs.io/en/noresm2/releases/
 
 ### NorESM1 and CMIP5
 For the NorESM code base used in CMIP5, please see the **noresm1** branch.
