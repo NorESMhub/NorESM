@@ -1,6 +1,6 @@
 .. _releases:
 
- NorESM2.0.X releases
+NorESM2.0.X releases
 ====================
 
 .. toctree::
