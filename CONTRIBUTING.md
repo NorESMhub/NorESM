@@ -17,10 +17,10 @@ If you want to submit an enhancement suggestion for NorESM, including completely
 You need to:
 - Setup your personal NorESM fork in GitHub to put your developments
 - Keep up to date with the NorESMhub. 
-- Once your changes or additions are sufficiently advanced you can form a Pull Request from your fork to the relevant NorESM branch including a clear description of what you've done. 
+- Once your changes or additions are sufficiently advanced you can form a pull request from your fork to the relevant NorESM branch including a clear description of what you've done. 
 - Please assign reviewers who will  do additional testing of your code and bring the changes to NorESM. 
 
-If your Pull Request causes conflicts which you are not able to resolve, please ask one of the NorESMhub maintainers for help.
+If your pull request causes conflicts which you are not able to resolve, please ask one of the NorESMhub maintainers for help.
 
 If you introduce code changes or new features into NorESM, these need to be documented. Please remember to update the documentation as well.
 
