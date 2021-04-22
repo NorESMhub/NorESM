@@ -88,7 +88,42 @@ to NORESM2. For a detailed description, see **Creating your own compset** below.
 For an overview of the compsets provided for CESM2, please see: http://www.cesm.ucar.edu/models/cesm2/config/compsets.html.
 
 
-**Supported grids**
+Resolution and grids
+''''''''''''
+
+The model resolution is set when the case is created (with the --res option). Below some common resolutions are listed. 
+
+**Atmospheric grids**
+::
+
+  f19_f19 - atm lnd 1.9x2.5
+  f09_f09 - atm lnd 0.9x1.25  
+  f09_f09_mg17
+
+
+**Ocean grids**
+::
+
+  tnx1v4   - tripolar ocn ice 1-degree grid  
+  tnx2v1   - tripolar ocn ice 2-degree grid  
+  tx0.25v4 - tripolar ocn ice 1/4-degree grid  
+
+
+**Coupled**
+::
+
+  f19_tn14   - atm lnd 1.9x2.5, ocnice tnx1v4  [CMIP6 grid, NorESM2-LM]  
+  f09_tn14   - atm lnd 0.9x1.25, ocnice tnx1v4  [CMIP6 grid, NorESM2-MM]  
+  f09_tn0254 - atm lnd 0.9x1.25, ocnice tnx0.25v4  
+
+
+A complete list of model grids can be found here::
+  
+  <noresm_base>/cime/config/cesm/config_grids.xml
+
+
+Supported grids
+'''''''''''''
 
 Most compsets contain an entries listing which which grid(s) are scientifically supported for that compset ::
 
@@ -99,6 +134,11 @@ When a compset has a scientifically-supported grid, you can create a new case (w
   --run-unsupported
 
 option is required when a case is created or the create_newcase script will fail.
+
+
+
+
+
 
 
 
@@ -125,6 +165,15 @@ For more details, check this folder ::
   <noresm_base>/cime_config/usermods_dirs
 
 
+Create a clone case
+''''''''''''''''
+The create_clone script in the <noresm_base>/cime/scripts folder allows you to create a clone of an already existing case::
+
+  ./create_clone --clone <full-path-to-experiment-to-be-cloned> --case <full-path-to-cloned-experiment>
+
+Creating a clone case can be very useful if you want to recreate an existing case or if you want to create a perturbed version. The clone will be set up as if it was created with the same create_newcase options as the existing case (except the case name) and will have identical ``env_*.xml``, ``user_nml_<component>`` and ``SourceMods`` files (these files can of course be modified before building the case). 
+
+
 
 The xmlchange and xmlquery scripts
 ''''''''''''''''''
@@ -140,13 +189,6 @@ It's also possible to change several variables at once, for instance ::
 See the header of ``xmlchange`` and ``xmlquery`` for more details and examples.
 
 
-Create a clone case
-''''''''''''''''
-The create_clone script in the <noresm_base>/cime/scripts folder allows you to create a clone of an already existing case::
-
-  ./create_clone --clone <full-path-to-experiment-to-be-cloned> --case <full-path-to-cloned-experiment>
-
-Creating a clone case can be very useful if you want to recreate an existing case or if you want to create a perturbed version. The clone will be set up as if it was created with the same create_newcase options as the existing case (except the case name) and will have identical ``env_*.xml``, ``user_nml_<component>`` and ``SourceMods`` files (these files can of course be modified before building the case). 
 
 
 
@@ -242,44 +284,6 @@ Submitting the case
 The case is submitted by ::
 
   ./case.submit
-
-
-Resolution
-''''''''''
-
-Model resolution is set when the case is created. Below some common resolutions are listed. A complete list of model grids can be found here:
-::
-  
-  <noresm_base>/cime/config/cesm/config_grids.xml
-
-
-Atmospheric grids
-^^^^^^^^^^^^^^^^^
-::
-
-  f19_f19 - atm lnd 1.9x2.5
-  f09_f09 - atm lnd 0.9x1.25  
-  f09_f09_mg17
-
-
-Ocean grids
-^^^^^^^^^^^
-Currently, BLOM supports three resolutions, nominal 2,1, and 1/4 degrees in a tripolar grid configuration:
-::
-
-  tnx1v4   - tripolar ocn ice 1-degree grid  
-  tnx2v1   - tripolar ocn ice 2-degree grid  
-  tx0.25v4 - tripolar ocn ice 1/4-degree grid  
-
-
-Coupled
-^^^^^^^
-::
-
-  f19_tn14   - atm lnd 1.9x2.5, ocnice tnx1v4  [CMIP6 grid, NorESM2-LM]  
-  f09_tn14   - atm lnd 0.9x1.25, ocnice tnx1v4  [CMIP6 grid, NorESM2-MM]  
-  f09_tn0254 - atm lnd 0.9x1.25, ocnice tnx0.25v4  
-
 
 
 Forcing
