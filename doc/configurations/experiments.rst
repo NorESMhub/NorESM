@@ -61,7 +61,11 @@ See the header of ``xmlchange`` and ``xmlquery`` for more details and examples.
 
 Create a clone case
 ^^^^^^^^^^^^^^^^^^^
-To create clone cases from a control case can be very useful for e.g. sensitivity studies. If you want to make a copy of a case (i.e. identical ``./create_newcase`` command and identical ``env_*.xml``, ``user_nml_<component>`` and ``SourceMods`` files) that can be done by the use of ``./create_clone``. You only need to give the casename of the new case and the casename of the case which sholud be cloned (copied). The case will have identical set up (``env_*.xml``, ``user_nml_<component>`` files and ``SourceMods``) as the clone, but these files can of course be modified before building the case.
+The create_clone script in the <noresm_base>/cime/scripts folder allows you to create a clone of an already existing case::
+
+  ./create_clone --clone <full-path-to-experiment-to-be-cloned> --case <full-path-to-cloned-experiment>
+
+Creating a clone case can be very useful if you want to recreate an existing case or if you want to create a perturbed version. The clone will be set up as if it was created with the same create_newcase options as the existing case (except the case name) and will have identical ``env_*.xml``, ``user_nml_<component>`` and ``SourceMods`` files (these files can of course be modified before building the case). 
 
 
 Compsets
