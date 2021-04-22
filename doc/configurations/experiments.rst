@@ -68,6 +68,61 @@ to NORESM2. For a detailed description, see **Creating your own compset** below.
 For an overview of the compsets provided for CESM2, please see: http://www.cesm.ucar.edu/models/cesm2/config/compsets.html.
 
 
+Creating your own compset
+'''''''''''''''''
+The essential file to edit for a new coupled NorESM compset is :: 
+
+  <noresm_base>/cime_config/config_compsets.xml
+  
+and for a new AMIP NorESM compset is :: 
+
+  <noresm_base>/components/cam/cime_config/config_compsets.xml
+  
+  
+**Coupled simulation** 
+
+This examples shows how to simply add the "N1850frc2" compset to ``config_compsets.xml``. In ``<noresm_base>/cime_config/config_compsets.xml`` the N1850frc2 is set as ::
+
+  <compset>
+    <alias>N1850frc2</alias>
+    <lname>1850_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+  </compset>
+ 
+where 
+
+* ``<alias>COMPSETNAME</alias>`` sets the compsets name used when building a new case, make sure to use a new and unique name
+* '_' is used as a separator between model components: ``_<MODEL>
+* '%' is used to to set components-specific configurations 
+
+So for the N1850frc2 compset, the different parts of the lname have the following meaning:
+
+- 1850_CAM60%NORESM%FRC2
+   - Forcing and input files read from pre-industrial conditions (1850). If you need a historical run replace 1850 with HIST
+   - Build CAM6.0 (the atmosphere model) with NorESM configuration and FRC2 organized emission files
+- CLM50%BGC-CROP
+   - Build CLM5 (land model) with Biogeochemistry and prognotic crop package 
+- CICE%NORESM-CMIP6
+   - Build CICE (sea-ice model) with NorESM2-CMIP6 setup 
+- BLOM%ECO
+   - Build BLOM (ocean model) including iHAMOCC biogeochemistry model
+- MOSART
+   - Build MOSART (river runoff model) with default configurations
+- SGLC_SWAV
+   - The SGLC (land-ice) and SWAV (ocean-wave) models are not interactive, but used only to satisy the interface requirements 
+- BGC%BDRDDMS
+   - ocean biogeochemistry model iHAMOCC run with interactive DMS
+
+The details of the compset i.e. which models components and component-specific configurations to use are set in ``<lname>1850_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>``
+
+It is possible to use the long name (lname) to select a compset then creating a new case.  
+
+
+**AMIP simulation**
+
+For details about AMIP simulation compsets, please see :ref:`amips`
+
+
+
 Resolution and grids
 ''''''''''''
 
@@ -169,69 +224,21 @@ It's also possible to change several variables at once, for instance ::
 See the header of ``xmlchange`` and ``xmlquery`` for more details and examples.
 
 
+Forcing
+''''''''''''''''
+Please see :ref:`input`
+
+Choosing output
+'''''''''''''''
+please see :ref:`output`
+
+Setting up a nudged simulation
+''''''''''''''''''''''''''''''
+please see :ref:`nudged_simulations`
 
 
 
 
-Creating your own compset
-^^^^^^^^^^^^^^^^^^^^^^^^^
-The essential file to edit for a new coupled NorESM compset is :: 
-
-  <noresm_base>/cime_config/config_compsets.xml
-  
-and for a new AMIP NorESM compset is :: 
-
-  <noresm_base>/components/cam/cime_config/config_compsets.xml
-  
-  
-**Coupled simulation** 
-
-This examples shows how to simply add the "N1850frc2" compset to ``config_compsets.xml``. In ``<noresm_base>/cime_config/config_compsets.xml`` the N1850frc2 is set as ::
-
-  <compset>
-    <alias>N1850frc2</alias>
-    <lname>1850_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-  </compset>
- 
-where 
-
-``<alias>COMPSETNAME</alias>``
-sets the compsets name used when building a new case. Make sure to use a new and unique compset name. The details of the compset i.e. which models components and component-specific configurations to use are set in ::
-
-<lname>1850_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-
-It is also possible to just add that line (without the <lname>) when creating a new case. 
-
-'_' seperates between model components ::
-
-_<MODEL>
-  
-and '%' sets the component-specific configuration ::
-
-%MODEL_CONFIGURATION
-
-E.g. 
-
-- 1850_CAM60%NORESM%FRC2
-   - Forcing and input files read from pre-industrial conditions (1850). If you need a historical run replace 1850 with HIST
-   - Build CAM6.0 (the atmosphere model) with NorESM configuration and FRC2 organized emission files
-- CLM50%BGC-CROP
-   - Build CLM5 (land model) with Biogeochemistry and prognotic crop package 
-- CICE%NORESM-CMIP6
-   - Build CICE (sea-ice model) with NorESM2-CMIP6 setup 
-- BLOM%ECO
-   - Build BLOM (ocean model) including iHAMOCC biogeochemistry model
-- MOSART
-   - Build MOSART (river runoff model) with default configurations
-- SGLC_SWAV
-   - The SGLC (land-ice) and SWAV (ocean-wave) models are not interactive, but used only to satisy the interface requirements 
-- BGC%BDRDDMS
-   - ocean biogeochemistry model iHAMOCC run with interactive DMS
-
-
-**AMIP simulation**
-
-For details about AMIP simulation compsets, please see :ref:`amips`
 
 
 Building the case
