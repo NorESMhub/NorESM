@@ -19,57 +19,16 @@ script, a case folder ``<path_to_case_dir>/<casename>`` is created that contains
 
   ./case.setup
 
-script, several other files and directories needed to build the case are created, including the user namelists files.
+script, several other files and directories needed to build the case are created, including the user namelists files. 
+
+The case folder contains predefined namelists (with namelist settings partly depending on compset option). The default namelist options for the case can be overwritten by changing/adding the new namelist options in the ``user_nl_<component>`` file.
+
 
 The create_newcase script includes a ``--compset`` option. A compset, or component set, is a collection of predefined setting that defines your experiment set-up, including which model components that should be activated. Some of the available compsets are described below.
 
-The case folder contains predefined namelist (with namelist settings partly depending on compset option). The default namelist options for the case can be overwritten by changing/adding the new namelist options in the ``user_nl_<component>`` file.
-
-Several configuration options are available in the user modification (usermod) directories under ``<noresm_base>/cime_config/usermods_dirs/``. The sets of usermods contain pre-defined user namelists for the atmosphere (cam) and land (clm) components that have been used for specific experiments, such as the CMIP6 DECK experiments. Within the user namelists, the lists of output variables and output frequencies has been modified and/or extended with additional output variables. In addition, the usermodes include one SourceMod (``SourceMods/src.cam/preprocessorDefinitions.h``) which  defines whether AEROFFL and AEROCOM are activated to produce extra aerosol diagnostics (for more details about the aerosol diagnostics see :ref:`aerosol_output`)
-
-The usermods under ``<noresm_base>/cime_config/usermods_dirs/`` include::
-
-  cmip6_noresm_DECK (AEROFFL)    
-  cmip6_noresm_hifreq (high frequency output, AEROFFL)    
-  cmip6_noresm_hifreq_xaer (high frecuency output, AEROFFL and AEROCOM)   
-  cmip6_noresm_keyCLIM (used for KeyCLIM experiments, AEROFFL)
-  cmip6_noresm_xaer (AEROFFLand AEROCOM)    
-  
-To activate the cmip6_noresm_DECK usermod, run the create_newcase script with the option ``--user-mods-dir cmip6_noresm_DECK``. 
-
-Remember that the amount of diagnostics and the output frequency have a huge impact on both the run time and storage. 
-
-For more details, check this folder ::
-
-  <noresm_base>/cime_config/usermods_dirs
-
-
-
-The xmlchange and xmlquery scripts
-^^^^^^^^^^^
-
-The ``xmlchange`` and ``xmlquery`` scripts are located in your case folder and lets you change or query the contents of variables in the ``evn_*.xml`` files without entering the files. There are two advantages of using ``xmlchange`` to edit the xml files rather than doing by hand: (1) the ``xmlchange`` script checks that the new setting is valid and (2) the change is echoed to the ``CaseStatus`` file, thus automatically documented. To change from the default ``ndays`` to ``nmonths`` ::
-
-  ./xmlchange STOP_OPTION=nmonths
-  
-It's also possible to change several variables at once, for instance ::
-
-  ./xmlchange STOP_OPTION=nmonths,STOP_N=14
-
-See the header of ``xmlchange`` and ``xmlquery`` for more details and examples.
-
-
-Create a clone case
-^^^^^^^^^^^^^^^^^^^
-The create_clone script in the <noresm_base>/cime/scripts folder allows you to create a clone of an already existing case::
-
-  ./create_clone --clone <full-path-to-experiment-to-be-cloned> --case <full-path-to-cloned-experiment>
-
-Creating a clone case can be very useful if you want to recreate an existing case or if you want to create a perturbed version. The clone will be set up as if it was created with the same create_newcase options as the existing case (except the case name) and will have identical ``env_*.xml``, ``user_nml_<component>`` and ``SourceMods`` files (these files can of course be modified before building the case). 
-
 
 Compsets
-^^^^^^^^
+'''''''''''''
 
 Compsets, or component sets, specify which component models will be used in your simulation along with which forcing files, and even which physics options to use. Each compset has a long name (lname) and an alias. For instance ``N1850`` is the alias for the NorESM compset for pre-industrial (1850) conditions. The long name for ``N1850`` is ::
   
@@ -89,7 +48,7 @@ Predefined compsets for **AMIP-type (atmsophere/land-only) simulations** can be 
 
   <noresm_base>/components/cam/cime_config/config_compsets.xml
   
-Predefined compsets for running the sea-ice model as a stand-alone model cam be found in ::
+Predefined compsets for running the sea-ice model as a stand-alone model can be found in ::
 
   <noresm_base>/components/cice/cime_config/config_compsets.xml
 
@@ -101,7 +60,7 @@ Predefined compsets for running the ocean model as a stand-alone model can be fo
 
   <noresm_base>/components/blom/cime_config/config_compsets.xml
   
-The compsets starting with N are NorESM coupled configurations. Compsets starting with NF are NorESM AMIP (atmosphere only) configurations. Some examples are given below.
+The compsets starting with N are NorESM coupled configurations. Compsets starting with NF are NorESM AMIP (atmosphere/land-only) configurations. Some examples are given below.
 
 **N1850 and N1850frc2**  
   Coupled configuration for NorESM for pre-industrial (1850) conditions.
@@ -140,6 +99,56 @@ When a compset has a scientifically-supported grid, you can create a new case (w
   --run-unsupported
 
 option is required when a case is created or the create_newcase script will fail.
+
+
+
+
+
+User modifications (usermods) 
+''''''''''''''''''
+Several configuration options are available in the user modification (usermod) directories under ``<noresm_base>/cime_config/usermods_dirs/``. The sets of usermods contain pre-defined user namelists for the atmosphere (cam) and land (clm) components that have been used for specific experiments, such as the CMIP6 DECK experiments. Within the user namelists, the lists of output variables and output frequencies has been modified and/or extended with additional output variables. In addition, the usermodes include one SourceMod (``SourceMods/src.cam/preprocessorDefinitions.h``) which  defines whether AEROFFL and AEROCOM are activated to produce extra aerosol diagnostics (for more details about the aerosol diagnostics see :ref:`aerosol_output`)
+
+The usermods under ``<noresm_base>/cime_config/usermods_dirs/`` include::
+
+  cmip6_noresm_DECK (AEROFFL)    
+  cmip6_noresm_hifreq (high frequency output, AEROFFL)    
+  cmip6_noresm_hifreq_xaer (high frecuency output, AEROFFL and AEROCOM)   
+  cmip6_noresm_keyCLIM (used for KeyCLIM experiments, AEROFFL)
+  cmip6_noresm_xaer (AEROFFLand AEROCOM)    
+  
+To activate the cmip6_noresm_DECK usermod, run the create_newcase script with the option ``--user-mods-dir cmip6_noresm_DECK``. 
+
+Remember that the amount of diagnostics and the output frequency have a huge impact on both the run time and storage. 
+
+For more details, check this folder ::
+
+  <noresm_base>/cime_config/usermods_dirs
+
+
+
+The xmlchange and xmlquery scripts
+''''''''''''''''''
+
+The ``xmlchange`` and ``xmlquery`` scripts are located in your case folder and lets you change or query the contents of variables in the ``evn_*.xml`` files without entering the files. There are two advantages of using ``xmlchange`` to edit the xml files rather than doing by hand: (1) the ``xmlchange`` script checks that the new setting is valid and (2) the change is echoed to the ``CaseStatus`` file, thus automatically documented. To change from the default ``ndays`` to ``nmonths`` ::
+
+  ./xmlchange STOP_OPTION=nmonths
+  
+It's also possible to change several variables at once, for instance ::
+
+  ./xmlchange STOP_OPTION=nmonths,STOP_N=14
+
+See the header of ``xmlchange`` and ``xmlquery`` for more details and examples.
+
+
+Create a clone case
+''''''''''''''''
+The create_clone script in the <noresm_base>/cime/scripts folder allows you to create a clone of an already existing case::
+
+  ./create_clone --clone <full-path-to-experiment-to-be-cloned> --case <full-path-to-cloned-experiment>
+
+Creating a clone case can be very useful if you want to recreate an existing case or if you want to create a perturbed version. The clone will be set up as if it was created with the same create_newcase options as the existing case (except the case name) and will have identical ``env_*.xml``, ``user_nml_<component>`` and ``SourceMods`` files (these files can of course be modified before building the case). 
+
+
 
 
 Creating your own compset
