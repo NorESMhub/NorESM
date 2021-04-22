@@ -38,34 +38,28 @@ The long name generally follows the notation ::
 
   TIME_ATM[%phys]_LND[%phys]_ICE[%phys]_OCN[%phys]_ROF[%phys]_GLC[%phys]_WAV[%phys][_ESP%phys][_BGC%phys] 
 
-(see the help section of the file ``<noresm_base>/cime_config/config_compsets.xml`` for details). The compsets can also include information on which grids are scientifcally supported (see below for details). 
+(see the help section of the file ``<noresm_base>/cime_config/config_compsets.xml`` for details). The compsets can also include information on which grids are scientifically supported (see below for details). 
 
-* All predefined compsets for **coupled simulations** can be found in ``<noresm_base>/cime_config/config_compsets.xml``
-* Predefined compsets for **AMIP-type (atmsophere/land-only) simulations** can be found in  ``<noresm_base>/components/cam/cime_config/config_compsets.xml``
-* Predefined compsets for running the sea-ice model as a stand-alone model can be found in ``<noresm_base>/components/cice/cime_config/config_compsets.xml``
-* Predefined compsets for running the land model as a stand-alone model can be found in ``<noresm_base>/components/clm/cime_config/config_compsets.xml``
-* Predefined compsets for running the ocean model as a stand-alone model can be found in ``<noresm_base>/components/blom/cime_config/config_compsets.xml``
+To find all predefined compsets:
+
+* **coupled simulations** ``<noresm_base>/cime_config/config_compsets.xml``
+* **AMIP-type (atmsophere/land-only) simulations** ``<noresm_base>/components/cam/cime_config/config_compsets.xml``
+* stand-alone experiments with the sea-ice model  ``<noresm_base>/components/cice/cime_config/config_compsets.xml``
+* stand-along experiments with the land model ``<noresm_base>/components/clm/cime_config/config_compsets.xml``
+* Stand-alone experiments with the ocean model  ``<noresm_base>/components/blom/cime_config/config_compsets.xml``
   
-The compsets starting with N are NorESM coupled configurations. Compsets starting with NF are NorESM AMIP (atmosphere/land-only) configurations. Some examples are given below:
+The compsets starting with N are NorESM coupled configurations. Compsets starting with NF are NorESM AMIP (atmosphere/land-only) configurations. Some examples are:
 
-**N1850 and N1850frc2**  
-  Coupled configuration for NorESM for pre-industrial (1850) conditions.
-
-**NHIST and NHISTfrc2**
-  Historical configuration from 1850 up to year 2015 (see detailed description below; 'Create your own compsets for AMIP simulations')
-
-**NSSP126frc2, NSSP245frc2, NSSP370frc2, NSSP585frc2**  
-  Future scenario compsets from 2015 to 2100
-  
-**NFHISTnorpddmsbc**  
-  AMIP simulation with time-evolving prescribed observed values for SSTs and sea ice and upper-ocean DMS values derived from a fully coupled NorESM2 simulation for present-day conditions
-  
-**frc2 emission files**
-  The frc2 option uses differently organized emission files. The frc2 files are located in ::
+* **N1850 and N1850frc2**: Coupled configuration for NorESM for pre-industrial (1850) conditions.
+* **NHIST and NHISTfrc2**: Historical configuration from 1850 up to year 2015 (see detailed description below; 'Create your own compsets for AMIP simulations')
+* **NSSP126frc2, NSSP245frc2, NSSP370frc2, NSSP585frc2**: Future scenario compsets from 2015 to 2100
+* **NFHISTnorpddmsbc**: AMIP simulation with time-evolving prescribed observed values for SSTs and sea ice and upper-ocean DMS values derived from a fully coupled NorESM2 simulation for present-day conditions
+ 
+**frc2 compsets**: The frc2 option uses differently organized emission files. The frc2 files are located in ::
   
   <PATH_TO_INPUTDATA>/noresm/inputdata/atm/cam/chem/emis/cmip6_emissions_version20190808
   
-A new set of emission files have been made to avoid the occurence of random mid-month model crashes. These crashes are related to the reading of emission files, but are still under investigation. To use the newest emission files choose compsets including *frc2* or if you  want to create a new compset add ::
+The frc2 files were created to avoid the occurence of random mid-month model crashes. These crashes are related to the reading of emission files, but are still under investigation. To make sure that you are using the frc2 files, choose a compsets including *frc2* or if you  want to create a new compset add ::
 
   %FRC2
  
