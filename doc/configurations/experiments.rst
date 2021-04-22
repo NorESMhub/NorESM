@@ -40,14 +40,13 @@ The long name generally follows the notation ::
 
 (see the help section of the file ``<noresm_base>/cime_config/config_compsets.xml`` for details). The compsets can also include information on which grids are scientifcally supported (see below for details). 
 
-* All predefined compsets for **coupled simulations** can be found in ::
-    <noresm_base>/cime_config/config_compsets.xml
-* Predefined compsets for **AMIP-type (atmsophere/land-only) simulations** can be found in ::  <noresm_base>/components/cam/cime_config/config_compsets.xml
-* Predefined compsets for running the sea-ice model as a stand-alone model can be found in :: <noresm_base>/components/cice/cime_config/config_compsets.xml
-* Predefined compsets for running the land model as a stand-alone model can be found in ::  <noresm_base>/components/clm/cime_config/config_compsets.xml
-* Predefined compsets for running the ocean model as a stand-alone model can be found in ::  <noresm_base>/components/blom/cime_config/config_compsets.xml
+* All predefined compsets for **coupled simulations** can be found in ``<noresm_base>/cime_config/config_compsets.xml``
+* Predefined compsets for **AMIP-type (atmsophere/land-only) simulations** can be found in  ``<noresm_base>/components/cam/cime_config/config_compsets.xml``
+* Predefined compsets for running the sea-ice model as a stand-alone model can be found in ``<noresm_base>/components/cice/cime_config/config_compsets.xml``
+* Predefined compsets for running the land model as a stand-alone model can be found in ``<noresm_base>/components/clm/cime_config/config_compsets.xml``
+* Predefined compsets for running the ocean model as a stand-alone model can be found in ``<noresm_base>/components/blom/cime_config/config_compsets.xml``
   
-The compsets starting with N are NorESM coupled configurations. Compsets starting with NF are NorESM AMIP (atmosphere/land-only) configurations. Some examples are given below.
+The compsets starting with N are NorESM coupled configurations. Compsets starting with NF are NorESM AMIP (atmosphere/land-only) configurations. Some examples are given below:
 
 **N1850 and N1850frc2**  
   Coupled configuration for NorESM for pre-industrial (1850) conditions.
