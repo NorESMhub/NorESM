@@ -63,7 +63,7 @@ The frc2 files were created to avoid the occurence of random mid-month model cr
 
   %FRC2
  
-to NORESM2. For a detailed description, see **Creating your own compset** below.
+to NORESM2. For a detailed description, see creating your own compset below.
 
 For an overview of the compsets provided for CESM2, please see: http://www.cesm.ucar.edu/models/cesm2/config/compsets.html.
 
