@@ -87,7 +87,15 @@ Then you need to launch the download::
 
 this will use the repositories, tags, branches as specified in Externals.cfg (see `Configure Externals.cfg`_ for its manipulation)
 
-**If you run into several SVN-related errors when launching the model, you may want to try to change required=True to required=False for pop2 and ww3 in Externals.cfg. POP2 and WW3 are not needed in NorESM2. Then try again.**
+**Known SVN-related errors**:
+
+If you run into several SVN-related errors when launching the model, you may want to try to change required=True to required=False for pop2 and ww3 in Externals.cfg. POP2 and WW3 are not needed in NorESM2. Then try again.
+
+When accessing svn repositories with ./manage_externals/checkout_externals for the first time on a new machine, the download of the svn repository might not work. This can be solved by doing a manual checkout without `--quiet`, e.g.: ::
+
+    svn checkout https://svn-ccsm-models.cgd.ucar.edu/ww3/release_tags/ww3_cesm2_1_rel_01/cluster/projects/nn9560k/$USER/NorESMbittest/NorESM2.0/NorESM/components/ww3
+    
+accept with "(p)" (permanently). The next time, downloading svn repositories should go smoothly.
 
 **To confirm a successful download of all components**, you can run checkout_externals with the status flag -S to show the status of the externals or --logging to get a log of reported errors (if any):
 
@@ -102,6 +110,12 @@ this will use the repositories, tags, branches as specified in Externals.cfg (se
 The checkout_externals script will read the configuration file called Externals.cfg and will download all the external component models and CIME into /path/to/<noresm-base>.
 
 Now you have a complete copy of the NorESM code in the directory <noresm-base>.  Now you can to the subdirectory cime/scripts and start creating a case! (see :ref:`experiments`)
+
+**Please note that if you checkout a new branch or tag, you will need to rerun checkout_externals in order to download the correct version of the model code**
+
+Betzy
++++++++++
+Please checkout tag NorESM2.0.3 or subsequent tags in order to run NorESM on the HPC platform Betzy. Please see :ref:`platforms` for more details.   
 
 Configure Externals.cfg
 ++++++++++++
