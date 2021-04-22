@@ -4,8 +4,7 @@
 ESMValTool
 **********
 
-The Earth System Model eValuation Tool (`ESMValTool <https://esmvaltool.readthedocs.io>`_)
-  is a community-development that aims at improving diagnosing and understanding of the causes and effects of model biases and inter-model spread. The ESMValTool can process multiple model outputs, including NorESM, but these model output need to be post-processed to conform with the CMIP data standard (i.e., `CMOR <https://cmor.llnl.gov>`_). ESMValTool support all the published model data output on the `ESGF <https://esgf-data.dkrz.de>`_ 
+**The Earth System Model eValuation Tool** (`ESMValTool <https://esmvaltool.readthedocs.io>`_) is a community-development that aims at improving diagnosing and understanding of the causes and effects of model biases and inter-model spread. The ESMValTool can process multiple model outputs, including NorESM, but these model output need to be post-processed to conform with the CMIP data standard (i.e., `CMOR <https://cmor.llnl.gov>`_). ESMValTool support all the published model data output on the `ESGF <https://esgf-data.dkrz.de>`_. 
 
 The `esmvaltool-on-nird <https://github.com/orgs/NorESMhub/teams/esmvaltool-on-nird>`_ discussion group can be a useful resource if you plan to run ESMValTool on Nird.
 
@@ -13,7 +12,7 @@ The `esmvaltool-on-nird <https://github.com/orgs/NorESMhub/teams/esmvaltool-on-n
 Run ESMValTool on NIRD service node
 ===================================
 
-The ESMValTool is currently installed under the dedicated IPCC service node (`<ipcc.nird.sigma2.no>_) for data post-processing. The following NIRD project areas are mounted under /projects of the ``IPCC`` node: NS2345K, NS9034K, NS9039K, NS9252K, NS9560K, NS9588K.
+The ESMValTool is currently installed under the dedicated IPCC service node (``ipcc.nird.sigma2.no``) for data post-processing. The following NIRD project areas are mounted under ``/projects`` of the IPCC node: ``NS2345K, NS2980K, NS9015K, NS9034K, NS9039K, NS9252K, NS9560K, NS9588K``.
 
 Activate and run ESMValTool
 ---------------------------
@@ -26,32 +25,65 @@ An example of steps to run the ESMValTool on ipcc.nird.sigma2.no
 
 2. load ESMValTool on nird: ::
 
-    conda active /conda/esmvaltool/2.0.0b4/
+    conda activate /conda/esmvaltool/2.1.0/
 
-(note, the esmvaltool may be upgraded in the future. Therefore, use ``ls /conda/esmvaltool/`` to check the currently installed vesion if 2.0.0b4 does not exist.)
+(note, the esmvaltool may be upgraded in the future. Therefore, use ``ls /conda/esmvaltool/`` to check the currently installed vesion if 2.1.0 does not exist.)
 
-3. copy the following config file and recipe to your favourite place: ::
+3. configure esmvaltool (first time use):
 
-    /projects/NS9252K/share/yanchun/esmvaltool/config_heyc.yml
-    /projects/NS9252K/share/yanchun/esmvaltool/recipe_seaice.yml
+   - esmvaltool requires a configuration file with paths to model and observational data files, and some run instructions. By default, esmvaltool will look for this file in ``$HOME/.esmvaltool/config-user.yml``.
+   - esmvaltool can auto-generate a config file, but not the correct path settings, by running ``esmvaltool config get_config_user``.
+   - alternatively, create an empty directory in ``$HOME/.esmvaltool`` to store your own config files.
+
+4. copy the following config file to ~/.esmvaltool/: ::
+
+    cp /projects/NS9252K/share/esmvaltool/config/config-ipcc.yml ~/.esmvaltool/
     
-You should copy and modify the config_heyc.yml file to store some intermediate data files and final plots to your own directory.
+   - You may copy and modify the config-ipcc.yml file to store some intermediate data files and final plots to your own directory.
+   - Rename ``config-ipcc.yml`` to ``config-user.yml`` if you don't want to specify the config file for each run.
+ 
+5. copy a recipe to ~/your-recipes/: ::
 
-4. run ``esmvaltool``: ::
+    mkdir ~/your-recipes
+    cp /projects/NS9252K/share/esmvaltool/tested_recipes/recipe_validation_CMIP6.yml ~/your-recipes/
+    
+6. run ``esmvaltool``: ::
 
-    esmvaltool -c config_xxx.yml ./recipe_seaice.yml
+    esmvaltool run --config_file=~/.esmvaltool/config-ipcc.yml ./your-recipes/recipe_validation_CMIP6.yml
 
-5. A sample result under:
+7. Check for results. The output directory setting in ``config-ipcc.yml`` is directed to a web directory under the NS2345K project::
 
-    `<http://ns2345k.web.sigma2.no/diagnostics/esmvaltool_output/yanchun>`_
+    /projects/NS2345K/www/diagnostics/esmvaltool/$USER/tmp
+
+Sample results are under: ::
+
+    http://ns2345k.web.sigma2.no/diagnostics/esmvaltool/
+
+
+Find sample recipes, model data and observational data
+------------------------------------------------------
+
+Shared resources for esmvaltool on the IPCC node is available from::
+
+    /projects/NS9252K/share/esmvaltool/
+
+The ``config/config-ipcc.yml`` file should provide paths to relevant data on Nird. These settings are probably adequate for most users, but can be altered to include additional model output or observational datasets from other sources. Model data are stored in a directory structure following the DKRZ convention. A list of tested recipes is available under the ``tested_recipes`` folder.
+
+auxiliary_data/
+  Auxiliary data needed to run some esmvaltool recipes, e.g. shapefiles for map plotting or data extraction.
+
+config/
+  User and developer config files.
+
+tested_recipes/
+  Some recipes that have been tested with esmvaltool for the IPCC node installation with NorESM1/2 supported.
 
 Download data automatically with Synda
 --------------------------------------
 
-`Synda <https://esmvaltool.readthedocs.io/en/latest/quickstart/running.html?highlight=synda#running>`_
-  is a tool to download and manage model data form the `ESGF <https://esgf-data.dkrz.de>`_, it can be called by the ``esmvaltool`` as a command line option ``--synda`` so that it can automatically download necessary model data as specified in the receipe of ESMValTool. For example, ::
+`Synda <https://esmvaltool.readthedocs.io/en/latest/quickstart/running.html?highlight=synda#running>`_ is a tool to download and manage model data form the `ESGF <https://esgf-data.dkrz.de>`_, it can be called by the ``esmvaltool`` as a command line option ``--synda_download=TRUE`` so that it can automatically download necessary model data as specified in the receipe of ESMValTool. For example, ::
 
-   esmvaltool -c config_heyc.yml ./recipe_seaice.yml --synda
+   esmvaltool run --config_file=~/.esmvaltool/config-ipcc.yml ./recipe_seaice.yml --synda_download=TRUE
 
 Note, it is OPTIONAL to use synda to download data automatically during the runtime of ESMValTool. One can download the data by some other tools or scripts before running the ESMValTool.
 
@@ -59,11 +91,11 @@ If you do want to use ``synda``, there are two major steps you need to do:
 
 **Activate the tool**
 
-It is install with ``conda``, so you can add ``synda`` exectable to your search path, e.g., ::
+It is installed with ``conda``, so you can add ``synda`` exectable to your search path, e.g., ::
 
   export PATH:$PATH:/projects/NS9252K/conda/synda/bin/synda
 
-Then it should be availabe in your command windown by the ``synda`` command.
+Then the ``synda`` command should be available in your searching path.
 
 **Set up your credentials**
 
@@ -73,7 +105,7 @@ Then it should be availabe in your command windown by the ``synda`` command.
 
 3. configure ``synda`` parameters in ``~/.synda/conf/sdt.conf``, use my setting as template.
 
-4. maybe you need get `globus token`. Run the following command: ::
+4. maybe you need to get `globus token`. Run the following command: ::
 
     synda token -p globus renew
 
@@ -112,10 +144,33 @@ Applications in NIRD Toolkit are available from::
 
 An owner/admin can launch a new application by installing it, and request resources to be made available to the application via the Kybernetes management system. A member can launch an existing application that has previously been set up by an owner/admin. The application setup allows access to storage areas under NSxxxxK storage volumes (read-only by default) and a user storage area under a specific NSxxxxK/subfolder with write access, but only applications pre-defined in the docker image provided to the Kybernetes system can be used.
 
-Install ESMValTool docker image
--------------------------------
+Run a pre-installed jupyterhub application (e.g. EOSC jupyterhub on nird)
+------------------------------------------
 
 ESMValTool is not included in the default docker images provided by Sigma2, but has been installed in modified docker images. These are created by building ESMValTool on top of an official Sigma2 docker image, and package in a new docker container. Such modified docker images are available for `jupyter` and `jupyterhub` applications.
+
+A jupyterhub application with pre-installed esmvaltool is available at
+
+    https://eosc-nordic.uiogeo-apps.sigma2.no/
+
+1. Launch a terminal, esmvaltool is designed to run from the command line. 
+
+2. Activate the esmvaltool environment::
+
+    conda activate esmvaltool
+
+3. Check that esmvaltool is working, and produce output::
+
+    esmvaltool version
+
+
+To run the pre-installed jupyterhub aplication, a user first needs to become a member of the user group. To get access to the hub please contact annefou[at]geo.uio.no <mailto:annefou@geo.uio.no> for the invitation URL link, or the noresm-core group.
+
+To join the group, and get access to the jupyterhub, follow instuctions in email.
+
+
+Install an ESMValTool docker image from source
+----------------------------------------------
 
 1. **jupyterhub:** nordicesmhub/jupyterhub-nird-toolkit
   - *source* : https://github.com/NorESMhub/jupyterhub-nird-toolkit
@@ -151,3 +206,5 @@ If you find an ``esmvaltool`` environment, this can be activated by ::
   source activate esmvaltool
 
 At the time of writing (10 June 2020), the preferred activation method ``conda activate esmvaltool`` is not recognized inside a NIRD Toolkit application.
+
+(Update: 8 March 2021, ``conda activate esmvaltool`` work on the `<https://eosc-nordic.uiogeo-apps.sigma2.no>`_.)
