@@ -4,6 +4,9 @@ We welcome contributions to the NorESM model, including bug reports and fixes, c
 ## What should I know before I get started?
 The NorESM model is made up of several repositories. When you initially consider contributing to NorESM,  you might be unsure about which of those repositories implements the functionality you want to change or report a bug for.  The NorESM team will help you with that through an issue discussion.
 
+A short presentation introducing the NorESM github repository, the issue and pull request systems, and the forking workflow:
+https://github.com/NorESMhub/INES_workshop_2020/blob/gh-pages/files/Torsvik_gitcollaborate.pdf 
+
 # How to contribute
 We recommend that you open an issue (https://github.com/NorESMhub/NorESM/issues) to discuss the changes or additions you want to include. Through the issue discussion, you can work with the NorESM developers to implement the code changes in the correct repository and in the correct branch. 
 
