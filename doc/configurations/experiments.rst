@@ -3,7 +3,7 @@
 Experiments
 ===========
 
-NorESM is part of the CESM family of earth system models and shares a lot of the configuration options with CESM. Many of the simulation configuration settings are defined by the so called compsets.
+NorESM is part of the CESM family of earth system models and shares a lot of the configuration options with CESM. Many of the simulation configuration settings are defined by the so-called compsets.
 
 For a quick-start guide on how to create, configure, build, and submit a NorESM experiment, see the :ref:`newbie-guide`. More details are provided below, for the more advanced users. 
 
@@ -19,26 +19,30 @@ script, a case folder ``<path_to_case_dir>/<casename>`` is created that contains
 
   ./case.setup
 
-script, several other files and directories needed to build the case are created, including the user user namelists files.
+script, several other files and directories needed to build the case are created, including the user namelists files.
 
 The create_newcase script includes a ``--compset`` option. A compset, or component set, is a collection of predefined setting that defines your experiment set-up, including which model components that should be activated. Some of the available compsets are described below.
 
 The case folder contains predefined namelist (with namelist settings partly depending on compset option). The default namelist options for the case can be overwritten by changing/adding the new namelist options in the ``user_nl_<component>`` file.
 
-Several configuration options are available in the usermods directories in ``<noresm_base>/cime_config/usermods_dirs/``. These folders contain information about output variables and frequencies from clm (land) and cam (atmosphere). In addition one SourceMod is included in ``SourceMods/src.cam/preprocessorDefinitions.h`` to define if AEROFFL and AEROCOM are included for extra aerosol diagnostics (for more details about the aerosol diagnostics see ``??``)
+Several configuration options are available in the user modification (usermod) directories under ``<noresm_base>/cime_config/usermods_dirs/``. The sets of usermods contain pre-defined user namelists for the atmosphere (cam) and land (clm) components that have been used for specific experiments, such as the CMIP6 DECK experiments. Within the user namelists, the lists of output variables and output frequencies has been modified and/or extended with additional output variables. In addition, the usermodes include one SourceMod (``SourceMods/src.cam/preprocessorDefinitions.h``) which  defines whether AEROFFL and AEROCOM are activated to produce extra aerosol diagnostics (for more details about the aerosol diagnostics see ``??``)
 
-Remember that the amount of diagnostics and the output frequency have a huge impact on both the run time and storage. 
-
-``--user-mods-dir cmip6_noresm_*`` ::
+The usermods under ``<noresm_base>/cime_config/usermods_dirs/`` include::
 
   cmip6_noresm_DECK (AEROFFL)    
   cmip6_noresm_hifreq (high frequency output, AEROFFL)    
   cmip6_noresm_hifreq_xaer (high frecuency output, AEROFFL and AEROCOM)   
+  cmip6_noresm_keyCLIM (used for KeyCLIM experiments, AEROFFL)
   cmip6_noresm_xaer (AEROFFLand AEROCOM)    
+  
+To activate the cmip6_noresm_DECK usermod, run the create_newcase script with the option ``--user-mods-dir cmip6_noresm_DECK``. 
 
-For more details about the user-mod-dir options, check this folder ::
+Remember that the amount of diagnostics and the output frequency have a huge impact on both the run time and storage. 
 
-<noresm_base>/cime_config/usermods_dirs
+For more details, check this folder ::
+
+  <noresm_base>/cime_config/usermods_dirs
+
 
 
 The xmlchange and xmlquery scripts
