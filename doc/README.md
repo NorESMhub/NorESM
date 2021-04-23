@@ -33,24 +33,27 @@ If you do not like to update the documentation online and prefer to use your fav
 
 Example on how to see your changes locally with sphinx:
 
-Prepare your PC/MAC
-
-conda install sphinx
-
-conda install -c conda-forge sphinxcontrib-bibtex
-
-conda install -c conda-forge sphinx_rtd_theme
-
-Copy NorESMdoc repository to local
-
-git clone git@github.com:NorESMhub/NorESM-docs.git
-
-go to NorESM-docs dir
-
-sphinx-build . _build
-
-open _build/index.html in browser
+> Prepare your PC/MAC
+> 
+> ```shell
+> $ conda install sphinx
+> $ conda install -c conda-forge sphinxcontrib-bibtex
+> $ conda install -c conda-forge sphinx_rtd_theme
+> ```
+> Copy NorESMdoc repository to local
+> 
+> ```shell
+> $ git clone git@github.com:NorESMhub/NorESM-docs.git
+> ```
+>
+> go to NorESM-docs dir
+>
+> ```shell
+> $ sphinx-build . _build
+> ```
+>
+> open _build/index.html in browser
 
 More info
-See https://coderefinery.github.io/documentation/04-sphinx/
+See https://coderefinery.github.io/documentation/content/sphinx.md
 
