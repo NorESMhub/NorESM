@@ -321,8 +321,11 @@ NorESM2 can be run with the CFMIP Observation Simulator Package (COSP) to calcul
 
 Code modifications
 ^^^^^^^^^^^^^^^^^^^
-Sometimes you will want to make changes that go beyond what is possible from just changing the user namelists, and you will need to modify the source code itself (i.e. the fortran files). It is then considered good practice to put the modified source code in the SourceMods folder in your case directory. **Do not change the source code in the <noresm-base> folder!**
+Sometimes you will want to make changes that go beyond what is possible from just changing the user namelists, and you will need to modify the source code itself (i.e. the fortran files). One way of doing this is to use the SourceMods folder in the case directory. The SourceMods folder contains sub-directories for all model component. Make a copy of the fortran file(s) you want to modify in the relevant sub-folder and modify the file(s) as needed before building the model. When compiling, the model will prioritize the modified file located under the SourceMods folder over the default version of the file located in the model source code under <noresm-base>.
 
-The SourceMods folder contains sub-directories for all model component. Make a copy of the fortran file(s) you want to modify in the relevant sub-folder and modify it as needed before building the model. When compiling, the model will prioritize the modified file located under the SourceMods folder over the default version of the file located in the model source code under <noresm-base>. Make sure that you use the source code from the same commit as you used to create the case (for commit details see README.case in the case folder). 
+Another option is to make a new branch for your code modifications following the procedure outlined in :ref:`gitbestpractice`. This has several advantages to using SourceMods, including that your changes are more easily visible for others (in your NorESM fork on GitHub), making them easy to share, and that the changes can more easily be considered for inclusion in the main NorESM repository on GitHub. 
+
+In either case, make sure that you use the source code from the same commit as you used to create the case (for commit details see README.case in the case folder).
+
 
 
