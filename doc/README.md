@@ -55,5 +55,5 @@ Example on how to see your changes locally with sphinx:
 > open _build/index.html in browser
 
 More info
-See https://coderefinery.github.io/documentation/content/sphinx.md
+See https://coderefinery.github.io/documentation/sphinx/
 
