@@ -6,6 +6,9 @@ Downloading the model code
 The NorESM2 model code is available through a public GitHub repository: 
 https://github.com/NorESMhub/NorESM
 
+- Most users will probably want to clone the NorESM repository to a local machine using a git command-line client (see below). This gives easy access to both stable releases and development branches of NorESM.
+- Users who do not wish to a git command-line client can download archive files (zip or tar.gz) of stable releases from https://github.com/NorESMhub/NorESM/tags 
+
 
 Make a clone of the NorESM repository
 +++++++++++++++++++++++++++++++++++++
