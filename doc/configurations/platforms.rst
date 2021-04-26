@@ -8,7 +8,7 @@ HPC platforms
 
 Below is a list of platforms where NorESM2 has been installed, including platform specific intructions. 
 
-   <noresm-base> : the name of the folder where the model code has been downloaded (cloned from git)
+**<noresm-base>**: the name of the folder where the model code has been downloaded (cloned from git)
 
 The configurations files with the platform specific settings are found in ::
   
