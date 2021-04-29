@@ -1,8 +1,22 @@
 .. _user_emails:
 
-Template for answering emails from users
+Answering emails from users
 ===================================
+Procedure for answering questions from external users through the noresm-ncc contact e-mail
+^^^^^
+1. Any email to noresm-ncc (UNLESS, see below) will be made into a github issue (in the most relevant repository of NorESMHUB by a noresm-ncc responible, labelled in github “noresm-ncc-question”), and the issue will be assigned to noresm-ncc responsible per repository.
+2. UNLESS the answer is straightforward with an email, this is sent with copy to noresm-ncc
+3. Acknowledge by email the receipt of the inquiry - explaining further the standard procedure to “user”, including link to github issue, with copy to noresm-ncc
+4. Standard procedure: Answering will be done on github
+5. Standard procedure: Please check the issue status, and comment further by signing in, sign in if you want to follow the issue
+6. Someone from NorESM (assignees) put replies into the github issue, discussion is kept there
+7. If discussion is continuing by email, the assignee paste discussion into issue
+8. Standard procedure: final reply(ies) will be through closing the issue and sending an email again by the “responsibles” that this issue is closed, with the link to the issue. Remind the user: You may reopen it.
+9. What to do with continued discussion? Encourage users to follow the github issue
 
+
+Template for answering emails from users
+^^^^^
 Dear xxx,
 
 Thank you for your email regarding the NorESM2 data/model.
