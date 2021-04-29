@@ -16,8 +16,11 @@ directory is set in <noresm-base>/cime/config/cesm/machines/config_machines.xml
   
 ::
 
-The main download location for input data is https://noresm.org/inputdata/ from where the downloading request 
-might be redirected to another location.
+The main download location for input data is:
+  
+  https://noresm.org/inputdata/
+
+from where the downloading request might be redirected to another location.
 
 
 NorESM specific inputdata
