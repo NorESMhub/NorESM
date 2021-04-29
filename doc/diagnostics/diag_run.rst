@@ -68,7 +68,7 @@ If you want to change the code for your own purpose, you can installed it on NIR
   - If you are installing the tool on NIRD, you just need to link all the data to your clone by running the script ``linkdata.sh``, given you have access to the /project/NS2345K project
   - If you are not memember of NS2345K or you are installing it on platforms other than NIRD, you should download all the data to your clone by executing ``dloaddata.sh``. If you are not running it on NIRD, you should have CDO, NCO and NCL installed.
 4. Make changes to the code/scripts for your purpose. And call ``diag_run`` of your own clone.
-5. If you would like to contribute your function enhancements or bug fixes to the original diagnostic package, you should commit the changes to your fork repository, then create an Issue at the `Github repository <https://github.com/NordicESMhub/noresmdiagnostics>`_, and finally make a ``pull request``  tto the original Github repository to incorporate your changes.
+5. If you would like to contribute your function enhancements or bug fixes to the original diagnostic package, you should commit the changes to your fork repository, then create an Issue at the `Github repository <https://github.com/NordicESMhub/noresmdiagnostics>`_, and finally make a ``pull request``  to the original Github repository to incorporate your changes.
 
 Run the tool
 ============
@@ -110,12 +110,12 @@ Each package can be run/configured from the command line using the wrapper scrip
   -i2, --input-dir2=DIR                         Specify the directory where the control case history files are located (OPTIONAL).
                                                 Default is --input-dir=/projects/NS2345K/noresm/cases
   -o, --output-dir=DIR                          Specify the directory where the package(s) the climatology and time-series files should be stored (OPTIONAL).
-                                                Default is --output-dir=/projects/NS2345K/diagnostics/noresm/out/yanchun
+                                                Default is --output-dir=/projects/NS2345K/diagnostics/noresm/out/$USER
   -p, --passive-mode                            Run the script in passive mode: the diagnostic script will be configured but not executed (OPTIONAL).
   -t, --type=TYPE                               Specify climatology or time series diagnostics (OPTIONAL): valid options are --type=climo and --type=time_series.
                                                 Default is to run both. Note that the time series are computed over the entire simulation.
   -w, --web-dir=DIR                             Specify the directory where the html should be published (OPTIONAL).
-                                                Default is --web-dir=/projects/NS2345K/www/diagnostics/noresm/yanchun
+                                                Default is --web-dir=/projects/NS2345K/www/diagnostics/noresm/$USER
   --no-atm                                      Run CLM diagnostics without CAM data. Must be used for offline CLM simulations.
   
   Examples:
@@ -260,14 +260,14 @@ the following will appear on the screen::
   /projects/NS2345K/diagnostics/noresm/bin/diag_run
   Version: 2.1
   -------------------------------------------------
-  -CHANGING DIAGNOSTICS DIRECTORY to /projects/NS2345K/diagnostics/noresm/out/yanchun/CLM_DIAG in lnd_template.csh
+  -CHANGING DIAGNOSTICS DIRECTORY to /projects/NS2345K/diagnostics/noresm/out/$USER/CLM_DIAG in lnd_template.csh
   -CHANGING ROOT DIRECTORY FOR CODE AND DATA to /projects/NS2345K/diagnostics/noresm/packages/CLM_DIAG in lnd_template.csh
   -CHANGING INPUT DIR 1 to /projects/NS2345K/noresm/cases in lnd_template.csh
-  -CHANGING publish_html_root to /projects/NS2345K/www/diagnostics/noresm/yanchun in lnd_template.csh
+  -CHANGING publish_html_root to /projects/NS2345K/www/diagnostics/noresm/$USER in lnd_template.csh
   -SETTING UP TIME-SERIES DIAGNOSTICS FOR ENTIRE EXPERIMENT
-  CLM DIAGNOSTICS SUCCESSFULLY CONFIGURED in /projects/NS2345K/diagnostics/noresm/out/yanchun/CLM_DIAG
+  CLM DIAGNOSTICS SUCCESSFULLY CONFIGURED in /projects/NS2345K/diagnostics/noresm/out/$USER/CLM_DIAG
   -------------------------------------------------
-  lnd_template.csh IS NOT RUNNING: NOT ALL REQUIRED VARIABLES HAVE BEEN CONFIGURED (see /projects/NS2345K/diagnostics/noresm/out/yanchun/CLM_DIAG/config.log).
+  lnd_template.csh IS NOT RUNNING: NOT ALL REQUIRED VARIABLES HAVE BEEN CONFIGURED (see /projects/NS2345K/diagnostics/noresm/out/$USER/CLM_DIAG/config.log).
   -------------------------------------------------
   -------------------------------------------------
   TOTAL diag_run RUNTIME: 0m1s

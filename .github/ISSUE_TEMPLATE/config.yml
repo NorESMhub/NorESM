@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: NorESM documentation FAQ
+    url: https://noresm-docs.readthedocs.io/en/latest/faq/faq.html
+    about: FAQ page for NorESM
+  - name: NorESM home page
+    url: https://www.noresm.org
+    about: Latest news about NorESM
