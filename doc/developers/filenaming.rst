@@ -13,6 +13,8 @@ the file name on the format YYYYMMDD, where:
 
 ::
 
-   $FILENAME_nYYYYMMDD
+   $FILENAME_nYYYYMMDD.$EXT
    
 ::
+
+$EXT is e.g. nc for a NetCDF file
