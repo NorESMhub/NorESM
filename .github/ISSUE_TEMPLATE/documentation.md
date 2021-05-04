@@ -7,11 +7,12 @@ assignees: TomasTorsvik
 
 ---
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
-
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+**Describe a problem and/or suggest an improvement**
+ - Something wrong in the documentation?
+ - Something should be added to the documentation?
+ - Something should be removed from the documentation?
+ - Something should be re-structured in the documentation?
+ - Suggest a Q&A for the FAQ?
 
 **Additional context**
 Add any other context or screenshots about the feature request here.
