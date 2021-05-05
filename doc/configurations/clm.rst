@@ -10,7 +10,7 @@ The land model used in NorESM2 is the Community Land Model version 5 (CLM5):
 http://www.cesm.ucar.edu/models/clm/
 
 
-Specific questions about CLM can be addressed Lei Cai, email: leca@norceresearch.no
+Specific questions about CLM can be addressed to Hui Tang (email: hui.tang@geo.uio.no) or Kjetil Aas (email: k.s.aas@geo.uio.no).
 
 CLM5 model configurations available in NorESM2
 ^^^^^^
@@ -181,7 +181,7 @@ https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/NorESM-CLM-m
 
 Code modification 
 ^^^^^^
-To make more subtantial modification to the BLOM/iHAMOCC code than what is possible by the use of user_nl_clm, there are two methods:
+To make more subtantial modification to the CLM5 code than what is possible by the use of user_nl_clm, there are two methods:
 
 1. Make a branch from the NorESM2 version (branch or release) you want to modify, checkout this branch in order to make code changes directly in the source code folder.
 
@@ -218,8 +218,8 @@ will use CESM2 treatment of the surface water in CLM (see previous description).
 CLM5 specifics
 ^^^^^
 
-- There is no information exchange within the CLM model between sub-grid tiles (landunits, columns, plant functional types (PFTs)). 
-- Sub-grid tiles only exchange information with the atmosphere. In the current CLM, there is no advection of heat and water at depth. 
+- CLM generally treats each sub-grid element (landunits and columns) independently, without lateral exchange of energy or heat.
+- Sub-grid elements only exchange information with the atmosphere, in addition to water being removed from the grid cell as surface and subsurface runoff.
 - The horizontal resolution of the CLM keeps the same as for the atmosphere (f19, f09). 
 - Vertically, there are four soil structures to set in the CLM namelist file. CLM5 model configurations available in NorESM2:
 
