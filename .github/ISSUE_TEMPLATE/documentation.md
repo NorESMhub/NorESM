@@ -8,7 +8,7 @@ assignees: TomasTorsvik
 ---
 
 **Describe a problem and/or suggest an improvement**
- - Something wrong in the documentation?
+ - Something incorrect or unclear in the documentation?
  - Something should be added to the documentation?
  - Something should be removed from the documentation?
  - Something should be re-structured in the documentation?
