@@ -69,14 +69,16 @@ For an overview of the compsets provided for CESM2, please see: http://www.cesm.
 
 
 Creating your own compset
-'''''''''''''''''
-The essential file to edit for a new coupled NorESM compset is :: 
+'''''''''''''''''''''''''
+The essential file to edit for a new coupled NorESM compset is
+::
 
-  <noresm_base>/cime_config/config_compsets.xml
+    <noresm_base>/cime_config/config_compsets.xml
   
-and for a new AMIP NorESM compset is :: 
+and for a new AMIP NorESM compset is
+::
 
-  <noresm_base>/components/cam/cime_config/config_compsets.xml
+    <noresm_base>/components/cam/cime_config/config_compsets.xml
   
   
 **Coupled simulation** 
@@ -91,7 +93,7 @@ This examples shows how to simply add the "N1850frc2" compset to ``config_compse
 where 
 
 * ``<alias>COMPSETNAME</alias>`` sets the compsets name used when building a new case, make sure to use a new and unique name
-* '_' is used as a separator between model components: ``_<MODEL>
+* '_' is used as a separator between model components: ``_<MODEL>``
 * '%' is used to to set components-specific configurations 
 
 So for the N1850frc2 compset, the different parts of the lname have the following meaning:
@@ -112,7 +114,9 @@ So for the N1850frc2 compset, the different parts of the lname have the followin
 - BGC%BDRDDMS
    - ocean biogeochemistry model iHAMOCC run with interactive DMS
 
-The details of the compset i.e. which models components and component-specific configurations to use are set in ``<lname>1850_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>``
+The details of the compset i.e. which models components and component-specific configurations to use are set in
+::
+    <lname>1850_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
 
 It is possible to use the long name (lname) to select a compset then creating a new case.  
 
@@ -126,7 +130,7 @@ For details about AMIP simulation compsets, please see :ref:`amips`
 Resolution and grids
 ''''''''''''
 
-The model resolution is set when the case is created (with the --res option). Below some common resolutions are listed. 
+The model resolution is set when the case is created (with the ``--res`` option). Below some common resolutions are listed. 
 
 **Atmospheric grids**
 ::
@@ -160,27 +164,20 @@ A complete list of model grids can be found here::
 Supported grids
 '''''''''''''
 
-Most compsets contain an entries listing which which grid(s) are scientifically supported for that compset ::
+Most compsets contain an entries listing which which grid(s) are scientifically supported for that compset
+::
 
-<science_support grid="xxx"/> fields
+    <science_support grid="xxx"/> fields
 
-When a compset has a scientifically-supported grid, you can create a new case (with the create_newcase script) without having to use the option ``--run-unsupported``. If the compset does not list any scientifically-supported grids, or if you want to use a grid configuration is not included in the definition of the compset, the ::
+When a compset has a scientifically-supported grid, you can create a new case (with the **create_newcase** script) without having to use the option ``--run-unsupported``. If the compset does not list any scientifically-supported grids, or if you want to use a grid configuration is not included in the definition of the compset, the ::
 
   --run-unsupported
 
-option is required when a case is created or the create_newcase script will fail.
-
-
-
-
-
-
-
-
+option is required when a case is created or the **create_newcase** script will fail.
 
 
 User modifications (usermods) 
-''''''''''''''''''
+'''''''''''''''''''''''''''''
 Several configuration options are available in the user modification (usermod) directories under ``<noresm_base>/cime_config/usermods_dirs/``. The sets of usermods contain pre-defined user namelists for the atmosphere (cam) and land (clm) components that have been used for specific experiments, such as the CMIP6 DECK experiments. Within the user namelists, the lists of output variables and output frequencies has been modified and/or extended with additional output variables. In addition, the usermodes include one SourceMod (``SourceMods/src.cam/preprocessorDefinitions.h``) which  defines whether AEROFFL and AEROCOM are activated to produce extra aerosol diagnostics (for more details about the aerosol diagnostics see :ref:`aerosol_output`)
 
 The usermods under ``<noresm_base>/cime_config/usermods_dirs/`` include::
@@ -255,12 +252,12 @@ If you want to ensure your case is ready for submission, you can run ::
   
 which will:
 
-- Ensure that all of the env xml files are in sync with the locked files
+- Ensure that all of the ``env_*.xml`` files are in sync with the locked files
 - Create namelists (thus verifying that there will be no problems with namelist generation)
 - Ensure that the build is complete
 
 Running this is completely optional: these checks will be done
-automatically when running case.submit. However, you can run this if you
+automatically when running **case.submit**. However, you can run this if you
 want to perform these checks without actually submitting the case.
 
 As a last step, remember to copy restart files to run directory if you are running a branch run or a hybrid run.
