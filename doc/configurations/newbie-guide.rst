@@ -50,9 +50,9 @@ More advanced examples
 The following example creates the case *test1910_1* on the machine Fram:
 ::
 
-    ./create_newcase --case ../../cases/test1910_1 --compset N1850 --res f19_tn14 --machine fram --project snic2019-1-2 --user-mods-dir cmip6_noresm_DECK --run-unsuported 
+    ./create_newcase --case ../../cases/test1910_1 --compset N1850 --res f19_tn14 --machine fram --project snic2019-1-2 --user-mods-dir cmip6_noresm_DECK 
 
-Here we use the *N1850* compset, which configures the case as a 1850 pre-industrial control simulation.  The argument ``--project`` should correspond to the id of the project used in the batch system accounting on Fram. The argument ``--user-mods-dir`` provides the path to a folder containing files that will further configure your case (like user namelists, shell scripts with xmlchange commands or SourceMods). The default location for this folder is under *<noresm_base>/cime_config/usermods_dirs/*. Note that we use the argument ``--run-unsupported``, which is required if the grid resolution is not supported in the compset (see :ref:`experiments`).
+Here we use the *N1850* compset, which configures the case as a 1850 pre-industrial control simulation.  The argument ``--project`` should correspond to the id of the project used in the batch system accounting on Fram. The argument ``--user-mods-dir`` provides the path to a folder containing files that will further configure your case (like user namelists, shell scripts with xmlchange commands or SourceMods). The default location for this folder is under *<noresm_base>/cime_config/usermods_dirs/*.
 
 The following example creates a case (also called *test1910_1*), but on the machine Tetralith:
 ::
