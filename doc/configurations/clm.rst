@@ -14,6 +14,7 @@ Specific questions about CLM can be addressed to Hui Tang (email: hui.tang@geo.u
 
 CLM5 model configurations available in NorESM2
 ^^^^^^
+The version of CLM5 used by NorESM2 can be found from Externals.cfg (see https://noresm-docs.readthedocs.io/en/noresm2/access/download_code.html#configure-externals-cfg) 
 CLM5 can be run with a prognostic crop model with prognostic vegetation state and active biogeochemistry. 
 The global crop model is on in BGC default configuration with 8 temperate and tropical crop types and has the capability to dynamically simulate crop management and crop management change through time. 
 The BGC-CROP option is used in all NorESM2 CMIP6 experiments and is activated in the compset by::
@@ -54,13 +55,10 @@ Required surface data for each land grid cell include:
 
 From CLM5 user guide: https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/tech_note/Ecosystem/CLM50_Tech_Note_Ecosystem.html#surface-data:
 
-**Steps to create a complete set of surface data files for CLM**
-
-A technical description on how to create new surface data sets is found here: 
-https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/clm_surfdata.pdf
+Surface data for default resolution (e.g., f19_tn14 for NorESM2-LM and f09_tn14 for NorESM2-MM) are available on Fram @ Sigma2: /work/shared/noresm/inputdata/lnd/clm2/surfdata_map/ 
 
 
-The inital state of CLM5
+The initial state of CLM5
 ^^^^^^
 
 The land model needs to read in the inital state from a restart file. This can be customized in user_nl_clm in the case folder ::
