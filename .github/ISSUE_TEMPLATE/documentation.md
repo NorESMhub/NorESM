@@ -3,7 +3,7 @@ name: Documentation
 about: Suggest changes in the documentation.
 title: ''
 labels: documentation
-assignees: TomasTorsvik
+assignees: adagj
 
 ---
 
