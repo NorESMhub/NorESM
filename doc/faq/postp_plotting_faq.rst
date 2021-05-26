@@ -3,6 +3,11 @@
 Post-processing and plotting FAQ
 ================
 
+Large ocean cell thickness in NorESM2
+-----
+The layer thikness **dz** variable may not be very meaningful for NorESM. As the ocean model of NorESM, BLOM is an isopycnic-coordinated model, the model layer thickness is changing from each integration step. Therefore, it is possible the layer thickness (3D layer depth 'dz' in the original model output) will exceed 3km/4km under certain circumstances. For example,  this occurs sometimes at polar waters, where the ocean column is not stratified. And also occurs at some coast sea regions (where the water may not be well-represented by 'isopycnic' movement). So in short, **dz** reflects how the model represents the water masses (faithfully or not). 
+
+
 Weights and area information for the ocean component BLOM 
 --------
 The area and mask information for BLOM output can be found in the grid file usually stored together with the input data used by BLOM.
@@ -18,7 +23,6 @@ Weights for ocean calculations:
   pweight = parea*pmask
   
 ::
-
 
 
 The vertical coordinalte in BLOM
