@@ -5,7 +5,7 @@ Post-processing and plotting FAQ
 
 Very large ocean cell thickness in NorESM2
 -----
-The ocean layer thikness **dz** variable may not be very meaningful for NorESM. The ocean model component BLOM is an isopycnic-coordinated model and hence the model layer thickness is changing from each integration step. Therefore, it is possible that the layer thickness will exceed 3km to 4km under certain circumstances. For example, this occurs sometimes in polar waters under deep convection where the ocean column is not stratified. And also at some coastal regions (where the water may not be well-represented by 'isopycnic' movement). So in short, **dz** reflects how the model represents the water masses (faithfully or not). 
+The ocean layer thickness **dz** variable may not be very meaningful for NorESM. The ocean model component BLOM is an isopycnic-coordinated model and hence the model layer thickness is changing from each integration step. Therefore, it is possible that the layer thickness will exceed 3km to 4km under certain circumstances. For example, this occurs sometimes in polar waters under deep convection where the ocean column is not stratified. And also at some coastal regions (where the water may not be well-represented by 'isopycnic' movement). So in short, **dz** reflects how the model represents the water masses (faithfully or not). 
 
 Weights and area information for the ocean component BLOM 
 --------
@@ -24,13 +24,13 @@ Weights for ocean calculations:
 ::
 
 
-The vertical coordinalte in BLOM
+The vertical coordinate in BLOM
 ---------------------------
 **Q:**
 The vertical coordinate of NorESM2 is provided as the isopycnal coordinate (kg/m^3). I want to change this isopycnal coordinate to z coordinate (m).
 
 **A:**
-Vertically pre-interpolated output to z-level (including temperature, salinity and the overtuning mass streamfunctions) should be available for all NorESM2 experiments. For raw model output these variables often end with *lvl* . E.g.
+Vertically pre-interpolated output to z-level (including temperature, salinity and the overturning mass stream-functions) should be available for all NorESM2 experiments. For raw model output these variables often end with *lvl* . E.g.
 
 - Temperature: templvl(time, depth, y, x)
 - Salinity: salnlvl(time, depth, y, x)
@@ -49,12 +49,12 @@ For CMORIZED data the pre-interpolated output to z-level uses a different grid i
 Different sea-ice and ocean grid
 ------------------------
 
-**Q:** The sea ice output variables in NorESM2 are on a 360x384 grid, while the ocean output varibales are on a 360x385 grid. Which variable shall I use if I want to e.g. calculate an the area sum of the sea ice  (e.g., sea ice volume in the Northern Hemisphere)?
+**Q:** The sea ice output variables in NorESM2 are on a 360x384 grid, while the ocean output variables are on a 360x385 grid. Which variable shall I use if I want to e.g. calculate the area sum of the sea ice  (e.g., sea ice volume in the Northern Hemisphere)?
 
 **A:**
 The ocean/sea-ice grid of NorESM2 is a tripolar grid with 360 and 384 unique grid cells in i- and j-direction, respectively. Due to the way variables are staggered in the ocean model, an additional j-row is required explaining the 385 grid cells in the j-direction for the ocean grid. The row with j=385 is a duplicate of the row with j=384, but with reverse i-index.
 
-The ocean and sea-ice components of NorESM defines the grid cell area differently. In the ocean component, the grid cell area is found by computing the area of a spherical polygon with grid cell corners as vertices. The sea-ice component computes area as dx*dy where dx and dy are grid cell sizes in i- and j-direction, respectively. In order to achieve good conservation in flux exchanges, we ensure that the ocean and sea-ice components have identical grid cell areas. To obtain this with the different approaches of computing grid cell area, we nudge the sea-ice grid locations slightly.
+The ocean and sea-ice components of NorESM define the grid cell area differently. In the ocean component, the grid cell area is found by computing the area of a spherical polygon with grid cell corners as vertices. The sea-ice component computes the area as dx*dy where dx and dy are grid cell sizes in i- and j-direction, respectively. In order to achieve good conservation in flux exchanges, we ensure that the ocean and sea-ice components have identical grid cell areas. To obtain this with the different approaches of computing grid cell area, we nudge the sea-ice grid locations slightly.
 
 In conclusion, it is consistent to use the area variable defined on the ocean grid in relation to sea-ice variables, but you have to ignore the final j-row of e.g. area. So to conclude, just drop the last row with j=385 of area when dealing with the sea ice variables.
 
