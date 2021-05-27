@@ -9,14 +9,14 @@ The ocean layer thickness **dz** variable may not be very meaningful for NorESM.
 
 Weights and area information for the ocean component BLOM 
 --------
-The area and mask information for BLOM output can be found in the grid file usually stored together with the input data used by BLOM.
+The area and mask information for BLOM output can be found in the grid file usually stored together with the input data used by BLOM. Please see http://ns9560k.web.sigma2.no/inputdata/ocn/blom/grid/ for the grid files used. 
 
 Weights for ocean calculations:
 
 ::
 
-  gridpath = 'ocngrid/tnx1v4/' # path to grid files
-  grid = xr.open_mfdataset(gridpath + 'grid.nc')
+  gridpath = 'path_to_gridfile' # path to grid files
+  grid = xr.open_mfdataset(gridpath + 'grid_tnx1v4_20170622.nc')
   parea =  grid.parea
   pmask =  grid.pmask
   pweight = parea*pmask
