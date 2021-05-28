@@ -7,6 +7,30 @@ Released versions of NorESM2.0
 NorESM2.0.5
 ++++++++++++
 
+- Repository: NorESMhub/NorESM
+- Tag: release-noresm2.0.5
+- Commit: 133cc12
+- Released by: DirkOlivie
+
+Version of code which can be used to **reproduce the CMIP6 results of NorESM2**. This release builds on the five former releases. 
+
+This release contains:
+----------------------
+- **updated NorESM2 documentation**, including an overview of NorESM2 releases, updated information about the CLM5.0 model component, and expansion of the FAQ section
+- technical (non answer-changing) modifications in CAM-Nor (to guarantee automatic download of AeroTab files for PTAERO compsets)
+- technical (non answer-changing) modifications in CTSM/CLM (modification to avoid problems with some compilers, changes related to NorCPM, and updated README.md)
+
+How to obtain this version:
+---------------------------
+::
+
+    git clone https://github.com/NorESMhub/NorESM.git
+    cd NorESM
+    git tag --list (this should give you a list of the existing tags or releases)
+    git checkout release-noresm2.0.5
+    ./manage_externals/checkout_externals
+
+::
 
 NorESM2.0.4
 ++++++++++++
