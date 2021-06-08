@@ -41,7 +41,7 @@ To investigate the full list of arguments, enter the *<noresm_base>/cime/scripts
 To create a new case, enter the scripts directory and run the **create_newcase** scripts:
 ::
     cd <noresm_base>/cime/scripts/
-    ./create_newcase --case ../../cases/$CASENAME --mach $MACHINE --res f19_g16 --compset $COMPSET
+    ./create_newcase --case ../../cases/$CASENAME --mach $MACHINE --res f19_tn14 --compset $COMPSET
 
 You have now created the case folder *<noresm_base>/cases/$CASENAME*! Go to the case folder to start configuring your experiment.
 
