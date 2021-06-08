@@ -104,6 +104,11 @@ To confirm a successful download of all components, you can run checkout_externa
   ./manage_externals/checkout_externals --logging      [write log of errors in manage_externals.log]
 
 
+Known python-related error
+^^^^^
+If you encounter problems with  ``dictionary keys changed during iteration`` , please see :ref:`tech_faq`
+
+
 Known SVN-related errors
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Some model components are maintained under SVN version control instead of git version control. If you run into several SVN-related errors when launching the model, you may want to try to change ``required=True`` to ``required=False`` for the model components POP2 and WW3 in **Externals.cfg**. POP2 and WW3 are not needed in NorESM2. Then try again.
