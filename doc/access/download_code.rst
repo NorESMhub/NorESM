@@ -104,7 +104,7 @@ To confirm a successful download of all components, you can run checkout_externa
   ./manage_externals/checkout_externals --logging      [write log of errors in manage_externals.log]
 
 
-Known python-related erros
+Known python-related error
 ^^^^^
 If you encounter problems with  ``dictionary keys changed during iteration`` , please see :ref:`tech_faq`
 
