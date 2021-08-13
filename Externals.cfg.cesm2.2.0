@@ -1,7 +1,7 @@
 [cam]
-tag = N2dev_port_from_CESM2.2.0
+tag = cam_cesm2_2_rel_02
 protocol = git
-repo_url = https://github.com/NorESMhub/CAM 
+repo_url = https://github.com/ESCOMP/CAM
 local_path = components/cam
 externals = Externals_CAM.cfg
 required = True
@@ -21,9 +21,9 @@ local_path = components/cdeps
 required = True
 
 [cime]
-tag = N2dev_port_from_CESM2.2.0
+tag = cime5.8.32
 protocol = git
-repo_url = https://github.com/NorESMhub/cime
+repo_url = https://github.com/ESMCI/cime
 local_path = cime
 externals = ../Externals_cime.cfg
 required = True
