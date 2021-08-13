@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <testlist version="2.0">
-  <test name="ERI" grid="f09_g17" compset="B1850" testmods="allactive/defaultio_noclminterp">
+  <test name="ERI" grid="f09_g17" compset="B1850" testmods="allactive/defaultio">
     <machines>
       <machine name="bluewaters" compiler="pgi" category="prebeta"/>
     </machines>
@@ -8,7 +8,7 @@
       <option name="wallclock"> 01:00 </option>
     </options>
   </test>
-  <test name="ERI" grid="f09_g17" compset="B1850" testmods="allactive/defaultio_noclminterp">
+  <test name="ERI" grid="f09_g17" compset="B1850" testmods="allactive/default">
     <machines>
       <machine name="edison" compiler="intel" category="prebeta"/>
     </machines>
@@ -16,12 +16,12 @@
       <option name="wallclock"> 01:00 </option>
     </options>
   </test>
-  <test name="ERI" grid="f09_g17" compset="B1850" testmods="allactive/defaultio_noclminterp">
+  <test name="ERI" grid="f09_g17" compset="B1850" testmods="allactive/defaultio">
     <machines>
       <machine name="cheyenne" compiler="intel" category="prealpha"/>
     </machines>
     <options>
-      <option name="wallclock"> 01:00 </option>
+      <option name="wallclock"> 01:00:00 </option>
     </options>
   </test>
   <test name="SMS_Ld2" grid="f09_g17" compset="B1850" testmods="allactive/defaultio">
@@ -29,15 +29,15 @@
       <machine name="cheyenne" compiler="intel" category="aux_cime_baselines"/>
     </machines>
     <options>
-      <option name="wallclock"> 00:30 </option>
+      <option name="wallclock"> 00:30:00 </option>
     </options>
   </test>
-  <test name="SMS_N3_PM3_Ld2" grid="f19_g17" compset="BHIST" testmods="allactive/defaultio">
+  <test name="SMS_Ld2" grid="f09_g17" compset="BHIST" testmods="allactive/defaultio">
     <machines>
       <machine name="cheyenne" compiler="gnu" category="aux_cime_baselines"/>
     </machines>
     <options>
-      <option name="wallclock"> 00:30 </option>
+      <option name="wallclock"> 00:30:00 </option>
     </options>
   </test>
   <test name="ERR" grid="f19_g17" compset="B1850" testmods="allactive/defaultio">
@@ -61,7 +61,7 @@
       <machine name="cheyenne" compiler="intel" category="prealpha"/>
     </machines>
     <options>
-      <option name="wallclock"> 02:00 </option>
+      <option name="wallclock"> 02:00:00 </option>
     </options>
   </test>
   <test name="ERS_D" grid="f09_g17" compset="B1850" testmods="allactive/defaultio">
@@ -69,7 +69,7 @@
       <machine name="cheyenne" compiler="intel" category="prealpha"/>
     </machines>
     <options>
-      <option name="wallclock"> 06:00 </option>
+      <option name="wallclock"> 06:00:00 </option>
     </options>
   </test>
   <test name="IRT" grid="f19_g17" compset="B1850" testmods="allactive/defaultio">
@@ -89,21 +89,13 @@
       <option name="wallclock"> 00:40 </option>
     </options>
   </test>
-  <test name="IRT" grid="f09_g17" compset="BRCP85L45BGCR" testmods="allactive/defaultio">
-    <machines>
-      <machine name="cheyenne" compiler="intel" category="prebeta"/>
-    </machines>
-    <options>
-      <option name="wallclock"> 00:30 </option>
-    </options>
-  </test>
   <test name="IRT_Ld7" grid="f09_g17" compset="BHIST" testmods="allactive/defaultio">
     <machines>
       <machine name="bluewaters" compiler="pgi" category="prebeta"/>
       <machine name="cheyenne" compiler="intel" category="prealpha"/>
     </machines>
     <options>
-      <option name="wallclock"> 00:30 </option>
+      <option name="wallclock"> 00:30:00 </option>
     </options>
   </test>
   <test name="SMS_Ld1" grid="f09_g17" compset="BW1850" testmods="allactive/default">
@@ -112,60 +104,7 @@
       <machine name="cheyenne" compiler="intel" category="bwaccm"/>
     </machines>
     <options>
-      <option name="wallclock"> 01:00 </option>
-    </options>
-  </test>
-  <test name="SMS_Ld1" grid="f09_g17" compset="BWsc1850" testmods="allactive/default">
-    <machines>
-      <machine name="cheyenne" compiler="intel" category="prebeta"/>
-      <machine name="cheyenne" compiler="intel" category="bwaccm"/>
-    </machines>
-    <options>
-      <option name="wallclock"> 00:30 </option>
-    </options>
-  </test>
-  <test name="SMS_Ld1" grid="f09_g17" compset="BWscHIST" testmods="allactive/default">
-    <machines>
-      <machine name="cheyenne" compiler="intel" category="prebeta"/>
-      <machine name="cheyenne" compiler="intel" category="bwaccm"/>
-    </machines>
-    <options>
-      <option name="wallclock"> 00:30 </option>
-    </options>
-  </test>
-  <test name="SMS_Ld1" grid="f09_g17" compset="BW1PCTcmip6" testmods="allactive/defaultio_min">
-    <machines>
-      <machine name="cheyenne" compiler="intel" category="prebeta"/>
-      <machine name="cheyenne" compiler="intel" category="bwaccm"/>
-    </machines>
-    <options>
-      <option name="wallclock"> 01:00 </option>
-    </options>
-  </test>
-  <test name="SMS_D_Ld1" grid="f09_g17" compset="BWCO2x4cmip6" testmods="allactive/defaultio_min">
-    <machines>
-      <machine name="cheyenne" compiler="intel" category="prebeta"/>
-      <machine name="cheyenne" compiler="intel" category="bwaccm"/>
-    </machines>
-    <options>
-      <option name="wallclock"> 01:00 </option>
-    </options>
-  </test>
-  <test name="SMS_Ld1" grid="f09_g17" compset="BWHIST" testmods="allactive/default">
-    <machines>
-      <machine name="cheyenne" compiler="intel" category="prebeta"/>
-      <machine name="cheyenne" compiler="intel" category="bwaccm"/>
-    </machines>
-    <options>
-      <option name="wallclock"> 01:00 </option>
-    </options>
-  </test>
-  <test name="IRT_Ld5" grid="f09_g17" compset="BWHISTcmip6" testmods="allactive/defaultio_min">
-    <machines>
-      <machine name="cheyenne" compiler="gnu" category="prealpha"/>
-    </machines>
-    <options>
-      <option name="wallclock"> 01:00 </option>
+      <option name="wallclock"> 01:00:00 </option>
     </options>
   </test>
   <test name="SMS_Ld5" grid="f19_g17" compset="BWma1850" testmods="allactive/default">
@@ -174,7 +113,7 @@
       <machine name="cheyenne" compiler="intel" category="bwaccm"/>
     </machines>
     <options>
-      <option name="wallclock"> 01:00 </option>
+      <option name="wallclock"> 01:00:00 </option>
     </options>
   </test>
   <test name="SMS_Ld1" grid="f09_g17" compset="BWma1850" testmods="allactive/default">
@@ -183,7 +122,7 @@
       <machine name="cheyenne" compiler="intel" category="bwaccm"/>
     </machines>
     <options>
-      <option name="wallclock"> 01:00 </option>
+      <option name="wallclock"> 01:00:00 </option>
     </options>
   </test>
   <test name="IRT_Ld7" grid="f09_g17" compset="BHIST" testmods="allactive/defaultio">
@@ -191,15 +130,15 @@
       <machine name="cheyenne" compiler="intel" category="prealpha"/>
     </machines>
     <options>
-      <option name="wallclock"> 01:00 </option>
+      <option name="wallclock"> 01:00:00 </option>
     </options>
   </test>
-  <test name="ERS_Ld5" grid="f19_g17" compset="E1850L45TEST" testmods="cice/default">
+  <test name="ERS_Ld5" grid="f19_g17" compset="E1850TEST" testmods="cice/default">
     <machines>
       <machine name="cheyenne" compiler="intel" category="prebeta"/>
     </machines>
     <options>
-      <option name="wallclock"> 00:30 </option>
+      <option name="wallclock"> 00:30:00 </option>
     </options>
   </test>
   <test name="ERS_Ld7" grid="f19_g17" compset="B1850" testmods="allactive/defaultio">
@@ -209,36 +148,7 @@
       <machine name="hobart"     compiler="pgi"   category="prealpha"/>
     </machines>
     <options>
-      <option name="wallclock"> 00:30 </option>
-    </options>
-  </test>
-  <test name="ERS_Ld5" grid="f09_g17" compset="BCO2x4cmip6" testmods="allactive/defaultio_min">
-    <machines>
-      <machine name="bluewaters" compiler="pgi"   category="prebeta"/>
-      <machine name="cheyenne"   compiler="intel" category="prealpha"/>
-      <machine name="hobart"     compiler="pgi"   category="prealpha"/>
-    </machines>
-    <options>
-      <option name="wallclock"> 00:30 </option>
-    </options>
-  </test>
-  <test name="ERS_Ld5" grid="f09_g17" compset="BWCO2x4cmip6" testmods="allactive/defaultio_min">
-    <machines>
-      <machine name="cheyenne"   compiler="gnu" category="prebeta"/>
-    </machines>
-    <options>
-      <option name="wallclock"> 00:30 </option>
-      <option name="comment">Restart test exercising BWCO2x4cmip6</option>
-    </options>
-  </test>
-    <test name="ERS_Ld5" grid="f09_g17" compset="B1PCTcmip6" testmods="allactive/defaultio_min">
-    <machines>
-      <machine name="bluewaters" compiler="pgi"   category="prebeta"/>
-      <machine name="cheyenne"   compiler="intel" category="prealpha"/>
-      <machine name="hobart"     compiler="pgi"   category="prealpha"/>
-    </machines>
-    <options>
-      <option name="wallclock"> 00:30 </option>
+      <option name="wallclock"> 00:30:00 </option>
     </options>
   </test>
   <test name="ERS_Ld7" grid="f09_g17" compset="BHIST" testmods="allactive/defaultio">
@@ -264,23 +174,7 @@
       <machine name="cheyenne" compiler="gnu" category="prebeta"/>
     </machines>
     <options>
-      <option name="wallclock"> 02:00 </option>
-    </options>
-  </test>
-  <test name="ERS_Ld7" grid="f09_g17" compset="BRCP85L45BGCR" testmods="allactive/defaultio">
-    <machines>
-      <machine name="edison" compiler="intel" category="prebeta"/>
-    </machines>
-    <options>
-      <option name="wallclock"> 00:30 </option>
-    </options>
-  </test>
-  <test name="NCK_Ld5" grid="f19_g17" compset="BC5L45BGCR" testmods="allactive/defaultio">
-    <machines>
-      <machine name="cheyenne" compiler="gnu" category="prebeta"/>
-    </machines>
-    <options>
-      <option name="wallclock"> 00:30 </option>
+      <option name="wallclock"> 02:00:00 </option>
     </options>
   </test>
   <test name="NCK_Ld5" grid="f19_g17" compset="B1850G" testmods="allactive/cism/test_coupling">
@@ -289,7 +183,7 @@
       <machine name="cheyenne" compiler="intel" category="prebeta"/>
     </machines>
     <options>
-      <option name="wallclock"> 01:30 </option>
+      <option name="wallclock"> 01:30:00 </option>
     </options>
   </test>
   <test name="PET_PM" grid="f19_g17" compset="B1850" testmods="allactive/defaultiomi">
@@ -298,7 +192,7 @@
       <machine name="cheyenne" compiler="intel" category="prealpha"/>
     </machines>
     <options>
-      <option name="wallclock"> 01:30 </option>
+      <option name="wallclock"> 01:30:00 </option>
     </options>
   </test>
   <test name="PFS" grid="f09_g17" compset="B1850" testmods="allactive/default">
@@ -308,24 +202,15 @@
       <machine name="cheyenne" compiler="intel" category="prebeta"/>
     </machines>
     <options>
-      <option name="wallclock"> 00:40 </option>
+      <option name="wallclock"> 00:40:00 </option>
     </options>
   </test>
-  <test name="PFS" grid="f09_g17" compset="B1850" testmods="allactive/default">
-    <machines>
-      <machine name="cheyenne" compiler="intel" category="prealpha"/>
-    </machines>
-    <options>
-      <option name="wallclock"> 00:40 </option>
-    </options>
-  </test>
-
   <test name="PFS" grid="f09_g17" compset="B1850" testmods="allactive/maxthroughputb">
     <machines>
       <machine name="cheyenne" compiler="intel" category="aux_perf"/>
     </machines>
     <options>
-      <option name="wallclock"> 00:40 </option>
+      <option name="wallclock"> 00:40:00 </option>
     </options>
   </test>
   <test compset="FW1850" grid="f09_f09_mg17" name="PFS" testmods="allactive/maxthroughputfw">
@@ -355,7 +240,7 @@
       <machine name="cheyenne" compiler="intel" category="prealpha"/>
     </machines>
     <options>
-      <option name="wallclock"> 00:30 </option>
+      <option name="wallclock"> 00:30:00 </option>
     </options>
   </test>
   <test name="SMS_Ld5" grid="f09_g17" compset="B1850G" testmods="allactive/cism/test_coupling">
@@ -363,14 +248,14 @@
       <machine name="cheyenne" compiler="intel" category="prebeta"/>
     </machines>
     <options>
-      <option name="wallclock"> 00:30 </option>
+      <option name="wallclock"> 00:30:00 </option>
     </options>
   </test>
   <test name="SMS_Ld5" grid="f19_g17" compset="B1850G1" testmods="allactive/cism/test_coupling">
     <machines>
       <machine name="cheyenne" compiler="gnu" category="prebeta">
         <options>
-          <option name="wallclock">0:30</option>
+          <option name="wallclock">0:30:00</option>
           <option name="comment">Include a fully-coupled test with CISM1, mainly to make sure the PE layout works</option>
         </options>
       </machine>
@@ -384,42 +269,20 @@
       <option name="wallclock"> 00:45 </option>
     </options>
   </test>
+  <test name="SMS_Ld5" grid="f09_g17_gl4" compset="J1850G" testmods="allactive/cism/test_coupling">
+    <machines>
+      <machine name="cheyenne" compiler="gnu" category="prebeta"/>
+    </machines>
+    <options>
+      <option name="wallclock"> 00:30:00 </option>
+    </options>
+  </test>
   <test name="SMS_Ld7" grid="f09_g17" compset="B1850" testmods="allactive/defaultio">
     <machines>
       <machine name="cheyenne" compiler="intel" category="prealpha"/>
     </machines>
     <options>
-      <option name="wallclock">  00:30 </option>
+      <option name="wallclock">  00:30:00 </option>
     </options>
-  </test>
-  <test name="SMS_D_Ld1" grid="f09_g17" compset="B1850cmip6" testmods="allactive/defaultio_min">
-    <machines>
-      <machine name="cheyenne" compiler="intel" category="prealpha">
-        <options>
-          <option name="wallclock">0:30</option>
-          <option name="comment">Debug test exercising B1850cmip6</option>
-        </options>
-      </machine>
-    </machines>
-  </test>
-  <test name="IRT_Ld5" grid="f09_g17" compset="BHISTcmip6" testmods="allactive/defaultio_min">
-    <machines>
-      <machine name="cheyenne" compiler="gnu" category="prealpha">
-        <options>
-          <option name="wallclock">0:30</option>
-          <option name="comment">Debug test exercising B1850cmip6</option>
-        </options>
-      </machine>
-    </machines>
-  </test>
-  <test name="ERS_Ld5" grid="f09_g17" compset="BWHISTcmip6" testmods="allactive/defaultio_min">
-    <machines>
-      <machine name="cheyenne" compiler="gnu" category="prebeta">
-        <options>
-          <option name="wallclock">0:30</option>
-          <option name="comment">Restart test exercising BW1850cmip6</option>
-        </options>
-      </machine>
-    </machines>
   </test>
 </testlist>
