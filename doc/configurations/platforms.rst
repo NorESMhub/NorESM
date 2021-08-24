@@ -8,7 +8,7 @@ HPC platforms
 
 Below is a list of platforms where NorESM2 has been installed, including platform specific intructions. 
 
-<noresm-base>: the name of the folder where the model code has been downloaded (cloned from git)
+**<noresm-base>**: the name of the folder where the model code has been downloaded (cloned from git)
 
 The configurations files with the platform specific settings are found in ::
   
@@ -27,15 +27,17 @@ Input data is stored in /cluster/shared/noresm/inputdata/
 
 Apply for membership in NorESM shared data storage (manager: mben@norceresearch.no) for access to the folder.
 
-The run and archive directories are stored /cluster/work/users/<user_name>/
+The run and archive directories are stored in /cluster/work/users/<user_name>/
 
 Create a new case: ::
 
-    ./create_newcase –case ../../../cases/<casename> --mach fram –-res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported  
+    ./create_newcase --case ../../../cases/<casename> --mach fram --res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported
 
 
 Betzy @ Sigma2
 ^^^^^^^^^^^^^
+NorESM2 working on BETZY with CIME tag cime5.6.10_cesm2_1_rel_06-Nor_v1.0.4
+
 Configuration files for running NorESM2 on Betzy are currently being put in all branches of the noresm code.
 
 Input data is stored in /cluster/shared/noresm/inputdata/
@@ -46,9 +48,34 @@ The run and archive directories are stored /cluster/work/users/<user_name>/
 
 Create a new case: ::
 
-    ./create_newcase –case ../../../cases/<casename> --mach betzy –-res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported  
+    ./create_newcase --case ../../../cases/<casename> --mach betzy --res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported
 
-**Please note that the Betzy settings are included in tag noresm2.0.3 and subsequent tags**  
+Setting number of nodes on Betzy
+-----------------
+In fully coupled setup, for grid f19_tn14 and f09_tn14, various processors configurations are added and can be used by setting ``--pecount`` = S, L, M or X1
+when creating a new case.
+
+For NorESM2-MM, using grid f09_tn14, ``--pecount`` will give the following number of nodes: ::
+
+    S = 4
+    M = 9
+    L = 15
+    X1 = 17
+
+and for NorESM2-LM, using grid f19_tn14, ``--pecount`` it will give the following number of nodes: ::
+
+    S = 4
+    M = 8
+    X1 = 10
+
+L does not exists for f19_tn14.
+
+E.g. creating a new case running on 4 nodes ::
+
+    ./create_newcase –case ../../../cases/<casename> --mach betzy –-res <resolution> --compset <compset_name> --project <project_name> --pecount= S --user-mods-dir <user_mods_dir> --run-unsupported  
+    
+ 
+**Please note that these Betzy settings are included in tag noresm2.0.4 and subsequent tags**  
 
 Queue options on Fram and on Betzy
 ------------------------
@@ -122,7 +149,7 @@ Input data is stored in /nobackup/forsk/noresm/inputdata/
 
 The run and archive directories are stored /nobackup/forsk/<user_name>/
 
-Before configuring and compiling the model, add export LMOD_QUIET=1 to your .bashrc
+Before configuring and compiling the model, add ``export LMOD_QUIET=1`` to your .bashrc
 
 ::
 
@@ -135,7 +162,7 @@ Create a new case:
 
 ::
 
-    ./create_newcase –case ../../../cases/<casename> --mach nebula –-res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported  
+    ./create_newcase --case ../../../cases/<casename> --mach nebula --res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported
 
 ::
 
@@ -181,7 +208,7 @@ Create a new case:
 
 ::
 
-./create_newcase –case ../../../cases/<casename> -mach triolith –res <resolution> -compset <compset_name> -pecount M -ccsm_out <NorESM_ouput_folder>
+    ./create_newcase --case ../../../cases/<casename> --mach triolith --res <resolution> --compset <compset_name> --pecount M --ccsm_out <NorESM_ouput_folder>
 
 ::
 

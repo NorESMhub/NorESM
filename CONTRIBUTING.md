@@ -2,10 +2,13 @@
 We welcome contributions to the NorESM model, including bug reports and fixes, contributions for code improvements, and suggestions for feature enhancements or inclusion of new features. Below we have listed some guidelines, but use your best judgment, and feel free to propose changes to this document in a pull request.
 
 ## What should I know before I get started?
-The NorESM model is made up of several repositories. When you initially consider contributing to NorESM,  you might be unsure about which of those repositories implements the functionality you want to change or report a bug for.  The NorESM team will help you with that through an issue discussion.
+The NorESM model is made up of several model components, each contained within separate repositories under [NorESMhub](https://github.com/NorESMhub). Some of these components are actively developed by members of the NorESM team while others are inherited from the [CESM](https://www.cesm.ucar.edu/) system. When you initially consider contributing to NorESM,  you might be unsure about which of those repositories implements the functionality you want to change or report a bug for.  The NorESM team will help you with that through an issue discussion.
+
+A short presentation introducing the NorESM github repository, the issue and pull request systems, and the forking workflow:
+https://github.com/NorESMhub/INES_workshop_2020/blob/gh-pages/files/Torsvik_gitcollaborate.pdf 
 
 # How to contribute
-We recommend that you open an issue (https://github.com/NorESMhub/NorESM/issues) to discuss the changes or additions you want to include. Through the issue discussion, you can work with the NorESM developers to implement the code changes in the correct repository and in the correct branch. 
+We recommend that you open an issue (https://github.com/NorESMhub/NorESM/issues) to discuss the changes or additions you want to include. This is done by selecting **New issue** in the top right corner of the issues page, and selecting one of the suggested issue types in the following menu. Through the issue discussion, you can work with the NorESM developers to implement the code changes in the correct repository and in the correct branch. 
 
 ## Reporting bugs
 Please, ensure that the bug was not already reported by searching on https://github.com/NorESMhub/NorESM/issues
@@ -17,10 +20,10 @@ If you want to submit an enhancement suggestion for NorESM, including completely
 You need to:
 - Setup your personal NorESM fork in GitHub to put your developments
 - Keep up to date with the NorESMhub. 
-- Once your changes or additions are sufficiently advanced you can form a Pull Request from your fork to the relevant NorESM branch including a clear description of what you've done. 
-- Please assign reviewers who will  do additional testing of your code and bring the changes to NorESM. 
+- Once your changes or additions are sufficiently advanced you can form a pull request from your fork to the relevant NorESM branch including a clear description of what you've done. 
+- Please assign reviewers who will do additional testing of your code and bring the changes to NorESM. 
 
-If your Pull Request causes conflicts which you are not able to resolve, please ask one of the NorESMhub maintainers for help.
+If your pull request causes conflicts which you are not able to resolve, please ask one of the NorESMhub maintainers for help.
 
 If you introduce code changes or new features into NorESM, these need to be documented. Please remember to update the documentation as well.
 
