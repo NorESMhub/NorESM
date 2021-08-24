@@ -4,7 +4,7 @@
 Compare netCDF files from NorESM output
 ***************************************
 
-For model development it is often useful to compare output from different model runs, to check if a change that has been introduced in the model code or run parameters results in changes of the model output. Since NorESM output contains run-specific metadata, a standard file comparison will usually show that output from different model runs are different, although the data fileds may be identical. Specific tools can be apploed to circumvent this problem.
+For model development it is often useful to compare output from different model runs, to check if a change that has been introduced in the model code or run parameters results in changes of the model output. Since NorESM output contains run-specific metadata, a standard file comparison will usually show that output from different model runs are different, although the data fileds may be identical. Specific tools can be applied to circumvent this problem.
 
 
 cprnc
