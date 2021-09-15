@@ -3,9 +3,12 @@
 Archiving NorESM output
 ===============
 
-Short term archiving
+Short-term archiving
 ^^^^
 
-Long term archiving
+Medium-term archiving
+^^^^
+
+Long-term archiving
 ^^^^
 
