@@ -3,7 +3,7 @@
 Archiving NorESM output
 ===============
 
-Archiving of NorESM output involve three distinct processes that serve different purposes. The medium-term and long-term archiving described here depend on services provided by `sigma2 <https://www.sigma2.no>`_, but the procedures may be relevant for other systems. 
+Archiving of NorESM output involve three distinct processes that serve different purposes. The medium-term and long-term archiving described here depend on services provided by `sigma2 <https://www.sigma2.no>`_, but the procedures may also be relevant for other systems. 
 
 Short-term archiving
 ^^^^
