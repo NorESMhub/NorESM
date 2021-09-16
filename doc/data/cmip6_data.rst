@@ -41,9 +41,11 @@ This is the same data that you can access through the ESGF. Note data is organiz
 
 **NIRD users that are members of NS9252K (NFR storage project for KeyCLIM) can access CMOR-ized CMIP6 data from multiple models under**:: 
 
-   /projects/NS9252K/CMIP6/
+   /projects/NS9252K/ESGF/
 
-Note this data has a different structure than the data residing in /projects/NS9034K/CMIP6/. If you want to make a request for data or for more data to be downloaded to this folder, contact jang@met.no. If you are a NIRD user, but not a member of this project and would like to request access, contact michaels@met.no.
+, which has the same structure as data in /projects/NS9034K/CMIP6 made by NorESM2 (and some version variants).
+
+If you want to make a request for data or for more data to be downloaded to this folder, contact jang@met.no. If you are a NIRD user, but not a member of this project and would like to request access, contact michaels@met.no.
 
 **NIRD users that are members of NS9560K (NFR storage project for INES) can access most of the raw (non-CMOR-ized) model data under**::
 
@@ -125,7 +127,7 @@ MIPs contributions
    * - LUMIP
      - Land-Use MIP
      - No contribution yet
-     - HL, YH
+     - HL
    * - OMIP
      - Ocean MIP
      - NorESM2-LM
@@ -160,7 +162,6 @@ MIPs contributions
 **FC**: Francois Counillon <francois.counillon@nersc.no>,
 **JBD**: Jens Boldingh Debernard <jensd@met.no>,
 **LSG**: Lise Seland Graff <lisesg@met.no>,
-**YH**: Yanchun He <yanchun.he@nersc.no>,
 **AK**: Alf Kirkevag <alfk@met.no>,
 **NK**: Noel Keenlyside <noel.keenlyside@gfi.uib.no>,
 **HL**: Hanna Lee <hanna.lee@uni.no>,
