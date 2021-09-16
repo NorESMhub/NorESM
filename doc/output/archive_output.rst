@@ -1,15 +1,15 @@
 .. _archive_output:
 
 Archiving NorESM output
-===============
+=======================
 
 Archiving of NorESM output involve three distinct processes that serve different purposes. The medium-term and long-term archiving described here depend on services provided by `sigma2 <https://www.sigma2.no>`_, but the procedures may also be relevant for other systems. 
 
 Short-term archiving
-^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 Medium-term archiving
-^^^^
+^^^^^^^^^^^^^^^^^^^^^
 Medium-term archiving is the process of transferring NorESM output from a HPC server to a storage server. This is usually required if data should be saved for later analysis, since HPC servers typically have only limited storage capacity, and often enforce automatic deletion (auto-cleanup) on their storage space at regular intervals.
 
 The following example consider the case of moving data from the HPC *betzy* to the storage server *nird*, but these procedures should be possible to follow on most other systems. Readers may also refer to the `sigma2 file transfer <https://documentation.sigma2.no/files_storage/file_transfer.html>`_ documentation for further information.
@@ -32,5 +32,82 @@ If for some reason ``rsync`` is not applicable, it is possible to use other appl
 
 
 Long-term archiving
-^^^^
+^^^^^^^^^^^^^^^^^^^
+Long-term archiving is the process of transferring NorESM output from the NIRD storage to the NIRD research archive. This is usually done after the data has been cmorized and/or published to an ESGF node. The data is typically stored 5 - 10 years or longer. After the data has been uploaded and archived, the copy on NIRD storage should be deleted to save storage space.
 
+The main documentation, `Research Data Archive User-Guide <https://documentation.sigma2.no/nird_archive/user-guide.html>`_ is found on the sigma2 site. The archiving is done by filling in a web-form, and the documentation includes most of the screenshots needed to see which metadata are required to fill them in. Mark the notes in the documentation on the constraints of the web-form.
+
+Sigma2 are in their finalizing stages on creating an API for archiving data programatically, so this procedure may become simpler in the future. We are in dialog with sigma2 to make this API fit our needs.
+
+Below are supplementary screenshots to the sigma2 user-guide, which also shows how to get hold of the metadata from the ESGF node.
+
+Visit the noresm2cmor repository:
+
+.. image:: images/long-term-archive-01.png
+   :width: 800
+
+Find the published data:
+
+.. image:: images/long-term-archive-02.png
+   :width: 800
+
+Extract the ``:further_info_url`` from the data:
+
+.. image:: images/long-term-archive-03.png
+   :width: 800
+
+Further info page:
+
+.. image:: images/long-term-archive-04.png
+   :width: 800
+
+Find the metadata on the ES-DOC pages, and login to `NIRD research archive <https://archive.sigma2.no>`_ and start the deposit-dataset 
+web-form:
+
+.. image:: images/long-term-archive-05.png
+   :width: 800
+
+Page 1:
+
+.. image:: images/long-term-archive-06.png
+   :width: 800
+
+Page 2a:
+
+.. image:: images/long-term-archive-07.png
+   :width: 800
+
+Page 2b:
+
+.. image:: images/long-term-archive-08.png
+   :width: 800
+
+Page 3a:
+
+.. image:: images/long-term-archive-09.png
+   :width: 800
+
+Page 3b:
+
+.. image:: images/long-term-archive-10.png
+   :width: 800
+
+Auto-reply from sigma2:
+
+.. image:: images/long-term-archive-11.png
+   :width: 800
+
+The registered archive info:
+
+.. image:: images/long-term-archive-12.png
+   :width: 800
+
+Page 4a:
+
+.. image:: images/long-term-archive-13.png
+   :width: 800
+
+Page 4b:
+
+.. image:: images/long-term-archive-14.png
+   :width: 800
