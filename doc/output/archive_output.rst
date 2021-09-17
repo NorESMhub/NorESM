@@ -7,7 +7,7 @@ Archiving of NorESM output involves three distinct processes that serve differen
 
 Short-term archiving
 ^^^^^^^^^^^^^^^^^^^^
-Short-term archiving is a phase of a NorESM model run where the generated output data is moved from $USERWORK/noresm/$CASE/run into a specific folder structure under $USERWORK/archive/$CASE. Short-term archiving environment variables are set in the env_mach_specific.xml file and by default, short-term archiving is enabled. However, in the ``env_run.xml`` file it is possible to change short-term archiving settings by modifying several variables which control the behavior of short-term archiving:
+Short-term archiving is a phase of a NorESM model run where the generated output data is moved from ``$USERWORK/noresm/$CASE/run`` into a specific folder structure under ``$USERWORK/archive/$CASE``. Short-term archiving environment variables are set in the ``env_mach_specific.xml`` file and by default, short-term archiving is enabled. However, in the ``env_run.xml`` file it is possible to change short-term archiving settings by modifying several variables which control the behavior of short-term archiving:
 
 ``DOUT_S``: If TRUE, short term archiving will be turned on.
 
