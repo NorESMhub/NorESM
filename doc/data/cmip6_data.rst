@@ -33,17 +33,17 @@ https://esg-dn1.nsc.liu.se/search/cmip6-liu/
 The (Norwegian) National Infrastructure for Research Data (NIRD)
 +++++++++++++++
  
-**All NIRD users can access the archive of CMOR-ized CMIP6 NorESM data** under project NS9034K::
+**All NIRD users can access the archive of CMOR-ized CMIP6 data by NorESM** under project NS9034K::
 
    /projects/NS9034K/CMIP6/
    
 This is the same data that you can access through the ESGF. Note data is organized by the different contributions/MIPs. The DECK and historical simulations are located under "CMIP".
 
-**All NIRD users can access CMOR-ized CMIP6 data from multiple models under (but only members of NS9252K, a NFR storage project for KeyCLIM have write permission):** :: 
+**All NIRD users can access CMOR-ized CMIP6 data from multiple models under:** :: 
 
    /projects/NS9252K/ESGF/
 
-, which has the same structure as data in /projects/NS9034K/CMIP6 made by NorESM2 (and some version variants).
+, which has the same structure as data in /projects/NS9034K/CMIP6. Note only members of NS9252K, a NFR storage project for KeyCLIM have write permission.
 
 If you want to make a request for data or for more data to be downloaded to this folder, contact jang@met.no. If you are a NIRD user, but not a member of this project and would like to request access, contact michaels@met.no.
 
