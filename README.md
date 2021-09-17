@@ -26,6 +26,8 @@ This repository has the following NorESM branches:
 
 * **master_cesm** - Community Earth System Model master fork
 
+* **noresm2.2** - is under development, and will contain updates from CESM2.2.  Only few compsets work technically at the moment (e.g. coupled compsets do not work), and no results have been verified yet.  This branch should currently not be used for any scientific study.
+
 * **release-noresm2.0.2_keyClim** - NorESM2 version for KeyClim project experiments (started from tag release-noresm2.0.2)
 
 * **noresm_landsites** - NorESM2 version for site-level simulations over land, specifically working with [NorESM_LandSites_Platform](https://github.com/NorESMhub/NorESM_LandSites_Platform) 
@@ -38,7 +40,5 @@ This repository has the following NorESM branches:
   - release-noresm2.0.1 - NorESM2 version, initial preliminary release of CMIP6 version, April  2020 
   
 For a detailed description of the NorESM2.0.X releases, please see https://noresm-docs.readthedocs.io/en/noresm2/releases/
-
-* **noresm2.2** - is under development, and will contain updates from CESM2.2.  Only few compsets work technically at the moment (e.g. coupled compsets do not work), and no results have been verified yet.  This branch should currently not be used for any scientific study.
 
 * **noresm1** - contains a copy of old wiki NorESM1 documentation, refering to https://github.com/metno/noresm NorESM1 code, and incompletely to the development code under https://github.com/metno/noresm-dev (restricted access), used in 2019 for CMIP6 simulations
