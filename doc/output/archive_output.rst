@@ -20,7 +20,7 @@ It is also possible to move output data from $USERWORK/noresm/$CASE/run into $US
 On FRAM:
 ``sbatch --time 14:59:00 -p normal --account <project> case.st_archive`` 
 
-On Betzy:
+On BETZY:
 ``sbatch --time 14:59:00 -p preproc --account <project> case.st_archive``
 
 Medium-term archiving
