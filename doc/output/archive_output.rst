@@ -15,7 +15,7 @@ Short-term archiving is a phase of a NorESM model run where the generated output
 
 ``DOUT_S_SAVE_INT_REST_FILES``: If TRUE, perform short term archiving on all interim restart files, not just those at the end of the run. By default, this value is FALSE. 
 
-It is also possible to move output data from $USERWORK/noresm/$CASE/run into $USERWORK/archive/$CASE without starting a new model run, e.g if the model run is not succsessful and stops before it is completed, the short-term archiving will not be executed. To launch only the short-term archiving script; go to the case folder and on the command line write:
+It is also possible to move output data from ``$USERWORK/noresm/$CASE/run`` into ``$USERWORK/archive/$CASE`` without starting a new model run, e.g if the model run is not successful and stops before it is completed, the short-term archiving will not be executed. To launch only the short-term archiving script; go to the case folder and on the command line write:
 
 On FRAM:
 ``sbatch --time 14:59:00 -p normal --account <project> case.st_archive`` 
