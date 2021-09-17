@@ -3,10 +3,25 @@
 Archiving NorESM output
 =======================
 
-Archiving of NorESM output involve three distinct processes that serve different purposes. The medium-term and long-term archiving described here depend on services provided by `sigma2 <https://www.sigma2.no>`_, but the procedures may also be relevant for other systems. 
+Archiving of NorESM output involves three distinct processes that serve different purposes. The medium-term and long-term archiving described here depend on services provided by `sigma2 <https://www.sigma2.no>`_, but the procedures may also be relevant for other systems. 
 
 Short-term archiving
 ^^^^^^^^^^^^^^^^^^^^
+Short-term archiving is a phase of a NorESM model run where the generated output data is moved from $USERWORK/noresm/$CASE/run into a specific folder structure under $USERWORK/archive/$CASE. Short-term archiving environment variables are set in the env_mach_specific.xml file and by default, short-term archiving is enabled. However, in the ``env_run.xml`` file it is possible to change short-term archiving settings by modifying several variables which control the behavior of short-term archiving:
+
+``DOUT_S``: If TRUE, short term archiving will be turned on.
+
+``DOUT_S_ROOT``: Root directory for short term archiving. This directory must be visible to compute nodes.
+
+``DOUT_S_SAVE_INT_REST_FILES``: If TRUE, perform short term archiving on all interim restart files, not just those at the end of the run. By default, this value is FALSE. 
+
+It is also possible to move output data from $USERWORK/noresm/$CASE/run into $USERWORK/archive/$CASE without starting a model run, e.g if the model run is not succsessful and stops before it is completed, the short-term archiving will not be executed. To launch only the short-term archiving script; go to the case folder and on the command line write:
+
+On FRAM:
+``sbatch --time 14:59:00 -p normal --account <project> case.st_archive`` 
+
+On Betzy:
+``sbatch --time 14:59:00 -p preproc --account <project> case.st_archive``
 
 Medium-term archiving
 ^^^^^^^^^^^^^^^^^^^^^
