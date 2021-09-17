@@ -39,4 +39,6 @@ This repository has the following NorESM branches:
   
 For a detailed description of the NorESM2.0.X releases, please see https://noresm-docs.readthedocs.io/en/noresm2/releases/
 
+* **noresm2.2** - is under development, and will contain updates from CESM2.2.  Only few compsets work technically at the moment (e.g. coupled compsets do not work), and no results have been verified yet.  This branch should currently not be used for any scientific study.
+
 * **noresm1** - contains a copy of old wiki NorESM1 documentation, refering to https://github.com/metno/noresm NorESM1 code, and incompletely to the development code under https://github.com/metno/noresm-dev (restricted access), used in 2019 for CMIP6 simulations
