@@ -1,6 +1,6 @@
 .. _ocn_model:
 
-The ocean model, BLOM
+The ocean model; BLOM
 =====================
 
 
