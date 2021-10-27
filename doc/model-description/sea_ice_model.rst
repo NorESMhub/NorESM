@@ -1,4 +1,4 @@
-.. _cea_ice_model:
+.. _cea_ice_model; CICE:
 
 The sea-ice model
 ======================
