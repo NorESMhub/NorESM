@@ -1,5 +1,5 @@
 .. _cism_model
-The land ice model, CISM
+The land ice model; CISM
 =========
 
 
