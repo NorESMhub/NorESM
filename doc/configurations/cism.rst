@@ -3,6 +3,8 @@
 Land ice
 ======
 
+**Note! The CISM coupling is under development and not yet a scientifically supported option in NorESM.**
+
 CISM
 ''''
 
@@ -24,4 +26,7 @@ The CISM model uses forcing files from the land model, CLM. To use NorESM2 histo
   hist_fincl2 = 'QRUNOFF', 'SOILLIQ', 'SOILICE', 'SOILWATER_10CM', 'TSA', 'TSL', 'GPP', 'AR', 'HR'
   hist_fincl3 = 'FIRA', 'FIRE', 'FSH', 'EFLX_LH_TOT', 'QSNOMELT', 'QSNOFRZ', 'QSOIL', 'QICE', 'QICE_MELT', 'FSA', 'FSR', 'TOPO_COL', 'FSDS', 'FLDS', 'LWdown', 'RAIN', 'SNOW', 'TSA', 'TG', 'H2OSNO'
   hist_dov2xy = .true., .true., .false.
+
+
+**Recoupling CLM5 with NorESM2**
 
