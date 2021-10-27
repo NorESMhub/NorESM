@@ -1,6 +1,6 @@
 .. _lnd_model:
 
-The land model
+The land model, CLM5
 ===================
 The NorESM2 employs the latest version of "Community Land Model" (CLM5; Lawrence et al., 2019) as the land component. In the CLM5, Biogeophysical and biogeochemical processes are simulated for each subgrid land unit, column, and plant functional type (PFT) independently and each subgrid unit maintains its own prognostic variables. The same atmospheric forcing is used to force all subgrid units within a grid cell. The surface variables and fluxes required by the atmosphere are obtained by averaging the subgrid quantities weighted by their fractional areas. The processes simulated include:
 
