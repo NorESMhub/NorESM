@@ -317,7 +317,7 @@ this points to the correct branch in NorESMhub
 
 note that the ``da_stream_year_first`` and ``da_stream_year_last`` need to be adjusted according to your sea ice target file. Similarly, ``da_lat_min`` and ``da_lat_max`` can be adjusted as desired.
 
-6. modify `env_run.xml` so that ::
+6. modify ``env_run.xml`` so that ::
 
     RUN_TYPE=hybdrid
     RUN_REFCASE=NHIST_01_f19tn14_pamip-s_init
@@ -325,7 +325,7 @@ note that the ``da_stream_year_first`` and ``da_stream_year_last`` need to be ad
     RUN_STARTDATE=2000-04-01
 
 
-7. add in the `user_nl_clm` ::
+7. add in the ``user_nl_clm`` ::
 
      use_init_interp = .true.
 
