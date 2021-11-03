@@ -412,63 +412,6 @@ https://cesmcice.readthedocs.io/en/latest/
 
 
 
-HOWTO setup NorESM with sea-ice nudging
-^^^^^
-
-1. download NorESM following https://noresm-docs.readthedocs.io/en/latest/access/download_code.html - note that one needs to stay in the master branch (or noresm2.0.3>release), because otherwise the ``N2000`` compset is not included
-
-2. Change the ``Externals.cfg`` so that under cice ::
-
-     tag = n2_nudge-ice
-
-this points to the correct branch in NorESMhub
-
-3. run  ::
-
-     ./manage_externals/checkout_externals
-
-4. create a case as follows (an example for the transient SSP585): ::
-
-   ./cime/scripts/create_newcase --case /cluster/home/$USER/NorESM2/cases/N2000frc2_f19_tn14_20211025_transientSSP585nudge --compset N2000frc2 --res f19_tn14 --machine betzy --project nn9252k --run-unsupported --user-mods-dir cmip6_noresm_keyCLIM
-
-5. add the following to the ``user_nl_cice`` ::
-
-    f_da_fresh ="mdxxx"
-    f_da_fsalt ="mdxxx"
-    f_da_fheat ="mdxxx"
-    da_ice = .true.
-    da_method = 'pamip_long'
-    da_stream_year_first = 2000
-    da_stream_year_last = 2100
-    da_model_year_align = 1
-    da_stream_domxvarname = 'TLON'
-    da_stream_domyvarname = 'TLAT'
-    da_stream_domareaname = 'tarea'
-    da_stream_dommaskname = 'tmask'
-    da_lat_min=0.0
-    da_lat_max=90.0
-    da_timescale=5.
-    da_stream_fldfilename = "/cluster/shared/noresm/inputdata/PAMIP/regridded/siconc_hist_ssp585_21century.nc"
-    da_stream_domfilename = "/cluster/shared/noresm/inputdata/PAMIP/domain.cice.tnx1v4.nc"
-
-note that the ``da_stream_year_first`` and ``da_stream_year_last`` need to be adjusted according to your sea ice target file. Similarly, ``da_lat_min`` and ``da_lat_max`` can be adjusted as desired.
-
-6. modify ``env_run.xml`` so that ::
-
-    RUN_TYPE=hybdrid
-    RUN_REFCASE=NHIST_01_f19tn14_pamip-s_init
-    RUN_REFDATE=2000-04-01
-    RUN_STARTDATE=2000-04-01
-
-
-7. add in the ``user_nl_clm`` ::
-
-     use_init_interp = .true.
-
-8. run the simulation and hope for the best!
-
-
-
 References
 ^^^^^^^^^^
 
