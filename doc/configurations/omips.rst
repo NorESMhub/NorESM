@@ -410,8 +410,6 @@ The CICE source code is located in::
 More information is found in the CESM-CICE User Guide:
 https://cesmcice.readthedocs.io/en/latest/
 
-
-
 References
 ^^^^^^^^^^
 
