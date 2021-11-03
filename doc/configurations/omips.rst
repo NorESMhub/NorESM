@@ -415,7 +415,7 @@ https://cesmcice.readthedocs.io/en/latest/
 HOWTO setup NorESM with sea-ice nudging
 ^^^^^
 
-1. download NorESM following https://noresm-docs.readthedocs.io/en/latest/access/download_code.html - note that one needs to stay in the master branch (or noresm2.03>release), because otherwise the `N2000` compset is not included
+1. download NorESM following https://noresm-docs.readthedocs.io/en/latest/access/download_code.html - note that one needs to stay in the master branch (or noresm2.0.3>release), because otherwise the `N2000` compset is not included
 
 2. Change the ``Externals.cfg`` so that under cice ::
 
