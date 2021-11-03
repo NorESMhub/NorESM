@@ -12,30 +12,28 @@ Obtain a copy of the model (using git)
 - Visit this page:
   https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
 
-- Send email to oyvind.seland@met.no to get the right permissions for the new github user (The email must contain who you are and the github username).
-
-- When you have the right permissions, you can obtain the code.
+You can obtain the obtain the code from: https://github.com/NorESMhub/NorESM  
 
 ::
 
-  git clone https://githubUserName@github.com/metno/noresm.git
+  git clone https://github.com/NorESMhub/NorESM.git
 
-The last point will create a new directory called "noresm" in the place
+The last point will create a new directory called ``NorESM`` in the place
 you checked out the model. Go to that directory before executing any
 git-commands.
 
 If you get error messages, verify that you can open the page
-https://github.com/metno/noresm in a web-browser. If you can not, you
-are probably not a github-user or not member of the noresm group on
-github.
+https://github.com/NorESMhub/NorESM in a web-browser. If you can not, you
+are probably not a github-user 
 
 -  Also do the following on all machines where you use git:
 
-  * **Make sure you have a version of git >= 2.0** (add the line "module load git" to your .bashrc files on hexagon, vilje)
+  * **Make sure you have a version of git >= 2.0** (add the line "module load git" to your .bashrc files on the HPC machine e.g. Betzy, Fram)
   * **git config - -global push.default simple** (Will edit your ~/.gitconfig file to a safer way to share your modifications, see http://stackoverflow.com/questions/13148066/warning-push-default-is-unset-its-implicit-value-is-changing-in-git-2-0)
 
 Note that with git, the main branch is no longer called "trunk", it is called "master"!
 
+For further details on downloading the NorESM code and managing externals, please see :ref:`download_code`
 
 Verify that you have the correct checkout
 '''''''''''''''''''''''''''''''''''''''''
@@ -83,6 +81,8 @@ can switch between any of your checked out branches using the command
 Note that in git, switching to a new branch change the files in your
 working directory. Git will warn you if you have any modified files
 before switching to a new branch. This is different from how svn works.
+
+For further details on downloading the NorESM code and managing externals, please see :ref:`download_code`
 
 
 Modify files
