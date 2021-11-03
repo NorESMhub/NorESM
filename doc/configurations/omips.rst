@@ -137,6 +137,142 @@ The iHAMOCC source code is located in::
 
   <noresm-base>/components/blom/hamocc
   
+Spinup of BLOM-iHAMOCC
+^^^^^
+The global ocean overturning circulation time-scale is in the order of 1500 years, and usually several cycles of spinup are required, especially for the ocean biogeochemistry to reach a reasonable quasi-equilibrium state. Since running the NorESM model in a fully coupled mode is computationally demanding, it is not practical to run thousands of model years during spinup. To alleviate this issue, the ocean components of NorESM, BLOM and iHAMOCC, can be simulated offline or stand-alone (non fully-coupled), forced by coupler fields for extended period of time until the drift in e.g. interior ocean fields become acceptable. Once this is achieved, the new quasi-equilibrium ocean state is then re-coupled back to the coupled system and integrated forward, usually for a few hundred years to ensure that the shock from re-coupling is minimized.
+
+The following describe the necessary steps to configure and run offline BLOM-iHAMOCC spinup:
+
+1. Generate the coupler forcing fields
+
+    The stand-alone ocean configuration requires boundary condition (atmospheric and land) fields to force the ocean model. In order to allow the ocean model to simulate the interannual-to-decadal variability, we recommend creating 50 years long or longer forcing fields from a fully coupled simulations under preindustrial control setup. The fully coupled simulation should have relatively stable atmospheric states during this 50 years period, with little drift. In order to generate the coupler fields, the following texts need to be included in the ``user_nl_cpl`` file in the case directory: ::
+
+     &seq_infodata_inparm
+       histaux_a2x      = .true.  
+       histaux_a2x1hr   = .true. 
+       histaux_a2x1hri  = .true.
+       histaux_a2x3hr   = .true.
+       histaux_a2x3hrp = .true.
+       histaux_a2x24hr = .true.
+       histaux_l2x     = .false.
+       histaux_l2x1yrg = .false.
+       histaux_r2x     = .true.
+
+2. Post-process the coupler fields
+
+     The coupler fields produced in step 1 are written in daily files and need to be concatenated into monthly files, which the ocean components expect. The script to concatenate and produce the monthly coupler fields is located @fram.sigma2.no: ::
+
+          /cluster/projects/nn2345k/matsbn/NorESM/concat_cpl_hist_mon/concat_cpl_hist_mon.csh
+
+
+     To generate the monthly fields, execute ::
+
+          concat_cpl_hist_mon.csh CASE_NAME INPUT_DAILY_DIR YEAR1 YEARN OUTPUT_MONTHLY_DIR "ha2x ha2x1hi ha2x1h ha2x3h ha2x1d hr2x"
+
+3. Create the stand-alone ocean case
+ 
+     The compset to run BLOM-iHAMOCC with the monthly coupler forcing is called ``NOICPLHISTOC``, which can be created e.g., as follows ::
+
+          create_newcase --case CASE_DIR_AND_NAME --compset NOICPLHISTOC --res f09_tn14 --machine betzy --project nnXXXXk --run-unsupported
+
+     (NOTE: not configured for Betzy yet)
+
+4. Setup the case
+
+     In the case directory, run ::
+    
+          ./case.setup
+
+5. Modify dependent files
+
+     In the case directory, add the following to ``user_nl_cice`` ::                
+
+         histfreq = 'm','d','x','x','x'
+         histfreq_n = 1,1,1,1,1
+         f_CMIP = 'mdxxx'
+         f_hi ="mxxxx"
+         f_hs="mxxxx"
+         f_fswdn="mxxxx"
+         f_fswabs="mxxxx"
+         f_congel="mxxxx"
+         f_frazil="mxxxx"
+         f_meltt="mxxxx"
+         f_melts="mxxxx"
+         f_meltb="mxxxx"
+         f_meltl="mxxxx"
+         f_fswthru="mxxxx"
+         f_dvidtt="mxxxx"
+         f_dvidtd="mxxxx"
+         f_daidtt="mxxxx"
+         f_daidtd="mxxxx"
+         f_apond_ai="mxxxx"
+         f_hpond_ai="mxxxx"
+         f_apeff_ai="mxxxx"
+         f_snowfrac="mxxxx"
+         f_aicen="mxxxx"
+         f_snowfracn="mxxxx"
+         
+
+     Add the following to ``user_nl_blom`` ::
+
+        set SRXDAY = 6.
+        set SRXBAL = .true.  
+
+     Edit or adjust the following entries in ``env_run.xml`` (e.g., for monthly coupler fields from year 751 to 850): ::    
+
+         <entry id="RUN_TYPE" value="hybrid">
+         <entry id="RUN_REFCASE" value=“CPLHIST_CASE>
+         <entry id="RUN_REFDATE" value="0751-01-01">
+         <entry id="RUN_STARTDATE" value="0751-01-01">
+         <entry id="STOP_OPTION" value="nyears">
+         <entry id="STOP_N" value="200">
+         <entry id="REST_N" value="25">
+         <entry id="DATM_CPLHIST_DIR" value="$DIN_LOC_ROOT/cplhist/CPLHIST_OUTPUT_MONTHLY_DIR">
+         <entry id="DATM_CPLHIST_CASE" value=“CPLHIST_CASE">
+         <entry id="DATM_CPLHIST_YR_ALIGN" value="751">
+         <entry id="DATM_CPLHIST_YR_START" value="751">
+         <entry id="DATM_CPLHIST_YR_END" value="850">
+         <entry id="DROF_CPLHIST_DIR" value="$DIN_LOC_ROOT/cplhist/CPLHIST_OUTPUT_MONTHLY_DIR">
+         <entry id="DROF_CPLHIST_CASE" value="CPLHIST_CASE">
+         <entry id="DROF_CPLHIST_YR_ALIGN" value="751">
+         <entry id="DROF_CPLHIST_YR_START" value="751">
+         <entry id="DROF_CPLHIST_YR_END" value="850">
+
+     Edit or adjust the following entries in ``env_mach_pes.xml`` (e.g., for NorESM2-MM configuration): ::
+
+         <entry id="COST_PES" value="480">
+         <entry id="MAX_TASKS_PER_NODE" value="32">
+         <entry id="MAX_MPITASKS_PER_NODE" value="32">
+
+6. Configure salinity relaxation
+
+    It is recommended that surface salinity is relaxed toward monthly climatology values, e.g., those from earlier coupled runs. This is needed to avoid unexpected drift in the ocean physical states. Monthly climatology files from previous spin-up are available @fram.sigma2.no: ::
+
+         NorESM2-MM: /cluster/shared/noresm/inputdata/ocn/micom/tnx1v4/20170601/sss_climatology_N1850_f09_tn14_20190726_751-850_classic.nc
+         NorESM2-LM: /cluster/shared/noresm/inputdata/ocn/micom/tnx1v4/20170601/sss_climatology_N1850OCBDRDDMS_f19_tn14_250119_466_565_classic.nc
+
+    A python script to generate these files is available in: ::
+
+         /cluster/projects/nn2345k/matsbn/NorESM/sss_climatology/sss_climatology.py
+
+    In the case directory, add the following line to ``user_nl_blom`` file: ::
+
+         SCFILE= <filename>
+
+7. Build your case
+
+     In the case directory, run ::
+
+         ./case.build
+ 
+     Adjust the the length of model integration in ``env_run.xlm`` and the respective computing hours in ``env_batch.xml``.
+
+8. Submit the run
+
+     In the case directory, run ::
+     
+         ./case.submit
+
 
 CICE
 ''''
@@ -273,6 +409,64 @@ The CICE source code is located in::
 
 More information is found in the CESM-CICE User Guide:
 https://cesmcice.readthedocs.io/en/latest/
+
+
+
+HOWTO setup NorESM with sea-ice nudging
+^^^^^
+
+1. download NorESM following https://noresm-docs.readthedocs.io/en/latest/access/download_code.html - note that one needs to stay in the master branch (or noresm2.0.3>release), because otherwise the ``N2000`` compset is not included
+
+2. Change the ``Externals.cfg`` so that under cice ::
+
+     tag = n2_nudge-ice
+
+this points to the correct branch in NorESMhub
+
+3. run  ::
+
+     ./manage_externals/checkout_externals
+
+4. create a case as follows (an example for the transient SSP585): ::
+
+   ./cime/scripts/create_newcase --case /cluster/home/$USER/NorESM2/cases/N2000frc2_f19_tn14_20211025_transientSSP585nudge --compset N2000frc2 --res f19_tn14 --machine betzy --project nn9252k --run-unsupported --user-mods-dir cmip6_noresm_keyCLIM
+
+5. add the following to the ``user_nl_cice`` ::
+
+    f_da_fresh ="mdxxx"
+    f_da_fsalt ="mdxxx"
+    f_da_fheat ="mdxxx"
+    da_ice = .true.
+    da_method = 'pamip_long'
+    da_stream_year_first = 2000
+    da_stream_year_last = 2100
+    da_model_year_align = 1
+    da_stream_domxvarname = 'TLON'
+    da_stream_domyvarname = 'TLAT'
+    da_stream_domareaname = 'tarea'
+    da_stream_dommaskname = 'tmask'
+    da_lat_min=0.0
+    da_lat_max=90.0
+    da_timescale=5.
+    da_stream_fldfilename = "/cluster/shared/noresm/inputdata/PAMIP/regridded/siconc_hist_ssp585_21century.nc"
+    da_stream_domfilename = "/cluster/shared/noresm/inputdata/PAMIP/domain.cice.tnx1v4.nc"
+
+note that the ``da_stream_year_first`` and ``da_stream_year_last`` need to be adjusted according to your sea ice target file. Similarly, ``da_lat_min`` and ``da_lat_max`` can be adjusted as desired.
+
+6. modify ``env_run.xml`` so that ::
+
+    RUN_TYPE=hybdrid
+    RUN_REFCASE=NHIST_01_f19tn14_pamip-s_init
+    RUN_REFDATE=2000-04-01
+    RUN_STARTDATE=2000-04-01
+
+
+7. add in the ``user_nl_clm`` ::
+
+     use_init_interp = .true.
+
+8. run the simulation and hope for the best!
+
 
 
 References
