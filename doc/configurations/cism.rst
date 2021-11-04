@@ -5,16 +5,15 @@ Land ice
 
 **Note! The CISM coupling is under development and not yet a scientifically supported option in NorESM.**
 
+This description is equally a work in progress!
+
 CISM
 ''''
+Activating the land ice component CISM in NorESM experiments requires some preparatory work that is described here. 
 
-
-Spin up of CLM5 
+Spin up of CISM 
 ^^^^^^
-A long spin up is required for running NorESM2 with CISM activated
-
-
-
+Ice sheets have a longer response time compared to most other Earth System components. CISM therefore requires a spinup before it can be coupled into NorESM. We currently spin up CISM in standalone mode with surface mass balance forcing coming from an exsiting or preliminary NorESM run.  
 
 **Running CISM stand alone with NorESM2 forcing data**
 
@@ -26,7 +25,4 @@ The CISM model uses forcing files from the land model, CLM. To use NorESM2 histo
   hist_fincl2 = 'QRUNOFF', 'SOILLIQ', 'SOILICE', 'SOILWATER_10CM', 'TSA', 'TSL', 'GPP', 'AR', 'HR'
   hist_fincl3 = 'FIRA', 'FIRE', 'FSH', 'EFLX_LH_TOT', 'QSNOMELT', 'QSNOFRZ', 'QSOIL', 'QICE', 'QICE_MELT', 'FSA', 'FSR', 'TOPO_COL', 'FSDS', 'FLDS', 'LWdown', 'RAIN', 'SNOW', 'TSA', 'TG', 'H2OSNO'
   hist_dov2xy = .true., .true., .false.
-
-
-**Recoupling CLM5 with NorESM2**
 
