@@ -13,4 +13,5 @@ We have recently started to develop and use CISM as a coupled component in NorES
 References
 ^^^^^
 Lipscomb, W., R. Bindschadler, E. Bueler, D. Holland, J. Johnson, and S. Price, 2009: A community ice sheet model for sea level prediction, Eos Trans. AGU, 90, 23.
+
 Lipscomb, W. H., Fyke, J. G., Vizcaíno, M., Sacks, W. J., Wolfe, J., Vertenstein, M., Craig, A., Kluzek, E., & Lawrence, D. M. (2013). Implementation and Initial Evaluation of the Glimmer Community Ice Sheet Model in the Community Earth System Model, Journal of Climate, 26(19), 7352-7371.
