@@ -12,30 +12,28 @@ Obtain a copy of the model (using git)
 - Visit this page:
   https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
 
-- Send email to oyvind.seland@met.no to get the right permissions for the new github user (The email must contain who you are and the github username).
-
-- When you have the right permissions, you can obtain the code.
+You can obtain the obtain the code from: https://github.com/NorESMhub/NorESM  
 
 ::
 
-  git clone https://githubUserName@github.com/metno/noresm.git
+  git clone https://github.com/NorESMhub/NorESM.git
 
-The last point will create a new directory called "noresm" in the place
+The last point will create a new directory called ``NorESM`` in the place
 you checked out the model. Go to that directory before executing any
 git-commands.
 
 If you get error messages, verify that you can open the page
-https://github.com/metno/noresm in a web-browser. If you can not, you
-are probably not a github-user or not member of the noresm group on
-github.
+https://github.com/NorESMhub/NorESM in a web-browser. If you can not, you
+are probably not a github-user 
 
 -  Also do the following on all machines where you use git:
 
-  * **Make sure you have a version of git >= 2.0** (add the line "module load git" to your .bashrc files on hexagon, vilje)
+  * **Make sure you have a version of git >= 2.0** (add the line "module load git" to your .bashrc files on the HPC machine e.g. Betzy, Fram)
   * **git config - -global push.default simple** (Will edit your ~/.gitconfig file to a safer way to share your modifications, see http://stackoverflow.com/questions/13148066/warning-push-default-is-unset-its-implicit-value-is-changing-in-git-2-0)
 
 Note that with git, the main branch is no longer called "trunk", it is called "master"!
 
+For further details on downloading the NorESM code and managing externals, please see :ref:`download_code`
 
 Verify that you have the correct checkout
 '''''''''''''''''''''''''''''''''''''''''
@@ -83,6 +81,8 @@ can switch between any of your checked out branches using the command
 Note that in git, switching to a new branch change the files in your
 working directory. Git will warn you if you have any modified files
 before switching to a new branch. This is different from how svn works.
+
+For further details on downloading the NorESM code and managing externals, please see :ref:`download_code`
 
 
 Modify files
@@ -189,6 +189,7 @@ After merging the PR, you should normally delete the feature branch and update y
 
 **Note**: If your feature branch has many commits, it may be smart to "squash" the history before creating the PR, so that it is easier to review the full changes by others (and yourself). This can be done using the **git rebase** command, but this will not be covered here.
 
+
 Development branch vs. continous integration tool (CI)
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''
 When working using the forking workflow and committing code through reviewed pull requests, there will still be times when code changes will break the software build for various reasons. It is therefore common to merge PR's into a **development branch** in the upstream repository, rather than directly to **master**. This adds additional management, because administrator must merge the development branch into master frequently and regularly, unless the build is broken. The gain is that **master** *always should work*.
@@ -196,6 +197,23 @@ When working using the forking workflow and committing code through reviewed pul
 An alternative to this scheme is to configure the workflow using a **CI/CD tool** that automates this process. I.e. when the pull request is created, the branch will automatically checked out on a dedicated build server and built. The pull request will not be published before the build is successful on the build server. On github, this is possible with **Github Actions** https://help.github.com/en/actions. It requires effort to get this in place for complex projects, but is normally worth it for large projects.
 
 Another huge benefit of using a CI-tool is that it can automatically run test-suites in your project. E.g. a limited test-suite after successful build (part of evaluating that the build was OK), and a larger set test-suite after nightly builds.
+
+
+Hotfix branches
+''''''''''''''''
+A **hotfix** branch is created to fix a specific problem or bug. It should normally branch off and merge back to **master**, but may also merge to **development** or **release** branches. The procedures for hotfix branches are the same as feature branches in terms of creation and merging through pull requests. The main difference is if a single bug fix should be introduced in multiple branches.
+
+To introduce a fix in multiple branches, the **hotfix** branch should be initiated at a common ancestor for all the branches, usually the last commit common to all branch histories. This preserves the development history for the fix and avoids the potential problem of propagating code between branches unintentionally. Fortunately, git can help to identify this point using the command **git merge-base**. In the most general case, introducing a fix in multiple branches, one would check out a new hotfix branch
+::
+
+  git checkout -b hotfix/x.x.x-yy $(git merge-base --octopus branch1 branch2 ... branchN)
+
+The naming convention for the hotfix branch is "hotfix/<latest-NorESM-version>-<hotfix-number>". The "--octopus" flag is used if the merge-base involves more than two branches. In practical terms one would normally just include the hotfix for **master** and the latest release, e.g. the first **hotfix** branch for noresm2.0.2 would be
+::
+
+  git checkout -b hotfix/2.0.2-1 $(git merge-base master noresm2)
+
+After introducing the fix in the code, the hotfix branch should be merged to all relevant branches through normal pull requests.
 
 
 Tips and Gotcha's when working with Git

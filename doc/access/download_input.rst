@@ -16,14 +16,16 @@ directory is set in <noresm-base>/cime/config/cesm/machines/config_machines.xml
   
 ::
 
-The main download location for input data is https://noresm.org/inputdata/ from where the downloading request 
-might be redirected to another location.
+The main download location for input data is:
+  
+  https://noresm.org/inputdata/
+
+from where the downloading request might be redirected to another location.
 
 
 NorESM specific inputdata
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-WILL BE UPDATED BY adag@met.no
 The recipe to download the complete NorESM2 code is based on how it is done for CESM. For more details please see
 https://escomp.github.io/CESM/release-cesm2/downloading_cesm.html
 
@@ -55,3 +57,25 @@ or
 or
 
 - 4. Submit the case twice i.e run  `./case.submit`
+
+
+Advanced: Updating NorESM source inputdata
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The input data is currently physically stored on NIRD under
+::
+
+/trd-project3/NS9560K/www/inputdata
+
+::
+Project group members can create new folders and files, also inside existing subfolders.
+However, most existing files are write protected.
+
+If existing files need to be updated, please contact the owners to update them, 
+or they can make the files temporarily writable by executing the script:
+::
+
+/trd-project3/NS9560K/www/inputdata_permissions.sh
+
+::
+after commenting in/out the first or second line.

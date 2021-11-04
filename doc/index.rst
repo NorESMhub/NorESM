@@ -36,6 +36,7 @@ For obtaining news per email register to users@noresm.org at https://www.noresm.
    keyruns/keyruns.rst
    data/data.rst
    contribute/contribute.rst
+   developers/developers.rst
    faq/faq.rst
    
 

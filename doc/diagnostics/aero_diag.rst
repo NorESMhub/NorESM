@@ -5,6 +5,24 @@ Aerosol diagnostics
 
 For utilizing the comparison package described below, NorESM2 should be run with extra aerosol diagnostics and output, i.e. adding history_aerosol = .true. in user_nl_cam and enabling AROFFL and AEROCOM in preprocessorDefinitions.h . For a more detailed description, please see: :ref:`aerosol_output`  
 
+AeroVal model evaluation web interface and pyaerocom tools
+-----------------------------------------------------------
+
+The `AeroVal <https://aerocom-evaluation.met.no/>`__ web interface is an online visualisation tool for model evaluation studies. It provides interactive visualisations of model performance including many different performance measures such as biases, correlation coefficients, RMSE, or fractional-gross-error, both on a global scale and down to analyses and visualisations of individual timeseries at the station level. 
+
+All results available in the AeroVal interface(s) are created using the `pyaerocom <https://pyaerocom.readthedocs.io/en/latest/>`__ model evaluation software, which can be considered the backbone of AeroVal. pyaerocom provides tools for data harmonisation and co-location and can handle many different data formats, for instance, model diagnostics and satellite data in AeroCom format, output from EMEP model, and support for many different observation datasets and databases such as AERONET, EBAS, EARLINET, or AirBase.
+
+In addition to the high-level evaluation tools that are used for AeroVal, pyaerocom provides a modular and intuitive python API that can be used for more customised studies (see `pyaerocom tutorials <https://pyaerocom.readthedocs.io/en/latest/pyaerocom-tutorials/index.html>`__ if you are interested). 
+
+Relevant links
+^^^^^^^^^^^^^^
+
+AeroVal NorESM project site: https://aerocom-evaluation.met.no/main.php?project=noresm  
+
+pyaerocom website: https://pyaerocom.readthedocs.io
+
+pyaerocom GitHub: https://github.com/metno/pyaerocom
+
 NCL Model Version Comparison package ModIvsModII
 ------------------------------------
 

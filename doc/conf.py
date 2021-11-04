@@ -178,3 +178,5 @@ epub_exclude_files = ['search.html']
 
 
 # -- Extension configuration -------------------------------------------------
+extensions = ['sphinxcontrib.bibtex']
+bibtex_bibfiles = ['references_noresm.bib']
