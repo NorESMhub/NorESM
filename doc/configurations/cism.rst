@@ -18,7 +18,7 @@ Ice sheets have a longer response time compared to most other Earth System compo
 
 **Producing NorESM2 forcing data**
 
-To run the CISM model with NorESM forcing relies on output files from the land model, CLM, to be available. To use NorESM2 history files as the forcing, these lines need to be included in `user_nl_clm` :
+To run the CISM model with NorESM forcing relies on output files from the land model, CLM, to be available. To use NorESM2 history files as the forcing, these lines need to be included in `user_nl_clm` ::
 
   hist_nhtfrq = 0, -24, 0
   hist_mfilt  = 1, 5, 1
@@ -46,20 +46,14 @@ Incorporating the effect of ice sheet geometry changes on the atmospheric circul
 
 Activating the land ice component
 ^^^^^^
-The land ice component is actviated by setting the cism block entry required = True in Externals.cfg before compilation. The land ice component code consist of two separate repositories that provide the interface with the climate model (cism-wrapper, see below) and the ice sheet model code itself (CISM, not shown). 
+The land ice component is actviated by setting the cism block entry required = True in Externals.cfg before compilation. The land ice component code consist of two separate repositories that provide the interface with the climate model (cism-wrapper, see below) and the ice sheet model code itself (CISM, not shown) ::
 
   [cism]
-  
   tag = wrapper_noresm2.0.2_v1
- 
   protocol = git
-  
   repo_url = https://github.com/NorESMhub/cism-wrapper
-  
   local_path = components/cism
-  
   externals = Externals_CISM.cfg
-  
   required = True
 
 With these code changes, the interface and CISM code are compiled and activated in NorESM. 
