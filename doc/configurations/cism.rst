@@ -30,12 +30,15 @@ To run the CISM model with NorESM forcing relies on output files from the land m
 The files required to derive CISM forcing data have the name clm.h2 in the lnd archive. 
 
 **Downscaling NorESM2 data to the ice sheet grid**
+
 A procedure to extract needed variables and downscale the forcing to the ice sheet grid is available in a separate repository (https://github.com/hgoelzer/MEC-downscaling). We typically use a long-term mean (30 years or more) of the downscaled SMB as boundary condition for a spinup. 
 
 **Running CISM standalone with NorESM2 forcing data**
+
 With the SMB available, a standalone ice sheet model initialisation run can be started, where ice sheet model parameters may be optimised and the ice sheet is relaxed to the NorESM SMB forcing. This step is required to avoid unphysical model drift once CISM is coupled with the other NorESM components. 
 
 **Preparing CISM restart files for NorESM**
+
 Restart files from a standalone CISM run are nearly ready for input in NorESM experiments. It is only needed to reset the time variable, rename the file to NorESM standards and to produce an rpointer.glc file. 
 
 
