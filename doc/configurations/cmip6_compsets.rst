@@ -2,6 +2,9 @@
 
 CMIP6 NorESM2 experiments setup
 ==============
+A detailed overview of NorESM2 CMIP6 spin up and experimens including compsets, case names, restart files etc. can be found here  https://noresmhub.github.io/noresm-exp/intro.html
+
+
 Please use the branch ``noresm2`` for reproducing CMIP6 results of NorESM2. For an overview, please see: https://noresm-docs.readthedocs.io/en/noresm2/access/releases_noresm20.html
 
 
