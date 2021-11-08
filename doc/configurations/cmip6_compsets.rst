@@ -168,6 +168,12 @@ and the long name for ``N1850frc2`` is ::
                    <entry id="RUN_REFCASE" value="N1850_f09_tn14_20190913">
          
                    <entry id="RUN_REFDATE" value="1200-01-01">
+                   
+- **Restart files**
+   Before submitting the job, please remeber to copy the restart and rpointer files to the run directory, e.g. for TEST_NorESM2-MM_piControl on BETZY ::
+   
+        cp /trd-project3/NS9560K/noresm/cases/N1850_f09_tn14_20190913/rest/1200-01-01-00000/* /cluster/projects/$PROJECT/$USER/noresm/TEST_NorESM2-MM_piControl/run/
+        gunzip /cluster/projects/$PROJECT/$USER/noresm/TEST_NorESM2-MM_piControl/run/*.gz
    
 Overview of piControl case names, detailed setup (machine settings, node settings etc.), raw output and restart files: 
 
@@ -234,7 +240,14 @@ and for ``NHISTfrc2`` is ::
                    <entry id="RUN_REFCASE" value="N1850_f09_tn14_20190913">
          
                    <entry id="RUN_REFDATE" value="1200-01-01">
+ 
+- **Restart files**
+   Before submitting the job, please remeber to copy the restart and rpointer files to the run directory, e.g. for TEST_NorESM2-LM_historical on BETZY ::
    
+        cp /trd-project3/NS9560K/noresm/cases/N1850_f19_tn14_20190621/rest/1600-01-01-00000/* /cluster/projects/$PROJECT/$USER/noresm/TEST_NorESM2-LM_historical/run/
+        gunzip /cluster/projects/$PROJECT/$USER/noresm/TEST_NorESM2-LM_historical/run/*.gz
+        
+        
 Overview of historical case names, members, detailed setup (machine settings, node settings etc.), raw output and restart files: 
 
 - NorESM2-LM: https://noresmhub.github.io/noresm-exp/noresm2_hist/noresm2_lm_hist.html
@@ -303,6 +316,13 @@ and for ``NSSP585frc2`` is ::
                    
                    <entry id="RUN_STARTDATE" value="2015-01-01">
    
+ 
+- **Restart files**
+   Before submitting the job, please remeber to copy the restart and rpointer files to the run directory, e.g. for TEST_NorESM2-LM_ssp585 on BETZY ::
+   
+        cp /trd-project3/NS9560K/noresm/cases/NHIST_f19_tn14_20190710/rest/2015-01-01-00000/* /cluster/projects/$PROJECT/$USER/noresm/TEST_NorESM2-LM_ssp585/run/
+        gunzip /cluster/projects/$PROJECT/$USER/noresm/TEST_NorESM2-LM_ssp585/run/*.gz
+        
 Overview of scenario experiment case names, members, detailed setup (machine settings, node settings etc.), raw output and restart files: 
 
 - NorESM2-LM and NorESM2-MM: https://noresmhub.github.io/noresm-exp/NSSPs/noresm2_mm_nssp.html
