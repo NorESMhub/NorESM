@@ -1,29 +1,14 @@
 .. _compsets:
 
-
-(see the help section of the file ``<noresm_base>/cime_config/config_compsets.xml`` for details). 
-The compsets can also include information on which grids are scientifically supported (see below for details). 
-
-
-**frc2 compsets**: The frc2 option uses differently organized emission files. The frc2 files are located in ::
-  
-  <PATH_TO_INPUTDATA>/noresm/inputdata/atm/cam/chem/emis/cmip6_emissions_version20190808
-  
-The frc2 files were created to avoid the occurence of random mid-month model crashes. These crashes are related to the reading of emission files. To make sure that you are using the frc2 files, choose a compsets including *frc2* or if you  want to create a new compset add ::
-
-  %FRC2
- 
-to NORESM2.     
-
-CMIP6 compsets
+CMIP6 NorESM2 experiments setup
 ==============
 Please use the branch ``noresm2`` for reproducing CMIP6 results of NorESM2. For an overview, please see: https://noresm-docs.readthedocs.io/en/noresm2/access/releases_noresm20.html
 
 
 In order to reproduce CMIP6 experiments:
 
-- **Checkout the CMIP6 version of NorESM2**
-
+Checkout the CMIP6 version of NorESM2
+^^^^^
      How to obtain this version:  
 ::
 
@@ -34,7 +19,89 @@ In order to reproduce CMIP6 experiments:
      ./manage_externals/checkout_externals
 
 
-Please not, the ``user-mods-dir`` is important for the output, and should be changed to your needs.
+
+List of all **coupled experiment** compsets can be found in::
+     
+     <noresm-base>/cime_config/config_compsets.xml
+
+List of all **AMIP type** and **fixed SST** experiments can be found in 
+::
+     
+     <noresm-base>/components/cam/cime_config/config_compsets.xml
+     
+**frc2 compsets**: Several CMIP6 experiments were run with frc2 compsets. The frc2 option uses differently organized emission files. The frc2 files are located in
+::
+  
+  <PATH_TO_INPUTDATA>/noresm/inputdata/atm/cam/chem/emis/cmip6_emissions_version20190808
+  
+The frc2 files were created to avoid the occurence of random mid-month model crashes on FRAM. These crashes are related to the reading of emission files. Compsets including **frc2** are using the frc2 emission files and include  
+
+::
+
+    NORESM2%FRC2
+ 
+in the compset long name. 
+ 
+ **Please note that running with frc2 compsets will not give bit-reproducible simulations compared to simulations run without frc2 in the compset name**
+
+
+
+CMIP6 DECK Compsets
+^^^^^
+
+- **piControl**    : N1850 or N1850frc2
+- **historical**   : NHIST or NHISTfrc2
+- **abrupt-4xCO2** : NCO2x4cmip6 or NCO2x4cmip6frc2
+- **1pctCO2**      : N1PCTcmip6 or N1PCTcmip6frc2
+
+For a detailed overview of case names, experiment setup, restart files etc. please see: 
+
+- NorESM2-MM: https://noresmhub.github.io/noresm-exp/noresm2_deck/noresm2_mm_deck.html 
+- NorESM2-LM: https://noresmhub.github.io/noresm-exp/noresm2_deck/noresm2_lm_deck.html
+
+CMIP6 Scenario compsets (only frc2 compsets):
+^^^^^
+
+- **ssp126** : NSSP126frc2
+- **ssp245** : NSSP245frc2
+- **ssp370** : NSSP370frc2
+- **ssp585** : NSSP585frc2
+
+An overveiw of NorESM2 CMIP6 SSP experiments details, case names, restart files can be found here: https://noresmhub.github.io/noresm-exp/NSSPs/noresm2_mm_nssp.html 
+
+CMIP6 AMIP and fixed SST compsets
+^^^^^
+- **amip** : NFHISTnorpddmsbc
+
+Detailed information on NorESM2-LM AMIP simulation can be accessed here: https://noresmhub.github.io/noresm-exp/noresm2_deck/noresm2_lm_amip.html
+
+Useful compsets for calculating aerosol ERF:
+
+- Prescribed SST from NorESM piControl, 1850 aerosol emissions: NF1850norbc or NF1850frc2norbc 
+- Prescribed SST from NorESM piControl, 2014 aerosol emissions: NF1850norbc_aer2014 or NF1850frc2norbc_aer2014
+
+
+CMIP6 output
+^^^^^
+
+Please note that when building a case the ``user-mods-dir`` is important for the *output*, and should be changed according to your needs. Please see :ref:`experiments` sec. 2.1.5 and :ref:`standard_output` for further details.
+
+The usermods under ``<noresm_base>/cime_config/usermods_dirs/`` include::
+
+  cmip6_noresm_DECK (AEROFFL)    
+  cmip6_noresm_hifreq (high frequency output, AEROFFL)    
+  cmip6_noresm_hifreq_xaer (high frecuency output, AEROFFL and AEROCOM)   
+  cmip6_noresm_keyCLIM (used for KeyCLIM experiments, AEROFFL)
+  cmip6_noresm_xaer (AEROFFLand AEROCOM)    
+  
+To activate the cmip6_noresm_DECK usermod, run the create_newcase script with the option ``--user-mods-dir cmip6_noresm_DECK``. 
+
+Remember that the amount of diagnostics and the output frequency have a huge impact on both the run time and storage. 
+
+For more details, alos see this folder ::
+
+  <noresm_base>/cime_config/usermods_dirs
+
 
 CMIP6 piControl, historical and SSP5-8.5 experiments
 ======
@@ -104,8 +171,9 @@ Overview of piControl case names, detailed setup (machine settings, node setting
 - NorESM2-LM: https://noresmhub.github.io/noresm-exp/noresm2_deck/noresm2_lm_piC.html
 - NorESM2-MM: https://noresmhub.github.io/noresm-exp/noresm2_deck/noresm2_mm_piC.html
 
-historical
-^^^^^
+Historical
+^^^^^^
+
 ``NHIST`` is the alias for the NorESM compset for historical (1850-2014) conditions. The long name for ``NHIST`` is ::
    
       HIST_CAM60%NORESM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_MICOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS
