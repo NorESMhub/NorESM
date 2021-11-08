@@ -34,7 +34,7 @@ List of all **AMIP type** and **fixed SST** experiments can be found in
   
   <PATH_TO_INPUTDATA>/noresm/inputdata/atm/cam/chem/emis/cmip6_emissions_version20190808
   
-The frc2 files were created to avoid the occurence of random mid-month model crashes on FRAM. These crashes are related to the reading of emission files. Compsets including **frc2** are using the frc2 emission files and include  
+The frc2 files were created to avoid the occurrence of random mid-month model crashes on FRAM. These crashes are related to the reading of emission files. Compsets including **frc2** are using the frc2 emission files and include  
 
 ::
 
@@ -67,7 +67,7 @@ CMIP6 Scenario compsets (only frc2 compsets):
 - **ssp370** : NSSP370frc2
 - **ssp585** : NSSP585frc2
 
-An overveiw of NorESM2 CMIP6 SSP experiments details, case names, restart files can be found here: https://noresmhub.github.io/noresm-exp/NSSPs/noresm2_mm_nssp.html 
+An overview of NorESM2 CMIP6 SSP experiments details, case names, restart files can be found here: https://noresmhub.github.io/noresm-exp/NSSPs/noresm2_mm_nssp.html 
 
 CMIP6 AMIP and fixed SST compsets
 ^^^^^
@@ -98,12 +98,12 @@ To activate the cmip6_noresm_DECK usermod, run the create_newcase script with th
 
 Remember that the amount of diagnostics and the output frequency have a huge impact on both the run time and storage. 
 
-For more details, alos see this folder ::
+For more details, also see this folder ::
 
   <noresm_base>/cime_config/usermods_dirs
 
 
-CMIP6 piControl, historical and SSP5-8.5 experiments
+Reproduce CMIP6 piControl, historical and SSP5-8.5 experiments
 ======
 
 piControl
