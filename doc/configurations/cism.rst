@@ -49,7 +49,7 @@ Incorporating the effect of ice sheet geometry changes on the atmospheric circul
 
 Activating the land ice component
 ^^^^^^
-The land ice component is actviated by setting the cism block entry required = True in Externals.cfg before compilation. The land ice component code consist of two separate repositories that provide the interface with the climate model (cism-wrapper, see below) and the ice sheet model code itself (CISM, not shown) ::
+The land ice component is actviated by setting the cism block entry ``required = True`` in Externals.cfg before compilation. The land ice component code consist of two separate repositories that provide the interface with the climate model (cism-wrapper, see below) and the ice sheet model code itself (CISM, not shown) ::
 
   [cism]
   tag = wrapper_noresm2.0.2_v1
