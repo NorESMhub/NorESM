@@ -1,4 +1,4 @@
-.. _compsets:
+.. _cmip6_compsets:
 
 CMIP6 NorESM2 experiments setup
 ==============
