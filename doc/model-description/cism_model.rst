@@ -8,7 +8,7 @@ https://escomp.github.io/cism-docs/cism-in-cesm/versions/release-cesm2.0/html/in
 
 CISM in NorESM2
 =========
-We have recently started to develop and use CISM as a coupled component in NorESM2, which is work in progress. A number of coupled experiments have alreayd been set up, but are still being analyesd and tested. We will update this documentation as the work towards a fully scientifically supported coupled climate - ice sheet configuration progresses and matures.   
+We have recently started to develop and use CISM as a coupled component in NorESM2, which is work in progress. A number of coupled experiments have already been set up, but are still being analyzed and tested. We will update this documentation as the work towards a fully scientifically supported coupled climate - ice sheet configuration progresses and matures.   
 
 References
 ^^^^^
