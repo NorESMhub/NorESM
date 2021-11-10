@@ -3,7 +3,7 @@
 Newbies guide
 ================================    
 
-This guide provides basic instructions on how set up and run a standard NorESM case by excecuting 4 steps:
+This guide provides basic instructions on how set up and run a standard NorESM case by executing 4 steps:
 
   - create a new case (the **create_newcase** script)
   - configure case (the **case_setup** script)
@@ -16,7 +16,7 @@ It is assumed that you have sucsessfully downloaded the model (see :ref:`downloa
 Create a new case
 --------------------
 
-The **create_newcase** script is an excecutable python script located in:
+The **create_newcase** script is an executable python script located in:
 ::
 
   <noresm-base>/cime/scripts/
