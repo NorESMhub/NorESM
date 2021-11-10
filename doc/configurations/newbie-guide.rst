@@ -84,7 +84,7 @@ When your case has finished building you are ready to submit and run your case. 
 ::
   ./case.submit
   
-If your model simulation was successful, you should find the following line in slurm.out (or similar) in your cse folder 
+If your model simulation was successful, you should find the following line in slurm.out (or similar) in your case folder 
 
 ::
 
