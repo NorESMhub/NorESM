@@ -273,7 +273,11 @@ The following describe the necessary steps to configure and run offline BLOM-iHA
      
          ./case.submit
 
+9. Prior to 'recoupling' simulation, the dates in atmospheric and land restart files need to be adjusted, e.g., using the following command:
 
+     ncap2 -s 'time=401501' N1850_f19_tn14_21062019_CPLHIST.cam.r.1521-01-01-00000.nc new_adjusted_restart.nc
+         
+         
 CICE
 ''''
 The sea ice model component is based upon version 5.1.2 of the CICE sea ice model of Hunke et al. (2015). 
