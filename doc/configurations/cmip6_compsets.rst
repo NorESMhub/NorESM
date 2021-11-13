@@ -157,7 +157,7 @@ and the long name for ``N1850frc2`` is ::
    
               ::
               
-                   <entry id="RUN_REFCASE" value="N1850_f19_tn14_20190621">
+                   <entry id="RUN_REFCASE" value="N1850_f19_tn14_11062019">
          
                    <entry id="RUN_REFDATE" value="1600-01-01">
    
@@ -229,7 +229,7 @@ and for ``NHISTfrc2`` is ::
    
               ::
               
-                   <entry id="RUN_REFCASE" value="N1850_f19_tn14_20190621">
+                   <entry id="RUN_REFCASE" value="N1850_f19_tn14_11062019">
          
                    <entry id="RUN_REFDATE" value="1600-01-01">
    
@@ -244,7 +244,7 @@ and for ``NHISTfrc2`` is ::
 - **Restart files**
    Before submitting the job, please remeber to copy the restart and rpointer files to the run directory, e.g. for TEST_NorESM2-LM_historical on BETZY ::
    
-        cp /trd-project3/NS9560K/noresm/cases/N1850_f19_tn14_20190621/rest/1600-01-01-00000/* /cluster/projects/$PROJECT/$USER/noresm/TEST_NorESM2-LM_historical/run/
+        cp /trd-project3/NS9560K/noresm/cases/N1850_f19_tn14_11062019/rest/1600-01-01-00000/* /cluster/projects/$PROJECT/$USER/noresm/TEST_NorESM2-LM_historical/run/
         gunzip /cluster/projects/$PROJECT/$USER/noresm/TEST_NorESM2-LM_historical/run/*.gz
         
         
