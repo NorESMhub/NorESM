@@ -277,6 +277,8 @@ The following describe the necessary steps to configure and run offline BLOM-iHA
 
      ncap2 -s 'time=401501' N1850_f19_tn14_21062019_CPLHIST.cam.r.1521-01-01-00000.nc new_adjusted_restart.nc
          
+         The 'time' value should be set to the year of the ocean restart files, e.g., the last year of the offline spin-up period.
+         
          
 CICE
 ''''
