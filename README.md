@@ -42,3 +42,9 @@ This repository has the following NorESM branches:
 For a detailed description of the NorESM2.0.X releases, please see https://noresm-docs.readthedocs.io/en/noresm2/releases/
 
 * **noresm1** - contains a copy of old wiki NorESM1 documentation, refering to https://github.com/metno/noresm NorESM1 code, and incompletely to the development code under https://github.com/metno/noresm-dev (restricted access), used in 2019 for CMIP6 simulations
+
+
+# Low-key discussion forum
+
+If you have questions or you can’t find the solution to a problem in the FAQs or in other parts of the documentation, please post question(s) here: 
+https://github.com/NorESMhub/NorESM/discussions
