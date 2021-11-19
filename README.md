@@ -38,3 +38,9 @@ For a detailed description of all NorESM2.0.X releases, please see https://nores
 
 ### NorESM1 and CMIP5
 For the NorESM code base used in CMIP5, please see the **noresm1** branch.
+
+
+# Low-key discussion forum
+
+If you have questions or you can’t find the solution to a problem in the FAQs or in other parts of the documentation, please post question(s) here: 
+https://github.com/NorESMhub/NorESM/discussions
