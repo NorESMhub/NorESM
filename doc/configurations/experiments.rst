@@ -65,6 +65,8 @@ The frc2 files were created to avoid the occurence of random mid-month model cr
  
 to NORESM2. For a detailed description, see the section on creating your own compset below.
 
+For an overview of common compsets used for NorESM2 CMIP6 experiments, please see: :ref:`cmip6_compsets`
+
 For an overview of the compsets provided for CESM2, please see: http://www.cesm.ucar.edu/models/cesm2/config/compsets.html.
 
 
@@ -124,7 +126,6 @@ It is possible to use the long name (lname) to select a compset then creating a 
 **AMIP simulation**
 
 For details about AMIP simulation compsets, please see :ref:`amips`
-
 
 
 Resolution and grids
@@ -232,8 +233,6 @@ please see :ref:`output`
 Setting up a nudged simulation
 ''''''''''''''''''''''''''''''
 please see :ref:`nudged_simulations`
-
-
 
 
 
