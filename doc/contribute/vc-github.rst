@@ -37,7 +37,7 @@ Clone a repository
 There are currently three options for `cloning a repository from GitHub
 <https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository>`_;
 with HTTPS, with SSH, or with GitHub command line interface. No user
-autentication is required to clone a repository with HTTPS, but all three
+authentication is required to clone a repository with HTTPS, but all three
 methods require some steps for user authentication before code can be pushed to
 GitHub.
 
@@ -59,6 +59,8 @@ The GitHub command line interface (CLI) is a recent development that allows a
 user to interact with GitHub without going through the web interface. However,
 this requires installation of the github-cli (gh) application.
 
+
+.. _git-references:
 
 Learn more about git version control
 ''''''''''''''''''''''''''''''''''''
