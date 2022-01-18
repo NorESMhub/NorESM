@@ -495,6 +495,36 @@
 
   </compset>
 
+  <!-- Keyclim compsets with CISM -->
+  <compset>
+    <alias>N1850frc2G</alias>
+    <lname>1850_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_CISM2%EVOLVE_SWAV_BGC%BDRDDMS</lname>
+  </compset>
+  <compset>
+    <alias>NHISTfrc2G</alias>
+    <lname>HIST_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_CISM2%EVOLVE_SWAV_BGC%BDRDDMS</lname>
+  </compset>
+  <compset>
+    <alias>NSSP126frc2G</alias>
+    <lname>SSP126_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_CISM2%EVOLVE_SWAV_BGC%BDRDDMS</lname>
+  </compset>
+  <compset>
+    <alias>NSSP245frc2G</alias>
+    <lname>SSP245_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_CISM2%EVOLVE_SWAV_BGC%BDRDDMS</lname>
+  </compset>
+  <compset>
+    <alias>NSSP370frc2G</alias>
+    <lname>SSP370_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_CISM2%EVOLVE_SWAV_BGC%BDRDDMS</lname>
+  </compset>
+  <compset>
+    <alias>NSSP585frc2G</alias>
+    <lname>SSP585_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_CISM2%EVOLVE_SWAV_BGC%BDRDDMS</lname>
+  </compset>
+  <compset>
+    <alias>NSSP585frc2extG</alias>
+    <lname>SSP585_CAM60%NORESM%FRC2EXT_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_CISM2%EVOLVE_SWAV_BGC%BDRDDMS</lname>
+  </compset>
+
   <!-- NorESM scenarios -->
 
   <compset>
