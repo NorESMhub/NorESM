@@ -1,0 +1,101 @@
+!-----------------------------------------------------------------------
+! Users should ONLY USE user_nl_cism to change namelist variables for
+! any of the namelists in cism_in and the namelist-like sections in
+! cism.config.
+!
+! Users should add ALL user specific namelist changes below using the
+! following syntax:
+!
+!   namelist_var = new_namelist_value 
+!
+! Note that there is no distinction between variables that will appear
+! in cism_in and those that will appear in cism.config: simply add a new
+! variable setting here, and it will be added to the appropriate place
+! in cism_in or cism.config.
+!
+! For example to change the value of evolution to 0, add the following
+! below:
+!
+!   evolution = 0
+!-----------------------------------------------------------------------
+
+cesm_history_vars = 'smb artm thk usurf topg uvel vvel temp bmlt bwat beta_internal floating_mask grounded_mask bpmp acab_applied bmlt_applied calving_rate iareaf iareag imass imass_above_flotation total_smb_flux total_bmb_flux total_calving_flux total_gl_flux ice_sheet_mask ice_cap_mask acab beta velnorm btemp bpmp'
+
+global_bc = 0
+
+![options]
+dycore = 2
+flow_law = 2
+evolution = 3
+temperature = 1
+temp_init = 4
+marine_margin = 1
+calving_domain = 1
+calving_init = 1
+limit_marine_cliffs = .true.
+basal_mass_balance = 1
+gthf = 1
+artm_input_function = 0
+bmlt_float = 0
+dm_dt_diag = 1
+
+![parameters]
+flow_factor = 1.
+flow_factor_float = 1.
+ice_limit = 1.
+thck_gradient_ramp = 100.
+marine_limit = -200
+geothermal = -5.e-2
+max_slope = 0.10
+rhoi = 917.
+rhoo = 1026.
+grav = 9.80616
+shci = 2117.27
+lhci = 3.337e5
+trpt = 273.16
+pmp_offset = 5.
+effecpress_delta = 0.02
+beta_grounded_min = 100.
+beta_powerlaw_umax = 5000.
+p_ocean_penetration = 0.
+cliff_timescale = 0.0
+taumax_cliff = 1.e6
+powerlaw_c = 2.e4
+powerlaw_m = 3.0
+powerlaw_c_max = 1.0e5
+powerlaw_c_min = 10.
+inversion_babc_timescale = 500.
+inversion_babc_thck_scale = 100.
+inversion_babc_smoothing_timescale = 2000.
+inversion_thck_flotation_buffer = 2.0
+inversion_thck_threshold = 5.0
+inversion_wean_powerlaw_c_tstart = 999999.
+inversion_wean_powerlaw_c_tend = 999999.
+inversion_wean_powerlaw_c_timescale = 1000.
+
+![ho_options]
+compute_blocks = 0
+which_ho_cp_inversion = 2
+which_ho_babc = 9
+which_ho_bwat = 0
+which_ho_effecpress = 3
+which_ho_efvs = 2
+which_ho_thermal_timestep = 0
+which_ho_resid = 4
+which_ho_sparse = 3
+which_ho_nonlinear = 1
+which_ho_gradient = 0
+which_ho_gradient_margin = 1
+which_ho_assemble_beta = 1
+which_ho_assemble_bfric = 1
+which_ho_assemble_taud = 1
+which_ho_approx = 4
+which_ho_precond = 4
+which_ho_calving_front = 0
+which_ho_ground = 2
+which_ho_flotation_function = 3
+glissade_maxiter = 100
+
+!block_inception = .true.
+!remove_ice_caps = .true.
+!force_retreat = .true.
