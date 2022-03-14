@@ -16,14 +16,16 @@ directory is set in <noresm-base>/cime/config/cesm/machines/config_machines.xml
   
 ::
 
-The main download location for input data is https://noresm.org/inputdata/ from where the downloading request 
-might be redirected to another location.
+The main download location for input data is:
+  
+  https://noresm.org/inputdata/
+
+from where the downloading request might be redirected to another location.
 
 
 NorESM specific inputdata
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-WILL BE UPDATED BY adag@met.no
 The recipe to download the complete NorESM2 code is based on how it is done for CESM. For more details please see
 https://escomp.github.io/CESM/release-cesm2/downloading_cesm.html
 

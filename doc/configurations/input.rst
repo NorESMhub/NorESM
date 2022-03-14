@@ -3,7 +3,7 @@
 
 Input data sets
 ==============================
-The complete input data set is stored on Fram @ Sigma2. For access contact mben@norceresearch.no.
+The complete input data set is stored at Sigma2. To download, please refer to the :ref:`download_input` section. For uploading new input data, contact mben@norceresearch.no or the owner of the data.
 
 Atmospheric specific input data
 ^^^^^^^^^^^^^^^
