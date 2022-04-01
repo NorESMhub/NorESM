@@ -60,13 +60,15 @@ Fresh install
 ---------------------------
 If you want to change the code for your own purpose, you can installed it on NIRD under your HOME folder or your own project area (i.e., /projects/NSxxxxK). There are several steps to install it:
 
+
 1. Fork the NorESM Diagnostic Package `Github repository <https://github.com/NordicESMhub/noresmdiagnostics>`_ to your own Github respository, e.g., https://github.com/YOU_GITHUB_USERNAME/noresmdiagnostics
 2. Change to your preferred location, denoted as $DIAGROOT, where you want to install the tool, and ``git clone https://github.com/YOU_GITHUB_USERNAME/noresmdiagnostics``
 3. Change to $DIAGROOT/noresmdiagnostics/bin, and link or download all the observation and grid data files.
+
   - If you are installing the tool on NIRD, you just need to link all the data to your clone by running the script ``linkdata.sh``, given you have access to the /project/NS2345K project
   - If you are not memember of NS2345K or you are installing it on platforms other than NIRD, you should download all the data to your clone by executing ``dloaddata.sh``. If you are not running it on NIRD, you should have CDO, NCO and NCL installed.
 4. Make changes to the code/scripts for your purpose. And call ``diag_run`` of your own clone.
-5. If you would like to contribute your function enhancements or bug fixes to the original diagnostic package, you should commit the changes to your fork repository, then create an Issue at the `Github repository <https://github.com/NordicESMhub/noresmdiagnostics>`_, and finally make a ``pull request``  tto the original Github repository to incorporate your changes.
+5. If you would like to contribute your function enhancements or bug fixes to the original diagnostic package, you should commit the changes to your fork repository, then create an Issue at the `Github repository <https://github.com/NordicESMhub/noresmdiagnostics>`_, and finally make a ``pull request``  to the original Github repository to incorporate your changes.
 
 Run the tool
 ============
@@ -108,12 +110,12 @@ Each package can be run/configured from the command line using the wrapper scrip
   -i2, --input-dir2=DIR                         Specify the directory where the control case history files are located (OPTIONAL).
                                                 Default is --input-dir=/projects/NS2345K/noresm/cases
   -o, --output-dir=DIR                          Specify the directory where the package(s) the climatology and time-series files should be stored (OPTIONAL).
-                                                Default is --output-dir=/projects/NS2345K/diagnostics/noresm/out/yanchun
+                                                Default is --output-dir=/projects/NS2345K/diagnostics/noresm/out/$USER
   -p, --passive-mode                            Run the script in passive mode: the diagnostic script will be configured but not executed (OPTIONAL).
   -t, --type=TYPE                               Specify climatology or time series diagnostics (OPTIONAL): valid options are --type=climo and --type=time_series.
                                                 Default is to run both. Note that the time series are computed over the entire simulation.
   -w, --web-dir=DIR                             Specify the directory where the html should be published (OPTIONAL).
-                                                Default is --web-dir=/projects/NS2345K/www/diagnostics/noresm/yanchun
+                                                Default is --web-dir=/projects/NS2345K/www/diagnostics/noresm/$USER
   --no-atm                                      Run CLM diagnostics without CAM data. Must be used for offline CLM simulations.
   
   Examples:
@@ -173,13 +175,16 @@ a climatology between model years 21 and 50. It is assumed that the N1850_f19_tn
 history files are located under */projects/NS2345K/noresm/cases*. By default, the resulting plots and html will be
 stored in ::
 
-  /projects/NS2345K/www/diagnostics/noresm/$USER/N1850_f19_tn14_191017/CAM_DIAG,
+  /projects/NS2345K/www/diagnostics/noresm/$USER/N1850_f19_tn14_191017/CAM_DIAG
   
-or, if you specify to store them under a common folder, i.e. with ``-w /projects/NS2345K/www/diagnostics/noresm/common``. It links to the following URL: 
+, where $USER is your NIRD username. Or if you specify to store them under a common folder, i.e. with ``-w /projects/NS2345K/www/diagnostics/noresm/common``. It links to the following URL: ::
+
 http://ns2345k.web.sigma2.no/diagnostics/noresm/common/N1850_f19_tn14_191017/CAM_DIAG/yrs21to50-obs.html.
 
-The climatology and time-series files under */projects/NS2345K/diagnostics/noresm/out/$USER/CAM_DIAG* (where $USER is your NIRD username).
+The climatology and time-series files under ::
 
+  /projects/NS2345K/diagnostics/noresm/out/$USER/CAM_DIAG
+ 
 If you want to run *model1-model2* diagnostics, you also need to specify *case_name2*, *start_yr2* and
 *end_yr2* (-c2, -s2, -e2) in addition.
 
@@ -258,14 +263,14 @@ the following will appear on the screen::
   /projects/NS2345K/diagnostics/noresm/bin/diag_run
   Version: 2.1
   -------------------------------------------------
-  -CHANGING DIAGNOSTICS DIRECTORY to /projects/NS2345K/diagnostics/noresm/out/yanchun/CLM_DIAG in lnd_template.csh
+  -CHANGING DIAGNOSTICS DIRECTORY to /projects/NS2345K/diagnostics/noresm/out/$USER/CLM_DIAG in lnd_template.csh
   -CHANGING ROOT DIRECTORY FOR CODE AND DATA to /projects/NS2345K/diagnostics/noresm/packages/CLM_DIAG in lnd_template.csh
   -CHANGING INPUT DIR 1 to /projects/NS2345K/noresm/cases in lnd_template.csh
-  -CHANGING publish_html_root to /projects/NS2345K/www/diagnostics/noresm/yanchun in lnd_template.csh
+  -CHANGING publish_html_root to /projects/NS2345K/www/diagnostics/noresm/$USER in lnd_template.csh
   -SETTING UP TIME-SERIES DIAGNOSTICS FOR ENTIRE EXPERIMENT
-  CLM DIAGNOSTICS SUCCESSFULLY CONFIGURED in /projects/NS2345K/diagnostics/noresm/out/yanchun/CLM_DIAG
+  CLM DIAGNOSTICS SUCCESSFULLY CONFIGURED in /projects/NS2345K/diagnostics/noresm/out/$USER/CLM_DIAG
   -------------------------------------------------
-  lnd_template.csh IS NOT RUNNING: NOT ALL REQUIRED VARIABLES HAVE BEEN CONFIGURED (see /projects/NS2345K/diagnostics/noresm/out/yanchun/CLM_DIAG/config.log).
+  lnd_template.csh IS NOT RUNNING: NOT ALL REQUIRED VARIABLES HAVE BEEN CONFIGURED (see /projects/NS2345K/diagnostics/noresm/out/$USER/CLM_DIAG/config.log).
   -------------------------------------------------
   -------------------------------------------------
   TOTAL diag_run RUNTIME: 0m1s

@@ -3,6 +3,89 @@
 Post-processing and plotting FAQ
 ================
 
+Very large ocean cell thickness in NorESM2
+-----
+The ocean layer thickness **dz** variable may not be very meaningful for NorESM. The ocean model component BLOM is an isopycnic-coordinated model and hence the model layer thickness is changing from each integration step. Therefore, it is possible that the layer thickness will exceed 3km to 4km under certain circumstances. For example, this occurs sometimes in polar waters under deep convection where the ocean column is not stratified. And also at some coastal regions (where the water may not be well-represented by 'isopycnic' movement). So in short, **dz** reflects how the model represents the water masses (faithfully or not). 
+
+Weights and area information for the ocean component BLOM 
+--------
+The area and mask information for BLOM output can be found in the grid file usually stored together with the input data used by BLOM. Please see http://ns9560k.web.sigma2.no/inputdata/ocn/blom/grid/ for the grid files used. 
+
+Weights for ocean calculations:
+
+::
+
+  gridpath = 'path_to_gridfile' # path to grid files
+  grid = xr.open_mfdataset(gridpath + 'grid_tnx1v4_20170622.nc')
+  parea =  grid.parea
+  pmask =  grid.pmask
+  pweight = parea*pmask
+  
+::
+
+
+The vertical coordinate in BLOM
+---------------------------
+**Q:**
+The vertical coordinate of NorESM2 is provided as the isopycnal coordinate (kg/m^3). I want to change this isopycnal coordinate to z coordinate (m).
+
+**A:**
+Vertically pre-interpolated output to z-level (including temperature, salinity and the overturning mass stream-functions) should be available for all NorESM2 experiments. For raw model output these variables often end with *lvl* . E.g.
+
+- Temperature: templvl(time, depth, y, x)
+- Salinity: salnlvl(time, depth, y, x)
+- Velocity x-component: uvellvl(time, depth, y, x)
+- Velocity y-component: vvellvl(time, depth, y, x)
+- Overturning stream-function: mmflxd(time, region, depth, lat)
+
+For CMORIZED data the pre-interpolated output to z-level uses a different grid identifier than *gn* (grid native). Please note that *gr* usually means regridded horizontally but in case of NorESM2 it is regridded vertically. E.g.
+
+- Temperature: thetao(time, depth, y, x) on *gr* grid 
+- Salinity: so(time, depth, y, x) on *gr* grid 
+- Velocity x-component: uo(time, depth, y, x) on *gr* grid 
+- Velocity y-component: vo(time, depth, y, x) on *gr* grid 
+- Overturning stream-function: msftmz(time, region, depth, lat) on *grz* grid 
+
+Different sea-ice and ocean grid
+------------------------
+
+**Q:** The sea ice output variables in NorESM2 are on a 360x384 grid, while the ocean output variables are on a 360x385 grid. Which variable shall I use if I want to e.g. calculate the area sum of the sea ice  (e.g., sea ice volume in the Northern Hemisphere)?
+
+**A:**
+The ocean/sea-ice grid of NorESM2 is a tripolar grid with 360 and 384 unique grid cells in i- and j-direction, respectively. Due to the way variables are staggered in the ocean model, an additional j-row is required explaining the 385 grid cells in the j-direction for the ocean grid. The row with j=385 is a duplicate of the row with j=384, but with reverse i-index.
+
+The ocean and sea-ice components of NorESM define the grid cell area differently. In the ocean component, the grid cell area is found by computing the area of a spherical polygon with grid cell corners as vertices. The sea-ice component computes the area as dx*dy where dx and dy are grid cell sizes in i- and j-direction, respectively. In order to achieve good conservation in flux exchanges, we ensure that the ocean and sea-ice components have identical grid cell areas. To obtain this with the different approaches of computing grid cell area, we nudge the sea-ice grid locations slightly.
+
+In conclusion, it is consistent to use the area variable defined on the ocean grid in relation to sea-ice variables, but you have to ignore the final j-row of e.g. area. So to conclude, just drop the last row with j=385 of area when dealing with the sea ice variables.
+
+
+The surface variables in BLOM
+---------------------------
+**Q:** Are the surface variables diagnosed in BLOM identical to the values in the upper ("surface") layer (e.g. sst compared to temp @sigma =27.22 and templvl @depth = 0m)? 
+
+**A:** Usually not. So if you think "surface is surface", please read below:
+
+The surface mixed boundary layer in BLOM is divided into 2 model layers with thickness dz(1) and dz(2) for the upper and lower layer, respectively. Let h = dz(1) + dz(2) be the total thickness of the mixed layer, then dz(1) = min(10 m, h/2). Further, the minimum thickness of the mixed layer is 5 m. Thus, the upper model layer, dz(1), will have a thickness between 2.5 m to 10 m.  For a comparison of the output variables  **sst**, **temp**, **templvl** :
+
+- **temp:**  the temperature weighted by the thickness of the layer. For the upper layer this will be: ::
+         
+         sum(temp(1)*dz(1))/sum(dz(1))
+         
+time averaged over the time interval used for the diagnostics.
+
+- **templvl**:  the temperature weighted by a pre-defined depth interval for every time step and subsequently averaged over the time interval used for the diagnostics. For the upper (first) layer of templvl, the depth interval is 0 to 5 m.
+
+- **sst**:  temperature in the upper (first) model layer for every time step in the diagnostics interval and subsequently averaged over the time interval used for the diagnostics.
+
+Thus: 
+
+- **temp** and **sst** will usually not be identical since *temp* is weighted by the layer thickness and *sst* is not. The only exception is if h is greater than 20m throughout the average time period used for the diagnostics, then a constant weighting will be applied (i.e.  dz(1) = 10 m).
+
+- **templvl** and **sst** will usually not be identical since *templvl* is weighted by the layer depth interval and *sst* is not. The only exception is if dz(1) is greater then 5 m throughout the average time period used for the diagnostics. Usually, dz(1) is less than 5 m in some regions e.g. tropical upwellilng regions and hence templvl @depth=0 and sst will differ.
+
+These results apply to other variables as well (e.g. salinity and velocities) and to all CMIP6 compsets. Please note, for the actual weighting calculations in BLOM pressure is used instead of layer thickness, but the explanation stays the same. 
+
+
 
 How do I compute a weighted average?
 ---------------------

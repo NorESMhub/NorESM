@@ -6,16 +6,15 @@ Land and river run off
 CLM5
 ------
 
-The land model used in NorESM2 is the Community Land Model version 5 (CLM5):
-http://www.cesm.ucar.edu/models/clm/
-
-
-Specific questions about CLM can be addressed Lei Cai, email: leca@norceresearch.no
+The land model used in NorESM2 is the Community Land Model version 5 (`CLM5 <http://www.cesm.ucar.edu/models/clm/>`_). Specific questions about CLM can be addressed to Hui Tang (email: hui.tang@geo.uio.no) or Kjetil Aas (email: k.s.aas@geo.uio.no).
 
 CLM5 model configurations available in NorESM2
 ^^^^^^
+The version of CLM5 used by NorESM2 can be found from Externals.cfg (see `here <https://noresm-docs.readthedocs.io/en/noresm2/access/download_code.html#configure-externals-cfg>`_ for a detailed explanation). 
+
 CLM5 can be run with a prognostic crop model with prognostic vegetation state and active biogeochemistry. 
 The global crop model is on in BGC default configuration with 8 temperate and tropical crop types and has the capability to dynamically simulate crop management and crop management change through time. 
+
 The BGC-CROP option is used in all NorESM2 CMIP6 experiments and is activated in the compset by::
 
   CLM50%BGC-CROP
@@ -35,7 +34,7 @@ The current state of the atmospheric component, CAM6-Nor, at a given time step i
 
 - 2. The land model then updates the soil and snow hydrology calculations based on these fluxes. These fields are passed to the atmosphere. The albedos sent to the atmosphere are for the solar zenith angle at the next time step but with surface conditions from the current time step.
 
-From CLM5 user guide: https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/tech_note/Ecosystem/CLM50_Tech_Note_Ecosystem.html#atmospheric-coupling
+From the CLM5 `user guide <https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/tech_note/Ecosystem/CLM50_Tech_Note_Ecosystem.html#atmospheric-coupling>`_. 
 
 
 CLM5 surface data
@@ -52,15 +51,12 @@ Required surface data for each land grid cell include:
 - peat area fraction
 - peak month of agricultural burning. Optional surface data include crop irrigation and managed crops.
 
-From CLM5 user guide: https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/tech_note/Ecosystem/CLM50_Tech_Note_Ecosystem.html#surface-data:
+From the CLM5 `user guide <https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/tech_note/Ecosystem/CLM50_Tech_Note_Ecosystem.html#surface-data>`_.
 
-**Steps to create a complete set of surface data files for CLM**
-
-A technical description on how to create new surface data sets is found here: 
-https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/clm_surfdata.pdf
+Surface data for default resolution (e.g., f19_tn14 for NorESM2-LM and f09_tn14 for NorESM2-MM) are available on Fram @ Sigma2: /work/shared/noresm/inputdata/lnd/clm2/surfdata_map/ 
 
 
-The inital state of CLM5
+The initial state of CLM5
 ^^^^^^
 
 The land model needs to read in the inital state from a restart file. This can be customized in user_nl_clm in the case folder ::
@@ -107,7 +103,7 @@ For example if STOP_N=50 years, you can set::
  
 -8760 means one average value per year, and 50 years in one file.
 
-- The full namelist definitions and defaults in the CLM5: http://www.cesm.ucar.edu/models/cesm2/settings/current/clm5_0_nml.html
+- The full namelist definitions and their defaults for CLM5 can be studied `here <http://www.cesm.ucar.edu/models/cesm2/settings/current/clm5_0_nml.html>`_. 
 
 Spin up of CLM5 
 ^^^^^^
@@ -176,12 +172,12 @@ NorESM2 can then be run with CLM5 using the restart file from the end of the spi
   finidat = '<path_to_inputdata>/inputdata/<path_to_file>/CLM_SPINUP_FILENAME.clm2.r.YR-01-01-00000.nc'
  
  
-A description of the NorESM2 CLM5 spin up, recoupling and diagnostics can be found here:
-https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/NorESM-CLM-memo.pdf
+A description of the NorESM2 CLM5 spin up, recoupling and diagnostics can be found `here <https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/NorESM-CLM-memo.pdf>`_. 
+
 
 Code modification 
 ^^^^^^
-To make more subtantial modification to the BLOM/iHAMOCC code than what is possible by the use of user_nl_clm, there are two methods:
+To make more subtantial modification to the CLM5 code than what is possible by the use of user_nl_clm, there are two methods:
 
 1. Make a branch from the NorESM2 version (branch or release) you want to modify, checkout this branch in order to make code changes directly in the source code folder.
 
@@ -195,8 +191,7 @@ The CLM5 source code is located in::
 Land-only experiments
 ^^^^^^
 
-**For land-only simulations**, there is no difference in running the CLM5 in CESM2 and that in NorESM2. For a detailed description on how to set up, modify, build and run CLM5 stand alone experiments, please see
-the CLM5.0 users guide: https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/setting-up-and-running-a-case/choosing-a-compset.html (last accessed 7th May 2020)
+**For land-only simulations**, there is no difference in running the CLM5 in CESM2 and that in NorESM2. For a detailed description on how to set up, modify, build and run CLM5 stand alone experiments, please check CLM5.0's `user guide <https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/setting-up-and-running-a-case/choosing-a-compset.html>`_  (last accessed 7th May 2020).
 
 NorESM2 specific additions
 ^^^^^^
@@ -218,8 +213,8 @@ will use CESM2 treatment of the surface water in CLM (see previous description).
 CLM5 specifics
 ^^^^^
 
-- There is no information exchange within the CLM model between sub-grid tiles (landunits, columns, plant functional types (PFTs)). 
-- Sub-grid tiles only exchange information with the atmosphere. In the current CLM, there is no advection of heat and water at depth. 
+- CLM generally treats each sub-grid element (landunits and columns) independently, without lateral exchange of energy or heat.
+- Sub-grid elements only exchange information with the atmosphere, in addition to water being removed from the grid cell as surface and subsurface runoff.
 - The horizontal resolution of the CLM keeps the same as for the atmosphere (f19, f09). 
 - Vertically, there are four soil structures to set in the CLM namelist file. CLM5 model configurations available in NorESM2:
 
@@ -238,12 +233,7 @@ By default, 20SL_8.5m is employed.
 MOSART
 -------------
 
-| The Model for Scale Adaptive River Transport (MOSART) is the default river model for CESM2, CLM5 and NorESM2. For more information please see:  
-| http://www.cesm.ucar.edu/models/cesm2/river/
-|   
-| For a techincal user guide, please see:  
-| https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/tech_note/MOSART/CLM50_Tech_Note_MOSART.html  
-
+The Model for Scale Adaptive River Transport (MOSART) is the default river model for CESM2, CLM5 and NorESM2. For more information start `here <http://www.cesm.ucar.edu/models/cesm2/river/>`_. For a techincal user guide go `here <https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/tech_note/MOSART/CLM50_Tech_Note_MOSART.html>`_.   
 
 The methods and syntax for modifying the user namelist and code in MOSART are similar to CLM5, so the previous description can be used. The user namelist for MOSART is user_nl_mosart and source code files should be copied to SourceMods/src.mosart/ in the case folder.
 
