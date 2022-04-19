@@ -12,7 +12,7 @@ This guide instructs both novice and experienced users on building and running N
 
 NorESM2
 ^^^^^^^^
-The Norwegian Earth System Model version 2 (NorESM2) is an coupled Earth System Model developed by the Norwegian Climate  Consortium (NCC). NorESM2 is based on the second version of the Community Earth System Model, CESM2 (http://www.cesm.ucar.edu/models/cesm2/), developed and operated at the National Center for Atmospheric Research (NCAR), Boulder, US. 
+The Norwegian Earth System Model version 2 (NorESM2) is an coupled Earth System Model developed by the NorESM Climate modeling Consortium (NCC). NorESM2 is based on the second version of the Community Earth System Model, CESM2 (http://www.cesm.ucar.edu/models/cesm2/), developed and operated at the National Center for Atmospheric Research (NCAR), Boulder, US. 
 
 The NorESM specific development is led by the Norwegian Meteorological Institute and NORCE Norwegian Research Centre AS. Other partners involved are the University of Oslo (UiO), CICERO, Nansen Environmental and Remote Sensing Center (NERSC) and the University of Bergen (UiB). 
 

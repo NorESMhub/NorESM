@@ -59,6 +59,34 @@ The ocean and sea-ice components of NorESM define the grid cell area differently
 In conclusion, it is consistent to use the area variable defined on the ocean grid in relation to sea-ice variables, but you have to ignore the final j-row of e.g. area. So to conclude, just drop the last row with j=385 of area when dealing with the sea ice variables.
 
 
+The surface variables in BLOM
+---------------------------
+**Q:** Are the surface variables diagnosed in BLOM identical to the values in the upper ("surface") layer (e.g. sst compared to temp @sigma =27.22 and templvl @depth = 0m)? 
+
+**A:** Usually not. So if you think "surface is surface", please read below:
+
+The surface mixed boundary layer in BLOM is divided into 2 model layers with thickness dz(1) and dz(2) for the upper and lower layer, respectively. Let h = dz(1) + dz(2) be the total thickness of the mixed layer, then dz(1) = min(10 m, h/2). Further, the minimum thickness of the mixed layer is 5 m. Thus, the upper model layer, dz(1), will have a thickness between 2.5 m to 10 m.  For a comparison of the output variables  **sst**, **temp**, **templvl** :
+
+- **temp:**  the temperature weighted by the thickness of the layer. For the upper layer this will be: ::
+         
+         sum(temp(1)*dz(1))/sum(dz(1))
+         
+time averaged over the time interval used for the diagnostics.
+
+- **templvl**:  the temperature weighted by a pre-defined depth interval for every time step and subsequently averaged over the time interval used for the diagnostics. For the upper (first) layer of templvl, the depth interval is 0 to 5 m.
+
+- **sst**:  temperature in the upper (first) model layer for every time step in the diagnostics interval and subsequently averaged over the time interval used for the diagnostics.
+
+Thus: 
+
+- **temp** and **sst** will usually not be identical since *temp* is weighted by the layer thickness and *sst* is not. The only exception is if h is greater than 20m throughout the average time period used for the diagnostics, then a constant weighting will be applied (i.e.  dz(1) = 10 m).
+
+- **templvl** and **sst** will usually not be identical since *templvl* is weighted by the layer depth interval and *sst* is not. The only exception is if dz(1) is greater then 5 m throughout the average time period used for the diagnostics. Usually, dz(1) is less than 5 m in some regions e.g. tropical upwellilng regions and hence templvl @depth=0 and sst will differ.
+
+These results apply to other variables as well (e.g. salinity and velocities) and to all CMIP6 compsets. Please note, for the actual weighting calculations in BLOM pressure is used instead of layer thickness, but the explanation stays the same. 
+
+
+
 How do I compute a weighted average?
 ---------------------
 

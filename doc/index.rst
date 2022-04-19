@@ -19,8 +19,11 @@ If you have a question or you can’t find the solution to a problem in the docu
 
 How to contribute
 ------------------
-
-If you have any questions or interested in actively participate in the code or documentation, create a new issue on github at https://github.com/NorESMhub/NorESM/issues
+We welcome contributions to the NorESM model, including bug reports and fixes, contributions for
+code improvements, and suggestions for feature enhancements or inclusion of new features. Please
+consult the `CONTRIBUTING.md <https://github.com/NorESMhub/NorESM/blob/master/CONTRIBUTING.md>`_
+file in the github repository or the ":ref:`contribute`" section in this document, and create a
+`new issue <https://github.com/NorESMhub/NorESM/issues>`_ on github.
 
 Further information on how to contribute to this documentation can be found at 
 https://github.com/NorESMhub/NorESM/blob/master/doc/README.md.
