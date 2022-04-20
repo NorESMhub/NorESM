@@ -41,7 +41,7 @@ The ocean component Bergen Layered Ocean Model (**BLOM**; Bentsen et al., 2020, 
   
 Further details in FAQs
 ^^^^^
-For further details about BLOM and BLOM diagnostics, please see the *Post-processing and plotting FAQ* in the Frequently asked questions section:  :ref:`faq/postp_plotting_faq` 
+For further details about BLOM and BLOM diagnostics, please see the *Post-processing and plotting FAQ* in the Frequently asked questions section:  :ref:`../faq/postp_plotting_faq` 
 
 References
 ^^^^^^
