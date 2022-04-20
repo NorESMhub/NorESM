@@ -39,9 +39,9 @@ The ocean component Bergen Layered Ocean Model (**BLOM**; Bentsen et al., 2020, 
   With respect to coupling to the sea ice model, BLOM and CICE now use a consistent salinity dependent seawater freezing temperature (Assur, 1958). Selective damping of external inertia–gravity waves in shallow regions is enabled to mitigate an issue with unphysical oceanic variability in high latitude shelf regions, causing excessive sea ice formation due to breakup and ridging in CMIP5 versions of NorESM1.                                                
   
   
-Further details in FAQ
+Further details in FAQs
 ^^^^^
-For further details about BLOM and BLOM diagnostics, please see :ref:`postp_plotting_faq`. 
+For further details about BLOM and BLOM diagnostics, please see the *Post-processing and plotting FAQ* in the Frequently asked questions section:  :ref:`faq/postp_plotting_faq` 
 
 References
 ^^^^^^
