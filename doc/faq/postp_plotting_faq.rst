@@ -97,6 +97,49 @@ There is no need for the total (integrated) vertical transport across depth to b
 
 Note that the vertical transport (wmo) is defined at level (or the model layer coordinate if you use gn-grid) interfaces, so you can check the vertical convergence for example wmo.diff('lev').sum('lev') which will be much closer to zero - if you take into account the horizontal convergence the closure will be much better, although things probably won't exactly close using the monthly output. If you just want to check the conservation, it is better to use the layer coordinate (gn, with vertical coordinate 'rho').
 
+How do I fix the time issue in monthly files (h0-files):
+--------------
+The monthly files in NorESM2 (not BLOM/MICOM/iHAMOCC files) are written *after* the last time step of the month. Consequently, the date in the netcdf file is the first of the following month. E.g. The date in FILENAME.cam.h0.0001-01.nc will be 01-02-0001 (the first of *February* and not January). This needs to be taken into account when calculating annual averages using python packages like xarray and iris. One method is to use the time bounds (instead of time), another method is to correct the time stamps in the time array. If the time variable is not corrected, none of the python functions involving time e.g. yearly averages, seasonal averages etc. will provide correct information
+    
+**xarray**
+
+::
+
+  def fix_cam_time(ds):
+      ''' 
+      Parameters
+      ----------
+      ds : xarray.Dataset 
+      Returns
+      -------
+      ds : xarray.Dataset with corrected time
+      '''
+
+      from cftime import DatetimeNoLeap
+      months = ds.time_bnds.isel(bnds=0).dt.month.values
+      years = ds.time_bnds.isel(bnds=0).dt.year.values
+      dates = [DatetimeNoLeap(year, month, 15) for year, month in zip(years, months) ]
+      ds = ds.assign_coords(time = dates)
+      return ds
+
+
+
+**iris**
+
+:: 
+
+    def subtract_second_timedim(cube):
+        '''
+        Fix time issue by subtracting one second from the time array
+        '''
+        time = cube.coord("time")
+        new_points = time.points - 1/86400
+        new_time = DimCoord(new_points, standard_name="time", 
+                            units=time.units)
+        cube.remove_coord("time")
+        cube.add_dim_coord(new_time, 0)
+        return cube
+
 
 How do I compute a weighted average?
 ---------------------
@@ -109,12 +152,9 @@ How do I compute a weighted average?
 
 **Using python**
 
-When calculating annual averages from NorESM2 data it is important use appropriate monthly weights, especially for individual radiative fluxes (can have errors of the order of 0.5-1 W/m^2 if not used). 
-
-The monthly files in NorESM2 (not BLOM/MICOM/iHAMOCC files) are written *after* the last time step of the month. Consequently, the date in the netcdf file is the first of the following month. E.g. The date in FILENAME.cam.h0.0001-01.nc will be 01-02-0001 (the first of *February* and not January). This needs to be taken into account when calculating annual averages using python packages like xarray and iris. One method is to use the time bounds (instead of time), another method is to correct the time stamps in the time array. 
+When calculating annual averages from NorESM2 data it is important use appropriate monthly weights, especially for individual radiative fluxes (can have errors of the order of 0.5-1 W/m^2 if not used). Please remember to fix the time issue in the monthly cam and clm files (see the previous question).
 
 **xarray**
-
 
 For BLOM/MICOM/iHAMOCC files there are no issues with the time variable, and annual averages can be calculated:
 
@@ -205,48 +245,3 @@ Documentation: https://scitools.org.uk/iris/docs/latest/
       cubes_aa = iris.cube.CubeList(tmp).merge()
       return cubes_aa[0]
   
-
-
-How do I fix the time issue in monthly cam files (h0-files):
---------------
-NorESM raw CAM h0 files have incorrect time i.e. the January files have the time 1st of February as the time variable and so on. Thus it is necessary to use the time boundaries in order to the correct time. If the time variable is not corrected, none of the python functions involving time e.g. yearly averages, seasonal averages etc. will provide correct information
-    
-**xarray**
-
-::
-
-  def fix_cam_time(ds):
-      ''' 
-      Parameters
-      ----------
-      ds : xarray.Dataset 
-      Returns
-      -------
-      ds : xarray.Dataset with corrected time
-      '''
-
-      from cftime import DatetimeNoLeap
-      months = ds.time_bnds.isel(bnds=0).dt.month.values
-      years = ds.time_bnds.isel(bnds=0).dt.year.values
-      dates = [DatetimeNoLeap(year, month, 15) for year, month in zip(years, months) ]
-      ds = ds.assign_coords(time = dates)
-      return ds
-
-
-
-**iris**
-
-:: 
-
-    def subtract_second_timedim(cube):
-        '''
-        Fix time issue by subtracting one second from the time array
-        '''
-        time = cube.coord("time")
-        new_points = time.points - 1/86400
-        new_time = DimCoord(new_points, standard_name="time", 
-                            units=time.units)
-        cube.remove_coord("time")
-        cube.add_dim_coord(new_time, 0)
-        return cube
-
