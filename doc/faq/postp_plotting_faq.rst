@@ -1,4 +1,4 @@
-.. postp_plotting_faq.rst:
+.. _postp_plotting_faq:
 
 Post-processing and plotting FAQ
 ================
