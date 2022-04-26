@@ -1,6 +1,6 @@
 .. _ocn_bgc_model:
 
-The ocean BGC model
+The ocean BGC model; iHAMOCC
 =======================================
 
 The ocean biogeochemistry (BGC) component **iHAMOCC** (isopycnic coordinate HAMburg Ocean Carbon Cycle model) is an updated version of the ocean biogeochemistry module used in NorESM1. The iHAMOCC is based on the the HAMOCC5.1 model developed in Max-Planck Institute of Meteorology (Maier-Reimer et al., 2005) and was later modified for an isopycnal-coordinate ocean general circulation model (Assmann et al., 2010).

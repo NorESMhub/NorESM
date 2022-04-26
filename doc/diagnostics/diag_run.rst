@@ -175,13 +175,16 @@ a climatology between model years 21 and 50. It is assumed that the N1850_f19_tn
 history files are located under */projects/NS2345K/noresm/cases*. By default, the resulting plots and html will be
 stored in ::
 
-  /projects/NS2345K/www/diagnostics/noresm/$USER/N1850_f19_tn14_191017/CAM_DIAG,
+  /projects/NS2345K/www/diagnostics/noresm/$USER/N1850_f19_tn14_191017/CAM_DIAG
   
-or, if you specify to store them under a common folder, i.e. with ``-w /projects/NS2345K/www/diagnostics/noresm/common``. It links to the following URL: 
+, where $USER is your NIRD username. Or if you specify to store them under a common folder, i.e. with ``-w /projects/NS2345K/www/diagnostics/noresm/common``. It links to the following URL: ::
+
 http://ns2345k.web.sigma2.no/diagnostics/noresm/common/N1850_f19_tn14_191017/CAM_DIAG/yrs21to50-obs.html.
 
-The climatology and time-series files under */projects/NS2345K/diagnostics/noresm/out/$USER/CAM_DIAG* (where $USER is your NIRD username).
+The climatology and time-series files under ::
 
+  /projects/NS2345K/diagnostics/noresm/out/$USER/CAM_DIAG
+ 
 If you want to run *model1-model2* diagnostics, you also need to specify *case_name2*, *start_yr2* and
 *end_yr2* (-c2, -s2, -e2) in addition.
 

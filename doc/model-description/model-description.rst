@@ -13,6 +13,7 @@ NorESM2 Model Description
    ocn_bgc_model.rst
    sea_ice_model.rst
    lnd_model.rst
+   cism_model.rst
    coupler.rst
    refs.rst
    
