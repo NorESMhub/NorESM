@@ -15,7 +15,7 @@ After creating a case (see :ref:`experiments`) and running the case.setup script
 
 - **user namelists:** namelists for the different models where you can change parameters and model settings, add output variables. If you use usermods when creating your case, any pre-defined user namelists from the usermods will appear immediately when running the create_newcase script. Otherwise, empty user namelists  will be created with running the case.setup script. There is one namelist for each model component (i.e. user\_nl\_cam, user\_nl\_cice, user\_nl\_clm, user\_nl\_blom, user\_nl\_cpl). Use the user namelists to change the contents of the full namelists in the CaseDocs folder (see below). 
 
-- **CaseDocs:** here you find the namelists containing all the subroutines and parameters used. These files will be modified after rebuild. The details of parameter values and input files are listed in the <component>_in files. *You should never have to edit the contents of this directory*. If you wish to make changes to the <component>_in files, you change the user_nl_<component> and rebuild.
+- **CaseDocs:** here you find the namelists containing all the inputfiles and parameters used. These files will be modified after rebuild. The details of parameter values and input files are listed in the <component>_in files. *You should never have to edit the contents of this directory*. If you wish to make changes to the <component>_in files, you change the user_nl_<component> and rebuild.
 
 - **LockedFiles:** Directory that holds copies of files that should not be changed. *You should never edit the contents of this directory*
 
