@@ -18,7 +18,7 @@ The NorESM Diagnostic Package:
 * **HAMOCC_DIAG**: time series, climaotology, zonal mean, regional mean
 * **BLOM_DIAG**: time series, climatologies, zonal mean, fluxes, etc
 
-(See the `major changes to the NCAR's Diagnostics Package`_ at the bottom)
+(See more on the `Major changes to the NCAR's Diagnostics Package`_ at the bottom)
 
 Installation
 ============
@@ -536,6 +536,8 @@ See more help: ::
 .. note::
     The mounted NIRD project area ``/trd-project*`` are not available on the HPC computing nodes. Therefore, the ``-i``, ``-o`` can only be set to locations under /cluster/users/$USER. The ``-w`` option can be set to ``/trd-project*`` area to facility the browsing the webpage-based diagnostics. It is actually set to ``/cluster`` during runtime, but can transfer to NIRD automatically after the diagnostic is finished. 
 --------------------------------------------------------------------------------
+
+.. _Major changes to the NCAR's Diagnostics Package:
 
 **Major changes to the NCAR's Diagnostics Package**
 
