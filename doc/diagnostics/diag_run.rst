@@ -584,7 +584,7 @@ The diagnostic tool package is based on NCAR's CAM and CLM Diagnostic Packages.
 
 *HAMOCC_DIAG (newly developed)*
 
-    Two modes of diagnostics: compare to the observations and anothor model run; includes diagnostics of:
+    Two modes of diagnostics: compare to the observations and another model run; includes diagnostics of:
 
     - Time series plots
         1. Global fluxes
