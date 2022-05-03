@@ -514,13 +514,13 @@ The CPU account is set to default as nn2345k if not prescribed. The CPU hours is
 
     $ ./diag_srun -m blom -c NOICPLHISTOC_f09_tn14_cpldiags -s 1 -e 20 -i /cluster/work/users/$USER/archive -o /cluster/work/users/$USER/diagnostics/out -w /cluster/work/users/$USER/diagnostics/www
 
-The above settings for ``-i``, ``-o`` and ``-w`` are default values if they are not prescribed.
+The above settings for ``-i``, ``-o`` and ``-w`` are default values if they are not prescribed. As the mounted NIRD disks ``/trd-project**`` are not accessible from the compute nodes, the ``-i`` and ``-o`` options have to be set to ``/cluster**``. For the ``-w`` option, see the next example.
 
 4. Set input data, output data on Betzy, and webpage path on NIRD ::
 
     $ ./diag_srun -m blom -c NOICPLHISTOC_f09_tn14_cpldiags -s 1 -e 20 -w /trd-project1/NS2345K/www/diagnostics/noresm/$USER --account=nn2345k --time=0-00:59:00
 
-The created webpage will saved to NIRD. As the mounted NIRD disks ``/trd-project**`` are not accessible from the compute nodes, the webpage path specificed by ``-w`` will temporary set to the defaut location under ``/cluster/work/users/$USER/diagnostics/www``, and will ``rsync`` to NIRD after the diagnostics job is finished.
+The created webpage will saved to NIRD. The webpage path specificed by ``-w`` will temporary set to the defaut location under ``/cluster/work/users/$USER/diagnostics/www``, and will ``rsync`` to NIRD after the diagnostics job is finished.
 
 5. Remove source webpage files from Betzy after transferred to NIRD ::
 
