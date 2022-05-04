@@ -68,7 +68,7 @@ The pre-installed path::
 
 You can run this package without installation as a *noresm* user group. There are two wrapper scripts:
 
-* ``diag_run`` for running on the Betzy login nodes (highly not recommended), and
+* ``diag_run`` for running on the Betzy login nodes (highly discouraged, see `Sigma2 HPC policy <https://documentation.sigma2.no/jobs/submitting.html>`_)
 * ``diag_srun`` to submit a SBATCH job to the compute node of Betzy as a `preproc <https://documentation.sigma2.no/jobs/job_types/betzy_job_types.html#preproc>`_ type of job.
 
 One can either add the ``diag_run`` and ``diag_srun`` to your search path: ::
@@ -470,7 +470,11 @@ Model-obs time-series diagnostics in HAMOCC between yrs 31 and 100: ::
 Run the tool on Betzy
 ==================
 
-There are two alternatives to run the tool on Betzy, run either as an interactive (for short test and debug runs) or a batch job (recommended). It is also possible to run directly on the login node with ``diag_run``, but it is higly discouraged and not an option.  
+There are two alternatives to run the tool on Betzy, either as an interactive (for short test and debug runs) or a batch job (recommended). It is also possible to run directly on the login node with ``diag_run``, but it is higly discouraged and not an option (Refer to `Sigma2 HPC policy <https://documentation.sigma2.no/jobs/submitting.html>`_).
+
+The main purpose to run the tool on Betzy is to get a quick diagnostic of model output when the model is still on-the-fly, but already has some intermediate output been `short-term archived </output/archive_output.html#short-term-archiving>`_ to **/cluster/work/users/$USER/archive** (Refer to :ref:`archive_output`).
+
+Since the mounted NIRD project disks ``/trd-project*/xx`` are not accessible from the compute nodes, the ``-i``, ``-o`` have to point to ``/cluster/work/users/$USERS/xxx``, with an execption for the ``-w`` option. See explanations and examples in the following.
 
 As interactive job
 ------------------
@@ -534,7 +538,8 @@ See more help: ::
     /cluster/shared/noresm/diagnostics/noresm/bin/diag_srun -h
 
 .. note::
-    The mounted NIRD project area ``/trd-project*`` are not available on the HPC computing nodes. Therefore, the ``-i``, ``-o`` can only be set to locations under /cluster/users/$USER. The ``-w`` option can be set to ``/trd-project*`` area to facility the browsing the webpage-based diagnostics. It is actually set to ``/cluster`` during runtime, but can transfer to NIRD automatically after the diagnostic is finished. 
+    The mounted NIRD project area ``/trd-project*`` are not available on the HPC computing nodes. Therefore, the ``-i``, ``-o`` can only be set to locations under /cluster/work/users/$USER. The ``-w`` option can be set to ``/trd-project*`` area to facility the browsing the webpage-based diagnostics. It is actually set to ``/cluster`` during runtime, but transfer the created webpages to NIRD automatically after the diagnostic is finished. 
+
 --------------------------------------------------------------------------------
 
 .. _Major changes to the NCAR's Diagnostics Package:
