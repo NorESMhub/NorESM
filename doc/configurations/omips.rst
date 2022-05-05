@@ -175,8 +175,6 @@ The following describe the necessary steps to configure and run offline BLOM-iHA
 
           create_newcase --case CASE_DIR_AND_NAME --compset NOICPLHISTOC --res f09_tn14 --machine betzy --project nnXXXXk --run-unsupported
 
-     (NOTE: not configured for Betzy yet)
-
 4. Setup the case
 
      In the case directory, run ::
@@ -246,7 +244,7 @@ The following describe the necessary steps to configure and run offline BLOM-iHA
 
 6. Configure salinity relaxation
 
-    It is recommended that surface salinity is relaxed toward monthly climatology values, e.g., those from earlier coupled runs. This is needed to avoid unexpected drift in the ocean physical states. Monthly climatology files from previous spin-up are available @fram.sigma2.no: ::
+    It is recommended that surface salinity is relaxed toward monthly climatology values, e.g., those from earlier coupled runs. This is needed to avoid unexpected drift in the ocean physical states. Monthly climatology files from previous spin-up are available @fram.sigma2.no and @betzy.sigma2.no: ::
 
          NorESM2-MM: /cluster/shared/noresm/inputdata/ocn/micom/tnx1v4/20170601/sss_climatology_N1850_f09_tn14_20190726_751-850_classic.nc
          NorESM2-LM: /cluster/shared/noresm/inputdata/ocn/micom/tnx1v4/20170601/sss_climatology_N1850OCBDRDDMS_f19_tn14_250119_466_565_classic.nc
@@ -257,7 +255,7 @@ The following describe the necessary steps to configure and run offline BLOM-iHA
 
     In the case directory, add the following line to ``user_nl_blom`` file: ::
 
-         SCFILE= <filename>
+         set SCFILE= '<filename>'
 
 7. Build your case
 
