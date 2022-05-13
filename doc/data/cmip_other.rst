@@ -27,13 +27,17 @@ There are two alternatives to download additional CMIP datasets:
 
 1. Make a request for data or for more data to be downloaded to this folder, contact jang@met.no.
 2. Download data by yourself, one can use the automatically-generated wget shell script on the ESGF data portal (e.g., `DKRZ ESGF portal <https://esgf-data.dkrz.de/projects/esgf-dkrz/>`_), or use the tool called `Synda <https://prodiguer.github.io/synda/index.html>`_ (Refer to the following subsection :ref:`download_with_synda`).
+
+For either way to download the data, please follow the :ref:`data_download_guideline` to download and move your data to the right place so that it will be sorted to the DKRZ structure.
    
 If you are a NIRD user, but not a member of this project and would like to request access, contact michaels@met.no.
 
 .. note::
     NorESM CMIP data !!!  They are stored on nird under /pojects/NS9034K/ (not under /projects/NS9252K). You don't need to download NorESM data to avoid duplication.
 
-Data download guidline
+.. _data_download_guideline:
+
+Data download guideline
 ---------------------
 
 (This guidline is also noted in /cluster/shared/ESGF/README.)
