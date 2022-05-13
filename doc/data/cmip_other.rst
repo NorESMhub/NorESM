@@ -80,7 +80,7 @@ Download data with Synda
 
 It is currently installed at `/cluster/shared/ESGF/software/synda`.
 
-(Note, this just serves as an alternative to the tool/scripts [ESGF_download](https://github.com/metno/ESGF_download) by Jans)
+(Note, this just serves as an alternative to the tool/scripts `ESGF_download <https://github.com/metno/ESGF_download>`_ by Jans)
 
 Refer to its `documentation <http://prodiguer.github.io/synda/>`_ for introduction and user's guide. But be alerted that its documentation seems not well written and keeps up-to-date.
 
