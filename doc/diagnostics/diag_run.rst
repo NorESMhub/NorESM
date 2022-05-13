@@ -472,7 +472,7 @@ Run the tool on Betzy
 
 There are two alternatives to run the tool on Betzy, either as an interactive (for short test and debug runs) or a batch job (recommended). It is also possible to run directly on the login node with ``diag_run``, but it is higly discouraged and not an option (Refer to `Sigma2 HPC policy <https://documentation.sigma2.no/jobs/submitting.html>`_).
 
-The main purpose to run the tool on Betzy is to get a quick diagnostic of model output when the model is still on-the-fly, but already has some intermediate output been `short-term archived </output/archive_output.html#short-term-archiving>`_ to **/cluster/work/users/$USER/archive** (Refer to :ref:`archive_output`).
+The main purpose to run the tool on Betzy is to get a quick diagnostic of model output when the model is still on-the-fly, but already has some intermediate output been short-term archived to **/cluster/work/users/$USER/archive** (Refer to :ref:`archive_output`).
 
 Since the mounted NIRD project disks ``/trd-project*/xx`` are not accessible from the compute nodes, the ``-i``, ``-o`` have to point to ``/cluster/work/users/$USERS/xxx``, with an execption for the ``-w`` option. See explanations and examples in the following.
 
@@ -482,7 +482,7 @@ Run with an `intactive sbatch job <https://documentation.sigma2.no/jobs/interact
 
 Start an interactive job request by, for example : ::
 
-$ salloc --nodes=1 --mem-per-cpu=2G --time=00:30:00 --partition=preproc --account=nn2345k
+$ salloc --nodes=1 --mem-per-cpu=12G --time=00:30:00 --partition=preproc --account=nn2345k
 
 And then use the same command-line options of ``diag_run`` as on NIRD. 
 
@@ -600,3 +600,11 @@ The diagnostic tool package is based on NCAR's CAM and CLM Diagnostic Packages.
         1. Horizontal fields
         2. Zonal mean fields
         3. Regionally-averaged monthly climatologies
+
+*CISM_DIAG (newly developed)*
+
+    Two modes of diagnostics: compare to the observations and another model run; includes diagnostics of:
+
+    - Time series plots
+        1. Mass/ice fluxes
+        2. Mass/ice/temperatue averages
