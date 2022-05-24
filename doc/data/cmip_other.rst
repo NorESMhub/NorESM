@@ -95,11 +95,11 @@ Synda is installed with ``Conda`` Betzy, so you can load it by: ::
 
 or just add ``synda`` exectable to your search path, e.g., ::
 
-    mkdir -p ~/local/bin/synda
+    mkdir -p ~/local/bin
     ln -s /cluster/shared/ESGF/software/synda/bin/synda ~/local/bin/synda
     echo 'export PATH=$PATH:~/local/bin' >>~/.bashrc
 
-Then it is availabe by the `synda` command.
+Then it is availabe by the ``synda`` command.
 
 Configuration
 ++++++++++++++++
@@ -107,6 +107,8 @@ Configuration
 You’ll need to properly configure the synda work environment. To do so, the first step is the set a synda home environment variable. This will the be the directory that will harbor all the configuration, database and other required files for synda to function properly. So choose it well. For instance: /home/user/.synda would do the trick. ::
 
     export ST_HOME=$HOME/.synda
+
+For more information, please refer to the `Synda documentation <https://prodiguer.github.io/synda/sdt/conda_install.html#configuration>`_
 
 Set up your credentials
 +++++++++++++++++++++++
@@ -157,6 +159,4 @@ each dataset contains several files, then download the dataset to the current di
 or individual file(s) by: ::
 
     synda get CMIP6.CMIP.NCC.NorESM2-LM.historical.r1i1p1f1.Amon.tas.gn.v20190815.tas_Amon_NorESM2-LM_historical_r1i1p1f1_gn_201001-201412.nc
-
-(There are more examples on a github discussion group `esmvaltool-on-nird <https://github.com/orgs/NorESMhub/teams/esmvaltool-on-nird/discussions/5>`_ (and you may need to become a member to see the discussions). It is however out-dated now, and it was previously written for the data management routine under NIRD, but not under Betzy now.)
 
