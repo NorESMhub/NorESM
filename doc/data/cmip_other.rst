@@ -89,13 +89,15 @@ A simply tutorial on how to use it to download and mange CMIP data.
 Activate the tool
 ++++++++++++++++
 
-It is install with ``Conda`` on the ipcc node (work for only the ipcc node), so you can load it by: ::
+Synda is installed with ``Conda`` Betzy, so you can load it by: ::
 
     conda activate /cluster/shared/ESGF/software/synda
 
-or just add ``synda`` exectable to your search path (work for the ipcc and normal nird nodes), e.g., ::
+or just add ``synda`` exectable to your search path, e.g., ::
 
+    mkdir -p ~/local/bin/synda
     ln -s /cluster/shared/ESGF/software/synda/bin/synda ~/local/bin/synda
+    echo 'export PATH=$PATH:~/local/bin' >>~/.bashrc
 
 Then it is availabe by the `synda` command.
 
@@ -104,7 +106,7 @@ Configuration
 
 You’ll need to properly configure the synda work environment. To do so, the first step is the set a synda home environment variable. This will the be the directory that will harbor all the configuration, database and other required files for synda to function properly. So choose it well. For instance: /home/user/.synda would do the trick. ::
 
-    export ST_HOME=/path/to/synda_home_directory
+    export ST_HOME=$HOME/.synda
 
 Set up your credentials
 +++++++++++++++++++++++
