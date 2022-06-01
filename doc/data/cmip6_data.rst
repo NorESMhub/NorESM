@@ -41,11 +41,11 @@ This is the same data that you can access through the ESGF. Note data is organiz
 
 **All NIRD users can access CMOR-ized CMIP6 data from multiple models under:** :: 
 
-   /projects/NS9252K/ESGF/
+   /projects/NS9252K/ESGF_betzy/
 
 , which has the same structure as data in /projects/NS9034K/CMIP6. Note only members of NS9252K, a NFR storage project for KeyCLIM have write permission.
 
-If you want to make a request for data or for more data to be downloaded to this folder, contact jang@met.no. If you are a NIRD user, but not a member of this project and would like to request access, contact michaels@met.no.
+Refer to Section: :ref:`cmip_other.rst` for more information on how to access and download new data.
 
 **NIRD users that are members of NS9560K (NFR storage project for INES) can access most of the raw (non-CMOR-ized) model data under**::
 
