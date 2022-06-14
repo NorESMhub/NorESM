@@ -1,30 +1,27 @@
-FLEXPART NORESM
-.. _diag_run:
-
 ****************************
-NorESM2 Diagnostics Package
+FLEXPART NORESM
 ****************************
 
 Introduction
 ============
 
-The NorESM Diagnostic Package:
-  is a NorESM model evaluation tool written with a set of scripts and command utilities (bash/cshrc, NCO, CDO and NCL etc) to provide a general evaluation and quick preview of the model performance with only one command line. This tool package works on the original model output and has NorESM-specific diagnostics.
+FLEXPART (“FLEXible PARTicle dispersion model”) is a Lagrangian transport and dispersion model suitable for the simulation of a large range of atmospheric transport processes. Apart from transport and turbulent diffusion, it is able to simulate dry and wet deposition, decay, linear chemistry; it can be used in forward or backward mode, with defined sources or in a domain-filling setting. It can be used from local to global scale. A version of FLEXPART for use with the Norwegian Earth System Model (NorESM1-M) has been created in 2016 and since than it has been updated with the current parametrizations used in the newest FLEXPART version, as well as compatibility to run with NorESM2.
 
-**The tool package consists of:**
+The offline FLEXible PARTicle (FLEXPART) stochastic dispersion model is currently a community model used by many scientists. The transport of pollutants, but also pysichal properties (e.g. moisture) is the main application. It provides an advanced tool to directly analyse and diagnose atmospheric transport properties of the state-of-the-art climate model NorESM in a reliable way. Extensive evaluation confirmed the effectiveness of the combined modelling system FLEXPART with NorESM in producing realistic transport statistics.
 
-* **CAM_DIAG**: (Based on NCAR's `AMWG Diagnostics Package <http://www.cesm.ucar.edu/working_groups/Atmosphere/amwg-diagnostics-package/>`_)
-* **CLM_DIAG**: (Based on CLM `Land Model Diagnostics Package <http://www.cesm.ucar.edu/models/cesm1.2/clm/clm_diagpackage.html>`_)
-* **CICE_DIAG**: snow/sea ice volume/area
-* **HAMOCC_DIAG**: time series, climaotology, zonal mean, regional mean
-* **BLOM_DIAG**: time series, climatologies, zonal mean, fluxes, etc
+The documentation of FLEXPART-NORESM has been published in GMD and can be found here:
+assiani, M., Stohl, A., Olivié, D., Seland, Ø., Bethke, I., Pisso, I., and Iversen, T.: The offline Lagrangian particle model FLEXPART–NorESM/CAM (v1): model description and comparisons with the online NorESM transport scheme and with the reference FLEXPART model, Geosci. Model Dev., 9, 4029–4048, ​https://doi.org/10.5194/gmd-9-4029-2016, 2016. 
 
-(See more on the `Major changes to the NCAR's Diagnostics Package`_ at the bottom)
 
 Installation
 ============
 
-The source codes of the NorESM diagnostics packages are developed and maintained on the Github:
-https://github.com/NordicESMhub/noresmdiagnostics.
+The source codes of the FLEXPART-NorESM are developed and maintained on the git.nilu.no:
 
-And the observation dataset and grid files are hosted at:
+git clone https://git.nilu.no/flexpart/flexpart-noresm.git
+
+Examples
+============
+
+Based on CMIP6 simulations from NorESM2 backward calculations for a BC tracer has been established, the results can be viewd here:
+https://niflheim.nilu.no/SabinePY/INES.py
