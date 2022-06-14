@@ -21,9 +21,27 @@ The source codes of the FLEXPART-NorESM are developed and maintained on the git.
 git clone https://git.nilu.no/flexpart/flexpart-noresm.git
 
 
-Compilation at nird
+Compilation at betzy
+============
 
-Examples
+in the directory $src
+module load 
+add the line: INCPATH  = /cluster/software/netCDF-Fortran/4.4.5-iimpi-2019a/include/ to makefile_noresm2
+make -f makefile_noresm2 ncf=yes
+
+Test of the FLEXPART installation
+============
+
+go to the directory $test
+   $src/flexpartnoresm
+   
+
+For the test there is all control fields, as well as NorESM2 input files for a 1 days backward calculation in the distribution.
+To run it you need to type
+
+
+
+Precalculated examples
 ============
 
 Based on CMIP6 simulations from NorESM2 backward calculations for a BC tracer has been established, the results can be viewd here:
