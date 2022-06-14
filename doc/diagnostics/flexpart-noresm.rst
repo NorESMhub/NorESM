@@ -39,7 +39,13 @@ go to the directory $test
 For the test there is all control fields, as well as NorESM2 input files for a 1 days backward calculation in the distribution.
 To run it you need to type
 
+Modification since version 1.0 (for Noresm)
+===========
 
+output in netcdf
+new scavenging parametrization
+inputfile defining the grid updated (grid_atm_288x192.nc)
+Speciesdefinition in namelist format
 
 Precalculated examples
 ============
