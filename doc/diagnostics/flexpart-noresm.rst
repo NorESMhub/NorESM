@@ -20,6 +20,9 @@ The source codes of the FLEXPART-NorESM are developed and maintained on the git.
 
 git clone https://git.nilu.no/flexpart/flexpart-noresm.git
 
+
+Compilation at nird
+
 Examples
 ============
 
