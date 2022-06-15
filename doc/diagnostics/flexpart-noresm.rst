@@ -24,10 +24,13 @@ The source codes of the FLEXPART-NorESM are developed and maintained on the git.
 Compilation at betzy
 ============
 
-in the directory $src
-module load 
-add the line: INCPATH  = /cluster/software/netCDF-Fortran/4.4.5-iimpi-2019a/include/ to makefile_noresm2
-make -f makefile_noresm2 ncf=yes
+in the directory $src ::
+
+  module load netCDF-Fortran/4.4.5-gompi-2019a
+
+add the line: INCPATH  = /cluster/software/netCDF-Fortran/4.4.5-gompi-2019a/include/ to makefile_noresm2 ::
+
+  make -f makefile_noresm2 ncf=yes
 
 Test of the FLEXPART installation
 ============
@@ -35,9 +38,11 @@ Test of the FLEXPART installation
 This test makes a backward simulation for a couple of hours from a point. The result of the simulation (variable spec001_mr), summed over all heights and time steps, should look like following plot, depicted in log10 scale)
 
 [[https://open.ubc.ca/files/2019/09/openubc.jpg]]
+ ::
 
-go to the directory $test
-   $src/flexpartnoresm
+  cd $test
+  
+  $src/flexpartnoresm
    
 
 For the test there is all control fields, as well as NorESM2 input files for a 1 days backward calculation in the distribution.
