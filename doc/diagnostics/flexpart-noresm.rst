@@ -1,5 +1,5 @@
 ****************************
-FLEXPART NORESM
+FLEXPART-NorESM
 ****************************
 
 Introduction
@@ -49,7 +49,7 @@ For the test there is all control fields, as well as NorESM2 input files for a 1
 To run it you need to type
 
 
-Modifications since version FLEXPART-NORESM 1.0 
+Modifications since version FLEXPART-NorESM 1.0 
 ===========
 
 outputields in netcdf
