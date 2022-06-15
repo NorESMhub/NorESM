@@ -49,12 +49,12 @@ For the test there is all control fields, as well as NorESM2 input files for a 1
 To run it you need to type
 
 
-Modification since version 1.0 (for Noresm)
+Modification since version FLEXPART-NORESM 1.0 
 ===========
 
 outputields in netcdf
 
-updated scavenging parametrization (Grythe et al., 2017)
+updated scavenging parametrization (Grythe et al., 2017), https://gmd.copernicus.org/articles/10/1447/2017/
 
 inputfile/program files defining the grid used in NorESM2 updated (grid_atm_288x192.nc)
 
@@ -63,5 +63,5 @@ Speciesdefinition in namelist format, introduction of command line parameters
 Precalculated examples
 ============
 
-Based on CMIP6 simulations from NorESM2 backward calculations for a BC tracer has been established, the results can be viewd here:
+Based on CMIP6 simulations from NorESM2 backward calculations for a BC tracer has been established, the results can be viewed here:
 https://niflheim.nilu.no/SabinePY/INES.py
