@@ -32,7 +32,9 @@ make -f makefile_noresm2 ncf=yes
 Test of the FLEXPART installation
 ============
 
-This test makes a backward simulation for a couple of hours from an Arctic station.
+This test makes a backward simulation for a couple of hours from a point. The result of the simulation (variable spec001_mr), summed over all heights and time steps, should look like following plot, depicted in log10 scale)
+
+PLOT
 
 go to the directory $test
    $src/flexpartnoresm
