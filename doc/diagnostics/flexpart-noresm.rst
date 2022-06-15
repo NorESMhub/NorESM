@@ -16,9 +16,9 @@ assiani, M., Stohl, A., Olivié, D., Seland, Ø., Bethke, I., Pisso, I., and Ive
 Installation
 ============
 
-The source codes of the FLEXPART-NorESM are developed and maintained on the git.nilu.no:
+The source codes of the FLEXPART-NorESM are developed and maintained on the git.nilu.no ::
 
-git clone https://git.nilu.no/flexpart/flexpart-noresm.git
+   git clone https://git.nilu.no/flexpart/flexpart-noresm.git
 
 
 Compilation at betzy
@@ -34,7 +34,7 @@ Test of the FLEXPART installation
 
 This test makes a backward simulation for a couple of hours from a point. The result of the simulation (variable spec001_mr), summed over all heights and time steps, should look like following plot, depicted in log10 scale)
 
-PLOT
+[[https://open.ubc.ca/files/2019/09/openubc.jpg]]
 
 go to the directory $test
    $src/flexpartnoresm
