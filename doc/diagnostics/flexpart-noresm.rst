@@ -47,13 +47,13 @@ To run it you need to type
 Modification since version 1.0 (for Noresm)
 ===========
 
-output in netcdf
+outputields in netcdf
 
-new scavenging parametrization
+updated scavenging parametrization (Grythe et al., 2017)
 
-inputfile/program files defining the grid updated (grid_atm_288x192.nc)
+inputfile/program files defining the grid used in NorESM2 updated (grid_atm_288x192.nc)
 
-Speciesdefinition in namelist format
+Speciesdefinition in namelist format, introduction of command line parameters
 
 Precalculated examples
 ============
