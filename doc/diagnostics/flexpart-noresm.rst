@@ -32,6 +32,8 @@ make -f makefile_noresm2 ncf=yes
 Test of the FLEXPART installation
 ============
 
+This test makes a backward simulation for a couple of hours from an Arctic station.
+
 go to the directory $test
    $src/flexpartnoresm
    
@@ -39,12 +41,16 @@ go to the directory $test
 For the test there is all control fields, as well as NorESM2 input files for a 1 days backward calculation in the distribution.
 To run it you need to type
 
+
 Modification since version 1.0 (for Noresm)
 ===========
 
 output in netcdf
+
 new scavenging parametrization
-inputfile defining the grid updated (grid_atm_288x192.nc)
+
+inputfile/program files defining the grid updated (grid_atm_288x192.nc)
+
 Speciesdefinition in namelist format
 
 Precalculated examples
