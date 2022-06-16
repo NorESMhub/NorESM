@@ -36,7 +36,7 @@ add the line: INCPATH  = /cluster/software/netCDF-Fortran/4.4.5-gompi-2019a/incl
 Preparation of the FLEXPART installation
 ============
   
-make sure that the file AVAILABLE in $test contains the path to the windfield
+make sure that in the pathnames there is the directory of the windfield and that in the file AVAILABLE in $test there is the correct name of to the windfield
 
 Test of the FLEXPART installation
 ============
