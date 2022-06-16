@@ -36,11 +36,11 @@ make sure that also the INCPATH variable points to the same netCDF library versi
 Preparation of the FLEXPART installation
 ============
   
-The pathnames file contains all the directories which are used by FLEXPART
+The ``pathnames`` file contains all the directories which are used by FLEXPART
 
-In the pathnames file there is the directory of the windfield and that in the file AVAILABLE in $test there is the correct name of to the windfield. The test windfield is not part of the git, but can be found here: https://folk.nilu.no/~sabine/NSSP585frc2_f09_tn14_TESTFIELD.nc
+In the ``pathnames`` file there is the directory of the windfield and that in the file AVAILABLE in $test there is the correct name of to the windfield. The test windfield is not part of the git, but can be found here: https://folk.nilu.no/~sabine/NSSP585frc2_f09_tn14_TESTFIELD.nc
 
-in the second line of the pathnames file is a link to the output directory, this has to been created
+in the second line of the ``pathnames`` file is a link to the output directory, this has to been created
 
 Test of the FLEXPART installation
 ============
