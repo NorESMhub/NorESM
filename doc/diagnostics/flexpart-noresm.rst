@@ -43,6 +43,13 @@ Test of the FLEXPART installation
 
 This test makes a backward simulation for a couple of hours from a point. The result of the simulation (variable spec001_mr), summed over all heights and time steps, should look like following plot, depicted in log10 scale)
 
+.. figure:: fpoutputnoresm.PNG
+    :width: 100%
+    :align: center
+    :alt: alternate text
+    :figclass: align-center
+
+
 [[https://folk.nilu.no/~sabine/fpoutputnoresm.PNG]] 
 
 For the test there is all control fields, as well as NorESM2 input files for a 1 days backward calculation in the distribution.
