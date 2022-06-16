@@ -28,7 +28,7 @@ in the directory $src ::
 
   module load netCDF-Fortran/4.4.5-gompi-2019a
 
-add the line: INCPATH  = /cluster/software/netCDF-Fortran/4.4.5-gompi-2019a/include/ to makefile_noresm2 ::
+make sure that also the INCPATH variable points to the same netCDF library version: INCPATH  = /cluster/software/netCDF-Fortran/4.4.5-gompi-2019a/include/ to makefile_noresm2 ::
 
   make -f makefile_noresm2 
   
