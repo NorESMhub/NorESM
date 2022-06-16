@@ -36,18 +36,20 @@ make sure that also the INCPATH variable points to the same netCDF library versi
 Preparation of the FLEXPART installation
 ============
   
-The ``pathnames`` file contains all the directories which are used by FLEXPART
+The ``pathnames``, located in the directory ``$test (flexpart_noresm/test)``  contains all the directories which are used by FLEXPART.
 
-In the ``pathnames`` file there is the directory of the windfield and that in the file AVAILABLE in ``$test`` there is the correct name of to the windfield. The test windfield is not part of the git repository, but can be retrieved with: ::
+In the ``pathnames`` file has the location of the ``AVAILABLE``, which shows the location of the meteorological data. Right now it is set up that the testwindfield should be located in  ``$test``  The test windfield is not part of the git repository, but can be retrieved with: ::
 
   wget https://folk.nilu.no/~sabine/NSSP585frc2_f09_tn14_TESTFIELD.nc
 
-in the second line of the ``pathnames`` file is a link to the output directory, this has to been created
+in the second line of the ``pathnames`` file is a link to the output directory, this has to been created, e.g. ::
+
+  mkdir $test/output
 
 Test of the FLEXPART installation
 ============
 
-This test makes a backward simulation for a couple of hours from a point. The result of the simulation (variable spec001_mr), summed over all heights and time steps, should look like following plot, depicted in log10 scale)
+This test runs a backward simulation for a couple of hours from a point. The result of the simulation (variable spec001_mr), summed over all heights and time steps, should look like following plot, (depicted in log10 scale)
 
 .. figure:: ../fpoutputnoresm.PNG
     :width: 50%
@@ -59,7 +61,7 @@ This test makes a backward simulation for a couple of hours from a point. The re
 For the test there is all control fields, as well as NorESM2 input files for a sevaral hours backward calculation in the distribution.
 To run it you need to type ::
 
- salloc --nodes=1 --time=00:30:00 --qos=devel --account=nn9419k
+ salloc --nodes=1 --time=00:30:00 --qos=devel --account=nnXXXXk
  
  cd $test
   
