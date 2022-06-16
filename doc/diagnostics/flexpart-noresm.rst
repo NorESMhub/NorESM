@@ -13,6 +13,8 @@ The documentation of FLEXPART-NORESM has been published in GMD and can be found 
 assiani, M., Stohl, A., Olivié, D., Seland, Ø., Bethke, I., Pisso, I., and Iversen, T.: The offline Lagrangian particle model FLEXPART–NorESM/CAM (v1): model description and comparisons with the online NorESM transport scheme and with the reference FLEXPART model, Geosci. Model Dev., 9, 4029–4048, ​https://doi.org/10.5194/gmd-9-4029-2016, 2016. 
 
 
+salloc --nodes=1 --time=00:30:00 --qos=devel --account=nn9419k
+
 Installation
 ============
 
