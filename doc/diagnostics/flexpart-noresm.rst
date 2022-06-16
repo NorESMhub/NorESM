@@ -13,8 +13,6 @@ The documentation of FLEXPART-NORESM has been published in GMD and can be found 
 assiani, M., Stohl, A., Olivié, D., Seland, Ø., Bethke, I., Pisso, I., and Iversen, T.: The offline Lagrangian particle model FLEXPART–NorESM/CAM (v1): model description and comparisons with the online NorESM transport scheme and with the reference FLEXPART model, Geosci. Model Dev., 9, 4029–4048, ​https://doi.org/10.5194/gmd-9-4029-2016, 2016. 
 
 
-salloc --nodes=1 --time=00:30:00 --qos=devel --account=nn9419k
-
 Installation
 ============
 
@@ -38,25 +36,26 @@ add the line: INCPATH  = /cluster/software/netCDF-Fortran/4.4.5-gompi-2019a/incl
 Preparation of the FLEXPART installation
 ============
   
-  make sure that the file AVAILABLE in $test contains the path to the windfield
+make sure that the file AVAILABLE in $test contains the path to the windfield
 
 Test of the FLEXPART installation
 ============
 
 This test makes a backward simulation for a couple of hours from a point. The result of the simulation (variable spec001_mr), summed over all heights and time steps, should look like following plot, depicted in log10 scale)
 
-  [[https://folk.nilu.no/~sabine/fpoutputnoresm.PNG]]
- ::
-
-  salloc --nodes=1 --time=00:30:00 --qos=devel --account=nn9419k
-  
-  cd $test
-  
-  $src/flexpartnoresm
-   
+[[https://folk.nilu.no/~sabine/fpoutputnoresm.PNG]] 
 
 For the test there is all control fields, as well as NorESM2 input files for a 1 days backward calculation in the distribution.
-To run it you need to type
+To run it you need to type ::
+
+ salloc --nodes=1 --time=00:30:00 --qos=devel --account=nn9419k
+ 
+ cd $test
+  
+ $src/flexpartnoresm
+   
+
+
 
 
 Modifications since version FLEXPART-NorESM 1.0 
