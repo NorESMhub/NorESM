@@ -1,5 +1,5 @@
 ****************************
-FLEXPART-NorESM
+FLEXPART-NorESM 1.1
 ****************************
 
 Introduction
@@ -30,7 +30,7 @@ in the directory $src ::
 
 add the line: INCPATH  = /cluster/software/netCDF-Fortran/4.4.5-gompi-2019a/include/ to makefile_noresm2 ::
 
-  make -f makefile_noresm2 ncf=yes
+  make -f makefile_noresm2 
   
   
 Preparation of the FLEXPART installation
@@ -59,10 +59,6 @@ To run it you need to type ::
   
  $src/flexpartnoresm
    
-
-
-
-
 Modifications since version FLEXPART-NorESM 1.0 
 ===========
 
@@ -72,10 +68,10 @@ updated scavenging parametrization (Grythe et al., 2017), https://gmd.copernicus
 
 inputfile/program files defining the grid used in NorESM2 updated (grid_atm_288x192.nc)
 
-Speciesdefinition in namelist format, introduction of command line parameters
+speciesdefinition in namelist format, introduction of command line parameters
 
 Precalculated examples
 ============
 
-Based on CMIP6 simulations from NorESM2 backward calculations for a BC tracer has been established, the results can be viewed here:
+Based on CMIP6 simulations from NorESM2 backward calculations for a BC tracer as well as a passive tracer has been established. The receptors for the simulations are 4 different Arctic stations and the model has been run until 2100 showing weekly footprints of the air masses origin at this stations. The results can be viewed here:
 https://niflheim.nilu.no/SabinePY/INES.py
