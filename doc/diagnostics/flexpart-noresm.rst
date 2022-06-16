@@ -23,7 +23,7 @@ The source codes of the FLEXPART-NorESM are developed and maintained on the git.
    git clone https://git.nilu.no/flexpart/flexpart-noresm.git
 
 
-Compilation at betzy
+Compilation on BETZY
 ============
 
 in the directory $src ::
@@ -33,15 +33,23 @@ in the directory $src ::
 add the line: INCPATH  = /cluster/software/netCDF-Fortran/4.4.5-gompi-2019a/include/ to makefile_noresm2 ::
 
   make -f makefile_noresm2 ncf=yes
+  
+  
+Preparation of the FLEXPART installation
+============
+  
+  make sure that the file AVAILABLE in $test contains the path to the windfield
 
 Test of the FLEXPART installation
 ============
 
 This test makes a backward simulation for a couple of hours from a point. The result of the simulation (variable spec001_mr), summed over all heights and time steps, should look like following plot, depicted in log10 scale)
 
-[[https://open.ubc.ca/files/2019/09/openubc.jpg]]
+  [[https://folk.nilu.no/~sabine/fpoutputnoresm.PNG]]
  ::
 
+  salloc --nodes=1 --time=00:30:00 --qos=devel --account=nn9419k
+  
   cd $test
   
   $src/flexpartnoresm
