@@ -28,9 +28,9 @@ in the directory $src ::
 
   module load netCDF-Fortran/4.4.5-gompi-2019a
 
-make sure that also the INCPATH variable points to the same netCDF library version: INCPATH  = /cluster/software/netCDF-Fortran/4.4.5-gompi-2019a/include/ to makefile_noresm2 ::
+make sure that also the INCPATH variable points to the same netCDF library version: ``INCPATH  = /cluster/software/netCDF-Fortran/4.4.5-gompi-2019a/include/`` to ``makefile_betzy`` ::
 
-  make -f makefile_noresm2 
+  make -f makefile_betzy
   
   
 Preparation of the FLEXPART installation
@@ -38,7 +38,9 @@ Preparation of the FLEXPART installation
   
 The ``pathnames`` file contains all the directories which are used by FLEXPART
 
-In the ``pathnames`` file there is the directory of the windfield and that in the file AVAILABLE in $test there is the correct name of to the windfield. The test windfield is not part of the git, but can be found here: https://folk.nilu.no/~sabine/NSSP585frc2_f09_tn14_TESTFIELD.nc
+In the ``pathnames`` file there is the directory of the windfield and that in the file AVAILABLE in ``$test`` there is the correct name of to the windfield. The test windfield is not part of the git repository, but can be retrieved with: ::
+
+  wget https://folk.nilu.no/~sabine/NSSP585frc2_f09_tn14_TESTFIELD.nc
 
 in the second line of the ``pathnames`` file is a link to the output directory, this has to been created
 
@@ -54,7 +56,7 @@ This test makes a backward simulation for a couple of hours from a point. The re
     :figclass: align-center
 
 
-For the test there is all control fields, as well as NorESM2 input files for a 1 days backward calculation in the distribution.
+For the test there is all control fields, as well as NorESM2 input files for a sevaral hours backward calculation in the distribution.
 To run it you need to type ::
 
  salloc --nodes=1 --time=00:30:00 --qos=devel --account=nn9419k
