@@ -1,3 +1,4 @@
+.. _flexpart_noresm:
 ****************************
 FLEXPART-NorESM 1.1
 ****************************
@@ -70,13 +71,13 @@ To run it you need to type ::
 Modifications since version FLEXPART-NorESM 1.0 
 ===========
 
-outputields in netcdf
+- netcdf output
 
-updated scavenging parametrization (Grythe et al., 2017), https://gmd.copernicus.org/articles/10/1447/2017/
+- updated scavenging parametrization (Grythe et al., 2017), https://gmd.copernicus.org/articles/10/1447/2017/
 
-inputfile/program files defining the grid used in NorESM2 updated (grid_atm_288x192.nc)
+- inputfile/program files defining the grid used in NorESM2 updated (grid_atm_288x192.nc)
 
-speciesdefinition in namelist format, introduction of command line parameters
+- species definition in namelist format, introduction of command line parameters
 
 Precalculated examples
 ============
