@@ -1,3 +1,4 @@
+.. _flexpart_noresm:
 ****************************
 FLEXPART-NorESM 1.1
 ****************************
@@ -13,7 +14,7 @@ The documentation of FLEXPART-NORESM has been published in GMD and can be found 
 assiani, M., Stohl, A., Olivié, D., Seland, Ø., Bethke, I., Pisso, I., and Iversen, T.: The offline Lagrangian particle model FLEXPART–NorESM/CAM (v1): model description and comparisons with the online NorESM transport scheme and with the reference FLEXPART model, Geosci. Model Dev., 9, 4029–4048, ​https://doi.org/10.5194/gmd-9-4029-2016, 2016. 
 
 
-Installation
+Downloading FLEXPART-NorESM from the repository
 ============
 
 The source codes of the FLEXPART-NorESM are developed and maintained on the git.nilu.no ::
@@ -38,7 +39,7 @@ Preparation of the FLEXPART installation
   
 The ``pathnames``, located in the directory ``$test (flexpart_noresm/test)``  contains all the directories which are used by FLEXPART.
 
-In the ``pathnames`` file has the location of the ``AVAILABLE``, which shows the location of the meteorological data. Right now it is set up that the testwindfield should be located in  ``$test``  The test windfield is not part of the git repository, but can be retrieved with: ::
+In the ``pathnames`` file is the path of the ``AVAILABLE``, which shows the location of the meteorological data. Right now it is set up that the testwindfield should be located in  ``$test``  The test windfield is not part of the git repository, but can be retrieved with: ::
 
   wget https://folk.nilu.no/~sabine/NSSP585frc2_f09_tn14_TESTFIELD.nc
 
@@ -58,8 +59,7 @@ This test runs a backward simulation for a couple of hours from a point. The res
     :figclass: align-center
 
 
-For the test there is all control fields, as well as NorESM2 input files for a sevaral hours backward calculation in the distribution.
-To run it you need to type ::
+For the test there are all control files provided, NorESM2 input files are downloaded as described above. This is sufficient for performing a sevaral hours backward calculation. To run it you need to type ::
 
  salloc --nodes=1 --time=00:30:00 --qos=devel --account=nnXXXXk
  
@@ -70,13 +70,13 @@ To run it you need to type ::
 Modifications since version FLEXPART-NorESM 1.0 
 ===========
 
-outputields in netcdf
+1. netcdf output
 
-updated scavenging parametrization (Grythe et al., 2017), https://gmd.copernicus.org/articles/10/1447/2017/
+2. updated scavenging parametrization (Grythe et al., 2017), https://gmd.copernicus.org/articles/10/1447/2017/
 
-inputfile/program files defining the grid used in NorESM2 updated (grid_atm_288x192.nc)
+3. inputfile/program files defining the grid used in NorESM2 updated (grid_atm_288x192.nc)
 
-speciesdefinition in namelist format, introduction of command line parameters
+4. species definition in namelist format, introduction of command line parameters
 
 Precalculated examples
 ============
