@@ -180,6 +180,51 @@ MIPs contributions
 | https://www.wcrp-climate.org/modelling-wgcm-mip-catalogue/modelling-wgcm-cmip6-endorsed-mips
 
 
+RFMIP and AerChemMIP simulations with different physics (rxi1p1f1 and rxi1p2f1)
+^^^^^^^^^^^^^^^^^
+**Context**
+
+For many of the RFMIP and AerChemMIP simulations with NorESM2-LM, two different simulations are available on ESGF: rxi1**p1**f1 and rxi1p2f1 (with x = 1, 2 or 3). The **p1**- and **p2**-simulations (where p stands for physics) differ in the way the fluxes of heat, momentum and moisture between the atmosphere and the ocean are calculated, and in the use of the solar zenith angle for the calculation of the albedo. The rxi1p2f1 simulations use
+the same paramaterisation as the fully-coupled NorESM2-LM simulations, whereas the rxi1p1f1 simulations use the standard approach of CESM2.
+
+**Advice**
+
+1. As the **rxi1p2f1** atmosphere-only simulations are more similar to the fully-coupled simulations, they are the preferred simulations to explain and illustrate the behaviour of the fully-coupled simulations.
+
+2. The atmosphere-only simulations can be used in pairs where one studies the difference between a perturbation simulation and a reference simulation (e.g., piClim-SO2 minus piClim-Control, or piClim-histghg minus piClim-histall). In such comparisons, one should be careful to use either two **p1**-simulations, or either two **p2**-simulations.
+
+
+**Table 1:** Global mean values of TOA imbalance and ERF for atmosphere-only simulations of RFMIP and AerChemMIP. Values are based on years 5–30 for the the 30-year long simulations, and on years 1989–2014 for the historical simulations. The values in brakets are based on years 5–200 of piClim-control. The interannual variability in TOA imbalance is around 0.25 Wm-2. As the ERF calculations are based on 26 years of the data, the error on the mean
+for ERF is around 0.25/ sqrt(26 − 1) × sqrt(2) ≃ 0.07 Wm-2.
+
+.. list-table:: 
+   :widths: 25 35 40
+   :header-rows: 2
+    
+   * - Exp. name (member)
+     - **rxi1p1f1**
+     - **rxi1p1f1**
+   * - 
+     - 
+     - 
+   * - **piClim-control**
+     - TOA imbalance [Wm-2]
+     - TOA imbalance [Wm-2]
+   * - piClim-control **Mean**
+     - 0.27 (0.73)
+     - 0.93 (0.92)
+   * - piClim-control **Variability**
+     - 0.26 (0.26)
+     - 0.21 (0.24)
+   * -
+     - 
+     - 
+   * -  **RFMIP**
+     - ERF [Wm-2]
+     - ERF [Wm-2]
+   * - piClim-4xCO2 
+     - 8.13
+     - 8.23
 References
 ^^^^^^
 Seland, Ø., Bentsen, M., Seland Graff, L., Olivié, D., Toniazzo, T., Gjermundsen, A., Debernard, J. B., Gupta, A. K., He, Y., Kirkevåg, A., Schwinger, J., Tjiputra, J., Schancke Aas, K., Bethke, I., Fan, Y., Griesfeller, J., Grini, A., Guo, C., Ilicak, M., Hafsahl Karset, I. H., Landgren, O., Liakka, J., Onsum Moseid, K., Nummelin, A., Spensberger, C., Tang, H., Zhang, Z., Heinze, C., Iverson, T., and Schulz, M.: The Norwegian Earth System Model, NorESM2 – Evaluation of theCMIP6 DECK and historical simulations, Geosci. Model Dev. Discuss., https://doi.org/10.5194/gmd-2019-378, in review, 2020.
