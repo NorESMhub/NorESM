@@ -78,21 +78,7 @@ There exists some predefined-emission driven compsets which usually ends with **
 * **N1850esm**: Emission driven coupled configuration for NorESM for pre-industrial (1850) conditions
 * **NHISTesm**: Emission driven historical configuration from 1850 up to year 2015 
 
-In order to run other experiments in emission-driven mode, you can simply replace `%BDRDDMS` with `%BPRPDMS` in ``<noresm_base>/cime_config/config_compsets.xml``, e.g. to create an emission driven SSP5-8.5 scenario compset: ::
-
- <compset>
-    <alias>NSSP585frc2esm</alias>
-    <lname>SSP585ESM_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BPRPDMS</lname>
-  </compset>
-
-
-which you then can use when you create your new case:::
-
-./create_newcase --case path_to_cases/NSSP585frc2esm_f19_tn14 --compset NSSP585frc2esm --res f19_tn14 --mach betzy --project project_nr --run-unsupported
-
-With the exception of preindustrial control, running in CO2 emission-driven mode requires time-varying spatial CO2 emissions boundary condition files. Currently, only historical and SSP5-8.5 scenarios have been tested.
-
-For more details on how to create new compsets, see below. 
+With the exception of preindustrial control, running in CO2 emission-driven mode requires time-varying spatial CO2 emissions boundary condition files. 
 
 Creating your own compset
 '''''''''''''''''''''''''
