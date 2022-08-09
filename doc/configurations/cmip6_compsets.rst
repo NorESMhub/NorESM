@@ -59,8 +59,8 @@ CMIP6 DECK Compsets
 
 For a detailed overview of case names, experiment setup, restart files etc. please see: 
 
-- NorESM2-MM: https://noresmhub.github.io/noresm-exp/noresm2_deck/noresm2_mm_deck.html 
-- NorESM2-LM: https://noresmhub.github.io/noresm-exp/noresm2_deck/noresm2_lm_deck.html
+- NorESM2-MM: https://noresmhub.github.io/noresm-exp/content/noresm2_deck/noresm2_mm_deck.html
+- NorESM2-LM: https://noresmhub.github.io/noresm-exp/content/noresm2_deck/noresm2_lm_deck.html
 
 CMIP6 Scenario compsets (only frc2 compsets):
 ^^^^^
@@ -70,13 +70,13 @@ CMIP6 Scenario compsets (only frc2 compsets):
 - **ssp370** : NSSP370frc2
 - **ssp585** : NSSP585frc2
 
-An overview of NorESM2 CMIP6 SSP experiments details, case names, restart files can be found here: https://noresmhub.github.io/noresm-exp/NSSPs/noresm2_mm_nssp.html 
+An overview of NorESM2 CMIP6 SSP experiments details, case names, restart files can be found here: https://noresmhub.github.io/noresm-exp/content/NSSPs/noresm2_mm_nssp.html 
 
 CMIP6 AMIP and fixed SST compsets
 ^^^^^
 - **amip** : NFHISTnorpddmsbc
 
-Detailed information on NorESM2-LM AMIP simulation can be accessed here: https://noresmhub.github.io/noresm-exp/noresm2_deck/noresm2_lm_amip.html
+Detailed information on NorESM2-LM AMIP simulation can be accessed here: https://noresmhub.github.io/noresm-exp/content/noresm2_deck/noresm2_lm_amip.html
 
 Useful compsets for calculating aerosol ERF:
 
@@ -177,8 +177,8 @@ and the long name for ``N1850frc2`` is ::
    
 Overview of piControl case names, detailed setup (machine settings, node settings etc.), raw output and restart files: 
 
-- NorESM2-LM: https://noresmhub.github.io/noresm-exp/noresm2_deck/noresm2_lm_piC.html
-- NorESM2-MM: https://noresmhub.github.io/noresm-exp/noresm2_deck/noresm2_mm_piC.html
+- NorESM2-LM: https://noresmhub.github.io/noresm-exp/content/noresm2_deck/noresm2_lm_piC.html
+- NorESM2-MM: https://noresmhub.github.io/noresm-exp/content/noresm2_deck/noresm2_mm_piC.html
 
 Historical
 ^^^^^^
@@ -250,8 +250,8 @@ and for ``NHISTfrc2`` is ::
         
 Overview of historical case names, members, detailed setup (machine settings, node settings etc.), raw output and restart files: 
 
-- NorESM2-LM: https://noresmhub.github.io/noresm-exp/noresm2_hist/noresm2_lm_hist.html
-- NorESM2-MM: https://noresmhub.github.io/noresm-exp/noresm2_hist/noresm2_hist.html
+- NorESM2-LM: https://noresmhub.github.io/noresm-exp/content/noresm2_hist/noresm2_lm_hist.html
+- NorESM2-MM: https://noresmhub.github.io/noresm-exp/content/noresm2_hist/noresm2_hist.html
 
 SSP5-8.5
 ^^^^^
@@ -325,5 +325,5 @@ and for ``NSSP585frc2`` is ::
         
 Overview of scenario experiment case names, members, detailed setup (machine settings, node settings etc.), raw output and restart files: 
 
-- NorESM2-LM and NorESM2-MM: https://noresmhub.github.io/noresm-exp/NSSPs/noresm2_mm_nssp.html
+- NorESM2-LM and NorESM2-MM: https://noresmhub.github.io/noresm-exp/content/NSSPs/noresm2_mm_nssp.html
 
