@@ -293,8 +293,9 @@ Note that BLOM uses a different syntax than the rest. In user_nl_blom::
 
   set BDMC2 = .15
   set NIWGF = .5
+  set SRF_ANO3 = 0, 2, 2
 
-you need to include **set** before the name of the variable and it does not matter what namelist group the variable belong.
+you need to include **set** before the name of the variable and it does not matter what namelist group the variable belong. To enable this handling of namelist parameters in BLOM, the namelist parameters require to be spelled in capital in both, user_nl_blom and cime_config/buildnml (the latter for developers, only).
 
 
 Input data
