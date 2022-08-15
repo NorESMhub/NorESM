@@ -25,6 +25,8 @@ On FRAM:
 On BETZY:
 ``sbatch --time 14:59:00 -p preproc --account <project> case.st_archive``
 
+The memory in case.st_archive set to 120 GB. Normally, the archiving should not stop or crash but, it can happen with large file sizes. If you encounter problems with the archiving, please check the ``/cluster/work/users/$USER/archive/<case>/archive.log.*`` log file and look for completion. If the archiving did not finish completely, please rerun the script ``case.st_archive`` in the ``<case>`` folder and check the log file to see why the archiving failed. Usually, the memory and/or walltime used for archiving need to be increased; which can be modified in case.st_archive. If you notice any data corruption, please contact us.
+
 Medium-term archiving
 ^^^^^^^^^^^^^^^^^^^^^
 Medium-term archiving is the process of transferring NorESM output from a HPC server to a storage server. This is usually required if data should be saved for later analysis, since HPC servers typically have only limited storage capacity, and often enforce automatic deletion (auto-cleanup) on their storage space at regular intervals.
