@@ -7,7 +7,7 @@ Running NorESM2
    :maxdepth: 2
    :numbered:
 
-   newbie-guide.rst
+   newbie_guide.rst
    experiments.rst
    experiment_environment.rst
    cmip6_compsets.rst
