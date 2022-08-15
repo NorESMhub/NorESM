@@ -293,8 +293,9 @@ Note that BLOM uses a different syntax than the rest. In user_nl_blom::
 
   set BDMC2 = .15
   set NIWGF = .5
+  set SRF_ANO3 = 0, 2, 2
 
-you need to include **set** before the name of the variable and it does not matter what namelist group the variable belong.
+you need to include **set** before the name of the variable and it does not matter what namelist group the variable belong. Input entries in user_nl_blom are case-insensitive (for model developers: variable names defined in the BLOM ``buildnml`` file should be capitalized to allow replacement values from user_nl_blom).
 
 
 Input data
