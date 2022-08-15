@@ -52,7 +52,7 @@ The following example creates the case *N1850_f19_tn14_test01* on the machine Fr
 
     ./create_newcase --case ~/NorESM/cases/N1850_f19_tn14_test01 --compset N1850 --res f19_tn14 --machine fram --project snic2019-1-2 --user-mods-dir cmip6_noresm_DECK 
 
-Here we store the case with the casename*N1850_f19_tn14_test01* in a subdirectory ``NorESM/cases/`` in the home directory on fram. We use the *N1850* compset, which configures the case as a 1850 pre-industrial control simulation.  The argument ``--project`` should correspond to the id of the project used in the batch system accounting on Fram. The argument ``--user-mods-dir`` provides the path to a folder containing files that will further configure your case (like user namelists, shell scripts with xmlchange commands or SourceMods). The default location for this folder is under *<noresm_base>/cime_config/usermods_dirs/*.
+Here we store the case with the casename *N1850_f19_tn14_test01* in a subdirectory ``NorESM/cases/`` in the home directory on fram. We use the *N1850* compset, which configures the case as a 1850 pre-industrial control simulation.  The argument ``--project`` should correspond to the id of the project used in the batch system accounting on Fram. The argument ``--user-mods-dir`` provides the path to a folder containing files that will further configure your case (like user namelists, shell scripts with xmlchange commands or SourceMods). The default location for this folder is under *<noresm_base>/cime_config/usermods_dirs/*.
 
 The following example creates a case (also called *N1850_f19_tn14_test01*), but on the machine Tetralith:
 ::
