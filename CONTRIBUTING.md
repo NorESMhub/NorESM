@@ -10,6 +10,9 @@ https://github.com/NorESMhub/INES_workshop_2020/blob/gh-pages/files/Torsvik_gitc
 # How to contribute
 We recommend that you open a new [discussion item](https://github.com/NorESMhub/NorESM/issues) if you have questions about code contribution, or an [issue](https://github.com/NorESMhub/NorESM/issues) to discuss specific changes or additions you want to include. This is done by selecting **New issue** in the top right corner of the issues page, and selecting one of the suggested issue types in the following menu. Through the issue discussion, you can work with the NorESM developers to implement the code changes in the correct repository and in the correct branch. 
 
+# Who can contribute
+Everybody with a github account can fork the repository, change a file and create a pull request, suggesting a change to the code or the documentation. The changes will, upon being merged by a member with write access, be visible to all. If you wish to have more access rights to any of the NorESMhub repositories, write to the NorESM team via email to noresm-ncc(at)met.no .
+
 ## Reporting bugs
 Please, ensure that the bug was not already reported by searching on https://github.com/NorESMhub/NorESM/issues
 
