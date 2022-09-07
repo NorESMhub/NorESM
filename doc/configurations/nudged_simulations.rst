@@ -30,7 +30,7 @@ Modify user_nl_cam include information about the meteorology you want to nudge t
 
 ::
 
-met_filenames_list points to a txt-file that must include all the meteorological nudging data that will be used for the entire simulation. The met_data_file points to the file in this list that includes the starting date of your simulation. The example above shows how to point to ERA-Interim data, created by Inger Helene Hafsahl Karset (https://www.duo.uio.no/handle/ 10852/72779). You can also create your own model produced data (explanation further down in this document). 
+met_filenames_list points to a txt-file that must include all the meteorological nudging data that will be used for the entire simulation. The met_data_file points to the file in this list that includes the starting date of your simulation. The example above shows how to point to ERA-Interim data, created by Inger Helene Hafsahl Karset (https://www.duo.uio.no/handle/10852/72779). You can also create your own model produced data (explanation further down in this document). 
 
 Nudging strength
 ^^^^^^^^^^^^^^^^^^
