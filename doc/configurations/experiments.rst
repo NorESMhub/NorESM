@@ -76,7 +76,7 @@ NorESM2 can be run in emission-driven mode for interactive carbon-cycle studies.
 There exists some predefined-emission driven compsets which usually ends with **esm** :
 
 * **N1850esm**: Emission driven coupled configuration for NorESM for pre-industrial (1850) conditions
-* **NHISTesm**: Emission driven historical configuration from 1850 up to year 2015 
+* **NHISTesm**: Emission driven historical configuration from 1850 to year 2014 
 
 With the exception of preindustrial control, running in CO2 emission-driven mode requires time-varying spatial CO2 emissions boundary condition files. 
 
