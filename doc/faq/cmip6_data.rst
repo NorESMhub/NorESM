@@ -1,6 +1,6 @@
 .. _cmip6_data.rst
 
-Cmorized (CMIP6) NorESM output 
+Reporting CMIP6 data errors
 ==========
 
 Data error(s)
