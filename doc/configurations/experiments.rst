@@ -78,7 +78,7 @@ There exists some predefined-emission driven compsets which usually ends with **
 * **N1850esm**: Emission driven coupled configuration for NorESM for pre-industrial (1850) conditions
 * **NHISTesm**: Emission driven historical configuration from 1850 to year 2014 
 * **NSSP585esm**: Emission driven SSP5-8.5 scenario configuration from 2015 to year 2100
-* **NSSP534esm:** Emission driven SSP5-3.4 scenario configuration from 2015  to year 2100
+* **NSSP534esm**: Emission driven SSP5-3.4 scenario configuration from 2015  to year 2100
 With the exception of preindustrial control, running in CO2 emission-driven mode requires time-varying spatial CO2 emissions boundary condition files. 
 
 Creating your own compset
