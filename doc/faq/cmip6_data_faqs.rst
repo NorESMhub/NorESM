@@ -1,4 +1,4 @@
-.. _cmip6_data.rst
+.. _cmip6_data_faqs.rst
 
 Reporting CMIP6 data errors
 ==========
