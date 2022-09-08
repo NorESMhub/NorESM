@@ -45,7 +45,7 @@ This is the same data that you can access through the ESGF. Note data is organiz
 
 , which has the same structure as data in /projects/NS9034K/CMIP6. Note only members of NS9252K, a NFR storage project for KeyCLIM have write permission.
 
-Refer to Section: :ref:`cmip_other` for more information on how to access and download new data.
+Refer to Section: :ref:`cmip_other.rst` for more information on how to access and download new data.
 
 **NIRD users that are members of NS9560K (NFR storage project for INES) can access most of the raw (non-CMOR-ized) model data under**::
 
@@ -54,7 +54,7 @@ Refer to Section: :ref:`cmip_other` for more information on how to access and do
 If you are a NIRD user, but not a member of this project, and would like to request access, contact mben@norceresearch.no.
 
 .. note::
-    CMIP6 data errors: if you encounter data errors/problems, please refer to the :ref:`cmip6_data_faq` section
+    CMIP6 data errors: if you encounter data errors/problems, please refer to the :ref:`cmip6_data_faq.rst` section
     
 DECK contributions
 ^^^^^^^^^^^^^^^^^^
