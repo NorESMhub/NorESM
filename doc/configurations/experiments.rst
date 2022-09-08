@@ -69,6 +69,18 @@ For an overview of common compsets used for NorESM2 CMIP6 experiments, please se
 
 For an overview of the compsets provided for CESM2, please see: http://www.cesm.ucar.edu/models/cesm2/config/compsets.html.
 
+Emission-driven compsets
+''''''''''''''''''''''''
+NorESM2 can be run in emission-driven mode for interactive carbon-cycle studies. Currently, this configuration is only supported for the LM-resolution. In order to run NorESM2-LM in emission-driven mode, the biogeochemical physics ``[_BGC]%pys`` is set to  ``%BPRPDMS`` (instead of ``%BDRDDMS``)
+
+There exists some predefined-emission driven compsets which usually ends with **esm** :
+
+* **N1850esm**: Emission driven coupled configuration for NorESM for pre-industrial (1850) conditions
+* **NHISTesm**: Emission driven historical configuration from 1850 to year 2014 
+* **NSSP585esm**: Emission driven SSP5-8.5 scenario configuration from 2015 to year 2100
+* **NSSP534esm**: Emission driven SSP5-3.4 scenario configuration from 2015  to year 2100
+
+With the exception of preindustrial control, running in CO2 emission-driven mode requires time-varying spatial CO2 emissions boundary condition files. 
 
 Creating your own compset
 '''''''''''''''''''''''''
