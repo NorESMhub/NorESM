@@ -216,7 +216,7 @@ for ERF is around 0.25/ sqrt(26 − 1) × sqrt(2) ≃ 0.07 Wm-2.
     
    * - Exp. name (member)
      - **rxi1p1f1**
-     - **rxi1p1f1**
+     - **rxi1p2f1**
    * - 
      - 
      - 
