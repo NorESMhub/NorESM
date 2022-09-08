@@ -54,7 +54,7 @@ Refer to Section: :ref:`cmip_other.rst` for more information on how to access an
 If you are a NIRD user, but not a member of this project, and would like to request access, contact mben@norceresearch.no.
 
 .. note::
-    CMIP6 data errors: if encounter data errors/problems, please refer to the :ref:`cmip6_data_faqs.rst` section
+    CMIP6 data errors: if encounter data errors/problems, please refer to the :ref:`cmip6_data_faq.rst` section
     
 DECK contributions
 ^^^^^^^^^^^^^^^^^^
