@@ -224,7 +224,7 @@ for ERF is around 0.25/ sqrt(26 − 1) × sqrt(2) ≃ 0.07 Wm-2.
      - TOA imbalance [Wm-2]
      - TOA imbalance [Wm-2]
    * - piClim-control **Mean**
-     - 0.27 (0.73)
+     - 0.72 (0.73)
      - 0.93 (0.92)
    * - piClim-control **Variability**
      - 0.26 (0.26)
