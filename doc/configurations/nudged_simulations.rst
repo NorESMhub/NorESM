@@ -18,6 +18,7 @@ to CAM_CONFIG_OPTS in env_build.xml after creating a case.
 
 .. note:: IMPORTANT NOTE (2022.09.06). 
    In current NorESM and CESM versions, the ``-offline_dyn`` option deactivates CAM's energy fixer because it would interfere with nudging of T (and possibly also Q). This behaviour may change in future versions of NorESM. To re-activate the use of the energy fixer for wind-only nudging, copy the source file ``components/cam/src/physics/cam/check_energy.F90`` to ``SourceMods/src.cam/`` and comment out the line
+   
    heat_glob = 0._r8
 
 
