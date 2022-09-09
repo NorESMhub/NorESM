@@ -6,9 +6,9 @@ Newbies guide
 This guide provides basic instructions on how set up and run a standard NorESM case by executing 4 steps:
 
   - create a new case (the **create_newcase** script)
-  - configure case (the **case_setup** script)
-  - build case (the **case_build** script)
-  - submit case (the **case_submit** script). 
+  - configure case (the **case.setup** script)
+  - build case (the **case.build** script)
+  - submit case (the **case.submit** script). 
   
 It is assumed that you have sucsessfully downloaded the model (see :ref:`download_code`), which means you have a copy of the model on your computer in a folder with a name of your choice. For simplicity we call this folder ``<noresm-base>`` in this guide.
 
@@ -63,7 +63,7 @@ Note that here we use the argument ``--output-root``, which is only required if 
 
 Configure the case
 ---------------------
-The case folder *<casepath>/<casename>/* is where you configure your case by changing enviroment files (such as the *<casepath>/<casename>/env_run.xml* file; see :ref:`experiment_environments`), changing the user namelists for the different model components (files named ``user_nl_$COMP`` where $COMP is a model component such as ``cam``), or even add your own code changes to ``SourceMods/src.<component>/``. But for now we stick to the standard out-of-the-box set up and configure the case as follows:
+The case folder *<casepath>/<casename>/* is where you configure your case by changing enviroment files (such as the *<casepath>/<casename>/env_run.xml* file; see :ref:`experiment_environments`), changing the user namelists for the different model components (files named ``user_nl_<component>`` where <component> is a model component such as ``cam``), or even add your own code changes to ``SourceMods/src.<component>/``. But for now we stick to the standard out-of-the-box set up and configure the case as follows:
 ::
 
   cd <casepath>/<casename>
