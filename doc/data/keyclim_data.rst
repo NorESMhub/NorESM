@@ -1,4 +1,4 @@
-.. _keyclim_data.rst
+.. _keyclim_data.rst:
 
 KeyCLIM data
 =============

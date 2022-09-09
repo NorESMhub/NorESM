@@ -1,4 +1,4 @@
-.. _happi_data.rst
+.. _happi_data.rst:
 
 HAPPI and HappiEVA data
 =============
