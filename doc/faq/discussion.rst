@@ -1,4 +1,4 @@
-.. discussion.rst:
+.. _discussion.rst:
 
 Low-key discussion forum
 ======

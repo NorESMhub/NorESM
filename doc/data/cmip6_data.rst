@@ -1,4 +1,4 @@
-.. _cmip6_data.rst
+.. _cmip6_data.rst:
 
 CMIP6 archive of NorESM results
 ===================
@@ -53,10 +53,9 @@ Refer to Section: :ref:`cmip_other.rst` for more information on how to access an
    
 If you are a NIRD user, but not a member of this project, and would like to request access, contact mben@norceresearch.no.
 
-CMIP6 data errors
-^^^^^
-If you encounter data errors/problems, please refer to the :ref:`cmip6_data_faq.rst` section
-    
+.. note::
+   **CMIP6 data errors:** If you encounter data errors/problems, please refer to the :ref:`cmip6_data_faq.rst` section
+
 DECK contributions
 ^^^^^^^^^^^^^^^^^^
 NorESM2 contributions to the CMIP6 Diagnostic, Evaluation and Characterization of Klima (DECK) and CMIP6 historical simulations
