@@ -291,7 +291,7 @@ ERA_f19_f19_L30::
   Contact person :
   Comment :
 
-ERA_f19_g16 ::
+ERA_f19_g16::
 
   Original ERA data : 
   Period : 1999-01-01 until 2004-01-31
