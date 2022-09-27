@@ -166,7 +166,7 @@ ERA_f09f09_32L_days::
 
 AL/ERA_f09f09_32L_days::
 
-  Original ERA data :
+  Original ERA data : ERA-Interim
   Period : 2016-01-01 until 2018-12-31
   Horizontal resolution : f09 (0.9x1.25)
   Vertical resolution : L32 (32 layers)
@@ -175,7 +175,7 @@ AL/ERA_f09f09_32L_days::
   Storage directory : inputdata/noresm-only/inputForNudging/AL/ERA_f09f09_32L_days
   Storage location : fram
   Contact person :
-  Comment :
+  Comment : Produced on Tetralith (copy of ERAI4NORESM)
 
 ERAI4NORESM::
 
@@ -183,12 +183,12 @@ ERAI4NORESM::
   Period : 2013-01-01 until 2019-08-31
   Horizontal resolution : f09 (0.9x1.25)
   Vertical resolution : L32 (32 layers)
-  Available fields : 
+  Available fields : PS, T, Q, U, V 
   Use : for NorESM2 / CAM6-Nor simulations
   Storage directory : /proj/bolinc/users/x_geoso/ERAI4NORESM
   Storage location : tetralith
-  Contact person :
-  Comment :
+  Contact person : anna@misu.su.se
+  Comment : Identical to the data AL/ERA_f09f09_32L_days on Fram
 
 0.9x1.25 horizontal resolution, 30 layers (for NorESM1.2 / CAM5.3-Nor)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -205,6 +205,21 @@ ERA_f09f09_30L_days::
   Storage location : fram, betzy, tetralith
   Contact person :
   Comment :
+
+ERA5_enda_30L::
+
+  Original ERA data : ERA5
+  Period : 2002-01-01 until 2018-10-31
+  Horizontal resolution : f09 (0.9x1.25)
+  Vertical resolution : L30 (30 layers)
+  Available fields : PS, T, Q, U, V
+  Use : for NorESM1.2 / CAM5.3-Nor simulations
+  Storage directory : /proj/bolinc/shared/data/noresm/inputForNudging/ERA5_enda_30L
+  Storage location : tetralith
+  Contact person : anna@misu.su.se
+  Comment : Created by Lena Frey on Tetralith
+
+
 
 
 1.9x2.5 horizontal resolution, 32 layers (for NorESM2 / CAM6-Nor)
