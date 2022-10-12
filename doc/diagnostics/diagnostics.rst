@@ -11,3 +11,4 @@ NorESM2 diagnostics
    diag_run.rst
    aero_diag.rst
    comp_netcdf.rst 
+   flexpart_noresm.rst

@@ -17,7 +17,7 @@ The Norwegian Earth System Model version 2 (NorESM2) is an coupled Earth System 
 The NorESM specific development is led by the Norwegian Meteorological Institute and NORCE Norwegian Research Centre AS. Other partners involved are the University of Oslo (UiO), CICERO, Nansen Environmental and Remote Sensing Center (NERSC) and the University of Bergen (UiB). 
 
 NorESM2 specific additions to CESM2 includes (but is not limited to):
-++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Atmosphere model : CAM6-Nor replaces standard CAM
 
@@ -41,7 +41,7 @@ BLOM/iHAMOCC replaces MICOM/HAMOCC as the combined physical and biogeochemical o
 
 
 NorESM2 exists in three versions:
-++++++++++++++++
++++++++++++++++++++++++++++++++++
 
 - **NorESM2-MM**
    
@@ -75,7 +75,7 @@ LM-resolution
 
 
 References
-^^^^^^
+^^^^^^^^^^
 Seland, Ø., Bentsen, M., Seland Graff, L., Olivié, D., Toniazzo, T., Gjermundsen, A., Debernard, J. B., Gupta, A. K., He, Y., Kirkevåg, A., Schwinger, J., Tjiputra, J., Schancke Aas, K., Bethke, I., Fan, Y., Griesfeller, J., Grini, A., Guo, C., Ilicak, M., Hafsahl Karset, I. H., Landgren, O., Liakka, J., Onsum Moseid, K., Nummelin, A., Spensberger, C., Tang, H., Zhang, Z., Heinze, C., Iverson, T., and Schulz, M.: The Norwegian Earth System Model, NorESM2 – Evaluation of theCMIP6 DECK and historical simulations, Geosci. Model Dev. Discuss., https://doi.org/10.5194/gmd-2019-378, in review, 2020.
 
 Tjiputra, J. F., Schwinger, J., Bentsen, M., Morée, A. L., Gao, S., Bethke, I., Heinze, C., Goris, N., Gupta, A., He, Y.-C., Olivié, D., Seland, Ø., and Schulz, M.: Ocean biogeochemistry in the Norwegian Earth System Model version 2 (NorESM2), Geosci. Model Dev., 13, 2393–2431, https://doi.org/10.5194/gmd-13-2393-2020, 2020.

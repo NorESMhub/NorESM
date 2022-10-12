@@ -16,6 +16,14 @@ use your own compset and add::
   
 to CAM_CONFIG_OPTS in env_build.xml after creating a case.
 
+.. note:: IMPORTANT NOTE (2022.09.06). 
+   In current NorESM and CESM versions, the ``-offline_dyn`` option deactivates CAM's energy fixer because it would interfere with nudging of T (and possibly also Q). This behaviour may change in future versions of NorESM. To re-activate the use of the energy fixer for wind-only nudging, copy the source file ``components/cam/src/physics/cam/check_energy.F90`` to ``SourceMods/src.cam/`` and comment out the line
+   
+   heat_glob = 0._r8
+
+
+
+
 Meteorology
 ^^^^^^^^^^^^^
 
@@ -30,7 +38,7 @@ Modify user_nl_cam include information about the meteorology you want to nudge t
 
 ::
 
-met_filenames_list points to a txt-file that must include all the meteorological nudging data that will be used for the entire simulation. The met_data_file points to the file in this list that includes the starting date of your simulation. The example above shows how to point to ERA-Interim data, created by Inger Helene Hafsahl Karset (https://www.duo.uio.no/handle/ 10852/72779). You can also create your own model produced data (explanation further down in this document). 
+met_filenames_list points to a txt-file that must include all the meteorological nudging data that will be used for the entire simulation. The met_data_file points to the file in this list that includes the starting date of your simulation. The example above shows how to point to ERA-Interim data, created by Inger Helene Hafsahl Karset (https://www.duo.uio.no/handle/10852/72779). You can also create your own model produced data (explanation further down in this document). 
 
 Nudging strength
 ^^^^^^^^^^^^^^^^^^
@@ -137,3 +145,176 @@ For more information, look into the file where most of the nudging code is found
 There are also other options for namelist modifications regarding nudging:
 http://www.cesm.ucar.edu/models/cesm2/settings/current/cam_nml.html and search for “met_”
 
+Available meteo fields for nudging
+----------------------------------
+
+0.9x1.25 horizontal resolution, 32 layers (for NorESM2 / CAM6-Nor)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+ERA_f09f09_32L_days::
+
+  Original ERA data :
+  Period : 2000-01-01 until 2016-01-31
+  Horizontal resolution : f09 (0.9x1.25)
+  Vertical resolution : L32 (32 layers)
+  Available fields : PS, T, Q, U, V
+  Use : for NorESM2 / CAM6-Nor simulations
+  Storage directory : inputdata/noresm-only/inputForNudging/ERA_f09f09_32L_days
+  Storage location : fram, betzy
+  Contact person :
+  Comment :
+
+AL/ERA_f09f09_32L_days::
+
+  Original ERA data : ERA-Interim
+  Period : 2016-01-01 until 2018-12-31
+  Horizontal resolution : f09 (0.9x1.25)
+  Vertical resolution : L32 (32 layers)
+  Available fields : PS, T, Q, U, V
+  Use : for NorESM2 / CAM6-Nor simulations
+  Storage directory : inputdata/noresm-only/inputForNudging/AL/ERA_f09f09_32L_days
+  Storage location : fram
+  Contact person :
+  Comment : Produced on Tetralith (copy of ERAI4NORESM)
+
+ERAI4NORESM::
+
+  Original ERA data : ERA-Interim
+  Period : 2013-01-01 until 2019-08-31
+  Horizontal resolution : f09 (0.9x1.25)
+  Vertical resolution : L32 (32 layers)
+  Available fields : PS, T, Q, U, V 
+  Use : for NorESM2 / CAM6-Nor simulations
+  Storage directory : /proj/bolinc/users/x_geoso/ERAI4NORESM
+  Storage location : tetralith
+  Contact person : anna@misu.su.se
+  Comment : Identical to the data AL/ERA_f09f09_32L_days on Fram
+
+0.9x1.25 horizontal resolution, 30 layers (for NorESM1.2 / CAM5.3-Nor)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+ERA_f09f09_30L_days::
+
+  Original ERA data :
+  Period : 2000-01-01 until 2018-03-31
+  Horizontal resolution : f09 (0.9x1.25)
+  Vertical resolution : L30 (30 layers)
+  Available fields : PS, T, Q, U, V
+  Use : for NorESM1.2 / CAM5.3-Nor simulations
+  Storage directory : inputdata/noresm-only/inputForNudging/ERA_f09f09_30L_days
+  Storage location : fram, betzy, tetralith
+  Contact person :
+  Comment :
+
+ERA5_enda_30L::
+
+  Original ERA data : ERA5
+  Period : 2002-01-01 until 2018-10-31
+  Horizontal resolution : f09 (0.9x1.25)
+  Vertical resolution : L30 (30 layers)
+  Available fields : PS, T, Q, U, V
+  Use : for NorESM1.2 / CAM5.3-Nor simulations
+  Storage directory : /proj/bolinc/shared/data/noresm/inputForNudging/ERA5_enda_30L
+  Storage location : tetralith
+  Contact person : anna@misu.su.se
+  Comment : Created by Lena Frey on Tetralith
+
+
+
+
+1.9x2.5 horizontal resolution, 32 layers (for NorESM2 / CAM6-Nor)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+ERA_f19_tn14::
+
+  Original ERA data :
+  Period : 2007-01-01 until 2013-12-31
+  Horizontal resolution : f19 (1.9x2.5)
+  Vertical resolution : L32 (32 layers)
+  Available fields : PS, T, Q, U, V
+  Use : for NorESM2 / CAM6-Nor simulations
+  Storage directory : inputdata/noresm-only/inputForNudging/ERA_f19_tn14
+  Storage location : fram, betzy
+  Contact person : 
+  Comment :
+
+z_ABG/ERA_f19_tn14::
+
+  Original ERA data :
+  Period : 2007-01-01 until 2013-12-31
+  Horizontal resolution : f19 (1.9x2.5)
+  Vertical resolution : L32 (32 layers)
+  Available fields : PS, T, Q, U, V
+  Use : for NorESM2 / CAM6-Nor simulations
+  Storage directory : noresm-only/inputForNudging/z_ABG/ERA_f19_tn14
+  Storage location : betzy
+  Contact person :
+  Comment :
+
+AZ/ERA_f19_tn14::
+
+  Original ERA data :
+  Period : 2007-01-01 until 2013-12-31
+  Horizontal resolution : f19 (1.9x2.5)
+  Vertical resolution : L32 (32 layers)
+  Available fields : PS, T, Q, U, V
+  Use : for NorESM2 / CAM6-Nor simulations
+  Storage directory : noresm-only/inputForNudging/AZ/ERA_f19_tn14
+  Storage location : betzy
+  Contact person :
+  Comment :
+
+ERA_f19_tn14_SH::
+
+  Original ERA data :
+  Period : 2007-01-01 until 2013-12-31
+  Horizontal resolution : f19 (1.9x2.5)
+  Vertical resolution : L32 (32 layers)
+  Available fields : PS, T, Q, U, V
+  Use : for NorESM2 / CAM6-Nor simulations
+  Storage directory : noresm-only/inputForNudging/ERA_f19_tn14_SH
+  Storage location : fram
+  Contact person :
+  Comment :
+
+SMB/ERA_f19_tn14_gte2014::
+
+  Original ERA data :
+  Period : 2014-01-01 until 2019-01-31
+  Horizontal resolution : f19 (2.5x1.9)
+  Vertical resolution : L32 (32 layers)
+  Available fields : PS, T, Q, U, V
+  Use : for NorESM2 / CAM6-Nor simulations
+  Storage directory : noresm-only/inputForNudging/SMB/ERA_f19_tn14_gte2014
+  Storage location : fram
+  Contact person : 
+  Comment :
+
+1.9x2.5 horizontal resolution, 30 layers (for NorESM1.2 / CAM5.3-Nor)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+ERA_f19_f19_L30::
+
+  Original ERA data :
+  Period : 2000-01-01 until 2010-12-31
+  Horizontal resolution : f19 (1.9x2.5)
+  Vertical resolution : L30
+  Available fields : PS, T, Q, U, V
+  Use : for NorESM1.2 / CAM5.3-Nor simulations
+  Storage directory : inputdata/noresm-only/inputForNudging/ERA_f19_f19_L30
+  Storage location :  fram, betzy
+  Contact person :
+  Comment :
+
+ERA_f19_g16::
+
+  Original ERA data : 
+  Period : 1999-01-01 until 2004-01-31
+  Horizontal resolution : f19 (2.5x1.9)
+  Vertical resolution : L30 (30 layers)
+  Available fields : PS, T, Q, U, V
+  Use : for NorESM1.2 / CAM5.3-Nor simulations
+  Storage directory : inputdata/noresm-only/inputForNudging/ERA_f19_g16
+  Storage location : fram
+  Contact person :
+  Comment :

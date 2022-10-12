@@ -11,3 +11,4 @@ Access NorESM data: CMIP and other
    cmip5_data.rst
    keyclim_data.rst
    happi_data.rst
+   cmip_other.rst

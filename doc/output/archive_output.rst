@@ -5,6 +5,8 @@ Archiving NorESM output
 
 Archiving of NorESM output involves three distinct processes that serve different purposes. The medium-term and long-term archiving described here depend on services provided by `sigma2 <https://www.sigma2.no>`_, but the procedures may also be relevant for other systems. 
 
+.. _shortterm_archive:
+
 Short-term archiving
 ^^^^^^^^^^^^^^^^^^^^
 Short-term archiving is a phase of a NorESM model run where the generated output data is moved from ``$USERWORK/noresm/$CASE/run`` into a specific folder structure under ``$USERWORK/archive/$CASE``. Short-term archiving environment variables are set in the ``env_mach_specific.xml`` file and by default, short-term archiving is enabled. However, in the ``env_run.xml`` file it is possible to change short-term archiving settings by modifying several variables which control the behavior of short-term archiving:
@@ -22,6 +24,8 @@ On FRAM:
 
 On BETZY:
 ``sbatch --time 14:59:00 -p preproc --account <project> case.st_archive``
+
+The memory in case.st_archive set to 120 GB. Normally, the archiving should not stop or crash but, it can happen with large file sizes. If you encounter problems with the archiving, please check the ``/cluster/work/users/$USER/archive/<case>/archive.log.*`` log file and look for completion. If the archiving did not finish completely, please rerun the script ``case.st_archive`` in the ``<case>`` folder and check the log file to see why the archiving failed. Usually, the memory and/or walltime used for archiving need to be increased; which can be modified in case.st_archive. If you notice any data corruption, please contact us.
 
 Medium-term archiving
 ^^^^^^^^^^^^^^^^^^^^^
