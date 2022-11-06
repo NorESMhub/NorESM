@@ -44,6 +44,6 @@ Schwinger,  J.,  Goris,  N.,  Tjiputra,  J.  F.,  Kriest,  I.,  Bentsen,  M.,  B
 
 Six, K. D. and Maier-Reimer, E.: Effects of plankton dynamics onseasonal  carbon  fluxes  in  an  ocean  general  circulation  model,Global Biogeochem. Cy., 10, 559–583, 1996.
 
-Tjiputra, J. F., Schwinger, J., Bentsen, M., Morée, A. L., Gao, S., Bethke, I., Heinze, C., Goris, N., Gupta, A., He, Y., Olivié, D., Seland, Ø., and Schulz, M.: Ocean biogeochemistry in the Norwegian Earth System Model version 2 (NorESM2), Geosci. Model Dev. Discuss., https://doi.org/10.5194/gmd-2019-347, in press, 2020.
+Tjiputra, J. F., Schwinger, J., Bentsen, M., Morée, A. L., Gao, S., Bethke, I., Heinze, C., Goris, N., Gupta, A., He, Y., Olivié, D., Seland, Ø., and Schulz, M.: Ocean biogeochemistry in the Norwegian Earth System Model version 2 (NorESM2), Geosci. Model Dev., https://doi.org/10.5194/gmd-13-2393-2020, 2020.
 
-Wanninkhof, R.: Relationship between wind speed and gas exchange over the ocean revisited, Limnol. Oceanogr.: Methods, 12, 351–362,https://doi.org/10.4319/lom.2014.12.351, 2014.
+Wanninkhof, R.: Relationship between wind speed and gas exchange over the ocean revisited, Limnol. Oceanogr.: Methods, 12, 351–362, https://doi.org/10.4319/lom.2014.12.351, 2014.
