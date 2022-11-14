@@ -491,7 +491,29 @@
     <alias>NSSP585frc2ext</alias>
     <lname>SSP585_CAM60%NORESM%FRC2EXT_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
     <science_support grid="f19_tn14"/>
+  </compset>
 
+  <compset>
+    <alias>NSSP585frc2esm</alias>
+    <lname>SSP585_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BPRPDMS</lname>
+  </compset>
+
+  <compset>
+    <alias>NSSP534frc2</alias>
+    <lname>SSP534_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+    <science_support grid="f19_tn14"/>
+  </compset>
+
+  <compset>
+    <alias>NSSP534frc2ext</alias>
+    <lname>SSP534_CAM60%NORESM%FRC2EXT_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+    <science_support grid="f19_tn14"/>
+  </compset>
+
+  <compset>
+    <alias>NSSP534frc2esm</alias>
+    <lname>SSP534_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BPRPDMS</lname>
+    <science_support grid="f19_tn14"/>
   </compset>
 
   <!-- Keyclim compsets with CISM -->
