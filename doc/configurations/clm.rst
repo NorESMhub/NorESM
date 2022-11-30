@@ -41,19 +41,19 @@ CLM5 surface data
 ^^^^
 Required surface data for each land grid cell include: 
 
-- the glacier, lake, and urban fractions of the grid cell (vegetated and crop occupy the remainder)
-- the fractional cover of each plant functional type (PFT), monthly leaf and stem area index and canopy top and bottom heights for each PFT, 
-- soil color, soil texture, soil organic matter density, 
-- maximum fractional saturated area, slope, elevation, 
-- biogenic volatile organic compounds (BVOCs) emissions factors, 
-- population density 
-- gross domestic production 
-- peat area fraction
-- peak month of agricultural burning. Optional surface data include crop irrigation and managed crops.
+* the glacier, lake, and urban fractions of the grid cell (vegetated and crop occupy the remainder)
+* the fractional cover of each plant functional type (PFT), monthly leaf and stem area index and canopy top and bottom heights for each PFT, 
+* soil color, soil texture, soil organic matter density, 
+* maximum fractional saturated area, slope, elevation, 
+* biogenic volatile organic compounds (BVOCs) emissions factors, 
+* population density 
+* gross domestic production 
+* peat area fraction
+* peak month of agricultural burning. Optional surface data include crop irrigation and managed crops.
 
-From the CLM5 `user guide <https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/tech_note/Ecosystem/CLM50_Tech_Note_Ecosystem.html#surface-data>`_.
+From the `CLM5 user guide <https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/tech_note/Ecosystem/CLM50_Tech_Note_Ecosystem.html#surface-data>`_.
 
-Surface data for default resolution (e.g., f19_tn14 for NorESM2-LM and f09_tn14 for NorESM2-MM) are available on Fram @ Sigma2: /work/shared/noresm/inputdata/lnd/clm2/surfdata_map/ 
+Surface data for default resolution (e.g., f19_tn14 for NorESM2-LM and f09_tn14 for NorESM2-MM) are available on Fram @Sigma2: ``/work/shared/noresm/inputdata/lnd/clm2/surfdata_map/``
 
 
 The initial state of CLM5
@@ -111,7 +111,7 @@ A long spin up is required for running NorESM2 with CLM50%BGC-CROP to achive e.g
 
 **Generating atmospheric forcing data**
 
-Atmospheric forcing data from the coupled NorESM2 simulation are used to run CLM5 stand alone spin up. To output such atmospheric forcing data, the following commands have to be added to user_nl_cpl in the coupled simulation of interest:::
+Atmospheric forcing data from the coupled NorESM2 simulation are used to run CLM5 stand alone spin up. To output such atmospheric forcing data, the following commands have to be added to ``user_nl_cpl`` in the coupled simulation of interest:::
 
   &seq_infodata_inparm
     histaux_a2x      = .true.  
@@ -127,9 +127,9 @@ Atmospheric forcing data from the coupled NorESM2 simulation are used to run CLM
 
 **Running CLM stand alone with NorESM2 forcing data**
 
-To use NorESM2 history files as the forcing, CPLHISTForcing mode needs to be activated. In CPLHISTForcing mode, the model is assumed to have 3-hourly for a global grid from a previous simulation (see description above). The data atmophere (datm) forcing is divided into three streams: precipitation, solar, and everything else.
+To use NorESM2 history files as the forcing, ``CPLHISTForcing mode`` needs to be activated. In CPLHISTForcing mode, the model is assumed to have 3-hourly for a global grid from a previous simulation (see description above). The data atmophere (datm) forcing is divided into three streams: precipitation, solar, and everything else.
 
-To create a new case for stand alone CLM5 spin up with NorESM2 forcing data, one should choose the same resolution as the coupled simulation (f19_tn14 for NorESM2-LM and f09_tn14 for NorESM2-MM). The compset to use is I1850BgcCropCmip6. For example, to create a new NorESM2-LM case, 
+To create a new case for stand alone CLM5 spin up with NorESM2 forcing data, one should choose the same resolution as the coupled simulation (f19_tn14 for NorESM2-LM and f09_tn14 for NorESM2-MM). The compset to use is ``I1850BgcCropCmip6``. For example, to create a new NorESM2-LM case, 
 
 :: 
 
@@ -137,7 +137,7 @@ To create a new case for stand alone CLM5 spin up with NorESM2 forcing data, one
 
 ::
 
-Using the CPLHIST forcing, the offline spin up needs to be run in two steps:
+Using the ``CPLHIST`` forcing, the offline spin up needs to be run in two steps:
 
 - **1. Accelerated spinup (300 years):** 
 
