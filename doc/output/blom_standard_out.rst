@@ -189,8 +189,6 @@ Monthly averaged output
 Daily averaged output
 ^^^^^^^^^^^^^^^^^^^^^^
 
----------------------------------
-
 | depth_bnds  
 
 -------------------------------------
