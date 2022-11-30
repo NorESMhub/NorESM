@@ -124,8 +124,6 @@ Monthly averaged output
 Daily averaged output
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-----------------------------------------
-
 | co2fxd = "Downward CO2 flux"
 | co2fxu = "Upward CO2 flux"
 
