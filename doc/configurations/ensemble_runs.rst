@@ -15,7 +15,6 @@ To set up an experiment with 5 members, invoke the create_newcase script with th
 
    ./create_newcase --case <home>/<noresm_cases>/MY_AWESOME_ENSEMBLE_EXP --multi-driver --ninst 5 --res f19_f19_mg17 --mach vilje --compset NFHISTnorpddmsbc --run-unsupported --project <project>
    
-::
 
 will create a new case in the folder ``<home>/<noresm_cases>/MY_AWESOME_ENSEMBLE_EXP with 5 ensemble members, the f19_f19_mg17 resolution, the ``NFHISTnorpddmsbc`` compset, with machine settings for Vilje, and using CPU hours from <project>. ``NFHISTnorpddmsbc`` is the compset for the CMIP6 AMIP experiment in which sea surface temperatures and sea ice are prescribed to observed values.
 
@@ -29,7 +28,6 @@ When using the multi-instance component, *you will get one user namelist for eac
    user_nl_cam_0004  user_nl_cice_0004  user_nl_clm_0004  user_nl_docn_0003  user_nl_mosart_0003
    user_nl_cam_0005  user_nl_cice_0005  user_nl_clm_0005  user_nl_docn_0004  user_nl_mosart_0004
 
-::
 
 The namelists can be used to control various settings and to add output. Note that changes are made individually for the separate members, so if you for instance add extra output fields to ``user_nl_cam_0001`` these fields will only be written out for member 1. To also get the extra output for members 2-5, modify the four other user namelists from cam. 
 
@@ -38,13 +36,13 @@ The namelists can be used to control various settings and to add output. Note th
 
 
 Perturbing the ensemble members: PERTLIM
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For the ensemble members to actually be different it is necessary to somehow perturb the initial condition of each member. The perturbation must be unique for each member. 
 
 One way of doing this is to use the CAM namelist parameter ``PERTLIM``. The default value of ``PERTLIM`` is 0.0. By choosing a non-zero value, a random parturbation with a size up to that given by the PERTLIM value will be added to the initial temperature field in the atmosphere. The value could be round-off error size, for instance 1e-14. 
 
-.. warming::
+.. warning::
    The ``PERTLIM`` value must be unique for each ensemble member
 
 .. warning::
@@ -56,7 +54,6 @@ While it is perhaps do-able to manually create 5 different namelists with five d
 
    pertlim          = 1e-14
 
-::
 
 The nice thing about using a template namelist is that you can add various content to the ``user_nl_cam_template`` that you want to apply to all members, such as additional output, and then you can create a set of namelists afterwards that only differ by their ``PERTLIM`` value using the script below:
 
@@ -97,7 +94,6 @@ The nice thing about using a template namelist is that you can add various conte
        counter=$(($counter+1))
    done
 
-::
 
 The above script puts the namelists in a folder called ``namelists_perturberd``, located in your current working directory. Remember that the namelists must be moved to the case folder when you are happy with them.
 
@@ -166,4 +162,3 @@ In some cases, you may want to start an ensemble run as a hybrid run from a dete
         done                                                                                                                 
        done                                                                                                                  
    done      
-
