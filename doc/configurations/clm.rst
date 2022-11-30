@@ -130,12 +130,10 @@ Atmospheric forcing data from the coupled NorESM2 simulation are used to run CLM
 To use NorESM2 history files as the forcing, ``CPLHISTForcing mode`` needs to be activated. In CPLHISTForcing mode, the model is assumed to have 3-hourly for a global grid from a previous simulation (see description above). The data atmophere (datm) forcing is divided into three streams: precipitation, solar, and everything else.
 
 To create a new case for stand alone CLM5 spin up with NorESM2 forcing data, one should choose the same resolution as the coupled simulation (f19_tn14 for NorESM2-LM and f09_tn14 for NorESM2-MM). The compset to use is ``I1850BgcCropCmip6``. For example, to create a new NorESM2-LM case, 
-
 :: 
 
-./create_newcase --case <PAT_TO_CASEFOLDER>/CASENAME --compset N1850BgcCropCmip6 --res f19_tn14 --mach fram --project nn9560k 
+    ./create_newcase --case <PAT_TO_CASEFOLDER>/CASENAME --compset N1850BgcCropCmip6 --res f19_tn14 --mach fram --project nn9560k 
 
-::
 
 Using the ``CPLHIST`` forcing, the offline spin up needs to be run in two steps:
 
@@ -211,21 +209,18 @@ Setting::
 will use CESM2 treatment of the surface water in CLM (see previous description).
 
 CLM5 specifics
-^^^^^
+^^^^^^^^^^^^^^^
 
 - CLM generally treats each sub-grid element (landunits and columns) independently, without lateral exchange of energy or heat.
 - Sub-grid elements only exchange information with the atmosphere, in addition to water being removed from the grid cell as surface and subsurface runoff.
 - The horizontal resolution of the CLM keeps the same as for the atmosphere (f19, f09). 
-- Vertically, there are four soil structures to set in the CLM namelist file. CLM5 model configurations available in NorESM2:
+- Vertically, there are four soil structures to set in the CLM namelist file. CLM5 model configurations available in NorESM2: ::
 
-::
+    10SL_3.5m    = standard CLM4 and CLM4.5 version
+    23SL_3.5m    = more vertical layers for permafrost simulations 
+    49SL_10m     = 49 layer soil column, 10m of soil, 5 bedrock layers
+    20SL_8.5m    = 20 layer soil column, 8m of soil, 5 bedrock layers
 
-  10SL_3.5m    = standard CLM4 and CLM4.5 version
-  23SL_3.5m    = more vertical layers for permafrost simulations 
-  49SL_10m     = 49 layer soil column, 10m of soil, 5 bedrock layers
-  20SL_8.5m    = 20 layer soil column, 8m of soil, 5 bedrock layers
-
-::
 
 By default, 20SL_8.5m is employed.
 
