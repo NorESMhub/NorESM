@@ -65,7 +65,7 @@ Note that here we use the argument ``--output-root``, which is only required if 
 
 Configure the case
 ---------------------
-The case folder *<casepath>/<casename>/* is where you configure your case by changing enviroment files (such as the *<casepath>/<casename>/env_run.xml* file; see :ref:`experiment_environments`), changing the user namelists for the different model components (files named ``user_nl_<component>`` where <component> is a model component such as ``cam``), or even add your own code changes to ``SourceMods/src.<component>/``. But for now we stick to the standard out-of-the-box set up and configure the case as follows:
+The case folder *<casepath>/<casename>/* is where you configure your case by changing enviroment files (such as the *<casepath>/<casename>/env_run.xml* file; see :ref:`experiment_environment`), changing the user namelists for the different model components (files named ``user_nl_<component>`` where <component> is a model component such as ``cam``), or even add your own code changes to ``SourceMods/src.<component>/``. But for now we stick to the standard out-of-the-box set up and configure the case as follows:
 ::
 
   cd <casepath>/<casename>
