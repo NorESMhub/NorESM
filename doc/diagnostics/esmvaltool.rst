@@ -69,14 +69,15 @@ Shared resources for esmvaltool on the IPCC node is available from::
 
 The ``config/config-ipcc.yml`` file should provide paths to relevant data on Nird. These settings are probably adequate for most users, but can be altered to include additional model output or observational datasets from other sources. Model data are stored in a directory structure following the DKRZ convention. A list of tested recipes is available under the ``tested_recipes`` folder.
 
-auxiliary_data/
-  Auxiliary data needed to run some esmvaltool recipes, e.g. shapefiles for map plotting or data extraction.
+.. glossary::
+    auxiliary_data/
+        Auxiliary data needed to run some esmvaltool recipes, e.g. shapefiles for map plotting or data extraction.
 
-config/
-  User and developer config files.
+    config/
+        User and developer config files.
 
-tested_recipes/
-  Some recipes that have been tested with esmvaltool for the IPCC node installation with NorESM1/2 supported.
+    tested_recipes/
+        Some recipes that have been tested with esmvaltool for the IPCC node installation with NorESM1/2 supported.
 
 Download data automatically with Synda
 --------------------------------------
