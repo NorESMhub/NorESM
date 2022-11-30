@@ -32,14 +32,16 @@ Some of the most important arguments are as follows:
 
   - ``--compset`` defines what compset you will be using. A list of compsets for fully-coupled configurations can be found in the file *<noresm_base>/cime_config/config_compsets.xml* (see :ref:`amips` for compsets for AMIP-type simulations)
 
-To investigate the full list of arguments, enter the *<noresm_base>/cime/scripts/* folder and run **create_newcase** with the ``--help`` argument:
+To investigate the full list of arguments, enter the *<noresm_base>/cime/scripts/* folder and run **create_newcase** with the ``--help`` argument: 
 ::
+    
     cd <noresm_base>/cime/scripts/
     ./create_newcase --help
 
   
-To create a new case, enter the scripts directory and run the **create_newcase** scripts:
+To create a new case, enter the scripts directory and run the **create_newcase** scripts: 
 ::
+    
     cd <noresm_base>/cime/scripts/
     ./create_newcase --case <casepath>/<casename> --mach <machine> --res f19_tn14 --compset <compset>
 
@@ -74,6 +76,7 @@ Build the case
 -----------------
 After your configuration is finished you can start bulding your case by invoking the case.build script from your case folder: 
 ::
+
   ./case.build
 
 Which may take a while.
@@ -82,6 +85,7 @@ Submit your case
 -------------------
 When your case has finished building you are ready to submit and run your case. This is done by invoking the case.submit script from your case folder:
 ::
+
   ./case.submit
   
 If your model simulation was successful, you should find the following line in slurm.out (or similar) in your case folder 
@@ -91,8 +95,5 @@ If your model simulation was successful, you should find the following line in s
   Tue Feb 9 21:41:33 CET 2016 -- CSM EXECUTION BEGINS HERE Wed Feb 10 13:37:56 CET 2016 -- CSM EXECUTION HAS FINISHED  
   (seq_mct_drv): =============== SUCCESSFUL TERMINATION OF CPL7-CCSM =============== 
 
-::
-
 
 And you are finished!
-
