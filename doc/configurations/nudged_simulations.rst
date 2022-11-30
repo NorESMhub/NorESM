@@ -36,8 +36,6 @@ Modify user_nl_cam include information about the meteorology you want to nudge t
     met_data_file = '/cluster/shared/noresm/inputdata/noresm-only/inputForNudging/ERA_f09f09_32L_days/ 2014-01-01.nc' 
 
 
-::
-
 met_filenames_list points to a txt-file that must include all the meteorological nudging data that will be used for the entire simulation. The met_data_file points to the file in this list that includes the starting date of your simulation. The example above shows how to point to ERA-Interim data, created by Inger Helene Hafsahl Karset (https://www.duo.uio.no/handle/10852/72779). You can also create your own model produced data (explanation further down in this document). 
 
 Nudging strength
@@ -48,7 +46,7 @@ Modify ``user_nl_cam`` to include information about the strength of the nudging:
   met_rlx_time = 6 
   
   
-met_rlx_time is the relaxation time scale. If the timestep of the model is 0.5 hrs, a relaxation time scale of 6 corresponds to a nudging strength of 0.5/6 ~ 0.083 = 8.3 %, meaning that 8.3 % of the nudged component (for example the wind) comes from the value in the met_data_file, while 93.7 % will come from the model itself. It is recommended to set ``met_rlx_time`` to the same value as the time frequency of the nudging data.
+``met_rlx_time`` is the relaxation time scale. If the timestep of the model is 0.5 hrs, a relaxation time scale of 6 corresponds to a nudging strength of 0.5/6 ~ 0.083 = 8.3 %, meaning that 8.3 % of the nudged component (for example the wind) comes from the value in the met_data_file, while 93.7 % will come from the model itself. It is recommended to set ``met_rlx_time`` to the same value as the time frequency of the nudging data.
 
 Vertical levels
 ^^^^^^^^^^^^^^^
@@ -63,10 +61,7 @@ should apply to
   met_rlx_bot_bot = 0 
   met_rlx_bot_top = 0 
 
-::
-
 By using the values in the example above, nudging will be applied to all levels in the vertical. If ``met_rlx_bot_bot`` and ``met_rlx_bot_top`` is set to heights (given in km) above the bottom layer of the model (0 km), ``met_rlx_time`` will decrease exponentially from ``met_rlx_bot_top`` (where it will have the value of ``met_rlx_time``) to ``met_rlx_bot_bot`` (where it will be zero from this level and all the way down to the ground). If you want to dampen or turn off the nudging intensity higher up, the same can be done to ``met_rlx_bot`` and ``met_rlx_top`` by setting these values to be lower in the atmosphere than the model top. 
-
 
 Nudging only winds and surface pressure
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -84,12 +79,9 @@ Appropriate topography
 
 Modify ``user_nl_cam`` to point to an appropriate topography file if nudging to meteorology 
 from ERA-Interim or other meteorology that is not produced by the model itself. It is the field named ``PHIS`` in the topography file that need to correspond to the source of the nudging data. 
-
 ::
 
     &cam_inparm bnd_topo = '/cluster/shared/noresm/inputdata/noresm-only/inputForNudging/ERA_f09f09_32L_days/ERA_bnd_topo_noresm2_20191023.nc' 
-
-::
 
 
 Correct calender
@@ -109,7 +101,7 @@ You are now ready to setup, build and submit your case.
 
 
 How to generate your own nudging inputdata
------------------------------------------
+-------------------------------------------
 
 Create a case
 ^^^^^^^^^^^^^^^^
@@ -129,32 +121,33 @@ Modify ``user_nl_cam`` and/or other user namelists to output the preferred nudgi
     avgflag_pertape='A','I',
     fincl2 ='PS','U','V','T'
 
-::
 
 The example above will output ordinary h0 monthly mean files, one pr month, but also h1-files with instantaneous values of PS, U, V and T every six hours, four pr file.
 
 Move the nudging data to a preferred folder
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Move the nudging data (the h1-files) over to a preferred folder and create a txt-file including
-a list of all the nudging data files that later can be pointed to as ``met_filenames_list``::
+a list of all the nudging data files that later can be pointed to as ``met_filenames_list``
+::
     
-    ls -d -1 $PWD/*.h1.*.nc > fileList.txt
+  ls -d -1 $PWD/*.h1.*.nc > fileList.txt
 
-For more information, look into the file where most of the nudging code is found::
+For more information, look into the file where most of the nudging code is found
+::
 
   /components/cam/src/NorESM/fv/metdata.F90
   
 There are also other options for namelist modifications regarding nudging:
-http://www.cesm.ucar.edu/models/cesm2/settings/current/cam_nml.html and search for “met_”
+http://www.cesm.ucar.edu/models/cesm2/settings/current/cam_nml.html and search for *met_*
 
 Available meteo fields for nudging
-----------------------------------
+-----------------------------------
 
 0.9x1.25 horizontal resolution, 32 layers (for NorESM2 / CAM6-Nor)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. glossery::
+.. glossary::
 
   ERA_f09f09_32L_days::
 
@@ -198,7 +191,7 @@ Available meteo fields for nudging
 0.9x1.25 horizontal resolution, 30 layers (for NorESM1.2 / CAM5.3-Nor)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. glossery::
+.. glossary::
 
   ERA_f09f09_30L_days::
 
@@ -231,7 +224,7 @@ Available meteo fields for nudging
 1.9x2.5 horizontal resolution, 32 layers (for NorESM2 / CAM6-Nor)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. glossery::
+.. glossary::
 
   ERA_f19_tn14::
 
@@ -301,7 +294,7 @@ Available meteo fields for nudging
 1.9x2.5 horizontal resolution, 30 layers (for NorESM1.2 / CAM5.3-Nor)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. glossery::
+.. glossary::
 
   ERA_f19_f19_L30::
 
