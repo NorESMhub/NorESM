@@ -256,7 +256,8 @@ and for ``NSSP585frc2`` is ::
 
         In ``env_run.xml``:
 
-        - set ``RUN_TYPE`` to ``hybrid`` : ::
+        - set ``RUN_TYPE`` to ``hybrid``: ::
+        
                       <group id="run_begin_stop_restart">
                         <entry id="RUN_TYPE" value="hybrid">
 
