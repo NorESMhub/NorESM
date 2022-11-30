@@ -38,7 +38,7 @@ in the ``preprocessorDefinitions.h`` file.
 
 The **AEROFFL**-token tells the model to do additional radiation-diagnostics for aerosol indirect effect. Including::
 
-  define AEROFFL
+  #define AEROFFL
   
 to ``preprocessorDefinitions.h`` gives 8 additionally variables (+ ca. 5% CPU-time). Please see an overview of the additional output variables: :ref:`aerosol_output_aeroffl_variables`
 
