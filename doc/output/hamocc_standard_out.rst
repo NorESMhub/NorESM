@@ -6,8 +6,6 @@ iHAMOCC standard set-up output
 Monthly averaged output
 ^^^^^^^^
 
------------------------------------------------
-
 | atmco2 = "Atmospheric CO2"
 
 ---------------------------------------------
@@ -144,5 +142,3 @@ Daily averaged output
 | srfdissic = "Surface dissolved inorganic carbon"
 | srfphyc = "Surface phytoplankton"
 | srftalk = "Surface alkalinity"
-
----------------------------------------------------
