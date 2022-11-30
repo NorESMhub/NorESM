@@ -100,5 +100,3 @@ COSP extra output
 | TAUTMODIS:long_name ="MODIS Total Cloud Optical Thickness*CLTMODIS" 
 | TAUWLOGMODIS:long_name = "MODIS Liquid Cloud Optical Thickness (Log10 Mean)*CLWMODIS" 
 | TAUWMODIS:long_name = "MODIS Liquid Cloud Optical Thickness*CLWMODIS" 
-
------------------------------------------------------------------------------
