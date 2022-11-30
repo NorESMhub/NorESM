@@ -31,12 +31,10 @@ SVN problems during downloading
 If the user encounter problems using svn, e.g. that the CESM2 files from ucar.edu are not downloaded automatically when submitting a case, there are several workarounds:
 
 - 1. On some machines you need to first download one file to permanently add the certificate. If the certificate is not issued by a trusted authority, you need to use the fingerprint to validate the certificate manually. This is done by explicit download one file with svn such that the user can choose "(p) permanently" to add the certificate.  One example file:
-
 ::
    
    svn export https://svn-ccsm-inputdata.cgd.ucar.edu/trunk/inputdata/atm/waccm/lb/LBC_1750-2014_CMIP6_0p5degLat_c170126.nc
 
-::
 
 or
 
