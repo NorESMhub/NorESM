@@ -6,7 +6,7 @@ Ensemble experiments
 
 Running several ensemble members in a single model experiment (case) is possible using the built-in **multi-instance component functionality**. This allows you to run multiple component instances under one model executable.  
 
-Creating an ensemble experiment:
+Creating an ensemble experiment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To set up an experiment with 5 members, invoke the create_newcase script with the **multi-driver** and the **ninst** arguments. For instance  
@@ -98,8 +98,8 @@ The nice thing about using a template namelist is that you can add various conte
 The above script puts the namelists in a folder called ``namelists_perturberd``, located in your current working directory. Remember that the namelists must be moved to the case folder when you are happy with them.
 
 
-Starting an ensemble run from a deterministic run:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Starting an ensemble run from a deterministic run
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In some cases, you may want to start an ensemble run as a hybrid run from a deterministic run (that is, a case with only one member). To achieve this, some manual interference is required to make sure that there are restart files and rpointers for each member. The script below provides an example of how to do this automatically for the case MY_AWESOME_ENSEMBLE_EXP:
 
