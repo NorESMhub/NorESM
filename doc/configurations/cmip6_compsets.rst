@@ -129,14 +129,14 @@ and the long name for ``N1850frc2`` is ::
 
       ::
 
-             ./create_newcase --case ../../cases/TEST_NorESM2-LM_piControl --compset N1850 --res f19_tn14 --machine fram --project $PROJECT --user-mods-dir cmip6_noresm_DECK   
+             ./create_newcase --case ../../cases/TEST_NorESM2-LM_piControl --compset N1850 --res f19_tn14 --machine fram --project <project> --user-mods-dir cmip6_noresm_DECK   
 
 
      - NorESM2-MM:  
 
       ::
 
-             ./create_newcase --case ../../cases/TEST_NorESM2-MM_piControl --compset N1850frc2 --res f09_tn14 --machine fram --project $PROJECT --user-mods-dir cmip6_noresm_DECK
+             ./create_newcase --case ../../cases/TEST_NorESM2-MM_piControl --compset N1850frc2 --res f09_tn14 --machine fram --project <project> --user-mods-dir cmip6_noresm_DECK
 
 
 - **Experiment settings**
@@ -172,8 +172,8 @@ and the long name for ``N1850frc2`` is ::
 - **Restart files**
    Before submitting the job, please remeber to copy the restart and rpointer files to the run directory, e.g. for TEST_NorESM2-MM_piControl on BETZY ::
    
-        cp /trd-project3/NS9560K/noresm/cases/N1850_f09_tn14_20190913/rest/1200-01-01-00000/* /cluster/projects/$PROJECT/$USER/noresm/TEST_NorESM2-MM_piControl/run/
-        gunzip /cluster/projects/$PROJECT/$USER/noresm/TEST_NorESM2-MM_piControl/run/*.gz
+        cp /trd-project3/NS9560K/noresm/cases/N1850_f09_tn14_20190913/rest/1200-01-01-00000/* /cluster/projects/<project>/<username>/noresm/TEST_NorESM2-MM_piControl/run/
+        gunzip /cluster/projects/<project>/<username>/noresm/TEST_NorESM2-MM_piControl/run/*.gz
    
 Overview of piControl case names, detailed setup (machine settings, node settings etc.), raw output and restart files: 
 
@@ -201,14 +201,14 @@ and for ``NHISTfrc2`` is ::
 
       ::
 
-             ./create_newcase --case ../../cases/TEST_NorESM2-LM_historical --compset NHIST --res f19_tn14 --machine fram --project $PROJECT --user-mods-dir cmip6_noresm_xaer   
+             ./create_newcase --case ../../cases/TEST_NorESM2-LM_historical --compset NHIST --res f19_tn14 --machine fram --project <project> --user-mods-dir cmip6_noresm_xaer   
 
 
      - NorESM2-MM:  
 
       ::
 
-             ./create_newcase --case ../../cases/TEST_NorESM2-MM_historical --compset NHISTfrc2 --res f09_tn14 --machine fram --project $PROJECT --user-mods-dir cmip6_noresm_DECK
+             ./create_newcase --case ../../cases/TEST_NorESM2-MM_historical --compset NHISTfrc2 --res f09_tn14 --machine fram --project <project> --user-mods-dir cmip6_noresm_DECK
 
 
 - **Experiment settings**
@@ -244,8 +244,8 @@ and for ``NHISTfrc2`` is ::
 - **Restart files**
    Before submitting the job, please remeber to copy the restart and rpointer files to the run directory, e.g. for TEST_NorESM2-LM_historical on BETZY ::
    
-        cp /trd-project3/NS9560K/noresm/cases/N1850_f19_tn14_11062019/rest/1600-01-01-00000/* /cluster/projects/$PROJECT/$USER/noresm/TEST_NorESM2-LM_historical/run/
-        gunzip /cluster/projects/$PROJECT/$USER/noresm/TEST_NorESM2-LM_historical/run/*.gz
+        cp /trd-project3/NS9560K/noresm/cases/N1850_f19_tn14_11062019/rest/1600-01-01-00000/* /cluster/projects/<project>/<username>/noresm/TEST_NorESM2-LM_historical/run/
+        gunzip /cluster/projects/<project>/<username>/noresm/TEST_NorESM2-LM_historical/run/*.gz
         
         
 Overview of historical case names, members, detailed setup (machine settings, node settings etc.), raw output and restart files: 
@@ -272,14 +272,14 @@ and for ``NSSP585frc2`` is ::
 
       ::
 
-             ./create_newcase --case ../../cases/TEST_NorESM2-LM_ssp585 --compset NSSP585frc2 --res f19_tn14 --machine fram --project $PROJECT --user-mods-dir cmip6_noresm_hifreq_xaer  
+             ./create_newcase --case ../../cases/TEST_NorESM2-LM_ssp585 --compset NSSP585frc2 --res f19_tn14 --machine fram --project <project> --user-mods-dir cmip6_noresm_hifreq_xaer  
 
 
      - NorESM2-MM:  
 
       ::
 
-             ./create_newcase --case ../../cases/TEST_NorESM2-MM_ssp585 --compset NSSP585frc2 --res f09_tn14 --machine fram --project $PROJECT --user-mods-dir cmip6_noresm_hifreq_xaer
+             ./create_newcase --case ../../cases/TEST_NorESM2-MM_ssp585 --compset NSSP585frc2 --res f09_tn14 --machine fram --project <project> --user-mods-dir cmip6_noresm_hifreq_xaer
 
 
 - **Experiment settings**
@@ -320,8 +320,8 @@ and for ``NSSP585frc2`` is ::
 - **Restart files**
    Before submitting the job, please remeber to copy the restart and rpointer files to the run directory, e.g. for TEST_NorESM2-LM_ssp585 on BETZY ::
    
-        cp /trd-project3/NS9560K/noresm/cases/NHIST_f19_tn14_20190710/rest/2015-01-01-00000/* /cluster/projects/$PROJECT/$USER/noresm/TEST_NorESM2-LM_ssp585/run/
-        gunzip /cluster/projects/$PROJECT/$USER/noresm/TEST_NorESM2-LM_ssp585/run/*.gz
+        cp /trd-project3/NS9560K/noresm/cases/NHIST_f19_tn14_20190710/rest/2015-01-01-00000/* /cluster/projects/<project>/<username>/noresm/TEST_NorESM2-LM_ssp585/run/
+        gunzip /cluster/projects/<project>/<username>/noresm/TEST_NorESM2-LM_ssp585/run/*.gz
         
 Overview of scenario experiment case names, members, detailed setup (machine settings, node settings etc.), raw output and restart files: 
 
