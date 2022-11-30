@@ -4,7 +4,7 @@ iHAMOCC standard set-up output
 ''''''''''''''''''''''''''''''''''
 
 Monthly averaged output
-^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 | atmco2 = "Atmospheric CO2"
 
@@ -122,7 +122,7 @@ Monthly averaged output
 
 
 Daily averaged output
-^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 ----------------------------------------
 
