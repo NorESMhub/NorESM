@@ -174,24 +174,21 @@ Install an ESMValTool docker image from source
 
 1. **jupyterhub:** nordicesmhub/jupyterhub-nird-toolkit
   - *source* : https://github.com/NorESMhub/jupyterhub-nird-toolkit
-  - *docker* : https://hub.docker.com/r/nordicesmhub/jupyterhub-nird-toolkit 
-    ::
+  - *docker* : https://hub.docker.com/r/nordicesmhub/jupyterhub-nird-toolkit ::
 
         nordicesmhub/jupyterhub-nird-toolkit:latest
 
 
 2. **jupyterhub:** tomastorsvik/nird_jupyterhub-singleuser_esmvaltool
   - *source* : https://github.com/TomasTorsvik/jupyterhub-nird-toolkit
-  - *docker* : https://hub.docker.com/repository/docker/tomastorsvik/nird_jupyterhub-singleuser_esmvaltool 
-    ::
+  - *docker* : https://hub.docker.com/repository/docker/tomastorsvik/nird_jupyterhub-singleuser_esmvaltool ::
 
         tomastorsvik/nird_jupyterhub-singleuser_esmvaltool:latest
 
 
 3. **jupyter:** tomastorsvik/nird_jupyter-spark_esmvaltool
   - *source* : https://github.com/TomasTorsvik/jupyter-spark-nird-toolkit
-  - *docker* : https://hub.docker.com/repository/docker/tomastorsvik/nird_jupyter-spark_esmvaltool 
-    ::
+  - *docker* : https://hub.docker.com/repository/docker/tomastorsvik/nird_jupyter-spark_esmvaltool ::
 
         tomastorsvik/nird_jupyter-spark_esmvaltool:latest
 

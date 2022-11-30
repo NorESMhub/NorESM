@@ -31,16 +31,19 @@ In addition some parameter settings, emisson and input files will differ from st
 
 The different source directories are included/activated in the following way:
 
-1. In ``components/cam/cime_config/config_component.xml``:
+1. In ``components/cam/cime_config/config_component.xml``
   If the long compset name contains ::
   
       _CAM60%NORESM 
+  
   
   or ::
   
       _CAM60%PTAERO
   
+  
   then CAM_CONFIG_OPTS will contain ``-chem trop_mam_oslo``.
+
 
 2. In components/cam/bld/configure:
   If chem contains the string ``_oslo``, the following two directories are added as source ::
@@ -49,6 +52,7 @@ The different source directories are included/activated in the following way:
       cam/src/physics/cam_oslo
 
   The directory ``cam/src/chemistry/pp_$chem_pkg`` (in our case thus ``pp_trop_mam_oslo``) will be added as source.
+
 
 The following two directories are always added [this should in principle not be the case for a pure CESM compset, but that switch hasn't been built in yet]::
 
@@ -129,6 +133,7 @@ This examples shows how to simply add the "NFHIST" compset to config_components.
 
 
 E.g. 
+
 .. glossary::
 
   HIST_CAM60%NORESM%NORNC
