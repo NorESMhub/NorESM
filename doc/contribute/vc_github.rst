@@ -1,4 +1,4 @@
-.. _vc-github:
+.. _vc_github:
 
 Version Control and GitHub
 ==========================
