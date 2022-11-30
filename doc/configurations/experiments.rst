@@ -9,7 +9,7 @@ For a quick-start guide on how to create, configure, build, and submit a NorESM 
 
 
 Create and configure a new case
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To start a new experiment you need to create and configure a case. After running the ::
 
@@ -128,8 +128,8 @@ So for the N1850frc2 compset, the different parts of the lname have the followin
 - BGC%BDRDDMS
    - ocean biogeochemistry model iHAMOCC run with interactive DMS
 
-The details of the compset i.e. which models components and component-specific configurations to use are set in
-::
+The details of the compset i.e. which models components and component-specific configurations to use are set in ::
+    
     <lname>1850_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
 
 It is possible to use the long name (lname) to select a compset then creating a new case.  
@@ -141,7 +141,7 @@ For details about AMIP simulation compsets, please see :ref:`amips`
 
 
 Resolution and grids
-''''''''''''
+''''''''''''''''''''
 
 The model resolution is set when the case is created (with the ``--res`` option). Below some common resolutions are listed. 
 
@@ -175,7 +175,7 @@ A complete list of model grids can be found here::
 
 
 Supported grids
-'''''''''''''
+'''''''''''''''
 
 Most compsets contain an entries listing which which grid(s) are scientifically supported for that compset
 ::
@@ -211,7 +211,7 @@ For more details, check this folder ::
 
 
 Create a clone case
-''''''''''''''''
+''''''''''''''''''''
 The create_clone script in the <noresm_base>/cime/scripts folder allows you to create a clone of an already existing case::
 
   ./create_clone --clone <full-path-to-experiment-to-be-cloned> --case <full-path-to-cloned-experiment>
@@ -221,7 +221,7 @@ Creating a clone case can be very useful if you want to recreate an existing cas
 
 
 The xmlchange and xmlquery scripts
-''''''''''''''''''
+''''''''''''''''''''''''''''''''''
 
 The ``xmlchange`` and ``xmlquery`` scripts are located in your case folder and lets you change or query the contents of variables in the ``evn_*.xml`` files without entering the files. There are two advantages of using ``xmlchange`` to edit the xml files rather than doing by hand: (1) the ``xmlchange`` script checks that the new setting is valid and (2) the change is echoed to the ``CaseStatus`` file, thus automatically documented. To change from the default ``ndays`` to ``nmonths`` ::
 
@@ -245,9 +245,6 @@ please see :ref:`output`
 Setting up a nudged simulation
 ''''''''''''''''''''''''''''''
 please see :ref:`nudged_simulations`
-
-
-
 
 Building the case
 ^^^^^^^^^^^^^^^^^^
