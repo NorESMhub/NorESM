@@ -16,7 +16,7 @@ Procedure for answering questions from external users through the noresm-ncc con
 
 
 Template for answering emails from users
-^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Dear xxx,
 
 Thank you for your email regarding the NorESM2 data/model.
