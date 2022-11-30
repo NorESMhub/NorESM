@@ -26,7 +26,7 @@ https://escomp.github.io/CESM/release-cesm2/downloading_cesm.html
 The input data sets are downloaded from multiple servers. The servers and download protocols used are listed in ``<noresm-base>/cime/config/cesm/config_inputdata.xml``
 
 SVN problems during downloading 
-^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If the user encounter problems using svn, e.g. that the CESM2 files from ucar.edu are not downloaded automatically when submitting a case, there are several workarounds:
 
