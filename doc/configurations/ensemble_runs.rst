@@ -13,11 +13,11 @@ To set up an experiment with 5 members, invoke the create_newcase script with th
 
 :: 
 
-   ./create_newcase --case $HOME/noresm_cases/MY_AWESOME_ENSEMBLE_EXP --multi-driver --ninst 5 --res f19_f19_mg17 --mach vilje --compset NFHISTnorpddmsbc --run-unsupported --project <YOUR-PROJECT-FOR-CPU-HOURS-ON-VILJE>
+   ./create_newcase --case <home>/<noresm_cases>/MY_AWESOME_ENSEMBLE_EXP --multi-driver --ninst 5 --res f19_f19_mg17 --mach vilje --compset NFHISTnorpddmsbc --run-unsupported --project <project>
    
 ::
 
-will create a new case in the folder $HOME/noresm_cases/MY_AWESOME_ENSEMBLE_EXP with 5 ensemble members, the f19_f19_mg17 resolution, the NFHISTnorpddmsbc compset, with machine settings for Vilje, and using CPU hours from YOUR-PROJECT-FOR-CPU-HOURS-ON-VILJE. NFHISTnorpddmsbc is the compset for the CMIP6 AMIP experiment in which sea surface temperatures and sea ice are prescribed to observed values.
+will create a new case in the folder ``<home>/<noresm_cases>/MY_AWESOME_ENSEMBLE_EXP with 5 ensemble members, the f19_f19_mg17 resolution, the ``NFHISTnorpddmsbc`` compset, with machine settings for Vilje, and using CPU hours from <project>. ``NFHISTnorpddmsbc`` is the compset for the CMIP6 AMIP experiment in which sea surface temperatures and sea ice are prescribed to observed values.
 
 When using the multi-instance component, *you will get one user namelist for each member and for each component* after running the script **case_setup** from your case folder. For the above case, these namelists are: 
 
@@ -31,9 +31,10 @@ When using the multi-instance component, *you will get one user namelist for eac
 
 ::
 
-The namelists can be used to control various settings and to add output. Note that changes are made individually for the separate members, so if you for instance add extra output fields to user_nl_cam_0001 these fields will only be written out for member 1. To also get the extra output for members 2-5, modify the four other user namelists from cam. 
+The namelists can be used to control various settings and to add output. Note that changes are made individually for the separate members, so if you for instance add extra output fields to ``user_nl_cam_0001`` these fields will only be written out for member 1. To also get the extra output for members 2-5, modify the four other user namelists from cam. 
 
-Something to keep in mind: the number of tasks set in env_mach_pes.xml corresponds to the number of tasks that one member will use. The total number of tasks used when running the experiment will thus be the tasks used by one member multiplied by the number of members. If you want to run a very large number of members, it might be a good idea to divide them into separate cases to make sure that you don't use too many CPUs per case. 
+.. note:: 
+   Something to keep in mind: the number of tasks set in ``env_mach_pes.xml`` corresponds to the number of tasks that one member will use. The total number of tasks used when running the experiment will thus be the tasks used by one member multiplied by the number of members. If you want to run a very large number of members, it might be a good idea to divide them into separate cases to make sure that you don't use too many CPUs per case. 
 
 
 Perturbing the ensemble members: PERTLIM
@@ -41,11 +42,15 @@ Perturbing the ensemble members: PERTLIM
 
 For the ensemble members to actually be different it is necessary to somehow perturb the initial condition of each member. The perturbation must be unique for each member. 
 
-One way of doing this is to use the CAM namelist parameter **PERTLIM**. The default value of PERTLIM is 0.0. By choosing a non-zero value, a random parturbation with a size up to that given by the PERTLIM value will be added to the initial temperature field in the atmosphere. The value could be round-off error size, for instance 1e-14. **The PERTLIM value must be unique for each ensemble member.**
+One way of doing this is to use the CAM namelist parameter ``PERTLIM``. The default value of ``PERTLIM`` is 0.0. By choosing a non-zero value, a random parturbation with a size up to that given by the PERTLIM value will be added to the initial temperature field in the atmosphere. The value could be round-off error size, for instance 1e-14. 
 
-**PERTLIM only works for startup or hybrid runs.** It is not possible to use PERTLIM when doing a branch run. 
+.. warming::
+   The ``PERTLIM`` value must be unique for each ensemble member
 
-While it is perhaps do-able to manually create 5 different namelists with five different PERTLIM values, you will probably want to do this in a more automated way if you want to run, say, 25 different members. The approach described below provides an example of how to do this. It is assumed that you have already created a template namelist called user_nl_cam_template which contains at least the following line:
+.. warning::
+   ``PERTLIM`` only works for startup or hybrid runs. It is not possible to use PERTLIM when doing a branch run. 
+
+While it is perhaps do-able to manually create 5 different namelists with five different ``PERTLIM`` values, you will probably want to do this in a more automated way if you want to run, say, 25 different members. The approach described below provides an example of how to do this. It is assumed that you have already created a template namelist called ``user_nl_cam_template`` which contains at least the following line:
 
 ::
 
@@ -53,7 +58,7 @@ While it is perhaps do-able to manually create 5 different namelists with five d
 
 ::
 
-The nice thing about using a template namelist is that you can add various content to the user_nl_cam_template that you want to apply to all members, such as additional output, and then you can create a set of namelists afterwards that only differ by their PERTLIM value using the script below:
+The nice thing about using a template namelist is that you can add various content to the ``user_nl_cam_template`` that you want to apply to all members, such as additional output, and then you can create a set of namelists afterwards that only differ by their ``PERTLIM`` value using the script below:
 
 ::
 
@@ -94,8 +99,7 @@ The nice thing about using a template namelist is that you can add various conte
 
 ::
 
-The above script puts the namelists in a folder called namelists_perturberd, located in your current working directory. Remember that the namelists must be moved to the case folder when you are happy with them.
-
+The above script puts the namelists in a folder called ``namelists_perturberd``, located in your current working directory. Remember that the namelists must be moved to the case folder when you are happy with them.
 
 
 Starting an ensemble run from a deterministic run:
