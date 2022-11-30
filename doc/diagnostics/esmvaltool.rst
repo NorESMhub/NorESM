@@ -1,6 +1,5 @@
 .. _esmvaltool:
 
-**********
 ESMValTool
 **********
 
@@ -122,9 +121,9 @@ Paste the above https address to browser, and you will find a authen code, and p
 Run ESMValTool on NIRD toolkit service
 ======================================
 
-The ESMValTool is also available from `NIRD Toolkit <https://apps.sigma2.no>`_ applications (Jupyter and JupyterHub), provided by Docker images.
+The ESMValTool is also available from `NIRD Toolkit <https://apps.sigma2.no>`__ applications (Jupyter and JupyterHub), provided by Docker images.
 
-`NIRD Toolkit <https://www.sigma2.no/nird-toolkit>`_ is a cloud infrastructure that gives access to compute nodes on Nird. The service is managed by `Kubernetes <https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/>`_ which launches applications from `Docker containers <https://docs.docker.com/get-started/overview/>`_.
+`NIRD Toolkit <https://www.sigma2.no/nird-toolkit>`__ is a cloud infrastructure that gives access to compute nodes on Nird. The service is managed by `Kubernetes <https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/>`__ which launches applications from `Docker containers <https://docs.docker.com/get-started/overview/>`__.
 
 Access to the NIRD Toolkit service is provided according to a 3 tier ranking
 
@@ -175,21 +174,27 @@ Install an ESMValTool docker image from source
 
 1. **jupyterhub:** nordicesmhub/jupyterhub-nird-toolkit
   - *source* : https://github.com/NorESMhub/jupyterhub-nird-toolkit
-  - *docker* : https://hub.docker.com/r/nordicesmhub/jupyterhub-nird-toolkit ::
+  - *docker* : https://hub.docker.com/r/nordicesmhub/jupyterhub-nird-toolkit 
+    ::
 
         nordicesmhub/jupyterhub-nird-toolkit:latest
 
+
 2. **jupyterhub:** tomastorsvik/nird_jupyterhub-singleuser_esmvaltool
   - *source* : https://github.com/TomasTorsvik/jupyterhub-nird-toolkit
-  - *docker* : https://hub.docker.com/repository/docker/tomastorsvik/nird_jupyterhub-singleuser_esmvaltool ::
+  - *docker* : https://hub.docker.com/repository/docker/tomastorsvik/nird_jupyterhub-singleuser_esmvaltool 
+    ::
 
         tomastorsvik/nird_jupyterhub-singleuser_esmvaltool:latest
 
+
 3. **jupyter:** tomastorsvik/nird_jupyter-spark_esmvaltool
   - *source* : https://github.com/TomasTorsvik/jupyter-spark-nird-toolkit
-  - *docker* : https://hub.docker.com/repository/docker/tomastorsvik/nird_jupyter-spark_esmvaltool ::
+  - *docker* : https://hub.docker.com/repository/docker/tomastorsvik/nird_jupyter-spark_esmvaltool 
+    ::
 
         tomastorsvik/nird_jupyter-spark_esmvaltool:latest
+
 
 To install the docker image you need access to the Nird Toolkit service through a project, and install a new instance of e.g. "jupyter". On the installation page you select whatever standard settings you like (application name, projectspace, persistent storage, machine type), and then select "Show advances configuration..." and replace the standard dockerimage with: ::
 
