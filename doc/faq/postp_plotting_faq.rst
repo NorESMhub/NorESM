@@ -1,22 +1,22 @@
 .. _postp_plotting_faq:
 
 Post-processing and plotting FAQ
-================
+=================================
 
 NorESM2-LM CMIP6 experiments with different physics
---------------------------
+----------------------------------------------------
 **Q:** For many of the RFMIP and AerChemMIP (CMIP6) simulations with NorESM2-LM, two different simulations (i.e. rxi1p1f1 and rxi1p2f1) are available on ESGF. Why?
 
 **A:** Please see ref:`cmip6_data.rst` for context and advice.
 
 Emission-driven compsets
-'''''''''''''''''''
+'''''''''''''''''''''''''
 **Q:** How do I run NorESM2 in an emission-driven mode with an interactive carbon-cycle?
 
 **A:** Please see ref:`experiments.rst` for recommendations. 
 
 Different sea-ice and ocean grid
-------------------------
+---------------------------------
 
 **Q:** The sea ice output variables in NorESM2 are on a 360x384 grid, while the ocean output variables are on a 360x385 grid. Which variable shall I use if I want to e.g. calculate the area sum of the sea ice  (e.g., sea ice volume in the Northern Hemisphere)?
 
@@ -29,15 +29,14 @@ In conclusion, it is consistent to use the area variable defined on the ocean gr
 
 
 Very large ocean cell thickness in BLOM (the ocean component in NorESM2)
------
+------------------------------------------------------------------------
 The ocean layer thickness **dz** variable may not be very meaningful for NorESM. The ocean model component BLOM is an isopycnic-coordinated model and hence the model layer thickness is changing from each integration step. Therefore, it is possible that the layer thickness will exceed 3km to 4km under certain circumstances. For example, this occurs sometimes in polar waters under deep convection where the ocean column is not stratified. And also at some coastal regions (where the water may not be well-represented by 'isopycnic' movement). So in short, **dz** reflects how the model represents the water masses (faithfully or not). 
 
 Weights and area information for the ocean component BLOM 
---------
+----------------------------------------------------------
 The area and mask information for BLOM output can be found in the grid file usually stored together with the input data used by BLOM. Please see http://ns9560k.web.sigma2.no/inputdata/ocn/blom/grid/ for the grid files used. 
 
 Weights for ocean calculations:
-
 ::
 
   gridpath = 'path_to_gridfile' # path to grid files
@@ -46,11 +45,9 @@ Weights for ocean calculations:
   pmask =  grid.pmask
   pweight = parea*pmask
   
-::
-
 
 The vertical coordinate in BLOM
----------------------------
+--------------------------------
 **Q:**
 The vertical coordinate of NorESM2 is provided as the isopycnal coordinate (kg/m^3). I want to change this isopycnal coordinate to z coordinate (m).
 
@@ -70,7 +67,7 @@ For CMORIZED data the pre-interpolated output to z-level uses a different grid i
   * Overturning stream-function: msftmz(time, region, depth, lat) on *grz* grid 
 
 The surface variables in BLOM
----------------------------
+------------------------------
 **Q:** Are the surface variables diagnosed in BLOM identical to the values in the upper ("surface") layer (e.g. sst compared to temp @sigma =27.22 and templvl @depth = 0m)? 
 
 **A:** Usually not. So if you think "surface is surface", please read below:
@@ -96,12 +93,12 @@ Thus:
 These results apply to other variables as well (e.g. salinity and velocities) and to all CMIP6 compsets. Please note, for the actual weighting calculations in BLOM pressure is used instead of layer thickness, but the explanation stays the same. 
 
 What is the ocean density value used to convert from kg/s to Sverdrups?
--------------------------------------
+-----------------------------------------------------------------------
 
 If you would like to be exact it would be the local density (which you could calculate based on T,S properties), but you can just use **1000 kg/m3** (i.e. just divide by 1E9 to get transport in Sverdrups). The ocean model in NorESM (BLOM) is actually mass conserving, so the mass flux is the *real* flux that the model uses and the volume flux is more of a diagnostic quantity. In models that are volume conserving (most CMIP models) the volume flux is what the model uses and they diagnose mass flux by multiplying with constant density, which is not what is done in NorESM.
 
 Why is the depth-integrated vertical transport not equal to zero?
----------------------------------------------------
+--------------------------------------------------------------------
 
 There is no need for the total (integrated) vertical transport across depth to be zero, and it is also not very meaningful to calculate the integral: it is the integral of horizontal+vertical convergence that should be close to zero (but also that does not need to be exactly zero, because the sea level can change at monthly timescale).
 
@@ -109,7 +106,7 @@ Note that the vertical transport (wmo) is defined at level (or the model layer c
 
 
 Is there a tool for creating time series files from the raw NorESM output?
---------------
+---------------------------------------------------------------------------
 
 Yes, there is! PyReshaper is a post-processing tool developed for the CESM that can be used to convert raw (time-slice) output to time series (one file per variable).
 
@@ -120,10 +117,8 @@ The documentation is available here: https://ncar.github.io/PyReshaper/index.htm
 If you are a NIRD user and a member of the INES Unix group, you can use the PyReshaper installation available under /projects/NS9560K/pyreshaper/ (see README file in that folder for details).
 
 
-
-
 How do I fix the time issue in monthly files (h0-files)?:
---------------
+-----------------------------------------------------------
 The monthly files in NorESM2 (not BLOM/MICOM/iHAMOCC files) are written *after* the last time step of the month. Consequently, the date in the netcdf file is the first of the following month. E.g. The date in FILENAME.cam.h0.0001-01.nc will be 01-02-0001 (the first of *February* and not January). This needs to be taken into account when calculating annual averages using python packages like xarray and iris. One method is to use the time bounds (instead of time), another method is to correct the time stamps in the time array. If the time variable is not corrected, none of the python functions involving time e.g. yearly averages, seasonal averages etc. will provide correct information
     
 **xarray**
@@ -146,7 +141,6 @@ The monthly files in NorESM2 (not BLOM/MICOM/iHAMOCC files) are written *after* 
       dates = [DatetimeNoLeap(year, month, 15) for year, month in zip(years, months) ]
       ds = ds.assign_coords(time = dates)
       return ds
-
 
 
 **iris**
@@ -195,7 +189,6 @@ For BLOM/MICOM/iHAMOCC files there are no issues with the time variable, and ann
         annual_mean = annual_mean.where(annual_mean!=0)
         annual_mean.rename(var.name).to_dataset().to_netcdf(fname)
       
-::
 
 One way to handle the time issue is to take annual averages by looping over 12 files at the time (slow method):
 
@@ -209,7 +202,6 @@ One way to handle the time issue is to take annual averages by looping over 12 f
     return np.sum(monthw*[ np.nansum((field[i,:]*ds.gw[0]).values)/
                           np.nansum(ds.gw[0]) for i in range(0,len(ds[var].time))])/np.sum(monthw)
                           
-
 
 Weights for ocean calculations:
 
@@ -269,4 +261,4 @@ Documentation: https://scitools.org.uk/iris/docs/latest/
       tmp = [cube_collapsed[i:i+n].collapsed('time', aggregator= iris.analysis.MEAN,weights=monthw) for i in range(0,n*yrs,n)]
       cubes_aa = iris.cube.CubeList(tmp).merge()
       return cubes_aa[0]
-  
+ 
