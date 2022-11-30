@@ -146,19 +146,18 @@ The following describe the necessary steps to configure and run offline BLOM-iHA
 
 1. Generate the coupler forcing fields
 
-    The stand-alone ocean configuration requires boundary condition (atmospheric and land) fields to force the ocean model. In order to allow the ocean model to simulate the interannual-to-decadal variability, we recommend creating 50 years long or longer forcing fields from a fully coupled simulations under preindustrial control setup. The fully coupled simulation should have relatively stable atmospheric states during this 50 years period, with little drift. In order to generate the coupler fields, the following texts need to be included in the ``user_nl_cpl`` file in the case directory: 
-::
+    The stand-alone ocean configuration requires boundary condition (atmospheric and land) fields to force the ocean model. In order to allow the ocean model to simulate the interannual-to-decadal variability, we recommend creating 50 years long or longer forcing fields from a fully coupled simulations under preindustrial control setup. The fully coupled simulation should have relatively stable atmospheric states during this 50 years period, with little drift. In order to generate the coupler fields, the following texts need to be included in the ``user_nl_cpl`` file in the case directory: ::
 
-     &seq_infodata_inparm
-       histaux_a2x      = .true.  
-       histaux_a2x1hr   = .true. 
-       histaux_a2x1hri  = .true.
-       histaux_a2x3hr   = .true.
-       histaux_a2x3hrp = .true.
-       histaux_a2x24hr = .true.
-       histaux_l2x     = .false.
-       histaux_l2x1yrg = .false.
-       histaux_r2x     = .true.
+        &seq_infodata_inparm
+          histaux_a2x      = .true.  
+          histaux_a2x1hr   = .true. 
+          histaux_a2x1hri  = .true.
+          histaux_a2x3hr   = .true.
+          histaux_a2x3hrp = .true.
+          histaux_a2x24hr = .true.
+          histaux_l2x     = .false.
+          histaux_l2x1yrg = .false.
+          histaux_r2x     = .true.
 
 2. Post-process the coupler fields
 
@@ -288,16 +287,13 @@ Initial conditions
 ^^^^^^^^^^^^^^^^^^
 
 By default, the CICE model is initialized with a 'default', simplified, sea ice field with sea ice in cold regions (air temperature below 0 degree C), north of 70 N and south of 60 S. The sea ice thickness in these regions is horizontal homogeneous, with a uniform snow cover. This behavior is given by the ice_ic variable in the namelist. This can be changed to start without sea ice by setting:
-
 ::
 
   &setup_nml
     ice_ic = "none"
 
-::
 
 in the user_nl_cice in the case folder, or by specifying a restart file which would give the desired sea ice state:
-
 ::
 
   &setup_nml
