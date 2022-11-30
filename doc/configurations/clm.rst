@@ -196,7 +196,7 @@ Land-only experiments
 NorESM2 specific additions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Remove infiltration excess water as runoff if the temperature of the surface water pool is below freezing.
-For details please see :ref:`model-description/lnd_model`
+For details please see :ref:`lnd_model`
 
 The NorESM2 specific addition can be tuned on/off by a flag in the user_nl_clm in the case folder. Setting::
 
