@@ -8,15 +8,13 @@ CMIP5 archive of NorESM results
 | 
 
 **CMIP5:** 
-
-- Project under World Climate Research Programme (WCRP)
-- Since 1995 CMIP has coordinated climate model experiments
-- Defines common experiment protocols, forcings and output.
+  * Project under World Climate Research Programme (WCRP)
+  * Since 1995 CMIP has coordinated climate model experiments
+  * Defines common experiment protocols, forcings and output.
 
 **Advantages:**
-
-- Several models perform the same experiments (enabeling comparisons across models and multi-model ensembles)
-- Homogenized and standardized outputs (including variable names). More specifically, all data is in compliance with the standards of the Climate Model Output Rewriter (CMOR).
+  * Several models perform the same experiments (enabeling comparisons across models and multi-model ensembles)
+  * Homogenized and standardized outputs (including variable names). More specifically, all data is in compliance with the standards of the Climate Model Output Rewriter (CMOR).
 
 
 Data access
