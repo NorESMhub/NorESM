@@ -26,14 +26,13 @@ Enter the *<noresm-base>* folder ::
 
 
 Now you can check which remote servers you have configured:
-
 ::
 
   > git remote -v 
   origin	https://github.com/NorESMhub/NorESM.git (fetch)
   origin	https://github.com/NorESMhub/NorESM.git (push)
 
-::
+
 
 And check which branch you are using ::
 
@@ -120,7 +119,6 @@ Configure Externals.cfg
 +++++++++++++++++++++++
 
 The **Externals.cfg** file contains code blocks that specify what model components to include in the NorESM build, where the source code for each component is located, and what verision of the model component to use. The file can be modified to use another repository, fork, branch or tag or release for any of the model components. The following example is for the land component, which in this case points to a version of the Community Terrestrial Systems Model (CTSM), which includes the Community Land Model (CLM)
-
 ::
 
   [clm]
@@ -131,7 +129,7 @@ The **Externals.cfg** file contains code blocks that specify what model componen
   externals = Externals_CLM.cfg
   required = True
 
-::
+
 
 The file takes the following keywords
 .. glossary::
