@@ -306,28 +306,30 @@ Available meteo fields for nudging
 
 .. glossary::
 
-  ERA_f19_f19_L30::
+  ERA_f19_f19_L30
+    ::
 
-    Original ERA data :
-    Period : 2000-01-01 until 2010-12-31
-    Horizontal resolution : f19 (1.9x2.5)
-    Vertical resolution : L30
-    Available fields : PS, T, Q, U, V
-    Use : for NorESM1.2 / CAM5.3-Nor simulations
-    Storage directory : inputdata/noresm-only/inputForNudging/ERA_f19_f19_L30
-    Storage location :  fram, betzy
-    Contact person :
-    Comment :
+      Original ERA data :
+      Period : 2000-01-01 until 2010-12-31
+      Horizontal resolution : f19 (1.9x2.5)
+      Vertical resolution : L30
+      Available fields : PS, T, Q, U, V
+      Use : for NorESM1.2 / CAM5.3-Nor simulations
+      Storage directory : inputdata/noresm-only/inputForNudging/ERA_f19_f19_L30
+      Storage location :  fram, betzy
+      Contact person :
+      Comment :
 
-  ERA_f19_g16::
+  ERA_f19_g16
+    ::
 
-    Original ERA data : 
-    Period : 1999-01-01 until 2004-01-31
-    Horizontal resolution : f19 (2.5x1.9)
-    Vertical resolution : L30 (30 layers)
-    Available fields : PS, T, Q, U, V
-    Use : for NorESM1.2 / CAM5.3-Nor simulations
-    Storage directory : inputdata/noresm-only/inputForNudging/ERA_f19_g16
-    Storage location : fram
-    Contact person :
-    Comment :
+      Original ERA data : 
+      Period : 1999-01-01 until 2004-01-31
+      Horizontal resolution : f19 (2.5x1.9)
+      Vertical resolution : L30 (30 layers)
+      Available fields : PS, T, Q, U, V
+      Use : for NorESM1.2 / CAM5.3-Nor simulations
+      Storage directory : inputdata/noresm-only/inputForNudging/ERA_f19_g16
+      Storage location : fram
+      Contact person :
+      Comment :
