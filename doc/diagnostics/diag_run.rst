@@ -79,7 +79,7 @@ The pre-installed path::
 You can run this package without installation as a *noresm* user group. There are two wrapper scripts:
 
 * ``diag_run`` for running on the Betzy login nodes (highly discouraged, see `Sigma2 HPC policy <https://documentation.sigma2.no/jobs/submitting.html>`_)
-* ``diag_srun`` to submit a SBATCH job to the compute node of Betzy as a `preproc <https://documentation.sigma2.no/jobs/job_types/betzy_job_types.html#preproc>`_ type of job.
+* ``diag_srun`` to submit a SBATCH job to the compute node of Betzy as a `preproc <https://documentation.sigma2.no/jobs/job_types/betzy_job_types.html#preproc>`__ type of job.
 
 One can either add the ``diag_run`` and ``diag_srun`` to your search path: ::
 
@@ -110,17 +110,19 @@ If you want to change the code for your own purpose, you can installed it on NIR
 
   - If you are installing the tool on NIRD, you just need to link all the data to your clone by running the script ``linkdata.sh``, given you have access to the /project/NS2345K project
   - If you are not memember of NS2345K or you are installing it on platforms other than NIRD, you should download all the data to your clone by executing ``dloaddata.sh``. If you are not running it on NIRD, you should have CDO, NCO and NCL installed.
+  
 4. Make changes to the code/scripts for your purpose. And call ``diag_run`` of your own clone.
 5. If you would like to contribute your function enhancements or bug fixes to the original diagnostic package, you should commit the changes to your fork repository, then create an Issue at the `Github repository <https://github.com/NordicESMhub/noresmdiagnostics>`_, and finally make a ``pull request``  to the original Github repository to incorporate your changes.
 
 Run the tool on NIRD
-============
+========================
 
 On NIRD_, each package can be run/configured from the command line using the wrapper script for NorESM diagnostic program ``diag_run``.
 
 On Betzy_, one can run the tool directly on the login nodes (not recommended), or by submitting a *preproc* job to the compute nodes, please refer to the subsection for more Betzy-specific details: :ref:`submit-job-betzy`.
 
-Call the wrapper script with ``diag_run -h`` will give you the description of the command-line options: ::
+Call the wrapper script with ``diag_run -h`` will give you the description of the command-line options: 
+::
 
   -------------------------------------------------
   Program:
@@ -217,14 +219,13 @@ Example 1: ::
   
 This command runs atmospheric model-obs diagnostics of the case N1850_f19_tn14_191017 using
 a climatology between model years 21 and 50. It is assumed that the N1850_f19_tn14_191017
-history files are located under */projects/NS2345K/noresm/cases*. By default, the resulting plots and html will be
-stored in ::
+history files are located under ``/projects/NS2345K/noresm/cases``. By default, the resulting plots and html will be
+stored in 
+::
 
-  /projects/NS2345K/www/diagnostics/noresm/$USER/N1850_f19_tn14_191017/CAM_DIAG
+  /projects/NS2345K/www/diagnostics/noresm/<user_name>/N1850_f19_tn14_191017/CAM_DIAG
   
-, where $USER is your NIRD username. Or if you specify to store them under a common folder, i.e. with ``-w /projects/NS2345K/www/diagnostics/noresm/common``. It links to the following URL: ::
-
-http://ns2345k.web.sigma2.no/diagnostics/noresm/common/N1850_f19_tn14_191017/CAM_DIAG/yrs21to50-obs.html.
+where <user_name> is your NIRD username. Or if you specify to store them under a common folder, i.e. with ``-w /projects/NS2345K/www/diagnostics/noresm/common``. It links to the following URL: http://ns2345k.web.sigma2.no/diagnostics/noresm/common/N1850_f19_tn14_191017/CAM_DIAG/yrs21to50-obs.html.
 
 The climatology and time-series files under ::
 
@@ -235,7 +236,8 @@ If you want to run *model1-model2* diagnostics, you also need to specify *case_n
 
 .. _`Example 2`:
 
-Example 2: ::
+Example 2: 
+::
 
   diag_run -m cam -c N1850_f19_tn14_191017 -s 21 -e 50 \
   -c2 B1850MICOM_f09_tn14_01 -s2 21 -e2 50
@@ -478,7 +480,7 @@ Model-obs time-series diagnostics in HAMOCC between yrs 31 and 100: ::
 .. _submit-job-betzy:
 
 Run the tool on Betzy
-==================
+======================
 
 There are two alternatives to run the tool on Betzy, either as an interactive (for short test and debug runs) or a batch job (recommended). It is also possible to run directly on the login node with ``diag_run``, but it is higly discouraged and not an option (Refer to `Sigma2 HPC policy <https://documentation.sigma2.no/jobs/submitting.html>`_).
 
@@ -490,9 +492,10 @@ As interactive job
 ------------------
 Run with an `intactive sbatch job <https://documentation.sigma2.no/jobs/interactive_jobs.html>`_, with ``diag_run``.
 
-Start an interactive job request by, for example : ::
+Start an interactive job request by, for example : 
+::
 
-$ salloc --nodes=1 --mem-per-cpu=12G --time=00:30:00 --partition=preproc --account=nn2345k
+  $ salloc --nodes=1 --mem-per-cpu=12G --time=00:30:00 --partition=preproc --account=nn2345k
 
 And then use the same command-line options of ``diag_run`` as on NIRD. 
 
@@ -500,7 +503,7 @@ And then use the same command-line options of ``diag_run`` as on NIRD.
 As batcth job
 -------------
 
-Submit a backend `preproc <https://documentation.sigma2.no/jobs/job_types/betzy_job_types.html#job-type-betzy-preproc>`_ job with ``diag_srun``.
+Submit a backend `preproc <https://documentation.sigma2.no/jobs/job_types/betzy_job_types.html#job-type-betzy-preproc>`__ job with ``diag_srun``.
 
 There are sbatch job specific command-line options for ``diag_srun``, in addition to the ``diag_run -h`` options: ::
 
