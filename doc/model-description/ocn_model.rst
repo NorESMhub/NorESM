@@ -26,7 +26,7 @@ The ocean component Bergen Layered Ocean Model (**BLOM**; Bentsen et al., 2020, 
   Absorption of shortwave radiation
     The penetration profile of shortwave radiation is modified, leading to a shallower absorption in NorESM2 compared to NorESM1.
     
-  Salinity dependent seawater freezing temperature:**
+  Salinity dependent seawater freezing temperature
     With respect to coupling to the sea ice model, BLOM and CICE now use a consistent salinity dependent seawater freezing temperature (Assur, 1958). Selective damping of external inertia–gravity waves in shallow regions is enabled to mitigate an issue with unphysical oceanic variability in high latitude shelf regions, causing excessive sea ice formation due to breakup and ridging in CMIP5 versions of NorESM1.                                                
 
   
