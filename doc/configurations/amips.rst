@@ -43,8 +43,7 @@ The different source directories are included/activated in the following way:
   then CAM_CONFIG_OPTS will contain ``-chem trop_mam_oslo``.
 
 2. In components/cam/bld/configure:
-  If chem contains the string ``_oslo``, the following two directories are added as source
-  ::
+  If chem contains the string ``_oslo``, the following two directories are added as source ::
   
       cam/src/chemistry/oslo_aero
       cam/src/physics/cam_oslo
