@@ -1,19 +1,20 @@
 .. _cism:
 
 Land ice
-======
+========
 
-**Note! The CISM coupling is under development and not yet a scientifically supported option in NorESM.**
+.. note::
+  The CISM coupling is under development and not yet a scientifically supported option in NorESM.
 
 This description is equally a work in progress!
 
 CISM
-''''
+'''''
 The current NorESM2 configuration only supports one ice sheet model instance and has only been used with the Greenland ice sheet so far.
 Activating the land ice component CISM in NorESM experiments requires some preparatory work that is described here. 
 
 Spin up of CISM 
-^^^^^^
+^^^^^^^^^^^^^^^
 Ice sheets have a longer response time compared to most other Earth System components. CISM therefore requires a spinup before it can be coupled into NorESM. We currently spin up CISM in standalone mode with surface mass balance (SMB) forcing coming from an exsiting or preliminary NorESM run.  
 
 **Producing NorESM2 forcing data**
@@ -43,12 +44,11 @@ Restart files from a standalone CISM run are nearly ready for input in NorESM ex
 
 
 Preparing two-way interactions with the atmosphere component 
-^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Incorporating the effect of ice sheet geometry changes on the atmospheric circulation is currently an asynchronous process that requires to automatically update the restart files of the atmospheric component. This is currently done every 5 years, at the end of a run segment. For this to work, a set of scripts needs to be set up that recalculate topography and surface roughness for the atmosphere model. The required global topographic data needs to be provided.
 
-
 Activating the land ice component
-^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The land ice component is actviated by setting the cism block entry ``required = True`` in Externals.cfg before compilation. The land ice component code consist of two separate repositories that provide the interface with the climate model (cism-wrapper, see below) and the ice sheet model code itself (CISM, not shown) ::
 
   [cism]
