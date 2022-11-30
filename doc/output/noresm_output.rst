@@ -1,4 +1,4 @@
-.. _output:
+.. _noresm_output:
 
 NorESM2 output
 ==============
