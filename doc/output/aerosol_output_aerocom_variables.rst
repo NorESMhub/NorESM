@@ -3,8 +3,6 @@
 AEROCOM extra output
 ''''''''''''''''''''
 
----------------------------------------------------------------
-
 | A550_BC:long_name = "BC abs. aerosol optical depth 550nm"  
 | A550_DU:long_name = "mineral abs. aerosol optical depth 550nm"          
 | A550_POM:long_name = "OC abs. aerosol optical depth 550nm"            
