@@ -5,15 +5,15 @@ Post-processing and plotting FAQ
 
 NorESM2-LM CMIP6 experiments with different physics
 --------------------------
-**Q:** For many of the RFMIP and AerChemMIP (CMIP6) simulations with NorESM2-LM, two different simulations are available on ESGF. Why?
+**Q:** For many of the RFMIP and AerChemMIP (CMIP6) simulations with NorESM2-LM, two different simulations (i.e. rxi1p1f1 and rxi1p2f1) are available on ESGF. Why?
 
-**A:** Please see ref:`cmip6_data` for context and advice.
+**A:** Please see ref:`cmip6_data.rst` for context and advice.
 
 Emission-driven compsets
 '''''''''''''''''''
 **Q:** How do I run NorESM2 in an emission-driven mode with an interactive carbon-cycle?
 
-**A:** Please see ref:`experiments` for recommendations. 
+**A:** Please see ref:`experiments.rst` for recommendations. 
 
 Different sea-ice and ocean grid
 ------------------------
@@ -56,20 +56,18 @@ The vertical coordinate of NorESM2 is provided as the isopycnal coordinate (kg/m
 
 **A:**
 Vertically pre-interpolated output to z-level (including temperature, salinity and the overturning mass stream-functions) should be available for all NorESM2 experiments. For raw model output these variables often end with *lvl* . E.g.
-
-- Temperature: templvl(time, depth, y, x)
-- Salinity: salnlvl(time, depth, y, x)
-- Velocity x-component: uvellvl(time, depth, y, x)
-- Velocity y-component: vvellvl(time, depth, y, x)
-- Overturning stream-function: mmflxd(time, region, depth, lat)
+  * Temperature: templvl(time, depth, y, x)
+  * Salinity: salnlvl(time, depth, y, x)
+  * Velocity x-component: uvellvl(time, depth, y, x)
+  * Velocity y-component: vvellvl(time, depth, y, x)
+  * Overturning stream-function: mmflxd(time, region, depth, lat)
 
 For CMORIZED data the pre-interpolated output to z-level uses a different grid identifier than *gn* (grid native). Please note that *gr* usually means regridded horizontally but in case of NorESM2 it is regridded vertically. E.g.
-
-- Temperature: thetao(time, depth, y, x) on *gr* grid 
-- Salinity: so(time, depth, y, x) on *gr* grid 
-- Velocity x-component: uo(time, depth, y, x) on *gr* grid 
-- Velocity y-component: vo(time, depth, y, x) on *gr* grid 
-- Overturning stream-function: msftmz(time, region, depth, lat) on *grz* grid 
+  * Temperature: thetao(time, depth, y, x) on *gr* grid 
+  * Salinity: so(time, depth, y, x) on *gr* grid 
+  * Velocity x-component: uo(time, depth, y, x) on *gr* grid 
+  * Velocity y-component: vo(time, depth, y, x) on *gr* grid 
+  * Overturning stream-function: msftmz(time, region, depth, lat) on *grz* grid 
 
 The surface variables in BLOM
 ---------------------------
@@ -79,21 +77,21 @@ The surface variables in BLOM
 
 The surface mixed boundary layer in BLOM is divided into 2 model layers with thickness dz(1) and dz(2) for the upper and lower layer, respectively. Let h = dz(1) + dz(2) be the total thickness of the mixed layer, then dz(1) = min(10 m, h/2). Further, the minimum thickness of the mixed layer is 5 m. Thus, the upper model layer, dz(1), will have a thickness between 2.5 m to 10 m.  For a comparison of the output variables  **sst**, **temp**, **templvl** :
 
-- **temp:**  the temperature weighted by the thickness of the layer. For the upper layer this will be: ::
+  * **temp:**  the temperature weighted by the thickness of the layer. For the upper layer this will be: ::
          
          sum(temp(1)*dz(1))/sum(dz(1))
          
 time averaged over the time interval used for the diagnostics.
 
-- **templvl**:  the temperature weighted by a pre-defined depth interval for every time step and subsequently averaged over the time interval used for the diagnostics. For the upper (first) layer of templvl, the depth interval is 0 to 5 m.
+  * **templvl**:  the temperature weighted by a pre-defined depth interval for every time step and subsequently averaged over the time interval used for the diagnostics. For the upper (first) layer of templvl, the depth interval is 0 to 5 m.
 
-- **sst**:  temperature in the upper (first) model layer for every time step in the diagnostics interval and subsequently averaged over the time interval used for the diagnostics.
+  * **sst**:  temperature in the upper (first) model layer for every time step in the diagnostics interval and subsequently averaged over the time interval used for the diagnostics.
 
 Thus: 
 
-- **temp** and **sst** will usually not be identical since *temp* is weighted by the layer thickness and *sst* is not. The only exception is if h is greater than 20m throughout the average time period used for the diagnostics, then a constant weighting will be applied (i.e.  dz(1) = 10 m).
+  * **temp** and **sst** will usually not be identical since *temp* is weighted by the layer thickness and *sst* is not. The only exception is if h is greater than 20m throughout the average time period used for the diagnostics, then a constant weighting will be applied (i.e.  dz(1) = 10 m).
 
-- **templvl** and **sst** will usually not be identical since *templvl* is weighted by the layer depth interval and *sst* is not. The only exception is if dz(1) is greater then 5 m throughout the average time period used for the diagnostics. Usually, dz(1) is less than 5 m in some regions e.g. tropical upwellilng regions and hence templvl @depth=0 and sst will differ.
+  * **templvl** and **sst** will usually not be identical since *templvl* is weighted by the layer depth interval and *sst* is not. The only exception is if dz(1) is greater then 5 m throughout the average time period used for the diagnostics. Usually, dz(1) is less than 5 m in some regions e.g. tropical upwellilng regions and hence templvl @depth=0 and sst will differ.
 
 These results apply to other variables as well (e.g. salinity and velocities) and to all CMIP6 compsets. Please note, for the actual weighting calculations in BLOM pressure is used instead of layer thickness, but the explanation stays the same. 
 

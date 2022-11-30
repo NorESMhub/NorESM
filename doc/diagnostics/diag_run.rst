@@ -7,16 +7,26 @@ NorESM2 Diagnostics Package
 Introduction
 ============
 
-The NorESM Diagnostic Package:
-  is a NorESM model evaluation tool written with a set of scripts and command utilities (bash/cshrc, NCO, CDO and NCL etc) to provide a general evaluation and quick preview of the model performance with only one command line. This tool package works on the original model output and has NorESM-specific diagnostics.
+The NorESM Diagnostic Package is a NorESM model evaluation tool written with a set of scripts and command utilities (bash/cshrc, NCO, CDO and NCL etc) to provide a general evaluation and quick preview of the model performance with only one command line. This tool package works on the original model output and has NorESM-specific diagnostics.
 
 **The tool package consists of:**
 
-* **CAM_DIAG**: (Based on NCAR's `AMWG Diagnostics Package <http://www.cesm.ucar.edu/working_groups/Atmosphere/amwg-diagnostics-package/>`_)
-* **CLM_DIAG**: (Based on CLM `Land Model Diagnostics Package <http://www.cesm.ucar.edu/models/cesm1.2/clm/clm_diagpackage.html>`_)
-* **CICE_DIAG**: snow/sea ice volume/area
-* **HAMOCC_DIAG**: time series, climaotology, zonal mean, regional mean
-* **BLOM_DIAG**: time series, climatologies, zonal mean, fluxes, etc
+.. glossary::
+
+  CAM_DIAG
+    The CAM_DIAG diagnostics package computes climatological means of the simulation(s) and produces plots and tables of the mean climate in the atmospheric model component ``CAM-Nor``. Based on NCAR's `AMWG Diagnostics Package <http://www.cesm.ucar.edu/working_groups/Atmosphere/amwg-diagnostics-package/>`_
+  
+  CLM_DIAG
+    The CLM_DIAG diagnostics package computes climatological means of the simulation(s) and produces plots and tables of the mean climate in the land model component ``CLM``. Based on CLM `Land Model Diagnostics Package <http://www.cesm.ucar.edu/models/cesm1.2/clm/clm_diagpackage.html>`_
+
+  CICE_DIAG 
+    The CICE_DIAG diagnostics package computes climatological means of the simulation(s) and produces timeseries of e.g. snow/sea ice volume/area in the sea ice model component ``CICE``.
+    
+  HAMOCC_DIAG
+     The HAMOCC_DIAG diagnostics package computes and produces time series, climaotology, zonal and regional averages of varaibles from the biogeochemistry model component ``iHAMOCC``.
+
+  BLOM_DIAG
+    The BLOM_DIAG diagnostics package computes and produces climaotology, time series, zonal and regional averages, volume transports and fluxes in the ocean model component ``BLOM``.
 
 (See more on the `Major changes to the NCAR's Diagnostics Package`_ at the bottom)
 
