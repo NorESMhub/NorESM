@@ -17,7 +17,6 @@ A different aerosol scheme is included in CAM6-Nor.  The code for this scheme ca
 * components/cam/NorESM/
 * components/cam/NorESM/fv
 
-
 **CAM**
 
 Some modifications in CAM (which are not related to the CAM-Oslo aerosol scheme) are implemented in the original code, but with namelist choices such that the modifications can be activated/deactivated:
@@ -33,21 +32,18 @@ In addition some parameter settings, emisson and input files will differ from st
 The different source directories are included/activated in the following way:
 
 1. In ``components/cam/cime_config/config_component.xml``:
-  If the long compset name contains
-  ::
+  If the long compset name contains ::
   
       _CAM60%NORESM 
   
-  or
-  ::
+  or ::
   
       _CAM60%PTAERO
   
   then CAM_CONFIG_OPTS will contain ``-chem trop_mam_oslo``.
 
 2. In components/cam/bld/configure:
-  If chem contains the string ``_oslo``, the following two directories are added as source
-  ::
+  If chem contains the string ``_oslo``, the following two directories are added as source ::
   
       cam/src/chemistry/oslo_aero
       cam/src/physics/cam_oslo
