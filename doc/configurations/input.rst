@@ -6,7 +6,7 @@ Input data sets
 The complete input data set is stored at Sigma2. To download, please refer to the :ref:`download_input` section. For uploading new input data, contact mben@norceresearch.no or the owner of the data.
 
 Atmospheric specific input data
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Various external input data sets are used by the atmosphere model.  These data sets often describe "boundary conditions" needed during the integration of the model (solar forcing, GHG concentrations, ozone concentrations, oxidant concentrations, emissions of short-lived species, production rate of H2O from CH4 oxidation, stratospheric aerosol, upper ocean chlorophyl-a concentration, sea-surface temperature and sea-ice concentration).  The boundary conditions can be constant, cyclic (often one annual cycle), or evolve according to a historical or future scenario.
 
@@ -49,7 +49,7 @@ A user's guide for the AeroTab code, with some additional information about Oslo
 This AeroTab presentation https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/AeroTab-slides-updateJan2020.pdf may be useful as a first introduction. For questions about AeroTab, contact Øyvind Seland (oyvinds at met.no).      
 
 Ocean specific input data
-^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In case of a startup run (i.e. if the model is not re-started from a prvious simulation) the ocean is initialized from rest, and the initial ocean temperature and salinity are from the Polar Science Center Hydrographic Climatology (PHC) 3.0, updated from Steele et al. (2001). The initial condition files containing ocean temperature and salinity are located in the directory
 ::
@@ -81,7 +81,7 @@ and grid specific information (grid input file, files defining ocean basins and 
    
    
 Ocean carbon cycle specific input data
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The ocean carbon cycle in NorESM2 (iHAMOCC) is initialized from gridded observation based data sets for DIC, alkalinity, phosphate, nitrate, oxygen, and silica. These data sets have been provided by CMIP6-OMIP (Orr et al. 2017), and are located in the same directory as the BLOM initial conditions.
 
