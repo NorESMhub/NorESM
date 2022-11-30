@@ -13,7 +13,7 @@ The purpose of the NorESM2 User's Guide is to provide a common place for NorESM2
 
 
 Low-key discussion forum
-------
+---------------------------
 If you have a question or you can’t find the solution to a problem in the documentation, please post your question here: https://github.com/NorESMhub/NorESM/discussions
 
 
