@@ -1,7 +1,7 @@
 .. _cam_standard_out:
 
 CAM6-Nor standard set-up output
-''''''''''''''''''''''
+'''''''''''''''''''''''''''''''''
 | zlon_bnds = "zlon bounds"
 | gw = "latitude weights"
 | hyam = "hybrid A coefficient at layer midpoints"
@@ -517,5 +517,3 @@ CAM6-Nor standard set-up output
 | mmr_SULFATE = "mmr_SULFATE mmr of aerosol type"
 | monoterp = "monoterp concentration"
 | monoterp_SRF = "monoterp in bottom layer"
-
--------------------------------------------------------------------------------
