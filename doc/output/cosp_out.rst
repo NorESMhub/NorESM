@@ -8,11 +8,11 @@ To activate cosp, run xmlchange in the case folder (before building the model)::
 
   ./xmlchange --append CAM_CONFIG_OPTS='-cosp'
   
-or you can add -cosp to CAM_CONFIG_OPTS in  env_build.xml  (before building the model)::
+or you can add ``-cosp`` to ``CAM_CONFIG_OPTS`` in  ``env_build.xml``  (before building the model)::
 
   <entry id="CAM_CONFIG_OPTS" value="-phys cam6 -co2_cycle -chem trop_mam_oslo -cosp">
   
-To the user_nl_cam, add::
+To the ``user_nl_cam``, add::
 
  &cospsimulator_nl
    docosp         = .true.
