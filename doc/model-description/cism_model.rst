@@ -1,4 +1,4 @@
-.. _cism_model
+.. _cism_model:
 
 The land ice model; CISM
 ========================
