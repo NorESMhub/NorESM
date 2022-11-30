@@ -33,22 +33,24 @@ In addition some parameter settings, emisson and input files will differ from st
 The different source directories are included/activated in the following way:
 
 1. In ``components/cam/cime_config/config_component.xml``:
-  If the long compset name contains::
+  If the long compset name contains
+  ::
   
-    _CAM60%NORESM 
+      _CAM60%NORESM 
   
-  or::
+  or
+  ::
   
-    _CAM60%PTAERO
-  
+      _CAM60%PTAERO
   
   then CAM_CONFIG_OPTS will contain ``-chem trop_mam_oslo``.
 
 2. In components/cam/bld/configure:
-  If chem contains the string ``_oslo``, the following two directories are added as source::
+  If chem contains the string ``_oslo``, the following two directories are added as source
+  ::
   
-    cam/src/chemistry/oslo_aero
-    cam/src/physics/cam_oslo
+      cam/src/chemistry/oslo_aero
+      cam/src/physics/cam_oslo
 
   The directory ``cam/src/chemistry/pp_$chem_pkg`` (in our case thus ``pp_trop_mam_oslo``) will be added as source.
 
@@ -120,7 +122,6 @@ The essential file to edit for a new AMIP NorESM compset is::
   <noresm_base>/components/cam/cime_config/config_compsets.xml
 
 This examples shows how to simply add the "NFHIST" compset to config_components.xml. In <noresm_base>/components/cam/cime_config/config_compsets.xml the NFHIST is set as
-
 ::
     
   <!-- fSST : evolving NorESM derived ; DMS: evolving NorESM derived -->
@@ -130,10 +131,10 @@ This examples shows how to simply add the "NFHIST" compset to config_components.
     <science_support grid="f09_f09_mg17"/>
   </compset>  
 
-::
 
 E.g. 
 .. glossary::
+
   HIST_CAM60%NORESM%NORNC
     * Forcing and input files read from historical conditions (1850 - 2015)
     * Build CAM6.0 (the atmosphere model) with NorESM specific additions and NorESM derived boundary conditions  (for the boundary conditions, please see explonation below).
@@ -160,29 +161,23 @@ To use different prescribed fields for SSTs and sea-ice cover than the default, 
 AMIP-style simulations with observed SSTs and frc2 emission files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The compsets using observed sea suface temperatures include compset names with *fsst*:
-
 ::
 
-  <compset>
-    <alias>NFHISTfsst</alias>
-    <lname>HIST_CAM60%NORESM%FSST_CLM50%BGC-CROP_CICE%PRES_DOCN%DOM_MOSART_SGLC_SWAV</lname>
-    <science_support grid="f09_f09_mg17"/>
-  </compset>
-
-::
+    <compset>
+      <alias>NFHISTfsst</alias>
+      <lname>HIST_CAM60%NORESM%FSST_CLM50%BGC-CROP_CICE%PRES_DOCN%DOM_MOSART_SGLC_SWAV</lname>
+      <science_support grid="f09_f09_mg17"/>
+    </compset>
 
 
 The ``frc2`` option uses differently organized emission files. A new set of emission files have been made to avoid the occurence of random mid-month model crashes. These crashes are related to the reading of emission files, but are still under investigation. To use the newest emission files choose compset names with ``frc2`` or if you want to create a new copset add ``%FRC2``:
-
 ::
 
-  <compset>
-    <alias>NFHISTfsstfrc2</alias>
-    <lname>HIST_CAM60%NORESM%FSST%FRC2_CLM50%BGC-CROP_CICE%PRES_DOCN%DOM_MOSART_SGLC_SWAV</lname>
-    <science_support grid="f09_f09_mg17"/>
-  </compset>
-
-::
+    <compset>
+      <alias>NFHISTfsstfrc2</alias>
+      <lname>HIST_CAM60%NORESM%FSST%FRC2_CLM50%BGC-CROP_CICE%PRES_DOCN%DOM_MOSART_SGLC_SWAV</lname>
+      <science_support grid="f09_f09_mg17"/>
+    </compset>
 
 
 NorESM2-derived boundary conditions for AMIP-style simulations
@@ -190,22 +185,22 @@ NorESM2-derived boundary conditions for AMIP-style simulations
 
 While the prescribed values used in atmosphere-only simulations are often based on observations, one might also want to use values that resemble those from a fully-coupled simulation with NorESM2. To achieve this, it is necessary to use prescribed boundary conditions for SST, sea-ice cover and upper-ocean DMS concentrations (all three fields taken from the fully-coupled simulation). Up to now, 4 sets of boundary conditions have been made:
 
-- a pre-industrial climatology with 2-degree resolution 
+1. a pre-industrial climatology with 2-degree resolution 
    * 2x2 degree resolution in the horizontal
    * contains 12 monthly values
    * based on a 30-year period (years 1751–1780) from the CMIP6 pre-industrial control (piControl) simulation with 2x2 degree resolution (NorESM2-LM).  
    * was used for the CMIP6 simulation piClim-control, and all simulations that are perturbation runs based on piClim-control, with NorESM2-LM (mostly 30-year long simulations) 
   
-- a pre-industrial climatology with 1-degree resolution 
+2. a pre-industrial climatology with 1-degree resolution 
    * as above but on 1x1 resolution in the horizontal, and based on years 1351-1380 from the CMIP6 piControl simulation with 1x1 degree resolution (NorESM2-MM)
 
-- the historical period 
+3. the historical period 
    * 2x2 degree resolution in the horizontal
    * contains monthly values for years 1849-20155
    * based on the period 1850–2014 from the CMIP6 historical simulation with 2x2 degree resolution (NorESM2-LM).  
    * was used for the CMIP6 simulation histSST, and all simulations that are perturbation runs based on sstHIST, with NorESM2-LM (165-year long simulations). 
  
-- a future period based on SSP3-7.0
+4. a future period based on SSP3-7.0
    * 2x2 degree resolution in the horizontal
    * contains monthly values for years 2014-2101
    * based on years 2015-2100 frm the CMIP6 SSP3-7.0 simulation with 2-degree resolution (NorESM2-LM).  
