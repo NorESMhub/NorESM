@@ -1,4 +1,4 @@
-.. _cmip6_data.rst:
+.. _cmip6_data:
 
 CMIP6 archive of NorESM results
 ================================
@@ -42,7 +42,7 @@ This is the same data that you can access through the ESGF. Note data is organiz
 
 , which has the same structure as data in /projects/NS9034K/CMIP6. Note only members of NS9252K, a NFR storage project for KeyCLIM have write permission.
 
-Refer to Section: :ref:`cmip_other.rst` for more information on how to access and download new data.
+Refer to Section: :ref:`cmip_other` for more information on how to access and download new data.
 
 **NIRD users that are members of NS9560K (NFR storage project for INES) can access most of the raw (non-CMOR-ized) model data under**::
 

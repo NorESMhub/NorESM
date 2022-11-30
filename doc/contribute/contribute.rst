@@ -12,7 +12,7 @@ guidelines with more specific information and step-by-step procedures.
 The basic steps for downloading the code has already been described in the
 :ref:`download code <download_code>` section of this document. For code
 contribution it is generally recommended to use a :ref:`fork-based workflow
-<fork-workflow>`, but some non-critical changes (e.g. editing documentation) can
+<fork_workflow>`, but some non-critical changes (e.g. editing documentation) can
 be made with a simplified procedure through GitHub (see `doc/README.md
 <https://github.com/NorESMhub/NorESM/blob/master/doc/README.md>`_). It is also
 recommended to create a `discussion item

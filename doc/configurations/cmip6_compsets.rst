@@ -101,7 +101,7 @@ For more details, also see this folder ::
 
 
 Reproduce CMIP6 piControl, historical and SSP5-8.5 experiments
-======
+==================================================================
 
 piControl
 ^^^^^^^^^
@@ -130,7 +130,7 @@ and the long name for ``N1850frc2`` is ::
                ./create_newcase --case ../../cases/TEST_NorESM2-MM_piControl --compset N1850frc2 --res f09_tn14 --machine fram --project <project> --user-mods-dir cmip6_noresm_DECK
 
 
-     Experiment settings
+     Experiment settings in piControl experiments
         In your case folder (e.g. TEST_NorESM2-LM_piControl or TEST_NorESM2-MM_piControl)
 
         In ``env_run.xml``:
@@ -152,7 +152,7 @@ and the long name for ``N1850frc2`` is ::
                         <entry id="RUN_REFCASE" value="N1850_f09_tn14_20190913">
                         <entry id="RUN_REFDATE" value="1200-01-01">
                    
-     Restart files
+     Restart files for piControl
         Before submitting the job, please remeber to copy the restart and rpointer files to the run directory, e.g. for TEST_NorESM2-MM_piControl on BETZY ::
 
              cp /trd-project3/NS9560K/noresm/cases/N1850_f09_tn14_20190913/rest/1200-01-01-00000/* /cluster/projects/<project>/<username>/noresm/TEST_NorESM2-MM_piControl/run/
@@ -191,7 +191,7 @@ and for ``NHISTfrc2`` is ::
                   ./create_newcase --case ../../cases/TEST_NorESM2-MM_historical --compset NHISTfrc2 --res f09_tn14 --machine fram --project <project> --user-mods-dir cmip6_noresm_DECK
 
 
-     Experiment settings
+     Experiment settings in historical experiments
         In your case folder (e.g. TEST_NorESM2-LM_historical or TEST_NorESM2-MM_historical)
 
         In ``env_run.xml``:
@@ -213,7 +213,7 @@ and for ``NHISTfrc2`` is ::
                         <entry id="RUN_REFCASE" value="N1850_f09_tn14_20190913">
                         <entry id="RUN_REFDATE" value="1200-01-01">
  
-     Restart files
+     Restart files for historical experiments
           Before submitting the job, please remeber to copy the restart and rpointer files to the run directory, e.g. for TEST_NorESM2-LM_historical on BETZY ::
    
              cp /trd-project3/NS9560K/noresm/cases/N1850_f19_tn14_11062019/rest/1600-01-01-00000/* /cluster/projects/<project>/<username>/noresm/TEST_NorESM2-LM_historical/run/
@@ -251,7 +251,7 @@ and for ``NSSP585frc2`` is ::
                   ./create_newcase --case ../../cases/TEST_NorESM2-MM_ssp585 --compset NSSP585frc2 --res f09_tn14 --machine fram --project <project> --user-mods-dir cmip6_noresm_hifreq_xaer
 
 
-     Experiment settings
+     Experiment settings in NSSP585 experiments
         In your case folder (e.g. TEST_NorESM2-LM_ssp585 or TEST_NorESM2-MM_ssp585)
 
         In ``env_run.xml``:
@@ -275,7 +275,7 @@ and for ``NSSP585frc2`` is ::
                         <entry id="RUN_STARTDATE" value="2015-01-01">
    
  
-     Restart files
+     Restart files for NSSP585 experiments
         Before submitting the job, please remeber to copy the restart and rpointer files to the run directory, e.g. for TEST_NorESM2-LM_ssp585 on BETZY ::
 
              cp /trd-project3/NS9560K/noresm/cases/NHIST_f19_tn14_20190710/rest/2015-01-01-00000/* /cluster/projects/<project>/<username>/noresm/TEST_NorESM2-LM_ssp585/run/

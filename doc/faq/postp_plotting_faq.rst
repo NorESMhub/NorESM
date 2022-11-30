@@ -53,18 +53,20 @@ The vertical coordinate of NorESM2 is provided as the isopycnal coordinate (kg/m
 
 **A:**
 Vertically pre-interpolated output to z-level (including temperature, salinity and the overturning mass stream-functions) should be available for all NorESM2 experiments. For raw model output these variables often end with *lvl* . E.g.
-  * Temperature: templvl(time, depth, y, x)
-  * Salinity: salnlvl(time, depth, y, x)
-  * Velocity x-component: uvellvl(time, depth, y, x)
-  * Velocity y-component: vvellvl(time, depth, y, x)
-  * Overturning stream-function: mmflxd(time, region, depth, lat)
+
+* Temperature: templvl(time, depth, y, x)
+* Salinity: salnlvl(time, depth, y, x)
+* Velocity x-component: uvellvl(time, depth, y, x)
+* Velocity y-component: vvellvl(time, depth, y, x)
+* Overturning stream-function: mmflxd(time, region, depth, lat)
 
 For CMORIZED data the pre-interpolated output to z-level uses a different grid identifier than *gn* (grid native). Please note that *gr* usually means regridded horizontally but in case of NorESM2 it is regridded vertically. E.g.
-  * Temperature: thetao(time, depth, y, x) on *gr* grid 
-  * Salinity: so(time, depth, y, x) on *gr* grid 
-  * Velocity x-component: uo(time, depth, y, x) on *gr* grid 
-  * Velocity y-component: vo(time, depth, y, x) on *gr* grid 
-  * Overturning stream-function: msftmz(time, region, depth, lat) on *grz* grid 
+
+* Temperature: thetao(time, depth, y, x) on *gr* grid 
+* Salinity: so(time, depth, y, x) on *gr* grid 
+* Velocity x-component: uo(time, depth, y, x) on *gr* grid 
+* Velocity y-component: vo(time, depth, y, x) on *gr* grid 
+* Overturning stream-function: msftmz(time, region, depth, lat) on *grz* grid 
 
 The surface variables in BLOM
 ------------------------------
@@ -161,7 +163,7 @@ The monthly files in NorESM2 (not BLOM/MICOM/iHAMOCC files) are written *after* 
 
 
 How do I compute a weighted average?
----------------------
+------------------------------------------
 
 **Using NCL**
 

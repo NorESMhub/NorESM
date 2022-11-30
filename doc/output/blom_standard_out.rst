@@ -4,7 +4,7 @@ BLOM standard set-up output
 ''''''''''''''''''''''''''''''
 
 Monthly averaged output  
-^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 | abswnd = "Absolute wind speed"    
 

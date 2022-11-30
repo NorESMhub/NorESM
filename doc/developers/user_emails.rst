@@ -3,7 +3,7 @@
 Answering emails from users
 ===================================
 Procedure for answering questions from external users through the noresm-ncc contact e-mail
-^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 1. Any email to noresm-ncc (UNLESS, see below) will be made into a github issue (in the most relevant repository of NorESMHUB by a noresm-ncc responible, labelled in github “noresm-ncc-question”), and the issue will be assigned to noresm-ncc responsible per repository.
 2. UNLESS the answer is straightforward with an email, this is sent with copy to noresm-ncc
 3. Acknowledge by email the receipt of the inquiry - explaining further the standard procedure to “user”, including link to github issue, with copy to noresm-ncc
