@@ -1,7 +1,7 @@
 .. _filenaming:
 
 Naming of input files used in  NorESM
-======
+======================================
 All input data files need to have the version information included in the file name. We recommend to add the creation date at the end of 
 the file name on the format YYYYMMDD, where:
 
@@ -15,6 +15,5 @@ the file name on the format YYYYMMDD, where:
 
    $FILENAME_nYYYYMMDD.$EXT
    
-::
 
 $EXT is e.g. nc for a NetCDF file
