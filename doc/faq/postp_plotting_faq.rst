@@ -5,7 +5,7 @@ Post-processing and plotting FAQ
 
 NorESM2-LM CMIP6 experiments with different physics
 --------------------------
-**Q:** For many of the RFMIP and AerChemMIP (CMIP6) simulations with NorESM2-LM, two different simulations are available on ESGF. Why?
+**Q:** For many of the RFMIP and AerChemMIP (CMIP6) simulations with NorESM2-LM, two different simulations (i.e. rxi1p1f1 and rxi1p2f1) are available on ESGF. Why?
 
 **A:** Please see ref:`cmip6_data` for context and advice.
 
