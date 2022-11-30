@@ -13,10 +13,11 @@ This procedure follows the guidelines set out in the coderefinery tutorial on
 <https://coderefinery.github.io/git-collaborative/03-distributed>`_.
 
 .. _(Fig. 1):
-.. image:: ../img/git_fork_3_users.png
+.. figure:: ../img/git_fork_3_users.png
    :width: 600
    :alt: Git fork and clone layout
-**Figure 1:** Collaborative fork-based workflow with three users.
+
+   **Figure 1:** Collaborative fork-based workflow with three users.
 
 :ref:`Figure 1<(Fig. 1)>` shows an example where three users are collaborating
 with code contributions to a main repository using a fork-based workflow.
@@ -120,20 +121,20 @@ and update your local repos. to keep things clean. It will still be seen as a
 Synchronize local repositories through a GitHub fork repository
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. _Fig. 2:
-.. image:: ../img/git_fork_sync.png
+.. _(Fig. 2):
+.. figure:: ../img/git_fork_sync.png
    :width: 500
    :alt: Synchronize through git fork
-**Figure 2:** Synchronize code changes between local git
-repositories through a shared GitHub fork repository.
+
+   **Figure 2:** Synchronize code changes between local git repositories through a shared GitHub fork repository.
 
 A GitHub fork repository can serve as a synchronization point for code testing,
 if this is carried out on multiple platforms (e.g. a local machine in addition
 to one or more HPC systems). Normally development will take place on only one of
 the platforms (e.g. a local machine), and all other platforms are used only for
-testing (solid line arrows in :ref:`Fig. 2`). However, the system also allows
+testing (solid line arrows in :ref:`Fig. 2<(Fig. 2)>`). However, the system also allows
 code changes to travel the other direction, e.g. if a bug fix is introduced
-during a test run (stippled arrows in :ref:`Fig. 2`).
+during a test run (stippled arrows in :ref:`Fig. 2<(Fig. 2)>`).
 
 
 Removing feature branches after merging
