@@ -1,13 +1,13 @@
 .. _happi_data.rst:
 
 HAPPI and HappiEVA data
-=============
+=======================
 
 Experiments for 1.5 and 2.0 degree warming 
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 AMIP-style HAPPI experiments
-++++++++++++++++
+++++++++++++++++++++++++++++
 
 A set of AMIP-style large ensemble experiments (125 members) were carried out with NorESM1-Happi (Graff et al., 2019) for three climate states: 
    * the present-day climate (the All-Hist experiment), 
@@ -26,17 +26,18 @@ as a part of the HAPPI initiative (Half A degree additional warming, Prognosis a
 
 
 Fully-coupled experiments
-+++++++++++
++++++++++++++++++++++++++
 
 Fully-coupled experiments targeting 
    * 1.5 degree warming (relative to pre-industrial conditions) and
    * 2.0 degree warming 
+
 were conducted with NorESM1-Happi. See Graff et al. (2019) for details.
 
 **The data (raw model output) can be retrieved from the NIRD research data archive:** https://doi.org/10.11582/2020.00021
 
 Slab-ocean experiments
-++++++++++
+++++++++++++++++++++++
 
 Slab-ocean experiments were conducted for 
    * a present-day climate that is as similar to that in the NorESM1-Happi All-Hist experiment as possible
@@ -45,10 +46,8 @@ Slab-ocean experiments were conducted for
 
 **The data (raw model output) can be retrieved from the NIRD research data archive:** https://doi.org/10.11582/2020.00013
 
-
-
 CMIP5 DECK and scenario experiments with NorESM1-Happi
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A set of fully-coupled DECK experiments and scenario experiments were carried out with NorESM1-Happi (Graff et al., 2019) to enable an extensive validation of the model in line with the CMIP5 protocol (note that these experiments are not a part of the official CMIP5 data set):
    * a pre-industrial control simulation (the **piControl** experiment)
@@ -74,9 +73,8 @@ In addition, a set of slab-ocean experiments were conducted to assess the climat
    
 **Data from the slab-ocean experiments can be retrieved from the NIRD research data archive:** https://doi.org/10.11582/2020.00014
 
-
 References
-^^^^^^
+^^^^^^^^^^^
 
 Graff, L. S., Iversen, T., Bethke, I., Debernard, J. B., Seland, Ø., Bentsen, M., Kirkevåg, A., Li, C., and Olivié, D. J. L.: Arctic amplification under global warming of 1.5 and 2 ◦C in NorESM1-Happi, Earth System Dynamics, 10, 569–598, https://doi.org/10.5194/esd-10-569-2019, 2019.
 

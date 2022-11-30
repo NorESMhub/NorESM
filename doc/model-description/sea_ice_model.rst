@@ -1,15 +1,11 @@
 .. _cea_ice_model:
 
 The sea-ice model; CICE
-======================
+========================
 
 The sea ice model component is based upon version 5.1.2 of the **CICE** sea ice model of Hunke et al. (2015). A NorESM2-specific change is including the effect of wind drift of snow into ocean following Lecomte et al. (2013), as described in Bentsen et al. (in prep). The NorESM version is also equipped with the possibility to modify snow density and snow thermal conductivity in the namelist. 
 
-
-
-
 For more detailed documentation about the CICE model, please see:  http://www.cesm.ucar.edu/models/cesm2/sea-ice/
- 
  
 Main features of the CICE configuration in NorESM2 and differences from NorESM1
 --------------------------------------------------------------------------------
@@ -22,9 +18,6 @@ Main features of the CICE configuration in NorESM2 and differences from NorESM1
 #. Delta-Eddington shortwave radiation 
 #. Melt ponds are allowed to form on undeformed ice (Hunke et al 2013). 
 #. Freezing point of sea water is salinity dependent and based on Assur (1958). The treatment is consistent between the internal mushy-layer thermodynamics, the sea ice - ocean interface, and open water sea ice growth (calculated in the ocean component). 
-
-
-
 
 References
 ^^^^^^^^^^
@@ -40,5 +33,3 @@ Hunke, Elizabeth, Lipscomb, William, Jones, Philip, Turner, Adrian, Jeffery, Nic
 Lecomte, O., T. Fichefet, M. Vancoppenolle, F. Domine, F. Massonnet, P. Mathiot, S. Morin, and P.Y. Barriat (2013), On theformulation of snow thermal conductivity in large-scale sea ice models, J. Adv. Model. Earth Syst., 5, 542–557, doi:10.1002/jame.20039
 
 Turner, A. K. and E. C. Hunke. Impacts of a mushy-layer thermodynamic approach in global sea-ice simulations using the CICE sea-ice model. J. Geophys. Res. Oceans, 120:1253–1275, 2015. URL: http://dx.doi.org/10.1002/2014JC010358.
-
-

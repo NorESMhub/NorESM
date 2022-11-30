@@ -28,7 +28,7 @@ of the code.
    :maxdepth: 2
    :numbered:
 
-   vc-github.rst
-   fork-workflow.rst
+   vc_github.rst
+   fork_workflow.rst
    gitbestpractice.rst
 

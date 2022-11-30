@@ -132,4 +132,3 @@ CICE stadard set-up output
 | vsnon = "snow depth on ice, categories"
 | vvel = "ice velocity (y)"
 
------------------------------------------------------------

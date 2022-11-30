@@ -13,7 +13,7 @@ The purpose of the NorESM2 User's Guide is to provide a common place for NorESM2
 
 
 Low-key discussion forum
-------
+---------------------------
 If you have a question or you can’t find the solution to a problem in the documentation, please post your question here: https://github.com/NorESMhub/NorESM/discussions
 
 
@@ -37,7 +37,7 @@ For obtaining news per email register to users@noresm.org at https://www.noresm.
    start.rst
    access/access.rst
    configurations/configurations.rst
-   output/output.rst
+   output/noresm_output.rst
    diagnostics/diagnostics.rst
    model-description/model-description.rst
    keyruns/keyruns.rst

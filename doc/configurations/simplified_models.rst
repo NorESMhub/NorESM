@@ -4,11 +4,11 @@ Simplified setup
 '''''''''''''''''''''''
 
 Slab ocean 
-^^^^
+^^^^^^^^^^^^
 
 The slab ocean configuration is under development.
 
-In <noresm-base>/cime_config/config_compsets.xml::
+In ``<noresm-base>/cime_config/config_compsets.xml``::
  
  OCN%SOCN
   
@@ -17,11 +17,11 @@ In <noresm-base>/cime_config/config_compsets.xml::
 
 
 Aqua-planet 
-^^^^^^
+^^^^^^^^^^^^
 
 The aquaplanet configuration is not available in NorESM2, or?
 
-In <noresm-base>/cime_config/config_compsets.xml::
+In ``<noresm-base>/cime_config/config_compsets.xml`` ::
   
   OCN%AQUA
   

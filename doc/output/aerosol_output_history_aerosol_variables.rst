@@ -676,5 +676,3 @@ history_aerosol extra output
 
 | XPH_LWC:long_name = "pH value multiplied by lwc"  
 | airFV:long_name = "FV " 
-
----------------------------------------------------------

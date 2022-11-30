@@ -1,8 +1,7 @@
 .. _cmip6_data.rst:
 
 CMIP6 archive of NorESM results
-===================
-
+================================
 
 | NorESM2 contributes to the 6th phase of the Coupled Model Intercomparison Project (CMIP6; Eyring et al., 2016):   
 | https://www.wcrp-climate.org/wgcm-cmip/wgcm-cmip6   
@@ -20,16 +19,16 @@ CMIP6 archive of NorESM results
  * Homogenized and standardized outputs (including variable names). More specifically, all data is in compliance with the standards of the Climate Model Output Rewriter (CMOR).
 
 Data access
-^^^^^^^
+^^^^^^^^^^^^^^
 
-The Earth System Grid Federation (ESGF):
-++++++++++++++++
+The Earth System Grid Federation (ESGF)
++++++++++++++++++++++++++++++++++++++++++
 
 **All data is CMOR-ized and public available here:**
 https://esg-dn1.nsc.liu.se/search/cmip6-liu/
 
 The (Norwegian) National Infrastructure for Research Data (NIRD)
-+++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  
 **All NIRD users can access the archive of CMOR-ized CMIP6 data by NorESM** under project NS9034K::
 
@@ -83,7 +82,7 @@ NorESM2 contributions to the CMIP6 Diagnostic, Evaluation and Characterization o
 
 
 MIPs contributions
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 .. list-table:: 
    :widths: 25 35 45 15
@@ -182,7 +181,7 @@ MIPs contributions
 
 
 RFMIP and AerChemMIP simulations with different physics (rxi1p1f1 and rxi1p2f1)
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **Context**
 
 For many of the RFMIP and AerChemMIP simulations with NorESM2-LM, two different simulations are available on ESGF: rxi1**p1**f1 and rxi1p2f1 (with x = 1, 2 or 3). The **p1**- and **p2**-simulations (where p stands for physics) differ in the way the fluxes of heat, momentum and moisture between the atmosphere and the ocean are calculated, and in the use of the solar zenith angle for the calculation of the albedo. The rxi1p2f1 simulations use
@@ -328,7 +327,7 @@ for ERF is around 0.25/ sqrt(26 − 1) × sqrt(2) ≃ 0.07 Wm-2.
      - -1.49
      
 References
-^^^^^^
+^^^^^^^^^^^^
 Seland, Ø., Bentsen, M., Seland Graff, L., Olivié, D., Toniazzo, T., Gjermundsen, A., Debernard, J. B., Gupta, A. K., He, Y., Kirkevåg, A., Schwinger, J., Tjiputra, J., Schancke Aas, K., Bethke, I., Fan, Y., Griesfeller, J., Grini, A., Guo, C., Ilicak, M., Hafsahl Karset, I. H., Landgren, O., Liakka, J., Onsum Moseid, K., Nummelin, A., Spensberger, C., Tang, H., Zhang, Z., Heinze, C., Iverson, T., and Schulz, M.: The Norwegian Earth System Model, NorESM2 – Evaluation of theCMIP6 DECK and historical simulations, Geosci. Model Dev. Discuss., https://doi.org/10.5194/gmd-2019-378, in review, 2020.
 
 

@@ -31,11 +31,11 @@ The ocean component Bergen Layered Ocean Model (**BLOM**; Bentsen et al., 2020, 
 
   
 Further details in FAQs
-^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
 For further details about BLOM and BLOM diagnostics, please see the *Post-processing and plotting FAQ* in the Frequently asked questions section  :ref:`postp_plotting_faq`
 
 References
-^^^^^^
+^^^^^^^^^^^
 Assur, A.: “Composition of Sea Ice and its Tensile Strength,” pp. 106–138, in Arctic Sea Ice, U.S. National Academy of Sciences-National Research Council Pub. 598, 1958.
 
 Bentsen, M., Bethke, I., Debernard, J. B., Iversen, T., Kirkevåg, A., Seland, Ø., Drange, H., Roelandt, C., Seierstad, I. A., Hoose, C., and Kristjánsson, J. E.: The Norwegian Earth System Model, NorESM1-M – Part 1: Description and basic evaluation of the physical climate, Geosci. Model Dev., 6, 687–720, https://doi.org/10.5194/gmd-6-687-2013, 2013.

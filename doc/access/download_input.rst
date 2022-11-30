@@ -8,17 +8,11 @@ Input datasets needed for a specific case and configuration will be automaticall
 We recommend to only have one input directory on a machine which is shared for all users. 
 
 The input data needs to be stored in a local directory on the machine the model is build and run. The path to the local
-directory is set in <noresm-base>/cime/config/cesm/machines/config_machines.xml
-
-::
+directory is set in ``<noresm-base>/cime/config/cesm/machines/config_machines.xml`` ::
 
   <DIN_LOC_ROOT>/cluster/shared/noresm/inputdata</DIN_LOC_ROOT>
   
-::
-
-The main download location for input data is:
-  
-  https://noresm.org/inputdata/
+The main download location for input data is: https://noresm.org/inputdata/
 
 from where the downloading request might be redirected to another location.
 
@@ -29,17 +23,15 @@ NorESM specific inputdata
 The recipe to download the complete NorESM2 code is based on how it is done for CESM. For more details please see
 https://escomp.github.io/CESM/release-cesm2/downloading_cesm.html
 
-The input data sets are downloaded from multiple servers. The servers and download protocols used are listed in ::
-
-<noresm-base>/cime/config/cesm/config_inputdata.xml
-
+The input data sets are downloaded from multiple servers. The servers and download protocols used are listed in ``<noresm-base>/cime/config/cesm/config_inputdata.xml``
 
 SVN problems during downloading 
-^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If the user encounter problems using svn, e.g. that the CESM2 files from ucar.edu are not downloaded automatically when submitting a case, there are several workarounds:
 
-- 1. On some machines you need to first download one file to permanently add the certificate. If the certificate is not issued by a trusted authority, you need to use the fingerprint to validate the certificate manually. This is done by explicit download one file with svn such that the user can choose "(p) permanently" to add the certificate.  One example file: 
+- 1. On some machines you need to first download one file to permanently add the certificate. If the certificate is not issued by a trusted authority, you need to use the fingerprint to validate the certificate manually. This is done by explicit download one file with svn such that the user can choose "(p) permanently" to add the certificate.  One example file:
+
 ::
    
    svn export https://svn-ccsm-inputdata.cgd.ucar.edu/trunk/inputdata/atm/waccm/lb/LBC_1750-2014_CMIP6_0p5degLat_c170126.nc
@@ -62,20 +54,16 @@ or
 Advanced: Updating NorESM source inputdata
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The input data is currently physically stored on NIRD under
-::
+The input data is currently physically stored on NIRD under ::
 
-/trd-project3/NS9560K/www/inputdata
+  /trd-project3/NS9560K/www/inputdata
 
-::
 Project group members can create new folders and files, also inside existing subfolders.
 However, most existing files are write protected.
 
 If existing files need to be updated, please contact the owners to update them, 
-or they can make the files temporarily writable by executing the script:
-::
+or they can make the files temporarily writable by executing the script ::
 
-/trd-project3/NS9560K/www/inputdata_permissions.sh
+  /trd-project3/NS9560K/www/inputdata_permissions.sh
 
-::
 after commenting in/out the first or second line.

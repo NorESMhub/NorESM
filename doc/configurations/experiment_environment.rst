@@ -1,7 +1,7 @@
 .. _experiment_environment:
 
 Experiment settings and modifications
-===================================
+======================================
 
 After creating a case (see :ref:`experiments`) and running the case.setup script the case folder is created including a number of different files and folders containing information and settings for your case. The case folder contains:
 
@@ -54,18 +54,12 @@ We will not discuss the following files as modifications to these files are not 
 
 Run environment
 ^^^^^^^^^^^^^^^^
-The file
-
-::
+The file ::
   
   env_run.xml
   
-::
 
 sets the configuration details for the experiment such as the run type, the length of the run, how often restart files should be produced, output of coupler diagnostics, and short-term and long-term restart file archiving.
-
-
-
 
 Some common configuration settings
 ----------------------------------
@@ -123,8 +117,6 @@ Some common configuration settings
   - Set to ``TRUE`` to archive all restart files that are produced or to ``FALSE`` to only archive restart files that are produced at the end of the run. Default is ``TRUE``.
 
 
-
-
 NorESM2-specific configuration settings
 ---------------------------------------
 - **OCN_FLUX_SCHEME=1**
@@ -142,7 +134,7 @@ NorESM2-specific configuration settings
           </entry>
         </group>
 
-  ::
+ 
 
 - **COSZ_AVG=.true.** 
 
@@ -159,15 +151,11 @@ NorESM2-specific configuration settings
           </entry>
 
 
-  ::
-
-
 Setting up a hybrid simulation
------------
+---------------------------------
 Step by step guide for setting up an  hybrid (restart) simulation.
 
 When the case is created and compiled, edit ``env_run.xml``. Below is an example for restart with CMIP6 historical initial conditions::
-
 
 
     <entry id="RUN_TYPE" value="hybrid">
@@ -188,15 +176,11 @@ If it is not possible to link directly to restarts, copy the restart files and r
 
 
 Batch job environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The file
-
-::
+^^^^^^^^^^^^^^^^^^^^^
+The file ::
   
   env_batch.xml
   
-::
-
 
 sets the arguments to the batch job commands. There are two jobs; one for running the model (``case.run``) and one for moving the files from the ``RUNDIR`` to the archive directory (``case.st_archive``). The archiving is usually very fast (less than one hour), but for very large jobs (high resolution or large output) it can take several hours. 
 
@@ -205,13 +189,10 @@ Some of the most commonly modified configuration settings are those related to t
 Machine-specific environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The file
-
-::
+The file ::
   
   env_mach_pes.xml
   
-::
 
 sets the component machine-specific processor layout. The settings are critical to a well-load-balanced simulation. Here you set the number of cpus or tasks (``NTASKS``) used for each model component and the coupler (usually land + ice + rof (river run off) = atm = coupler). An example of the NTASKS-settings from an ``env_mach_pes.xml`` file could be:
 
@@ -233,8 +214,6 @@ sets the component machine-specific processor layout. The settings are critical 
       <desc>number of tasks for each component</desc>
     </entry>
 
-
-::
 
 Note that positive values are used for setting the number of tasks whereas negative values can be used to set the number of nodes instead.
 
@@ -295,20 +274,17 @@ For a detailed description of NorESM2 output, please see :ref:`output`
 
 
 Parameter settings
-------------------
+-------------------
 If you need to change some variable values or activate/deactivate flags, that can also be done in ``user_nl_<component>``. The syntax is::
 
   &namelist_group
     namelist_var = new_namelist_value
 
-E.g for a quadrupling of the atmospheric CO2 concentration
-
-::
+E.g for a quadrupling of the atmospheric CO2 concentration ::
 
   &chem_surfvals_nl
     co2vmr         =    1137.28e-6
 
-::
 
 Note that BLOM uses a different syntax than the rest. In user_nl_blom::
 
@@ -333,8 +309,7 @@ Input data is handled by the build process as follows:
 
 
 Aerosol diagnostics
-^^^^^^^^^^
-
+^^^^^^^^^^^^^^^^^^^^
 The model can be set up to output AeroCom-specific variables, effective forcing estimates, and other additional aerosol output. See :ref:`aerosol_output` for details. 
 
 COSP
@@ -349,6 +324,3 @@ Sometimes you will want to make changes that go beyond what is possible from jus
 Another option is to make a new branch for your code modifications following the procedure outlined in :ref:`gitbestpractice`. This has several advantages to using SourceMods, including that your changes are more easily visible for others (in your NorESM fork on GitHub), making them easy to share, and that the changes can more easily be considered for inclusion in the main NorESM repository on GitHub. 
 
 In either case, make sure that you use the source code from the same commit as you used to create the case (for commit details see README.case in the case folder).
-
-
-

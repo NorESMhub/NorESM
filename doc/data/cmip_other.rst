@@ -1,8 +1,7 @@
-.. _cmip_other.rst:
+.. _cmip_other:
 
 Other CMIP5/6 data
 ===================
-
 In addition to CMIP data by NorESM, some other CMIP5 and CMIP6 model and observational data are also downloaded and (currently) stored on Betzy, which is also accessible from NIRD. However, it is not a full replica of ESGF archive. Missing data can be downloaded from ESGF to directory /cluster/shared/ESGF/rawdata, see instructions below.
 
 .. note::
@@ -10,19 +9,19 @@ In addition to CMIP data by NorESM, some other CMIP5 and CMIP6 model and observa
     Users of the CMIP data copy are requested to respect the data policies of CMIP and acknowledge the KeyCLIM project for providing access to the data (acknowledgement shall be done in CRISTIN for any publication resulting of data usage taken from the nird data, KeyCLIM project number 295046).
 
 Data access
-^^^^^^^
-
-All Betzy users can access the (partial) replica of CMIP6 data under Betzy: ::
+^^^^^^^^^^^^^^
+All Betzy users can access the (partial) replica of CMIP6 data under Betzy: 
+::
 
    /cluster/share/ESGF
    
-It contains CMIP5, CMIP6 and obs4MIPs datasets. These data are also accessible (read-only) on NIRD for members of NS9252K :: 
+It contains CMIP5, CMIP6 and obs4MIPs datasets. These data are also accessible (read-only) on NIRD for members of NS9252K 
+:: 
 
    /projects/NS9252K/ESGF_betzy
 
-
 Data download
-^^^^^^^^^^^^
+^^^^^^^^^^^^^^
 There are two alternatives to download additional CMIP datasets:
 
 1. Make a request for data or for more data to be downloaded to this folder, contact jang@met.no.
@@ -33,28 +32,31 @@ For either way to download the data, please follow the :ref:`data_download_guide
 If you are a NIRD user, but not a member of this project and would like to request access, contact michaels@met.no.
 
 .. note::
-    NorESM CMIP data !!!  They are stored on nird under /pojects/NS9034K/ (not under /projects/NS9252K). You don't need to download NorESM data to avoid duplication.
+    NorESM CMIP data! They are stored on nird under /pojects/NS9034K/ (not under /projects/NS9252K). You don't need to download NorESM data to avoid duplication.
 
 .. _data_download_guideline:
 
 Data download guideline
----------------------
+-------------------------
 
 (This guidline is also noted in /cluster/shared/ESGF/README.)
 
-1. Download your data under (recommended, but OK to be elsewhere): ::
+1. Download your data under (recommended, but OK to be elsewhere): 
+::
 
     /cluster/shared/ESGF/rawdata/model
 
 2. After all downloaded, invoke the script ``move2autosort.sh`` to move data to ``/cluster/shared/ESGF/rawdata/autosort`` and automatically set correct file permission/ownership:
 
-For example: ::
+    For example: ::
 
-    $ cd /cluster/shared/ESGF/rawdata
-    $ ./move2autosort.sh "/cluster/shared/ESGF/rawdata/model/mydata*.nc"
-or  ::
+        $ cd /cluster/shared/ESGF/rawdata
+        $ ./move2autosort.sh "/cluster/shared/ESGF/rawdata/model/mydata*.nc"
 
-    $ ./move2autosort.sh "/cluster/shared/ESGF/rawdata/model/mydatafolder"
+    or  ::
+
+        $ ./move2autosort.sh "/cluster/shared/ESGF/rawdata/model/mydatafolder"
+
 
 .. note::
     * You can create subfolders to organise the downloaded data
@@ -87,7 +89,7 @@ Refer to its `documentation <http://prodiguer.github.io/synda/>`_ for introducti
 A simply tutorial on how to use it to download and mange CMIP data.
 
 Activate the tool
-++++++++++++++++
+++++++++++++++++++
 
 Synda is installed with ``Conda`` Betzy, so you can load it by: ::
 

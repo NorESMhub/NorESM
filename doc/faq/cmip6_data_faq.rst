@@ -1,10 +1,10 @@
 .. _cmip6_data_faq.rst:
 
 Reporting CMIP6 data errors
-==========
+==============================
 
 Data error(s)
-------------
+--------------
 
 If you encounter errors with the cmorized NorESM2 output published on ESGF, please create an issue here: https://github.com/NorESMhub/noresm2cmor
 including a precise and concise description of the data error.

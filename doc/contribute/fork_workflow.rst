@@ -1,4 +1,4 @@
-.. _fork-workflow:
+.. _fork_workflow:
 
 Workflow with GitHub forks
 ==========================
@@ -33,7 +33,6 @@ The workflow passes through the following steps:
    repository.
 #. Synchronize local clone (and/or fork repository) with recent changes from the
    main repository.
-
 
 Keep local clone in sync with main repository
 '''''''''''''''''''''''''''''''''''''''''''''

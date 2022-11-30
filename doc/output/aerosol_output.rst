@@ -1,19 +1,17 @@
 .. _aerosol_output:
 
 Aerosol diagnostics and output
-==========================
+===============================
 
 
 Configuring a run with more aerosol diagnostics in NorESM2
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 To run NorESM2 with more aerosol diagnostics add to user_nl_cam:
-
 :: 
 
   &phys_ctl_nl 
     history_aerosol = .true. 
     
-::
 
 
 Adding ``history_aerosol = .true.`` to ``user_nl_cam gives`` additional 577 variables (+ ca. 13 % CPU-time).
@@ -68,6 +66,6 @@ If #define AEROCOM is activated, we additionally get 149 variables (+ ca. 13% CP
 
 
 References
-^^^^^^ 
+^^^^^^^^^^^^ 
 
 Ghan, S.J., X. Liu, R.C. Easter, R. Zaveri, P.J. Rasch, J. Yoon, and B. Eaton, 2012: Toward a Minimal Representation of Aerosols in Climate Models: Comparative Decomposition of Aerosol Direct, Semidirect, and Indirect Radiative Forcing. J. Climate, 25, 6461–6476, https://doi.org/10.1175/JCLI-D-11-00650.1

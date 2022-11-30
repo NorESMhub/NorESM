@@ -32,25 +32,25 @@ In addition some parameter settings, emisson and input files will differ from st
 
 The different source directories are included/activated in the following way:
 
-1. In components/cam/cime_config/config_component.xml:
+1. In ``components/cam/cime_config/config_component.xml``:
   If the long compset name contains::
   
-  _CAM60%NORESM 
+    _CAM60%NORESM 
   
   or::
   
-  _CAM60%PTAERO
+    _CAM60%PTAERO
   
   
-  then CAM_CONFIG_OPTS will contain "-chem trop_mam_oslo".
+  then CAM_CONFIG_OPTS will contain ``-chem trop_mam_oslo``.
 
 2. In components/cam/bld/configure:
-  If chem contains the string "_oslo", the following two directories are added as source::
+  If chem contains the string ``_oslo``, the following two directories are added as source::
   
-   cam/src/chemistry/oslo_aero
-   cam/src/physics/cam_oslo
+    cam/src/chemistry/oslo_aero
+    cam/src/physics/cam_oslo
 
-  The directory cam/src/chemistry/pp_$chem_pkg (in our case thus pp_trop_mam_oslo) will be added as source.
+  The directory ``cam/src/chemistry/pp_$chem_pkg`` (in our case thus ``pp_trop_mam_oslo``) will be added as source.
 
 The following two directories are always added [this should in principle not be the case for a pure CESM compset, but that switch hasn't been built in yet]::
 
@@ -59,7 +59,7 @@ The following two directories are always added [this should in principle not be 
 
 
 Initial conditions
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 .. glossary::
 
@@ -85,13 +85,13 @@ Initial conditions
     If your experiment is a ``hybrid`` run, the different model components are initialized as if it was a startup, but using initialization files from a previous case at a given date (again set by the RUN_REFCASE and RUN_REFDATE variables). CAM is initialized using a initial-condition file from the previous case. The full pathname of the initial-condition file will be set in the cam namelist variable ``ncdata``. 
 
 Setting up an AMIP-type experiment
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Atmospheric Model Intercomparison Project (AMIP) style runs are runs in which the **atmosphere and land components are active while values for sea surface temperatures and sea ice are prescribed** (that is, read from a file). The sea-ice model CICE then runs in a simplified mode and computes surface fluxes, snow depth, albedo, and surface temperatures using 1D thermodynamics without conserving energy. The sea-ice thickness is assumed to be 2 m in the Northern Hemisphere and 1 m in the Southern Hemisphere. 
 
 The AMIP simulation is created in the same manner as a coupled simulation, but using compsets starting with NF. 
 
 AMIP compsets
-'''''''
+'''''''''''''
 
 Compsets starting with NF are NorESM AMIP (atmosphere/land-only) configurations.  Predefined compsets for AMIP simulations can be found in::  
 
@@ -113,7 +113,7 @@ Available user-mod-dir options for NorESM2 used in CMIP6:
 
 
 Creating your own compset for AMIP simulations
-''''''''''''''''''''''
+''''''''''''''''''''''''''''''''''''''''''''''
 
 The essential file to edit for a new AMIP NorESM compset is:: 
 
@@ -133,27 +133,32 @@ This examples shows how to simply add the "NFHIST" compset to config_components.
 ::
 
 E.g. 
+.. glossary::
+  HIST_CAM60%NORESM%NORNC
+    * Forcing and input files read from historical conditions (1850 - 2015)
+    * Build CAM6.0 (the atmosphere model) with NorESM specific additions and NorESM derived boundary conditions  (for the boundary conditions, please see explonation below).
+    Note for some AMIP compsets CAM60%PTAERO may be used instead of CAM60%NORESM. Don't worry, those are identical.
 
-- HIST_CAM60%NORESM%NORNC
-   - Forcing and input files read from historical conditions (1850 - 2015)
-   - Build CAM6.0 (the atmosphere model) with NorESM specific additions and NorESM derived boundary conditions  (for the boundary conditions, please see explonation below).
-   - Note for some AMIP compsets CAM60%PTAERO may be used instead of CAM60%NORESM. Don't worry, those are identical.
-- CLM50%BGC-CROP
-   - Build CLM5 (land model) with a global crop model (interactive vegetation)
-   - If you want pre-described vegetation, use CLM50%SP
-- CICE%PRES
-   - Build CICE (sea-ice model) with prescribed sea-ice
-- DOCN%DOM
-   - Build data ocean with fixed SSTs. 
-- MOSART
-   - Build MOSART (river runoff model) with default configurations
-- SGLC_SWAV
-   - The SGLC (land-ice) and SWAV (ocean-wave) models are not interactive, but used only to satisfy the interface requirements 
+  CLM50%BGC-CROP
+    * Build CLM5 (land model) with a global crop model (interactive vegetation)
+    * If you want pre-described vegetation, use CLM50%SP
+    
+  CICE%PRES
+    * Build CICE (sea-ice model) with prescribed sea-ice
+    
+  DOCN%DOM
+    * Build data ocean with fixed SSTs. 
+    
+  MOSART
+    * Build MOSART (river runoff model) with default configurations
+    
+  SGLC_SWAV
+    * The SGLC (land-ice) and SWAV (ocean-wave) models are not interactive, but used only to satisfy the interface requirements 
 
 To use different prescribed fields for SSTs and sea-ice cover than the default, change the value of the variable ``SSTICE_DATA_FILENAME`` in the ``evn_run.xml`` file to the full path of a different file that complies to the requirements of the CICE and the data-ocean model.
 
 AMIP-style simulations with observed SSTs and frc2 emission files
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The compsets using observed sea suface temperatures include compset names with *fsst*:
 
 ::
@@ -181,7 +186,7 @@ The ``frc2`` option uses differently organized emission files. A new set of emis
 
 
 NorESM2-derived boundary conditions for AMIP-style simulations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 While the prescribed values used in atmosphere-only simulations are often based on observations, one might also want to use values that resemble those from a fully-coupled simulation with NorESM2. To achieve this, it is necessary to use prescribed boundary conditions for SST, sea-ice cover and upper-ocean DMS concentrations (all three fields taken from the fully-coupled simulation). Up to now, 4 sets of boundary conditions have been made:
 
@@ -222,7 +227,7 @@ and ends up in the drv_in namelist as::
   
  
 Code modifications
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 To make more subtantial modification to the code than what is possible by the use of user_nl_cam, there are two methods:
 
@@ -232,4 +237,4 @@ To make more subtantial modification to the code than what is possible by the us
 
 The CAM6/CAM6-Nor source code is located in::
 
-<noresm-base>/components/cam/
+  <noresm-base>/components/cam/

@@ -41,17 +41,17 @@ and 3 D) are:
 Adding history_aerosol = .true. to user_nl_cam gives the following
 additional 577 variables (+ ca. 13 % CPU-time)
 
-:ref:`history_aerosol_extra_output`
+:ref:`aerosol_output_history_aerosol_variables`
 
 Furthermore including #define AEROFFL to preprocessorDefinitions.h gives
 8 additionally variables (+ ca. 5% CPU-time)
 
-:ref:`aeroffl_extra_output`
+:ref:`aerosol_output_aeroffl_variables`
 
 and when also #define AEROCOM is activated there, we additionally get
 the following 149 variables (+ ca. 13% CPU-time)
 
-:ref:`aerocom_extra_output`
+:ref:`aerosol_output_aerocom_variables`
 
 Finally, also taking out COSP data (./xmlchange --append
 CAM_CONFIG_OPTS='-cosp'), the following 57 output variables (of which 7

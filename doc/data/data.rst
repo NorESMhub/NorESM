@@ -1,7 +1,7 @@
 .. _data:
 
 Access NorESM data: CMIP and other
-===================
+==================================
 
 .. toctree::
    :maxdepth: 2
