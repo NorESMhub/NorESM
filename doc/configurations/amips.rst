@@ -32,26 +32,23 @@ In addition some parameter settings, emisson and input files will differ from st
 The different source directories are included/activated in the following way:
 
 1. In ``components/cam/cime_config/config_component.xml``
-  If the long compset name contains ::
-  
-      _CAM60%NORESM 
-  
-  
-  or ::
-  
-      _CAM60%PTAERO
-  
-  
-  then CAM_CONFIG_OPTS will contain ``-chem trop_mam_oslo``.
+   If the long compset name contains ::
 
+        _CAM60%NORESM
+
+   or ::
+
+       _CAM60%PTAERO
+
+   then CAM_CONFIG_OPTS will contain ``-chem trop_mam_oslo``.
 
 2. In components/cam/bld/configure:
-  If chem contains the string ``_oslo``, the following two directories are added as source ::
-  
-      cam/src/chemistry/oslo_aero
-      cam/src/physics/cam_oslo
+   If chem contains the string ``_oslo``, the following two directories are added as source ::
 
-  The directory ``cam/src/chemistry/pp_$chem_pkg`` (in our case thus ``pp_trop_mam_oslo``) will be added as source.
+       cam/src/chemistry/oslo_aero
+       cam/src/physics/cam_oslo
+
+   The directory ``cam/src/chemistry/pp_$chem_pkg`` (in our case thus ``pp_trop_mam_oslo``) will be added as source.
 
 
 The following two directories are always added [this should in principle not be the case for a pure CESM compset, but that switch hasn't been built in yet]::
@@ -139,7 +136,7 @@ E.g.
   HIST_CAM60%NORESM%NORNC
     * Forcing and input files read from historical conditions (1850 - 2015)
     * Build CAM6.0 (the atmosphere model) with NorESM specific additions and NorESM derived boundary conditions  (for the boundary conditions, please see explonation below).
-    Note for some AMIP compsets CAM60%PTAERO may be used instead of CAM60%NORESM. Don't worry, those are identical.
+    * Note for some AMIP compsets CAM60%PTAERO may be used instead of CAM60%NORESM. Don't worry, those are identical.
 
   CLM50%BGC-CROP
     * Build CLM5 (land model) with a global crop model (interactive vegetation)

@@ -1,5 +1,5 @@
-.. _aerosol_output_aeroffl_variables:
 :orphan:
+.. _aerosol_output_aeroffl_variables:
 
 AEROFFL extra output
 ''''''''''''''''''''

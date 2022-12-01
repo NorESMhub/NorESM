@@ -1,5 +1,5 @@
-.. _blom_standard_out:
 :orphan:
+.. _blom_standard_out:
 
 BLOM standard set-up output  
 ''''''''''''''''''''''''''''''

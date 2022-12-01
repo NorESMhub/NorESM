@@ -1,5 +1,5 @@
-.. _cam_standard_out:
 :orphan:
+.. _cam_standard_out:
 
 CAM6-Nor standard set-up output
 '''''''''''''''''''''''''''''''''
