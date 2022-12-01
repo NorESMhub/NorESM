@@ -1,4 +1,5 @@
 .. _simplified_models:
+:orphan:
 
 Simplified setup
 '''''''''''''''''''''''

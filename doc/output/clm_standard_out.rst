@@ -1,4 +1,5 @@
 .. _clm_standard_out:
+:orphan:
 
 CLM5 standard set-up output
 ''''''''''''''''''''''''''''

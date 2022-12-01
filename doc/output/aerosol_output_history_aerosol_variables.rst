@@ -1,5 +1,6 @@
 .. _aerosol_output_history_aerosol_variables:
- 
+:orphan:
+
 history_aerosol extra output
 ''''''''''''''''''''''''''''
 
