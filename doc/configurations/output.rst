@@ -1,5 +1,5 @@
-.. _output:
 :orphan:
+.. _output:
 
 Output and standard results
 ===================================
