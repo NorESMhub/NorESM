@@ -1,4 +1,5 @@
 .. _cice_standard_out:
+:orphan:
 
 CICE stadard set-up output
 '''''''''''''''''''''''''''''

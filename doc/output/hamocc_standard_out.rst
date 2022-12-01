@@ -1,4 +1,5 @@
 .. _hamocc_standard_out:
+:orphan:
 
 iHAMOCC standard set-up output
 ''''''''''''''''''''''''''''''''''

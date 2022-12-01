@@ -1,4 +1,5 @@
 .. _cosp_extra_output:
+:orphan:
 
 COSP extra output
 '''''''''''''''''
