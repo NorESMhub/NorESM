@@ -1,5 +1,6 @@
+:orphan:
 .. _aerosol_output_history_aerosol_variables:
- 
+
 history_aerosol extra output
 ''''''''''''''''''''''''''''
 
@@ -676,5 +677,3 @@ history_aerosol extra output
 
 | XPH_LWC:long_name = "pH value multiplied by lwc"  
 | airFV:long_name = "FV " 
-
----------------------------------------------------------

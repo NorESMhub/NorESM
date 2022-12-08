@@ -1,3 +1,4 @@
+:orphan:
 .. _clm_standard_out:
 
 CLM5 standard set-up output
@@ -560,4 +561,3 @@ CLM5 standard set-up output
 | ZWT_CH4_UNSAT = "depth of water table for methane production used in non-inundated area"
 | ZWT_PERCH = "perched water table depth (vegetated landunits only)"
 
-------------------------------------------------------------------------

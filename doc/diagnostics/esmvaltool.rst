@@ -1,12 +1,11 @@
 .. _esmvaltool:
 
-**********
 ESMValTool
 **********
 
-**The Earth System Model eValuation Tool** (`ESMValTool <https://esmvaltool.readthedocs.io>`_) is a community-development that aims at improving diagnosing and understanding of the causes and effects of model biases and inter-model spread. The ESMValTool can process multiple model outputs, including NorESM, but these model output need to be post-processed to conform with the CMIP data standard (i.e., `CMOR <https://cmor.llnl.gov>`_). ESMValTool support all the published model data output on the `ESGF <https://esgf-data.dkrz.de>`_. 
+**The Earth System Model eValuation Tool** (`ESMValTool <https://esmvaltool.readthedocs.io>`__) is a community-development that aims at improving diagnosing and understanding of the causes and effects of model biases and inter-model spread. The ESMValTool can process multiple model outputs, including NorESM, but these model output need to be post-processed to conform with the CMIP data standard (i.e., `CMOR <https://cmor.llnl.gov>`__). ESMValTool support all the published model data output on the `ESGF <https://esgf-data.dkrz.de>`__. 
 
-The `esmvaltool-on-nird <https://github.com/orgs/NorESMhub/teams/esmvaltool-on-nird>`_ discussion group can be a useful resource if you plan to run ESMValTool on Nird.
+The `esmvaltool-on-nird <https://github.com/orgs/NorESMhub/teams/esmvaltool-on-nird>`__ discussion group can be a useful resource if you plan to run ESMValTool on Nird.
 
 
 Run ESMValTool on NIRD service node
@@ -25,9 +24,9 @@ An example of steps to run the ESMValTool on ipcc.nird.sigma2.no
 
 2. load ESMValTool on nird: ::
 
-    conda activate /conda/esmvaltool/2.1.0/
+    conda activate /conda/esmvaltool/2.2.0/
 
-(note, the esmvaltool may be upgraded in the future. Therefore, use ``ls /conda/esmvaltool/`` to check the currently installed vesion if 2.1.0 does not exist.)
+(note, the esmvaltool may be upgraded in the future. Therefore, use ``ls /conda/esmvaltool/`` to check which version is actually installed.)
 
 3. configure esmvaltool (first time use):
 
@@ -69,14 +68,15 @@ Shared resources for esmvaltool on the IPCC node is available from::
 
 The ``config/config-ipcc.yml`` file should provide paths to relevant data on Nird. These settings are probably adequate for most users, but can be altered to include additional model output or observational datasets from other sources. Model data are stored in a directory structure following the DKRZ convention. A list of tested recipes is available under the ``tested_recipes`` folder.
 
-auxiliary_data/
-  Auxiliary data needed to run some esmvaltool recipes, e.g. shapefiles for map plotting or data extraction.
+.. glossary::
+    auxiliary_data/
+        Auxiliary data needed to run some esmvaltool recipes, e.g. shapefiles for map plotting or data extraction.
 
-config/
-  User and developer config files.
+    config/
+        User and developer config files.
 
-tested_recipes/
-  Some recipes that have been tested with esmvaltool for the IPCC node installation with NorESM1/2 supported.
+    tested_recipes/
+        Some recipes that have been tested with esmvaltool for the IPCC node installation with NorESM1/2 supported.
 
 Download data automatically with Synda
 --------------------------------------
@@ -121,9 +121,9 @@ Paste the above https address to browser, and you will find a authen code, and p
 Run ESMValTool on NIRD toolkit service
 ======================================
 
-The ESMValTool is also available from `NIRD Toolkit <https://apps.sigma2.no>`_ applications (Jupyter and JupyterHub), provided by Docker images.
+The ESMValTool is also available from `NIRD Toolkit <https://apps.sigma2.no>`__ applications (Jupyter and JupyterHub), provided by Docker images.
 
-`NIRD Toolkit <https://www.sigma2.no/nird-toolkit>`_ is a cloud infrastructure that gives access to compute nodes on Nird. The service is managed by `Kubernetes <https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/>`_ which launches applications from `Docker containers <https://docs.docker.com/get-started/overview/>`_.
+`NIRD Toolkit <https://www.sigma2.no/nird-toolkit>`__ is a cloud infrastructure that gives access to compute nodes on Nird. The service is managed by `Kubernetes <https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/>`__ which launches applications from `Docker containers <https://docs.docker.com/get-started/overview/>`__.
 
 Access to the NIRD Toolkit service is provided according to a 3 tier ranking
 
@@ -145,7 +145,7 @@ Applications in NIRD Toolkit are available from::
 An owner/admin can launch a new application by installing it, and request resources to be made available to the application via the Kybernetes management system. A member can launch an existing application that has previously been set up by an owner/admin. The application setup allows access to storage areas under NSxxxxK storage volumes (read-only by default) and a user storage area under a specific NSxxxxK/subfolder with write access, but only applications pre-defined in the docker image provided to the Kybernetes system can be used.
 
 Run a pre-installed jupyterhub application (e.g. EOSC jupyterhub on nird)
-------------------------------------------
+--------------------------------------------------------------------------
 
 ESMValTool is not included in the default docker images provided by Sigma2, but has been installed in modified docker images. These are created by building ESMValTool on top of an official Sigma2 docker image, and package in a new docker container. Such modified docker images are available for `jupyter` and `jupyterhub` applications.
 
@@ -173,22 +173,27 @@ Install an ESMValTool docker image from source
 ----------------------------------------------
 
 1. **jupyterhub:** nordicesmhub/jupyterhub-nird-toolkit
-  - *source* : https://github.com/NorESMhub/jupyterhub-nird-toolkit
-  - *docker* : https://hub.docker.com/r/nordicesmhub/jupyterhub-nird-toolkit ::
 
-   nordicesmhub/jupyterhub-nird-toolkit:latest
+   - *source* : https://github.com/NorESMhub/jupyterhub-nird-toolkit
+   - *docker* : https://hub.docker.com/r/nordicesmhub/jupyterhub-nird-toolkit ::
+
+        nordicesmhub/jupyterhub-nird-toolkit:latest
+
 
 2. **jupyterhub:** tomastorsvik/nird_jupyterhub-singleuser_esmvaltool
-  - *source* : https://github.com/TomasTorsvik/jupyterhub-nird-toolkit
-  - *docker* : https://hub.docker.com/repository/docker/tomastorsvik/nird_jupyterhub-singleuser_esmvaltool ::
 
-   tomastorsvik/nird_jupyterhub-singleuser_esmvaltool:latest
+   - *source* : https://github.com/TomasTorsvik/jupyterhub-nird-toolkit
+   - *docker* : https://hub.docker.com/repository/docker/tomastorsvik/nird_jupyterhub-singleuser_esmvaltool ::
+
+        tomastorsvik/nird_jupyterhub-singleuser_esmvaltool:latest
+
 
 3. **jupyter:** tomastorsvik/nird_jupyter-spark_esmvaltool
-  - *source* : https://github.com/TomasTorsvik/jupyter-spark-nird-toolkit
-  - *docker* : https://hub.docker.com/repository/docker/tomastorsvik/nird_jupyter-spark_esmvaltool ::
 
-     tomastorsvik/nird_jupyter-spark_esmvaltool:latest
+   - *source* : https://github.com/TomasTorsvik/jupyter-spark-nird-toolkit
+   - *docker* : https://hub.docker.com/repository/docker/tomastorsvik/nird_jupyter-spark_esmvaltool ::
+
+        tomastorsvik/nird_jupyter-spark_esmvaltool:latest
 
 
 To install the docker image you need access to the Nird Toolkit service through a project, and install a new instance of e.g. "jupyter". On the installation page you select whatever standard settings you like (application name, projectspace, persistent storage, machine type), and then select "Show advances configuration..." and replace the standard dockerimage with: ::

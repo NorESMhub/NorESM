@@ -7,18 +7,28 @@ NorESM2 Diagnostics Package
 Introduction
 ============
 
-The NorESM Diagnostic Package:
-  is a NorESM model evaluation tool written with a set of scripts and command utilities (bash/cshrc, NCO, CDO and NCL etc) to provide a general evaluation and quick preview of the model performance with only one command line. This tool package works on the original model output and has NorESM-specific diagnostics.
+The NorESM Diagnostic Package is a NorESM model evaluation tool written with a set of scripts and command utilities (bash/cshrc, NCO, CDO and NCL etc) to provide a general evaluation and quick preview of the model performance with only one command line. This tool package works on the original model output and has NorESM-specific diagnostics.
 
 **The tool package consists of:**
 
-* **CAM_DIAG**: (Based on NCAR's `AMWG Diagnostics Package <http://www.cesm.ucar.edu/working_groups/Atmosphere/amwg-diagnostics-package/>`_)
-* **CLM_DIAG**: (Based on CLM `Land Model Diagnostics Package <http://www.cesm.ucar.edu/models/cesm1.2/clm/clm_diagpackage.html>`_)
-* **CICE_DIAG**: snow/sea ice volume/area
-* **HAMOCC_DIAG**: time series, climaotology, zonal mean, regional mean
-* **BLOM_DIAG**: time series, climatologies, zonal mean, fluxes, etc
+.. glossary::
 
-(See the `major changes to the NCAR's Diagnostics Package`_ at the bottom)
+  CAM_DIAG
+    The CAM_DIAG diagnostics package computes climatological means of the simulation(s) and produces plots and tables of the mean climate in the atmospheric model component ``CAM-Nor``. Based on NCAR's `AMWG Diagnostics Package <http://www.cesm.ucar.edu/working_groups/Atmosphere/amwg-diagnostics-package/>`_
+  
+  CLM_DIAG
+    The CLM_DIAG diagnostics package computes climatological means of the simulation(s) and produces plots and tables of the mean climate in the land model component ``CLM``. Based on CLM `Land Model Diagnostics Package <http://www.cesm.ucar.edu/models/cesm1.2/clm/clm_diagpackage.html>`_
+
+  CICE_DIAG 
+    The CICE_DIAG diagnostics package computes climatological means of the simulation(s) and produces timeseries of e.g. snow/sea ice volume/area in the sea ice model component ``CICE``.
+    
+  HAMOCC_DIAG
+     The HAMOCC_DIAG diagnostics package computes and produces time series, climaotology, zonal and regional averages of varaibles from the biogeochemistry model component ``iHAMOCC``.
+
+  BLOM_DIAG
+    The BLOM_DIAG diagnostics package computes and produces climaotology, time series, zonal and regional averages, volume transports and fluxes in the ocean model component ``BLOM``.
+
+(See more on the `Major changes to the NCAR's Diagnostics Package`_ at the bottom)
 
 Installation
 ============
@@ -29,16 +39,22 @@ https://github.com/NordicESMhub/noresmdiagnostics.
 And the observation dataset and grid files are hosted at:
 https://www.noresm.org/diagnostics, with a total size of ~100 GB.
 
-There are two options to use this package, as described in the following subsections:
+One can either use the preinstalled package or has a fresh install, as described below:
 
 Preinstalled package
 ----------------------------
 
-The full diagnostic package (including source files and data files) are currently hosted on NIRD_: ::
-
-  NIRD:/projects/NS2345K/diagnostics/noresm
+The full diagnostic package (including source files and data files) are currently installed on storage platform NIRD_ and the HPC computing Betzy_. It is not supported yet on Fram_.
 
 .. _NIRD: https://documentation.sigma2.no/files_storage/nird.html 
+.. _Betzy: https://documentation.sigma2.no/hpc_machines/betzy.html
+.. _Fram: https://documentation.sigma2.no/hpc_machines/fram.html
+
+On NIRD
+^^^^^^^
+The pre-installed path::
+
+  NIRD:/projects/NS2345K/diagnostics/noresm
 
 You don't need to install this diagnostic package, but you can call it as a command line directly on NIRD. As a prerequiste, you should have access permission to the NS2345K project on NIRD.
 
@@ -54,7 +70,34 @@ or add it as an alias in ``$HOME/.bashrc``: ::
 
 and ``source ~/.bashrc`` to make these changes take effect.
 
-(DO **NOT** make changes direclty in this preinstalled package; if you are willing to modify the code, refer to the next subsection below.)
+On Betzy
+^^^^^^^^
+The pre-installed path::
+
+  Betzy:/cluster/shared/noresm/diagnostics/noresm
+
+You can run this package without installation as a *noresm* user group. There are two wrapper scripts:
+
+* ``diag_run`` for running on the Betzy login nodes (highly discouraged, see `Sigma2 HPC policy <https://documentation.sigma2.no/jobs/submitting.html>`_)
+* ``diag_srun`` to submit a SBATCH job to the compute node of Betzy as a `preproc <https://documentation.sigma2.no/jobs/job_types/betzy_job_types.html#preproc>`__ type of job.
+
+One can either add the ``diag_run`` and ``diag_srun`` to your search path: ::
+
+  export PATH=$PATH:/projects/NS2345K/diagnostics/noresm/bin
+  
+(assuming you are using Bash Shell)
+
+or add it as an alias in ``$HOME/.bashrc``: :: 
+
+  alias diag_run="/projects/NS2345K/diagnostics/noresm/bin/diag_run"
+  alias diag_srun="/projects/NS2345K/diagnostics/noresm/bin/diag_srun"
+
+and ``source ~/.bashrc`` to make these changes take effect.
+
+For details on how to invoke the ``diag_run`` or ``diag_srun`` on Betzy, please refer to the subsection: :ref:`submit-job-betzy`.
+
+.. note::
+    DO **NOT** make changes direclty in this preinstalled package; if you are willing to modify the code, refer to the next subsection below.
 
 Fresh install
 ---------------------------
@@ -67,14 +110,18 @@ If you want to change the code for your own purpose, you can installed it on NIR
 
   - If you are installing the tool on NIRD, you just need to link all the data to your clone by running the script ``linkdata.sh``, given you have access to the /project/NS2345K project
   - If you are not memember of NS2345K or you are installing it on platforms other than NIRD, you should download all the data to your clone by executing ``dloaddata.sh``. If you are not running it on NIRD, you should have CDO, NCO and NCL installed.
+  
 4. Make changes to the code/scripts for your purpose. And call ``diag_run`` of your own clone.
 5. If you would like to contribute your function enhancements or bug fixes to the original diagnostic package, you should commit the changes to your fork repository, then create an Issue at the `Github repository <https://github.com/NordicESMhub/noresmdiagnostics>`_, and finally make a ``pull request``  to the original Github repository to incorporate your changes.
 
-Run the tool
-============
+Run the tool on NIRD
+========================
 
-Each package can be run/configured from the command line using the wrapper script for NorESM diagnostic program ``diag_run``: 
+On NIRD_, each package can be run/configured from the command line using the wrapper script for NorESM diagnostic program ``diag_run``.
 
+On Betzy_, one can run the tool directly on the login nodes (not recommended), or by submitting a *preproc* job to the compute nodes, please refer to the subsection for more Betzy-specific details: :ref:`submit-job-betzy`.
+
+Call the wrapper script with ``diag_run -h`` will give you the description of the command-line options: 
 ::
 
   -------------------------------------------------
@@ -172,25 +219,27 @@ Example 1: ::
   
 This command runs atmospheric model-obs diagnostics of the case N1850_f19_tn14_191017 using
 a climatology between model years 21 and 50. It is assumed that the N1850_f19_tn14_191017
-history files are located under */projects/NS2345K/noresm/cases*. By default, the resulting plots and html will be
-stored in ::
+history files are located under ``/projects/NS2345K/noresm/cases``. By default, the resulting plots and html will be
+stored in 
+::
 
-  /projects/NS2345K/www/diagnostics/noresm/$USER/N1850_f19_tn14_191017/CAM_DIAG,
+  /projects/NS2345K/www/diagnostics/noresm/<username>/N1850_f19_tn14_191017/CAM_DIAG
   
-or, if you specify to store them under a common folder, i.e. with ``-w /projects/NS2345K/www/diagnostics/noresm/common``. It links to the following URL: 
-http://ns2345k.web.sigma2.no/diagnostics/noresm/common/N1850_f19_tn14_191017/CAM_DIAG/yrs21to50-obs.html.
+where <user_name> is your NIRD username. Or if you specify to store them under a common folder, i.e. with ``-w /projects/NS2345K/www/diagnostics/noresm/common``. It links to the following URL: http://ns2345k.web.sigma2.no/diagnostics/noresm/common/N1850_f19_tn14_191017/CAM_DIAG/yrs21to50-obs.html.
 
-The climatology and time-series files under */projects/NS2345K/diagnostics/noresm/out/$USER/CAM_DIAG* (where $USER is your NIRD username).
+The climatology and time-series files under ::
 
+  /projects/NS2345K/diagnostics/noresm/out/<username>/CAM_DIAG
+ 
 If you want to run *model1-model2* diagnostics, you also need to specify *case_name2*, *start_yr2* and
 *end_yr2* (-c2, -s2, -e2) in addition.
 
 .. _`Example 2`:
 
-Example 2: ::
+Example 2: 
+::
 
-  diag_run -m cam -c N1850_f19_tn14_191017 -s 21 -e 50 \
-  -c2 B1850MICOM_f09_tn14_01 -s2 21 -e2 50
+  diag_run -m cam -c N1850_f19_tn14_191017 -s 21 -e 50 -c2 B1850MICOM_f09_tn14_01 -s2 21 -e2 50
   
 would be the same as in Example 1 above, except for comparing *N1850_f19_tn14_191017* to
 *B1850MICOM_f09_tn14_01* instead of observations.
@@ -224,19 +273,19 @@ stores information about changes in the diagnostics scripts invoked by the user,
 contains the standard output and error (i.e. what is shown in your terminal during runtime).
 When the diagnostics a component is finished the run scripts are copied to: ::
 
-  output_dir/$USER/XXX_DIAG/config/case_name/run_scripts
+  output_dir/<user_name>/XXX_DIAG/config/<casename>/run_scripts
   
 and the config and output files to: ::
 
-  output_dir/$USER/XXX_DIAG/config/case_name/logs
+  output_dir/<username>/XXX_DIAG/config/case_name/logs
   
 Hence, for `Example 1`_ above, the run scripts are saved in: ::
 
-  /projects/NS2345K/diagnostics/noresm/out/$USER/CAM_DIAG/config/N1850_f19_tn14_191017/run_scripts
+  /projects/NS2345K/diagnostics/noresm/out/<username>/CAM_DIAG/config/N1850_f19_tn14_191017/run_scripts
   
 and the config and out files in: ::
 
-  /projects/NS2345K/diagnostics/noresm/out/$USER/CAM_DIAG/config/N1850_f19_tn14_191017/logs
+  /projects/NS2345K/diagnostics/noresm/out/<username>/CAM_DIAG/config/N1850_f19_tn14_191017/logs
 
 Passive-mode
 -------------
@@ -260,14 +309,14 @@ the following will appear on the screen::
   /projects/NS2345K/diagnostics/noresm/bin/diag_run
   Version: 2.1
   -------------------------------------------------
-  -CHANGING DIAGNOSTICS DIRECTORY to /projects/NS2345K/diagnostics/noresm/out/$USER/CLM_DIAG in lnd_template.csh
+  -CHANGING DIAGNOSTICS DIRECTORY to /projects/NS2345K/diagnostics/noresm/out/<username>/CLM_DIAG in lnd_template.csh
   -CHANGING ROOT DIRECTORY FOR CODE AND DATA to /projects/NS2345K/diagnostics/noresm/packages/CLM_DIAG in lnd_template.csh
   -CHANGING INPUT DIR 1 to /projects/NS2345K/noresm/cases in lnd_template.csh
-  -CHANGING publish_html_root to /projects/NS2345K/www/diagnostics/noresm/$USER in lnd_template.csh
+  -CHANGING publish_html_root to /projects/NS2345K/www/diagnostics/noresm/<username> in lnd_template.csh
   -SETTING UP TIME-SERIES DIAGNOSTICS FOR ENTIRE EXPERIMENT
-  CLM DIAGNOSTICS SUCCESSFULLY CONFIGURED in /projects/NS2345K/diagnostics/noresm/out/$USER/CLM_DIAG
+  CLM DIAGNOSTICS SUCCESSFULLY CONFIGURED in /projects/NS2345K/diagnostics/noresm/out/<username>/CLM_DIAG
   -------------------------------------------------
-  lnd_template.csh IS NOT RUNNING: NOT ALL REQUIRED VARIABLES HAVE BEEN CONFIGURED (see /projects/NS2345K/diagnostics/noresm/out/$USER/CLM_DIAG/config.log).
+  lnd_template.csh IS NOT RUNNING: NOT ALL REQUIRED VARIABLES HAVE BEEN CONFIGURED (see /projects/NS2345K/diagnostics/noresm/out/<username>/CLM_DIAG/config.log).
   -------------------------------------------------
   -------------------------------------------------
   TOTAL diag_run RUNTIME: 0m1s
@@ -344,9 +393,9 @@ time-series files from the blom diagnostics will be stored in::
   
 Default is::
 
-  output_dir=/projects/NS2345K/diagnostics/noresm/out/$USER
+  output_dir=/projects/NS2345K/diagnostics/noresm/out/<username>
   
-where $USER is your user name on NIRD. ::
+where <username> is your user name on NIRD. ::
 
   -p, --passive-mode
   
@@ -427,63 +476,147 @@ Model-obs time-series diagnostics in HAMOCC between yrs 31 and 100: ::
 
   diag_run -m hamocc -c N1850OC_f19_tn11_exp1 -s 31 -e 100 -t time_series
 
+.. _submit-job-betzy:
+
+Run the tool on Betzy
+======================
+
+There are two alternatives to run the tool on Betzy, either as an interactive (for short test and debug runs) or a batch job (recommended). It is also possible to run directly on the login node with ``diag_run``, but it is higly discouraged and not an option (Refer to `Sigma2 HPC policy <https://documentation.sigma2.no/jobs/submitting.html>`_).
+
+The main purpose to run the tool on Betzy is to get a quick diagnostic of model output when the model is still on-the-fly, but already has some intermediate output been short-term archived to **/cluster/work/users/<username>/archive** (Refer to :ref:`archive_output`).
+
+Since the mounted NIRD project disks ``/trd-project*/xx`` are not accessible from the compute nodes, the ``-i``, ``-o`` have to point to ``/cluster/work/users/<username>/xxx``, with an execption for the ``-w`` option. See explanations and examples in the following.
+
+As interactive job
+------------------
+Run with an `intactive sbatch job <https://documentation.sigma2.no/jobs/interactive_jobs.html>`__, with ``diag_run``.
+
+Start an interactive job request by, for example : 
+::
+
+  $ salloc --nodes=1 --mem-per-cpu=12G --time=00:30:00 --partition=preproc --account=nn2345k
+
+And then use the same command-line options of ``diag_run`` as on NIRD. 
+
+
+As batcth job
+-------------
+
+Submit a backend `preproc <https://documentation.sigma2.no/jobs/job_types/betzy_job_types.html#job-type-betzy-preproc>`__ job with ``diag_srun``.
+
+There are sbatch job specific command-line options for ``diag_srun``, in addition to the ``diag_run -h`` options: ::
+
+  --account=nsxxxxk                             : (OPTIONAL. Project account for CPU hours (default ns2345k).
+  --time=DD-HH:MM:SS                            : (OPTIONAL. CPU walltime (default value according to length of years and active components).
+  --remove-source-files-flag=true|false         : (OPTIONAL. Flag if the source file will be removed after the webpage is moved from Betzy /cluster to NIRD /project* (default as false).
+
+See ``diag_srun -h`` for the help information.
+
+**Examples:**
+
+1. Use all default settings ::
+
+    $ ./diag_srun -m blom -c test_case_name -s 1 -e 10
+
+It is the same as ``diag_run``.
+
+2. Set CPU account and hours ::
+
+    $ ./diag_srun -m blom -c test_case_name -s 1 -e 10 --account=nn2345k --time=0-00:59:00
+    
+The CPU account is set to default as nn2345k if not prescribed. The CPU hours is set according the prescribed experiment start and end years.
+
+3. Set input data, output data, and webpage path to /cluster on Betzy (the same as default values) ::
+
+    $ ./diag_srun -m blom -c NOICPLHISTOC_f09_tn14_cpldiags -s 1 -e 20 -i /cluster/work/users/<username>/archive -o /cluster/work/users/<username>/diagnostics/out -w /cluster/work/users/<username>/diagnostics/www
+
+The above settings for ``-i``, ``-o`` and ``-w`` are default values if they are not prescribed. As the mounted NIRD disks ``/trd-project**`` are not accessible from the compute nodes, the ``-i`` and ``-o`` options have to be set to ``/cluster**``. For the ``-w`` option, see the next example.
+
+4. Set input data, output data on Betzy, and webpage path on NIRD ::
+
+    $ ./diag_srun -m blom -c NOICPLHISTOC_f09_tn14_cpldiags -s 1 -e 20 -w /trd-project1/NS2345K/www/diagnostics/noresm/<username> --account=nn2345k --time=0-00:59:00
+
+The created webpage will saved to NIRD. The webpage path specificed by ``-w`` will temporary set to the defaut location under ``/cluster/work/users/<username>/diagnostics/www``, and will ``rsync`` to NIRD after the diagnostics job is finished.
+
+5. Remove source webpage files from Betzy after transferred to NIRD ::
+
+    $ ./diag_srun -m blom -c NOICPLHISTOC_f09_tn14_cpldiags -s 1 -e 20 -w /trd-project1/NS2345K/www/diagnostics/noresm/<username>/ --remove-source-files-flag=true
+
+Options to set if temporary webpage under ``/cluster`` as described above will be removed after they are transferred to NIRD (only valid if ``-w`` option is set to ``/trd-project*`` area)
+
+See more help: ::
+
+    /cluster/shared/noresm/diagnostics/noresm/bin/diag_run -h
+    /cluster/shared/noresm/diagnostics/noresm/bin/diag_srun -h
+
+.. note::
+    The mounted NIRD project area ``/trd-project*`` are not available on the HPC computing nodes. Therefore, the ``-i``, ``-o`` can only be set to locations under /cluster/work/users/<username>. The ``-w`` option can be set to ``/trd-project*`` area to facility the browsing the webpage-based diagnostics. It is actually set to ``/cluster`` during runtime, but transfer the created webpages to NIRD automatically after the diagnostic is finished. 
+
 --------------------------------------------------------------------------------
 
-Major changes to the NCAR's Diagnostic Package:**
+.. _Major changes to the NCAR's Diagnostics Package:
 
-.. _`major changes to the NCAR's Diagnostics Package`:
+**Major changes to the NCAR's Diagnostics Package**
 
 The diagnostic tool package is based on NCAR's CAM and CLM Diagnostic Packages.
 
-*Changes to all components*
++ **Changes to all components**
 
-The following major changes have been made in all diagnostic packages:
+    The following major changes have been made in all diagnostic packages:
 
-- The calculation of the climatology has been improved, using the ncclimo oporator from nco.
-- The bash/csh variables publish_html and publish_html_root have been added in order to enable publication of the html on the NIRD web server.
-- There is now the option to calculate time series over the entire simulation (default). Hence, the start and end years of the time series must no longer be specified.
-- The bash/csh variable CLIMO_TIME_SERIES_SWITCH has been added in order to allow for diag_run to compute only climatology or time series if desired.
-- The environmental variable ncclimo_dir has been added in order to allow for diag_run to be run by cron.
+    - The calculation of the climatology has been improved, using the ncclimo oporator from nco.
+    - The bash/csh variables publish_html and publish_html_root have been added in order to enable publication of the html on the NIRD web server.
+    - There is now the option to calculate time series over the entire simulation (default). Hence, the start and end years of the time series must no longer be specified.
+    - The bash/csh variable CLIMO_TIME_SERIES_SWITCH has been added in order to allow for diag_run to compute only climatology or time series if desired.
+    - The environmental variable ncclimo_dir has been added in order to allow for diag_run to be run by cron.
 
-*CAM_DIAG specific major changes*
++ **CAM_DIAG specific major changes**
 
-- The CAM diagnostics (amwg) now calculate the annual and global mean time series of the net TOA radiation balance. The results are published on the web server together with the other figures.
+    - The CAM diagnostics (amwg) now calculate the annual and global mean time series of the net TOA radiation balance. The results are published on the web server together with the other figures.
 
-*CLM_DIAG specific major changes*
++ **CLM_DIAG specific major changes**
 
-- The amount of variables used in the time series calculations have been dramatically reduced in order to reduce time and computational resources
-- If time series or climatology is computed is now determined by the selected sets in the computation.
+    - The amount of variables used in the time series calculations have been dramatically reduced in order to reduce time and computational resources
+    - If time series or climatology is computed is now determined by the selected sets in the computation.
 
-*CICE_DIAG specific major changes*
++ **CICE_DIAG specific major changes**
 
-- The switch CNTL has been added in order to determine whether one or two cases should be plotted.
+    - The switch CNTL has been added in order to determine whether one or two cases should be plotted.
 
-*BLOM_DIAG (newly developed)*
++ **BLOM_DIAG (newly developed)**
 
-Has two modes: compare to the observations and anothor model run; includes diagnostics of:
+    Two modes of diagnostics: compare to the observations and anothor model run; includes diagnostics of:
 
-- Time series plots
-    * Sections transports
-    * Global averages
-    * Maximum AMOC
-    * Hovmoeller plots
-    * ENSO indices
-- Climatology plots
-    * Horizontal fields - annual means
-    * Horizontal fields - seasonal/monthly means
-    * Overturning circulation
-    * Zonal means (lat-depth)
-    * Equatorial cross sections
-    * Meridional fluxes (vertically integrated)
+    - Time series plots
+        1. Sections transports
+        2. Global averages
+        3. Maximum AMOC
+        4. Hovmoeller plots
+        5. ENSO indices
+    - Climatology plots
+        1. Horizontal fields - annual means
+        2. Horizontal fields - seasonal/monthly means
+        3. Overturning circulation
+        4. Zonal means (lat-depth)
+        5. Equatorial cross sections
+        6. Meridional fluxes (vertically integrated)
 
-*HAMOCC_DIAG (newly developed)*
++ **HAMOCC_DIAG (newly developed)**
 
-Has two modes: compare to the observations and anthor model run; includes diagnostics of:
+    Two modes of diagnostics: compare to the observations and another model run; includes diagnostics of:
 
-- Time series plots
-    * Global fluxes
-    * Global averages
-- Climatology plots
-    * Horizontal fields
-    * Zonal mean fields
-    * Regionally-averaged monthly climatologies
+    - Time series plots
+        1. Global fluxes
+        2. Global averages
+    - Climatology plots
+        1. Horizontal fields
+        2. Zonal mean fields
+        3. Regionally-averaged monthly climatologies
+
++ **CISM_DIAG (newly developed)**
+
+    Two modes of diagnostics: compare to the observations and another model run; includes diagnostics of:
+
+    - Time series plots
+        1. Mass/ice fluxes
+        2. Mass/ice/temperatue averages
