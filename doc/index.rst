@@ -30,7 +30,7 @@ For obtaining news per email register to users@noresm.org at https://www.noresm.
    start.rst
    access/access.rst
    configurations/configurations.rst
-   output/output.rst
+   output/noresm_output.rst
    diagnostics/diagnostics.rst
    model-description/model-description.rst
    keyruns/keyruns.rst
