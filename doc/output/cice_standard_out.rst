@@ -1,3 +1,4 @@
+:orphan:
 .. _cice_standard_out:
 
 CICE stadard set-up output
@@ -132,4 +133,3 @@ CICE stadard set-up output
 | vsnon = "snow depth on ice, categories"
 | vvel = "ice velocity (y)"
 
------------------------------------------------------------

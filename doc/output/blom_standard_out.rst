@@ -1,11 +1,11 @@
+:orphan:
 .. _blom_standard_out:
 
 BLOM standard set-up output  
-''''''''''''''''''''''
-
+''''''''''''''''''''''''''''''
 
 Monthly averaged output  
-^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 | abswnd = "Absolute wind speed"    
 
@@ -172,6 +172,7 @@ Monthly averaged output
 | vsflxlvl = "Salt flux in y-direction"
 | vvel = "Velocity y-component"
 | vvellvl = "Velocity y-component"
+
 ---------------------------------------------------------
 
 | wflx = "Vertical mass flux"
@@ -187,9 +188,7 @@ Monthly averaged output
 
 
 Daily averaged output
-^^^^^^^^
-
----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^
 
 | depth_bnds  
 
@@ -209,5 +208,3 @@ Daily averaged output
 ---------------------------------------
 
 | t20d = "20C isoterm depth"   
-
--------------------------------
