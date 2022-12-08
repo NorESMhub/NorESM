@@ -4,7 +4,7 @@ Technical FAQ
 =============
 
 Manage externals
-------
+----------------
 I get a ``Dictionary keys changed`` error when checking out externals in my cloned repository. 
 
 **Error:**
@@ -23,7 +23,7 @@ Change to an older python version <= 3.7. If you have activated a conda environt
 The default python versions on BETZY and FRAM is 2.7.5 and will not create such errors.
 
 Creating a case
-------
+----------------
 
 I get a ``SyntaxError: invalid syntax`` error when creating a case in my cloned repository. 
 
