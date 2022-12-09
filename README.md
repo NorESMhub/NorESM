@@ -16,7 +16,7 @@ The NorESM-2.0 documentation: https://noresm-docs.readthedocs.io/en/noresm2/
     - Available to reproduce CMIP6 results of NorESM2
     - Updated BLOM : options for hybrid vertical coordinates, support for NUOPC driver, changes in model diagnostics 
     - Updated CAM : corrected CCN and COSP diagnostics 
-    - Link to cism-wrapper repository on NorESMhub (instead of ESCOMP) : added CSIM support, Greenland enabled compsets and usermod
+    - Link to cism-wrapper repository on NorESMhub (instead of ESCOMP) : added CISM support, Greenland enabled compsets and usermod
     - Additional SSP5-3.4 compset and emission driven SSP compsets
     - Modification in the archiving script for netcdf3 to netcdf4 conversion (uses ncks instead nccopy)		
     - Updated NorESM2.0 documentation
