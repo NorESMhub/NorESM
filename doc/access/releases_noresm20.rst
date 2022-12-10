@@ -35,22 +35,17 @@ This release contains:
   * include support for NUOPC driver
   * iHAMOCC source code structure : completed conversion to free-source format and explicit use statements for all imported variables
   * modifications in model structure.  The hybrid vertical coordinate formulation relies on an external package CVmix, which is included as a git submodule. When building NorESM, the external dependency should be declared in the Externals.cfg file
-
 ::
-
-externals = Externals_BLOM.cfg
-
+    externals = Externals_BLOM.cfg
 ::
 
   * changes in model diagnostics in BLOM. Starting from commit 9e6bd6b, which introduced hybrid vertical coordinates, model output changed for the following 4 fields:
 
 ::
-
-wflx : vertical mass flux
-wflx2 : vertical mass flux squared
-bfsq : buoyancy frequency squared
-bfsqlvl: buoyancy frequency squared (constant depth levels)
-
+    wflx : vertical mass flux
+    wflx2 : vertical mass flux squared
+    bfsq : buoyancy frequency squared
+    bfsqlvl: buoyancy frequency squared (constant depth levels)
 ::
 
   * changes in model diagnostics in BLOM. Pull request #205 included a correction on the variable dp_trc :
