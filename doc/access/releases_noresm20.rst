@@ -17,61 +17,26 @@ This release contains:
 ----------------------
 - updated NorESM2 documentation
 - addition of extra compsets : new SSP5-3.4 compsets and emission driven SSP compsets (affects CAM-Nor, CLM and NorESM)
-- CAM-Nor
-  1. technical (non answer-changing) modifications in CAM-Nor : correction in CCN and COSP diagnostics
-  2. Correction in H2O emission file link for f09 for the extended (year 2100-2300) SSP1-2.6 and SSP5-8.5 compsets
-  3. addition for the above-mentioned extra compsets
+- CAM-Nor (1) technical (non answer-changing) modifications in CAM-Nor : correction in CCN and COSP diagnostics;
+          (2) correction in H2O emission file link for f09 for the extended (year 2100-2300) SSP1-2.6 and SSP5-8.5 compsets;
+          (3) addition for the above-mentioned extra compsets.
 - CAM-CLM
-  1. addition for the above-mentioned extra compsets
+          (1) addition for the above-mentioned extra compsets.
 - CIME
-  1. Modification in archiving script noresm2netcdf4.sh : uses ncks instead of nccopy
-  2. Other small modifications
+          (1) modification in archiving script noresm2netcdf4.sh : uses ncks instead of nccopy;
+          (2) other small modifications.
 - CISM
-  * Link to cism-wrapper repository on NorESMhub (instead of ESCOMP)
-  * Added CISM support, Greenland enabled compsets and usermod
+          (1) link to cism-wrapper repository on NorESMhub (instead of ESCOMP)
+          (2) added CISM support, Greenland enabled compsets and usermod
 - BLOM
-  * include option for hybrid vertical coordinates
-  * include option for sediment spinup
-  + include support for NUOPC driver
-  + iHAMOCC source code structure : completed conversion to free-source format and explicit use statements for all imported variables
-  + modifications in model structure.  The hybrid vertical coordinate formulation relies on an external package CVmix, which is included as a git submodule. When building NorESM, the external dependency should be declared in the Externals.cfg file
-  
-::
-
-    externals = Externals_BLOM.cfg
-
-::  
-
-  + changes in model diagnostics in BLOM. Starting from commit 9e6bd6b, which introduced hybrid vertical coordinates, model output changed for the following 4 fields:
-
-::
-
-    wflx : vertical mass flux
-    wflx2 : vertical mass flux squared
-    bfsq : buoyancy frequency squared
-    bfsqlvl: buoyancy frequency squared (constant depth levels)
-
-::
-
-  * changes in model diagnostics in BLOM. Pull request #205 included a correction on the variable dp_trc :
-
-::
-
-dp_trc : This variable is supposed to in unit Pa = kg m-1 s-2 but is wrongly output in unit g cm-1 s-2.
-
-::
-
-  * changes in model diagnostics in iHAMOCC.  Pull request #202 changed the definition of the variable KWCO2, with the original definition retained in a new variable KWCO2KHM :
-::
-
-Original definition table:
-! KWCO2 - Piston velocity times solubility (kwco2*kh; moist air) [m s-1 mol kg-1 uatm-1]
-
-New definition table:
-! KWCO2 - Piston velocity (kwco2) [m s-1]
-! KWCO2KHM - Piston velocity times solubility (kwco2*kh; moist air) [m s-1 mol kg-1 uatm-1]
-
-::
+          (1) include option for hybrid vertical coordinates;
+          (2) include option for sediment spinup;
+          (3) include support for NUOPC driver;
+          (4) iHAMOCC source code structure : completed conversion to free-source format and explicit use statements for all imported variables;
+          (5) modifications in model structure.  The hybrid vertical coordinate formulation relies on an external package CVmix, which is included as a git submodule. When building NorESM, the external dependency should be declared in the Externals.cfg file of BLOM : externals = Externals_BLOM.cfg;
+          (6) changes in model diagnostics in BLOM. Starting from commit 9e6bd6b, which introduced hybrid vertical coordinates, model output changed for the following 4 fields: wflx (vertical mass flux), wflx2 (vertical mass flux squared), bfsq (buoyancy frequency squared) and bfsqlvl (buoyancy frequency squared (constant depth levels));
+          (7) changes in model diagnostics in BLOM. Pull request #205 included a correction on the variable dp_trc : this variable is supposed to in unit Pa = kg m-1 s-2 but is wrongly output in unit g cm-1 s-2;
+          (8) changes in model diagnostics in iHAMOCC.  Pull request #202 changed the definition of the variable KWCO2, with the original definition retained in a new variable KWCO2KHM.
 
 How to obtain this version:
 ---------------------------
