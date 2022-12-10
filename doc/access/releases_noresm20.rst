@@ -18,14 +18,14 @@ This release contains:
 - updated NorESM2 documentation
 - addition of extra compsets : new SSP5-3.4 compsets and emission driven SSP compsets (affects CAM-Nor, CLM and NorESM)
 - CAM-Nor
-  -- technical (non answer-changing) modifications in CAM-Nor : correction in CCN and COSP diagnostics
-  -- Correction in H2O emission file link for f09 for the extended (year 2100-2300) SSP1-2.6 and SSP5-8.5 compsets
-  -- addition for the above-mentioned extra compsets
+  1. technical (non answer-changing) modifications in CAM-Nor : correction in CCN and COSP diagnostics
+  2. Correction in H2O emission file link for f09 for the extended (year 2100-2300) SSP1-2.6 and SSP5-8.5 compsets
+  3. addition for the above-mentioned extra compsets
 - CAM-CLM
-  * addition for the above-mentioned extra compsets
+  1. addition for the above-mentioned extra compsets
 - CIME
-  * Modification in archiving script noresm2netcdf4.sh : uses ncks instead of nccopy
-  * Other small modifications
+  1. Modification in archiving script noresm2netcdf4.sh : uses ncks instead of nccopy
+  2. Other small modifications
 - CISM
   * Link to cism-wrapper repository on NorESMhub (instead of ESCOMP)
   * Added CISM support, Greenland enabled compsets and usermod
@@ -37,7 +37,6 @@ This release contains:
   * modifications in model structure.  The hybrid vertical coordinate formulation relies on an external package CVmix, which is included as a git submodule. When building NorESM, the external dependency should be declared in the Externals.cfg file:
 ::
 
-blom]
 externals = Externals_BLOM.cfg
 
 ::
