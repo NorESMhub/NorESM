@@ -34,13 +34,16 @@ This release contains:
   * include option for sediment spinup
   * include support for NUOPC driver
   * iHAMOCC source code structure : completed conversion to free-source format and explicit use statements for all imported variables
-  * modifications in model structure.  The hybrid vertical coordinate formulation relies on an external package CVmix, which is included as a git submodule. When building NorESM, the external dependency should be declared in the Externals.cfg file:
+  * modifications in model structure.  The hybrid vertical coordinate formulation relies on an external package CVmix, which is included as a git submodule. When building NorESM, the external dependency should be declared in the Externals.cfg file
+
 ::
 
 externals = Externals_BLOM.cfg
 
 ::
+
   * changes in model diagnostics in BLOM. Starting from commit 9e6bd6b, which introduced hybrid vertical coordinates, model output changed for the following 4 fields:
+
 ::
 
 wflx : vertical mass flux
@@ -49,12 +52,15 @@ bfsq : buoyancy frequency squared
 bfsqlvl: buoyancy frequency squared (constant depth levels)
 
 ::
+
   * changes in model diagnostics in BLOM. Pull request #205 included a correction on the variable dp_trc :
+
 ::
 
 dp_trc : This variable is supposed to in unit Pa = kg m-1 s-2 but is wrongly output in unit g cm-1 s-2.
 
 ::
+
   * changes in model diagnostics in iHAMOCC.  Pull request #202 changed the definition of the variable KWCO2, with the original definition retained in a new variable KWCO2KHM :
 ::
 
