@@ -18,31 +18,30 @@ This release contains:
 - updated NorESM2 documentation
 - addition of extra compsets : new SSP5-3.4 compsets and emission driven SSP compsets (affects CAM-Nor, CLM and NorESM)
 - CAM-Nor
-  + technical (non answer-changing) modifications in CAM-Nor : correction in CCN and COSP diagnostics
-  + Correction in H2O emission file link for f09 for the extended (year 2100-2300) SSP1-2.6 and SSP5-8.5 compsets
-  + addition for the above-mentioned extra compsets
+  * technical (non answer-changing) modifications in CAM-Nor : correction in CCN and COSP diagnostics
+  * Correction in H2O emission file link for f09 for the extended (year 2100-2300) SSP1-2.6 and SSP5-8.5 compsets
+  * addition for the above-mentioned extra compsets
 - CAM-CLM
-  + addition for the above-mentioned extra compsets
+  * addition for the above-mentioned extra compsets
 - CIME
-  + Modification in archiving script noresm2netcdf4.sh : uses ncks instead of nccopy
-  + Other small modifications
+  * Modification in archiving script noresm2netcdf4.sh : uses ncks instead of nccopy
+  * Other small modifications
 - CISM
-  + Link to cism-wrapper repository on NorESMhub (instead of ESCOMP)
-  + Added CISM support, Greenland enabled compsets and usermod
+  * Link to cism-wrapper repository on NorESMhub (instead of ESCOMP)
+  * Added CISM support, Greenland enabled compsets and usermod
 - BLOM
-  + include option for hybrid vertical coordinates
-  + include option for sediment spinup
-  + include support for NUOPC driver
-  + iHAMOCC source code structure : completed conversion to free-source format and explicit use statements for all imported variables
-  + modifications in model structure.  The hybrid vertical coordinate formulation relies on an external package CVmix, which is included as a git submodule. When building NorESM, the external dependency should be declared in the Externals.cfg file:
+  * include option for hybrid vertical coordinates
+  * include option for sediment spinup
+  * include support for NUOPC driver
+  * iHAMOCC source code structure : completed conversion to free-source format and explicit use statements for all imported variables
+  * modifications in model structure.  The hybrid vertical coordinate formulation relies on an external package CVmix, which is included as a git submodule. When building NorESM, the external dependency should be declared in the Externals.cfg file:
 ::
 
 [blom]
-...
 externals = Externals_BLOM.cfg
 
 ::
-  + changes in model diagnostics in BLOM. Starting from commit 9e6bd6b, which introduced hybrid vertical coordinates, model output changed for the following 4 fields:
+  * changes in model diagnostics in BLOM. Starting from commit 9e6bd6b, which introduced hybrid vertical coordinates, model output changed for the following 4 fields:
 ::
 
 wflx : vertical mass flux
@@ -51,13 +50,13 @@ bfsq : buoyancy frequency squared
 bfsqlvl: buoyancy frequency squared (constant depth levels)
 
 ::
-  + changes in model diagnostics in BLOM. Pull request #205 included a correction on the variable dp_trc :
+  * changes in model diagnostics in BLOM. Pull request #205 included a correction on the variable dp_trc :
 ::
 
 dp_trc : This variable is supposed to in unit Pa = kg m-1 s-2 but is wrongly output in unit g cm-1 s-2.
 
 ::
-  + changes in model diagnostics in iHAMOCC.  Pull request #202 changed the definition of the variable KWCO2, with the original definition retained in a new variable KWCO2KHM :
+  * changes in model diagnostics in iHAMOCC.  Pull request #202 changed the definition of the variable KWCO2, with the original definition retained in a new variable KWCO2KHM :
 ::
 
 Original definition table:
