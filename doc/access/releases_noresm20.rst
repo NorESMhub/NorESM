@@ -22,22 +22,22 @@ This release contains:
         (2) correction in H2O emission file link for f09 for the extended (year 2100-2300) SSP1-2.6 and SSP5-8.5 compsets;
         (3) addition for the above-mentioned extra compsets.
 - CAM-CLM
-          (1) addition for the above-mentioned extra compsets.
+        (1) addition for the above-mentioned extra compsets.
 - CIME
-          (1) modification in archiving script noresm2netcdf4.sh : uses ncks instead of nccopy;
-          (2) other small modifications.
+        (1) modification in archiving script noresm2netcdf4.sh : uses ncks instead of nccopy;
+        (2) other small modifications.
 - CISM
-          (1) link to cism-wrapper repository on NorESMhub (instead of ESCOMP)
-          (2) added CISM support, Greenland enabled compsets and usermod
+        (1) link to cism-wrapper repository on NorESMhub (instead of ESCOMP)
+        (2) added CISM support, Greenland enabled compsets and usermod
 - BLOM
-          (1) include option for hybrid vertical coordinates;
-          (2) include option for sediment spinup;
-          (3) include support for NUOPC driver;
-          (4) iHAMOCC source code structure : completed conversion to free-source format and explicit use statements for all imported variables;
-          (5) modifications in model structure.  The hybrid vertical coordinate formulation relies on an external package CVmix, which is included as a git submodule. When building NorESM, the external dependency should be declared for BLOM in the Externals.cfg file : externals = Externals_BLOM.cfg;
-          (6) changes in model diagnostics in BLOM. Starting from commit 9e6bd6b, which introduced hybrid vertical coordinates, model output changed for the following 4 fields: wflx (vertical mass flux), wflx2 (vertical mass flux squared), bfsq (buoyancy frequency squared) and bfsqlvl (buoyancy frequency squared (constant depth levels));
-          (7) changes in model diagnostics in BLOM. Pull request #205 included a correction on the variable dp_trc : this variable is supposed to be in unit Pa = kg m-1 s-2 but is wrongly output in unit g cm-1 s-2;
-          (8) changes in model diagnostics in iHAMOCC.  Pull request #202 changed the definition of the variable KWCO2, with the original definition retained in a new variable KWCO2KHM.
+        (1) include option for hybrid vertical coordinates;
+        (2) include option for sediment spinup;
+        (3) include support for NUOPC driver;
+        (4) iHAMOCC source code structure : completed conversion to free-source format and explicit use statements for all imported variables;
+        (5) modifications in model structure.  The hybrid vertical coordinate formulation relies on an external package CVmix, which is included as a git submodule. When building NorESM, the external dependency should be declared for BLOM in the Externals.cfg file : externals = Externals_BLOM.cfg;
+        (6) changes in model diagnostics in BLOM. Starting from commit 9e6bd6b, which introduced hybrid vertical coordinates, model output changed for the following 4 fields: wflx (vertical mass flux), wflx2 (vertical mass flux squared), bfsq (buoyancy frequency squared) and bfsqlvl (buoyancy frequency squared (constant depth levels));
+        (7) changes in model diagnostics in BLOM. Pull request #205 included a correction on the variable dp_trc : this variable is supposed to be in unit Pa = kg m-1 s-2 but is wrongly output in unit g cm-1 s-2;
+        (8) changes in model diagnostics in iHAMOCC.  Pull request #202 changed the definition of the variable KWCO2, with the original definition retained in a new variable KWCO2KHM.
 
 How to obtain this version:
 ---------------------------
@@ -49,7 +49,6 @@ How to obtain this version:
     git checkout release-noresm2.0.6
     ./manage_externals/checkout_externals
 
-::
 
 
 NorESM2.0.5
@@ -78,7 +77,6 @@ How to obtain this version:
     git checkout release-noresm2.0.5
     ./manage_externals/checkout_externals
 
-::
 
 NorESM2.0.4
 ++++++++++++
@@ -120,7 +118,6 @@ How to obtain this version:
     git checkout release-noresm2.0.4
     ./manage_externals/checkout_externals
 
-::
 
 NorESM2.0.3
 ++++++++++++
@@ -158,8 +155,7 @@ How to obtain this version
    git tag --list (this should give you a list of the existing tags or releases)
    git checkout release-noresm2.0.3
    ./manage_externals/checkout_externals
-   
-::
+
 
 NorESM2.0.2
 ++++++++++++
@@ -186,14 +182,14 @@ Additional features:
 Notice
 -------
 1. automatic download of inputdata from noresm.org to certain machines (e.g. nebula) might not work completely as expected. This can partially be solved by or :
- (i) change the listed order of servers in cime/config/cesm/config_inputdata.xml : move the cesm-inputdata server before the noresm.org server; or
- (ii) run ./check_inputdata twice; or
- (iii) submit the job twice (./case_submit).
- 
+    (i) change the listed order of servers in cime/config/cesm/config_inputdata.xml : move the cesm-inputdata server before the noresm.org server; or
+    (ii) run ./check_inputdata twice; or
+    (iii) submit the job twice (./case_submit).
+
 2. reproducing CMIP6 results
- (i) on vilje and fram for atmosphere-only compsets (like NF1850norbc, NFHISTnorpibc, ...) : this can be obtained by commenting out in cam/src/chemistry/mozart/chemistry.F90 line 1310 : ncldwtr(:,:) = 0._r8
- (ii) on vilje and fram for fully-coupled simulations (like N1850, NSSP245frc2, ...) : we have kept the -init=zero,arrays compiler settings for CAM on fram and vilje
- (iii) one should use the same number of processor as in the original simulation
+    (i) on vilje and fram for atmosphere-only compsets (like NF1850norbc, NFHISTnorpibc, ...) : this can be obtained by commenting out in cam/src/chemistry/mozart/chemistry.F90 line 1310 : ncldwtr(:,:) = 0._r8
+    (ii) on vilje and fram for fully-coupled simulations (like N1850, NSSP245frc2, ...) : we have kept the -init=zero,arrays compiler settings for CAM on fram and vilje
+    (iii) one should use the same number of processor as in the original simulation
 
 3. it is possible that some NorESM-specific inputdata is missing on noresm.org/inputdata. If that happens, please make an issue, and we will try to upload the missing data.
 
