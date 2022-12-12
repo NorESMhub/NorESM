@@ -12,7 +12,7 @@ The NorESM-2.0 documentation: https://noresm-docs.readthedocs.io/en/noresm2/
 
 ## Releases in noresm2
 - [release-noresm2.0.6](https://github.com/NorESMhub/NorESM/releases/tag/release-noresm2.0.6)
-    - Release of NorESM2.0.6, 10th of December 2022
+    - Release of NorESM2.0.6, 12th of December 2022
     - Available to reproduce CMIP6 results of NorESM2
     - Updated BLOM : options for hybrid vertical coordinates, support for NUOPC driver, changes in model diagnostics 
     - Updated CAM : corrected CCN and COSP diagnostics 
