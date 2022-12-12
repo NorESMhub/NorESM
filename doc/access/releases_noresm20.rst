@@ -21,7 +21,7 @@ This release contains:
         (1) technical (non answer-changing) modifications in CAM-Nor : correction in CCN and COSP diagnostics;
         (2) correction in H2O emission file link for f09 for the extended (year 2100-2300) SSP1-2.6 and SSP5-8.5 compsets;
         (3) addition for the above-mentioned extra compsets.
-* CAM-CLM
+* CLM
         (1) addition for the above-mentioned extra compsets.
 * CIME
         (1) modification in archiving script noresm2netcdf4.sh : uses ncks instead of nccopy;
