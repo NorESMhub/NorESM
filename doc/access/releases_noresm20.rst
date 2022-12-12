@@ -6,30 +6,30 @@ Released versions of NorESM2.0
 NorESM2.0.6
 ++++++++++++
 
-- Repository: NorESMhub/NorESM
-- Tag: release-noresm2.0.6
-- Commit: 
-- Released by: DirkOlivie
+* Repository: NorESMhub/NorESM
+* Tag: release-noresm2.0.6
+* Commit: 
+* Released by: DirkOlivie
 
 Version of code which can be used to **reproduce the CMIP6 results of NorESM2**. This release builds on the six former releases.
 
 This release contains:
 ----------------------
-- updated NorESM2 documentation
-- addition of extra compsets : new SSP5-3.4 compsets and emission driven SSP compsets (affects CAM-Nor, CLM and NorESM)
-- CAM-Nor 
+* updated NorESM2 documentation
+* addition of extra compsets : new SSP5-3.4 compsets and emission driven SSP compsets (affects CAM-Nor, CLM and NorESM)
+* CAM-Nor 
         (1) technical (non answer-changing) modifications in CAM-Nor : correction in CCN and COSP diagnostics;
         (2) correction in H2O emission file link for f09 for the extended (year 2100-2300) SSP1-2.6 and SSP5-8.5 compsets;
         (3) addition for the above-mentioned extra compsets.
-- CAM-CLM
+* CAM-CLM
         (1) addition for the above-mentioned extra compsets.
-- CIME
+* CIME
         (1) modification in archiving script noresm2netcdf4.sh : uses ncks instead of nccopy;
         (2) other small modifications.
-- CISM
+* CISM
         (1) link to cism-wrapper repository on NorESMhub (instead of ESCOMP)
         (2) added CISM support, Greenland enabled compsets and usermod
-- BLOM
+* BLOM
         (1) include option for hybrid vertical coordinates;
         (2) include option for sediment spinup;
         (3) include support for NUOPC driver;
@@ -54,18 +54,18 @@ How to obtain this version:
 NorESM2.0.5
 ++++++++++++
 
-- Repository: NorESMhub/NorESM
-- Tag: release-noresm2.0.5
-- Commit: 133cc12
-- Released by: DirkOlivie
+* Repository: NorESMhub/NorESM
+* Tag: release-noresm2.0.5
+* Commit: 133cc12
+* Released by: DirkOlivie
 
 Version of code which can be used to **reproduce the CMIP6 results of NorESM2**. This release builds on the five former releases. 
 
 This release contains:
 ----------------------
-- **updated NorESM2 documentation**, including an overview of NorESM2 releases, updated information about the CLM5.0 model component, and expansion of the FAQ section
-- technical (non answer-changing) modifications in CAM-Nor (to guarantee automatic download of AeroTab files for PTAERO compsets)
-- technical (non answer-changing) modifications in CTSM/CLM (modification to avoid problems with some compilers, changes related to NorCPM, and updated README.md)
+* **updated NorESM2 documentation**, including an overview of NorESM2 releases, updated information about the CLM5.0 model component, and expansion of the FAQ section
+* technical (non answer-changing) modifications in CAM-Nor (to guarantee automatic download of AeroTab files for PTAERO compsets)
+* technical (non answer-changing) modifications in CTSM/CLM (modification to avoid problems with some compilers, changes related to NorCPM, and updated README.md)
 
 How to obtain this version:
 ---------------------------
@@ -81,10 +81,10 @@ How to obtain this version:
 NorESM2.0.4
 ++++++++++++
 
-- Repository: NorESMhub/NorESM 
-- Tag: release-noresm2.0.4 
-- Commit: d8c5cec 
-- Released by: DirkOlivie
+* Repository: NorESMhub/NorESM 
+* Tag: release-noresm2.0.4 
+* Commit: d8c5cec 
+* Released by: DirkOlivie
 
 This release is identical to release-noresm2.0.3 except for an additional modification in CIME related to Fram machine and the `--pecount` option for betzy. We therefore repeat here the information mentioned in release-noresm2.0.3.
 
@@ -92,21 +92,21 @@ This release is identical to release-noresm2.0.3 except for an additional modifi
 
 This release contains:
 ------------------------
-- modified setting for machine Fram : minor changes due to removal of preproc queue (this is the only change compared to release-noresm2.0.3)
-- settings to run on the machine Betzy
-- automatic copying of the case directory to the archive directory
-- updated documentation
-- modifications in the ocean component BLOM (see a list of main changes below)
+* modified setting for machine Fram : minor changes due to removal of preproc queue (this is the only change compared to release-noresm2.0.3)
+* settings to run on the machine Betzy
+* automatic copying of the case directory to the archive directory
+* updated documentation
+* modifications in the ocean component BLOM (see a list of main changes below)
 
 Notable changes of BLOM v1.1.0 compared to v1.0.0 that has impact on BLOM operation as a component of NorESM
 -------------------------------------------------------------------------------------------------------------
-- Added NorESM multiple instance support
-- Corrected time-smoothing of forcing fields received through the coupler so it works for any coupling interval.
-- Corrected the generation of BLOM/iHAMOCC input data list.
-- Added handling of N-deposition files for N2000 compsets.
-- Major restructuring of code to replace header files and common blocks with Fortran modules.
-- Added new pe-layout for OMIP1 compsets with iHAMOCC using the tnx2 grid.
-- Added support for tripolar ocean grid with 1/8 deg resolution along equator (tnx0.125v4).
+* Added NorESM multiple instance support
+* Corrected time-smoothing of forcing fields received through the coupler so it works for any coupling interval.
+* Corrected the generation of BLOM/iHAMOCC input data list.
+* Added handling of N-deposition files for N2000 compsets.
+* Major restructuring of code to replace header files and common blocks with Fortran modules.
+* Added new pe-layout for OMIP1 compsets with iHAMOCC using the tnx2 grid.
+* Added support for tripolar ocean grid with 1/8 deg resolution along equator (tnx0.125v4).
 
 How to obtain this version:
 ---------------------------
@@ -122,29 +122,29 @@ How to obtain this version:
 NorESM2.0.3
 ++++++++++++
 
-- Repository: NorESMhub/NorESM
-- Tag: release-noresm2.0.3 
-- Commit: ac97bf2 
-- Released by: DirkOlivie
+* Repository: NorESMhub/NorESM
+* Tag: release-noresm2.0.3 
+* Commit: ac97bf2 
+* Released by: DirkOlivie
 
 Version of code which can be used to **reproduce the CMIP6 results of NorESM2**. This release builds on the three former releases.
 
 This release contains:
 ----------------------
-- settings to run on the machine Betzy
-- automatic copying of the case directory to the archive directory
-- updated documentation
-- modifications in the ocean component BLOM (see a list of main changes below)
+* settings to run on the machine Betzy
+* automatic copying of the case directory to the archive directory
+* updated documentation
+* modifications in the ocean component BLOM (see a list of main changes below)
 
 Notable changes of BLOM v1.1.0 compared to v1.0.0 that has impact on BLOM operation as a component of NorESM:
 --------------------------------------------------------------------------------------------------------------
-- Added NorESM multiple instance support.
-- Corrected time-smoothing of forcing fields received through the coupler so it works for any coupling interval.
-- Corrected the generation of BLOM/iHAMOCC input data list.
-- Added handling of N-deposition files for N2000 compsets.
-- Major restructuring of code to replace header files and common blocks with Fortran modules.
-- Added new pe-layout for OMIP1 compsets with iHAMOCC using the tnx2 grid.
-- Added support for tripolar ocean grid with 1/8 deg resolution along equator (tnx0.125v4).
+* Added NorESM multiple instance support.
+* Corrected time-smoothing of forcing fields received through the coupler so it works for any coupling interval.
+* Corrected the generation of BLOM/iHAMOCC input data list.
+* Added handling of N-deposition files for N2000 compsets.
+* Major restructuring of code to replace header files and common blocks with Fortran modules.
+* Added new pe-layout for OMIP1 compsets with iHAMOCC using the tnx2 grid.
+* Added support for tripolar ocean grid with 1/8 deg resolution along equator (tnx0.125v4).
 
 How to obtain this version
 --------------------------
@@ -159,25 +159,25 @@ How to obtain this version
 
 NorESM2.0.2
 ++++++++++++
-- Repository: NorESMhub/NorESM 
-- Tag: release-noresm2.0.2 
-- Commit: 6581d10 
-- Released by: DirkOlivie
+* Repository: NorESMhub/NorESM 
+* Tag: release-noresm2.0.2 
+* Commit: 6581d10 
+* Released by: DirkOlivie
 
 Version of code which can be used to **reproduce the CMIP6 results of NorESM2**. This release builds on the two former releases.
 
 This release contains:
 ----------------------
-- updated documentation
-- bug fixes such that model runs without intermittent crashes on certain machines (nebula, tetralith)
-- automatic download of NorESM-specific inputdata from noresm.org/inputdata
-- indication of which grids are supported for individual compsets
-- modification in the inputdata structure of BLOM
-- extra usermods_dir for keyCLIM simulations and extra compsets for covid simulations
+* updated documentation
+* bug fixes such that model runs without intermittent crashes on certain machines (nebula, tetralith)
+* automatic download of NorESM-specific inputdata from noresm.org/inputdata
+* indication of which grids are supported for individual compsets
+* modification in the inputdata structure of BLOM
+* extra usermods_dir for keyCLIM simulations and extra compsets for covid simulations
 
 Additional features:
 --------------------
-- restart files for some compsets can now be found on noresm.org/restart
+* restart files for some compsets can now be found on noresm.org/restart
 
 Notice
 -------
@@ -196,10 +196,10 @@ Notice
 
 NorESM2.0.1
 ++++++++++++
-- Repository: NorESMhub/NorESM
-- Tag: release-noresm2.0.1 
-- Commit: 21b9758 
-- Released by: DirkOlivie
+* Repository: NorESMhub/NorESM
+* Tag: release-noresm2.0.1 
+* Commit: 21b9758 
+* Released by: DirkOlivie
 
 Version of code which can be used to **reproduce the CMIP6 results of NorESM2**. Code is now split over several repositories. Licenses have been added.
 
