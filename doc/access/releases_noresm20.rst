@@ -15,8 +15,8 @@ Version of code which can be used to **reproduce the CMIP6 results of NorESM2**.
 
 This release contains:
 ----------------------
-* updated NorESM2 documentation
-* addition of extra compsets : new SSP5-3.4 compsets and emission driven SSP compsets (affects CAM-Nor, CLM and NorESM)
+* **updated NorESM2 documentation**
+* addition of **extra compsets** : new SSP5-3.4 compsets and emission driven SSP compsets (affects CAM-Nor, CLM and NorESM)
 * CAM-Nor 
         (1) technical (non answer-changing) modifications in CAM-Nor : correction in CCN and COSP diagnostics;
         (2) correction in H2O emission file link for f09 for the extended (year 2100-2300) SSP1-2.6 and SSP5-8.5 compsets;
