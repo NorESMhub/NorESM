@@ -101,7 +101,7 @@ This release contains:
 - modifications in the ocean component BLOM (see a list of main changes below)
 
 Notable changes of BLOM v1.1.0 compared to v1.0.0 that has impact on BLOM operation as a component of NorESM
------------------
+-------------------------------------------------------------------------------------------------------------
 - Added NorESM multiple instance support
 - Corrected time-smoothing of forcing fields received through the coupler so it works for any coupling interval.
 - Corrected the generation of BLOM/iHAMOCC input data list.
@@ -111,7 +111,7 @@ Notable changes of BLOM v1.1.0 compared to v1.0.0 that has impact on BLOM operat
 - Added support for tripolar ocean grid with 1/8 deg resolution along equator (tnx0.125v4).
 
 How to obtain this version:
----------------------
+---------------------------
 ::
 
     git clone https://github.com/NorESMhub/NorESM.git
@@ -133,14 +133,14 @@ NorESM2.0.3
 Version of code which can be used to **reproduce the CMIP6 results of NorESM2**. This release builds on the three former releases.
 
 This release contains:
-------------
+----------------------
 - settings to run on the machine Betzy
 - automatic copying of the case directory to the archive directory
 - updated documentation
 - modifications in the ocean component BLOM (see a list of main changes below)
 
 Notable changes of BLOM v1.1.0 compared to v1.0.0 that has impact on BLOM operation as a component of NorESM:
-------------------------------------
+--------------------------------------------------------------------------------------------------------------
 - Added NorESM multiple instance support.
 - Corrected time-smoothing of forcing fields received through the coupler so it works for any coupling interval.
 - Corrected the generation of BLOM/iHAMOCC input data list.
@@ -150,7 +150,7 @@ Notable changes of BLOM v1.1.0 compared to v1.0.0 that has impact on BLOM operat
 - Added support for tripolar ocean grid with 1/8 deg resolution along equator (tnx0.125v4).
 
 How to obtain this version
---------------
+--------------------------
 ::
 
    git clone https://github.com/NorESMhub/NorESM.git
@@ -171,7 +171,7 @@ NorESM2.0.2
 Version of code which can be used to **reproduce the CMIP6 results of NorESM2**. This release builds on the two former releases.
 
 This release contains:
-------------
+----------------------
 - updated documentation
 - bug fixes such that model runs without intermittent crashes on certain machines (nebula, tetralith)
 - automatic download of NorESM-specific inputdata from noresm.org/inputdata
@@ -180,7 +180,7 @@ This release contains:
 - extra usermods_dir for keyCLIM simulations and extra compsets for covid simulations
 
 Additional features:
----------
+--------------------
 - restart files for some compsets can now be found on noresm.org/restart
 
 Notice
