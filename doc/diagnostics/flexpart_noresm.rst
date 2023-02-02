@@ -52,7 +52,7 @@ Test of the FLEXPART installation
 
 This test runs a backward simulation for a couple of hours from a point. The result of the simulation (variable spec001_mr), summed over all heights and time steps, should look like following plot, (depicted in log10 scale)
 
-.. figure:: ../fpoutputnoresm.PNG
+.. figure:: images/fpoutputnoresm.PNG
     :width: 50%
     :align: center
     :alt: alternate text
