@@ -1,3 +1,4 @@
 [submodule "doc"]
 	path = doc
 	url = https://github.com/NorESMhub/NorESM-docs.git
+	branch = noresm2
