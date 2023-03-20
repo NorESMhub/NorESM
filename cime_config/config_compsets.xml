@@ -280,10 +280,31 @@
     <science_support grid="f19_tn14"/>
   </compset>
 
+  <compset>
+    <alias>N1850_tropstratchem_prep</alias>
+    <lname>1850_CAM60%NORESM%TROPSTRATCHEM%PREP_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+    <science_support grid="f09_tn14"/>
+    <science_support grid="f19_tn14"/>
+  </compset>
+
+  <compset>
+    <alias>N1850vsls_tropstratchem_prep</alias>
+    <lname>1850_CAM60%NORESM%TROPSTRATCHEM%PREP_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS%VSLSC</lname>
+    <science_support grid="f09_tn14"/>
+    <science_support grid="f19_tn14"/>
+  </compset>
+
   <!-- uses differently organized emission files : FRC2 -->
   <compset>
     <alias>N1850frc2</alias>
     <lname>1850_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+    <science_support grid="f09_tn14"/>
+    <science_support grid="f19_tn14"/>
+  </compset>
+
+  <compset>
+    <alias>N1850frc2vsls</alias>
+    <lname>1850_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS%VSLSC</lname>
     <science_support grid="f09_tn14"/>
     <science_support grid="f19_tn14"/>
   </compset>
@@ -301,9 +322,37 @@
     <science_support grid="f19_tn14"/>
   </compset>
 
+   <compset>
+    <alias>N2000</alias>
+    <lname>2000_CAM60%NORESM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+    <science_support grid="f09_tn14"/>
+    <science_support grid="f19_tn14"/>
+  </compset>
+
+   <compset>
+    <alias>N2000frc2</alias>
+    <lname>2000_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+    <science_support grid="f09_tn14"/>
+    <science_support grid="f19_tn14"/>
+  </compset>
+
   <compset>
     <alias>NHIST</alias>
     <lname>HIST_CAM60%NORESM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+    <science_support grid="f09_tn14"/>
+    <science_support grid="f19_tn14"/>
+  </compset>
+
+  <compset>
+    <alias>NHIST_tropstratchem_prep</alias>
+    <lname>HIST_CAM60%NORESM%TROPSTRATCHEM%PREP_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+    <science_support grid="f09_tn14"/>
+    <science_support grid="f19_tn14"/>
+  </compset>
+
+  <compset>
+    <alias>NHISTvsls_tropstratchem_prep</alias>
+    <lname>HIST_CAM60%NORESM%TROPSTRATCHEM%PREP_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS%VSLSC</lname>
     <science_support grid="f09_tn14"/>
     <science_support grid="f19_tn14"/>
   </compset>
@@ -312,6 +361,13 @@
   <compset>
     <alias>NHISTfrc2</alias>
     <lname>HIST_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+    <science_support grid="f09_tn14"/>
+    <science_support grid="f19_tn14"/>
+  </compset>
+
+  <compset>
+    <alias>NHISTfrc2vsls</alias>
+    <lname>HIST_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS%VSLSC</lname>
     <science_support grid="f09_tn14"/>
     <science_support grid="f19_tn14"/>
   </compset>
@@ -477,6 +533,13 @@
   <compset>
     <alias>NSSP585frc2</alias>
     <lname>SSP585_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+    <science_support grid="f09_tn14"/>
+    <science_support grid="f19_tn14"/>
+  </compset>
+
+  <compset>
+    <alias>NSSP585frc2vsls</alias>
+    <lname>SSP585_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS%VSLSC</lname>
     <science_support grid="f09_tn14"/>
     <science_support grid="f19_tn14"/>
   </compset>
