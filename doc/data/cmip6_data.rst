@@ -36,11 +36,11 @@ The (Norwegian) National Infrastructure for Research Data (NIRD)
    
 This is the same data that you can access through the ESGF. Note data is organized by the different contributions/MIPs. The DECK and historical simulations are located under "CMIP".
 
-**All NIRD users can access CMOR-ized CMIP6 data from multiple models under:** :: 
+**All NIRD (nird-lmd) users can access CMOR-ized CMIP6 data from multiple models under:** :: 
 
-   /projects/NS9252K/ESGF_betzy/
+   /nird/datalake/NS9560K/ESGF/
 
-, which has the same structure as data in /projects/NS9034K/CMIP6. Note only members of NS9252K, a NFR storage project for KeyCLIM have write permission.
+, which has the same structure as data in /projects/NS9034K/CMIP6. Note only members of NS9560K, a NFR storage project for KeyCLIM have write permission. See README in the directory.
 
 Refer to Section: :ref:`cmip_other` for more information on how to access and download new data.
 
