@@ -9,7 +9,7 @@ For a quick-start guide on how to create, configure, build, and submit a NorESM 
 
 
 Create and configure a new case
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To start a new experiment you need to create and configure a case. After running the ::
 
@@ -65,8 +65,22 @@ The frc2 files were created to avoid the occurence of random mid-month model cr
  
 to NORESM2. For a detailed description, see the section on creating your own compset below.
 
+For an overview of common compsets used for NorESM2 CMIP6 experiments, please see: :ref:`cmip6_compsets`
+
 For an overview of the compsets provided for CESM2, please see: http://www.cesm.ucar.edu/models/cesm2/config/compsets.html.
 
+Emission-driven compsets
+''''''''''''''''''''''''
+NorESM2 can be run in emission-driven mode for interactive carbon-cycle studies. Currently, this configuration is only supported for the LM-resolution. In order to run NorESM2-LM in emission-driven mode, the biogeochemical physics ``[_BGC]%pys`` is set to  ``%BPRPDMS`` (instead of ``%BDRDDMS``)
+
+There exists some predefined-emission driven compsets which usually ends with **esm** :
+
+* **N1850esm**: Emission driven coupled configuration for NorESM for pre-industrial (1850) conditions
+* **NHISTesm**: Emission driven historical configuration from 1850 to year 2014 
+* **NSSP585esm**: Emission driven SSP5-8.5 scenario configuration from 2015 to year 2100
+* **NSSP534esm**: Emission driven SSP5-3.4 scenario configuration from 2015  to year 2100
+
+With the exception of preindustrial control, running in CO2 emission-driven mode requires time-varying spatial CO2 emissions boundary condition files. 
 
 Creating your own compset
 '''''''''''''''''''''''''
@@ -114,8 +128,8 @@ So for the N1850frc2 compset, the different parts of the lname have the followin
 - BGC%BDRDDMS
    - ocean biogeochemistry model iHAMOCC run with interactive DMS
 
-The details of the compset i.e. which models components and component-specific configurations to use are set in
-::
+The details of the compset i.e. which models components and component-specific configurations to use are set in ::
+    
     <lname>1850_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
 
 It is possible to use the long name (lname) to select a compset then creating a new case.  
@@ -126,9 +140,8 @@ It is possible to use the long name (lname) to select a compset then creating a 
 For details about AMIP simulation compsets, please see :ref:`amips`
 
 
-
 Resolution and grids
-''''''''''''
+''''''''''''''''''''
 
 The model resolution is set when the case is created (with the ``--res`` option). Below some common resolutions are listed. 
 
@@ -162,7 +175,7 @@ A complete list of model grids can be found here::
 
 
 Supported grids
-'''''''''''''
+'''''''''''''''
 
 Most compsets contain an entries listing which which grid(s) are scientifically supported for that compset
 ::
@@ -198,7 +211,7 @@ For more details, check this folder ::
 
 
 Create a clone case
-''''''''''''''''
+''''''''''''''''''''
 The create_clone script in the <noresm_base>/cime/scripts folder allows you to create a clone of an already existing case::
 
   ./create_clone --clone <full-path-to-experiment-to-be-cloned> --case <full-path-to-cloned-experiment>
@@ -208,7 +221,7 @@ Creating a clone case can be very useful if you want to recreate an existing cas
 
 
 The xmlchange and xmlquery scripts
-''''''''''''''''''
+''''''''''''''''''''''''''''''''''
 
 The ``xmlchange`` and ``xmlquery`` scripts are located in your case folder and lets you change or query the contents of variables in the ``evn_*.xml`` files without entering the files. There are two advantages of using ``xmlchange`` to edit the xml files rather than doing by hand: (1) the ``xmlchange`` script checks that the new setting is valid and (2) the change is echoed to the ``CaseStatus`` file, thus automatically documented. To change from the default ``ndays`` to ``nmonths`` ::
 
@@ -232,11 +245,6 @@ please see :ref:`output`
 Setting up a nudged simulation
 ''''''''''''''''''''''''''''''
 please see :ref:`nudged_simulations`
-
-
-
-
-
 
 Building the case
 ^^^^^^^^^^^^^^^^^^

@@ -1,8 +1,8 @@
+:orphan:
 .. _aerosol_output_aeroffl_variables:
 
 AEROFFL extra output
 ''''''''''''''''''''
----------------------------------------------------------------------------------
 
 | FLNTCDRF:long_name = "Clear sky total column longwave flux (DIRind)"  
 | FLNT_DRF:long_name = "Total column longwave flux (DIRind)"  
@@ -21,5 +21,3 @@ AEROFFL extra output
 
 | QRSC_DRF:long_name = "Clearsky solar heating rate (DIRind)" 
 | QRS_DRF:long_name = "Solar heating rate (DIRind)" 
-
-----------------------------------------------------------------------------

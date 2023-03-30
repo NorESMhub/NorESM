@@ -35,7 +35,7 @@ Create a new case: ::
 
 
 Betzy @ Sigma2
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 NorESM2 working on BETZY with CIME tag cime5.6.10_cesm2_1_rel_06-Nor_v1.0.4
 
 Configuration files for running NorESM2 on Betzy are currently being put in all branches of the noresm code.
@@ -51,7 +51,7 @@ Create a new case: ::
     ./create_newcase --case ../../../cases/<casename> --mach betzy --res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported
 
 Setting number of nodes on Betzy
------------------
+---------------------------------
 In fully coupled setup, for grid f19_tn14 and f09_tn14, various processors configurations are added and can be used by setting ``--pecount`` = S, L, M or X1
 when creating a new case.
 
@@ -75,30 +75,26 @@ E.g. creating a new case running on 4 nodes ::
     ./create_newcase –case ../../../cases/<casename> --mach betzy –-res <resolution> --compset <compset_name> --project <project_name> --pecount= S --user-mods-dir <user_mods_dir> --run-unsupported  
     
  
-**Please note that these Betzy settings are included in tag noresm2.0.4 and subsequent tags**  
+.. note::
+  Please note that these Betzy settings are included in tag noresm2.0.4 and subsequent tags
 
 Queue options on Fram and on Betzy
-------------------------
+-----------------------------------
 On fram there are different queues for testing and development experiments (usually short runs on few nodes) and longer experiments. If you want to run simulations using different queue options than *normal*, in env_batch.xml:
 
 Add to the directives 
-
 ::
 
     <directive> --qos=devel</directive>
 
-::
 
 for the development queue and change (only on Fram) the node settings to: 
-
 ::
 
    <queue walltimemax="00:30:00" nodemin="1" nodemax="4" default="true">devel</queue>
 
-::
 
 For the short (Fram) and preproc (Betzy) queue options, add
-
 ::
 
     <directive> --qos=short</directive>
@@ -107,15 +103,13 @@ For the short (Fram) and preproc (Betzy) queue options, add
     
     directive> --qos=preproc</directive>
 
-::
 
 for the development queue and change (only on Fram) the node settings to: 
-
 ::
 
  <queue walltimemax="02:00:00" nodemin="1" nodemax="10" default="true">short</queue>
   
-::
+
   
 for the short/preproc queue. 
 
@@ -127,73 +121,58 @@ for the short/preproc queue.
 Nebula @ NSC
 ^^^^^^^^^^^^
 Configuration files for running NorESM2 on Nebula are distributed in the release tags release-noresm2* and in the noresm2 origin/noresm2 branch. If Nebula configurations are missing in your copy of the model, the files can be found in the following folder on Nebula:
-
 ::
 
-/nobackup/forsk/noresm/nebula_config_noresm2/
+  /nobackup/forsk/noresm/nebula_config_noresm2/
     
-::
 
 Apply for membership in NorESM shared data storage (manager: adag@met.no) for access to the folder.
 
 Copy the files in the above folder to:
-
 ::
 
     cd <noresm-base>/cime/config/cesm/machines/
     cp /nobackup/forsk/noresm/nebula_config_noresm2/* .
 
-::
 
-Input data is stored in /nobackup/forsk/noresm/inputdata/
+Input data is stored in ``/nobackup/forsk/noresm/inputdata/``
 
-The run and archive directories are stored /nobackup/forsk/<user_name>/
+The run and archive directories are stored ``/nobackup/forsk/<user_name>/``
 
 Before configuring and compiling the model, add ``export LMOD_QUIET=1`` to your .bashrc
-
 ::
 
     cd
     vi .bashrc
 
-::
 
 Create a new case:
-
 ::
 
     ./create_newcase --case ../../../cases/<casename> --mach nebula --res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported
-
-::
 
 
 Tetralith @ NSC
 ^^^^^^^^^^^^^^^
 
 Configuration files for running NorESM2 on Tetralith are distributed in the featureCESM2.1.0-OsloDevelopment branch. If Tetralith configurations are missing in your copy of the model the files can be found in the following folder on Tetralith:
-
 ::
 
-/proj/cesm_input-data/tetralith_config_noresm2
+  /proj/cesm_input-data/tetralith_config_noresm2
     
-::
 
 Apply for membership in CESM climate model shared data storage (SNIC 2019/32-10) for access to the folder.
 
 Copy the files in the above folder to:
-
 ::
 
     cd <noresm-base>/cime/config/cesm/machines/
     cp /proj/cesm_input-data/tetralith_config_noresm2/* .
 
-::
 
 Input data is stored /proj/cesm_input-data/ 
 
 Before configuring and compiling the model, clear your environment and load the following modules:
-
-
 ::
 
   module purge 
@@ -202,7 +181,6 @@ Before configuring and compiling the model, clear your environment and load the 
   module load HDF5/1.8.19-nsc1-intel-2018a-eb 
   module load PnetCDF/1.8.1-nsc1-intel-2018a-eb
 
-::
 
 Create a new case:
 
@@ -210,7 +188,7 @@ Create a new case:
 
     ./create_newcase --case ../../../cases/<casename> --mach triolith --res <resolution> --compset <compset_name> --pecount M --ccsm_out <NorESM_ouput_folder>
 
-::
+
 
 Virtual Machine with Conda (@ https://www.nrec.no/ for example)
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -224,15 +202,12 @@ For this example we start with a completely empty machine with the Centos7 Linux
 The name of the user is **centos** (if your user name is different you will have to use your *username* instead).
 
 The first step is to format the volume (if your disk is already formated and/or contains data, skip this step, but still create the **/opt/uio** folder since this is where the model(s) are configured to read/write).
-
 ::
 
   sudo mkfs.ext4 /dev/sdb
 
-::
 
 then mount it at /opt/uio
-
 ::
 
   sudo mkdir /opt/uio
@@ -245,10 +220,8 @@ then mount it at /opt/uio
 
   cd /opt/uio
 
-::
 
 and create the following folders:
-
 ::
 
   mkdir /opt/uio/inputdata
@@ -259,10 +232,9 @@ and create the following folders:
 
   mkdir /opt/uio/archive/cases
 
-::
+
 
 Now we can install a few packages which will be needed later (to get the model(s), etc.) and miniconda (accept the terms of the license and accept the default location **/home/centos/miniconda3**, then answer yes to the question *"Do you wish the installer to initialize Miniconda3 by running conda init"*, exit the virtual machine and re-login).
-
 ::
 
   sudo yum install wget git subversion csh -y
@@ -273,12 +245,10 @@ Now we can install a few packages which will be needed later (to get the model(s
 
   exit 
 
-::
 
 You will notice the next time you login the Virtual Machine that the prompt starts with *(base)* which indicates that you are in the base conda environment (since you accepted it during the miniconda install).
 
 We recommend to create a new **esm** conda environment before adding the **bioconda** and **conda-forge** channels (in this order) and installing cesm
-
 ::
 
   conda create -n esm
@@ -291,7 +261,6 @@ We recommend to create a new **esm** conda environment before adding the **bioco
 
   conda install cesm=2.1.3 
 
-::
 
 The prompt should start with *(esm)* indicating that the esm conda environment has been activated, and every time you login you will have to type **conda activate esm** to be able to run the model(s).
 
@@ -300,7 +269,6 @@ This will have installed CESM2.1.3 as well as all the necessary compilers and li
 In order to run the model(s) you still need configuration files (namely *config*, *config_machines.xml* and *config_compilers.xml*). These will eventually come with NorESM, but for the sake of convenience we provide hereafter an example of such files which have to be located in a **.cime** folder in your home directory (simply copy & past the content of the following cell to generate the files automatically and be carefull not to add any odd characters or lines since CESM/NorESM are extremely picky about it).
 
 Notice that you only need to do this once, since both CESM and NorESM will use these configurations, and that the name of the machine created is **espresso**. 
-
 ::
 
   cd /home/centos
@@ -382,10 +350,7 @@ Notice that you only need to do this once, since both CESM and NorESM will use t
   </config_compilers>
   EOF
 
-::
-
 To create a new CESM case F2000climo at resolution f19_g17 and run it for **1 day**, and because (for CESM only) *create_newcase* has been added to the *PATH*, simply type (from anywhere on the machine):
-
 ::
 
   create_newcase --case /opt/uio/archive/cases/conda_CESM213_F2000climo_f19_g17 --compset F2000climo --res f19_g17 --machine espresso --run-unsupported
@@ -410,12 +375,10 @@ To create a new CESM case F2000climo at resolution f19_g17 and run it for **1 da
 
   ./case.submit
 
-::
 
 Hopefully this should create the case, configure it, compile it (for this particular machine the compilation time is less then 3 minutes) and run it (starting with the download of the necessary input files the first time you run it).
 
 For NorESM, first clone the github repository, here in /opt/uio/**noresm2**, as follows (be careful: you have to be in the **(base)** conda environment for that):
-
 ::
 
   cd /opt/uio
@@ -428,10 +391,8 @@ For NorESM, first clone the github repository, here in /opt/uio/**noresm2**, as 
  
   ./manage_externals/checkout_externals -v 
 
-::
 
 To create a "similar" NorESM case NF2000climo at resolution f19_tn14 and also run it for **1 day**, and after having activated the **(esm)** environment (if you are not already in it), do:
-
 ::
 
   cd /opt/uio/noresm2/cime/scripts
@@ -458,32 +419,27 @@ To create a "similar" NorESM case NF2000climo at resolution f19_tn14 and also ru
 
   ./case.submit
 
-::
 
 On our machine the compilation takes less then 3 minutes, and if everything went well the input files should download automatically before the run starts.
 
-Note: AeroTab is supposed to be a folder, if a file has been created instead simply add a "trailing slash" (/) at line 1946 in components/cam/bld/namelist_files/namelist_defaults_cam.xml (which has to be written as: <aerotab_table_dir>noresm-only/atm/cam/camoslo/AeroTab_8jun17/</aerotab_table_dir>) and resubmit.
+Note: AeroTab is supposed to be a folder, if a file has been created instead simply add a "trailing slash" (/) at line 1946 in  ``components/cam/bld/namelist_files/namelist_defaults_cam.xml`` (which has to be written as: <aerotab_table_dir>noresm-only/atm/cam/camoslo/AeroTab_8jun17/</aerotab_table_dir>) and resubmit.
 
 Adding a new platform
 '''''''''''''''''''''
 
 Edit the following files:
-
 ::
 
   config_batch.xml  
   config_compilers.xml  
   config_machines.xml
 
-::  
-
 located in
 
 ::
 
-<noresm-base>/cime/config/cesm/machines/
+  <noresm-base>/cime/config/cesm/machines/
 
-::
 
 config_batch.xml
 ^^^^^^^^^^^^^^^^
@@ -493,7 +449,6 @@ Add a batch_system entry in this file for your platform with appropriate setting
 Machine example with SLURM batch system
 
 on Fram:
-
 ::
 
   <batch_system MACH="fram" type="slurm">
@@ -513,11 +468,8 @@ on Fram:
     </queues>
   </batch_system>
 
-::
-
 
 On Tetralith:
-
 ::
 
   <batch_system type="slurm" MACH="tetralith">
@@ -532,10 +484,8 @@ On Tetralith:
     </queues>
   </batch_system>
 
-::
 
 Machine example with PBS batch system
-
 ::
 
   <batch_system MACH="vilje" type="pbs">
@@ -554,7 +504,6 @@ Machine example with PBS batch system
     </walltimes-->
   </batch_system>
 
-::
 
 config_compilers.xml
 ^^^^^^^^^^^^^^^^^^^^
@@ -562,7 +511,6 @@ config_compilers.xml
 Add a compiler entry in this file for your platform with appropriate settings. See examples below.
 
 On Fram:
-
 ::
 
    <compiler MACH="fram">
@@ -590,10 +538,8 @@ On Fram:
      </SLIBS>
   </compiler>
 
-::
 
 On Tetralith:
-
 ::
  
    <compiler MACH="tetralith" COMPILER="intel">
@@ -620,17 +566,12 @@ On Tetralith:
     </LDFLAGS>
   </compiler>
  
-::
- 
- 
-
 config_machines.xml
 ^^^^^^^^^^^^^^^^^^^
  
 Add a machine entry in this file for your platform with appropriate settings. See examples below.
 
 On Fram:
-
 ::
 
   <machine MACH="fram">
@@ -692,10 +633,7 @@ On Fram:
     </resource_limits>
   </machine>
 
-::
-
 On Tetralith:
-
 ::
  
    <machine MACH="tetralith">
@@ -723,11 +661,4 @@ On Tetralith:
     <module_system type="none">
     </module_system>
   </machine>
- 
-::
- 
- 
- 
- 
- 
  

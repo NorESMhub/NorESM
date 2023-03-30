@@ -1,9 +1,8 @@
+:orphan:
 .. _aerosol_output_aerocom_variables:
 
 AEROCOM extra output
 ''''''''''''''''''''
-
----------------------------------------------------------------
 
 | A550_BC:long_name = "BC abs. aerosol optical depth 550nm"  
 | A550_DU:long_name = "mineral abs. aerosol optical depth 550nm"          

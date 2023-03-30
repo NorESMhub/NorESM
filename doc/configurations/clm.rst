@@ -1,16 +1,16 @@
 .. _clm:
 
 Land and river run off
-================
+======================
 
 CLM5
 ------
 
-The land model used in NorESM2 is the Community Land Model version 5 (`CLM5 <http://www.cesm.ucar.edu/models/clm/>`_). Specific questions about CLM can be addressed to Hui Tang (email: hui.tang@geo.uio.no) or Kjetil Aas (email: k.s.aas@geo.uio.no).
+The land model used in NorESM2 is the Community Land Model version 5 (`CLM5 <http://www.cesm.ucar.edu/models/clm/>`__). Specific questions about CLM can be addressed to Hui Tang (email: hui.tang@geo.uio.no) or Kjetil Aas (email: k.s.aas@geo.uio.no).
 
 CLM5 model configurations available in NorESM2
-^^^^^^
-The version of CLM5 used by NorESM2 can be found from Externals.cfg (see `here <https://noresm-docs.readthedocs.io/en/noresm2/access/download_code.html#configure-externals-cfg>`_ for a detailed explanation). 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The version of CLM5 used by NorESM2 can be found from Externals.cfg (see `here <https://noresm-docs.readthedocs.io/en/noresm2/access/download_code.html#configure-externals-cfg>`__ for a detailed explanation). 
 
 CLM5 can be run with a prognostic crop model with prognostic vegetation state and active biogeochemistry. 
 The global crop model is on in BGC default configuration with 8 temperate and tropical crop types and has the capability to dynamically simulate crop management and crop management change through time. 
@@ -27,37 +27,37 @@ CLM5 in NorESM2 can also be run with a prescribed satellite vegetation phenology
 Note that the BGC-CROP option is more expensive than SP (+ca 10-15% CPU time)
 
 CLM5 atmospheric coupling
-^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 The current state of the atmospheric component, CAM6-Nor, at a given time step is used to force the land model. The land model then initiates a full set of calculations for surface energy, constituent, momentum, and radiative fluxes. The land model calculations are implemented in two steps:
 
 - 1. The land model proceeds with the calculation of surface energy, constituent, momentum, and radiative fluxes using the snow and soil hydrologic states from the previous time step. 
 
 - 2. The land model then updates the soil and snow hydrology calculations based on these fluxes. These fields are passed to the atmosphere. The albedos sent to the atmosphere are for the solar zenith angle at the next time step but with surface conditions from the current time step.
 
-From the CLM5 `user guide <https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/tech_note/Ecosystem/CLM50_Tech_Note_Ecosystem.html#atmospheric-coupling>`_. 
+From the  `CLM5 user guide <https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/tech_note/Ecosystem/CLM50_Tech_Note_Ecosystem.html#atmospheric-coupling>`__.
 
 
 CLM5 surface data
-^^^^
+^^^^^^^^^^^^^^^^^
 Required surface data for each land grid cell include: 
 
-- the glacier, lake, and urban fractions of the grid cell (vegetated and crop occupy the remainder)
-- the fractional cover of each plant functional type (PFT), monthly leaf and stem area index and canopy top and bottom heights for each PFT, 
-- soil color, soil texture, soil organic matter density, 
-- maximum fractional saturated area, slope, elevation, 
-- biogenic volatile organic compounds (BVOCs) emissions factors, 
-- population density 
-- gross domestic production 
-- peat area fraction
-- peak month of agricultural burning. Optional surface data include crop irrigation and managed crops.
+* the glacier, lake, and urban fractions of the grid cell (vegetated and crop occupy the remainder)
+* the fractional cover of each plant functional type (PFT), monthly leaf and stem area index and canopy top and bottom heights for each PFT, 
+* soil color, soil texture, soil organic matter density, 
+* maximum fractional saturated area, slope, elevation, 
+* biogenic volatile organic compounds (BVOCs) emissions factors, 
+* population density 
+* gross domestic production 
+* peat area fraction
+* peak month of agricultural burning. Optional surface data include crop irrigation and managed crops.
 
-From the CLM5 `user guide <https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/tech_note/Ecosystem/CLM50_Tech_Note_Ecosystem.html#surface-data>`_.
+From the `CLM5 user guide <https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/tech_note/Ecosystem/CLM50_Tech_Note_Ecosystem.html#surface-data>`__.
 
-Surface data for default resolution (e.g., f19_tn14 for NorESM2-LM and f09_tn14 for NorESM2-MM) are available on Fram @ Sigma2: /work/shared/noresm/inputdata/lnd/clm2/surfdata_map/ 
+Surface data for default resolution (e.g., f19_tn14 for NorESM2-LM and f09_tn14 for NorESM2-MM) are available on Fram @Sigma2: ``/work/shared/noresm/inputdata/lnd/clm2/surfdata_map/``
 
 
 The initial state of CLM5
-^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The land model needs to read in the inital state from a restart file. This can be customized in user_nl_clm in the case folder ::
 
@@ -84,7 +84,7 @@ and in the Run folder::
   <RUN_DIR>/case/run/lnd_in
 
 User name list modifications
-^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 An example of how you can modify user_nl_clm. This adds four auxilary history files in addition to the standard monthly files. The first two are daily, and the last two are six and three hourly::
 
       hist_mfilt   = 1,365,30,120,240        
@@ -103,15 +103,15 @@ For example if STOP_N=50 years, you can set::
  
 -8760 means one average value per year, and 50 years in one file.
 
-- The full namelist definitions and their defaults for CLM5 can be studied `here <http://www.cesm.ucar.edu/models/cesm2/settings/current/clm5_0_nml.html>`_. 
+- The full namelist definitions and their defaults for CLM5 can be studied `here <http://www.cesm.ucar.edu/models/cesm2/settings/current/clm5_0_nml.html>`__. 
 
 Spin up of CLM5 
-^^^^^^
+^^^^^^^^^^^^^^^
 A long spin up is required for running NorESM2 with CLM50%BGC-CROP to achive e.g. land carbon balance. Therefore, an off-line spin up of CLM50%BGC-CROP has to be performed in order to save computation time.
 
 **Generating atmospheric forcing data**
 
-Atmospheric forcing data from the coupled NorESM2 simulation are used to run CLM5 stand alone spin up. To output such atmospheric forcing data, the following commands have to be added to user_nl_cpl in the coupled simulation of interest:::
+Atmospheric forcing data from the coupled NorESM2 simulation are used to run CLM5 stand alone spin up. To output such atmospheric forcing data, the following commands have to be added to ``user_nl_cpl`` in the coupled simulation of interest:::
 
   &seq_infodata_inparm
     histaux_a2x      = .true.  
@@ -127,17 +127,15 @@ Atmospheric forcing data from the coupled NorESM2 simulation are used to run CLM
 
 **Running CLM stand alone with NorESM2 forcing data**
 
-To use NorESM2 history files as the forcing, CPLHISTForcing mode needs to be activated. In CPLHISTForcing mode, the model is assumed to have 3-hourly for a global grid from a previous simulation (see description above). The data atmophere (datm) forcing is divided into three streams: precipitation, solar, and everything else.
+To use NorESM2 history files as the forcing, ``CPLHISTForcing mode`` needs to be activated. In CPLHISTForcing mode, the model is assumed to have 3-hourly for a global grid from a previous simulation (see description above). The data atmophere (datm) forcing is divided into three streams: precipitation, solar, and everything else.
 
-To create a new case for stand alone CLM5 spin up with NorESM2 forcing data, one should choose the same resolution as the coupled simulation (f19_tn14 for NorESM2-LM and f09_tn14 for NorESM2-MM). The compset to use is I1850BgcCropCmip6. For example, to create a new NorESM2-LM case, 
-
+To create a new case for stand alone CLM5 spin up with NorESM2 forcing data, one should choose the same resolution as the coupled simulation (f19_tn14 for NorESM2-LM and f09_tn14 for NorESM2-MM). The compset to use is ``I1850BgcCropCmip6``. For example, to create a new NorESM2-LM case, 
 :: 
 
-./create_newcase --case <PAT_TO_CASEFOLDER>/CASENAME --compset N1850BgcCropCmip6 --res f19_tn14 --mach fram --project nn9560k 
+    ./create_newcase --case <PAT_TO_CASEFOLDER>/CASENAME --compset N1850BgcCropCmip6 --res f19_tn14 --mach fram --project nn9560k 
 
-::
 
-Using the CPLHIST forcing, the offline spin up needs to be run in two steps:
+Using the ``CPLHIST`` forcing, the offline spin up needs to be run in two steps:
 
 - **1. Accelerated spinup (300 years):** 
 
@@ -172,11 +170,11 @@ NorESM2 can then be run with CLM5 using the restart file from the end of the spi
   finidat = '<path_to_inputdata>/inputdata/<path_to_file>/CLM_SPINUP_FILENAME.clm2.r.YR-01-01-00000.nc'
  
  
-A description of the NorESM2 CLM5 spin up, recoupling and diagnostics can be found `here <https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/NorESM-CLM-memo.pdf>`_. 
+A description of the NorESM2 CLM5 spin up, recoupling and diagnostics can be found `here <https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/NorESM-CLM-memo.pdf>`__.
 
 
 Code modification 
-^^^^^^
+^^^^^^^^^^^^^^^^^^
 To make more subtantial modification to the CLM5 code than what is possible by the use of user_nl_clm, there are two methods:
 
 1. Make a branch from the NorESM2 version (branch or release) you want to modify, checkout this branch in order to make code changes directly in the source code folder.
@@ -189,14 +187,14 @@ The CLM5 source code is located in::
 
 
 Land-only experiments
-^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
-**For land-only simulations**, there is no difference in running the CLM5 in CESM2 and that in NorESM2. For a detailed description on how to set up, modify, build and run CLM5 stand alone experiments, please check CLM5.0's `user guide <https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/setting-up-and-running-a-case/choosing-a-compset.html>`_  (last accessed 7th May 2020).
+**For land-only simulations**, there is no difference in running the CLM5 in CESM2 and that in NorESM2. For a detailed description on how to set up, modify, build and run CLM5 stand alone experiments, please check `CLM5.0's user guide <https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/setting-up-and-running-a-case/choosing-a-compset.html>`__  (last accessed 7th May 2020).
 
 NorESM2 specific additions
-^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 Remove infiltration excess water as runoff if the temperature of the surface water pool is below freezing.
-For details please see :ref:`model-description/lnd_model`
+For details please see :ref:`lnd_model`
 
 The NorESM2 specific addition can be tuned on/off by a flag in the user_nl_clm in the case folder. Setting::
 
@@ -211,21 +209,18 @@ Setting::
 will use CESM2 treatment of the surface water in CLM (see previous description).
 
 CLM5 specifics
-^^^^^
+^^^^^^^^^^^^^^^
 
 - CLM generally treats each sub-grid element (landunits and columns) independently, without lateral exchange of energy or heat.
 - Sub-grid elements only exchange information with the atmosphere, in addition to water being removed from the grid cell as surface and subsurface runoff.
 - The horizontal resolution of the CLM keeps the same as for the atmosphere (f19, f09). 
-- Vertically, there are four soil structures to set in the CLM namelist file. CLM5 model configurations available in NorESM2:
+- Vertically, there are four soil structures to set in the CLM namelist file. CLM5 model configurations available in NorESM2: ::
 
-::
+    10SL_3.5m    = standard CLM4 and CLM4.5 version
+    23SL_3.5m    = more vertical layers for permafrost simulations 
+    49SL_10m     = 49 layer soil column, 10m of soil, 5 bedrock layers
+    20SL_8.5m    = 20 layer soil column, 8m of soil, 5 bedrock layers
 
-  10SL_3.5m    = standard CLM4 and CLM4.5 version
-  23SL_3.5m    = more vertical layers for permafrost simulations 
-  49SL_10m     = 49 layer soil column, 10m of soil, 5 bedrock layers
-  20SL_8.5m    = 20 layer soil column, 8m of soil, 5 bedrock layers
-
-::
 
 By default, 20SL_8.5m is employed.
 
@@ -233,13 +228,10 @@ By default, 20SL_8.5m is employed.
 MOSART
 -------------
 
-The Model for Scale Adaptive River Transport (MOSART) is the default river model for CESM2, CLM5 and NorESM2. For more information start `here <http://www.cesm.ucar.edu/models/cesm2/river/>`_. For a techincal user guide go `here <https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/tech_note/MOSART/CLM50_Tech_Note_MOSART.html>`_.   
+The Model for Scale Adaptive River Transport (MOSART) is the default river model for CESM2, CLM5 and NorESM2. For more information start `here <http://www.cesm.ucar.edu/models/cesm2/river/>`_. For a techincal user guide go `here <https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/tech_note/MOSART/CLM50_Tech_Note_MOSART.html>`__.   
 
 The methods and syntax for modifying the user namelist and code in MOSART are similar to CLM5, so the previous description can be used. The user namelist for MOSART is user_nl_mosart and source code files should be copied to SourceMods/src.mosart/ in the case folder.
 
 The MOSART source code is located in::
   
   <noresm-base>/components/mosart/src/
-
-
-  

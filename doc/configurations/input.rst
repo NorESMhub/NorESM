@@ -6,27 +6,38 @@ Input data sets
 The complete input data set is stored at Sigma2. To download, please refer to the :ref:`download_input` section. For uploading new input data, contact mben@norceresearch.no or the owner of the data.
 
 Atmospheric specific input data
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Various external input data sets are used by the atmosphere model.  These data sets often describe "boundary conditions" needed during the integration of the model (solar forcing, GHG concentrations, ozone concentrations, oxidant concentrations, emissions of short-lived species, production rate of H2O from CH4 oxidation, stratospheric aerosol, upper ocean chlorophyl-a concentration, sea-surface temperature and sea-ice concentration).  The boundary conditions can be constant, cyclic (often one annual cycle), or evolve according to a historical or future scenario.
 
-- **Solar forcing** The solar forcing is prescribed following Matthes et al. (2017).
+.. glossary::
 
-- **GHG concentrations : CO2, CH4, N2O, CFC1-eq, CFC12**  Green-house concentrations are used in the radiative transfer calculations, and the values are taken from Meinshausen et al. (2017).  The prescribed concentrations are assumed to represent the surface concentrations.  Latitudinal and species dependent profiles are used to calculate the concentrations at different altitudes.
+  Solar forcing
+    The solar forcing is prescribed following Matthes et al. (2017).
 
-- **Ozone concentrations**  Ozone concentration climatologies are used in the radiative transfer calculations.  The ozone climatologies used in NorESM2 have a 5-day frequency, vary in height and latitude, but have no longitudinal dependce.  They are based on simulations with CESM2-WACCM (Danabasoglu et al., 2019).
+  GHG concentrations 
+    CO2, CH4, N2O, CFC1-eq, CFC12**  Green-house concentrations are used in the radiative transfer calculations, and the values are taken from Meinshausen et al. (2017).  The prescribed concentrations are assumed to represent the surface concentrations.  Latitudinal and species dependent profiles are used to calculate the concentrations at different altitudes.
 
-- **Oxidant concentrations : OH, ozone, NO3-radical, HO2** The oxidant concentrations are used in the description of secondary aerosol formation (sulfate and SOA).  OH, ozone, NO3 and H2O2 (formed by HO2) are relevant for the oxidation of DMS, SO2, isoprene, and monoterpenes.  These climatologies have a monthly frequency, and a 3-dimensional spatial distribution.  They are based on simulations with CESM2-WACCM (Danabasoglu et al., 2019).
+  Ozone concentrations
+    Ozone concentration climatologies are used in the radiative transfer calculations.  The ozone climatologies used in NorESM2 have a 5-day frequency, vary in height and latitude, but have no longitudinal dependce.  They are based on simulations with CESM2-WACCM (Danabasoglu et al., 2019).
 
-- **Emissions of short-lived species : BC, OM and SO2** Emissions of BC, OM and SO2 consists in contributions from anthropogenic sources, biomass burning, and continuous outgassing of SO2 by volcanoes.  The anthropogenic sources (Hoesly et al., 2018) are given as 9 different sectors : emissions of agricultural activity, transport, domestic heating, solvents, waste and shipping are emitted at the surface; emissions from the energy and industrial sectors are emitted between 150 and 350 m height; aircraft emissions can go up to around 15 km.  The biomass burning sources (van Marle et al., 2017) are give as 6 different categories, and emission heights differ among them : 0-100 m for agricultural waste burning and peat burning, 0-1 km for savannah burning and deforestation, 0-2 km for temperate forests, and 0-3 km for Boreal forests (Dentener et al., 2006).  A fixed climatology of continuous tropospheric outgassing of SO2 by volcanoes is also included (Dentener et al., 2006).   Emission inventories provide emission strengths for OC.  For fossil fuel combustions we assumed an OM:OC ratio of 1.4, and for biomass burning of 2.6.  Part of the SO2 (2.5% equivalent S) is emitted as SO4.  Emission fields are provided both on the 1.9x2.5 and 0.9x1.25 horizontal grid.
+  Oxidant concentrations
+    OH, ozone, NO3-radical, HO2** The oxidant concentrations are used in the description of secondary aerosol formation (sulfate and SOA).  OH, ozone, NO3 and H2O2 (formed by HO2) are relevant for the oxidation of DMS, SO2, isoprene, and monoterpenes.  These climatologies have a monthly frequency, and a 3-dimensional spatial distribution.  They are based on simulations with CESM2-WACCM (Danabasoglu et al., 2019).
 
-- **Water vapour emissions (from methane oxidation)** Production of H2O from methane oxidation is prescribed using a climatologies based on simulations with CESM2-WACCM.  This source is especially relevant in the stratosphere.  These climatologies have a monthly frequency, and a 3-dimensional spatial distribution.  They are based on simulations with CESM2-WACCM (Danabasoglu et al., 2019).
+  Emissions of short-lived species
+    BC, OM and SO2** Emissions of BC, OM and SO2 consists in contributions from anthropogenic sources, biomass burning, and continuous outgassing of SO2 by volcanoes.  The anthropogenic sources (Hoesly et al., 2018) are given as 9 different sectors : emissions of agricultural activity, transport, domestic heating, solvents, waste and shipping are emitted at the surface; emissions from the energy and industrial sectors are emitted between 150 and 350 m height; aircraft emissions can go up to around 15 km.  The biomass burning sources (van Marle et al., 2017) are give as 6 different categories, and emission heights differ among them : 0-100 m for agricultural waste burning and peat burning, 0-1 km for savannah burning and deforestation, 0-2 km for temperate forests, and 0-3 km for Boreal forests (Dentener et al., 2006).  A fixed climatology of continuous tropospheric outgassing of SO2 by volcanoes is also included (Dentener et al., 2006).   Emission inventories provide emission strengths for OC.  For fossil fuel combustions we assumed an OM:OC ratio of 1.4, and for biomass burning of 2.6.  Part of the SO2 (2.5% equivalent S) is emitted as SO4.  Emission fields are provided both on the 1.9x2.5 and 0.9x1.25 horizontal grid.
 
-- **Stratospheric aerosol**  To describe the impact of volcanic SO2 emissions reaching the stratosphere and forming SO4 aerosol, monthly varying climatologies of stratospheric aerosol properties are used.
+  Water vapour emissions (from methane oxidation)
+    Production of H2O from methane oxidation is prescribed using a climatologies based on simulations with CESM2-WACCM.  This source is especially relevant in the stratosphere.  These climatologies have a monthly frequency, and a 3-dimensional spatial distribution.  They are based on simulations with CESM2-WACCM (Danabasoglu et al., 2019).
 
-- **Upper-ocean POM concentrations**  To describe the emission strength of marine primary organic matter from the ocean, a monthly varying climatology of upper-ocean chlorophyl-a concentration is used.
+  Stratospheric aerosol 
+    To describe the impact of volcanic SO2 emissions reaching the stratosphere and forming SO4 aerosol, monthly varying climatologies of stratospheric aerosol properties are used.
 
-- **Sea-surface temperature and sea-ice cover**  In atmosphere-only simulations, the sea-surface temperature and sea-ice concentrations are prescribed as monthly varying climatologies.  One can use climatologies that are based on observations (Hurrell et al., 2008), or climatologies derived from fully-coupled NorESM2 simulations.
+  Upper-ocean POM concentrations  
+    To describe the emission strength of marine primary organic matter from the ocean, a monthly varying climatology of upper-ocean chlorophyl-a concentration is used.
+
+  Sea-surface temperature and sea-ice cover
+    In atmosphere-only simulations, the sea-surface temperature and sea-ice concentrations are prescribed as monthly varying climatologies.  One can use climatologies that are based on observations (Hurrell et al., 2008), or climatologies derived from fully-coupled NorESM2 simulations.
 
 
 Aerosol specific input data
@@ -35,17 +46,17 @@ Aerosol specific input data
 Some of the input data, the look-up tables (LUT) for NorESM specific aerosol optics and size information for calculation of cloud droplet activation, can be modified either for testing purposes or in order to take into account new developments in the aerosol microphysics scheme. Some typical examples of input that may need to be updated are: refractive indices; assumed (log-normal) size parameters at the point of emission or production; assumed hygroscopicities for sub-saturated conditions. Such changes can be made in the offline "sectional" aerosol module AeroTab (as in the example of new refractive indices), or both in AeroTab and in the online aerosol module OsloAero in the CAM6-Nor code (as in the example of assumed size parameters). Many aerosol related model changes may be done without having to touch the AeroTab code and thee LUT at all, such as e.g. the emissions (whether they are prescribed or interactive).  
 
 A user's guide for the AeroTab code, with some additional information about OsloAero code (in CAM6-Nor) which makes use of the AeroTab LUT, can be found at https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/AeroTab-user-guide_v16april2020.pdf.
-This AeroTab presentation https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/AeroTab-slides-updateJan2020.pdf may be useful as a first introduction. For questions about AeroTab, contakt Alf Kirkevåg (alfk at met.no) or Øyvind Seland (oyvinds at met.no).      
+This AeroTab presentation https://github.com/NorESMhub/NorESM/blob/noresm2/doc/configurations/AeroTab-slides-updateJan2020.pdf may be useful as a first introduction. For questions about AeroTab, contact Øyvind Seland (oyvinds at met.no).      
 
 Ocean specific input data
-^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In case of a startup run (i.e. if the model is not re-started from a prvious simulation) the ocean is initialized from rest, and the initial ocean temperature and salinity are from the Polar Science Center Hydrographic Climatology (PHC) 3.0, updated from Steele et al. (2001). The initial condition files containing ocean temperature and salinity are located in the directory
 ::
 
   /DIN_LOC_ROOT/ocn/blom/inicon/inicon_<gridspec>_<date>.nc,
 
-where DIN_LOC_ROOT is the base input data directory (depends on the machine; on fram it is /cluster/shared/noresm/inputdata), *gridspec* specifies the ocean grid used, and *date* specifies a date tag for the file. The files contains values for layered potential density (sigma), potential temperature (temp), salinity (saln) and layer thickness (dz):
+where ``DIN_LOC_ROOT`` is the base input data directory (depends on the machine; on fram it is ``/cluster/shared/noresm/inputdata``), *gridspec* specifies the ocean grid used, and *date* specifies a date tag for the file. The files contains values for layered potential density (sigma), potential temperature (temp), salinity (saln) and layer thickness (dz):
 :: 
 
   dimensions:
@@ -61,22 +72,22 @@ where DIN_LOC_ROOT is the base input data directory (depends on the machine; on 
 Boundary conditions for the ocean component (e.g. tidal dissipation, SSS climatologies for OMIP configuration) are located in 
 ::
 
-   /DIN_LOC_ROOT/ocn/blom/bndcon/,
+   /DIN_LOC_ROOT/ocn/blom/bndcon/
 
 and grid specific information (grid input file, files defining ocean basins and sections) are located in 
 ::
 
-   /DIN_LOC_ROOT/ocn/blom/grid/.
+   /DIN_LOC_ROOT/ocn/blom/grid/
    
    
 Ocean carbon cycle specific input data
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The ocean carbon cycle in NorESM2 (iHAMOCC) is initialized from gridded observation based data sets for DIC, alkalinity, phosphate, nitrate, oxygen, and silica. These data sets have been provided by CMIP6-OMIP (Orr et al. 2017), and are located in the same directory as the BLOM initial conditions.
 
 Further, iHAMOCC requires three input data sets specifying boundary conditions: 1) monthly climatological dust deposition based on Mahowald et al. (2006), 2) riverine inputs, which contain an annual climatology (normalized to year 2000) of fluxes of organic and inorganic carbon and nutrient constituents based on the Global-NEWS2 model and other datasets (Mayorga et al., 2010; Hartmann, 2009; Chester, 1990), and 3) atmospheric nitrogen deposition, provided through the CMIP6 protocol in monthly deposition fields of wet or dry and oxidized or reduced nitrogen deposition rates, all of which are added to the nitrate pool in the top-most ocean layer.  
 
-By default, these external inputs are activated, but the user can choose not to include riverine and nitrogen deposition by setting BLOM_RIVER_NUTRIENTS and BLOM_N_DEPOSITION to FALSE in in env_run.xml.
+By default, these external inputs are activated, but the user can choose not to include riverine and nitrogen deposition by setting ``BLOM_RIVER_NUTRIENTS`` and ``BLOM_N_DEPOSITION`` to ``FALSE`` in ``env_run.xml``.
 
 While the initial conditions are interpolated by the model (using nearest neighbor interpolation), the boundary condition datasets need to be pre-interpolated to the ocean grid used. These data sets are available for 2, 1, and 1/4 degree resolution (the tnx2v1, tnx1v4, and tnx0.25v4 grids). Note however, that for running CMIP scenario simulations, specific N-deposition data sets are necessary. These might not be available for a given grid, so they may need to be created and tested. 
 

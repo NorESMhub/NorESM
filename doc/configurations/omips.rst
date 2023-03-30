@@ -88,6 +88,7 @@ Modify user namelist for BLOM/iHAMOCC
 
 Model parameters and adjusting model output can be done in user_nl_blom, which is present in the case directory after ./case.setup has been excecuted. The resolved namelist for BLOM/iHAMOCC is saved in CaseDocs/ocn_in, and specifies a number of physical parameters (such as vertical and horizontal mixing), as well as model output settings and frequencies. Output settings include options for daily (hd/hbgcd), monthly (hm/hbgcm), and yearly (hy/hbgcy) output, where the files containing 'bgc' in their filenames are iHAMOCC output files. Note that the resolved namelist (CaseDocs/ocn_in) should **never** be used to place user defined changes, since this file is re-created (overwritten) every time the model is submitted. User defined namelist changes need to be placed in user_nl_blom, for example
 ::
+
   BDMC2 = .15
   NIWGF = .5
 
@@ -137,7 +138,147 @@ The iHAMOCC source code is located in::
 
   <noresm-base>/components/blom/hamocc
   
+Spinup of BLOM-iHAMOCC
+^^^^^^^^^^^^^^^^^^^^^^
+The global ocean overturning circulation time-scale is in the order of 1500 years, and usually several cycles of spinup are required, especially for the ocean biogeochemistry to reach a reasonable quasi-equilibrium state. Since running the NorESM model in a fully coupled mode is computationally demanding, it is not practical to run thousands of model years during spinup. To alleviate this issue, the ocean components of NorESM, BLOM and iHAMOCC, can be simulated offline or stand-alone (non fully-coupled), forced by coupler fields for extended period of time until the drift in e.g. interior ocean fields become acceptable. Once this is achieved, the new quasi-equilibrium ocean state is then re-coupled back to the coupled system and integrated forward, usually for a few hundred years to ensure that the shock from re-coupling is minimized.
 
+The following describe the necessary steps to configure and run offline BLOM-iHAMOCC spinup:
+
+1. Generate the coupler forcing fields
+
+    The stand-alone ocean configuration requires boundary condition (atmospheric and land) fields to force the ocean model. In order to allow the ocean model to simulate the interannual-to-decadal variability, we recommend creating 50 years long or longer forcing fields from a fully coupled simulations under preindustrial control setup. The fully coupled simulation should have relatively stable atmospheric states during this 50 years period, with little drift. In order to generate the coupler fields, the following texts need to be included in the ``user_nl_cpl`` file in the case directory: ::
+
+        &seq_infodata_inparm
+          histaux_a2x      = .true.  
+          histaux_a2x1hr   = .true. 
+          histaux_a2x1hri  = .true.
+          histaux_a2x3hr   = .true.
+          histaux_a2x3hrp = .true.
+          histaux_a2x24hr = .true.
+          histaux_l2x     = .false.
+          histaux_l2x1yrg = .false.
+          histaux_r2x     = .true.
+
+2. Post-process the coupler fields
+
+     The coupler fields produced in step 1 are written in daily files and need to be concatenated into monthly files, which the ocean components expect. The script to concatenate and produce the monthly coupler fields is located @fram.sigma2.no: ::
+
+          /cluster/projects/nn2345k/matsbn/NorESM/concat_cpl_hist_mon/concat_cpl_hist_mon.csh
+
+
+     To generate the monthly fields, execute ::
+
+          concat_cpl_hist_mon.csh CASE_NAME INPUT_DAILY_DIR YEAR1 YEARN OUTPUT_MONTHLY_DIR "ha2x ha2x1hi ha2x1h ha2x3h ha2x1d hr2x"
+
+3. Create the stand-alone ocean case
+ 
+     The compset to run BLOM-iHAMOCC with the monthly coupler forcing is called ``NOICPLHISTOC``, which can be created e.g., as follows ::
+
+          create_newcase --case CASE_DIR_AND_NAME --compset NOICPLHISTOC --res f09_tn14 --machine betzy --project nnXXXXk --run-unsupported
+
+4. Setup the case
+
+     In the case directory, run ::
+    
+          ./case.setup
+
+5. Modify dependent files
+
+     In the case directory, add the following to ``user_nl_cice`` ::                
+
+         histfreq = 'm','d','x','x','x'
+         histfreq_n = 1,1,1,1,1
+         f_CMIP = 'mdxxx'
+         f_hi ="mxxxx"
+         f_hs="mxxxx"
+         f_fswdn="mxxxx"
+         f_fswabs="mxxxx"
+         f_congel="mxxxx"
+         f_frazil="mxxxx"
+         f_meltt="mxxxx"
+         f_melts="mxxxx"
+         f_meltb="mxxxx"
+         f_meltl="mxxxx"
+         f_fswthru="mxxxx"
+         f_dvidtt="mxxxx"
+         f_dvidtd="mxxxx"
+         f_daidtt="mxxxx"
+         f_daidtd="mxxxx"
+         f_apond_ai="mxxxx"
+         f_hpond_ai="mxxxx"
+         f_apeff_ai="mxxxx"
+         f_snowfrac="mxxxx"
+         f_aicen="mxxxx"
+         f_snowfracn="mxxxx"
+         
+
+     Add the following to ``user_nl_blom`` ::
+
+        set SRXDAY = 6.
+        set SRXBAL = .true.  
+
+     Edit or adjust the following entries in ``env_run.xml`` (e.g., for monthly coupler fields from year 751 to 850): ::    
+
+         <entry id="RUN_TYPE" value="hybrid">
+         <entry id="RUN_REFCASE" value=“CPLHIST_CASE>
+         <entry id="RUN_REFDATE" value="0751-01-01">
+         <entry id="RUN_STARTDATE" value="0751-01-01">
+         <entry id="STOP_OPTION" value="nyears">
+         <entry id="STOP_N" value="200">
+         <entry id="REST_N" value="25">
+         <entry id="DATM_CPLHIST_DIR" value="$DIN_LOC_ROOT/cplhist/CPLHIST_OUTPUT_MONTHLY_DIR">
+         <entry id="DATM_CPLHIST_CASE" value=“CPLHIST_CASE">
+         <entry id="DATM_CPLHIST_YR_ALIGN" value="751">
+         <entry id="DATM_CPLHIST_YR_START" value="751">
+         <entry id="DATM_CPLHIST_YR_END" value="850">
+         <entry id="DROF_CPLHIST_DIR" value="$DIN_LOC_ROOT/cplhist/CPLHIST_OUTPUT_MONTHLY_DIR">
+         <entry id="DROF_CPLHIST_CASE" value="CPLHIST_CASE">
+         <entry id="DROF_CPLHIST_YR_ALIGN" value="751">
+         <entry id="DROF_CPLHIST_YR_START" value="751">
+         <entry id="DROF_CPLHIST_YR_END" value="850">
+
+     Edit or adjust the following entries in ``env_mach_pes.xml`` (e.g., for NorESM2-MM configuration): ::
+
+         <entry id="COST_PES" value="480">
+         <entry id="MAX_TASKS_PER_NODE" value="32">
+         <entry id="MAX_MPITASKS_PER_NODE" value="32">
+
+6. Configure salinity relaxation
+
+    It is recommended that surface salinity is relaxed toward monthly climatology values, e.g., those from earlier coupled runs. This is needed to avoid unexpected drift in the ocean physical states. Monthly climatology files from previous spin-up are available @fram.sigma2.no and @betzy.sigma2.no: ::
+
+         NorESM2-MM: /cluster/shared/noresm/inputdata/ocn/micom/tnx1v4/20170601/sss_climatology_N1850_f09_tn14_20190726_751-850_classic.nc
+         NorESM2-LM: /cluster/shared/noresm/inputdata/ocn/micom/tnx1v4/20170601/sss_climatology_N1850OCBDRDDMS_f19_tn14_250119_466_565_classic.nc
+
+    A python script to generate these files is available in: ::
+
+         /cluster/projects/nn2345k/matsbn/NorESM/sss_climatology/sss_climatology.py
+
+    In the case directory, add the following line to ``user_nl_blom`` file: ::
+
+         set SCFILE= '<filename>'
+
+7. Build your case
+
+     In the case directory, run ::
+
+         ./case.build
+ 
+     Adjust the the length of model integration in ``env_run.xlm`` and the respective computing hours in ``env_batch.xml``.
+
+8. Submit the run
+
+     In the case directory, run ::
+     
+         ./case.submit
+
+9. Prior to 'recoupling' simulation, the dates in atmospheric and land restart files need to be adjusted, e.g., using the following command:
+
+     ncap2 -s 'time=401501' N1850_f19_tn14_21062019_CPLHIST.cam.r.1521-01-01-00000.nc new_adjusted_restart.nc
+         
+         The 'time' value should be set to the year of the ocean restart files, e.g., the last year of the offline spin-up period.
+         
+         
 CICE
 ''''
 The sea ice model component is based upon version 5.1.2 of the CICE sea ice model of Hunke et al. (2015). 
@@ -146,21 +287,18 @@ Initial conditions
 ^^^^^^^^^^^^^^^^^^
 
 By default, the CICE model is initialized with a 'default', simplified, sea ice field with sea ice in cold regions (air temperature below 0 degree C), north of 70 N and south of 60 S. The sea ice thickness in these regions is horizontal homogeneous, with a uniform snow cover. This behavior is given by the ice_ic variable in the namelist. This can be changed to start without sea ice by setting:
-
 ::
 
   &setup_nml
     ice_ic = "none"
 
-::
 
 in the user_nl_cice in the case folder, or by specifying a restart file which would give the desired sea ice state:
-
 ::
 
   &setup_nml
     ice_ic = "PATH_TO_FILE/NAME_OF_FILE.cice.r.YEAR-01-01-00000.nc"
-::
+
 
 The file used for NorESM2-MM CMIP6 piControl simulation is::
 
@@ -183,7 +321,8 @@ This information is also written to the ice.log.* file generated during the run.
 NorESM2 specific addition
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 A NorESM2-specific change is including the effect of wind drift of snow into ocean following Lecomte et al. (2013)
-This change can be tuned on/off in the user_nl_cice in the case folder. Default is::
+This change can be tuned on/off in the user_nl_cice in the case folder. Default is
+::
 
   &snowphys_nml
     blowingsnow = "lecomte2013"
@@ -192,13 +331,10 @@ This change can be tuned on/off in the user_nl_cice in the case folder. Default 
 
 
 and will use NorESM2 treatment of wind drift of snow. Setting
-
 ::
  
- &snowphys_nml
-  blowingsnow = "none"
-
-::
+   &snowphys_nml
+     blowingsnow = "none"
 
 will reset the NorESM2 specific addition and the effect of wind drift of snow into ocean will not be included. It is also possible to change the snow density ``rhos`` and the snow thermal conductivity ``ksno``. Be aware that this will influence the overall tuning of the coupled model. 
 
@@ -233,7 +369,6 @@ Output from the model is changed by controlling the user_nl_cice file in your ca
    f_aicen="mxxxx"
    f_snowfracn="mxxxx"
 
-::
 
 where the ``f_*`` flags are used to change the writing of specific variables, and the ``histfreq`` and ``histfreq_n`` variables are used to specify type of history files written, and their frequency. The ``f_CMIP`` flag activates the specific SIMIP/CMIP variables used the CMIP6 runs. By default, the model writes extensive output with a monthly frequency, and more limited at daily basis. 
 
@@ -242,21 +377,18 @@ The easiest way to turn of daily output from CICE is to put
 
    histfreq = 'm','x','x','x','x'
 
-:: 
 
-in the user_nl_cice file. 
+in the ``user_nl_cice`` file. 
 
 High-frequency output can be achieved by manipulating the  ``histfreq`` and ``histfreq_n`` variables, together with the specific variable should be at higher frequency. To use 3-hourly output of the sea ice velocity from the model set
 ::
+
    histfreq = 'm','d','h','x','x'
    histfreq_n = 1,1,3,1,1
    f_siu = 'm,d,h,x,x'
    f_siv = 'm,d,h,x,x'
-::
 
 Be aware that the model writes one file per time step. Therefore, this should be done for short runs, only, and the high-frequency output should be collected together in one (or a few) larger files after the model run, e.g. by using the ``ncrcat`` command. 
-
-
 
 Code modification
 ^^^^^^^^^^^^^^^^^
@@ -266,14 +398,14 @@ To make more subtantial modification to the code than what is possible by the us
 
 2. Copy the source code (the fortran file(s) you want to modify) to the SourceMods/src.cice folder in the case directory, and then make the modifications needed before building the model. By the use of this method, you will not change the source code in the <noresm-base> folder.
 
-The CICE source code is located in::
+The CICE source code is located in
+::
   
   <noresm-base>/components/cice/src/
   
-
+  
 More information is found in the CESM-CICE User Guide:
 https://cesmcice.readthedocs.io/en/latest/
-
 
 References
 ^^^^^^^^^^
