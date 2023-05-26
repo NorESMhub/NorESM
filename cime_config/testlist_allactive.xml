@@ -1,5 +1,16 @@
 <?xml version="1.0"?>
 <testlist version="2.0">
+  <!-- begin noresm tests -->
+  <test name="ERS_Ld3" grid="f19_tn14_wtn14" compset="2000_CAM60_CLM50%SP_CICE_BLOM_MOSART_SGLC_WW3DEV_SESP" testmods="allactive/defaultio--allactive/wavice">
+    <machines>
+      <machine name="betzy" compiler="intel" category="aux_noresm"/>
+    </machines>
+    <options>
+      <option name="wallclock"> 00:30:00 </option>
+    </options>
+  </test>
+  <!-- end noresm tests -->
+
   <test name="ERI" grid="f09_g17" compset="B1850" testmods="allactive/defaultio">
     <machines>
       <machine name="cheyenne" compiler="intel" category="prealpha"/>
