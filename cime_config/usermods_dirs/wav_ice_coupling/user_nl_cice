@@ -4,14 +4,15 @@
 ! Note - that it does not matter what namelist group the namelist_var belongs to
 !----------------------------------------------------------------------------------
 
-tr_fsd=.true.
-nfsd=12
+tr_fsd = .true.
+nfsd = 12
 wave_spec_type = "random"
 histfreq = 'm','d','x','x','x'
 histfreq_n = 1,1,0,0,0
 f_afsd = 'md'
-f_dafsd_newi='md'
-f_dafsd_weld='md'
-!f_wave_sig_ht='md'
-f_dafsd_latg='md'
-f_dafsd_wave='md'
+f_dafsd_newi = 'md'
+f_dafsd_weld = 'md'
+!f_wave_sig_ht = 'md'
+f_dafsd_latg = 'md'
+f_dafsd_wave = 'md'
+wave_spec_type = 'constant' 
