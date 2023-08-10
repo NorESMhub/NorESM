@@ -44,7 +44,7 @@ The NorESM-2.0 documentation: https://noresm-docs.readthedocs.io/en/noresm2/
     - NorESM2 version,  April  2020 
     - Initial preliminary release of CMIP6 version.
 
-For a detailed description of all NorESM2.0.X releases, please see https://noresm-docs.readthedocs.io/en/noresm2/releases/
+For a detailed description of all NorESM2.0.X releases, please see https://noresm-docs.readthedocs.io/en/noresm2/access/releases_noresm20.html
 
 ### NorESM1 and CMIP5
 For the NorESM code base used in CMIP5, please see the **noresm1** branch.
