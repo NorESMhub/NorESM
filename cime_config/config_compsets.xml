@@ -41,16 +41,12 @@
   <compset>
     <alias>B1850</alias>
     <lname>1850_CAM60_CLM50%BGC-CROP_CICE_POP2%ECO%ABIO-DIC_MOSART_CISM2%NOEVOLVE_WW3_BGC%BDRD</lname>
-    <science_support grid="f09_g17_gl4"/>
-    <science_support grid="f09_g17"/>
   </compset>
 
   <!-- Same as B1850, but with cmip6-related modifiers for some components -->
   <compset>
     <alias>B1850cmip6</alias>
     <lname>1850_CAM60_CLM50%BGC-CROP-CMIP6DECK_CICE%CMIP6_POP2%ECO%ABIO-DIC_MOSART_CISM2%NOEVOLVE_WW3_BGC%BDRD</lname>
-    <science_support grid="f09_g17_gl4"/>
-    <science_support grid="f09_g17"/>
   </compset>
 
   <compset>
@@ -66,16 +62,12 @@
   <compset>
     <alias>BW1850</alias>
     <lname>1850_CAM60%WCTS_CLM50%BGC-CROP_CICE_POP2%ECO%NDEP_MOSART_CISM2%NOEVOLVE_WW3</lname>
-    <science_support grid="f09_g17_gl4"/>
-    <science_support grid="f09_g17"/>
   </compset>
 
   <!-- Same as BW1850, but with cmip6-related modifiers for some components -->
   <compset>
     <alias>BW1850cmip6</alias>
     <lname>1850_CAM60%WCTS_CLM50%BGC-CROP-CMIP6WACCMDECK_CICE%CMIP6_POP2%ECO%NDEP_MOSART_CISM2%NOEVOLVE_WW3</lname>
-    <science_support grid="f09_g17_gl4"/>
-    <science_support grid="f09_g17"/>
   </compset>
 
   <compset>
@@ -101,16 +93,12 @@
   <compset>
     <alias>BWHIST</alias>
     <lname>HIST_CAM60%WCTS_CLM50%BGC-CROP_CICE_POP2%ECO%NDEP_MOSART_CISM2%NOEVOLVE_WW3</lname>
-    <science_support grid="f09_g17_gl4"/>
-    <science_support grid="f09_g17"/>
   </compset>
 
   <!-- Same as BWHIST, but with cmip6-related modifiers for some components -->
   <compset>
     <alias>BWHISTcmip6</alias>
     <lname>HIST_CAM60%WCTS_CLM50%BGC-CROP-CMIP6WACCMDECK_CICE%CMIP6_POP2%ECO%NDEP_MOSART_CISM2%NOEVOLVE_WW3</lname>
-    <science_support grid="f09_g17_gl4"/>
-    <science_support grid="f09_g17"/>
   </compset>
 
   <compset>
@@ -121,16 +109,12 @@
   <compset>
     <alias>BHIST</alias>
     <lname>HIST_CAM60_CLM50%BGC-CROP_CICE_POP2%ECO%ABIO-DIC_MOSART_CISM2%NOEVOLVE_WW3_BGC%BDRD</lname>
-    <science_support grid="f09_g17_gl4"/>
-    <science_support grid="f09_g17"/>
   </compset>
 
   <!-- Same as BHIST, but with cmip6-related modifiers for some components -->
   <compset>
     <alias>BHISTcmip6</alias>
     <lname>HIST_CAM60_CLM50%BGC-CROP-CMIP6DECK_CICE%CMIP6_POP2%ECO%ABIO-DIC_MOSART_CISM2%NOEVOLVE_WW3_BGC%BDRD</lname>
-    <science_support grid="f09_g17_gl4"/>
-    <science_support grid="f09_g17"/>
   </compset>
 
   <compset>
@@ -199,58 +183,42 @@
   <compset>
     <alias>BSSP585</alias>
     <lname>SSP585_CAM60_CLM50%BGC-CROP_CICE_POP2%ECO%ABIO-DIC_MOSART_CISM2%NOEVOLVE_WW3_BGC%BDRD</lname>
-    <science_support grid="f09_g17_gl4"/>
-    <science_support grid="f09_g17"/>
   </compset>
 
   <compset>
     <alias>BSSP126</alias>
     <lname>SSP126_CAM60_CLM50%BGC-CROP_CICE_POP2%ECO%ABIO-DIC_MOSART_CISM2%NOEVOLVE_WW3_BGC%BDRD</lname>
-    <science_support grid="f09_g17_gl4"/>
-    <science_support grid="f09_g17"/>
   </compset>
 
   <compset>
     <alias>BSSP245</alias>
     <lname>SSP245_CAM60_CLM50%BGC-CROP_CICE_POP2%ECO%ABIO-DIC_MOSART_CISM2%NOEVOLVE_WW3_BGC%BDRD</lname>
-    <science_support grid="f09_g17_gl4"/>
-    <science_support grid="f09_g17"/>
   </compset>
 
   <compset>
     <alias>BSSP370</alias>
     <lname>SSP370_CAM60_CLM50%BGC-CROP_CICE_POP2%ECO%ABIO-DIC_MOSART_CISM2%NOEVOLVE_WW3_BGC%BDRD</lname>
-    <science_support grid="f09_g17_gl4"/>
-    <science_support grid="f09_g17"/>
   </compset>
 
   <!-- Same as above, but with cmip6-related modifiers for some components -->
   <compset>
     <alias>BSSP585cmip6</alias>
     <lname>SSP585_CAM60_CLM50%BGC-CROP-CMIP6DECK_CICE%CMIP6_POP2%ECO%ABIO-DIC_MOSART_CISM2%NOEVOLVE_WW3_BGC%BDRD</lname>
-    <science_support grid="f09_g17_gl4"/>
-    <science_support grid="f09_g17"/>
   </compset>
 
   <compset>
     <alias>BSSP126cmip6</alias>
     <lname>SSP126_CAM60_CLM50%BGC-CROP-CMIP6DECK_CICE%CMIP6_POP2%ECO%ABIO-DIC_MOSART_CISM2%NOEVOLVE_WW3_BGC%BDRD</lname>
-    <science_support grid="f09_g17_gl4"/>
-    <science_support grid="f09_g17"/>
   </compset>
 
   <compset>
     <alias>BSSP245cmip6</alias>
     <lname>SSP245_CAM60_CLM50%BGC-CROP-CMIP6DECK_CICE%CMIP6_POP2%ECO%ABIO-DIC_MOSART_CISM2%NOEVOLVE_WW3_BGC%BDRD</lname>
-    <science_support grid="f09_g17_gl4"/>
-    <science_support grid="f09_g17"/>
   </compset>
 
   <compset>
     <alias>BSSP370cmip6</alias>
     <lname>SSP370_CAM60_CLM50%BGC-CROP-CMIP6DECK_CICE%CMIP6_POP2%ECO%ABIO-DIC_MOSART_CISM2%NOEVOLVE_WW3_BGC%BDRD</lname>
-    <science_support grid="f09_g17_gl4"/>
-    <science_support grid="f09_g17"/>
   </compset>
 
   <!-- NorESM compset -->
@@ -276,16 +244,12 @@
     <!--lname>1850_CAM60%PTAERO_CLM50%BGC-CROP_CICE_BLOM_MOSART_SGLC_SWAV</lname -->
     <!-- lname>1850_CAM60%NORESM_CLM50%BGC-CROP_CICE_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname -->
     <lname>1850_CAM60%NORESM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f09_tn14"/>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <!-- uses differently organized emission files : FRC2 -->
   <compset>
     <alias>N1850frc2</alias>
     <lname>1850_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f09_tn14"/>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <compset>
@@ -296,122 +260,96 @@
   <compset>
     <alias>N1850esm</alias>
     <lname>1850_CAM60%NORESM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BPRPDMS</lname>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <!-- uses differently organized emission files : FRC2 -->
   <compset>
     <alias>N1850frc2esm</alias>
     <lname>1850_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BPRPDMS</lname>
-    <science_support grid="f19_tn14"/>
   </compset>
 
    <compset>
     <alias>N2000</alias>
     <lname>2000_CAM60%NORESM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f09_tn14"/>
-    <science_support grid="f19_tn14"/>
   </compset>
 
    <compset>
     <alias>N2000frc2</alias>
     <lname>2000_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f09_tn14"/>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <compset>
     <alias>NHIST</alias>
     <lname>HIST_CAM60%NORESM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f09_tn14"/>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <!--uses differently organized emission files : FRC2 -->
   <compset>
     <alias>NHISTfrc2</alias>
     <lname>HIST_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f09_tn14"/>
-    <science_support grid="f19_tn14"/>
   </compset>
 
    <compset>
     <alias>NHISTesm</alias>
     <lname>HIST_CAM60%NORESM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BPRPDMS</lname>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <!--uses differently organized emission files : FRC2 -->
   <compset>
     <alias>NHISTfrc2esm</alias>
     <lname>HIST_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BPRPDMS</lname>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <compset>
     <alias>NHISTpintcf</alias>
     <lname>HIST_CAM60%NORESM%PINTCF_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <compset>
     <alias>NHISTpiaer</alias>
     <lname>HIST_CAM60%NORESM%PIAER_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f19_tn14"/>
   </compset>
 
  <compset>
     <alias>NHISTpiaeroxid</alias>
     <lname>HIST_CAM60%NORESM%PIAEROXID_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <compset>
     <alias>NCO2x4cmip6</alias>
     <lname>1850_CAM60%NORESM%4xCO2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f09_tn14"/>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <!-- uses differently organized emission files : FRC2 -->
   <compset>
     <alias>NCO2x4cmip6frc2</alias>
     <lname>1850_CAM60%NORESM%FRC2%4xCO2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f09_tn14"/>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <compset>
     <alias>N1PCTcmip6</alias>
     <lname>1850_CAM60%NORESM%1PCT_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f09_tn14"/>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <!-- uses differently organized emission files : FRC2 -->
   <compset>
     <alias>N1PCTcmip6frc2</alias>
     <lname>1850_CAM60%NORESM%FRC2%1PCT_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f09_tn14"/>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <compset>
     <alias>N1850ghgonly</alias>
     <lname>1850_CAM60%NORESM%GHGONLY_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <compset>
     <alias>N1850natonly</alias>
     <lname>1850_CAM60%NORESM%NATONLY_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <compset>
     <alias>N1850aeroxidonly</alias>
     <lname>1850_CAM60%NORESM%AEROXIDONLY_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <!-- NorESM scenarios -->
@@ -419,21 +357,16 @@
   <compset>
     <alias>NSSP126frc2</alias>
     <lname>SSP126_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f09_tn14"/>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <compset>
     <alias>NSSP126frc2ext</alias>
     <lname>SSP126_CAM60%NORESM%FRC2EXT_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <compset>
     <alias>NSSP245frc2</alias>
     <lname>SSP245_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f09_tn14"/>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <compset>
@@ -464,57 +397,46 @@
   <compset>
     <alias>NSSP370frc2</alias>
     <lname>SSP370_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f09_tn14"/>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <compset>
     <alias>NSSP370LOWNTCFfrc2</alias>
     <lname>SSP370LOWNTCF_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <compset>
     <alias>NSSP370REFGHGLOWNTCFfrc2</alias>
     <lname>SSP370REFGHGLOWNTCF_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <compset>
     <alias>NSSP585frc2</alias>
     <lname>SSP585_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f09_tn14"/>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <compset>
     <alias>NSSP585frc2ext</alias>
     <lname>SSP585_CAM60%NORESM%FRC2EXT_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <compset>
     <alias>NSSP585frc2esm</alias>
     <lname>SSP585_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BPRPDMS</lname>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <compset>
     <alias>NSSP534frc2</alias>
     <lname>SSP534_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <compset>
     <alias>NSSP534frc2ext</alias>
     <lname>SSP534_CAM60%NORESM%FRC2EXT_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <compset>
     <alias>NSSP534frc2esm</alias>
     <lname>SSP534_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BPRPDMS</lname>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <!-- Keyclim compsets with CISM -->
@@ -552,19 +474,16 @@
   <compset>
     <alias>NSSP245frc2ghgonly</alias>
     <lname>1850_CAM60%NORESM%GHGONLY%SSP245%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <compset>
     <alias>NSSP245frc2natonly</alias>
     <lname>1850_CAM60%NORESM%NATONLY%SSP245%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <compset>
     <alias>NSSP245frc2aeroxidonly</alias>
     <lname>1850_CAM60%NORESM%AEROXIDONLY%SSP245%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
-    <science_support grid="f19_tn14"/>
   </compset>
 
   <compset>
