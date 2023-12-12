@@ -227,22 +227,19 @@
 
     	There are two types of compsets for NorESM2 : the (i) ones without "frc2", and (ii) the ones with "frc2" in their name.
 	These compsets differ slightly in how atmospheric emission files are organized (but in a climatological sense they are very close).
-	The "frc2" compset have been introduced to avoid a problem of non-reproducibility on the fram HPC.  
+	The "frc2" compset have been introduced to avoid a problem of non-reproducibility on the fram HPC.
 	The problem was that identical simulations setup without "frc2" started to divergence on average after 5 to 8 years into the simulations.i
 	With "frc2", we do not have that problem on fram HPC anaymore.
 
 	For the CMIP6 simulations submitted to ESGF, some have been done without "frc2", some with "frc2".
 	As a general rule :
 	(i) f09 resolution : all simulations have been done WITH frc2.
-	(ii) f19 resolution : 
+	(ii) f19 resolution :
        		piControl + historical + perturbed historical (hist-aer, hist-GHG, hist-nat) have been done WITHOUT frc2
 		scenarios + perturbed scenarions : have been done WITH frc2 -->
 
   <compset>
     <alias>N1850</alias>
-    <!--lname>1850_CAM60%PTAERO_CLM50%BGC_CICE_BLOM_MOSART_SGLC_SWAV</lname-->
-    <!--lname>1850_CAM60%PTAERO_CLM50%BGC-CROP_CICE_BLOM_MOSART_SGLC_SWAV</lname -->
-    <!-- lname>1850_CAM60%NORESM_CLM50%BGC-CROP_CICE_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname -->
     <lname>1850_CAM60%NORESM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
   </compset>
 
@@ -488,42 +485,42 @@
 
   <compset>
     <alias>N1850OC</alias>
-    <lname>1850_CAM60%PTAERO_CLM50%BGC_CICE_BLOM%ECO_MOSART_SGLC_SWAV</lname>
+    <lname>1850_CAM60%NORESM_CLM50%BGC_CICE_BLOM%ECO_MOSART_SGLC_SWAV</lname>
   </compset>
 
   <compset>
     <alias>N1850OCBPRP</alias>
-    <lname>1850_CAM60%PTAERO_CLM50%BGC_CICE_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BPRP</lname>
+    <lname>1850_CAM60%NORESM_CLM50%BGC_CICE_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BPRP</lname>
   </compset>
 
   <compset>
     <alias>N1850OCBPRPDMS</alias>
-    <lname>1850_CAM60%PTAERO_CLM50%BGC_CICE_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BPRPDMS</lname>
+    <lname>1850_CAM60%NORESM_CLM50%BGC_CICE_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BPRPDMS</lname>
   </compset>
 
   <compset>
     <alias>N1850OCBDRDDMS</alias>
-    <lname>1850_CAM60%PTAERO_CLM50%BGC-CROP_CICE_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+    <lname>1850_CAM60%NORESM_CLM50%BGC-CROP_CICE_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
   </compset>
 
   <compset>
     <alias>NHISTOCBDRDDMS</alias>
-    <lname>HIST_CAM60%PTAERO_CLM50%BGC-CROP_CICE_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+    <lname>HIST_CAM60%NORESM_CLM50%BGC-CROP_CICE_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
   </compset>
 
   <compset>
     <alias>N1850OCDMS</alias>
-    <lname>1850_CAM60%PTAERO_CLM50%BGC_CICE_BLOM%ECO_MOSART_SGLC_SWAV_BGC%DMS</lname>
+    <lname>1850_CAM60%NORESM_CLM50%BGC_CICE_BLOM%ECO_MOSART_SGLC_SWAV_BGC%DMS</lname>
   </compset>
 
   <compset>
     <alias>N1850P</alias>
-    <lname>1850_CAM60%PTAERO_CLM50%BGC_CICE_POP2_MOSART_SGLC_SWAV</lname>
+    <lname>1850_CAM60%NORESM_CLM50%BGC_CICE_POP2_MOSART_SGLC_SWAV</lname>
   </compset>
 
   <compset>
     <alias>N1850G</alias>
-    <lname>1850_CAM60%PTAERO_CLM50%BGC-CROP_CICE_BLOM_MOSART_CISM2%EVOLVE_SWAV</lname>
+    <lname>1850_CAM60%NORESM_CLM50%BGC-CROP_CICE_BLOM_MOSART_CISM2%EVOLVE_SWAV</lname>
   </compset>
 
   <compset>
