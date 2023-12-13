@@ -524,11 +524,6 @@
   </compset>
 
   <compset>
-    <alias>N1850CwWs</alias>
-    <lname>1850_CAM60%WTSM_CLM50%BGC_CICE_BLOM_MOSART_SGLC_SWAV</lname>
-  </compset>
-
-  <compset>
     <alias>N1850C5L45BGCR</alias>
     <lname>1850_CAM50_CLM45%BGC_CICE_BLOM_RTM_SGLC_SWAV</lname>
   </compset>
