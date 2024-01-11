@@ -1,4 +1,4 @@
-![NorESM logo](doc/img/NORESM-logo.png)
+![NorESM logo](img/NORESM-logo.png)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3905091.svg)](https://doi.org/10.5281/zenodo.3905091)
 
