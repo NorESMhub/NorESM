@@ -1,0 +1,2 @@
+# Turn on AEROCOM diagnostic output
+./xmlchange AEROCOM=TRUE
