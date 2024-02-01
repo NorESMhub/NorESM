@@ -36,7 +36,15 @@
     - grid  (optional regular expression match for grid to work with the compset)
   </help>
 
-  <!-- 1850 compsets Default, Mosart, Wave for CESM2 -->
+  <!-- N Compsets -->
+  <!-- convert CAM to FV output -->
+
+  <compset>
+    <alias>NB1850proto</alias>
+    <lname>1850_CAM%DEV%LT%NORESM%CAMoslo_CLM51%SP_CICE_BLOM_MOSART_SGLC_SWAV</lname>
+  </compset>
+
+  <!-- B compsets -->
 
   <compset>
     <alias>B1850</alias>

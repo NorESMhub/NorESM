@@ -1,0 +1,4 @@
+interpolate_output = .true.
+interpolate_gridtype = 1
+interpolate_nlon = 288
+interpolate_nlat = 192
