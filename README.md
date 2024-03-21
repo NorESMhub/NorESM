@@ -11,6 +11,11 @@ NorESM2-LM and NorESM2-MM CMIP6 simulations
 The NorESM-2.0 documentation: https://noresm-docs.readthedocs.io/en/noresm2/
 
 ## Releases in noresm2
+- [release-noresm2.0.7](https://github.com/NorESMhub/NorESM/releases/tag/release-noresm2.0.7)
+    - Release of NorESM2.0.7, 15th of November 2023
+    - Available to reproduce CMIP6 results of NorESM2
+    - Updated CIME for better queue management on Betzy
+
 - [release-noresm2.0.6](https://github.com/NorESMhub/NorESM/releases/tag/release-noresm2.0.6)
     - Release of NorESM2.0.6, 12th of December 2022
     - Available to reproduce CMIP6 results of NorESM2
