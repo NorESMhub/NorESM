@@ -32,6 +32,8 @@ This repository has the following NorESM branches:
 
 * **noresm_landsites** - NorESM2 version for site-level simulations over land, specifically working with [NorESM Land Sites Platform](https://github.com/NorESMhub/noresm-land-sites-platform)
 
+* **noresm2_1_develop** - includes a few bug fixes along with numerous code improvements from the NorESM2.0 release (see [NorESM2.1 documentation](https://noresm-docs.readthedocs.io/en/noresm2.1/) for further details).
+
 * **noresm2** - contains NorESM2.0.X documentation, code and configurations as used for most NorESM2-LM and NorESM2-MM CMIP6 simulations. See documentation for a [detailed description of the NorESM2.0.X releases](https://noresm-docs.readthedocs.io/en/noresm2/access/releases_noresm20.html).
 
 * **noresm1** - contains a copy of old wiki NorESM1 documentation, refering to https://github.com/metno/noresm NorESM1 code, and incompletely to the development code under https://github.com/metno/noresm-dev (restricted access), used in 2019 for CMIP6 simulations
