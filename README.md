@@ -15,7 +15,7 @@ Visit the [NorESM home page](https://www.noresm.org/) to learn more about the No
 
 - [NorESM-1 documentation](https://noresm-docs.readthedocs.io/en/noresm1)
 - [NorESM-2.0 documentation](https://noresm-docs.readthedocs.io/en/noresm2/)
-- [Latest NorESM documentation](https://noresm-docs.readthedocs.io/en/latest) currently showing NorESM2 documentation
+- [Latest NorESM documentation](https://noresm-docs.readthedocs.io/en/latest) list of documentation pages for all NorESM versions
 
 
 # Branches in NorESM
@@ -24,9 +24,9 @@ This repository has the following NorESM branches:
 
 * **master** - combines and contains recent developments, based on the latest release (at this stage NorESM2.0.2)
 
-* **master_cesm** - Community Earth System Model master fork
+* **noresm2_3_develop** - development branch for upcoming NorESM2.3 version
 
-* **noresm2.2** - is under development, and will contain updates from CESM2.2.  Only few compsets work technically at the moment (e.g. coupled compsets do not work), and no results have been verified yet.  This branch should currently not be used for any scientific study.
+* **noresm2.2** - contain updates from CESM2.2.  Only few compsets work technically at the moment (e.g. coupled compsets do not work), and no results have been verified yet.  This branch should not be used for scientific studies.
 
 * **release-noresm2.0.2_keyClim** - NorESM2 version for KeyClim project experiments (started from tag release-noresm2.0.2)
 
