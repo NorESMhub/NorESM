@@ -412,6 +412,11 @@
   </compset>
 
   <compset>
+    <alias>NSSP585cloud2</alias>
+    <lname>SSP585_CAM60%NORESM%FRC2%CLOUD2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+  </compset>
+
+  <compset>
     <alias>NSSP585frc2ext</alias>
     <lname>SSP585_CAM60%NORESM%FRC2EXT_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
   </compset>
