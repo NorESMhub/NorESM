@@ -1,4 +1,16 @@
-==================================
+=============================
+  NorESM development branch
+=============================
+
+This is the main development branch for NorESM, which is currently in
+development towards NorESM2.5.
+
+* This branch is for technical testing only!
+
+* Externals.cfg in this branch points to the latest tag versions of NorESM
+  components that are consitent with the NorESM2.5 build system.
+
+
  The Community Earth System Model
 ==================================
 
