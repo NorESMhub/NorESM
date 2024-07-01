@@ -36,33 +36,20 @@
     - grid  (optional regular expression match for grid to work with the compset)
   </help>
 
-  <!-- 1850 compsets Default, Mosart, Wave for CESM2 -->
+  <!-- 1850 compset -->
 
   <compset>
-    <alias>B1850</alias>
-    <lname>1850_CAM60_CLM50%BGC-CROP_CICE_POP2%ECO_MOSART_CISM2%GRIS-NOEVOLVE_WW3_BGC%BDRD</lname>
+    <alias>N1850</alias>
+    <lname>1850_CAM%DEV%LT%NORESM%CAMoslo_CLM51%SP_CICE_BLOM%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
   </compset>
 
   <compset>
-    <alias>BW1850</alias>
-    <lname>1850_CAM60%WCTS_CLM50%BGC-CROP_CICE_POP2%ECO%NDEP_MOSART_CISM2%GRIS-NOEVOLVE_WW3</lname>
-  </compset>
-  <compset>
-    <alias>BWma1850</alias>
-    <lname>1850_CAM60%WCCM_CLM50%BGC-CROP_CICE_POP2%ECO%NDEP_MOSART_CISM2%GRIS-NOEVOLVE_WW3</lname>
-  </compset>
-
-  <compset>
-    <alias>BHIST</alias>
-    <lname>HIST_CAM60_CLM50%BGC-CROP_CICE_POP2%ECO_MOSART_CISM2%GRIS-NOEVOLVE_WW3_BGC%BDRD</lname>
+    <alias>N1850mam4</alias>
+    <lname>1850_CAM%DEV%LT%GHGMAM4_CLM51%SP_CICE_BLOM%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
   </compset>
 
   <!-- BG compsets: evolving ice sheet -->
 
-  <compset>
-    <alias>B1850G</alias>
-    <lname>1850_CAM60_CLM50%BGC-CROP_CICE_POP2%ECO_MOSART_CISM2%GRIS-EVOLVE_WW3_BGC%BDRD</lname>
-  </compset>
 
   <!-- Prognostic wave -->
 
@@ -75,23 +62,7 @@
 
   <!-- SOM compsets -->
 
-  <compset>
-    <alias>ETEST</alias>
-    <lname>2000_CAM60_CLM50%SP_CICE_DOCN%SOM_MOSART_SGLC_SWAV_TEST</lname>
-  </compset>
-
-  <compset>
-    <alias>E1850TEST</alias>
-    <lname>1850_CAM60_CLM50%SP_CICE_DOCN%SOM_MOSART_SGLC_SWAV_TEST</lname>
-  </compset>
-
   <!-- fully coupled MOM6 runs -->
-  <compset>
-    <!-- MOM is an optional component of CESM and is not checked out by default
-	 use checkout_externals mom to add it -->
-    <alias>B1850MOM</alias>
-    <lname>1850_CAM60_CLM50%BGC-CROP_CICE_MOM6_MOSART_CISM2%GRIS-NOEVOLVE_SWAV_BGC%BDRD</lname>
-  </compset>
 
   <!-- All active except data atmosphere
        Used for spinup and testing of CISM couplings -->
