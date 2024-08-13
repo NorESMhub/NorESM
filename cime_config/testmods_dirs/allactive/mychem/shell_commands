@@ -1,2 +1,8 @@
-cp  /proj/bolinc/users/x_alewi/NorESM2/noresm_el9/cases/cpp_chem_test2/my_chem_mech.in .
+rm -f $CIMEROOT/../components/cam/chem_proc/campp
+
+cp $CIMEROOT/../components/cam/src/chemistry/pp_trop_mam_oslo/chem_mech.in my_chem_mech.in
+sed -i 's/2.9/8.8/' my_chem_mech.in
+sed -i 's/BEGSIM/*BEGSIM/' my_chem_mech.in
+sed -i 's/ENDSIM/*ENDSIM/' my_chem_mech.in
+
 ./xmlchange --append CAM_CONFIG_OPTS="--usr_mech_infile `pwd`/my_chem_mech.in"
