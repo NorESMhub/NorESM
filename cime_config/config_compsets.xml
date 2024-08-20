@@ -50,22 +50,15 @@
 
   <!-- BG compsets: evolving ice sheet -->
 
-
   <!-- Prognostic wave -->
 
-
   <!-- Data wave -->
-
-
-  <!-- Single Column POP -->
-
 
   <!-- SOM compsets -->
 
   <!-- fully coupled MOM6 runs -->
 
-  <!-- All active except data atmosphere
-       Used for spinup and testing of CISM couplings -->
+  <!-- All active except data atmosphere:  used for spinup and testing of CISM couplings -->
 
   <compset>
      <alias>J1850G</alias>
