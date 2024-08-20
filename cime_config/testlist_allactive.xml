@@ -3,7 +3,7 @@
 
   <test name="ERS_Ld5" grid="f09_tn14" compset="N1850frc2" testmods="allactive/defaultio">
     <machines>
-      <machine name="betzy" compiler="intel" category="noresm_prealpha"/>
+      <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00 </option>
@@ -11,7 +11,7 @@
   </test>
   <test name="SMS_D_Ld1" grid="f09_tn14" compset="N1850frc2" testmods="allactive/defaultio">
     <machines>
-      <machine name="betzy" compiler="intel" category="noresm_prealpha"/>
+      <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00 </option>
@@ -19,7 +19,7 @@
   </test>
   <test name="PFS" grid="f09_tn14" compset="N1850frc2" testmods="allactive/defaultio">
     <machines>
-      <machine name="betzy" compiler="intel" category="noresm_prealpha"/>
+      <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00 </option>
@@ -27,7 +27,7 @@
   </test>
   <test name="ERS_Ld5" grid="f09_tn14" compset="NHISTfrc2" testmods="allactive/defaultio">
     <machines>
-      <machine name="betzy" compiler="intel" category="noresm_prealpha"/>
+      <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00 </option>
@@ -35,7 +35,7 @@
   </test>
   <test name="SMS_D_Ld1" grid="f09_tn14" compset="NHISTfrc2" testmods="allactive/defaultio">
     <machines>
-      <machine name="betzy" compiler="intel" category="noresm_prealpha"/>
+      <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00 </option>
@@ -43,7 +43,7 @@
   </test>
   <test name="PFS" grid="f09_tn14" compset="NHISTfrc2" testmods="allactive/defaultio">
     <machines>
-      <machine name="betzy" compiler="intel" category="noresm_prealpha"/>
+      <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00 </option>
@@ -52,7 +52,7 @@
 
   <test name="ERS_Ld5" grid="f19_tn14" compset="N1850" testmods="allactive/defaultio">
     <machines>
-      <machine name="betzy" compiler="intel" category="noresm_prealpha"/>
+      <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00 </option>
@@ -60,7 +60,7 @@
   </test>
   <test name="SMS_D_Ld1" grid="f19_tn14" compset="N1850" testmods="allactive/defaultio">
     <machines>
-      <machine name="betzy" compiler="intel" category="noresm_prealpha"/>
+      <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00 </option>
@@ -68,7 +68,7 @@
   </test>
   <test name="PFS" grid="f19_tn14" compset="N1850">
     <machines>
-      <machine name="betzy" compiler="intel" category="noresm_prealpha"/>
+      <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00 </option>
@@ -76,7 +76,7 @@
   </test>
   <test name="ERS_Ld5" grid="f19_tn14" compset="NHIST" testmods="allactive/defaultio">
     <machines>
-      <machine name="betzy" compiler="intel" category="noresm_prealpha"/>
+      <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00 </option>
@@ -84,7 +84,7 @@
   </test>
   <test name="SMS_D_Ld1" grid="f19_tn14" compset="NHIST" testmods="allactive/defaultio">
     <machines>
-      <machine name="betzy" compiler="intel" category="noresm_prealpha"/>
+      <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00 </option>
@@ -92,7 +92,7 @@
   </test>
   <test name="PFS" grid="f19_tn14" compset="NHIST">
     <machines>
-      <machine name="betzy" compiler="intel" category="noresm_prealpha"/>
+      <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00 </option>
@@ -101,7 +101,7 @@
 
   <test name="ERS_Ld5" grid="f19_tn14" compset="N1850esm" testmods="allactive/defaultio">
     <machines>
-      <machine name="betzy" compiler="intel" category="noresm_prealpha"/>
+      <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00 </option>
