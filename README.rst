@@ -1,3 +1,7 @@
+.. image:: img/NORESM-logo.png
+  :width: 150
+  :alt: NorESM logo
+
 =============================
   NorESM development branch
 =============================
