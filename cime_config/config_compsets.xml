@@ -326,11 +326,24 @@
     <science_support grid="f09_tn14"/>
     <science_support grid="f19_tn14"/>
   </compset>
+  <compset>
+    <alias>NHISTNCPM</alias>
+    <lname>HIST_CAM60%NORESM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_NORCPM_BGC%BDRDDMS</lname>
+    <science_support grid="f09_tn14"/>
+    <science_support grid="f19_tn14"/>
+  </compset>
 
   <!--uses differently organized emission files : FRC2 -->
   <compset>
     <alias>NHISTfrc2</alias>
     <lname>HIST_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+    <science_support grid="f09_tn14"/>
+    <science_support grid="f19_tn14"/>
+  </compset>
+
+  <compset>
+    <alias>NHISTNCPMfrc2</alias>
+    <lname>HIST_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_NORCPM_BGC%BDRDDMS</lname>
     <science_support grid="f09_tn14"/>
     <science_support grid="f19_tn14"/>
   </compset>
