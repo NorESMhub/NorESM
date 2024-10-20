@@ -243,6 +243,12 @@
     <lname>1850_CAM60%NORESM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
   </compset>
 
+  <compset>
+    <alias>N1850_tropstratchem</alias>
+    <lname>1850_CAM60%NORESM%TROPSTRATCHEM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+    <science_support grid="f09_tn14"/>
+    <science_support grid="f19_tn14"/>
+  </compset>
   <!-- uses differently organized emission files : FRC2 -->
   <compset>
     <alias>N1850frc2</alias>
@@ -278,6 +284,13 @@
   <compset>
     <alias>NHIST</alias>
     <lname>HIST_CAM60%NORESM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+  </compset>
+
+  <compset>
+    <alias>NHIST_tropstratchem</alias>
+    <lname>HIST_CAM60%NORESM%TROPSTRATCHEM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+    <science_support grid="f09_tn14"/>
+    <science_support grid="f19_tn14"/>
   </compset>
 
   <!--uses differently organized emission files : FRC2 -->
@@ -392,6 +405,13 @@
   </compset>
 
   <compset>
+    <alias>NSSP370_tropstratchem</alias>
+    <lname>SSP370_CAM60%NORESM%TROPSTRATCHEM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+    <science_support grid="f09_tn14"/>
+    <science_support grid="f19_tn14"/>
+  </compset>
+
+  <compset>
     <alias>NSSP370frc2</alias>
     <lname>SSP370_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
   </compset>
@@ -404,6 +424,13 @@
   <compset>
     <alias>NSSP370REFGHGLOWNTCFfrc2</alias>
     <lname>SSP370REFGHGLOWNTCF_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+  </compset>
+
+  <compset>
+    <alias>NSSP585_tropstratchem</alias>
+    <lname>SSP585_CAM60%NORESM%TROPSTRATCHEM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+    <science_support grid="f09_tn14"/>
+    <science_support grid="f19_tn14"/>
   </compset>
 
   <compset>

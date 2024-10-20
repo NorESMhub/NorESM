@@ -49,7 +49,15 @@
       <option name="wallclock"> 01:00 </option>
     </options>
   </test>
-
+  <test name="ERS_Ld5" grid="f09_tn14" compset="NHIST_tropstratchem" testmods="allactive/defaultio">
+    <machines>
+      <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
+    </machines>
+    <options>
+      <option name="comment">Test full chemistry compset</option>
+      <option name="wallclock"> 01:00 </option>
+    </options>
+  </test>
   <test name="ERS_Ld5" grid="f19_tn14" compset="N1850" testmods="allactive/defaultio">
     <machines>
       <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
