@@ -43,6 +43,10 @@
     <lname>1850_CAM%DEV%LT%NORESM%CAMoslo_CLM60%SP_CICE_BLOM%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
   </compset>
   <compset>
+    <alias>N1850clmbgc</alias>
+    <lname>1850_CAM%DEV%LT%NORESM%CAMoslo_CLM60%BGC-CROP_CICE_BLOM%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
+  </compset>
+  <compset>
     <alias>N1850fates-sp</alias>
     <lname>1850_CAM%DEV%LT%NORESM%CAMoslo_CLM60%FATES-SP_CICE_BLOM%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
   </compset>
