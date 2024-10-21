@@ -25,7 +25,9 @@ Problems identified as part of testing:
 
   Baseline failures:
   ERI.ne30pg3_tn14.N1850.betzy_intel.allactive-defaultio
+  	cice.h.0003-01-19.nc.cprnc.out:	NCAT is different at 1 point compared to baselines
   ERR_Ld3.ne30pg3_tn14.N1850.betzy_intel.allactive-defaultio
+  	cice.h.0003-01-19.nc.cprnc.out:	NCAT is different at 1 point compared to baselines
   ERS_Ld5.ne30pg3_tn14.N1850mam4.betzy_intel.allactive-defaultio
   	cice.h.0003-01-19.nc.cprnc.out:	NCAT is different at 1 point compared to baselines
 
