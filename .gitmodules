@@ -149,5 +149,3 @@ path = tools/statistical_ensemble_test/pyCECT
 url = https://github.com/NCAR/PyCECT.git
 fxtag = 3.2.2
 fxrequired = ToplevelOptional
-[submodule "https://github.com/mvertens/CTSM"]
-	url = clm
