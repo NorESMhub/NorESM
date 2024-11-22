@@ -114,8 +114,8 @@ fxDONOTUSEurl = https://github.com/ESCOMP/CISM-wrapper
 
 [submodule "clm"]
 path = components/clm
-url = https://github.com/mvertens/CTSM
-fxtag = feature/megan_cherrypick_ctsm_mvertens
+url = https://github.com/NorESMhub/CTSM
+fxtag = ctsm5.3.11-noresm_v1
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CTSM
 
