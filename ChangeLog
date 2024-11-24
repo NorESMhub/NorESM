@@ -1,4 +1,55 @@
 =============================================================
+Tag name: noresm2_5_alpha08b
+Date: 24 Nov 2024
+One-line Summary: Update CAM, CTSM and add git-fleximod
+
+- Update CAM: https://github.com/NorESMhub/CAM/issues/173
+- Update CTSM: https://github.com/NorESMhub/CTSM/issues/94
+- Update CTSM: Add MEGAN/FATES compability  https://github.com/NorESMhub/CTSM/issues/101
+- Replace manage_externals with git-fleximod: https://github.com/NorESMhub/NorESM/issues/581
+
+Usage of new git-fleximod can be found here - https://github.com/ESMCI/git-fleximod
+    For noresm - the simplest way to create a sandbox is the following:
+
+    > git clone https://github.com/NorESMhub/NorESM.git
+    > cd NorESM
+    > git checkout noresm2_5_alpha08
+	> ./bin/git-fleximod update
+
+    usage of ./bin/git-fleximod update gives the following (slightly condensed)
+            parallelio at tag pio2_6_2
+                   mct at tag MCT_2.11.0
+            ccs_config at tag ccs_config_noresm0.0.38
+                  cime at tag cime6.1.28_noresm_v0
+                 share at tag share1.1.2_noresm_v0
+                  blom at tag dev1.6.1.8
+                   cam at tag noresm2_5_016_cam6_4_041
+                      atmos_phys at tag atmos_phys0_05_001
+                     camnor_phys at tag camnor_noresm_v0.0.6
+                           carma at tag carma4_01
+                       chem_proc at tag chem_proc5_0_06
+                           clubb at tag clubb_4ncar_20240605_73d60f6_gpufixes_posinf
+                           cosp2 at tag v2.1.4cesm
+                           hemco at tag hemco-cesm2_0_hemco3_9_0
+                       oslo_aero at tag noresm_oslo_aero_v3
+                           pumas at tag pumas_cam-release_v1.36
+                    pumas-frozen at tag pumas_cam-release_v1.17_rename
+                     rrtmgp-data at tag v1.8
+                      rte-rrtmgp at tag v1.7
+                 cdeps at tag cdeps1.0.53
+                 cice6 at tag cesm_cice6_5_0_20240702_noresm_v2
+                             src at tag cice6_5_0_20240702_noresm_v1
+                  cism at tag cismwrap_2_2_002_noresm_v1
+                     source_cism at tag cism_main_2.01.015
+                   clm at tag ctsm5.3.11-noresm_v1
+                           fates at tag sci.1.78.3_api.36.1.0_noresm_v1
+                 cmeps at tag cmeps1.0.20_noresm_v0
+                mosart at tag mosart1.1.02
+                   ww3 at tag ww3_interface_noresm0.0.15
+
+
+
+=============================================================
 Tag name: noresm2_5_alpha07
 Date: 21 Oct 2024
 One-line Summary: Update for Betzy OS
