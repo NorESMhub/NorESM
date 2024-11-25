@@ -14,7 +14,7 @@ Usage of new git-fleximod can be found here - https://github.com/ESMCI/git-flexi
     > git clone https://github.com/NorESMhub/NorESM.git
     > cd NorESM
     > git checkout noresm2_5_alpha08
-	> ./bin/git-fleximod update
+    > ./bin/git-fleximod update
 
     usage of ./bin/git-fleximod update gives the following (slightly condensed)
             parallelio at tag pio2_6_2

@@ -110,7 +110,7 @@ path = components/cism
 url = https://github.com/NorESMhub/CISM-wrapper
 fxtag = cismwrap_2_2_002_noresm_v1
 fxrequired = ToplevelRequired
-fxDONOTUSEurl = https://github.com/ESCOMP/CISM-wrapper
+fxDONOTUSEurl = https://github.com/NorESMhub/CISM-wrapper
 
 [submodule "clm"]
 path = components/clm
