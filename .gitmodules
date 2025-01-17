@@ -80,7 +80,7 @@ fxDONOTUSEurl = https://github.com/NorESMHub/NorESM_share
 [submodule "blom"]
 path = components/blom
 url = https://github.com/NorESMhub/BLOM.git
-fxtag = dev1.6.1.12
+fxtag = v1.7.0
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/BLOM.git
 
