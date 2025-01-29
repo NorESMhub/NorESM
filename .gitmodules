@@ -51,7 +51,7 @@ fxDONOTUSEurl = https://github.com/MCSclimate/MCT
 [submodule "ccs_config"]
 path = ccs_config
 url = https://github.com/NorESMhub/ccs_config_noresm.git
-fxtag = ccs_config_noresm0.0.38
+fxtag = ccs_config_noresm0.0.39
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/ccs_config_noresm.git
 
@@ -115,7 +115,7 @@ fxDONOTUSEurl = https://github.com/NorESMhub/CISM-wrapper
 [submodule "clm"]
 path = components/clm
 url = https://github.com/NorESMhub/CTSM
-fxtag = ctsm5.3.11-noresm_v1
+fxtag = ctsm5.3.11-noresm_v2
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CTSM
 
