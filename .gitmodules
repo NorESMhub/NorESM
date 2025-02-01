@@ -51,7 +51,7 @@ fxDONOTUSEurl = https://github.com/MCSclimate/MCT
 [submodule "ccs_config"]
 path = ccs_config
 url = https://github.com/NorESMhub/ccs_config_noresm.git
-fxtag = ccs_config_noresm0.0.39
+fxtag = ccs_config_noresm0.0.38
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/ccs_config_noresm.git
 
