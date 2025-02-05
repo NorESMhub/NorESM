@@ -79,7 +79,7 @@
 
   <!-- fully coupled without hybrid coordinate in BLOM for testing-->
   <compset>
-    <alias>N1850nohyb</alias>
+    <alias>N2N1850</alias>
     <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%SP_CICE_BLOM%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
   </compset>
 
