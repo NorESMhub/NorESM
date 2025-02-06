@@ -40,24 +40,24 @@
 
   <compset>
     <alias>N1850</alias>
-    <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%SP_CICE_BLOM%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
+    <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%SP_CICE_BLOM%HYB%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
   </compset>
   <compset>
     <alias>N1850clmbgc</alias>
-    <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%BGC-CROP_CICE_BLOM%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
+    <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%BGC-CROP_CICE_BLOM%HYB%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
   </compset>
   <compset>
     <alias>N1850fates-sp</alias>
-    <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-SP_CICE_BLOM%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
+    <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-SP_CICE_BLOM%HYB%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
   </compset>
   <compset>
     <alias>N1850fates-nocomp</alias>
-    <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-NOCOMP_CICE_BLOM%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
+    <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-NOCOMP_CICE_BLOM%HYB%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
   </compset>
 
   <compset>
     <alias>N1850mam4</alias>
-    <lname>1850_CAM70%LT%GHGMAM4_CLM60%SP_CICE_BLOM%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
+    <lname>1850_CAM70%LT%GHGMAM4_CLM60%SP_CICE_BLOM%HYB%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
   </compset>
 
   <!-- BG compsets: evolving ice sheet -->
@@ -75,6 +75,12 @@
   <compset>
      <alias>J1850G</alias>
      <lname>1850_DATM%CRUv7_CLM50%BGC-CROP_CICE_POP2_MOSART_CISM2%GRIS-EVOLVE_SWAV</lname>
+  </compset>
+
+  <!-- fully coupled without hybrid coordinate in BLOM for testing-->
+  <compset>
+    <alias>N2N1850</alias>
+    <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%SP_CICE_BLOM%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
   </compset>
 
   <entries>
