@@ -1,12 +1,12 @@
 =============================================================
 Tag name: noresm2_5_alpha09
-Date: 13 Feb 2025
-One-line Summary: Update BLOM fixes, CAM fix for ERS tests 
+Date: 19 Feb 2025
+One-line Summary: Update BLOM fixes, CAM fix for ER tests and cime to 1.38
 
 ccs_config		: https://github.com/NorESMhub/ccsm_config_noresm/ccs_config_noresm0.0.38
 cime			: https://github.com/NorESMhub/come/cime6.1.38_noresm_v0
 share			: https://github.com/NorESMhub/NorESM_share/share1.1.2_noresm_v0
-components/blom		: https://github.com/NorESMhub/BLOM/dev1.7.1
+components/blom		: https://github.com/NorESMhub/BLOM/v1.7.1
 components/cam		: https://github.com/NorESMhub/CAM/noresm2_5_018_cam6_4_041
 components/cdeps	: https://github.com/ESCOMP/CDEPS.git/cdeps1.0.51
 components/cice		: https://github.com/NorESMhub/NorESM_CICE/cesm_cice6_5_0_20240702_noresm_v1
@@ -18,6 +18,25 @@ components/ww3		: https://github.com/NorESMhub/WW3_interface/ww3_interface_nores
 libraries/mct		: https://github.com/MCSclimate/MCT/MCT_2.11.0
 libraries/parallelio    : https://github.com/NCAR/ParallelIO/pio2_6_2
 
+Answer Changes introduced with this tag when compared to noresm2_5_alpha09
+    YES
+
+Problems identified as part of testing:
+
+  Baseline failures (expected):
+    All coupled with %BLOM
+
+  Test failures:
+
+  ERI.ne30pg3_tn14.N1850.betzy_intel.allactive-defaultio (Overall: FAIL) details:
+    FAIL ERI.ne30pg3_tn14.N1850.betzy_intel.allactive-defaultio COMPARE_base_rest
+  ERR_Ld3.ne30pg3_tn14.N1850.betzy_intel.allactive-defaultio (Overall: FAIL) details:
+    FAIL ERR_Ld3.ne30pg3_tn14.N1850.betzy_intel.allactive-defaultio COMPARE_base_rest
+  ERS_D_Ld4.ne30pg3_tn14.N2N1850.betzy_intel.allactive-defaultio (Overall: FAIL) details:
+    FAIL ERS_D_Ld4.ne30pg3_tn14.N2N1850.betzy_intel.allactive-defaultio COMPARE_base_rest
+
+
+  CAM side of ER failures is fixed. BLOM side still persists. with 1 more test failures now: https://github.com/NorESMhub/BLOM/issues/499
 
 
 
