@@ -58,7 +58,7 @@ fxDONOTUSEurl = https://github.com/NorESMhub/ccs_config_noresm.git
 [submodule "cime"]
 path = cime
 url = https://github.com/NorESMhub/cime.git
-fxtag = cime6.1.28_noresm_v0
+fxtag = cime6.1.38_noresm_v0
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/cime.git
 
@@ -80,14 +80,14 @@ fxDONOTUSEurl = https://github.com/NorESMHub/NorESM_share
 [submodule "blom"]
 path = components/blom
 url = https://github.com/NorESMhub/BLOM.git
-fxtag = v1.7.0
+fxtag = v1.7.1
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/BLOM.git
 
 [submodule "cam"]
 path = components/cam
 url = https://github.com/NorESMhub/CAM.git
-fxtag = noresm2_5_017_cam6_4_041
+fxtag = noresm2_5_018_cam6_4_041
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CAM.git
 
