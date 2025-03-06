@@ -4,7 +4,7 @@ _The Contributor Code of Conduct is for participants in our software projects an
 ## Our Pledge
 We, as contributors, creators, stewards, and maintainers (participants), of the Norwegian Earth System Model (NorESM) pledge to make participation in our software, system or hardware project and community a safe, productive, welcoming and inclusive experience for everyone.
 All participants are required to abide by this Code of Conduct.
-This includes respectful treatment of everyone regardless of age, body size, disability, ethnicity, gender identity or expression, level of experience, nationality, political affiliation, veteran status, pregnancy, genetic information, physical appearance, race, religion, or sexual orientation, as well as any other characteristic protected under applicable US federal or state law.
+This includes respectful treatment of everyone regardless of age, body size, disability, ethnicity, gender identity or expression, level of experience, nationality, political affiliation, veteran status, pregnancy, genetic information, physical appearance, race, religion, or sexual orientation, as well as any other personal characteristic.
 
 ## Our Standards
 Examples of behaviors that contribute to a positive environment include:
@@ -23,7 +23,7 @@ Examples of unacceptable behavior include, but are not limited to:
 * Physical, verbal, or written abuse by anyone to anyone, including repeated use of pronouns other than those requested
 * Unwelcome sexual attention or advances
 * Personal attacks directed at other guests, members, participants, etc.
-* Publishing others' private information, such as a physical or electronic address, without explicit permission
+* Publishing others' private information without explicit permission
 * Alarming, intimidating, threatening, or hostile comments or conduct
 * Inappropriate use of nudity and/or sexual images
 * Threatening or stalking anyone, including a participant
