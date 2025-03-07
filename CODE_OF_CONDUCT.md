@@ -46,14 +46,14 @@ Project administrators are responsible for clarifying the standards of acceptabl
 Project administrator(s) are normally the ones that would be tasked to carry out the actions in the [Consequences](#consequences) section below.
 
 ## Reporting
-Instances of unacceptable behavior can be brought to the attention of the project administrator(s) who may take any action as outlined in the [Consequences](#consequences) section below.
-However, making a report to a project administrator is not considered an 'official report' to any of the NCC consortium members.
+Instances of unacceptable behavior can be brought to the attention of a chosen representative of the NCC consortium, who may take any action as outlined in the [Consequences](#consequences) section below.
+However, making a report to a representative of the NCC consortium is not considered an 'official report' to any of the NCC consortium members.
 
 Complaints will be held as confidential as practicable under the circumstances, and retaliation against a person who initiates a complaint or an inquiry about inappropriate behavior will not be tolerated.
 
 ## Consequences
-Upon receipt of a complaint, the project administrator(s) may take any action deemed necessary and appropriate under the circumstances.
-Such action can include things such as: removing, editing, or rejecting comments, commits, code, wiki edits, email, issues, and other contributions that are not aligned to this Code of Conduct, or banning temporarily or permanently any contributor for other behaviors that are deemed inappropriate, threatening, offensive, or harmful.
+Upon receipt of a complaint, the chosen representative of the NCC consortium may initiate action deemed necessary and appropriate under the circumstances.
+Such action can include things such as: contacting the involved NCC consortium member organisations, removing, editing, or rejecting comments, commits, code, wiki edits, email, issues, and other contributions that are not aligned to this Code of Conduct, or banning temporarily or permanently any contributor for other behaviors that are deemed inappropriate, threatening, offensive, or harmful.
 
 ## Attribution
 This Code of Conduct was originally adapted from the [Contributor Covenant](http://contributor-covenant.org/version/1/4), version 1.4.
