@@ -37,12 +37,6 @@ fxtag = pio2_6_2
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NCAR/ParallelIO
 
-[submodule "mct"]
-path = libraries/mct
-url = https://github.com/MCSclimate/MCT
-fxtag = MCT_2.11.0
-fxrequired = ToplevelRequired
-fxDONOTUSEurl = https://github.com/MCSclimate/MCT
 
 #-----------------------------
 # Configuration/CCS
