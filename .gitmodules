@@ -37,12 +37,6 @@ fxtag = pio2_6_2
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NCAR/ParallelIO
 
-[submodule "mct"]
-path = libraries/mct
-url = https://github.com/MCSclimate/MCT
-fxtag = MCT_2.11.0
-fxrequired = ToplevelRequired
-fxDONOTUSEurl = https://github.com/MCSclimate/MCT
 
 #-----------------------------
 # Configuration/CCS
@@ -51,14 +45,14 @@ fxDONOTUSEurl = https://github.com/MCSclimate/MCT
 [submodule "ccs_config"]
 path = ccs_config
 url = https://github.com/NorESMhub/ccs_config_noresm.git
-fxtag = ccs_config_noresm0.0.38
+fxtag = ccs_config_noresm0.0.44
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/ccs_config_noresm.git
 
 [submodule "cime"]
 path = cime
 url = https://github.com/NorESMhub/cime.git
-fxtag = cime6.1.38_noresm_v0
+fxtag = cime6.1.73_noresm_v0
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/cime.git
 
@@ -69,7 +63,7 @@ fxDONOTUSEurl = https://github.com/NorESMhub/cime.git
 [submodule "share"]
 path = share
 url = https://github.com/NorESMHub/NorESM_share
-fxtag = share1.1.2_noresm_v0
+fxtag = share1.1.9_noresm_v0
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMHub/NorESM_share
 
@@ -80,63 +74,63 @@ fxDONOTUSEurl = https://github.com/NorESMHub/NorESM_share
 [submodule "blom"]
 path = components/blom
 url = https://github.com/NorESMhub/BLOM.git
-fxtag = v1.7.1
+fxtag = v1.8.0
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/BLOM.git
 
 [submodule "cam"]
 path = components/cam
 url = https://github.com/NorESMhub/CAM.git
-fxtag = noresm2_5_018_cam6_4_041
+fxtag = noresm3_0_001_cam6_4_070
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CAM.git
 
 [submodule "cdeps"]
 path = components/cdeps
-url = https://github.com/ESCOMP/CDEPS.git
-fxtag = cdeps1.0.53
+url = https://github.com/NorESMhub/CDEPS.git
+fxtag = cdeps1.0.70_noresm_v0
 fxrequired = ToplevelRequired
-fxDONOTUSEurl = https://github.com/ESCOMP/CDEPS.git
+fxDONOTUSEurl = https://github.com/NorESMhub/CDEPS.git
 
 [submodule "cice6"]
 path = components/cice
 url = https://github.com/NorESMhub/NorESM_CICE
-fxtag = cesm_cice6_5_0_20240702_noresm_v2
+fxtag = cesm_cice6_5_0_20240702_noresm_v3
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/NorESM_CICE
 
 [submodule "cism"]
 path = components/cism
 url = https://github.com/NorESMhub/CISM-wrapper
-fxtag = cismwrap_2_2_002_noresm_v1
+fxtag = cismwrap_2_2_006_noresm_v0
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CISM-wrapper
 
 [submodule "clm"]
 path = components/clm
 url = https://github.com/NorESMhub/CTSM
-fxtag = ctsm5.3.11-noresm_v2
+fxtag = ctsm5.3.030_noresm_v0
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CTSM
 
 [submodule "cmeps"]
 path = components/cmeps
 url = https://github.com/NorESMhub/CMEPS.git
-fxtag = cmeps1.0.20_noresm_v0
+fxtag = cmeps1.0.39_noresm_v0
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CMEPS.git
 
 [submodule "mosart"]
 path = components/mosart
 url = https://github.com/ESCOMP/MOSART
-fxtag = mosart1.1.02
+fxtag = mosart1.1.08
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/ESCOMP/MOSART
 
 [submodule "ww3"]
 path = components/ww3
 url = https://github.com/NorESMhub/WW3_interface.git
-fxtag = ww3_interface_noresm0.0.16
+fxtag = ww3_interface_noresm0.0.17
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/WW3_interface.git
 

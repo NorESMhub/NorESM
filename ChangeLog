@@ -1,4 +1,33 @@
 =============================================================
+Tag name: noresm3_0_alpha01
+Date: 21 Mar 2025
+One-line Summary: Update to all components to allow rpointer timestamps
+                  Bug fixes and updates for multiple components
+                  Remove MCT.
+                  Added tests with gnu compiler.
+
+ccs_config           : https://github.com/NorESMhub/ccsm_config_noresm/ccs_config_noresm0.0.44
+cime                 : https://github.com/NorESMhub/come/cime6.1.73_noresm_v0
+share                : https://github.com/NorESMhub/NorESM_share/share1.1.9_noresm_v0
+components/blom      : https://github.com/NorESMhub/BLOM/v1.8.0
+components/cam       : https://github.com/NorESMhub/CAM/noresm3_0_001_cam6_4_070
+components/cdeps     : https://github.com/NorESMhub/CDEPS/cdeps1.0.70_noresm_v0
+components/cice      : https://github.com/NorESMhub/NorESM_CICE/cesm_cice6_5_0_20240702_noresm_v3
+components/cism      : https://github.com/NorESMhub/CISM-wrapper/cismwrap_2_2_006_noresm_v0
+components/clm       : https://github.com/NorESMhub/CTSM/ctsm5.3.030-noresm_v0
+components/cmeps     : https://github.com/NorESMhub/CMEPS/cmeps1.0.39_noresm_v0
+components/mosart    : https://github.com/ESCOMP/MOSART/mosart1.1.08
+components/ww3       : https://github.com/NorESMhub/WW3_interface/ww3_interface_noresm0.0.17
+libraries/parallelio : https://github.com/NCAR/ParallelIO/pio2_6_2
+
+Answer Changes introduced with this tag when compared to noresm2_5_alpha09a
+    YES
+
+Problems identified as part of testing:
+    All tests pass.
+
+
+=============================================================
 Tag name: noresm2_5_alpha09
 Date: 19 Feb 2025
 One-line Summary: Update BLOM fixes, CAM fix for ER tests and cime to 1.38
