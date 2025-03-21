@@ -81,7 +81,7 @@ fxDONOTUSEurl = https://github.com/NorESMhub/BLOM.git
 [submodule "cam"]
 path = components/cam
 url = https://github.com/NorESMhub/CAM.git
-fxtag = noresm2_5_018_cam6_4_041
+fxtag = noresm3_0_001_cam6_4_070
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CAM.git
 
@@ -102,14 +102,14 @@ fxDONOTUSEurl = https://github.com/NorESMhub/NorESM_CICE
 [submodule "cism"]
 path = components/cism
 url = https://github.com/NorESMhub/CISM-wrapper
-fxtag = cismwrap_2_2_006_noresm_v1
+fxtag = cismwrap_2_2_006_noresm_v0
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CISM-wrapper
 
 [submodule "clm"]
 path = components/clm
 url = https://github.com/NorESMhub/CTSM
-fxtag = ctsm5.3.11-noresm_v2
+fxtag = ctsm5.3.030_noresm_v0
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CTSM
 
