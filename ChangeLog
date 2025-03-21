@@ -3,7 +3,8 @@ Tag name: noresm3_0_alpha01
 Date: 21 Mar 2025
 One-line Summary: Update to all components to allow rpointer timestamps
                   Bug fixes and updates for multiple components
-                  remove MCT
+                  Remove MCT.
+                  Added tests with gnu compiler.
 
 ccs_config           : https://github.com/NorESMhub/ccsm_config_noresm/ccs_config_noresm0.0.44
 cime                 : https://github.com/NorESMhub/come/cime6.1.73_noresm_v0
