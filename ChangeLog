@@ -2,9 +2,13 @@
 Tag name: noresm3_0_alpha02
 Date: 21 Mar 2025
 One-line Summary: Update to CTSM and FATES to allow dry deposition
-                  CTSM version is brought up to 5.3.034 from ESCOMP
-                  Makes N1850fates-nocomp compset to be functional
-                  For details, see CTSM changelog
+
+Details:
+    CTSM version is brought up to ctsm5.3.034 from ESCOMP
+    For details on ctsm5.3.034, see CTSM changelog
+    Makes N1850fates-nocomp compset to be functional
+    Default radiation scheme in FATES is set to "twostream"
+    Default parameter file changes for FATES from @rosiealice
 
 ccs_config           : https://github.com/NorESMhub/ccsm_config_noresm/ccs_config_noresm0.0.44
 cime                 : https://github.com/NorESMhub/come/cime6.1.73_noresm_v0
