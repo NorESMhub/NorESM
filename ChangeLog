@@ -25,7 +25,12 @@ components/ww3       : https://github.com/NorESMhub/WW3_interface/ww3_interface_
 libraries/parallelio : https://github.com/NCAR/ParallelIO/pio2_6_2
 
 Answer Changes introduced with this tag when compared to noresm3_0_alpha01
-    YES
+  YES for tests:
+    ERI.ne30pg3_tn14.N1850.betzy_intel.allactive-defaultio 
+    ERR.ne30pg3_tn14.N1850.betzy_intel.allactive-defaultio
+    ERS.ne30pg3_tn14.N1850fates-nocomp.betzy_gnu.allactive-defaultio
+    SMS_D_Ld1.ne30pg3_tn14.N1850fates-nocomp.betzy_intel.allactive-defaultio
+    SMS_D_Ld1.ne30pg3_tn14.N1850fates-sp.betzy_gnu.allactive-defaultio
 
 Problems identified as part of testing:
     All tests pass.
