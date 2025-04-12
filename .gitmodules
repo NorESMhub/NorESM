@@ -45,7 +45,7 @@ fxDONOTUSEurl = https://github.com/NCAR/ParallelIO
 [submodule "ccs_config"]
 path = ccs_config
 url = https://github.com/NorESMhub/ccs_config_noresm.git
-fxtag = ccs_config_noresm0.0.44
+fxtag = ccs_config_noresm0.0.45
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/ccs_config_noresm.git
 
@@ -81,7 +81,7 @@ fxDONOTUSEurl = https://github.com/NorESMhub/BLOM.git
 [submodule "cam"]
 path = components/cam
 url = https://github.com/NorESMhub/CAM.git
-fxtag = noresm3_0_001_cam6_4_070
+fxtag = noresm3_0_002_cam6_4_070
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CAM.git
 
