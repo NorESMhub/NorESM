@@ -1,3 +1,44 @@
+===============================================================
+Tag name: noresm3_0_alpha02a
+Date: 19 Apr 2025
+One-line Summary: Add support and testing for two-degree test
+
+Details:
+ - Added capability in CAM for running on the 2-degree spectral
+   element (ne16pg3) grid
+ - Added AMIP compsets for running with FATES-sp (NF1850fates-sp) and
+   with FATES-nocomp (NF1850fates-nocomp)
+ - Added AMIP and coupled tests running on the 2-degree SE grid
+
+List all component tags that were used to create cesm tag:
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.45
+ - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
+ - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
+ - blom       : NorESMhub/BLOM.git          : v1.8.0
+ - cam        : NorESMhub/CAM.git           : noresm3_0_002_cam6_4_070
+ - cdeps      : NorESMhub/CDEPS.git         : cdeps1.0.70_noresm_v0
+ - cice6      : NorESMhub/NorESM_CICE       : cesm_cice6_5_0_20240702_noresm_v3
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_006_noresm_v0
+ - clm        : NorESMhub/CTSM              : ctsm5.3.034_noresm_v2
+ - cmeps      : NorESMhub/CMEPS.git         : cmeps1.0.39_noresm_v0
+ - mosart     : ESCOMP/MOSART               : mosart1.1.08
+ - ww3        : NorESMhub/WW3_interface.git : ww3_interface_noresm0.0.17
+ - pycect     : NCAR/PyCECT.git             : 3.2.2
+
+Bugs fixed: NA
+
+Describe any changes made to scripts/build system: NA
+
+Describe any substantial timing or memory changes: NA
+
+Code reviewed by: TomasTorsvik
+
+Summary of pre-tag testing: prealpha_noresm suite
+ - Baseline and namelist fail for new 2-degree test
+
+Summarize any change to answers: NA
+
 =============================================================
 Tag name: noresm3_0_alpha02
 Date: 06 Apr 2025
@@ -26,7 +67,7 @@ libraries/parallelio : https://github.com/NCAR/ParallelIO/pio2_6_2
 
 Answer Changes introduced with this tag when compared to noresm3_0_alpha01
   YES for tests:
-    ERI.ne30pg3_tn14.N1850.betzy_intel.allactive-defaultio 
+    ERI.ne30pg3_tn14.N1850.betzy_intel.allactive-defaultio
     ERR.ne30pg3_tn14.N1850.betzy_intel.allactive-defaultio
     ERS.ne30pg3_tn14.N1850fates-nocomp.betzy_gnu.allactive-defaultio
     SMS_D_Ld1.ne30pg3_tn14.N1850fates-nocomp.betzy_intel.allactive-defaultio
@@ -113,7 +154,7 @@ Problems identified as part of testing:
 =============================================================
 Tag name: noresm2_5_alpha09
 Date: 06 Feb 2025
-One-line Summary: Update BLOM to hybrid coords in compsets, update CTSM 
+One-line Summary: Update BLOM to hybrid coords in compsets, update CTSM
 
 ccs_config		: https://github.com/NorESMhub/ccsm_config_noresm/ccs_config_noresm0.0.38
 cime			: https://github.com/NorESMhub/come/cime6.1.28_noresm_v0
