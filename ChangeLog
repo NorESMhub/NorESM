@@ -7,7 +7,6 @@ Details:
  - Fixed inconsistencies in Fates radiation to work properly with cam7
  - Added two tests in aux_clm_noresm
  - Reduced output for CLM-FATES
- - Updated blom, reduced output, removed CGS units, adde CPPM advection
  - CDEPS has DOCN%MULTILEV-CPLHIST and DLND%GCPL mods for forcing CISM
  - CMEPS writes out yearly lnd2glc and ocn2glc coupler history files
    for forcing CISM (default for compesets with both CLM and BLOM)
@@ -17,7 +16,7 @@ List all component tags that were used to create cesm tag:
  - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.45
  - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
- - blom       : NorESMhub/BLOM.git          : dev1.9.0.4
+ - blom       : NorESMhub/BLOM.git          : dev1.8.0
  - cam        : NorESMhub/CAM.git           : noresm3_0_002_cam6_4_070
  - cdeps      : NorESMhub/CDEPS.git         : cdeps1.0.70_noresm_v2
  - cice6      : NorESMhub/NorESM_CICE       : cesm_cice6_5_0_20240702_noresm_v3
@@ -35,13 +34,30 @@ Bugs fixed: Invalid values for NF2000 ERS tests with fates,
 Describe any changes made to scripts/build system: 
 
 Describe any substantial timing or memory changes: NA
+ - TPUTCOMP fails with > +30% change. Might be due to betzy issues
+   and/or due to increased I/O
 
 Code reviewed by:
-
+    M. Vertenstein
 Summary of pre-tag testing: prealpha_noresm suite
- - 
+ - BASELINE diffs for all tests with BLOM, CLM or CISM2
+   Apart from FATES tests, diffs come from
+   new coupler history defaults
+    DIFF ERI_Ly15.f09_g17_gris4.T1850Gg.betzy_intel.cism-isostasy_period4
+    DIFF ERI.ne30pg3_tn14.N1850.betzy_intel.allactive-defaultio
+    DIFF ERR.ne30pg3_tn14.N1850.betzy_intel.allactive-defaultio
+    DIFF ERS_D_Ld4.ne30pg3_tn14.N2N1850.betzy_intel.allactive-defaultio
+    DIFF ERS_Ld5.ne30pg3_tn14.N1850mam4.betzy_intel.allactive-defaultio
+    DIFF ERS_Ly7.f09_g17_gris4.T1850Gg.betzy_intel
+    DIFF ERS.ne30pg3_tn14.N1850fates-nocomp.betzy_gnu.allactive-defaultio
+    DIFF SMS_D_Ld1.ne16pg3_tn14.N1850fates-sp.betzy_gnu.allactive-defaultio
+    DIFF SMS_D_Ld1.ne30pg3_tn14.N1850.betzy_intel.allactive-defaultio
+    DIFF SMS_D_Ld1.ne30pg3_tn14.N1850clmbgc.betzy_intel.allactive-defaultio
+    DIFF SMS_D_Ld1.ne30pg3_tn14.N1850fates-nocomp.betzy_intel.allactive-defaultio
+    DIFF SMS_D_Ld1.ne30pg3_tn14.N1850fates-sp.betzy_gnu.allactive-defaultio
+    DIFF SMS_D_Ly1.f09_g17_ais8.T1850Ga.betzy_intel
 
-Summarize any change to answers: NA
+Summarize any change to answers: Any compset with FATES
 
 ===============================================================
 Tag name: noresm3_0_alpha02a
