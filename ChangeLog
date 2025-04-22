@@ -11,21 +11,22 @@ Details:
  - CMEPS writes out yearly lnd2glc and ocn2glc coupler history files
    for forcing CISM (default for compesets with both CLM and BLOM)
 
-List all component tags that were used to create cesm tag:
+List all component tags that were used to create noresm tag:
  - parallelio : NCAR/ParallelIO             : pio2_6_2
  - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.45
  - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
- - blom       : NorESMhub/BLOM.git          : dev1.8.0
- - cam        : NorESMhub/CAM.git           : noresm3_0_002_cam6_4_070
- - cdeps      : NorESMhub/CDEPS.git         : cdeps1.0.70_noresm_v2
+ - blom       : NorESMhub/BLOM              : v1.8.0
+ - cam        : NorESMhub/CAM               : noresm3_0_002_cam6_4_070
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v2
  - cice6      : NorESMhub/NorESM_CICE       : cesm_cice6_5_0_20240702_noresm_v3
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_006_noresm_v0
- - clm        : NorESMhub/CTSM              : ctsm5.3.034_noresm_v4
- - cmeps      : NorESMhub/CMEPS.git         : cmeps1.0.39_noresm_v1
+ - clm        : NorESMhub/CTSM              : ctsm5.3.034_noresm_v3
+    - fates   : NorESMhub/fates             : sci.1.82.3_api.39.0.0_noresm_v2
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.0.39_noresm_v1
  - mosart     : ESCOMP/MOSART               : mosart1.1.08
- - ww3        : NorESMhub/WW3_interface.git : ww3_interface_noresm0.0.17
- - pycect     : NCAR/PyCECT.git             : 3.2.2
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.17
+ - pycect     : NCAR/PyCECT                 : 3.2.2
 
 Bugs fixed: Invalid values for NF2000 ERS tests with fates,
             failures to run IxClm60Fatesx compsets with datm settings
