@@ -32,10 +32,10 @@
 
 [submodule "parallelio"]
 path = libraries/parallelio
-url = https://github.com/NCAR/ParallelIO
+url = https://github.com/NCAR/ParallelIO.git
 fxtag = pio2_6_2
 fxrequired = ToplevelRequired
-fxDONOTUSEurl = https://github.com/NCAR/ParallelIO
+fxDONOTUSEurl = https://github.com/NCAR/ParallelIO.git
 
 
 #-----------------------------
@@ -62,10 +62,10 @@ fxDONOTUSEurl = https://github.com/NorESMhub/cime.git
 
 [submodule "share"]
 path = share
-url = https://github.com/NorESMHub/NorESM_share
+url = https://github.com/NorESMHub/NorESM_share.git
 fxtag = share1.1.9_noresm_v0
 fxrequired = ToplevelRequired
-fxDONOTUSEurl = https://github.com/NorESMHub/NorESM_share
+fxDONOTUSEurl = https://github.com/NorESMHub/NorESM_share.git
 
 #-----------------------------
 # Components
@@ -74,7 +74,7 @@ fxDONOTUSEurl = https://github.com/NorESMHub/NorESM_share
 [submodule "blom"]
 path = components/blom
 url = https://github.com/NorESMhub/BLOM.git
-fxtag = dev1.8.0
+fxtag = v1.8.0
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/BLOM.git
 
@@ -88,44 +88,44 @@ fxDONOTUSEurl = https://github.com/NorESMhub/CAM.git
 [submodule "cdeps"]
 path = components/cdeps
 url = https://github.com/NorESMhub/CDEPS.git
-fxtag = cdeps1.0.70_noresm_v0
+fxtag = cdeps1.0.70_noresm_v2
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CDEPS.git
 
 [submodule "cice6"]
 path = components/cice
-url = https://github.com/NorESMhub/NorESM_CICE
+url = https://github.com/NorESMhub/NorESM_CICE.git
 fxtag = cesm_cice6_5_0_20240702_noresm_v3
 fxrequired = ToplevelRequired
-fxDONOTUSEurl = https://github.com/NorESMhub/NorESM_CICE
+fxDONOTUSEurl = https://github.com/NorESMhub/NorESM_CICE.git
 
 [submodule "cism"]
 path = components/cism
-url = https://github.com/NorESMhub/CISM-wrapper
+url = https://github.com/NorESMhub/CISM-wrapper.git
 fxtag = cismwrap_2_2_006_noresm_v0
 fxrequired = ToplevelRequired
-fxDONOTUSEurl = https://github.com/NorESMhub/CISM-wrapper
+fxDONOTUSEurl = https://github.com/NorESMhub/CISM-wrapper.git
 
 [submodule "clm"]
 path = components/clm
-url = https://github.com/NorESMhub/CTSM
-fxtag = ctsm5.3.034_noresm_v2
+url = https://github.com/NorESMhub/CTSM.git
+fxtag = ctsm5.3.034_noresm_v3
 fxrequired = ToplevelRequired
-fxDONOTUSEurl = https://github.com/NorESMhub/CTSM
+fxDONOTUSEurl = https://github.com/NorESMhub/CTSM.git
 
 [submodule "cmeps"]
 path = components/cmeps
 url = https://github.com/NorESMhub/CMEPS.git
-fxtag = cmeps1.0.39_noresm_v0
+fxtag = cmeps1.0.39_noresm_v1
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CMEPS.git
 
 [submodule "mosart"]
 path = components/mosart
-url = https://github.com/ESCOMP/MOSART
+url = https://github.com/ESCOMP/MOSART.git
 fxtag = mosart1.1.08
 fxrequired = ToplevelRequired
-fxDONOTUSEurl = https://github.com/ESCOMP/MOSART
+fxDONOTUSEurl = https://github.com/ESCOMP/MOSART.git
 
 [submodule "ww3"]
 path = components/ww3
@@ -143,3 +143,4 @@ path = tools/statistical_ensemble_test/pyCECT
 url = https://github.com/NCAR/PyCECT.git
 fxtag = 3.2.2
 fxrequired = ToplevelOptional
+fxDONOTUSEurl = https://github.com/NCAR/PyCECT.git
