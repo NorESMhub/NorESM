@@ -80,4 +80,23 @@
       <option name="wallclock"> 01:00:00 </option>
     </options>
   </test>
+
+  <test name="SMS_D_Ld1" grid="ne16pg3_tn14" compset="N1850fates-nocomp" testmods="allactive/reducedout">
+    <machines>
+      <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
+    </machines>
+    <options>
+      <option name="wallclock"> 01:00:00 </option>
+    </options>
+  </test>
+
+  <test name="SMS_D_Ld1" grid="ne16pg3_tn14" compset="N1850fates-nocomp" testmods="allactive/reducedout">
+    <machines>
+      <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
+    </machines>
+    <options>
+      <option name="wallclock"> 01:00:00 </option>
+    </options>
+  </test>
+
 </testlist>
