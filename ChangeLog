@@ -1,6 +1,6 @@
 ===============================================================
 Tag name: noresm3_0_alpha03a
-Date: 3 May 2025
+Date: 5 May 2025
 One-line Summary: Reduced output usermod, BLOM and CTSM updates
 
 Details:
@@ -47,14 +47,13 @@ Describe any changes made to scripts/build system: NA
 
 Describe any substantial timing or memory changes: NA
 
-Code reviewed by: Steve Goldhaber
+Code reviewed by: Steve Goldhaber, Matvey Debolskiy
 
 Summary of pre-tag testing:
  - aux_cdeps_noresm : all tests PASS
  - aux_blom_noresm : tests PASS (except the "expected FAIL" tests)
  - aux_clm_noresm
- - prealpha_noresm : 17/18 tests PASS
-    FAIL ERI.ne30pg3_tn14.N1850.betzy_intel.allactive-defaultio
+ - prealpha_noresm : all tests PASS
 
 Summarize any change to answers:
  - BASELINE diffs for all tests with BLOM, due to CPPM implementation.
