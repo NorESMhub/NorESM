@@ -1,7 +1,7 @@
 ===============================================================
 Tag name: noresm3_0_alpha03b
-Date:
-One-line Summary:
+Date: 9 May 2025
+One-line Summary: Update BLOM shortwave absorption and default namelist
 
 Details:
  - Update BLOM tag to dev1.9.0.12
@@ -42,6 +42,19 @@ Summary of pre-tag testing:
  - prealpha_noresm : all tests PASS
 
 Summarize any change to answers:
+ - BASELINE diffs for all tests with BLOM, due to new default namelist for ALE method
+    DIFF ERI.ne30pg3_tn14.N1850.betzy_intel.allactive-defaultio
+    DIFF ERR.ne30pg3_tn14.N1850.betzy_intel.allactive-defaultio
+    DIFF ERS_D_Ld4.ne30pg3_tn14.N2N1850.betzy_intel.allactive-defaultio
+    DIFF ERS_Ld5.ne30pg3_tn14.N1850mam4.betzy_intel.allactive-defaultio
+    DIFF ERS.ne30pg3_tn14.N1850fates-nocomp.betzy_gnu.allactive-defaultio
+    DIFF SMS_D_Ld1.ne16pg3_tn14.N1850fates-nocomp.betzy_intel.allactive-reducedout
+    DIFF SMS_D_Ld1.ne16pg3_tn14.N1850fates-sp.betzy_gnu.allactive-defaultio
+    DIFF SMS_D_Ld1.ne30pg3_tn14.N1850.betzy_intel.allactive-defaultio
+    DIFF SMS_D_Ld1.ne30pg3_tn14.N1850clmbgc.betzy_intel.allactive-defaultio
+    DIFF SMS_D_Ld1.ne30pg3_tn14.N1850fates-nocomp.betzy_intel.allactive-defaultio
+    DIFF SMS_D_Ld1.ne30pg3_tn14.N1850fates-sp.betzy_gnu.allactive-defaultio
+
 
 ===============================================================
 Tag name: noresm3_0_alpha03a
