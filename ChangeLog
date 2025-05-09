@@ -1,19 +1,22 @@
 ===============================================================
-Tag name: noresm3_0_alpha04
+Tag name: noresm3_0_alpha03b
 Date:
 One-line Summary:
 
 Details:
- - Update BLOM tag to dev1.9.0.8
+ - Update BLOM tag to dev1.9.0.12
    + Includ modified shortwave absorption module
+   + New default namelist for ALE method
    + Bug fix for input file names
+   + Set default atm. N2O concentration to pre-industrial value
+   + Correct CaCO3 dissolution rate constant
 
 List all component tags that were used to create noresm tag:
  - parallelio : NCAR/ParallelIO             : pio2_6_2
  - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.45
  - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
- - blom       : NorESMhub/BLOM              : dev1.9.0.8
+ - blom       : NorESMhub/BLOM              : dev1.9.0.12
  - cam        : NorESMhub/CAM               : noresm3_0_002_cam6_4_070
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v4
  - cice6      : NorESMhub/NorESM_CICE       : cesm_cice6_5_0_20240702_noresm_v3
@@ -35,6 +38,8 @@ Describe any substantial timing or memory changes: NA
 Code reviewed by:
 
 Summary of pre-tag testing:
+ - aux_blom_noresm : tests PASS (except the "expected FAIL" tests)
+ - prealpha_noresm : all tests PASS
 
 Summarize any change to answers:
 
