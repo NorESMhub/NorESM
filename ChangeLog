@@ -5,7 +5,7 @@ One-line Summary: Update BLOM shortwave absorption and default namelist
 
 Details:
  - Update BLOM tag to dev1.9.0.12
-   + Includ modified shortwave absorption module
+   + Include modified shortwave absorption module
    + New default namelist for ALE method
    + Bug fix for input file names
    + Set default atm. N2O concentration to pre-industrial value
