@@ -35,7 +35,7 @@ Describe any changes made to scripts/build system: NA
 
 Describe any substantial timing or memory changes: NA
 
-Code reviewed by:
+Code reviewed by: Steve Goldhaber, Matvey Debolskiy
 
 Summary of pre-tag testing:
  - aux_blom_noresm : tests PASS (except the "expected FAIL" tests)
