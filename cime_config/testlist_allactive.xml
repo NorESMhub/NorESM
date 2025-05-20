@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <testlist version="2.0">
-  <test name="ERI" grid="ne30pg3_tn14" compset="N1850" testmods="allactive/defaultio">
+  <test name="ERI" grid="ne16pg3_tn14" compset="N1850fates-nocomp" testmods="allactive/defaultio">
     <machines>
       <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
     </machines>
