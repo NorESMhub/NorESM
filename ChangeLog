@@ -1,4 +1,56 @@
 ===============================================================
+Tag name: noresm3_0_alpha03c
+Date: 9 May 2025
+One-line Summary: Update CTSM and CDEPS for ERI bugfix
+
+Details:
+ - Update CTSM tag to ctsm5.3.034_noresm_v6
+   Fix for fates_nocomp with two stream radiation
+ - Update CDEPS tag to cdeps1.0.70_noresm_v5
+   Make datm set nextsw_cday with nextsw_cday_calc_cam7
+   to give same value as cam7 does on stepn=1
+ - Add ERI tests for fates_nocomp to avoid getting same problems again
+
+List all component tags that were used to create noresm tag:
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.45
+ - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
+ - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
+ - blom       : NorESMhub/BLOM              : dev1.9.0.12
+ - cam        : NorESMhub/CAM               : noresm3_0_002_cam6_4_070
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v5
+ - cice6      : NorESMhub/NorESM_CICE       : cesm_cice6_5_0_20240702_noresm_v3
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_006_noresm_v0
+ - clm        : NorESMhub/CTSM              : ctsm5.3.034_noresm_v6
+    - fates   : NorESMhub/fates             : sci.1.82.3_api.39.0.0_noresm_v2
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.0.39_noresm_v1
+ - mosart     : ESCOMP/MOSART               : mosart1.1.08
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.17
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+ - Restarts from finidat and hybrid runs with fates_nocomp and twostream radiation
+
+Describe any changes made to scripts/build system: NA
+
+Describe any substantial timing or memory changes: NA
+
+Code reviewed by: Steve Goldhaber, Matvey Debolskiy
+
+Summary of pre-tag testing:
+ - aux_blom_noresm : tests PASS (except the "expected FAIL" tests)
+ - prealpha_noresm : all tests PASS 
+ - aux_clm_noresm  : all tests PASS 
+
+Summarize any change to answers:
+  No previous baselines:
+  -  ERI_D_Ld30.f45_f45_mg37.I1850Clm60FatesSp.betzy_gnu.clm-FatesColdClm60Cam7LndTuningMode
+  -  ERI_D_Ld11.ne30pg3_ne30pg3_mtn14.I1850Clm60FatesNocompSpinup.betzy_intel.clm-FatesColdSpinup
+  -  ERI_D_Ld30.f45_f45_mg37.I1850Clm60FatesNocomp.betzy_gnu.clm-FatesColdClm60Cam7LndTuningMode
+  -  ERI.ne16pg3_tn14.N1850fates-nocomp.betzy_intel.allactive/defaulio
+
+
+===============================================================
 Tag name: noresm3_0_alpha03b
 Date: 9 May 2025
 One-line Summary: Update BLOM shortwave absorption and default namelist
