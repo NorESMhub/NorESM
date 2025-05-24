@@ -1,11 +1,13 @@
 ===============================================================
 Tag name: noresm3_0_alpha03d
 Date: 21 May 2025
-One-line Summary: Update CTSM and CAM bugfix
+One-line Summary: Update CTSM, CICE and CAM bugfix
 
 Details:
  - Update CTSM tag to ctsm5.3.034_noresm_v7
    Removed unnecessary log messages
+ - Update cice to cesm_cice6_5_0_20240702_noresm_v4
+    Set default distribution for tx1 to sectrobin
  - Update CAM to noresm3_0_002_cam6_4_085
    Leung_2023 dust scheme
    Updated Oslo Aero shadow files (src_cam) plus aero_model.F90 to account
@@ -25,9 +27,9 @@ List all component tags that were used to create noresm tag:
  - blom       : NorESMhub/BLOM              : dev1.9.0.13
  - cam        : NorESMhub/CAM               : noresm3_0_002_cam6_4_085
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v5
- - cice6      : NorESMhub/NorESM_CICE       : cesm_cice6_5_0_20240702_noresm_v3
+ - cice6      : NorESMhub/NorESM_CICE       : cesm_cice6_5_0_20240702_noresm_v4
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_006_noresm_v0
- - clm        : NorESMhub/CTSM              : ctsm5.3.034_noresm_v6
+ - clm        : NorESMhub/CTSM              : ctsm5.3.034_noresm_v7
     - fates   : NorESMhub/fates             : sci.1.82.3_api.39.0.0_noresm_v2
  - cmeps      : NorESMhub/CMEPS             : cmeps1.0.39_noresm_v1
  - mosart     : ESCOMP/MOSART               : mosart1.1.08
