@@ -1,4 +1,59 @@
 ===============================================================
+Tag name: noresm3_0_alpha03d
+Date: 21 May 2025
+One-line Summary: Update CTSM, CICE and CAM bugfix
+
+Details:
+ - Update CTSM tag to ctsm5.3.034_noresm_v7
+   Removed unnecessary log messages
+ - Update cice to cesm_cice6_5_0_20240702_noresm_v4
+    Set default distribution for tx1 to sectrobin
+ - Update CAM to noresm3_0_002_cam6_4_085
+   Leung_2023 dust scheme
+   Updated Oslo Aero shadow files (src_cam) plus aero_model.F90 to account
+   for modifications in ESCOMP/CAM between cam6_4_070 and cam6_4_085.
+   Move PUMAS external from ESCOMP to NorESMhub
+   Derive new geopotential fields whenever water species are updated
+   Improvements to moving mountains parameterization
+   SE dycore code cleanup
+   Created a list of Oslo Aero aerosol constituent names
+   Added the `ndropmixed` property to Oslo Aero aerosol tracer constituents
+
+List all component tags that were used to create noresm tag:
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.45
+ - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
+ - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
+ - blom       : NorESMhub/BLOM              : dev1.9.0.13
+ - cam        : NorESMhub/CAM               : noresm3_0_002_cam6_4_085
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v5
+ - cice6      : NorESMhub/NorESM_CICE       : cesm_cice6_5_0_20240702_noresm_v4
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_006_noresm_v0
+ - clm        : NorESMhub/CTSM              : ctsm5.3.034_noresm_v7
+    - fates   : NorESMhub/fates             : sci.1.82.3_api.39.0.0_noresm_v2
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.0.39_noresm_v1
+ - mosart     : ESCOMP/MOSART               : mosart1.1.08
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.17
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+
+Describe any changes made to scripts/build system: NA
+
+Describe any substantial timing or memory changes: NA
+
+Code reviewed by: Steve Goldhaber, Matvey Debolskiy
+
+Summary of pre-tag testing:
+ - prealpha_noresm : all tests PASS 
+ - aux_clm_noresm  : all tests PASS 
+ - ERI_D_Ld12.ne16pg3_tn14.N1850fates-nocomp tests with Leung on PASS
+
+Summarize any change to answers:
+    All tests with CAM.
+
+
+===============================================================
 Tag name: noresm3_0_alpha03c
 Date: 9 May 2025
 One-line Summary: Update CTSM and CDEPS for ERI bugfix
