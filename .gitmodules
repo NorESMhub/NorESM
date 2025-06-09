@@ -130,7 +130,7 @@ fxDONOTUSEurl = https://github.com/ESCOMP/MOSART.git
 [submodule "ww3"]
 path = components/ww3
 url = https://github.com/NorESMhub/WW3_interface.git
-fxtag = ww3_interface_noresm0.0.17
+fxtag = ww3_interface_noresm0.0.18
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/WW3_interface.git
 
