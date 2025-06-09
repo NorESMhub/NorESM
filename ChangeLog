@@ -1,6 +1,47 @@
 ==============================================================
 
-Tag name: noresm30_alpha04
+Tag name: noresm3_0_alpha05
+Date:
+One-line Summary: Update CICE to noresm_cice6_6_0_20250522_v0
+
+Details:
+ - Update CICE to noresm_cice6_6_0_20250522_v0:
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.45
+ - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
+ - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
+ - blom       : NorESMhub/BLOM              : dev1.9.0.13
+ - cam        : NorESMhub/CAM               : noresm3_0_005_cam6_4_085
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v6
+ - cice6      : NorESMhub/NorESM_CICE       : cesm_cice6_5_0_20240702_noresm_v4
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_006_noresm_v0
+ - clm        : NorESMhub/CTSM              : ctsm5.3.034_noresm_v7
+    - fates   : NorESMhub/fates             : sci.1.82.3_api.39.0.0_noresm_v2
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.0.39_noresm_v3
+ - mosart     : ESCOMP/MOSART               : mosart1.1.08
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.17
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+
+
+Describe any changes made to scripts/build system: NA
+
+Describe any substantial timing or memory changes: NA
+
+Code reviewed by:
+
+Summary of pre-tag testing:
+
+Summarize any change to answers:
+
+
+==============================================================
+
+Tag name: noresm3_0_alpha04
 Date: 08/06/2025
 One-line Summary: Update CAM to noresm3_0_005_cam6_4_085
 
