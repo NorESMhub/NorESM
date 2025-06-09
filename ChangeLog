@@ -41,6 +41,8 @@ Code reviewed by: Steve Goldhaber, Matvey Debolskiy, Øyvind Seland
 Summary of pre-tag testing:
   - prealpha_noresm, aux_cam_noresm
     - Expected baseline diffs and nlcomp fails
+    - N1850 comsets:Throughput changed by 54.07%:
+      baseline=9.757 sypd, tolerance=25%, current=4.481 sypd
 
 Summarize any change to answers:
   - Any compset with active atmosphere
