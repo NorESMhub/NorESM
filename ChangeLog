@@ -5,22 +5,24 @@ Date:
 One-line Summary: Update CICE to noresm_cice6_6_0_20250522_v0
 
 Details:
- - Update CICE6 to noresm_cice6_6_0_20250522_v0:
- - Update BLOM to dev1.0.9.21:
+ - Update CICE6 tag to noresm_cice6_6_0_20250522_v0:
+   - Update CICE tag to cice6_6_0_20250522_noresm
+   - Various updates from CICE6.5.0 to CICE6.6.0
+ - Update BLOM tag to dev1.0.9.21:
    - Add Gibbs SeaWater (GSW) Oceanographic Toolbox of TEOS-10 (external)
    - Support for WOA18 in-situ temperature and practical salinity climatology
    - Adapt reference potential densities to the evolving model state
    - Support river2omip experiments
    - Add option for GESAMP 2018 dust/iron deposition
- - Update WW3_interface to ww3_interface_noresm0.0.18:
-   - Update WW3 to ww3_noresm0.0.16
- - Update ccs_config to ccs_config_nore0.0.47:
+ - Update WW3_interface tag to ww3_interface_noresm0.0.18:
+   - Update WW3 tag to ww3_noresm0.0.16
+ - Update ccs_config tag to ccs_config_nore0.0.47:
    - Add model grid alias ne30pg3_tn05
    - Include ROF2OCN mapping files
- - Update CMEPS to cmeps1.0.39_noresm_v3:
+ - Update CMEPS tag to cmeps1.0.39_noresm_v3:
    - fixes to get DLND%RCPL mode working with mosart
    - various ocn and lnd component fixes
- - Update CDEPS to cdeps1.0.70_noresm_v6:
+ - Update CDEPS tag to cdeps1.0.70_noresm_v6:
    - test for DLND%RCPL
    - various ocn and lnd component fixes
 
@@ -33,7 +35,7 @@ Component tags used in this tag:
  - blom       : NorESMhub/BLOM              : dev1.9.0.21
  - cam        : NorESMhub/CAM               : noresm3_0_005_cam6_4_085
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v6
- - cice6      : NorESMhub/NorESM_CICE       : cesm_cice6_5_0_20240702_noresm_v4
+ - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v0
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_006_noresm_v0
  - clm        : NorESMhub/CTSM              : ctsm5.3.034_noresm_v7
     - fates   : NorESMhub/fates             : sci.1.82.3_api.39.0.0_noresm_v2
