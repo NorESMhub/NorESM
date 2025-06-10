@@ -10,7 +10,7 @@ Details:
 Component tags used in this tag:
 
  - parallelio : NCAR/ParallelIO             : pio2_6_2
- - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.45
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.47
  - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
  - blom       : NorESMhub/BLOM              : dev1.9.0.21
@@ -22,7 +22,7 @@ Component tags used in this tag:
     - fates   : NorESMhub/fates             : sci.1.82.3_api.39.0.0_noresm_v2
  - cmeps      : NorESMhub/CMEPS             : cmeps1.0.39_noresm_v3
  - mosart     : ESCOMP/MOSART               : mosart1.1.08
- - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.17
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
  - pycect     : NCAR/PyCECT                 : 3.2.2
 
 Bugs fixed:
