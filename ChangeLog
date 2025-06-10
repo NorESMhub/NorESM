@@ -8,7 +8,7 @@ Details:
  - Update CICE6 tag to noresm_cice6_6_0_20250522_v0:
    - Update CICE tag to cice6_6_0_20250522_noresm
    - Various updates from CICE6.5.0 to CICE6.6.0
- - Update BLOM tag to dev1.0.9.21:
+ - Update BLOM tag to dev1.0.9.22:
    - Add Gibbs SeaWater (GSW) Oceanographic Toolbox of TEOS-10 (external)
    - Support for WOA18 in-situ temperature and practical salinity climatology
    - Adapt reference potential densities to the evolving model state
@@ -32,7 +32,7 @@ Component tags used in this tag:
  - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.47
  - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
- - blom       : NorESMhub/BLOM              : dev1.9.0.21
+ - blom       : NorESMhub/BLOM              : dev1.9.0.22
  - cam        : NorESMhub/CAM               : noresm3_0_005_cam6_4_085
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v6
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v0
