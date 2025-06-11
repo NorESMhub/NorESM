@@ -8,7 +8,7 @@ Details:
  - Update CICE6 tag to noresm_cice6_6_0_20250522_v0:
    - Update CICE tag to cice6_6_0_20250522_noresm
    - Various updates from CICE6.5.0 to CICE6.6.0
- - Update BLOM tag to dev1.0.9.22:
+ - Update BLOM tag to dev1.0.9.24:
    - Add Gibbs SeaWater (GSW) Oceanographic Toolbox of TEOS-10 (external)
    - Support for WOA18 in-situ temperature and practical salinity climatology
    - Adapt reference potential densities to the evolving model state
@@ -32,7 +32,7 @@ Component tags used in this tag:
  - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.47
  - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
- - blom       : NorESMhub/BLOM              : dev1.9.0.22
+ - blom       : NorESMhub/BLOM              : dev1.9.0.24
  - cam        : NorESMhub/CAM               : noresm3_0_005_cam6_4_085
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v6
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v0
@@ -46,14 +46,14 @@ Component tags used in this tag:
 
 Bugs fixed:
 
-
 Describe any changes made to scripts/build system: NA
 
 Describe any substantial timing or memory changes: NA
 
-Code reviewed by:
+Code reviewed by: Matvey Debolskiy, Mats Bentsen, Jens Debernard
 
 Summary of pre-tag testing:
+  - prealpha_noresm, aux_blom_noresm
 
 Summarize any change to answers:
 
@@ -89,7 +89,7 @@ Component tags used in this tag:
  - pycect     : NCAR/PyCECT                 : 3.2.2
 
 Bugs fixed:
-  NorESMhb/CAM#211
+  NorESMhub/CAM#211
 
 
 Describe any changes made to scripts/build system: NA
@@ -101,7 +101,7 @@ Code reviewed by: Steve Goldhaber, Matvey Debolskiy, Øyvind Seland
 Summary of pre-tag testing:
   - prealpha_noresm, aux_cam_noresm
     - Expected baseline diffs and nlcomp fails
-    - N1850 comsets:Throughput changed by 54.07%:
+    - N1850 compsets:Throughput changed by 54.07%:
       baseline=9.757 sypd, tolerance=25%, current=4.481 sypd
 
 Summarize any change to answers:
