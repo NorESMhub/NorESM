@@ -56,7 +56,7 @@
       <option name="wallclock"> 01:00:00 </option>
     </options>
   </test>
-  <test name="ERS" grid="ne30pg3_tn05" compset="N1850" testmods="allactive/defaultio">
+  <test name="SMS_D_Ld1_P253" grid="ne30pg3_tn05" compset="N1850" testmods="allactive/defaultio">
     <machines>
       <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
     </machines>
