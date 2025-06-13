@@ -102,7 +102,7 @@ fxDONOTUSEurl = https://github.com/NorESMhub/NorESM_CICE.git
 [submodule "cism"]
 path = components/cism
 url = https://github.com/NorESMhub/CISM-wrapper.git
-fxtag = cismwrap_2_2_006_noresm_v0
+fxtag = cismwrap_2_2_007_noresm_v0
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CISM-wrapper.git
 
