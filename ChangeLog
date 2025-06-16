@@ -1,7 +1,50 @@
 ==============================================================
 
+Tag name: noresm3_0_alpha06a
+Date: 17-06-2025
+One-line Summary: Update BLOM/iHAMOCC
+
+Details:
+ - Update BLOM/iHAMOCC to tag dev1.9.0.28:
+   - New iHAMOCC default configuration and parameter settings
+   - Define working precision for iHAMOCC
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.49
+ - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
+ - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
+ - blom       : NorESMhub/BLOM              : dev1.9.0.28
+ - cam        : NorESMhub/CAM               : noresm3_0_005_cam6_4_085
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v7
+ - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v0
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v0
+ - clm        : NorESMhub/CTSM              : ctsm5.3.045_noresm_v0
+    - fates   : NorESMhub/fates             : sci.1.85.1_api.40.0.0_noresm_v0
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.0.39_noresm_v4
+ - mosart     : NorESMhub/MOSART            : mosart1.1.08_noresm_v0
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+
+Describe any changes made to scripts/build system: NA
+
+Describe any substantial timing or memory changes: NA
+
+Code reviewed by: Tomas Torsvik, Jöran Maerz, Jörg Schwinger
+
+Summary of pre-tag testing:
+  - prealpha_noresm, aux_blom_noresm
+
+Summarize any change to answers:
+  - Any compset with active ocean BGC
+
+==============================================================
+
 Tag name: noresm3_0_alpha06
-Date:
+Date: 16/06/2025
 One-line Summary: Update CISM, CTSM and fates
 
 Details:
@@ -41,7 +84,7 @@ Describe any changes made to scripts/build system: NA
 Describe any substantial timing or memory changes: NA
 
 Code reviewed by: Matvey Debolskiy, Mariana Vertenstein, Michelle parameterisation
-                  Alok Gupta, Tomas Torsvik, 
+                  Alok Gupta, Tomas Torsvik
 
 Summary of pre-tag testing:
   - prealpha_noresm, aux_cism_noresm, aux_clm_noresm
@@ -57,7 +100,7 @@ Summarize any change to answers:
 ==============================================================
 
 Tag name: noresm3_0_alpha05
-Date:
+Date: 12/06/2025
 One-line Summary: Update CICE to noresm_cice6_6_0_20250522_v0
 
 Details:
