@@ -1,5 +1,61 @@
 ==============================================================
 
+Tag name: noresm3_0_alpha06
+Date:
+One-line Summary: Update CISM, CTSM and fates
+
+Details:
+ - Update CISM to tag cismwrap_2_2_007_noresm_v0:
+   - introduced new smoothing algorithm for thermal forcing
+   - update to latest escomp/main
+   - new compsets for runing cism with new DLND and DOCN modes
+   - ocn2glc coupling
+ - Update CTSM to escomp 5.3.045 (+ fates update to latest tag)
+ - Update MOSART to mosart1.1.08_noresm_v0 and switch to NorESMhub fork
+ - Add capability for CLM and MOSART to exchange nonh20 tracers
+ - Update ccs_config:
+   - added compression to history output as default
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.49
+ - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
+ - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
+ - blom       : NorESMhub/BLOM              : dev1.9.0.24
+ - cam        : NorESMhub/CAM               : noresm3_0_005_cam6_4_085
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v7
+ - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v0
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v0
+ - clm        : NorESMhub/CTSM              : ctsm5.3.045_noresm_v0
+    - fates   : NorESMhub/fates             : sci.1.85.1_api.40.0.0_noresm_v0
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.0.39_noresm_v4
+ - mosart     : NorESMhub/MOSART            : mosart1.1.08_noresm_v0
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+
+Describe any changes made to scripts/build system: NA
+
+Describe any substantial timing or memory changes: NA
+
+Code reviewed by: Matvey Debolskiy, Mariana Vertenstein, Michelle parameterisation
+                  Alok Gupta, Tomas Torsvik, 
+
+Summary of pre-tag testing:
+  - prealpha_noresm, aux_cism_noresm, aux_clm_noresm
+    - expected fails:
+      ERS.f09_f09_mtn14.I2000Clm60Bgc.betzy_intel.clm-lnd2rof_tracers
+         NorESMhub/MOSART#13
+      ERS_D_Ly10.ne30pg3_tn14_ais8.TC1850Ga.betzy_intel.cism-ocn2glc_cplhist_nor_withocean
+        (if bmlt_float_thermal_forcing_param>0) 0 is default NorESMhub/CISM-wrapper#12
+
+Summarize any change to answers:
+  - Any compset with active land or cism
+
+==============================================================
+
 Tag name: noresm3_0_alpha05
 Date:
 One-line Summary: Update CICE to noresm_cice6_6_0_20250522_v0
