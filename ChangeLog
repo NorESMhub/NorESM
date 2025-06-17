@@ -36,7 +36,17 @@ Describe any substantial timing or memory changes: NA
 Code reviewed by: Tomas Torsvik, Jöran Maerz, Jörg Schwinger
 
 Summary of pre-tag testing:
-  - prealpha_noresm, aux_blom_noresm
+  - prealpha_noresm : 1 expected FAIL
+      SMS_D_Ld1_P253.ne30pg3_tn05.N1850.betzy_intel.allactive-defaultio
+  - aux_blom_noresm : 6 expected FAIL
+      ERP_Ld3_P256.T62_tn14.NOINYOC.betzy_gnu
+      ERP_Ld3_P256.T62_tn14.NOINYOC.betzy_intel
+      ERS_Ld3.T62_tn14_wtn14nw.NOINY_WW3.betzy_gnu.blom-wavice
+      ERS_Ld3.T62_tn21.NOINY.betzy_intel
+      SMS_D_Ld1.T62_tn14.NOIIAOC20TR.betzy_intel
+      SMS_D_Ld1.T62_tn14_wtn14nw.NOINYOC_WW3.betzy_gnu.blom-wavice
+  - aux_hamocc_noresm : 1 expected FAIL
+      SMS_D_Ld1.T62_tn14.NOINYOC.betzy_intel.blom-hamocc-hamocc6
 
 Summarize any change to answers:
   - Any compset with active ocean BGC
