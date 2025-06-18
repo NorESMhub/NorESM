@@ -26,6 +26,8 @@ Component tags used in this tag:
  - pycect     : NCAR/PyCECT                 : 3.2.2
 
 Bugs fixed:
+  - Bug in boundary layer accumulation mode of BC
+    (NorESMhub/CAM#214)
 
 Describe any changes made to scripts/build system: NA
 
