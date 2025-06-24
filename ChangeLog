@@ -6,11 +6,15 @@ One-line Summary: Update CAM, BC bugfix
 
 Details:
  - Update CAM to tag noresm3_0_009_cam6_4_085
+   - Fix BC bug
+   - Compsets and tests for long-lived GHGs in CAMoslo
+ - Update ccs_config to ccs_config_noresm0.0.50
+   - Restore default DGLC grids
 
 Component tags used in this tag:
 
  - parallelio : NCAR/ParallelIO             : pio2_6_2
- - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.49
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.50
  - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
  - blom       : NorESMhub/BLOM              : dev1.9.0.28
@@ -33,11 +37,16 @@ Describe any changes made to scripts/build system: NA
 
 Describe any substantial timing or memory changes: NA
 
-Code reviewed by: Tomas Torsvik,
+Code reviewed by: Tomas Torsvik, Steve Goldhaber
 
 Summary of pre-tag testing:
+  - prealpha_noresm : 1 expected FAIL
+      SMS_D_Ld1_P253.ne30pg3_tn05.N1850.betzy_intel.allactive-defaultio
+  - aux_cam_noresm : 1 unexpected FAIL
+      ERP_Ln9.ne16pg3_ne16pg3_mtn14.NF1850ghg_fates-nocomp.betzy_intel.cam-outfrq9s
 
 Summarize any change to answers:
+  - Any compset with active NorESM-CAM
 
 ==============================================================
 
