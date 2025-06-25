@@ -1,5 +1,55 @@
 ==============================================================
 
+Tag name: noresm3_0_alpha07
+Date:
+One-line Summary: Update CAM, BC bugfix
+
+Details:
+ - Update CAM to tag noresm3_0_009_cam6_4_085
+   - Fix BC bug
+   - Compsets and tests for long-lived GHGs in CAMoslo
+ - Update ccs_config to ccs_config_noresm0.0.50
+   - Restore default DGLC grids
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.50
+ - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
+ - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
+ - blom       : NorESMhub/BLOM              : dev1.9.0.28
+ - cam        : NorESMhub/CAM               : noresm3_0_009_cam6_4_085
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v7
+ - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v0
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v0
+ - clm        : NorESMhub/CTSM              : ctsm5.3.045_noresm_v0
+    - fates   : NorESMhub/fates             : sci.1.85.1_api.40.0.0_noresm_v0
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.0.39_noresm_v4
+ - mosart     : NorESMhub/MOSART            : mosart1.1.08_noresm_v0
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+  - Bug in boundary layer accumulation mode of BC
+    (NorESMhub/CAM#214)
+
+Describe any changes made to scripts/build system: NA
+
+Describe any substantial timing or memory changes: NA
+
+Code reviewed by: Tomas Torsvik, Steve Goldhaber
+
+Summary of pre-tag testing:
+  - prealpha_noresm : 1 expected FAIL
+      SMS_D_Ld1_P253.ne30pg3_tn05.N1850.betzy_intel.allactive-defaultio
+  - aux_cam_noresm : 1 unexpected FAIL
+      ERP_Ln9.ne16pg3_ne16pg3_mtn14.NF1850ghg_fates-nocomp.betzy_intel.cam-outfrq9s
+
+Summarize any change to answers:
+  - Any compset with active NorESM-CAM
+
+==============================================================
+
 Tag name: noresm3_0_alpha06a
 Date: 17-06-2025
 One-line Summary: Update BLOM/iHAMOCC
