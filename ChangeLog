@@ -8,7 +8,7 @@ Details:
  - Update BLOM to tag v1.10.0
    - Update parameters for reference density and eddy diffusivity
  - Update CAM to tag noresm3_0_010_cam6_4_085
-   - Add option to use Shofer local or PUMAS global ice limiter
+   - Fixed bugs in PUMAS and modified Oslo Aero to resolve LW-CF and aerosol LW ERF aerosol issues
 
 Component tags used in this tag:
 
