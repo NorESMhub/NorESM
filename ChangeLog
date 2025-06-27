@@ -9,6 +9,7 @@ Details:
    - Update parameters for reference density and eddy diffusivity
  - Update CAM to tag noresm3_0_010_cam6_4_085
    - Fixed bugs in PUMAS and modified Oslo Aero to resolve LW-CF and aerosol LW ERF aerosol issues
+ - Update CICE to tag noresm_cice6_6_0_20250522_v1
 
 Component tags used in this tag:
 
@@ -19,7 +20,7 @@ Component tags used in this tag:
  - blom       : NorESMhub/BLOM              : v1.10.0
  - cam        : NorESMhub/CAM               : noresm3_0_010_cam6_4_085
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v7
- - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v0
+ - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v1
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v0
  - clm        : NorESMhub/CTSM              : ctsm5.3.045_noresm_v0
     - fates   : NorESMhub/fates             : sci.1.85.1_api.40.0.0_noresm_v0
