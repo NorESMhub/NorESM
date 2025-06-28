@@ -2,7 +2,7 @@
 
 Tag name: noresm3_0_beta01
 Date:
-One-line Summary:
+One-line Summary: Final component updates for noresm3_0_beta01 release
 
 Details:
  - Update BLOM to tag v1.10.0
@@ -10,6 +10,9 @@ Details:
  - Update CAM to tag noresm3_0_011_cam6_4_085
    - Fixed bugs in PUMAS and modified Oslo Aero to resolve LW-CF and aerosol LW ERF aerosol issues
  - Update CICE to tag noresm_cice6_6_0_20250522_v1
+ - Update CLM to ctsm5.3.045_noresm_v9
+   - Nbp with products
+   - Update FATES to sci.1.85.1_api.40.0.0_noresm_v3
 
 Component tags used in this tag:
 
@@ -22,8 +25,8 @@ Component tags used in this tag:
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v7
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v1
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v0
- - clm        : NorESMhub/CTSM              : ctsm5.3.045_noresm_v0
-    - fates   : NorESMhub/fates             : sci.1.85.1_api.40.0.0_noresm_v0
+ - clm        : NorESMhub/CTSM              : ctsm5.3.045_noresm_v9
+    - fates   : NorESMhub/fates             : sci.1.85.1_api.40.0.0_noresm_v3
  - cmeps      : NorESMhub/CMEPS             : cmeps1.0.39_noresm_v4
  - mosart     : NorESMhub/MOSART            : mosart1.1.08_noresm_v0
  - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
@@ -35,7 +38,7 @@ Describe any changes made to scripts/build system: NA
 
 Describe any substantial timing or memory changes: NA
 
-Code reviewed by: Tomas Torsvik, Steve Goldhaber
+Code reviewed by: Tomas Torsvik, Steve Goldhaber, Marit Sandstad
 
 Summary of pre-tag testing:
 
