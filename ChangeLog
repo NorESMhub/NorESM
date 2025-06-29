@@ -1,7 +1,70 @@
 ==============================================================
 
+Tag name: noresm3_0_beta01
+Date: 29-06-2025
+One-line Summary: Final component updates for noresm3_0_beta01 release
+
+Details:
+ - Update BLOM to tag v1.10.0
+   - Update parameters for reference density and eddy diffusivity
+ - Update CAM to tag noresm3_0_011_cam6_4_085
+   - Fixed bugs in PUMAS and modified Oslo Aero to resolve LW-CF and aerosol LW ERF aerosol issues
+ - Update CICE to tag noresm_cice6_6_0_20250522_v1
+ - Update CLM to ctsm5.3.045_noresm_v9
+   - Nbp with products
+   - Update FATES to sci.1.85.1_api.40.0.0_noresm_v3
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.50
+ - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
+ - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.10.0
+ - cam        : NorESMhub/CAM               : noresm3_0_011_cam6_4_085
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v7
+ - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v1
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v0
+ - clm        : NorESMhub/CTSM              : ctsm5.3.045_noresm_v9
+    - fates   : NorESMhub/fates             : sci.1.85.1_api.40.0.0_noresm_v3
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.0.39_noresm_v4
+ - mosart     : NorESMhub/MOSART            : mosart1.1.08_noresm_v0
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+  - Bug fixes from Oslo Aero and PUMAS
+    (NorESMhub/CAM#230)
+
+Describe any changes made to scripts/build system: NA
+
+Describe any substantial timing or memory changes: NA
+
+Code reviewed by: Tomas Torsvik, Steve Goldhaber, Marit Sandstad, Mats Bentsen
+
+Summary of pre-tag testing:
+  - prealpha_noresm : 1 expected FAIL
+      SMS_D_Ld1_P253.ne30pg3_tn05.N1850.betzy_intel.allactive-defaultio
+  - aux_cam_noresm : 1 expected FAIL
+      ERP_Ln9.ne16pg3_ne16pg3_mtn14.NF1850ghg_fates-nocomp.betzy_intel.cam-outfrq9s
+  - aux_blom_noresm : 5 expected FAIL
+      ERP_Ld3_P256.T62_tn14.NOINYOC.betzy_gnu
+      ERP_Ld3_P256.T62_tn14.NOINYOC.betzy_intel
+      ERS_Ld3.T62_tn14_wtn14nw.NOINY_WW3.betzy_gnu.blom-wavice
+      SMS_D_Ld1.T62_tn14_wtn14nw.NOINYOC_WW3.betzy_gnu.blom-wavice
+      SMS_D_Ld1.T62_tn14.NOIIAOC20TR.betzy_intel
+  - aux_clm_noresm : 1 expected fail
+      ERS.f09_f09_mtn14.I2000Clm60Bgc.betzy_intel.clm-lnd2rof_tracers
+  - aux_hamocc_noresm : 1 expected fail
+      SMS_D_Ld1.T62_tn14.NOINYOC.betzy_intel.blom-hamocc-hamocc6
+
+Summarize any change to answers:
+  - All compsets have answer changes
+
+==============================================================
+
 Tag name: noresm3_0_alpha07
-Date:
+Date: 25-07-2025
 One-line Summary: Update CAM, BC bugfix
 
 Details:
