@@ -1,7 +1,7 @@
 ==============================================================
 
 Tag name: noresm3_0_beta01
-Date:
+Date: 29-06-2025
 One-line Summary: Final component updates for noresm3_0_beta01 release
 
 Details:
@@ -33,16 +33,33 @@ Component tags used in this tag:
  - pycect     : NCAR/PyCECT                 : 3.2.2
 
 Bugs fixed:
+  - Bug fixes from Oslo Aero and PUMAS
+    (NorESMhub/CAM#230)
 
 Describe any changes made to scripts/build system: NA
 
 Describe any substantial timing or memory changes: NA
 
-Code reviewed by: Tomas Torsvik, Steve Goldhaber, Marit Sandstad
+Code reviewed by: Tomas Torsvik, Steve Goldhaber, Marit Sandstad, Mats Bentsen
 
 Summary of pre-tag testing:
+  - prealpha_noresm : 1 expected FAIL
+      SMS_D_Ld1_P253.ne30pg3_tn05.N1850.betzy_intel.allactive-defaultio
+  - aux_cam_noresm : 1 expected FAIL
+      ERP_Ln9.ne16pg3_ne16pg3_mtn14.NF1850ghg_fates-nocomp.betzy_intel.cam-outfrq9s
+  - aux_blom_noresm : 5 expected FAIL
+      ERP_Ld3_P256.T62_tn14.NOINYOC.betzy_gnu
+      ERP_Ld3_P256.T62_tn14.NOINYOC.betzy_intel
+      ERS_Ld3.T62_tn14_wtn14nw.NOINY_WW3.betzy_gnu.blom-wavice
+      SMS_D_Ld1.T62_tn14_wtn14nw.NOINYOC_WW3.betzy_gnu.blom-wavice
+      SMS_D_Ld1.T62_tn14.NOIIAOC20TR.betzy_intel
+  - aux_clm_noresm : 1 expected fail
+      ERS.f09_f09_mtn14.I2000Clm60Bgc.betzy_intel.clm-lnd2rof_tracers
+  - aux_hamocc_noresm : 1 expected fail
+      SMS_D_Ld1.T62_tn14.NOINYOC.betzy_intel.blom-hamocc-hamocc6
 
 Summarize any change to answers:
+  - All compsets have answer changes
 
 ==============================================================
 
