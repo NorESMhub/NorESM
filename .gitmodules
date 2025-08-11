@@ -116,7 +116,7 @@ fxDONOTUSEurl = https://github.com/NorESMhub/CTSM.git
 [submodule "cmeps"]
 path = components/cmeps
 url = https://github.com/NorESMhub/CMEPS.git
-fxtag = cmeps1.0.39_noresm_v4
+fxtag = cmeps1.0.39_noresm_v5
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CMEPS.git
 
