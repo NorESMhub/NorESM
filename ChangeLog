@@ -1,5 +1,59 @@
 ==============================================================
 
+Tag name: noresm3_0_beta01a
+Date: 13-08-2025
+One-line Summary: Bug fixes for emission-driven runs
+
+Details:
+ - Update CMEPS to cmeps1.0.39_noresm_v5
+   - Fix field check for fco2 from land
+ - Update CLM to ctsm5.3.045_noresm_v11
+   - Fix grazing and fire_closs updates
+   - New parameter file
+   - Update FATES to sci.1.85.1_api.40.0.0_noresm_v4
+ - Added NE1850fates-nocomp compset for prognostic co2
+ - New test for NE1850fates
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.50
+ - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
+ - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.10.0
+ - cam        : NorESMhub/CAM               : noresm3_0_011_cam6_4_085
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v7
+ - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v1
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v0
+ - clm        : NorESMhub/CTSM              : ctsm5.3.045_noresm_v11
+    - fates   : NorESMhub/fates             : sci.1.85.1_api.40.0.0_noresm_v4
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.0.39_noresm_v5
+ - mosart     : NorESMhub/MOSART            : mosart1.1.08_noresm_v0
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+  - New compset
+    (NorESMhub/NorESM/#665)
+
+Describe any changes made to scripts/build system: NA
+
+Describe any substantial timing or memory changes: NA
+
+Code reviewed by: Tomas Torsvik, Steve Goldhaber, Marit Sandstad, Mats Bentsen
+
+Summary of pre-tag testing:
+  - prealpha_noresm : 1 expected FAIL
+      SMS_D_Ld1_P253.ne30pg3_tn05.N1850.betzy_intel.allactive-defaultio
+  - aux_clm_noresm : 1 expected fail
+      ERS.f09_f09_mtn14.I2000Clm60Bgc.betzy_intel.clm-lnd2rof_tracers
+
+Summarize any change to answers:
+  - Concentration driven comspets - due to new parameter file
+
+
+==============================================================
+
 Tag name: noresm3_0_beta01
 Date: 29-06-2025
 One-line Summary: Final component updates for noresm3_0_beta01 release

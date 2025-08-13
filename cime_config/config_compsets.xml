@@ -83,6 +83,13 @@
     <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%SP_CICE_BLOM%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
   </compset>
 
+  <!-- Emission-driven -->
+
+  <compset>
+     <alias>NE1850fates-nocomp</alias>
+     <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-NOCOMP_CICE_BLOM%HYB%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP_BGC%BPRP</lname>
+  </compset>
+
   <entries>
     <entry id="RUN_STARTDATE">
       <values>
