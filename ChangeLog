@@ -7,10 +7,10 @@ One-line Summary: Bug fixes for emission-driven runs
 Details:
  - Update CMEPS to cmeps1.0.39_noresm_v5
    - Fix field check for fco2 from land
- - Update CLM to ctsm5.3.045_noresm_v10
+ - Update CLM to ctsm5.3.045_noresm_v11
    - Fix grazing and fire_closs updates
    - New parameter file
-   - Update FATES to sci.1.85.1_api.40.0.0_noresm_v3
+   - Update FATES to sci.1.85.1_api.40.0.0_noresm_v4
  - Added NE1850fates-nocomp compset for prognostic co2
  - New test for NE1850fates
 
@@ -26,7 +26,7 @@ Component tags used in this tag:
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v1
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v0
  - clm        : NorESMhub/CTSM              : ctsm5.3.045_noresm_v11
-    - fates   : NorESMhub/fates             : sci.1.85.1_api.40.0.0_noresm_v3
+    - fates   : NorESMhub/fates             : sci.1.85.1_api.40.0.0_noresm_v4
  - cmeps      : NorESMhub/CMEPS             : cmeps1.0.39_noresm_v5
  - mosart     : NorESMhub/MOSART            : mosart1.1.08_noresm_v0
  - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
