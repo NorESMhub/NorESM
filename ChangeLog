@@ -5,6 +5,7 @@ Date:
 One-line Summary: New default settings for noresm3_0_beta02 release
 
 Details:
+ - Update CAM to tag noresm3_0_012_cam6_4_085
  - Update CICE to tag noresm_cice6_6_0_20250522_v2
 
 Component tags used in this tag:
@@ -14,7 +15,7 @@ Component tags used in this tag:
  - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
  - blom       : NorESMhub/BLOM              : v1.10.0
- - cam        : NorESMhub/CAM               : noresm3_0_011_cam6_4_085
+ - cam        : NorESMhub/CAM               : noresm3_0_012_cam6_4_085
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v7
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v2
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v0
