@@ -7,6 +7,7 @@ One-line Summary: New default settings for noresm3_0_beta02 release
 Details:
  - Update CAM to tag noresm3_0_012_cam6_4_085
  - Update CICE to tag noresm_cice6_6_0_20250522_v2
+ - Update MOSART to tag mosart1.1.12_noresm_v0
 
 Component tags used in this tag:
 
@@ -22,7 +23,7 @@ Component tags used in this tag:
  - clm        : NorESMhub/CTSM              : ctsm5.3.045_noresm_v11
     - fates   : NorESMhub/fates             : sci.1.85.1_api.40.0.0_noresm_v4
  - cmeps      : NorESMhub/CMEPS             : cmeps1.0.39_noresm_v5
- - mosart     : NorESMhub/MOSART            : mosart1.1.08_noresm_v0
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v0
  - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
  - pycect     : NCAR/PyCECT                 : 3.2.2
 
