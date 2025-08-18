@@ -5,17 +5,22 @@ Date:
 One-line Summary: New default settings for noresm3_0_beta02 release
 
 Details:
- - Update CAM to tag noresm3_0_012_cam6_4_085
+ - Update BLOM to tag v1.11.1
+ - Update CAM to tag noresm3_0_013_cam6_4_085
+   - Introduce new history flags to contain all CAM output in NorESM3
  - Update CICE to tag noresm_cice6_6_0_20250522_v2
  - Update MOSART to tag mosart1.1.12_noresm_v0
+   - Updates NorESM to use ESCOMP mosart1.1.12
+ - Update ccs_config to ccs_config_noresm0.0.51
+ - Update git-fleximod to v1.0.2
 
 Component tags used in this tag:
 
  - parallelio : NCAR/ParallelIO             : pio2_6_2
- - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.50
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.51
  - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
- - blom       : NorESMhub/BLOM              : v1.10.0
+ - blom       : NorESMhub/BLOM              : v1.11.1
  - cam        : NorESMhub/CAM               : noresm3_0_012_cam6_4_085
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v7
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v2
@@ -23,15 +28,21 @@ Component tags used in this tag:
  - clm        : NorESMhub/CTSM              : ctsm5.3.045_noresm_v11
     - fates   : NorESMhub/fates             : sci.1.85.1_api.40.0.0_noresm_v4
  - cmeps      : NorESMhub/CMEPS             : cmeps1.0.39_noresm_v5
- - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v0
+ - mosart     : NorESMhub/MOSART            : mosart1.1.13_noresm_v0
  - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
  - pycect     : NCAR/PyCECT                 : 3.2.2
 
 Bugs fixed:
-  - Correct snow redistribution keyword from snwITDrdg to ITDrdg
-    (NorESMhub/NORESM_CICE#18)
+ - CAM: Resolve pcols / ncol conflict
+   (NorESMhub/CAM#234) ; (NorESMhub/OSLO_AERO#61)
+ - CICE: Correct snow redistribution keyword from snwITDrdg to ITDrdg
+   (NorESMhub/NORESM_CICE#18)
 
-Describe any changes made to scripts/build system: NA
+
+Describe any changes made to scripts/build system:
+   Update git-fleximod to version v1.0.2 (Aug. 15, 2025) from
+   version v0.9.2 (Sep. 18, 2024). Full changelog available via link:
+   https://github.com/ESMCI/git-fleximod/compare/02e8599...5a406d3
 
 Describe any substantial timing or memory changes: NA
 
