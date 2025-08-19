@@ -6,7 +6,12 @@ One-line Summary: New default settings for noresm3_0_beta02 release
 
 Details:
  - Update ccs_config to ccs_config_noresm0.0.51
- - Update BLOM to tag v1.11.2
+ - Update BLOM to tag v1.11.3
+   - Increase default vertical layers for hybrid coordinates from 56 to 72
+   - Adaption of reference potential densities enabled by default
+   - Improve CPPM transport method for tracers
+   - Change default mixed layer stratification method to Bodner et al. (2023)
+   - HAMOCC: Adjust N-cyle parameters and set new default parameters
  - Update CAM to tag noresm3_0_013_cam6_4_085
    - Introduce new history flags to contain all CAM output in NorESM3
  - Update CICE to tag noresm_cice6_6_0_20250522_v2
@@ -22,7 +27,7 @@ Component tags used in this tag:
  - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.51
  - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
- - blom       : NorESMhub/BLOM              : v1.11.2
+ - blom       : NorESMhub/BLOM              : v1.11.3
  - cam        : NorESMhub/CAM               : noresm3_0_012_cam6_4_085
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v7
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v2
