@@ -9,6 +9,7 @@ import os
 import shutil
 import logging
 import textwrap
+import asyncio
 from git_fleximod import utils
 from git_fleximod import cli
 from git_fleximod.gitinterface import GitInterface
@@ -166,7 +167,7 @@ def submodule_sparse_checkout(root_dir, name, url, path, sparsefile, tag="master
         with utils.pushd(sprep_repo):
             if os.path.isfile(sparsefile):
                 shutil.copy(sparsefile, gitsparse)
-
+                
 
     # Finally checkout the repo
     sprepo_git.git_operation("fetch", "origin", "--tags")
@@ -179,8 +180,10 @@ def submodule_sparse_checkout(root_dir, name, url, path, sparsefile, tag="master
 def init_submodule_from_gitmodules(gitmodules, name, root_dir, logger):
     path = gitmodules.get(name, "path")
     url = gitmodules.get(name, "url")
-    assert path and url, f"Malformed .gitmodules file '{path}' '{url}'"
+    assert path and url, f"Malformed .gitmodules file {path} {url}"
     tag = gitmodules.get(name, "fxtag")
+    if not tag:
+        tag = gitmodules.get(name, "hash")
     fxurl = gitmodules.get(name, "fxDONOTUSEurl")
     fxsparse = gitmodules.get(name, "fxsparse")
     fxrequired = gitmodules.get(name, "fxrequired")
@@ -193,7 +196,7 @@ def submodules_status(gitmodules, root_dir, toplevel=False, depth=0):
     wrapper = textwrap.TextWrapper(initial_indent=' '*(depth*10), width=120,subsequent_indent=' '*(depth*20))
     for name in gitmodules.sections():
         submod = init_submodule_from_gitmodules(gitmodules, name, root_dir, logger)
-
+            
         result,n,l,t = submod.status()
         if toplevel or not submod.toplevel():
             print(wrapper.fill(result))
@@ -208,7 +211,7 @@ def submodules_status(gitmodules, root_dir, toplevel=False, depth=0):
                 testfails += t
                 localmods += l
                 needsupdate += n
-
+            
     return testfails, localmods, needsupdate
 
 def git_toplevelroot(root_dir, logger):
@@ -216,19 +219,19 @@ def git_toplevelroot(root_dir, logger):
     _, superroot = rgit.git_operation("rev-parse", "--show-superproject-working-tree")
     return superroot
 
-def submodules_update(gitmodules, root_dir, requiredlist, force):
-    for name in gitmodules.sections():
+async def submodules_update(gitmodules, root_dir, requiredlist, force):
+    async def update_submodule(name, requiredlist, force):
         submod = init_submodule_from_gitmodules(gitmodules, name, root_dir, logger)
 
         _, needsupdate, localmods, testfails = submod.status()
         if not submod.fxrequired:
             submod.fxrequired = "AlwaysRequired"
-        fxrequired = submod.fxrequired
+        fxrequired = submod.fxrequired    
         allowedvalues = fxrequired_allowed_values()
         assert fxrequired in allowedvalues
 
         superroot = git_toplevelroot(root_dir, logger)
-
+                                     
         if (
             fxrequired
             and ((superroot and "Toplevel" in fxrequired)
@@ -237,11 +240,11 @@ def submodules_update(gitmodules, root_dir, requiredlist, force):
             if "Optional" in fxrequired and "Optional" not in requiredlist:
                 if fxrequired.startswith("Always"):
                     print(f"Skipping optional component {name:>20}")
-                continue
+                return # continue to next submodule
         optional = "AlwaysOptional" in requiredlist
 
         if fxrequired in requiredlist:
-            submod.update()
+            await submod.update()
             repodir = os.path.join(root_dir, submod.path)
             if os.path.exists(os.path.join(repodir, ".gitmodules")):
                 # recursively handle this checkout
@@ -250,8 +253,10 @@ def submodules_update(gitmodules, root_dir, requiredlist, force):
                 newrequiredlist = ["AlwaysRequired"]
                 if optional:
                     newrequiredlist.append("AlwaysOptional")
+                await submodules_update(gitsubmodules, repodir, newrequiredlist, force=force)
 
-                submodules_update(gitsubmodules, repodir, newrequiredlist, force=force)
+    tasks = [update_submodule(name, requiredlist, force) for name in gitmodules.sections()]
+    await asyncio.gather(*tasks)
 
 def local_mods_output():
     text = """\
@@ -317,7 +322,7 @@ def main():
     logger = logging.getLogger(__name__)
 
     logger.info("action is {} root_dir={} file_name={}".format(action, root_dir, file_name))
-
+    
     if not root_dir or not os.path.isfile(os.path.join(root_dir, file_name)):
         if root_dir:
             file_path = utils.find_upwards(root_dir, file_name)
@@ -342,10 +347,10 @@ def main():
         excludelist=excludelist,
     )
     if not gitmodules.sections():
-        sys.exit("No submodule components found")
+        sys.exit(f"No submodule components found, root_dir={root_dir}")
     retval = 0
     if action == "update":
-        submodules_update(gitmodules, root_dir, fxrequired, force)
+        asyncio.run(submodules_update(gitmodules, root_dir, fxrequired, force))
     elif action == "status":
         tfails, lmods, updates = submodules_status(gitmodules, root_dir, toplevel=True)
         if tfails + lmods + updates > 0:
