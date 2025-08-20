@@ -1,7 +1,7 @@
 ==============================================================
 
 Tag name: noresm3_0_beta02
-Date:
+Date: 20-08-2025
 One-line Summary: New default settings for noresm3_0_beta02 release
 
 Details:
@@ -28,14 +28,14 @@ Component tags used in this tag:
  - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
  - blom       : NorESMhub/BLOM              : v1.11.4
- - cam        : NorESMhub/CAM               : noresm3_0_012_cam6_4_085
+ - cam        : NorESMhub/CAM               : noresm3_0_013_cam6_4_085
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v7
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v2
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v0
  - clm        : NorESMhub/CTSM              : ctsm5.3.045_noresm_v11
     - fates   : NorESMhub/fates             : sci.1.85.1_api.40.0.0_noresm_v4
  - cmeps      : NorESMhub/CMEPS             : cmeps1.0.39_noresm_v6
- - mosart     : NorESMhub/MOSART            : mosart1.1.13_noresm_v0
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v0
  - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
  - pycect     : NCAR/PyCECT                 : 3.2.2
 
@@ -59,6 +59,7 @@ Describe any substantial timing or memory changes:
 Code merged by: Tomas Torsvik
 
 Code reviewed by: Steve Goldhaber, Mats Bentsen, Jens Debernard
+                  Matvey Debolskiy, Mariana Vertenstein
 
 Summary of pre-tag testing:
  - prealpha_noresm : 1 expected FAIL
@@ -77,6 +78,10 @@ Summary of pre-tag testing:
      SMS_D_Ld1.T62_tn14.NOINYOC.betzy_intel.blom-hamocc-hamocc6
 
 Summarize any change to answers:
+ - DIFF compared with noresm3_0_beta01 baselines for
+   - All fully coupled NorESM compsets
+   - All AMIP-type compsets
+   - All OMIP-type compsets
 
 ==============================================================
 
