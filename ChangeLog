@@ -52,7 +52,7 @@ Describe any changes made to scripts/build system:
 
 Describe any substantial timing or memory changes:
  - The increase in ocean vertical layers potentially increase 3D fields by 28.6%.
-   Cost of short OMIP-type test runs incerease by 23%-26%, whereas cost of fully
+   Cost of short OMIP-type test runs increase by 23%-26%, whereas cost of fully
    coupled test runs increase by 1%-2%, in terms of model throughput
    (simulated_years/day).
 
