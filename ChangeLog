@@ -2,6 +2,62 @@
 
 Tag name: noresm3_0_beta02
 Date: 20-08-2025
+One-line Summary: Fixes for CISM%EVOLVE and new grids
+
+Details:
+ - Update ccs_config to ccs_config_noresm0.0.52
+ - Update clm to ctsm5.3.045_noresm_v12
+ - Update cmeps to cmeps1.0.39_noresm_v7 
+ - Add new pelayouts for ne3pg3_tn14 and ne3pg3_tn21
+ - Add allactive tests for ne3pg3 grid
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.52
+ - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
+ - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.11.4
+ - cam        : NorESMhub/CAM               : noresm3_0_013_cam6_4_085
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v7
+ - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v2
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v0
+ - clm        : NorESMhub/CTSM              : ctsm5.3.045_noresm_v12
+    - fates   : NorESMhub/fates             : sci.1.85.1_api.40.0.0_noresm_v4
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.0.39_noresm_v6
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v0
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+ - 
+
+Describe any changes made to scripts/build system:
+
+
+Describe any substantial timing or memory changes:
+
+
+Code merged by: Matvey Debolskiy
+
+Code reviewed by: Steve Goldhaber, Tomas Torsvik, Alok Gupta
+                  Mariana Vertenstein
+
+Summary of pre-tag testing:
+ - prealpha_noresm : 1 expected FAIL
+     SMS_D_Ld1_P253.ne30pg3_tn05.N1850.betzy_intel.allactive-defaultio
+ - aux_clm_noresm : 1 expected fail
+     ERS.f09_f09_mtn14.I2000Clm60Bgc.betzy_intel.clm-lnd2rof_tracers
+     Baseline diffs for tests with MOSART (tag updated)
+
+
+Summarize any change to answers:
+ - None
+
+==============================================================
+
+Tag name: noresm3_0_beta02
+Date: 20-08-2025
 One-line Summary: New default settings for noresm3_0_beta02 release
 
 Details:
