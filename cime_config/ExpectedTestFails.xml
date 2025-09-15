@@ -30,10 +30,10 @@
 
   <!-- prealpha_noresm test suite failures -->
 
-  <test name="SMS_D_Ld1_P253.ne30pg3_tn05.N1850.betzy_intel.allactive-defaultio">
-    <phase name="RUN">
+  <test name="ERS.ne30pg3_tn14.N1850fates-nocomp.betzy_gnu.allactive-defaultio">
+    <phase name="COMPARE_base_rest">
       <status>FAIL</status>
-      <issue>NorESM#688</issue>
+      <issue>NorESM#716</issue>
     </phase>
   </test>
 

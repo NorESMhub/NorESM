@@ -1031,4 +1031,80 @@
     </mach>
   </grid>
 
+  <grid name="a%ne3np4.pg3.+l%ne3np4.pg3.+oi%tnx1v4" >
+    <mach name="any">
+      <pes pesize="any" compset="any">
+	      <comment>none</comment>
+	      <ntasks>
+	        <ntasks_atm>54</ntasks_atm>
+	        <ntasks_lnd>54</ntasks_lnd>
+	        <ntasks_rof>54</ntasks_rof>
+	        <ntasks_ice>360</ntasks_ice>
+	        <ntasks_ocn>354</ntasks_ocn>
+	        <ntasks_glc>54</ntasks_glc>
+	        <ntasks_wav>1</ntasks_wav>
+	        <ntasks_cpl>414</ntasks_cpl>
+	      </ntasks>
+	      <nthrds>
+	        <nthrds_atm>1</nthrds_atm>
+	        <nthrds_lnd>1</nthrds_lnd>
+	        <nthrds_rof>1</nthrds_rof>
+	        <nthrds_ice>1</nthrds_ice>
+	        <nthrds_ocn>1</nthrds_ocn>
+	        <nthrds_glc>1</nthrds_glc>
+	        <nthrds_wav>1</nthrds_wav>
+	        <nthrds_cpl>1</nthrds_cpl>
+	      </nthrds>
+	      <rootpe>
+	        <rootpe_atm>0</rootpe_atm>
+	        <rootpe_lnd>0</rootpe_lnd>
+	        <rootpe_rof>0</rootpe_rof>
+	        <rootpe_ice>54</rootpe_ice>
+	        <rootpe_ocn>414</rootpe_ocn>
+	        <rootpe_glc>0</rootpe_glc>
+	        <rootpe_wav>0</rootpe_wav>
+	        <rootpe_cpl>0</rootpe_cpl>
+	      </rootpe>
+      </pes>
+    </mach>
+  </grid>
+
+  <grid name="a%ne3np4.pg3.+l%ne3np4.pg3.+oi%tnx2v1" >
+    <mach name="any">
+      <pes pesize="any" compset="any">
+	      <comment>none</comment>
+	      <ntasks>
+	        <ntasks_atm>54</ntasks_atm>
+	        <ntasks_lnd>54</ntasks_lnd>
+	        <ntasks_rof>54</ntasks_rof>
+	        <ntasks_ice>308</ntasks_ice>
+	        <ntasks_ocn>406</ntasks_ocn>
+	        <ntasks_glc>54</ntasks_glc>
+	        <ntasks_wav>1</ntasks_wav>
+	        <ntasks_cpl>362</ntasks_cpl>
+	      </ntasks>
+	      <nthrds>
+	        <nthrds_atm>1</nthrds_atm>
+	        <nthrds_lnd>1</nthrds_lnd>
+	        <nthrds_rof>1</nthrds_rof>
+	        <nthrds_ice>1</nthrds_ice>
+	        <nthrds_ocn>1</nthrds_ocn>
+	        <nthrds_glc>1</nthrds_glc>
+	        <nthrds_wav>1</nthrds_wav>
+	        <nthrds_cpl>1</nthrds_cpl>
+	      </nthrds>
+	      <rootpe>
+	        <rootpe_atm>0</rootpe_atm>
+	        <rootpe_lnd>0</rootpe_lnd>
+	        <rootpe_rof>0</rootpe_rof>
+	        <rootpe_ice>54</rootpe_ice>
+	        <rootpe_ocn>362</rootpe_ocn>
+	        <rootpe_glc>0</rootpe_glc>
+	        <rootpe_wav>0</rootpe_wav>
+	        <rootpe_cpl>0</rootpe_cpl>
+	      </rootpe>
+      </pes>
+    </mach>
+  </grid>
+
 </config_pes>
