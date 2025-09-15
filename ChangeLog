@@ -47,7 +47,8 @@ Code reviewed by: Steve Goldhaber, Tomas Torsvik, Alok Gupta
 
 Summary of pre-tag testing:
  - prealpha_noresm : 1 expected FAIL
-     SMS_D_Ld1_P253.ne30pg3_tn05.N1850.betzy_intel.allactive-defaultio
+     (NLCOMP fails due to changes in clm namelists)
+     ERS.ne30pg3_tn14.N1850fates-nocomp.betzy_gnu.allactive-defaultio
  - aux_clm_noresm : 1 expected fail
      ERS.f09_f09_mtn14.I2000Clm60Bgc.betzy_intel.clm-lnd2rof_tracers
      Baseline diffs for tests with MOSART (tag updated)
