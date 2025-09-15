@@ -1,7 +1,7 @@
 ==============================================================
 
 Tag name: noresm3_0_beta02a
-Date: 01-09-2025
+Date: 15-09-2025
 One-line Summary: Fixes for CISM%EVOLVE and new grids
 
 Details:
@@ -47,7 +47,7 @@ Code reviewed by: Steve Goldhaber, Tomas Torsvik, Alok Gupta
 
 Summary of pre-tag testing:
  - prealpha_noresm : 1 expected FAIL
-     (NLCOMP fails due to changes in clm namelists)
+     (NLCOMP fails due to changes in cam namelists)
      ERS.ne30pg3_tn14.N1850fates-nocomp.betzy_gnu.allactive-defaultio
  - aux_clm_noresm : 1 expected fail
      ERS.f09_f09_mtn14.I2000Clm60Bgc.betzy_intel.clm-lnd2rof_tracers
