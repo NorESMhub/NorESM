@@ -6,6 +6,8 @@ One-line Summary:
 
 Details:
  - Update blom to v1.12.2
+   - Bound mixed layer depth and limit local vertical layer thickness
+   - Adjust default HAMOCC parameter settings
  - Update CAM to noresm3_0_016_cam6_4_085
 
 Component tags used in this tag:
@@ -27,13 +29,16 @@ Component tags used in this tag:
  - pycect     : NCAR/PyCECT                 : 3.2.2
 
 Bugs fixed:
- -
+ - BLOM: Fix periodic hangs on creation of woa18_s_an.nc
+        (https://github.com/NorESMhub/BLOM/pull/651)
+ - BLOM: Bugfix for out of bound and uninitialized arrays
+        (https://github.com/NorESMhub/BLOM/pull/658)
+ - CAM: Bugfix for secondary ice production
+        (https://github.com/NorESMhub/CAM/pull/237)
 
-Describe any changes made to scripts/build system:
-
+Describe any changes made to scripts/build system: NA
 
 Describe any substantial timing or memory changes:
-
 
 Code merged by: Tomas Torsvik
 
@@ -41,6 +46,19 @@ Code reviewed by: Steve Goldhaber, Matvey Debolskiy, Mats Bentsen
                   Mariana Vertenstein
 
 Summary of pre-tag testing:
+ - prealpha_noresm : 1 expected FAIL
+     ERS.ne30pg3_tn14.N1850fates-nocomp.betzy_gnu.allactive-defaultio
+ - aux_blom_noresm : 5 expected FAIL
+     ERP_Ld3_P256.T62_tn14.NOINYOC.betzy_gnu
+     ERP_Ld3_P256.T62_tn14.NOINYOC.betzy_intel
+     ERS_Ld3.T62_tn14_wtn14nw.NOINY_WW3.betzy_gnu.blom-wavice
+     SMS_D_Ld1.T62_tn14_wtn14nw.NOINYOC_WW3.betzy_gnu.blom-wavice
+     SMS_D_Ld1.T62_tn14.NOIIAOC20TR.betzy_intel
+ - aux_cam_noresm : all tests PASS, 1 baseline DIFF
+     ERP_Ln9.ne16pg3_ne16pg3_mtn14.NF1850.betzy_intel.cam-secice
+ - aux_hamocc_noresm : 1 expected fail
+     SMS_D_Ld1.T62_tn14.NOINYOC.betzy_intel.blom-hamocc-hamocc6
+
 
 Summarize any change to answers:
 
