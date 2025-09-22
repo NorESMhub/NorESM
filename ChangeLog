@@ -9,6 +9,8 @@ Details:
    - Bound mixed layer depth and limit local vertical layer thickness
    - Adjust default HAMOCC parameter settings
  - Update CAM to noresm3_0_016_cam6_4_085
+ - Update CMEPS to cmeps1.0.39_noresm_v8
+   - Include Taylor et al. (1996) ocean albedo scheme
 
 Component tags used in this tag:
 
@@ -23,7 +25,7 @@ Component tags used in this tag:
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v0
  - clm        : NorESMhub/CTSM              : ctsm5.3.045_noresm_v12
     - fates   : NorESMhub/fates             : sci.1.85.1_api.40.0.0_noresm_v4
- - cmeps      : NorESMhub/CMEPS             : cmeps1.0.39_noresm_v7
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.0.39_noresm_v8
  - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v0
  - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
  - pycect     : NCAR/PyCECT                 : 3.2.2
