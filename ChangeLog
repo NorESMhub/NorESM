@@ -37,6 +37,8 @@ Bugs fixed:
         (https://github.com/NorESMhub/BLOM/pull/658)
  - CAM: Bugfix for secondary ice production
         (https://github.com/NorESMhub/CAM/pull/237)
+ - ALLACTIVE: Potentially solves issue with failing ERS test
+        (https://github.com/NorESMhub/NorESM/issues/716)
 
 Describe any changes made to scripts/build system: NA
 
