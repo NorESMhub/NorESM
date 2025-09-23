@@ -1,14 +1,14 @@
 ==============================================================
 
 Tag name: noresm3_0_beta03
-Date:
-One-line Summary:
+Date: 23-09-2025
+One-line Summary: Adjust vertical layers in BLOM; BLOM and CAM bug fixes
 
 Details:
  - Update blom to v1.12.4
    - Bound mixed layer depth and limit local vertical layer thickness
    - Adjust default HAMOCC parameter settings
- - Update CAM to noresm3_0_016_cam6_4_085
+ - Update CAM to noresm3_0_017_cam6_4_085
  - Update CMEPS to cmeps1.0.39_noresm_v8
    - Include Taylor et al. (1996) ocean albedo scheme
 
@@ -48,7 +48,10 @@ Code reviewed by: Steve Goldhaber, Matvey Debolskiy, Mats Bentsen
                   Mariana Vertenstein
 
 Summary of pre-tag testing:
- - prealpha_noresm : 1 expected FAIL
+ - prealpha_noresm : all test PASS
+   - DIFF compared with noresm3_0_beta02a baseline for all NorESM compsets
+   - NLFAIL (namelist comparison) for all non-NorESM compsets
+   - Previously failing test now PASS:
      ERS.ne30pg3_tn14.N1850fates-nocomp.betzy_gnu.allactive-defaultio
  - aux_blom_noresm : 5 expected FAIL
      ERP_Ld3_P256.T62_tn14.NOINYOC.betzy_gnu
@@ -60,7 +63,6 @@ Summary of pre-tag testing:
      ERP_Ln9.ne16pg3_ne16pg3_mtn14.NF1850.betzy_intel.cam-secice
  - aux_hamocc_noresm : 1 expected fail
      SMS_D_Ld1.T62_tn14.NOINYOC.betzy_intel.blom-hamocc-hamocc6
-
 
 Summarize any change to answers:
 
@@ -75,7 +77,7 @@ Details:
  - Update cam to noresm3_0_015_cam6_4_085
    - Add new options for ZM and fix FATES-nocomp regression test
  - Update clm to ctsm5.3.045_noresm_v12
- - Update cmeps to cmeps1.0.39_noresm_v7 
+ - Update cmeps to cmeps1.0.39_noresm_v7
  - Add new pelayouts for ne3pg3_tn14 and ne3pg3_tn21
  - Add allactive tests for ne3pg3 grid
 
