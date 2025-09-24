@@ -1,5 +1,75 @@
 ==============================================================
 
+Tag name: noresm3_0_beta03
+Date: 24-09-2025
+One-line Summary: Adjust vertical layers in BLOM; BLOM and CAM bug fixes
+
+Details:
+ - Update blom to v1.12.4
+   - Bound mixed layer depth and limit local vertical layer thickness
+   - Adjust default HAMOCC parameter settings
+ - Update CAM to noresm3_0_017_cam6_4_085
+ - Update CMEPS to cmeps1.0.39_noresm_v8
+   - Include Taylor et al. (1996) ocean albedo scheme
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.52
+ - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
+ - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.12.4
+ - cam        : NorESMhub/CAM               : noresm3_0_017_cam6_4_085
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v7
+ - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v2
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v0
+ - clm        : NorESMhub/CTSM              : ctsm5.3.045_noresm_v12
+    - fates   : NorESMhub/fates             : sci.1.85.1_api.40.0.0_noresm_v4
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.0.39_noresm_v8
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v0
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+ - BLOM: Fix periodic hangs on creation of woa18_s_an.nc
+        (https://github.com/NorESMhub/BLOM/pull/651)
+ - BLOM: Bugfix for out of bound and uninitialized arrays
+        (https://github.com/NorESMhub/BLOM/pull/658)
+ - CAM: Bugfix for secondary ice production
+        (https://github.com/NorESMhub/CAM/pull/237)
+ - ALLACTIVE: Potentially solves issue with previously failing ERS test
+        (https://github.com/NorESMhub/NorESM/issues/716)
+
+Describe any changes made to scripts/build system: NA
+
+Describe any substantial timing or memory changes: NA
+
+Code merged by: Tomas Torsvik
+
+Code reviewed by: Steve Goldhaber, Matvey Debolskiy, Mats Bentsen
+                  Mariana Vertenstein
+
+Summary of pre-tag testing:
+ - prealpha_noresm : all test PASS
+   - DIFF compared with noresm3_0_beta02a baseline for all NorESM compsets
+   - NLFAIL (namelist comparison) for all non-NorESM compsets
+   - Previously failing test now PASS:
+     ERS.ne30pg3_tn14.N1850fates-nocomp.betzy_gnu.allactive-defaultio
+ - aux_blom_noresm : 5 expected FAIL
+     ERP_Ld3_P256.T62_tn14.NOINYOC.betzy_gnu
+     ERP_Ld3_P256.T62_tn14.NOINYOC.betzy_intel
+     ERS_Ld3.T62_tn14_wtn14nw.NOINY_WW3.betzy_gnu.blom-wavice
+     SMS_D_Ld1.T62_tn14_wtn14nw.NOINYOC_WW3.betzy_gnu.blom-wavice
+     SMS_D_Ld1.T62_tn14.NOIIAOC20TR.betzy_intel
+ - aux_cam_noresm : all tests PASS, 1 baseline DIFF
+     ERP_Ln9.ne16pg3_ne16pg3_mtn14.NF1850.betzy_intel.cam-secice
+ - aux_hamocc_noresm : 1 expected fail
+     SMS_D_Ld1.T62_tn14.NOINYOC.betzy_intel.blom-hamocc-hamocc6
+
+Summarize any change to answers:
+
+==============================================================
+
 Tag name: noresm3_0_beta02a
 Date: 15-09-2025
 One-line Summary: Fixes for CISM%EVOLVE and new grids
@@ -9,7 +79,7 @@ Details:
  - Update cam to noresm3_0_015_cam6_4_085
    - Add new options for ZM and fix FATES-nocomp regression test
  - Update clm to ctsm5.3.045_noresm_v12
- - Update cmeps to cmeps1.0.39_noresm_v7 
+ - Update cmeps to cmeps1.0.39_noresm_v7
  - Add new pelayouts for ne3pg3_tn14 and ne3pg3_tn21
  - Add allactive tests for ne3pg3 grid
 
