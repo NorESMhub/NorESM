@@ -9,7 +9,7 @@ Details:
  - Update blom to v1.12.7
    - speed up of ERI tests
    - modify order of operations for smoothing operators to avoid
-     runoff differences at the arctic seam of tripolar grids
+     roundoff differences at the arctic seam of tripolar grids
    - reduce size of automatic array and ensure routine xcsum does not
      modify input array.
  - Update clm to ctsm5.3.045_noresm_v12
@@ -17,11 +17,14 @@ Details:
    - log cleanup
    - test for AD spinup with CPLHIST
    - Update fates to sci.1.85.1_api.40.0.0_noresm_v5
+ - Update ccs_config to ccs_config_noresm0.0.53
+   - Changes to reduce number of random ucx and hcoll fails
+   - Make devel and normal queues more distinct 
 
 Component tags used in this tag:
 
  - parallelio : NCAR/ParallelIO             : pio2_6_2
- - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.52
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.53
  - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
  - blom       : NorESMhub/BLOM              : v1.12.7
