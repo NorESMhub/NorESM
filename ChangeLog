@@ -1,3 +1,4 @@
+
 ==============================================================
 
 Tag name: noresm3_0_beta03a
@@ -7,6 +8,11 @@ One-line Summary: TBD
 Details:
  - Update blom to v1.12.5
    - speed up of ERI tests
+ - Update clm to ctsm5.3.045_noresm_v12
+   - AD spinup fix for Fates
+   - log cleanup
+   - test for AD spinup with CPLHIST
+   - Update fates to sci.1.85.1_api.40.0.0_noresm_v5
 
 Component tags used in this tag:
 
@@ -19,8 +25,8 @@ Component tags used in this tag:
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v7
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v2
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v0
- - clm        : NorESMhub/CTSM              : ctsm5.3.045_noresm_v12
-    - fates   : NorESMhub/fates             : sci.1.85.1_api.40.0.0_noresm_v4
+ - clm        : NorESMhub/CTSM              : ctsm5.3.045_noresm_v13
+    - fates   : NorESMhub/fates             : sci.1.85.1_api.40.0.0_noresm_v5
  - cmeps      : NorESMhub/CMEPS             : cmeps1.0.39_noresm_v8
  - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v0
  - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
@@ -37,6 +43,7 @@ Code merged by:
 Code reviewed by: Mariana Vertenstein, Matvey Debolskiy
 
 Summary of pre-tag testing:
+  - aux_clm_noresm (bfb, except new test + NLCOMP fails for fates tests)
 
 Summarize any change to answers:
 
