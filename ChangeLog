@@ -8,6 +8,10 @@ One-line Summary: TBD
 Details:
  - Update blom to v1.12.5
    - speed up of ERI tests
+   - modify order of operations for smoothing operators to avoid
+     runoff differences at the arctic seam of tripolar grids
+   - reduce size of automatic array and ensure routine xcsum does not
+     modify input array.
  - Update clm to ctsm5.3.045_noresm_v12
    - AD spinup fix for Fates
    - log cleanup
