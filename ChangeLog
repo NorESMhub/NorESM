@@ -2,7 +2,7 @@
 ==============================================================
 
 Tag name: noresm3_0_beta03a
-Date: 24-09-2025
+Date: 06.10.2025
 One-line Summary: TBD
 
 Details:
@@ -12,6 +12,8 @@ Details:
      roundoff differences at the arctic seam of tripolar grids
    - reduce size of automatic array and ensure routine xcsum does not
      modify input array.
+ - Update cam to noresm3_0_018_cam6_4_085
+   - Bugfix in secondary ice
  - Update clm to ctsm5.3.045_noresm_v12
    - AD spinup fix for Fates
    - log cleanup
@@ -28,7 +30,7 @@ Component tags used in this tag:
  - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
  - blom       : NorESMhub/BLOM              : v1.12.7
- - cam        : NorESMhub/CAM               : noresm3_0_017_cam6_4_085
+ - cam        : NorESMhub/CAM               : noresm3_0_018_cam6_4_085
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v7
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v2
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v0
