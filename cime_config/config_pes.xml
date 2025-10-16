@@ -277,7 +277,7 @@
                 <ntasks_lnd>-6</ntasks_lnd>
                 <ntasks_rof>-12</ntasks_rof>
                 <ntasks_ice>-6</ntasks_ice>
-                <ntasks_ocn>-2</ntasks_ocn>
+                <ntasks_ocn>500</ntasks_ocn>
                 <ntasks_glc>-12</ntasks_glc>
                 <ntasks_wav>-12</ntasks_wav>
                 <ntasks_cpl>-12</ntasks_cpl>
