@@ -5,7 +5,7 @@ Date:
 One-line Summary: Support high-order remapping to z-levels for ocean diagnostic output
 
 Details:
- - Update blom to v1.12.10
+ - Update blom to v1.12.11
 
 Component tags used in this tag:
 
@@ -13,7 +13,7 @@ Component tags used in this tag:
  - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.53
  - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
- - blom       : NorESMhub/BLOM              : v1.12.10
+ - blom       : NorESMhub/BLOM              : v1.12.11
  - cam        : NorESMhub/CAM               : noresm3_0_018_cam6_4_085
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v7
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v2
