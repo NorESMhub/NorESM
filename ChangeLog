@@ -1,11 +1,15 @@
 ==============================================================
 
 Tag name: noresm3_0_beta03b
-Date:
+Date: 21.10.2025
 One-line Summary: Support high-order remapping to z-levels for ocean diagnostic output
 
 Details:
  - Update blom to v1.12.11
+   - Use high-order vertical reconstructions for remapping to diagnostic z-levels
+   - Include changes needed for CAM computing enthalpy -> mediator -> BLOM
+   - Remove outdated compset NOIIAOC20TR from list of standard tests
+ - Set NTASK_OCN=500 for grid=ne16pg3_tn14; pesize=X1
 
 Component tags used in this tag:
 
@@ -25,7 +29,7 @@ Component tags used in this tag:
  - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
  - pycect     : NCAR/PyCECT                 : 3.2.2
 
-Bugs fixed:
+Bugs fixed: NA
 
 Describe any changes made to scripts/build system: NA
 
@@ -33,9 +37,18 @@ Describe any substantial timing or memory changes: NA
 
 Code merged by: Tomas Torsvik
 
-Code reviewed by:
+Code reviewed by: Mats Bentsen, Steve Goldhaber, Mariana Vertenstein
 
 Summary of pre-tag testing:
+ - prealpha_noresm : all test PASS
+   - DIFF compared with noresm3_0_beta03a for all NorESM compsets
+ - aux_blom_noresm : 4 expected FAIL
+     ERP_Ld3_P256.T62_tn14.NOINYOC.betzy_gnu
+     ERP_Ld3_P256.T62_tn14.NOINYOC.betzy_intel
+     ERS_Ld3.T62_tn14_wtn14nw.NOINY_WW3.betzy_gnu.blom-wavice
+     SMS_D_Ld1.T62_tn14_wtn14nw.NOINYOC_WW3.betzy_gnu.blom-wavice
+   - DIFF compared with noresm3_0_beta03a for all test using hybrid
+	vertical coordinates
 
 Summarize any change to answers:
 
