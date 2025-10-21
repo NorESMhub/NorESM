@@ -1,3 +1,56 @@
+==============================================================
+
+Tag name: noresm3_0_beta03b
+Date: 21.10.2025
+One-line Summary: Support high-order remapping to z-levels for ocean diagnostic output
+
+Details:
+ - Update blom to v1.12.11
+   - Use high-order vertical reconstructions for remapping to diagnostic z-levels
+   - Include changes needed for CAM computing enthalpy -> mediator -> BLOM
+   - Remove outdated compset NOIIAOC20TR from list of standard tests
+ - Set NTASK_OCN=500 for grid=ne16pg3_tn14; pesize=X1
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.53
+ - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
+ - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.12.11
+ - cam        : NorESMhub/CAM               : noresm3_0_018_cam6_4_085
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v7
+ - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v2
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v0
+ - clm        : NorESMhub/CTSM              : ctsm5.3.045_noresm_v13
+    - fates   : NorESMhub/fates             : sci.1.85.1_api.40.0.0_noresm_v5
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.0.39_noresm_v8
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v0
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed: NA
+
+Describe any changes made to scripts/build system: NA
+
+Describe any substantial timing or memory changes: NA
+
+Code merged by: Tomas Torsvik
+
+Code reviewed by: Mats Bentsen, Steve Goldhaber, Mariana Vertenstein
+
+Summary of pre-tag testing:
+ - prealpha_noresm : all test PASS
+   - DIFF compared with noresm3_0_beta03a for all NorESM compsets
+ - aux_blom_noresm : 4 expected FAIL
+     ERP_Ld3_P256.T62_tn14.NOINYOC.betzy_gnu
+     ERP_Ld3_P256.T62_tn14.NOINYOC.betzy_intel
+     ERS_Ld3.T62_tn14_wtn14nw.NOINY_WW3.betzy_gnu.blom-wavice
+     SMS_D_Ld1.T62_tn14_wtn14nw.NOINYOC_WW3.betzy_gnu.blom-wavice
+   - DIFF compared with noresm3_0_beta03a for all test using hybrid
+	vertical coordinates
+
+Summarize any change to answers:
 
 ==============================================================
 
@@ -21,7 +74,7 @@ Details:
    - Update fates to sci.1.85.1_api.40.0.0_noresm_v5
  - Update ccs_config to ccs_config_noresm0.0.53
    - Changes to reduce number of random ucx and hcoll fails
-   - Make devel and normal queues more distinct 
+   - Make devel and normal queues more distinct
 
 Component tags used in this tag:
 
