@@ -5,8 +5,9 @@ Date: 03.01.2025
 One-line Summary: Updates to CTSM and BLOM
 
 Details:
- - Update blom to v1.12.12
- - Update ctsm to ctsm5.3.045_noresm_v14
+ - Update BLOM to v1.12.12
+   - Added parameters for brine and under-ice diffusivity
+ - Update CTSM to ctsm5.3.045_noresm_v14
    - Updates to parameter file and fco2 flux fix
    - Update fates to sci.1.85.1_api.40.0.0_nor_sci1_api1
    - Updates to parameter file
@@ -32,7 +33,8 @@ Component tags used in this tag:
  - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
  - pycect     : NCAR/PyCECT                 : 3.2.2
 
-Bugs fixed: NA
+Bugs fixed:
+ - Wrong updates for fire and grazing fluxes as part of co2 flux to atm
 
 Describe any changes made to scripts/build system: NA
 
