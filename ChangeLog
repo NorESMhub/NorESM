@@ -52,8 +52,7 @@ Summary of pre-tag testing:
      ERP_Ld3_P256.T62_tn14.NOINYOC.betzy_intel
      ERS_Ld3.T62_tn14_wtn14nw.NOINY_WW3.betzy_gnu.blom-wavice
      SMS_D_Ld1.T62_tn14_wtn14nw.NOINYOC_WW3.betzy_gnu.blom-wavice
-   - DIFF compared with noresm3_0_beta03a for all test using hybrid
-	vertical coordinates
+   - NLFAIL compared with noresm3_0_beta03b due to changes in BLOM namelist options
  - aux_clm_noresm
    - BASELINE DIFF for all FATES compsets
    - clm/lnd2rof_tracers expected fail
