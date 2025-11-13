@@ -88,7 +88,7 @@ fxDONOTUSEurl = https://github.com/NorESMhub/CAM.git
 [submodule "cdeps"]
 path = components/cdeps
 url = https://github.com/NorESMhub/CDEPS.git
-fxtag = cdeps1.0.70_noresm_v7
+fxtag = cdeps1.0.70_noresm_v8
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CDEPS.git
 
@@ -109,7 +109,7 @@ fxDONOTUSEurl = https://github.com/NorESMhub/CISM-wrapper.git
 [submodule "clm"]
 path = components/clm
 url = https://github.com/NorESMhub/CTSM.git
-fxtag = ctsm5.3.045_noresm_v14
+fxtag = ctsm5.3.045_noresm_v15
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CTSM.git
 
