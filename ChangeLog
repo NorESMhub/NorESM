@@ -1,7 +1,7 @@
 ==============================================================
 
 Tag name: noresm3_0_beta06
-Date: 13.11.2025
+Date: 14.11.2025
 One-line Summary: Updates to CTSM, bugfixes CTSM,BLOM,CDEPS
 
 Details:
@@ -45,11 +45,11 @@ Describe any substantial timing or memory changes: NA
 
 Code merged by: mvdebolskiy
 
-Code reviewed by: 
+Code reviewed by: Tomas Torsvik, Steve Goldhaber, Mariana Vertenstein
 
 Summary of pre-tag testing:
  - prealpha_noresm :
-   - DIFF compared with noresm3_0_beta04 for all compsets with Fates or Fates-nocomp
+   - DIFF compared with noresm3_0_beta04 for all compsets with Fates
  - aux_blom_noresm : 
  - aux_clm_noresm:
    - fates compsets baseline diffs.
