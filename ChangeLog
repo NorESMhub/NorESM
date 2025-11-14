@@ -1,5 +1,66 @@
 ==============================================================
 
+Tag name: noresm3_0_beta06
+Date: 14.11.2025
+One-line Summary: Updates to CTSM, bugfixes CTSM,BLOM,CDEPS
+
+Details:
+ - Update BLOM to v1.12.15
+   - Bug fixes for ndep namelist generation with CPLHIST
+ - Update CTSM to ctsm5.3.045_noresm_v15
+   - Changed default stomatal conductance scheme Ballberry -> Medlyn
+   - Changed default fates_spitfire_mode 0 (nofire) -> 4 (spitfire with dataset lightning)
+   - Update fates to sci.1.85.1_api.40.0.0_nor_sci2_api1
+     - Fixed numerical tree_lai/canopy resistance bug 
+ - Update CDEPS to cdeps1.0.70_noresm_v8
+   - Bugfix for nitrogen deposition units in datm_cplhist_mode
+ - Update ccs_config to ccs_config_noresm0.0.54
+   - Added runoff map JRA -> tn21
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.54
+ - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
+ - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.12.15
+ - cam        : NorESMhub/CAM               : noresm3_0_019_cam6_4_121
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v8
+ - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v2
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v0
+ - clm        : NorESMhub/CTSM              : ctsm5.3.045_noresm_v15
+    - fates   : NorESMhub/fates             : sci.1.85.1_api.40.0.0_nor_sci2_api1
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.0.39_noresm_v8
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v0
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+ - BLOM#688
+ - NGEET/fates#1487
+
+Describe any changes made to scripts/build system: NA
+
+Describe any substantial timing or memory changes: NA
+
+Code merged by: mvdebolskiy
+
+Code reviewed by: Tomas Torsvik, Steve Goldhaber, Mariana Vertenstein
+
+Summary of pre-tag testing:
+ - prealpha_noresm :
+   - DIFF compared with noresm3_0_beta04 for all compsets with Fates
+ - aux_blom_noresm : 
+ - aux_clm_noresm:
+   - fates compsets baseline diffs.
+   - 5x5_amazon does not work anymore with full fates due to spitfire mode
+
+
+Summarize any change to answers:
+
+
+==============================================================
+
 Tag name: noresm3_0_beta05
 Date: 07.11.2025
 One-line Summary: Updates to CAM and BLOM
