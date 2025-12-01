@@ -1,5 +1,50 @@
 ==============================================================
 
+Tag name: noresm3_0_beta07
+Date: 02.12.2025
+One-line Summary: Updates to CICE, BLOM
+
+Details:
+ - Update BLOM to v1.12.18
+ - Update CICE to ???
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.54
+ - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
+ - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.12.18
+ - cam        : NorESMhub/CAM               : noresm3_0_019_cam6_4_121
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v8
+ - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v2
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v0
+ - clm        : NorESMhub/CTSM              : ctsm5.3.045_noresm_v15
+    - fates   : NorESMhub/fates             : sci.1.85.1_api.40.0.0_nor_sci2_api1
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.0.39_noresm_v8
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v0
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+
+Describe any changes made to scripts/build system: NA
+
+Describe any substantial timing or memory changes: NA
+
+Code merged by: Tomas Torsvik
+
+Code reviewed by: Mariana Vertenstein, Jens Debernard, Mats Bentsen
+
+Summary of pre-tag testing:
+ - prealpha_noresm :
+ - aux_blom_noresm :
+
+Summarize any change to answers:
+
+
+==============================================================
+
 Tag name: noresm3_0_beta06
 Date: 14.11.2025
 One-line Summary: Updates to CTSM, bugfixes CTSM,BLOM,CDEPS
