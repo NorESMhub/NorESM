@@ -5,7 +5,11 @@ Date: 02.12.2025
 One-line Summary: Updates to CICE, BLOM
 
 Details:
- - Update BLOM to v1.12.18
+ - Update BLOM to v1.12.19
+   - Fix interim restart capability (non-answer changing)
+   - Fix NH3 coupling (non-answer changing)
+   - Reduce s_bot oscillations in ref dens adaptation (answer changing)
+   - Set new default namelist parameters (answer changing)
  - Update CICE to ???
 
 Component tags used in this tag:
@@ -14,7 +18,7 @@ Component tags used in this tag:
  - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.54
  - cime       : NorESMhub/cime              : cime6.1.73_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
- - blom       : NorESMhub/BLOM              : v1.12.18
+ - blom       : NorESMhub/BLOM              : v1.12.19
  - cam        : NorESMhub/CAM               : noresm3_0_019_cam6_4_121
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.70_noresm_v8
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v2
@@ -56,7 +60,7 @@ Details:
    - Changed default stomatal conductance scheme Ballberry -> Medlyn
    - Changed default fates_spitfire_mode 0 (nofire) -> 4 (spitfire with dataset lightning)
    - Update fates to sci.1.85.1_api.40.0.0_nor_sci2_api1
-     - Fixed numerical tree_lai/canopy resistance bug 
+     - Fixed numerical tree_lai/canopy resistance bug
  - Update CDEPS to cdeps1.0.70_noresm_v8
    - Bugfix for nitrogen deposition units in datm_cplhist_mode
  - Update ccs_config to ccs_config_noresm0.0.54
@@ -95,7 +99,7 @@ Code reviewed by: Tomas Torsvik, Steve Goldhaber, Mariana Vertenstein
 Summary of pre-tag testing:
  - prealpha_noresm :
    - DIFF compared with noresm3_0_beta04 for all compsets with Fates
- - aux_blom_noresm : 
+ - aux_blom_noresm :
  - aux_clm_noresm:
    - fates compsets baseline diffs.
    - 5x5_amazon does not work anymore with full fates due to spitfire mode
@@ -152,7 +156,7 @@ Code reviewed by: Tomas Torsvik, Mariana Vertenstein
 Summary of pre-tag testing:
  - prealpha_noresm : ??
    - DIFF compared with noresm3_0_beta04 for all NorESM compsets
- - aux_blom_noresm : 
+ - aux_blom_noresm :
  - aux_cam_noresm : Baseline and namelist changes for all tests
  - aux_clm_noresm
 
@@ -161,7 +165,7 @@ Summarize any change to answers:
 ==============================================================
 
 Tag name: noresm3_0_beta04
-Date: 03.01.2025
+Date: 30.10.2025
 One-line Summary: Updates to CTSM and BLOM
 
 Details:
