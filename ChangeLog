@@ -11,6 +11,7 @@ Details:
    - Reduce s_bot oscillations in ref dens adaptation (answer changing)
    - Set new default namelist parameters (answer changing)
  - Update CICE to ???
+ - Update git-fleximod to v1.1.1
 
 Component tags used in this tag:
 
