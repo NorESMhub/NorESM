@@ -1,5 +1,91 @@
 ==============================================================
 
+Tag name: noresm3_0_beta07
+Date: 05.12.2025
+One-line Summary: Updates to CTSM, CMEPS, CDEPS, CIME, ccs_config
+
+Details:
+ - Update CTSM to ctsm5.3.085_noresm_v1
+   - Bring changes from ESCOMP latest tag for bug fixes and easier update to 5.4
+     - Changed defaults for glc snow parameters
+     - Fixed fpe bug SoiTemperature
+     - Added longer tests
+     - VOCEmissionMod refactor
+     - fix interim restart rpointers
+   - Update fates to sci.1.88.6_api.42.0.0_nor_sci1_api1
+     - Fixed bugs for full fates
+     - Updates from NGEET: nbp balance check, managed fire.
+ - Update BLOM to v1.12.16
+   - Fix interim restarts
+ - Update CICE to noresm_cice6_6_0_20250522_v3
+   - Fix interim restarts
+ - Update CAM to 
+   - Fix interim restarts
+  - Update CISM to 
+   - Fix interim restarts
+ - Update MOSART to 
+   - Fix interim restarts
+ - Update CDEPS to cdeps1.0.83_noresm_v1
+   - Bring changes from ESCOMP latest tag
+   - Updates DGLC grid and model_data_files
+   - Fix interim restarts
+ - Update CMEPS to cmeps1.1.23_noresm_v1
+   - Update to ESCOMP latest tag
+   - Updates to shr_megan
+   - Refactor atmocn fluxes
+   -
+   - Fix interim restarts
+ - Update ccs_config to ccs_config_noresm0.0.55
+   - updates from ccs_config_cesm1.0.65
+ - Update cime to cime6.1.143_noresm_v1
+   - Updates from ESMCI
+   - Fix interim restarts
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.55
+ - cime       : NorESMhub/cime              : cime6.1.143_noresm_v1
+ - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.12.16
+ - cam        : NorESMhub/CAM               : noresm3_0_020_cam6_4_121
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.83_noresm_v1
+ - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v3
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v1
+ - clm        : NorESMhub/CTSM              : ctsm5.3.085_noresm_v1
+    - fates   : NorESMhub/fates             : sci.1.88.6_api.42.0.0_nor_sci1_api1
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.23_noresm_v1
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v1
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+
+
+Describe any changes made to scripts/build system: NA
+
+Describe any substantial timing or memory changes: NA
+
+Code merged by: mvdebolskiy
+
+Code reviewed by: Steve Goldhaber, Mariana Vertenstein
+
+Summary of pre-tag testing:
+ - prealpha_noresm :
+   - PASSED, DIFF compared with noresm3_0_beta06 for all
+ - aux_blom_noresm : 
+   - PASS, BASELINE DIFF due to change in ocean_albedo_scheme defaults
+ - aux_clm_noresm:
+   - PASS, BASELINE DIFF for all
+ - aux_cam_noresm:
+   - PASS
+
+
+Summarize any change to answers:
+
+
+==============================================================
+
 Tag name: noresm3_0_beta06
 Date: 14.11.2025
 One-line Summary: Updates to CTSM, bugfixes CTSM,BLOM,CDEPS
