@@ -1,7 +1,7 @@
 ==============================================================
 
 Tag name: noresm3_0_beta07
-Date: 05.12.2025
+Date: 06.12.2025
 One-line Summary: Updates to CTSM, CMEPS, CDEPS, CIME, ccs_config
 
 Details:
@@ -19,13 +19,13 @@ Details:
    - Fix interim restarts
  - Update CICE to noresm_cice6_6_0_20250522_v3
    - Fix interim restarts
- - Update CAM to 
+ - Update CAM to noresm3_0_020_cam6_4_121 
    - Fix interim restarts
-  - Update CISM to 
+  - Update CISM to cismwrap_2_2_007_noresm_v1
    - Fix interim restarts
- - Update MOSART to 
+ - Update MOSART to mosart1.1.12_noresm_v1
    - Fix interim restarts
- - Update CDEPS to cdeps1.0.83_noresm_v1
+ - Update CDEPS to cdeps1.0.83_noresm_v2
    - Bring changes from ESCOMP latest tag
    - Updates DGLC grid and model_data_files
    - Fix interim restarts
@@ -33,7 +33,7 @@ Details:
    - Update to ESCOMP latest tag
    - Updates to shr_megan
    - Refactor atmocn fluxes
-   -
+   - ocean_albedo_scheme is now 1 by default
    - Fix interim restarts
  - Update ccs_config to ccs_config_noresm0.0.55
    - updates from ccs_config_cesm1.0.65
@@ -49,7 +49,7 @@ Component tags used in this tag:
  - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
  - blom       : NorESMhub/BLOM              : v1.12.16
  - cam        : NorESMhub/CAM               : noresm3_0_020_cam6_4_121
- - cdeps      : NorESMhub/CDEPS             : cdeps1.0.83_noresm_v1
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.83_noresm_v2
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v3
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v1
  - clm        : NorESMhub/CTSM              : ctsm5.3.085_noresm_v1
