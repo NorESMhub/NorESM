@@ -45,14 +45,14 @@ fxDONOTUSEurl = https://github.com/NCAR/ParallelIO.git
 [submodule "ccs_config"]
 path = ccs_config
 url = https://github.com/NorESMhub/ccs_config_noresm.git
-fxtag = ccs_config_noresm0.0.54
+fxtag = ccs_config_noresm0.0.55
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/ccs_config_noresm.git
 
 [submodule "cime"]
 path = cime
 url = https://github.com/NorESMhub/cime.git
-fxtag = cime6.1.73_noresm_v0
+fxtag = cime6.1.143_noresm_v1
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/cime.git
 
@@ -74,56 +74,56 @@ fxDONOTUSEurl = https://github.com/NorESMHub/NorESM_share.git
 [submodule "blom"]
 path = components/blom
 url = https://github.com/NorESMhub/BLOM.git
-fxtag = v1.12.15
+fxtag = v1.12.16
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/BLOM.git
 
 [submodule "cam"]
 path = components/cam
 url = https://github.com/NorESMhub/CAM.git
-fxtag = noresm3_0_019_cam6_4_121
+fxtag = noresm3_0_020_cam6_4_121
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CAM.git
 
 [submodule "cdeps"]
 path = components/cdeps
 url = https://github.com/NorESMhub/CDEPS.git
-fxtag = cdeps1.0.70_noresm_v8
+fxtag = cdeps1.0.83_noresm_v2
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CDEPS.git
 
 [submodule "cice6"]
 path = components/cice
 url = https://github.com/NorESMhub/NorESM_CICE.git
-fxtag = noresm_cice6_6_0_20250522_v2
+fxtag = noresm_cice6_6_0_20250522_v3
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/NorESM_CICE.git
 
 [submodule "cism"]
 path = components/cism
 url = https://github.com/NorESMhub/CISM-wrapper.git
-fxtag = cismwrap_2_2_007_noresm_v0
+fxtag = cismwrap_2_2_007_noresm_v1
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CISM-wrapper.git
 
 [submodule "clm"]
 path = components/clm
 url = https://github.com/NorESMhub/CTSM.git
-fxtag = ctsm5.3.045_noresm_v15
+fxtag = ctsm5.3.085_noresm_v1
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CTSM.git
 
 [submodule "cmeps"]
 path = components/cmeps
 url = https://github.com/NorESMhub/CMEPS.git
-fxtag = cmeps1.0.39_noresm_v8
+fxtag = cmeps1.1.23_noresm_v1
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CMEPS.git
 
 [submodule "mosart"]
 path = components/mosart
 url = https://github.com/NorESMhub/MOSART.git
-fxtag = mosart1.1.12_noresm_v0
+fxtag = mosart1.1.12_noresm_v1
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/MOSART.git
 
