@@ -10,7 +10,8 @@ Details:
    - Fix NH3 coupling (non-answer changing)
    - Reduce s_bot oscillations in ref dens adaptation (answer changing)
    - Set new default namelist parameters (answer changing)
- - Update CICE to ???
+ - Update CICE6 to noresm_cice6_6_1_20251129_v1
+   - Update CICE to cice6_6_1_20251119_noresm
  - Update git-fleximod to v1.1.1
 
 Component tags used in this tag:
@@ -22,7 +23,7 @@ Component tags used in this tag:
  - blom       : NorESMhub/BLOM              : v1.12.19
  - cam        : NorESMhub/CAM               : noresm3_0_020_cam6_4_121
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.83_noresm_v2
- - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v3
+ - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_1_20251129_v1
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v1
  - clm        : NorESMhub/CTSM              : ctsm5.3.085_noresm_v1
     - fates   : NorESMhub/fates             : sci.1.88.6_api.42.0.0_nor_sci1_api1
