@@ -81,7 +81,7 @@ fxDONOTUSEurl = https://github.com/NorESMhub/BLOM.git
 [submodule "cam"]
 path = components/cam
 url = https://github.com/NorESMhub/CAM.git
-fxtag = noresm3_0_020_cam6_4_121
+fxtag = noresm3_0_021_cam6_4_121
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CAM.git
 

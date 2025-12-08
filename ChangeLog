@@ -2,7 +2,7 @@
 
 Tag name: noresm3_0_beta08
 Date: 
-One-line Summary: Update to CICE6_6_1, minor BLOM update
+One-line Summary: Update to CICE6_6_1, minor CAM, BLOM updates
 
 Details:
  - Update BLOM to v1.12.19
@@ -10,6 +10,8 @@ Details:
    - Fix NH3 coupling (non-answer changing)
    - Reduce s_bot oscillations in ref dens adaptation (answer changing)
    - Set new default namelist parameters (answer changing)
+ - Update CAM to noresm3_0_021_cam6_4_121
+   - New energy transport diagnostics, BFB
  - Update CICE6 to noresm_cice6_6_1_20251129_v1
    - Update CICE to cice6_6_1_20251119_noresm
  - Update git-fleximod to v1.1.1
@@ -21,7 +23,7 @@ Component tags used in this tag:
  - cime       : NorESMhub/cime              : cime6.1.143_noresm_v1
  - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
  - blom       : NorESMhub/BLOM              : v1.12.19
- - cam        : NorESMhub/CAM               : noresm3_0_020_cam6_4_121
+ - cam        : NorESMhub/CAM               : noresm3_0_021_cam6_4_121
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.83_noresm_v2
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_1_20251129_v1
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v1
@@ -40,7 +42,8 @@ Describe any substantial timing or memory changes: NA
 
 Code merged by: Tomas Torsvik
 
-Code reviewed by: Steve Goldhaber, Mariana Vertenstein
+Code reviewed by: Steve Goldhaber, Mariana Vertenstein, Jens Debernard,
+	          Mats Bentsen
 
 Summary of pre-tag testing:
  - prealpha_noresm :
@@ -71,7 +74,7 @@ Details:
    - Fix interim restarts
  - Update CICE to noresm_cice6_6_0_20250522_v3
    - Fix interim restarts
- - Update CAM to noresm3_0_020_cam6_4_121 
+ - Update CAM to noresm3_0_020_cam6_4_121
    - Fix interim restarts
   - Update CISM to cismwrap_2_2_007_noresm_v1
    - Fix interim restarts
@@ -125,7 +128,7 @@ Code reviewed by: Steve Goldhaber, Mariana Vertenstein
 Summary of pre-tag testing:
  - prealpha_noresm :
    - PASSED, DIFF compared with noresm3_0_beta06 for all
- - aux_blom_noresm : 
+ - aux_blom_noresm :
    - PASS, BASELINE DIFF due to change in ocean_albedo_scheme defaults
  - aux_clm_noresm:
    - PASS, BASELINE DIFF for all
@@ -149,7 +152,7 @@ Details:
    - Changed default stomatal conductance scheme Ballberry -> Medlyn
    - Changed default fates_spitfire_mode 0 (nofire) -> 4 (spitfire with dataset lightning)
    - Update fates to sci.1.85.1_api.40.0.0_nor_sci2_api1
-     - Fixed numerical tree_lai/canopy resistance bug 
+     - Fixed numerical tree_lai/canopy resistance bug
  - Update CDEPS to cdeps1.0.70_noresm_v8
    - Bugfix for nitrogen deposition units in datm_cplhist_mode
  - Update ccs_config to ccs_config_noresm0.0.54
@@ -188,7 +191,7 @@ Code reviewed by: Tomas Torsvik, Steve Goldhaber, Mariana Vertenstein
 Summary of pre-tag testing:
  - prealpha_noresm :
    - DIFF compared with noresm3_0_beta04 for all compsets with Fates
- - aux_blom_noresm : 
+ - aux_blom_noresm :
  - aux_clm_noresm:
    - fates compsets baseline diffs.
    - 5x5_amazon does not work anymore with full fates due to spitfire mode
@@ -245,7 +248,7 @@ Code reviewed by: Tomas Torsvik, Mariana Vertenstein
 Summary of pre-tag testing:
  - prealpha_noresm : ??
    - DIFF compared with noresm3_0_beta04 for all NorESM compsets
- - aux_blom_noresm : 
+ - aux_blom_noresm :
  - aux_cam_noresm : Baseline and namelist changes for all tests
  - aux_clm_noresm
 
@@ -254,7 +257,7 @@ Summarize any change to answers:
 ==============================================================
 
 Tag name: noresm3_0_beta04
-Date: 03.01.2025
+Date: 30.10.2025
 One-line Summary: Updates to CTSM and BLOM
 
 Details:
