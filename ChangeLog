@@ -10,7 +10,7 @@ Details:
    - Fix NH3 coupling (non-answer changing)
    - Reduce s_bot oscillations in ref dens adaptation (answer changing)
    - Set new default namelist parameters (answer changing)
-   - Set regular inputdata path for fedep source
+   - Convert absolute path to path relative to inputdata for fedep
  - Update CAM to noresm3_0_021_cam6_4_121
    - New energy transport diagnostics, BFB
  - Update CICE6 to noresm_cice6_6_1_20251129_v1
