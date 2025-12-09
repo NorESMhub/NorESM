@@ -112,7 +112,7 @@ Component tags used in this tag:
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v3
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v1
  - clm        : NorESMhub/CTSM              : ctsm5.3.085_noresm_v1
-    - fates   : NorESMhub/fates             : sci.1.88.6_api.42.0.0_nor_sci1_api1
+    - fates   : NorESMhub/fates             : sci.1.88.6_api.42.0.0_14pft_nor_sci1_api1
  - cmeps      : NorESMhub/CMEPS             : cmeps1.1.23_noresm_v1
  - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v1
  - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
