@@ -1,8 +1,8 @@
 ==============================================================
 
 Tag name: noresm3_0_beta08
-Date: 
-One-line Summary: Update to CICE6_6_1, minor CAM, BLOM updates
+Date: 09.12.2025
+One-line Summary: Update to CICE6.6.1, minor CAM and BLOM updates
 
 Details:
  - Update BLOM to v1.12.19
@@ -36,7 +36,9 @@ Component tags used in this tag:
 
 Bugs fixed:
 
-Describe any changes made to scripts/build system: NA
+Describe any changes made to scripts/build system:
+  The git-flexmid system is updated from v1.0.2 to v1.1.1. There are several
+  minor fixes, but basic functionality remains the same.
 
 Describe any substantial timing or memory changes: NA
 
@@ -47,11 +49,13 @@ Code reviewed by: Steve Goldhaber, Mariana Vertenstein, Jens Debernard,
 
 Summary of pre-tag testing:
  - prealpha_noresm :
+   - PASS, BASELINE_DIFF for all NorESM compsets
  - aux_blom_noresm :
-
+   - PASS, BASELINE_DIFF for all NorESM3 compsets
+ - aux_cice_noresm :
+   - PASS
 
 Summarize any change to answers:
-
 
 ==============================================================
 
