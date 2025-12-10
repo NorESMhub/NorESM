@@ -16,6 +16,8 @@ Details:
    - New energy transport diagnostics, BFB
  - Update CICE6 to noresm_cice6_6_1_20251129_v1
    - Update CICE to cice6_6_1_20251119_noresm
+ - Update CTSM to ctsm5.3.085_noresm_v2
+   - fix for fates tag-name, update git-fleximod
  - Update git-fleximod to v1.1.1
 
 Component tags used in this tag:
@@ -29,8 +31,8 @@ Component tags used in this tag:
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.83_noresm_v2
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_1_20251129_v1
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v1
- - clm        : NorESMhub/CTSM              : ctsm5.3.085_noresm_v1
-    - fates   : NorESMhub/fates             : sci.1.88.6_api.42.0.0_14pft_nor_sci1_api1
+ - clm        : NorESMhub/CTSM              : ctsm5.3.085_noresm_v2
+    - fates   : NorESMhub/fates             : sci.1.88.6_api.42.0.0_nor_sci1_api1
  - cmeps      : NorESMhub/CMEPS             : cmeps1.1.23_noresm_v1
  - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v1
  - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
