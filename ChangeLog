@@ -5,12 +5,13 @@ Date: 09.12.2025
 One-line Summary: Update to CICE6.6.1, minor CAM and BLOM updates
 
 Details:
- - Update BLOM to v1.12.20
+ - Update BLOM to v1.12.21
    - Fix interim restart capability (non-answer changing)
    - Fix NH3 coupling (non-answer changing)
    - Reduce s_bot oscillations in ref dens adaptation (answer changing)
    - Set new default namelist parameters (answer changing)
    - Convert absolute path to path relative to inputdata for fedep
+   - Adjust namelist options for sinking parameter
  - Update CAM to noresm3_0_021_cam6_4_121
    - New energy transport diagnostics, BFB
  - Update CICE6 to noresm_cice6_6_1_20251129_v1
@@ -23,7 +24,7 @@ Component tags used in this tag:
  - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.55
  - cime       : NorESMhub/cime              : cime6.1.143_noresm_v1
  - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
- - blom       : NorESMhub/BLOM              : v1.12.20
+ - blom       : NorESMhub/BLOM              : v1.12.21
  - cam        : NorESMhub/CAM               : noresm3_0_021_cam6_4_121
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.83_noresm_v2
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_1_20251129_v1
