@@ -1,5 +1,68 @@
 ==============================================================
 
+Tag name: noresm3_0_beta08
+Date: 09.12.2025
+One-line Summary: Update to CICE6.6.1, minor CAM and BLOM updates
+
+Details:
+ - Update BLOM to v1.12.21
+   - Fix interim restart capability (non-answer changing)
+   - Fix NH3 coupling (non-answer changing)
+   - Reduce s_bot oscillations in ref dens adaptation (answer changing)
+   - Set new default namelist parameters (answer changing)
+   - Convert absolute path to path relative to inputdata for fedep
+   - Adjust namelist options for sinking parameter
+ - Update CAM to noresm3_0_021_cam6_4_121
+   - New energy transport diagnostics, BFB
+ - Update CICE6 to noresm_cice6_6_1_20251129_v1
+   - Update CICE to cice6_6_1_20251119_noresm
+ - Update CTSM to ctsm5.3.085_noresm_v2
+   - fix for fates tag-name, update git-fleximod
+ - Update git-fleximod to v1.1.1
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.55
+ - cime       : NorESMhub/cime              : cime6.1.143_noresm_v1
+ - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.12.21
+ - cam        : NorESMhub/CAM               : noresm3_0_021_cam6_4_121
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.83_noresm_v2
+ - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_1_20251129_v1
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v1
+ - clm        : NorESMhub/CTSM              : ctsm5.3.085_noresm_v2
+    - fates   : NorESMhub/fates             : sci.1.88.6_api.42.0.0_nor_sci1_api1
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.23_noresm_v1
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v1
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+
+Describe any changes made to scripts/build system:
+  The git-flexmid system is updated from v1.0.2 to v1.1.1. There are several
+  minor fixes, but basic functionality remains the same.
+
+Describe any substantial timing or memory changes: NA
+
+Code merged by: Tomas Torsvik
+
+Code reviewed by: Steve Goldhaber, Mariana Vertenstein, Jens Debernard,
+	          Mats Bentsen
+
+Summary of pre-tag testing:
+ - prealpha_noresm :
+   - PASS, BASELINE_DIFF for all NorESM compsets
+ - aux_blom_noresm :
+   - PASS, BASELINE_DIFF for all NorESM3 compsets
+ - aux_cice_noresm :
+   - PASS
+
+Summarize any change to answers:
+
+==============================================================
+
 Tag name: noresm3_0_beta07
 Date: 06.12.2025
 One-line Summary: Updates to CTSM, CMEPS, CDEPS, CIME, ccs_config
@@ -19,7 +82,7 @@ Details:
    - Fix interim restarts
  - Update CICE to noresm_cice6_6_0_20250522_v3
    - Fix interim restarts
- - Update CAM to noresm3_0_020_cam6_4_121 
+ - Update CAM to noresm3_0_020_cam6_4_121
    - Fix interim restarts
   - Update CISM to cismwrap_2_2_007_noresm_v1
    - Fix interim restarts
@@ -53,7 +116,7 @@ Component tags used in this tag:
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_0_20250522_v3
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v1
  - clm        : NorESMhub/CTSM              : ctsm5.3.085_noresm_v1
-    - fates   : NorESMhub/fates             : sci.1.88.6_api.42.0.0_nor_sci1_api1
+    - fates   : NorESMhub/fates             : sci.1.88.6_api.42.0.0_14pft_nor_sci1_api1
  - cmeps      : NorESMhub/CMEPS             : cmeps1.1.23_noresm_v1
  - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v1
  - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
@@ -73,7 +136,7 @@ Code reviewed by: Steve Goldhaber, Mariana Vertenstein
 Summary of pre-tag testing:
  - prealpha_noresm :
    - PASSED, DIFF compared with noresm3_0_beta06 for all
- - aux_blom_noresm : 
+ - aux_blom_noresm :
    - PASS, BASELINE DIFF due to change in ocean_albedo_scheme defaults
  - aux_clm_noresm:
    - PASS, BASELINE DIFF for all
@@ -97,7 +160,7 @@ Details:
    - Changed default stomatal conductance scheme Ballberry -> Medlyn
    - Changed default fates_spitfire_mode 0 (nofire) -> 4 (spitfire with dataset lightning)
    - Update fates to sci.1.85.1_api.40.0.0_nor_sci2_api1
-     - Fixed numerical tree_lai/canopy resistance bug 
+     - Fixed numerical tree_lai/canopy resistance bug
  - Update CDEPS to cdeps1.0.70_noresm_v8
    - Bugfix for nitrogen deposition units in datm_cplhist_mode
  - Update ccs_config to ccs_config_noresm0.0.54
@@ -136,7 +199,7 @@ Code reviewed by: Tomas Torsvik, Steve Goldhaber, Mariana Vertenstein
 Summary of pre-tag testing:
  - prealpha_noresm :
    - DIFF compared with noresm3_0_beta04 for all compsets with Fates
- - aux_blom_noresm : 
+ - aux_blom_noresm :
  - aux_clm_noresm:
    - fates compsets baseline diffs.
    - 5x5_amazon does not work anymore with full fates due to spitfire mode
@@ -193,7 +256,7 @@ Code reviewed by: Tomas Torsvik, Mariana Vertenstein
 Summary of pre-tag testing:
  - prealpha_noresm : ??
    - DIFF compared with noresm3_0_beta04 for all NorESM compsets
- - aux_blom_noresm : 
+ - aux_blom_noresm :
  - aux_cam_noresm : Baseline and namelist changes for all tests
  - aux_clm_noresm
 
@@ -202,7 +265,7 @@ Summarize any change to answers:
 ==============================================================
 
 Tag name: noresm3_0_beta04
-Date: 03.01.2025
+Date: 30.10.2025
 One-line Summary: Updates to CTSM and BLOM
 
 Details:
