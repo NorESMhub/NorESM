@@ -1,8 +1,8 @@
 ==============================================================
 
-Tag name: noresm3_0_beta08
-Date: 09.12.2025
-One-line Summary: Update to CICE6.6.1, minor CAM and BLOM updates
+Tag name: noresm3_0_beta09
+Date: 17.12.2025
+One-line Summary: Update to CTSM5.4 blom, namelist update
 
 Details:
  - Update BLOM to v1.12.22
@@ -32,16 +32,17 @@ Component tags used in this tag:
 Bugs fixed:
 
 Describe any changes made to scripts/build system:
+ - new namelist variables: dmsp3, dmsp4, dmsp5 in BLOM
 
 Describe any substantial timing or memory changes: NA
 
-Code merged by: mvdebolskiy
+Code merged by: mvdebolskiy, Mariana Vertenstein
 
 Code reviewed by: Steve Goldhaber, Mariana Vertenstein, Tomas Torsvik
 
 Summary of pre-tag testing:
  - prealpha_noresm :
-   - PASS, BASELINE_DIFF for all n* compsets
+   - PASS, BASELINE_DIFF for all N* compsets
  - aux_blom_noresm :
    - PASS, BASELINE_DIFF for all NorESM3 compsets
  - aux_clm_noresm :
