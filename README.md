@@ -5,8 +5,9 @@
 [![Documentation Status](https://readthedocs.org/projects/noresm-docs/badge/?version=noresm2)](https://noresm-docs.readthedocs.io/en/noresm2/?badge=noresm2)
 
 # The Norwegian Earth System Model version 2.3 (NorESM2)
-The **noresm2** branch contains the NorESM2.0.X documentation, code and configurations as used for most  <br />
-NorESM2-LM and NorESM2-MM CMIP6 simulations
+The **noresm2_3_develop** branch contains the NorESM2.3.X code and configurations.
+
+NorESM2.3 is a technical development version of NorESM2 that includes a few bug fixes along with numerous code improvements from the NorESM2.1 release (NorESM tag release-noresm2.1.1). NorESM2.3 relies on the same case creation (including compsets), set up, build and run procedures as NorESM2.0, but will not generally produce the same model output.
 
 The NorESM-2.0 documentation: https://noresm-docs.readthedocs.io/en/noresm2/
 
