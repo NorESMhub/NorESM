@@ -271,6 +271,11 @@
     <lname>1850_CAM60%NORESM%FRC2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BPRPDMS</lname>
   </compset>
 
+  <compset>
+    <alias>N1850MAM4</alias>
+    <lname>1850_CAM60%NORESM%MAM4_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+  </compset>
+
    <compset>
     <alias>N2000</alias>
     <lname>2000_CAM60%NORESM_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
@@ -328,6 +333,11 @@
   <compset>
     <alias>NCO2x4cmip6</alias>
     <lname>1850_CAM60%NORESM%4xCO2_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
+  </compset>
+
+  <compset>
+    <alias>NHISTMAM4</alias>
+    <lname>HIST_CAM60%NORESM%MAM4_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_SGLC_SWAV_BGC%BDRDDMS</lname>
   </compset>
 
   <!-- uses differently organized emission files : FRC2 -->

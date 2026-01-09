@@ -1,4 +1,4 @@
-Copyright (C) 2020 The NorESM developers group
+Copyright (C) 2026 The NorESM developers group
 
 The NorESM developers group is currently affiliated to the following
 Institutions:
