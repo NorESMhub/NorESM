@@ -7,6 +7,15 @@ One-line Summary:
 Details:
  - Update BLOM to v1.12.23
    - Provide historical atmospheric N2O concentrations
+ - Update CIME to cime6.1.43_noresm_v1
+   - Contains updates needed to get check_inputdata --download to work correctly
+ - Update CAM to noresm3_0_024_cam6_4_121
+  - online interpolation of co2 ffuel and co2 aircraft
+  - cam7 physics now uses new cmip7 nitrogen deposition
+ - Update CDEPS to cdeps1.0.87_noresm_v4
+   - bug fix for ingesting unstructured grids with vertical dimensions
+   - new stream functionality for datm presaero, presco2, preso3 and presndep (new cmip7 forcing for ndep is default)
+   - new mapping capability for the stream mapalgo to be mapfile
 
 Component tags used in this tag:
 
@@ -15,7 +24,7 @@ Component tags used in this tag:
  - cime       : NorESMhub/cime              : cime6.1.143_noresm_v1
  - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
  - blom       : NorESMhub/BLOM              : v1.12.23
- - cam        : NorESMhub/CAM               : noresm3_0_021_cam6_4_121
+ - cam        : NorESMhub/CAM               : noresm3_0_024_cam6_4_121
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.83_noresm_v2
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_1_20251129_v1
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v1
