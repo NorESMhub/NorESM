@@ -1,14 +1,12 @@
 ==============================================================
 
 Tag name: noresm3_0_beta10
-Date: 
-One-line Summary: 
+Date:
+One-line Summary:
 
 Details:
  - Update BLOM to v1.12.23
    - Provide historical atmospheric N2O concentrations
- - Update CIME to cime6.1.43_noresm_v1
-   - Contains updates needed to get check_inputdata --download to work correctly
  - Update CAM to noresm3_0_024_cam6_4_121
   - online interpolation of co2 ffuel and co2 aircraft
   - cam7 physics now uses new cmip7 nitrogen deposition
@@ -41,9 +39,9 @@ Describe any changes made to scripts/build system: NA
 
 Describe any substantial timing or memory changes: NA
 
-Code merged by: 
+Code merged by:
 
-Code reviewed by: 
+Code reviewed by:
 
 Summary of pre-tag testing:
  - prealpha_noresm :
