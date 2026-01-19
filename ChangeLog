@@ -1,16 +1,16 @@
 ==============================================================
 
 Tag name: noresm3_0_beta10
-Date:
-One-line Summary:
+Date: 19.01.2026
+One-line Summary: New CAM capability for co2 ffuel, co2 aircraft and nitrogen deposition
 
 Details:
  - Update BLOM to v1.12.23
    - Provide historical atmospheric N2O concentrations
  - Update CAM to noresm3_0_024_cam6_4_121
-  - online interpolation of co2 ffuel and co2 aircraft
-  - cam7 physics now uses new cmip7 nitrogen deposition
- - Update CDEPS to cdeps1.0.87_noresm_v4
+   - online interpolation of co2 ffuel and co2 aircraft
+   - cam7 physics now uses new cmip7 nitrogen deposition
+ - Update CDEPS to cdeps1.0.87_noresm_v3
    - bug fix for ingesting unstructured grids with vertical dimensions
    - new stream functionality for datm presaero, presco2, preso3 and presndep (new cmip7 forcing for ndep is default)
    - new mapping capability for the stream mapalgo to be mapfile
@@ -23,7 +23,7 @@ Component tags used in this tag:
  - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
  - blom       : NorESMhub/BLOM              : v1.12.23
  - cam        : NorESMhub/CAM               : noresm3_0_024_cam6_4_121
- - cdeps      : NorESMhub/CDEPS             : cdeps1.0.83_noresm_v2
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.87_noresm_v3
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_1_20251129_v1
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v1
  - clm        : NorESMhub/CTSM              : ctsm5.4.002_noresm_v1
@@ -34,18 +34,19 @@ Component tags used in this tag:
  - pycect     : NCAR/PyCECT                 : 3.2.2
 
 Bugs fixed:
+ - CDEPS #26: bugfix for handling unstructured input data with multiple levels
 
 Describe any changes made to scripts/build system: NA
 
 Describe any substantial timing or memory changes: NA
 
-Code merged by:
+Code merged by: Tomas Torsvik, Mariana Vertenstein
 
-Code reviewed by:
+Code reviewed by: Mariana Vertenstein
 
 Summary of pre-tag testing:
- - prealpha_noresm :
- - aux_blom_noresm :
+ - prealpha_noresm : PASS, except expected baseline comparison failures
+ - aux_blom_noresm : PASS
  - aux_cam_noresm :
  - aux_clm_noresm :
 
