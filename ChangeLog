@@ -14,6 +14,7 @@ Details:
    - bug fix for ingesting unstructured grids with vertical dimensions
    - new stream functionality for datm presaero, presco2, preso3 and presndep (new cmip7 forcing for ndep is default)
    - new mapping capability for the stream mapalgo to be mapfile
+ - Added some PE settings for Olivia
 
 Component tags used in this tag:
 
