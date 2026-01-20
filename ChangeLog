@@ -1,7 +1,7 @@
 ==============================================================
 
 Tag name: noresm3_0_beta10
-Date: 19.01.2026
+Date: 20.01.2026
 One-line Summary: New CAM capability for co2 ffuel, co2 aircraft and nitrogen deposition
 
 Details:
@@ -41,16 +41,18 @@ Describe any changes made to scripts/build system: NA
 
 Describe any substantial timing or memory changes: NA
 
-Code merged by: Tomas Torsvik, Mariana Vertenstein
+Code merged by: Tomas Torsvik
 
-Code reviewed by: Mariana Vertenstein
+Code reviewed by: Mariana Vertenstein, Steve Goldhaber, mvdebolskiy
 
 Summary of pre-tag testing:
  - prealpha_noresm : PASS, except expected baseline comparison failures
- - aux_blom_noresm : PASS
+ - aux_blom_noresm : PASS, except expected baseline comparison failures
  - aux_cam_noresm :
- - aux_clm_noresm :
-
+ - aux_clm_noresm : 3 new tests FAIL, due to missing spinup datasets. To be fixed later:
+   - ERS_D_Ld11.ne30pg3_ne30pg3_mtn14.I1850Clm60FatesNocompSpinup.betzy_intel.clm-FatesColdSpinup
+   - ERI_D_Ld11.ne30pg3_ne30pg3_mtn14.I1850Clm60FatesNocompSpinup.betzy_gnu.clm-FatesColdSpinupAD
+   - SMS_D_Ld1000_P1536.ne30pg3_ne30pg3_mtn14.I1850Clm60FatesNocompSpinup.betzy_gnu.clm-FatesColdSpinup
 
 Summarize any change to answers:
 
