@@ -1165,7 +1165,7 @@
   </grid>
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx1v4" >
-    <mach name="betzy">
+    <mach name="betzy|olivia">
       <pes pesize="L" compset="CAM60%PTAERO_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO">
         <comment>none</comment>
         <ntasks>
@@ -1203,7 +1203,7 @@
   </grid>
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx1v4" >
-    <mach name="betzy">
+    <mach name="betzy|olivia">
       <pes pesize="X1" compset="CAM60%PTAERO_CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO">
         <comment>none</comment>
         <ntasks>
@@ -1241,7 +1241,7 @@
   </grid>
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx1v4" >
-    <mach name="betzy">
+    <mach name="betzy|olivia">
       <pes pesize="L" compset="CAM60%NORESM.+CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO"> 
         <comment>none</comment>
         <ntasks>
@@ -1279,7 +1279,7 @@
   </grid>
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx1v4" >
-    <mach name="betzy">
+    <mach name="betzy|olivia">
       <pes pesize="X1" compset="CAM60%NORESM.+CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO">
         <comment>none</comment>
         <ntasks>
@@ -1468,7 +1468,7 @@
   </grid>
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx1v4" >
-    <mach name="betzy">
+    <mach name="betzy|olivia">
       <pes pesize="S" compset="any">
         <comment>none</comment>
         <ntasks>
@@ -1582,7 +1582,7 @@
   </grid>
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx1v4" >
-    <mach name="betzy">
+    <mach name="betzy|olivia">
       <pes pesize="M" compset="any">
         <comment>none</comment>
         <ntasks>
@@ -1621,7 +1621,7 @@
 
   <!--heig keyclim type experiments with CISM active-->  
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx1v4" >
-    <mach name="betzy">
+    <mach name="betzy|olivia">
       <pes pesize="M" compset="CAM60%NORESM.+CLM50%BGC-CROP_CICE%NORESM-CMIP6_BLOM%ECO_MOSART_CISM2%EVOLVE_SWAV_BGC%BDRDDMS">
         <comment>none</comment>
         <ntasks>
@@ -1811,7 +1811,7 @@
   </grid>
 
   <grid name="a%1.9x2.5.+l%1.9x2.5.+oi%tnx1v4" >
-    <mach name="betzy">
+    <mach name="betzy|olivia">
       <pes pesize="M" compset="CAM60%PTAERO.+CLM50%BGC-CROP.+CICE.+BLOM%ECO">
         <comment>none</comment>
         <ntasks>
@@ -1887,7 +1887,7 @@
   </grid>
 
   <grid name="a%1.9x2.5.+l%1.9x2.5.+oi%tnx1v4" >
-    <mach name="betzy">
+    <mach name="betzy|olivia">
       <pes pesize="M" compset="CAM60%NORESM.+CLM50%BGC-CROP.+CICE.+BLOM%ECO">
         <comment>none</comment>
         <ntasks>
@@ -1925,7 +1925,7 @@
   </grid>
 
   <grid name="a%1.9x2.5.+l%1.9x2.5.+oi%tnx1v4" >
-    <mach name="betzy">
+    <mach name="betzy|olivia">
       <pes pesize="S" compset="any">
         <comment>none</comment>
         <ntasks>
@@ -2001,7 +2001,7 @@
   </grid>
 
   <grid name="a%1.9x2.5.+l%1.9x2.5.+oi%tnx1v4" >
-    <mach name="betzy">
+    <mach name="betzy|olivia">
       <pes pesize="X1" compset="any">
         <comment>none</comment>
         <ntasks>
@@ -2115,7 +2115,7 @@
   </grid>
 
   <grid name="a%0.23x0.31.+l%0.23x0.31.+oi%tnx0.25v4" >
-    <mach name="hexagon|vilje|fram|betzy">
+    <mach name="hexagon|vilje|fram|betzy|olivia">
       <pes pesize="any" compset="any">
         <comment>none</comment>
         <ntasks>
@@ -2153,7 +2153,7 @@
   </grid>
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx0.125v4" >
-    <mach name="hexagon|vilje|fram|betzy">
+    <mach name="hexagon|vilje|fram|betzy|olivia">
       <pes pesize="any" compset="CAM60%NORESM.+CLM50%BGC-CROP.+CICE.+BLOM">
         <comment>none</comment>
         <ntasks>
@@ -2267,7 +2267,7 @@
   </grid>
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx0.25v4" >
-    <mach name="hexagon|vilje|fram|betzy">
+    <mach name="hexagon|vilje|fram|betzy|olivia">
       <pes pesize="any" compset="CAM60%NORESM.+CLM50%BGC-CROP.+CICE.+BLOM%ECO">
         <comment>none</comment>
         <ntasks>
@@ -2305,7 +2305,7 @@
   </grid>
 
   <grid name="a%0.9x1.25.+l%0.9x1.25.+oi%tnx0.25v4" >
-    <mach name="hexagon|vilje|fram|betzy">
+    <mach name="hexagon|vilje|fram|betzy|olivia">
       <pes pesize="any" compset="any">
         <comment>none</comment>
         <ntasks>
