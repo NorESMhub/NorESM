@@ -16,7 +16,7 @@ Component tags used in this tag:
  - cime       : NorESMhub/cime              : cime6.1.143_noresm_v1
  - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
  - blom       : NorESMhub/BLOM              : v1.12.26
- - cam        : NorESMhub/CAM               : noresm3_0_024_cam6_4_121
+ - cam        : NorESMhub/CAM               : noresm3_0_025_cam6_4_121
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.87_noresm_v3
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_1_20251129_v1
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v1
