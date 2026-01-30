@@ -12,6 +12,8 @@ Details:
    - Update FATES to sci.1.88.6_api.42.0.0_nor_sci2_api1
    - New default FATES parameter file to fix water balance endrun
      during historical simulations, reduce LHFLX bias
+ - Update CDEPS to cdeps1.0.88_noresm_v0
+   - Refactored ctream usage synced with ESCOMP.
 
 
 Component tags used in this tag:
@@ -22,7 +24,7 @@ Component tags used in this tag:
  - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
  - blom       : NorESMhub/BLOM              : v1.12.26
  - cam        : NorESMhub/CAM               : noresm3_0_025_cam6_4_121
- - cdeps      : NorESMhub/CDEPS             : cdeps1.0.87_noresm_v3
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.88_noresm_v0
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_1_20251129_v1
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v1
  - clm        : NorESMhub/CTSM              : ctsm5.4.002_noresm_v3
@@ -46,9 +48,14 @@ Summary of pre-tag testing:
  - prealpha_noresm :
  - aux_blom_noresm :
  - aux_cam_noresm :
- - aux_clm_noresm :
+ - aux_clm_noresm : PASS
 
 Summarize any change to answers:
+
+ - Any compset with CLM60 and FATES has reduced latent heat bias
+   also, bug fix for excess soil ice melt changes heat/moist. 
+   soil state, slightly in the arctic with only few gridcells having
+   significant changes.
 
 ==============================================================
 
