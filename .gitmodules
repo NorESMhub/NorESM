@@ -123,7 +123,7 @@ fxDONOTUSEurl = https://github.com/NorESMhub/CMEPS.git
 [submodule "mosart"]
 path = components/mosart
 url = https://github.com/NorESMhub/MOSART.git
-fxtag = mosart1.1.12_noresm_v1
+fxtag = mosart1.1.12_noresm_v2
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/MOSART.git
 

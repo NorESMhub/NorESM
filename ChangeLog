@@ -14,7 +14,8 @@ Details:
      during historical simulations, reduce LHFLX bias
  - Update CDEPS to cdeps1.0.88_noresm_v0
    - Refactored ctream usage synced with ESCOMP.
-
+ - Update MOSART to mosart1.1.12_noresm_v2
+   - Support running DEBUG mode on Olivia
 
 Component tags used in this tag:
 
@@ -30,7 +31,7 @@ Component tags used in this tag:
  - clm        : NorESMhub/CTSM              : ctsm5.4.002_noresm_v3
     - fates   : NorESMhub/fates             : sci.1.88.6_api.42.0.0_nor_sci2_api1
  - cmeps      : NorESMhub/CMEPS             : cmeps1.1.23_noresm_v1
- - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v1
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v2
  - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
  - pycect     : NCAR/PyCECT                 : 3.2.2
 
@@ -53,7 +54,7 @@ Summary of pre-tag testing:
 Summarize any change to answers:
 
  - Any compset with CLM60 and FATES has reduced latent heat bias
-   also, bug fix for excess soil ice melt changes heat/moist. 
+   also, bug fix for excess soil ice melt changes heat/moist.
    soil state, slightly in the arctic with only few gridcells having
    significant changes.
 
