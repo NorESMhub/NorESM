@@ -7,6 +7,8 @@ One-line Summary:
 Details:
  - Update BLOM to v1.12.26
    - New testlist and PES layouts
+ - Update CAM to noresm3_0_025_cam6_4_121
+   - New optional diagnostic output fields
  - Update CTSM to ctsm5.4.002_noresm_v3
    - Bug fix for excess ice melt.
    - Update FATES to sci.1.88.6_api.42.0.0_nor_sci2_api1
