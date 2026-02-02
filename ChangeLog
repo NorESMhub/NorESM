@@ -1,8 +1,8 @@
 ==============================================================
 
 Tag name: noresm3_0_beta11
-Date:
-One-line Summary:
+Date: 02.02.2026
+One-line Summary: New default FATES parameters; CDEPS refactored stream usage
 
 Details:
  - Update BLOM to v1.12.26
@@ -15,7 +15,7 @@ Details:
    - New default FATES parameter file to fix water balance endrun
      during historical simulations, reduce LHFLX bias
  - Update CDEPS to cdeps1.0.88_noresm_v0
-   - Refactored ctream usage synced with ESCOMP.
+   - Refactored stream usage synced with ESCOMP.
  - Update MOSART to mosart1.1.12_noresm_v2
    - Support running DEBUG mode on Olivia
 
@@ -43,14 +43,14 @@ Describe any changes made to scripts/build system: NA
 
 Describe any substantial timing or memory changes: NA
 
-Code merged by:
+Code merged by: Tomas Torsvik
 
-Code reviewed by:
+Code reviewed by: Mariana Vertenstein, Steve Goldhaber, mvdebolskiy
 
 Summary of pre-tag testing:
- - prealpha_noresm :
- - aux_blom_noresm :
- - aux_cam_noresm :
+ - prealpha_noresm : PASS, except expected baseline comparison failures
+ - aux_blom_noresm : PASS, except expected baseline comparison failures
+ - aux_cam_noresm : PASS, except expected baseline comparison failures
  - aux_clm_noresm : PASS
 
 Summarize any change to answers:
