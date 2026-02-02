@@ -1,5 +1,67 @@
 ==============================================================
 
+Tag name: noresm3_0_beta11
+Date: 02.02.2026
+One-line Summary: New default FATES parameters; CDEPS refactored stream usage
+
+Details:
+ - Update BLOM to v1.12.26
+   - New testlist and PES layouts
+ - Update CAM to noresm3_0_025_cam6_4_121
+   - New optional diagnostic output fields
+ - Update CTSM to ctsm5.4.002_noresm_v3
+   - Bug fix for excess ice melt.
+   - Update FATES to sci.1.88.6_api.42.0.0_nor_sci2_api1
+   - New default FATES parameter file to fix water balance endrun
+     during historical simulations, reduce LHFLX bias
+ - Update CDEPS to cdeps1.0.88_noresm_v0
+   - Refactored stream usage synced with ESCOMP.
+ - Update MOSART to mosart1.1.12_noresm_v2
+   - Support running DEBUG mode on Olivia
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.56
+ - cime       : NorESMhub/cime              : cime6.1.143_noresm_v1
+ - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.12.26
+ - cam        : NorESMhub/CAM               : noresm3_0_025_cam6_4_121
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.88_noresm_v0
+ - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_1_20251129_v1
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v1
+ - clm        : NorESMhub/CTSM              : ctsm5.4.002_noresm_v3
+    - fates   : NorESMhub/fates             : sci.1.88.6_api.42.0.0_nor_sci2_api1
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.23_noresm_v1
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v2
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+
+Describe any changes made to scripts/build system: NA
+
+Describe any substantial timing or memory changes: NA
+
+Code merged by: Tomas Torsvik
+
+Code reviewed by: Mariana Vertenstein, Steve Goldhaber, mvdebolskiy
+
+Summary of pre-tag testing:
+ - prealpha_noresm : PASS, except expected baseline comparison failures
+ - aux_blom_noresm : PASS, except expected baseline comparison failures
+ - aux_cam_noresm : PASS, except expected baseline comparison failures
+ - aux_clm_noresm : PASS
+
+Summarize any change to answers:
+
+ - Any compset with CLM60 and FATES has reduced latent heat bias
+   also, bug fix for excess soil ice melt changes heat/moist.
+   soil state, slightly in the arctic with only few gridcells having
+   significant changes.
+
+==============================================================
+
 Tag name: noresm3_0_beta10a
 Date: 21.01.2026
 One-line Summary: Update Olivia settings
