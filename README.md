@@ -15,7 +15,7 @@ Visit the [NorESM home page](https://www.noresm.org/) to learn more about the No
 
 - [NorESM-1 documentation](https://noresm-docs.readthedocs.io/en/noresm1)
 - [NorESM-2.0 documentation](https://noresm-docs.readthedocs.io/en/noresm2/)
-- [Latest NorESM documentation](https://noresm-docs.readthedocs.io/en/latest) list of documentation pages for all NorESM versions
+- [NorESM documentation main page](https://noresm-docs.readthedocs.io/en/main)
 
 
 # Branches in NorESM
