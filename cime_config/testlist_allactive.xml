@@ -3,6 +3,7 @@
   <test name="ERI" grid="ne16pg3_tn14" compset="N1850fates-nocomp">
     <machines>
       <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
+      <machine name="olivia" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00:00 </option>
@@ -11,6 +12,7 @@
   <test name="SMS_D_Ld1" grid="ne30pg3_tn14" compset="N1850" testmods="allactive/defaultio">
     <machines>
       <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
+      <machine name="olivia" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00:00 </option>
@@ -19,6 +21,7 @@
   <test name="ERR" grid="ne30pg3_tn14" compset="N1850" testmods="allactive/defaultio">
     <machines>
       <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
+      <machine name="olivia" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 04:00:00 </option>
@@ -27,6 +30,7 @@
   <test name="SMS_D_Ld1" grid="ne30pg3_tn14" compset="N1850clmbgc" testmods="allactive/defaultio">
     <machines>
       <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
+      <machine name="olivia" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00:00 </option>
@@ -35,6 +39,7 @@
   <test name="SMS_D_Ld1" grid="ne16pg3_tn14" compset="N1850fates-sp" testmods="allactive/defaultio">
     <machines>
       <machine name="betzy" compiler="gnu" category="prealpha_noresm"/>
+      <machine name="olivia" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00:00 </option>
@@ -43,6 +48,7 @@
   <test name="SMS_D_Ld1" grid="ne30pg3_tn14" compset="N1850fates-sp" testmods="allactive/defaultio">
     <machines>
       <machine name="betzy" compiler="gnu" category="prealpha_noresm"/>
+      <machine name="olivia" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00:00 </option>
@@ -51,6 +57,7 @@
   <test name="SMS_D_Ld1" grid="ne30pg3_tn14" compset="N1850fates-nocomp" testmods="allactive/defaultio">
     <machines>
       <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
+      <machine name="olivia" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00:00 </option>
@@ -59,6 +66,7 @@
   <test name="ERS" grid="ne30pg3_tn14" compset="N1850fates-nocomp" testmods="allactive/defaultio">
     <machines>
       <machine name="betzy" compiler="gnu" category="prealpha_noresm"/>
+      <machine name="olivia" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00:00 </option>
@@ -67,6 +75,7 @@
   <test name="ERS_Ld5" grid="ne30pg3_tn14" compset="N1850mam4" testmods="allactive/defaultio">
     <machines>
       <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
+      <machine name="olivia" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00:00 </option>
@@ -76,6 +85,7 @@
   <test name="ERS_D_Ld4" grid="ne30pg3_tn14" compset="N2N1850" testmods="allactive/defaultio">
     <machines>
       <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
+      <machine name="olivia" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00:00 </option>
@@ -85,6 +95,7 @@
   <test name="SMS_D_Ld1" grid="ne16pg3_tn14" compset="N1850fates-nocomp" testmods="allactive/reducedout">
     <machines>
       <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
+      <machine name="olivia" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00:00 </option>
@@ -94,6 +105,7 @@
   <test name="SMS_Ld1" grid="ne16pg3_tn14" compset="NE1850fates-nocomp" testmods="allactive/defaultio">
     <machines>
       <machine name="betzy" compiler="gnu" category="prealpha_noresm"/>
+      <machine name="olivia" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00:00 </option>
@@ -103,6 +115,7 @@
   <test name="ERI" grid="ne3pg3_tn21" compset="N1850fates-nocomp">
     <machines>
       <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
+      <machine name="olivia" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00:00 </option>
@@ -112,6 +125,7 @@
 <test name="ERS_Ld5" grid="ne3pg3_tn14" compset="N1850fates-nocomp" testmods="allactive/defaultio">
     <machines>
       <machine name="betzy" compiler="gnu" category="prealpha_noresm"/>
+      <machine name="olivia" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00:00 </option>
