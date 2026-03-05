@@ -11,10 +11,13 @@ Details:
     - Fix for restarts when a run is started from a spunup
       state through finidat. Fix for hyrdaulic failure mortality
       in the cold regions.
- - Update CAM to 
+ - Update CAM to noresm3_0_027_cam6_4_121
    - Updated ctsm checkout, added test for fix above
+   - Update Oslo Aero with volcaero fix
+   - Move to new topography for 2 degree runs (ne16pg3)
  - update ccs_config to ccs_config_noresm0.0.57
    - Update config_batch.xml settings for olivia after machine maintenance
+ - Include machine settings for prealpha_noresm tests on olivia
 
 Component tags used in this tag:
 
@@ -23,7 +26,7 @@ Component tags used in this tag:
  - cime       : NorESMhub/cime              : cime6.1.143_noresm_v1
  - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
  - blom       : NorESMhub/BLOM              : v1.12.26
- - cam        : NorESMhub/CAM               : noresm3_0_025_cam6_4_121
+ - cam        : NorESMhub/CAM               : noresm3_0_027_cam6_4_121
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.88_noresm_v0
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_1_20251129_v1
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v1
@@ -56,9 +59,10 @@ Summary of pre-tag testing:
 Summarize any change to answers:
 
  - Any compset with CLM60 and FATES will have changes to vegetation state,
-   resubmitting the case/starting hybrid/branch runs will no longer change 
+   resubmitting the case/starting hybrid/branch runs will no longer change
    the state of the land/atm
- - 
+ - Compsets using prescribed_volcaero have changes
+ - Simulations using the ne16pg3 grid have canges due to new topography
 
 ==============================================================
 
