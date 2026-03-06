@@ -12,7 +12,6 @@ Details:
       state through finidat. Fix for hyrdaulic failure mortality
       in the cold regions.
  - Update CAM to noresm3_0_027_cam6_4_121
-   - Updated ctsm checkout, added test for fix above
    - Update Oslo Aero with volcaero fix
    - Move to new topography for 2 degree runs (ne16pg3)
  - update ccs_config to ccs_config_noresm0.0.58
