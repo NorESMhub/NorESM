@@ -61,10 +61,9 @@ Summary of pre-tag testing on Betzy:
  - aux_clm_noresm : PASS, except expected baseline comparison failures
 
 Summary of pre-tag testing on Olivia:
- Currently we are missing some input data on olivia, and are working to
- have this in place for future testing. We also need a place to store
- baseline simulations for comparison with future development tags.
- - prealpha_noresm : 4 tests PASS, 10 tests FAIL
+ - prealpha_noresm : 6 tests PASS, 8 tests FAIL
+   - All tests with debug flag enabled fail in BLOM/iHAMOCC (NorESM issue #778)
+   - Test with compset N1850mam4 fail due to missing inputdata/write permissions
 
 Summarize any change to answers:
 
