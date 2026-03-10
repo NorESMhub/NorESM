@@ -55,10 +55,16 @@ Code merged by: Tomas Torsvik
 
 Code reviewed by: Mariana Vertenstein, Steve Goldhaber, mvdebolskiy
 
-Summary of pre-tag testing:
+Summary of pre-tag testing on Betzy:
  - prealpha_noresm : PASS, except expected baseline comparison failures
  - aux_cam_noresm : PASS, except expected baseline comparison failures
  - aux_clm_noresm : PASS, except expected baseline comparison failures
+
+Summary of pre-tag testing on Olivia:
+ Currently we are missing some input data on olivia, and are working to
+ have this in place for future testing. We also need a place to store
+ baseline simulations for comparison with future development tags.
+ - prealpha_noresm : 4 tests PASS, 10 tests FAIL
 
 Summarize any change to answers:
 
