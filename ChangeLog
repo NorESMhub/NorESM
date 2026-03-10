@@ -1,7 +1,7 @@
 ==============================================================
 
 Tag name: noresm3_0_beta12
-Date: 
+Date: 10.03.2026
 One-line Summary: Fixes for CLM; CAM
 
 Details:
@@ -44,17 +44,20 @@ NorESM#770
 CTSM#200
 NGEET/fates#1492
 
-Describe any changes made to scripts/build system: NA
+Describe any changes made to scripts/build system:
+ - Remove loading of Python modules in machine settings for Betzy (introduced
+   in ccs_config_noresm0.0.59). This fix may cause problems for some workflows
+   in the future, so we may want to look for a different solution.
 
 Describe any substantial timing or memory changes: NA
 
-Code merged by: 
+Code merged by: Tomas Torsvik
 
-Code reviewed by: 
+Code reviewed by: Mariana Vertenstein, Steve Goldhaber, mvdebolskiy
 
 Summary of pre-tag testing:
- - prealpha_noresm : 
- - aux_cam_noresm : 
+ - prealpha_noresm : PASS, except expected baseline comparison failures
+ - aux_cam_noresm : PASS, except expected baseline comparison failures
  - aux_clm_noresm : PASS, except expected baseline comparison failures
 
 Summarize any change to answers:
