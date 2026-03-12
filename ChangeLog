@@ -46,13 +46,16 @@ Code reviewed by:
 
 Summary of pre-tag testing on Betzy:
  - prealpha_noresm : 
- - aux_blom_noresm : 
+ - aux_blom_noresm : PASS, with expected DIFF compared to noresm3_0_beta11
+ - aux_cice_noresm : PASS (no baseline comparison)
 
 Summary of pre-tag testing on Olivia:
- - prealpha_noresm : 
- - aux_blom_noresm : 
+ - prealpha_noresm : PASS (no baseline comparison)
 
 Summarize any change to answers:
+ - CMIP7 diagnostic output added in both BLOM and iHAMOCC
+   - BLOM (hd): 15 fields added, 7 fields removed, 7 fields changed
+   - iHAMOCC (hbgcd): 9 fields added
 
 ==============================================================
 
