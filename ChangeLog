@@ -1,7 +1,7 @@
 ==============================================================
 
 Tag name: noresm3_0_beta12a
-Date: 
+Date: 13.03.2026
 One-line Summary: BLOM output for CMIP7
 
 Details:
@@ -36,16 +36,16 @@ Component tags used in this tag:
 
 Bugs fixed:
 
-Describe any changes made to scripts/build system:
+Describe any changes made to scripts/build system: NA
 
 Describe any substantial timing or memory changes: NA
 
 Code merged by: Tomas Torsvik
 
-Code reviewed by: 
+Code reviewed by: Mats Bentsen, Jörg Schwinger, Jens Debernard, Alok Gupta
 
 Summary of pre-tag testing on Betzy:
- - prealpha_noresm : 
+ - prealpha_noresm : PASS, with expected DIFF compared to noresm3_0_beta12
  - aux_blom_noresm : PASS, with expected DIFF compared to noresm3_0_beta11
  - aux_cice_noresm : PASS (no baseline comparison)
 
