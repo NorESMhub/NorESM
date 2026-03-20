@@ -1,5 +1,64 @@
 ==============================================================
 
+Tag name: noresm3_0_beta12a
+Date: 13.03.2026
+One-line Summary: BLOM output for CMIP7
+
+Details:
+ - Update BLOM to v1.12.31
+   - v1.12.27: New and revised diagnostics for CMIP7
+   - v1.12.28: Include machine settings for olivia in testlist
+   - v1.12.29: Update use of flush statements in BLOM/iHAMOCC
+   - v1.12.30: Bugfix in iHAMOCC field accumulation
+   - v1.12.31: Bugfix in BLOM restart module
+ - Update CICE to noresm_cice6_6_1_20251129_v2
+   - Enable snow heat conductivity tuning with ksno namelist setting
+ - Update ccs_config to ccs_config_noresm0.0.61
+   - Technical support for GNU compiler on Olivia
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.61
+ - cime       : NorESMhub/cime              : cime6.1.143_noresm_v1
+ - share      : NorESMHub/NorESM_share      : share1.1.9_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.12.31
+ - cam        : NorESMhub/CAM               : noresm3_0_027_cam6_4_121
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.88_noresm_v0
+ - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_1_20251129_v2
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v1
+ - clm        : NorESMhub/CTSM              : ctsm5.4.002_noresm_v4
+    - fates   : NorESMhub/fates             : sci.1.88.6_api.42.0.0_nor_sci5_api1
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.23_noresm_v1
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v2
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+
+Describe any changes made to scripts/build system: NA
+
+Describe any substantial timing or memory changes: NA
+
+Code merged by: Tomas Torsvik
+
+Code reviewed by: Mats Bentsen, Jörg Schwinger, Jens Debernard, Alok Gupta
+
+Summary of pre-tag testing on Betzy:
+ - prealpha_noresm : PASS, with expected DIFF compared to noresm3_0_beta12
+ - aux_blom_noresm : PASS, with expected DIFF compared to noresm3_0_beta11
+ - aux_cice_noresm : PASS (no baseline comparison)
+
+Summary of pre-tag testing on Olivia:
+ - prealpha_noresm : PASS (no baseline comparison)
+
+Summarize any change to answers:
+ - CMIP7 diagnostic output added in both BLOM and iHAMOCC
+   - BLOM (hd): 15 fields added, 7 fields removed, 7 fields changed
+   - iHAMOCC (hbgcd): 9 fields added
+
+==============================================================
+
 Tag name: noresm3_0_beta12
 Date: 11.03.2026
 One-line Summary: Fixes for CLM; CAM
