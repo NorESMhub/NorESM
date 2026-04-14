@@ -13,7 +13,8 @@ Details:
    - to cmeps1.1.41_noresm_v0
 	- new 'dead' components needed for testing of water isotope changes
 - Update share to share1.1.18_noresm_v0
-   - needed for the update of CMEPS
+	- needed for the update of CMEPS
+- Update CDEPS to cdeps1.0.88_noresm_v1
 
 Component tags used in this tag:
 
@@ -23,7 +24,7 @@ Component tags used in this tag:
  - share      : NorESMHub/NorESM_share      : share1.1.18_noresm_v0
  - blom       : NorESMhub/BLOM              : v1.12.31
  - cam        : NorESMhub/CAM               : noresm3_0_027_cam6_4_121
- - cdeps      : NorESMhub/CDEPS             : cdeps1.0.88_noresm_v0
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.88_noresm_v1
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_1_20251129_v2
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v1
  - clm        : NorESMhub/CTSM              : ctsm5.4.002_noresm_v4
