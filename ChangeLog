@@ -15,6 +15,13 @@ Details:
 - Update share to share1.1.18_noresm_v0
 	- needed for the update of CMEPS
 - Update CDEPS to cdeps1.0.88_noresm_v1
+- Update BLOM to v1.12.36
+   - v1.12.32: Horizontal mesoscale eddy-induced diffusion in mixed layer
+   - v1.12.33: Adjusted iHAMOCC output frequencies for CMIP7 cmorization
+   - v1.12.34: Fix OCN_CO2_type for HIST compset
+   - v1.12.35: Tuning for 10m wind of parameterized Langmuir turbulence
+   - v1.12.36: Allow running paramgen for python without setuptools
+
 
 Component tags used in this tag:
 
@@ -22,7 +29,7 @@ Component tags used in this tag:
  - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.63
  - cime       : NorESMhub/cime              : cime6.1.143_noresm_v1
  - share      : NorESMHub/NorESM_share      : share1.1.18_noresm_v0
- - blom       : NorESMhub/BLOM              : v1.12.31
+ - blom       : NorESMhub/BLOM              : v1.12.36
  - cam        : NorESMhub/CAM               : noresm3_0_027_cam6_4_121
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.88_noresm_v1
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_1_20251129_v2
