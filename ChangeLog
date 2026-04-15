@@ -1,7 +1,7 @@
 ==============================================================
 
 Tag name: noresm3_0_beta13
-Date: 13.03.2026
+Date: 15.04.2026
 One-line Summary: Updates to CMEPS, share
 
 Details:
@@ -49,15 +49,15 @@ Describe any substantial timing or memory changes: NA
 
 Code merged by: Tomas Torsvik
 
-Code reviewed by:
+Code reviewed by: Mariana Vertenstein, Steve Goldhaber, Mats Bentsen
 
 Summary of pre-tag testing on Betzy:
- - prealpha_noresm :
- - aux_blom_noresm :
- - aux_cice_noresm :
+ - prealpha_noresm : PASS, with expected DIFF compared to noresm3_0_beta12a
+ - aux_blom_noresm : PASS, with expected DIFF compared to noresm3_0_beta12a
+   - All tests that WW3 tests
 
 Summary of pre-tag testing on Olivia:
- - prealpha_noresm :
+ - prealpha_noresm : NA (system down for maintenance)
 
 Summarize any change to answers:
 
