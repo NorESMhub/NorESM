@@ -31,6 +31,7 @@ Component tags used in this tag:
 
 Bugs fixed:
  - NorESMhub/NorESM#790
+ - NorESMhub/CTSM#204
  - historical runs with fates crash with DEBUG=TRUE
 
 Describe any changes made to scripts/build system: NA
