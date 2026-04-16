@@ -39,14 +39,14 @@ Describe any changes made to scripts/build system: NA
 
 Describe any substantial timing or memory changes: NA
 
-Code merged by: Mariana Vertenstein
+Code merged by: mvdebolskiy
 
-Code reviewed by: Tomas Torsvik, Steve Goldhaber, Mats Bentsen
+Code reviewed by:  Steve Goldhaber, Mariana Vertenstein
 
 Summary of pre-tag testing on Betzy:
- - prealpha_noresm : PASS, no DIFFs compared to noresm3_0_beta12a
- - aux_clm_noresm : PASS, no DIFFs compared to noresm3_0_beta12a
-   - All tests that WW3 tests
+ - prealpha_noresm : PASS, no DIFFs compared to noresm3_0_beta13
+ - aux_clm_noresm : PASS, no DIFFs compared to noresm3_0_beta13
+
 
 Summary of pre-tag testing on Olivia:
  - prealpha_noresm : NA (system down for maintenance)
