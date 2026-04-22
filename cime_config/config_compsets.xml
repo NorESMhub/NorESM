@@ -14,9 +14,9 @@
     Where for the specific compsets below the following is supported
     TIME = Time period (e.g. 2000, HIST, RCP8...)
     ATM  = [CAM40, CAM50, CAM60, CAM70]
-    LND  = [CLM45, CLM50, CLM60, SLND]
+    LND  = [CLM45, CLM50, CLM60, DLND, SLND]
     ICE  = [CICE, DICE, SICE]
-    OCN  = [DOCN, AQUAP, SOCN]
+    OCN  = [BLOM, DOCN, SOCN]
     ROF  = [RTM, MOSART, SROF]
     GLC  = [CISM2, DGLC, SGLC]
     WAV  = [WW3, DWAV, XWAV, SWAV]
@@ -36,69 +36,77 @@
     - grid  (optional regular expression match for grid to work with the compset)
   </help>
 
-  <!-- 1850 compset -->
-
+  <!-- 1850 -->
   <compset>
     <alias>N1850</alias>
-    <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%SP_CICE_BLOM%HYB%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
-  </compset>
-  <compset>
-    <alias>N1850clmbgc</alias>
-    <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%BGC-CROP_CICE_BLOM%HYB%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
-  </compset>
-  <compset>
-    <alias>N1850fates-sp</alias>
-    <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-SP_CICE_BLOM%HYB%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
-  </compset>
-  <compset>
-    <alias>N1850fates-nocomp</alias>
     <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-NOCOMP_CICE_BLOM%HYB%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
   </compset>
-
   <compset>
-    <alias>N1850mam4</alias>
-    <lname>1850_CAM70%LT%GHGMAM4_CLM60%SP_CICE_BLOM%HYB%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
+    <alias>N1850Esm</alias>
+    <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-NOCOMP_CICE_BLOM%HYB%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP_BGC%BPRP</lname>
+  </compset>
+  <compset>
+    <alias>N1850G</alias>
+    <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-NOCOMP_CICE_BLOM%HYB%ECO_MOSART_CISM%GRIS-EVOLVE_SWAV_SESP</lname>
+  </compset>
+  <compset>
+    <alias>N1850EsmG</alias>
+    <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-NOCOMP_CICE_BLOM%HYB%ECO_MOSART_CISM%GRIS-EVOLVE_SWAV_SESP_BGC%BPRP</lname>
+  </compset>
+
+  <!-- Historical -->
+  <compset>
+    <alias>NHist</alias>
+    <lname>HIST_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-NOCOMP_CICE_BLOM%HYB%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
+  </compset>
+  <compset>
+    <alias>NHistEsm</alias>
+    <lname>HIST_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-NOCOMP_CICE_BLOM%HYB%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP_BGC%BPRP</lname>
+  </compset>
+  <compset>
+    <alias>NHistG</alias>
+    <lname>HIST_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-NOCOMP_CICE_BLOM%HYB%ECO_MOSART_CISM%GRIS-EVOLVE_SWAV_SESP</lname>
+  </compset>
+  <compset>
+    <alias>NHistEsmG</alias>
+    <lname>HIST_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-NOCOMP_CICE_BLOM%HYB%ECO_MOSART_CISM%GRIS-EVOLVE_SWAV_SESP_BGC%BPRP</lname>
+  </compset>
+
+  <!-- CLM variants for testing -->
+  <compset>
+    <alias>N2000Clm60Sp</alias>
+    <lname>2000_CAM70%LT%NORESM%CAMoslo_CLM60%SP_CICE_BLOM%HYB_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
+  </compset>
+  <compset>
+    <alias>NHistClm60</alias>
+    <lname>HIST_CAM70%LT%NORESM%CAMoslo_CLM60%BGC-CROP_CICE_BLOM%HYB%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
+  </compset>
+  <compset>
+    <alias>N1850Clm60</alias>
+    <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%BGC-CROP_CICE_BLOM%HYB%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
   </compset>
 
   <!-- BG compsets: evolving ice sheet -->
 
   <!-- Prognostic wave -->
 
-  <!-- Data wave -->
-
   <!-- SOM compsets -->
 
-  <!-- fully coupled MOM6 runs -->
-
   <!-- All active except data atmosphere:  used for spinup and testing of CISM couplings -->
-
   <compset>
      <alias>J1850G</alias>
      <lname>1850_DATM%CRUv7_CLM50%BGC-CROP_CICE_POP2_MOSART_CISM2%GRIS-EVOLVE_SWAV</lname>
   </compset>
 
-  <!-- fully coupled without hybrid coordinate in BLOM for testing-->
-  <compset>
-    <alias>N2N1850</alias>
-    <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%SP_CICE_BLOM%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
-  </compset>
-
-  <!-- Emission-driven -->
-
-  <compset>
-     <alias>NE1850fates-nocomp</alias>
-     <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-NOCOMP_CICE_BLOM%HYB%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP_BGC%BPRP</lname>
-  </compset>
-
   <entries>
     <entry id="RUN_STARTDATE">
       <values>
-	<value compset="1850_"     >0001-01-01</value>
-	<value compset="2000_"     >0001-01-01</value>
-	<value compset="HIST_"     >1850-01-01</value>
-	<value compset="5505_"     >1955-01-01</value>
-	<value compset="RCP[2468]_">2005-01-01</value>
-	<value compset="2013_"     >2013-01-01</value>
+	      <value compset="1850_"     >0001-01-01</value>
+	      <value compset="2000_"     >0001-01-01</value>
+	      <value compset="HIST_"     >1850-01-01</value>
+	      <value compset="5505_"     >1955-01-01</value>
+	      <value compset="RCP[2468]_">2005-01-01</value>
+	      <value compset="2013_"     >2013-01-01</value>
       </values>
     </entry>
   </entries>
