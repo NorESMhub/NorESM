@@ -1,5 +1,65 @@
 ==============================================================
 
+Tag name: noresm3_0_beta14
+Date: 21.04.2026
+One-line Summary: Component updates
+
+Details:
+ - ccs_config update to ccs_config_noresm0.065
+   - Update configs for olivia to make gnu work
+   - Add MEM variables to config_machines on olivia and betzy
+   - Add --mem specs to the config_batch on olivia and betzy
+   - Olivia default CIME_OUTPUT_ROOT /cluster/work/projects/$PROJECT/$USER/noresm/
+     - This means that the noresm and archive folders by default
+       to the project and user with which you submitted your case.
+ - cime update to cime6.1.73_noresm_v2
+   - Update to latest ESMCI.
+   - Add SLURM MEM vars cleanup into case_st_archive
+     to allow single point and resubmit for big jobs to work out of the box
+
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.65
+ - cime       : NorESMhub/cime              : cime6.1.143_noresm_v1
+ - share      : NorESMHub/NorESM_share      : share1.1.18_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.12.39
+ - cam        : NorESMhub/CAM               : noresm3_0_027_cam6_4_121
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.88_noresm_v1
+ - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_1_20251129_v2
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v1
+ - clm        : NorESMhub/CTSM              : ctsm5.4.002_noresm_v6
+    - fates   : NorESMhub/fates             : sci.1.88.6_api.42.0.0_nor_sci5_api1
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.41_noresm_v0
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v2
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+ - NorESMhub/NorESM#796
+
+Describe any changes made to scripts/build system: NA
+
+Describe any substantial timing or memory changes: NA
+
+Code merged by: Tomas Torsvik
+
+Code reviewed by:  Mats Bentsen, Jörg Schwinger
+
+Summary of pre-tag testing on Betzy:
+ - prealpha_noresm : PASS, no DIFFs compared to noresm3_0_beta13
+   - NLFAIL when setting reduced output for BLOM/iHAMOCC
+ - aux_blom_noresm : PASS, no DIFFs compared to noresm3_0_beta13
+
+Summary of pre-tag testing on Olivia:
+ - prealpha_noresm : NA (system down for maintenance)
+
+Summarize any change to answers:
+  - No answer changes in tests.
+
+==============================================================
+
 Tag name: noresm3_0_beta13b
 Date: 21.04.2026
 One-line Summary: Bugfix for BLOM
