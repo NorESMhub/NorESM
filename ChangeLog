@@ -63,10 +63,12 @@ Code reviewed by:  Mats Bentsen, Jörg Schwinger
 Summary of pre-tag testing on Betzy:
  - prealpha_noresm : PASS, DIFFs compared to noresm3_0_beta13
    - NLFAIL when setting reduced output for BLOM/iHAMOCC
- - aux_blom_noresm : PASS, DIFFs compared to noresm3_0_beta13
+ - aux_blom_noresm : PASS, NLCOMP fails with picking up correct cdeps files.
+ - aux_clm_noresm :  PASS, baselines created.
 
 Summary of pre-tag testing on Olivia:
- - prealpha_noresm : NA (system down for maintenance)
+ - prealpha_noresm :
+ - aux_clm_noresm : PASS, DIFFS compared to ctsm5.4.002_noresm_v5
 
 Summarize any change to answers:
   - No answer changes in tests.
