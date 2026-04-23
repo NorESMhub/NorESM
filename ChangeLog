@@ -23,6 +23,7 @@ Details:
      default now for compsets with BLOM
  - CAM update to noresm3_0_030_cam6_4_121
    - Update in case configuration to accommodate CIME update
+   - New CMIP7 forcing files for PI control (1850)
    - Update NDEP forcing file
 
 Component tags used in this tag:
