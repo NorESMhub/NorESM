@@ -56,7 +56,7 @@ Bugs fixed:
 Describe any changes made to scripts/build system:
 
 - On olivia the default folder for bld-run and archive 
-  DEPENDS on the --project you used durin ./create_newcase.
+  DEPENDS on the --project you used during ./create_newcase.
   GNU compiler with OPENMPI is available but only for <=3 nodes.
   On both betzy and oliva you can run single-point cases out of the box.
 
