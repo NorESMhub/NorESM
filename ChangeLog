@@ -1,5 +1,139 @@
 ==============================================================
 
+Tag name: noresm3_0_beta14
+Date: 23.04.2026
+One-line Summary: Component updates
+
+Details:
+ - ccs_config update to ccs_config_noresm0.0.65
+   - Update configs for olivia to make gnu work
+   - Add MEM variables to config_machines on olivia and betzy
+   - Add --mem specs to the config_batch on olivia and betzy
+   - Olivia default CIME_OUTPUT_ROOT /cluster/work/projects/$PROJECT/$USER/noresm/
+     - This means that the noresm and archive folders by default
+       to the project and user with which you submitted your case.
+ - cime update to cime6.1.173_noresm_v0
+   - Update to latest ESMCI.
+   - Add SLURM MEM vars cleanup into case_st_archive
+     to allow single point and resubmit for big jobs to work out of the box
+ - CTSM update to ctsm5.4.002_noresm_v7, FATES to sci.1.88.6_api.42.0.0_nor_sci2_api2
+   - Fixes for dry deposition with fates-nocomp
+ - CDEPS update to cdeps1.0.88_noresm_v2
+   - New nitrogen deposition forcing for DATM from Input4MIPs v1.2->v2.0
+     default now for compsets with BLOM
+ - CAM update to noresm3_0_030_cam6_4_121
+   - noresm3_0_028_cam6_4_121
+     - New test for spunup FATES
+     - New UBC file for CMIP7
+   - noresm3_0_029_cam6_4_121
+     - New CMIP7 forcing and boundary files for PI control (1850)
+     - Fixed bug in CO2 cycle for when aircraft CO2 is not present
+   - noresm3_0_030_cam6_4_121
+     - Update in case configuration to accommodate CIME update
+     - Update NDEP forcing file
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.65
+ - cime       : NorESMhub/cime              : cime6.1.173_noresm_v0
+ - share      : NorESMHub/NorESM_share      : share1.1.18_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.12.39
+ - cam        : NorESMhub/CAM               : noresm3_0_030_cam6_4_121
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.88_noresm_v2
+ - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_1_20251129_v2
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v1
+ - clm        : NorESMhub/CTSM              : ctsm5.4.002_noresm_v7
+    - fates   : NorESMhub/fates             : sci.1.88.6_api.42.0.0_nor_sci2_api2
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.41_noresm_v0
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v2
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+ - NorESMhub/NorESM#792
+
+Describe any changes made to scripts/build system:
+
+- On olivia the default folder for bld-run and archive 
+  DEPENDS on the --project you used during ./create_newcase.
+  GNU compiler with OPENMPI is available but only for <=3 nodes.
+  On both betzy and oliva you can run single-point cases out of the box.
+
+
+Describe any substantial timing or memory changes: NA
+
+Code merged by: mvdebolskiy
+
+Code reviewed by:  Tomas Torsvik, Steve Goldhaber
+
+Summary of pre-tag testing on Betzy:
+ - prealpha_noresm : PASS, DIFFs compared to noresm3_0_beta13
+   - NLFAIL when setting reduced output for BLOM/iHAMOCC
+ - aux_blom_noresm : PASS, NLCOMP fails with picking up correct cdeps files.
+ - aux_clm_noresm :  PASS, baselines created.
+
+Summary of pre-tag testing on Olivia:
+ - prealpha_noresm :
+ - aux_clm_noresm : PASS, DIFFS compared to ctsm5.4.002_noresm_v5
+
+Summarize any change to answers:
+  - No answer changes in tests.
+
+==============================================================
+
+Tag name: noresm3_0_beta13b
+Date: 21.04.2026
+One-line Summary: Bugfix for BLOM
+
+Details:
+- Update BLOM to v1.12.39
+  - v1.12.37: Make extNcycle support optional natDIC tracers
+  - v1.12.38: Adjust ocprod natcalc deposition
+  - v1.12.39: Work-around for writing atmospheric CO2
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.63
+ - cime       : NorESMhub/cime              : cime6.1.143_noresm_v1
+ - share      : NorESMHub/NorESM_share      : share1.1.18_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.12.39
+ - cam        : NorESMhub/CAM               : noresm3_0_027_cam6_4_121
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.88_noresm_v1
+ - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_1_20251129_v2
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v1
+ - clm        : NorESMhub/CTSM              : ctsm5.4.002_noresm_v6
+    - fates   : NorESMhub/fates             : sci.1.88.6_api.42.0.0_nor_sci5_api1
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.41_noresm_v0
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v2
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+ - NorESMhub/NorESM#796
+
+Describe any changes made to scripts/build system: NA
+
+Describe any substantial timing or memory changes: NA
+
+Code merged by: Tomas Torsvik
+
+Code reviewed by:  Mats Bentsen, Jörg Schwinger
+
+Summary of pre-tag testing on Betzy:
+ - prealpha_noresm : PASS, no DIFFs compared to noresm3_0_beta13
+   - NLFAIL when setting reduced output for BLOM/iHAMOCC
+ - aux_blom_noresm : PASS, no DIFFs compared to noresm3_0_beta13
+
+Summary of pre-tag testing on Olivia:
+ - prealpha_noresm : NA (system down for maintenance)
+
+Summarize any change to answers:
+  - No answer changes in tests.
+
+==============================================================
+
 Tag name: noresm3_0_beta13a
 Date: 15.04.2026
 One-line Summary: Bugfixes for CTSM
