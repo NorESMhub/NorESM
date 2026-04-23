@@ -1,7 +1,7 @@
 ==============================================================
 
 Tag name: noresm3_0_beta14
-Date: 21.04.2026
+Date: 23.04.2026
 One-line Summary: Component updates
 
 Details:
@@ -21,9 +21,9 @@ Details:
  - CDEPS update to cdeps1.0.88_noresm_v2
    - New nitrogen deposition forcing for DATM from Input4MIPs v1.2->v2.0
      default now for compsets with BLOM
- - CAM update to ....
-   - ...
-
+ - CAM update to noresm3_0_030_cam6_4_121
+   - Update in case configuration to accommodate CIME update
+   - Update NDEP forcing file
 
 Component tags used in this tag:
 
@@ -32,7 +32,7 @@ Component tags used in this tag:
  - cime       : NorESMhub/cime              : cime6.1.173_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.18_noresm_v0
  - blom       : NorESMhub/BLOM              : v1.12.39
- - cam        : NorESMhub/CAM               : noresm3_0_027_cam6_4_121
+ - cam        : NorESMhub/CAM               : noresm3_0_030_cam6_4_121
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.88_noresm_v2
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_1_20251129_v2
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v1
