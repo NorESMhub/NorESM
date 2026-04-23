@@ -51,7 +51,7 @@ Component tags used in this tag:
  - pycect     : NCAR/PyCECT                 : 3.2.2
 
 Bugs fixed:
- - NorESMhub/NorESM#796
+ - NorESMhub/NorESM#792
 
 Describe any changes made to scripts/build system:
 
@@ -63,9 +63,9 @@ Describe any changes made to scripts/build system:
 
 Describe any substantial timing or memory changes: NA
 
-Code merged by: Tomas Torsvik
+Code merged by: mvdebolskiy
 
-Code reviewed by:  Mats Bentsen, Jörg Schwinger
+Code reviewed by:  Tomas Torsvik, Steve Goldhaber
 
 Summary of pre-tag testing on Betzy:
  - prealpha_noresm : PASS, DIFFs compared to noresm3_0_beta13
