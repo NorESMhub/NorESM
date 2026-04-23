@@ -45,14 +45,14 @@ fxDONOTUSEurl = https://github.com/NCAR/ParallelIO.git
 [submodule "ccs_config"]
 path = ccs_config
 url = https://github.com/NorESMhub/ccs_config_noresm.git
-fxtag = ccs_config_noresm0.0.63
+fxtag = ccs_config_noresm0.0.65
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/ccs_config_noresm.git
 
 [submodule "cime"]
 path = cime
 url = https://github.com/NorESMhub/cime.git
-fxtag = cime6.1.143_noresm_v1
+fxtag = cime6.1.173_noresm_v0
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/cime.git
 
@@ -81,14 +81,14 @@ fxDONOTUSEurl = https://github.com/NorESMhub/BLOM.git
 [submodule "cam"]
 path = components/cam
 url = https://github.com/NorESMhub/CAM.git
-fxtag = noresm3_0_027_cam6_4_121
+fxtag = noresm3_0_030_cam6_4_121
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CAM.git
 
 [submodule "cdeps"]
 path = components/cdeps
 url = https://github.com/NorESMhub/CDEPS.git
-fxtag = cdeps1.0.88_noresm_v1
+fxtag = cdeps1.0.88_noresm_v2
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CDEPS.git
 
@@ -109,7 +109,7 @@ fxDONOTUSEurl = https://github.com/NorESMhub/CISM-wrapper.git
 [submodule "clm"]
 path = components/clm
 url = https://github.com/NorESMhub/CTSM.git
-fxtag = ctsm5.4.002_noresm_v6
+fxtag = ctsm5.4.002_noresm_v7
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CTSM.git
 
