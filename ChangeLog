@@ -22,9 +22,15 @@ Details:
    - New nitrogen deposition forcing for DATM from Input4MIPs v1.2->v2.0
      default now for compsets with BLOM
  - CAM update to noresm3_0_030_cam6_4_121
-   - Update in case configuration to accommodate CIME update
-   - New CMIP7 forcing files for PI control (1850)
-   - Update NDEP forcing file
+   - noresm3_0_028_cam6_4_121
+     - New test for spunup FATES
+     - New UBC file for CMIP7
+   - noresm3_0_029_cam6_4_121
+     - New CMIP7 forcing and boundary files for PI control (1850)
+     - Fixed bug in CO2 cycle for when aircraft CO2 is not present
+   - noresm3_0_030_cam6_4_121
+     - Update in case configuration to accommodate CIME update
+     - Update NDEP forcing file
 
 Component tags used in this tag:
 
