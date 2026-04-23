@@ -5,7 +5,7 @@ Date: 23.04.2026
 One-line Summary: Component updates
 
 Details:
- - ccs_config update to ccs_config_noresm0.065
+ - ccs_config update to ccs_config_noresm0.0.65
    - Update configs for olivia to make gnu work
    - Add MEM variables to config_machines on olivia and betzy
    - Add --mem specs to the config_batch on olivia and betzy
