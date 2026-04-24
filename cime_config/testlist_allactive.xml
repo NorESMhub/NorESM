@@ -93,7 +93,7 @@
       <option name="wallclock"> 01:00:00 </option>
     </options>
   </test>
-  <test name="SMS_D_Ld1" grid="ne16pg3_tn14" compset="NHistesm" testmods="allactive/defaultio">
+  <test name="SMS_D_Ld1" grid="ne16pg3_tn14" compset="NHistEsm" testmods="allactive/defaultio">
     <machines>
       <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
       <machine name="olivia" compiler="intel" category="prealpha_noresm"/>
