@@ -1,10 +1,12 @@
 ==============================================================
 
 Tag name: noresm3_0_beta15
-Date: 
-One-line Summary: Compset aliases for CMIP7
+Date:
+One-line Summary: New compset aliases and tests for CMIP7 and updates to CAM
 
 Details:
+- noresm
+  - New compset aliases for CMIP7
 - CAM
   - Nudging refactor (noresm3_0_031_cam6_4_121)
   - CMIP7 forcing files for HIST compsets (noresm3_0_032_cam6_4_121)
@@ -30,25 +32,21 @@ Component tags used in this tag:
 
 Bugs fixed: NA
 
-Describe any changes made to scripts/build system:
+Describe any changes made to scripts/build system: None
 
 Describe any substantial timing or memory changes: NA
 
-Code merged by: 
+Code merged by: mvertens
 
-Code reviewed by: 
+Code reviewed by: Tomas Torvik, Steve Goldhaber
 
 Summary of pre-tag testing on Betzy:
- - prealpha_noresm : 
- - aux_cam_noresm : 
- - aux_blom_noresm : 
- - aux_clm_noresm : 
+ - prealpha_noresm : new expected FAILS for ERS for N1850G and NHistG
+ - aux_cam_noresm : PASS
 
 Summary of pre-tag testing on Olivia:
- - prealpha_noresm : 
- - aux_cam_noresm : 
- - aux_blom_noresm : 
- - aux_clm_noresm : 
+ - prealpha_noresm : new expected FAILS for ERS for N1850G and NHistG
+ - aux_cam_noresm : PASS
 
 Summarize any change to answers:
 
