@@ -75,6 +75,15 @@
   <!-- fully coupled historical tests -->
   <!-- ========================= -->
 
+  <test name="ERS_Ld5" grid="ne16pg3_tn14" compset="NHist" testmods="allactive/defaultio">
+    <machines>
+      <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
+      <machine name="olivia" compiler="intel" category="prealpha_noresm"/>
+    </machines>
+    <options>
+      <option name="wallclock"> 01:00:00 </option>
+    </options>
+  </test>
   <test name="ERS_Ld5" grid="ne16pg3_tn14" compset="NHistG" testmods="allactive/defaultio">
     <machines>
       <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
@@ -84,7 +93,7 @@
       <option name="wallclock"> 01:00:00 </option>
     </options>
   </test>
-  <test name="SMS_D_Ld1" grid="ne16pg3_tn14" compset="NHistEsmG" testmods="allactive/defaultio">
+  <test name="ERS_Ld5" grid="ne16pg3_tn14" compset="NHistEsmG" testmods="allactive/defaultio">
     <machines>
       <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
       <machine name="olivia" compiler="intel" category="prealpha_noresm"/>
