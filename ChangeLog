@@ -2,6 +2,72 @@
 
 Tag name: noresm3_0_beta15
 Date:
+One-line Summary: Updates to CTSM and FATES
+
+Details:
+- CTSM update to ctsm5.4.036_noresm_v0
+  - Changes to defaults:
+    - paramfile: lnd/clm2/paramdata/ctsm60_params.noresm.c260406.nc
+    - fates_paramfile: src/fates/parameter_files/fates_params_noresm.json
+    - filled nans in the surface and other datasets for ifx compiler to be happy
+    - new namelist flag for initializing fates at coldstart with dbh instead of density
+  - Updates to fate landuse and bugfixes
+  - carbon+nitrogen coupling with fates.
+  - FATES: update to sci.1.92.4_api.45.0.0_nor_sci1_api1
+    - fates_paramfile is now in .json format and lives in:
+      in LNDROOT/src/fates/parameter_files/ by default.
+    - Updates and fixes for landuse
+    - Refactory for cn-coupling
+    - added 15th PFT (generic crop)
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.65
+ - cime       : NorESMhub/cime              : cime6.1.173_noresm_v0
+ - share      : NorESMHub/NorESM_share      : share1.1.18_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.12.39
+ - cam        : NorESMhub/CAM               : noresm3_0_032_cam6_4_121
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.88_noresm_v2
+ - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_1_20251129_v2
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v1
+ - clm        : NorESMhub/CTSM              : ctsm5.4.036_noresm_v0
+    - fates   : NorESMhub/fates             : sci.1.92.4_api.45.0.0_nor_sci1_api1
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.41_noresm_v0
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v2
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed: swap pasture and rangeland names in the luh 
+
+Describe any changes made to scripts/build system: 
+  - Any manipulations with fates_paramfile has to be updated
+  - initial dataset won't be valid. You can not restart/initialize land with files from previous versions
+
+Describe any substantial timing or memory changes: NA
+
+Code merged by: mvdebolskiy
+
+Code reviewed by: 
+
+Summary of pre-tag testing on Betzy:
+ - prealpha_noresm : PASS expected FAILS for ERS for N1850G and NHistG
+ - aux_clm_noresm : PASS, FatesIniSpinup fails due to lack of new finidat
+ - aux_cam_noresm : outfrq9s_fatesini will fail due to lack of new finidat
+
+Summary of pre-tag testing on Olivia:
+ - prealpha_noresm : new expected FAILS for ERS for N1850G and NHistG
+ - aux_cam_noresm : PASS
+
+Summarize any change to answers:
+ - to be evaluated
+ - DIFFS in all tests with prognostic LND
+
+
+==============================================================
+
+Tag name: noresm3_0_beta15
+Date:
 One-line Summary: New compset aliases and tests for CMIP7 and updates to CAM
 
 Details:
