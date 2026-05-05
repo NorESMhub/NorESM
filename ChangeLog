@@ -1,5 +1,57 @@
 ==============================================================
 
+Tag name: noresm3_0_beta15
+Date:
+One-line Summary: New compset aliases and tests for CMIP7 and updates to CAM
+
+Details:
+- noresm
+  - New compset aliases for CMIP7
+- CAM
+  - Nudging refactor (noresm3_0_031_cam6_4_121)
+  - CMIP7 forcing files for HIST compsets (noresm3_0_032_cam6_4_121)
+  - Bugfix for writing restart at end of run (noresm3_0_032_cam6_4_121)
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.65
+ - cime       : NorESMhub/cime              : cime6.1.173_noresm_v0
+ - share      : NorESMHub/NorESM_share      : share1.1.18_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.12.39
+ - cam        : NorESMhub/CAM               : noresm3_0_032_cam6_4_121
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.88_noresm_v2
+ - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_1_20251129_v2
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v1
+ - clm        : NorESMhub/CTSM              : ctsm5.4.002_noresm_v7
+    - fates   : NorESMhub/fates             : sci.1.88.6_api.42.0.0_nor_sci2_api2
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.41_noresm_v0
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v2
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed: NA
+
+Describe any changes made to scripts/build system: None
+
+Describe any substantial timing or memory changes: NA
+
+Code merged by: mvertens
+
+Code reviewed by: Tomas Torvik, Steve Goldhaber
+
+Summary of pre-tag testing on Betzy:
+ - prealpha_noresm : new expected FAILS for ERS for N1850G and NHistG
+ - aux_cam_noresm : PASS
+
+Summary of pre-tag testing on Olivia:
+ - prealpha_noresm : new expected FAILS for ERS for N1850G and NHistG
+ - aux_cam_noresm : PASS
+
+Summarize any change to answers:
+
+==============================================================
+
 Tag name: noresm3_0_beta14
 Date: 23.04.2026
 One-line Summary: Component updates
@@ -55,7 +107,7 @@ Bugs fixed:
 
 Describe any changes made to scripts/build system:
 
-- On olivia the default folder for bld-run and archive 
+- On olivia the default folder for bld-run and archive
   DEPENDS on the --project you used during ./create_newcase.
   GNU compiler with OPENMPI is available but only for <=3 nodes.
   On both betzy and oliva you can run single-point cases out of the box.
