@@ -1,5 +1,53 @@
 ==============================================================
 
+Tag name: noresm3_0_beta17
+Date: 
+One-line Summary: 
+
+Details:
+- BLOM update to v1.12.42
+  - v1.12.40: Bugfix of type conversion issue in packed format outputting
+  - v1.12.41: New default values for iHAMMOC parameters as used in the
+              spin-up of NorESM3-LM
+  - v1.12.42: Update default BLOM namelist parameters
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.65
+ - cime       : NorESMhub/cime              : cime6.1.173_noresm_v0
+ - share      : NorESMHub/NorESM_share      : share1.1.18_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.12.42
+ - cam        : NorESMhub/CAM               : noresm3_0_032_cam6_4_121
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.88_noresm_v2
+ - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_1_20251129_v2
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v1
+ - clm        : NorESMhub/CTSM              : ctsm5.4.036_noresm_v0
+    - fates   : NorESMhub/fates             : sci.1.92.4_api.45.0.0_nor_sci1_api1
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.41_noresm_v0
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v2
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+ - [NorESM #796]: iHAMOCC crash at netCDF write for atmospheric CO2
+
+Describe any changes made to scripts/build system: NA
+
+Describe any substantial timing or memory changes: NA
+
+Code merged by: Tomas Torsvik
+
+Code reviewed by: 
+
+Summary of pre-tag testing on Betzy:
+
+Summary of pre-tag testing on Olivia:
+
+Summarize any change to answers:
+
+==============================================================
+
 Tag name: noresm3_0_beta16
 Date: 05.05.2026
 One-line Summary: Updates to CTSM and FATES
@@ -38,9 +86,9 @@ Component tags used in this tag:
  - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
  - pycect     : NCAR/PyCECT                 : 3.2.2
 
-Bugs fixed: swap pasture and rangeland names in the luh 
+Bugs fixed: swap pasture and rangeland names in the luh
 
-Describe any changes made to scripts/build system: 
+Describe any changes made to scripts/build system:
   - Any manipulations with fates_paramfile has to be updated
   - initial dataset won't be valid. You can not restart/initialize land with files from previous versions
 
@@ -48,7 +96,7 @@ Describe any substantial timing or memory changes: NA
 
 Code merged by: mvdebolskiy
 
-Code reviewed by: mvertens, Tomas Torsvik 
+Code reviewed by: mvertens, Tomas Torsvik
 
 Summary of pre-tag testing on Betzy:
   - prealpha_noresm : PASS expected COMPARE_base_rest FAILS for ERS for N*G compsets
@@ -64,7 +112,6 @@ Summary of pre-tag testing on Olivia:
 Summarize any change to answers:
  - to be evaluated
  - DIFFS in all tests with prognostic LND
-
 
 ==============================================================
 
