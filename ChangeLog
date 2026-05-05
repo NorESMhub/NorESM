@@ -1,7 +1,7 @@
 ==============================================================
 
 Tag name: noresm3_0_beta16
-Date:
+Date: 05.05.2026
 One-line Summary: Updates to CTSM and FATES
 
 Details:
@@ -48,15 +48,18 @@ Describe any substantial timing or memory changes: NA
 
 Code merged by: mvdebolskiy
 
-Code reviewed by: 
+Code reviewed by: mvertens, Tomas Torsvik 
 
 Summary of pre-tag testing on Betzy:
- - prealpha_noresm : PASS expected FAILS for ERS for N1850G and NHistG
- - aux_clm_noresm : PASS, FatesIniSpinup fails due to lack of new finidat
- - aux_cam_noresm : outfrq9s_fatesini will fail due to lack of new finidat
+  - prealpha_noresm : PASS expected COMPARE_base_rest FAILS for ERS for N*G compsets
+  - aux_clm_noresm  : PASS, FatesIniSpinup fails due to lack of new finidat
+  - aux_cam_noresm  : outfrq9s_fatesini will fail due to lack of new finidat
 
 Summary of pre-tag testing on Olivia:
-
+  - prealpha_noresm : PASS expected COMAPRE_base_rest FAILS fpr ERS for N*G compsets
+  - aux_clm_noresm  : PASS FatesIniSpinup fails due to lack of new finidat
+                      fail in FatesColdPRT2_suplnAll due to ESCOMP/CTSM#3989
+  - aux_cam_noresm  : outfrq9s_fatesini will fail due to lack of new finidat
 
 Summarize any change to answers:
  - to be evaluated
