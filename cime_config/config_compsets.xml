@@ -46,11 +46,11 @@
     <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-NOCOMP_CICE_BLOM%HYB%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP_BGC%BPRP</lname>
   </compset>
   <compset>
-    <alias>N1850G</alias>
+    <alias>N1850Gg</alias>
     <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-NOCOMP_CICE_BLOM%HYB%ECO_MOSART_CISM2%GRIS-EVOLVE_SWAV_SESP</lname>
   </compset>
   <compset>
-    <alias>N1850EsmG</alias>
+    <alias>N1850EsmGg</alias>
     <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-NOCOMP_CICE_BLOM%HYB%ECO_MOSART_CISM2%GRIS-EVOLVE_SWAV_SESP_BGC%BPRP</lname>
   </compset>
 
@@ -64,11 +64,11 @@
     <lname>HIST_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-NOCOMP_CICE_BLOM%HYB%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP_BGC%BPRP</lname>
   </compset>
   <compset>
-    <alias>NHistG</alias>
+    <alias>NHistGg</alias>
     <lname>HIST_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-NOCOMP_CICE_BLOM%HYB%ECO_MOSART_CISM2%GRIS-EVOLVE_SWAV_SESP</lname>
   </compset>
   <compset>
-    <alias>NHistEsmG</alias>
+    <alias>NHistEsmGg</alias>
     <lname>HIST_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-NOCOMP_CICE_BLOM%HYB%ECO_MOSART_CISM2%GRIS-EVOLVE_SWAV_SESP_BGC%BPRP</lname>
   </compset>
 
@@ -94,7 +94,7 @@
 
   <!-- All active except data atmosphere:  used for spinup and testing of CISM couplings -->
   <compset>
-     <alias>J1850G</alias>
+     <alias>J1850Gg</alias>
      <lname>1850_DATM%CRUv7_CLM50%BGC-CROP_CICE_POP2_MOSART_CISM2%GRIS-EVOLVE_SWAV</lname>
   </compset>
 
