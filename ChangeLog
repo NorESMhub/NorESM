@@ -17,6 +17,8 @@ cmeps: cmeps1.1.41_noresm_v1
   - v1.12.42: Update default BLOM namelist parameters
 - CISM: cismwrap_2_2_007_noresm_v3
   - major updates to source_cism
+- WW3: ww3_interface_noresm0.0.19
+  - updated averaging in ww3
 
 Component tags used in this tag:
 
@@ -33,7 +35,7 @@ Component tags used in this tag:
     - fates   : NorESMhub/fates             : sci.1.92.4_api.45.0.0_nor_sci1_api1
  - cmeps      : NorESMhub/CMEPS             : cmeps1.1.41_noresm_v0
  - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v2
- - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.18
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.19
  - pycect     : NCAR/PyCECT                 : 3.2.2
 
 Bugs fixed:
