@@ -1,8 +1,8 @@
 ==============================================================
 
 Tag name: noresm3_0_beta17
-Date: 
-One-line Summary: 
+Date:
+One-line Summary:
 
 Details:
 - BLOM update to v1.12.42
@@ -10,6 +10,10 @@ Details:
   - v1.12.41: New default values for iHAMMOC parameters as used in the
               spin-up of NorESM3-LM
   - v1.12.42: Update default BLOM namelist parameters
+cmeps: cmeps1.1.41_noresm_v1
+  - introduce new 'noresm' value coupling_mode in mediator code and udpate ww3 settings
+    that enable differences from ESCOMP
+
 
 Component tags used in this tag:
 
@@ -38,7 +42,7 @@ Describe any substantial timing or memory changes: NA
 
 Code merged by: Tomas Torsvik
 
-Code reviewed by: 
+Code reviewed by:
 
 Summary of pre-tag testing on Betzy:
 
