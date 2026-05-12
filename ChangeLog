@@ -5,27 +5,30 @@ Date:
 One-line Summary:
 
 Details:
+ccs_config: ccs_config_noresm0.0.67
+  - updates to model grid aliases needed for CISM
+cmeps: cmeps1.1.41_noresm_v1
+  - introduce new 'noresm' value coupling_mode in mediator code and udpate ww3 settings
+    that enable differences from ESCOMP
 - BLOM update to v1.12.42
   - v1.12.40: Bugfix of type conversion issue in packed format outputting
   - v1.12.41: New default values for iHAMMOC parameters as used in the
               spin-up of NorESM3-LM
   - v1.12.42: Update default BLOM namelist parameters
-cmeps: cmeps1.1.41_noresm_v1
-  - introduce new 'noresm' value coupling_mode in mediator code and udpate ww3 settings
-    that enable differences from ESCOMP
-
+- CISM: cismwrap_2_2_007_noresm_v3
+  - major updates to source_cism
 
 Component tags used in this tag:
 
  - parallelio : NCAR/ParallelIO             : pio2_6_2
- - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.65
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.67
  - cime       : NorESMhub/cime              : cime6.1.173_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.18_noresm_v0
  - blom       : NorESMhub/BLOM              : v1.12.42
  - cam        : NorESMhub/CAM               : noresm3_0_032_cam6_4_121
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.88_noresm_v2
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_1_20251129_v2
- - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v1
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v3
  - clm        : NorESMhub/CTSM              : ctsm5.4.036_noresm_v0
     - fates   : NorESMhub/fates             : sci.1.92.4_api.45.0.0_nor_sci1_api1
  - cmeps      : NorESMhub/CMEPS             : cmeps1.1.41_noresm_v0
