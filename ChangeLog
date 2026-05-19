@@ -15,6 +15,9 @@ cmeps: cmeps1.1.41_noresm_v1
   - v1.12.41: New default values for iHAMMOC parameters as used in the
               spin-up of NorESM3-LM
   - v1.12.42: Update default BLOM namelist parameters
+- CAM update to noresm3_0_034_cam6_4_121
+  - noresm3_0_033_cam6_4_121: Create namelist for dust and seasalt settings
+  - noresm3_0_034_cam6_4_121: Fix energy conservation bugs
 - CISM: cismwrap_2_2_007_noresm_v3
   - major updates to source_cism
 - WW3: ww3_interface_noresm0.0.19
@@ -23,17 +26,17 @@ cmeps: cmeps1.1.41_noresm_v1
 Component tags used in this tag:
 
  - parallelio : NCAR/ParallelIO             : pio2_6_2
- - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.67
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.68
  - cime       : NorESMhub/cime              : cime6.1.173_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.18_noresm_v0
  - blom       : NorESMhub/BLOM              : v1.12.42
- - cam        : NorESMhub/CAM               : noresm3_0_032_cam6_4_121
+ - cam        : NorESMhub/CAM               : noresm3_0_034_cam6_4_121
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.88_noresm_v2
  - cice6      : NorESMhub/NorESM_CICE       : noresm_cice6_6_1_20251129_v2
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v3
  - clm        : NorESMhub/CTSM              : ctsm5.4.036_noresm_v0
     - fates   : NorESMhub/fates             : sci.1.92.4_api.45.0.0_nor_sci1_api1
- - cmeps      : NorESMhub/CMEPS             : cmeps1.1.41_noresm_v0
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.41_noresm_v1
  - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v2
  - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.19
  - pycect     : NCAR/PyCECT                 : 3.2.2
