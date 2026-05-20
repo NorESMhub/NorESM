@@ -1,11 +1,16 @@
 ==============================================================
 
 Tag name: noresm3_0_beta17
-Date:
-One-line Summary:
+Date: 20.05.2026
+One-line Summary: Fix energy conservation bug in CAM; CISM updates
+
+NOTE: This tag should not be used for long simulations, only for sensitivity
+      testing connected with the CAM bugfix. There will be further updates
+      to CTSM, CISM and CICE that in noresm3_0_beta18 that will require
+      new initialization files.
 
 Details:
-ccs_config: ccs_config_noresm0.0.67
+ccs_config: ccs_config_noresm0.0.68
   - updates to model grid aliases needed for CISM
 cmeps: cmeps1.1.41_noresm_v1
   - introduce new 'noresm' value coupling_mode in mediator code and udpate ww3 settings
@@ -50,13 +55,19 @@ Describe any substantial timing or memory changes: NA
 
 Code merged by: Tomas Torsvik
 
-Code reviewed by:
+Code reviewed by: mvdebolskiy, Steve Goldhaber
 
 Summary of pre-tag testing on Betzy:
+  - Unable to perform tests on Betzy due to system issues
 
 Summary of pre-tag testing on Olivia:
+  - prealpha_noresm :
+  - aux_cam_noresm  :
+  - aux_blom_noresm : DIFF for all compsets, 6 expected FAIL tests
 
 Summarize any change to answers:
+  - Expected answer changes due to bugfix in CAM.
+  - Changes in default namelist settings in BLOM.
 
 ==============================================================
 
