@@ -1,12 +1,15 @@
 ==============================================================
 
 Tag name: noresm3_0_beta18
-Date: 
+Date:
 One-line Summary: Updates to CICE, CISM, CLM, CDEPS
 
 Details:
 cice:
   - update to cesm3_cice6_6_3_11 (will change answers)
+cism:
+  - fix fix bug calling force retreat and update to
+    cismwrap_2_2_007_noresm_v5 (will change answers)
 
 Component tags used in this tag:
 
@@ -18,7 +21,7 @@ Component tags used in this tag:
  - cam        : NorESMhub/CAM               : noresm3_0_034_cam6_4_121
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.88_noresm_v2
  - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v0
- - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v3
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v5
  - clm        : NorESMhub/CTSM              : ctsm5.4.036_noresm_v0
     - fates   : NorESMhub/fates             : sci.1.92.4_api.45.0.0_nor_sci1_api1
  - cmeps      : NorESMhub/CMEPS             : cmeps1.1.41_noresm_v1
@@ -37,7 +40,6 @@ Code merged by:
 Code reviewed by:
 
 Summary of pre-tag testing on Betzy:
-  -
 
 Summary of pre-tag testing on Olivia:
   - prealpha_noresm :
