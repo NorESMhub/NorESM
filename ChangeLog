@@ -16,6 +16,12 @@ cism:
 ccs_config:
   - ccs_config_noresm0.0.69
     new module settings specific for nn9560k that eliminates cxil_mapping crashes
+blom: v1.13.4
+  - v1.13.0 : Remove optional split in iHAMOCC between euphotic zone and deep ocean
+  - v1.13.1 : Update historical N2O to CMIP7 input4MIPs
+  - v1.13.2 : Correct bug in the estimation of mixed layer depth
+  - v1.13.3 : Add Ohlmann (2003) parameterization as method for shortwave radiation absorption
+  - v1.13.4 : Fix bug in relaxation of fe, slightly adjust default parameters
 
 Component tags used in this tag:
 
@@ -23,7 +29,7 @@ Component tags used in this tag:
  - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.69
  - cime       : NorESMhub/cime              : cime6.1.173_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.18_noresm_v0
- - blom       : NorESMhub/BLOM              : v1.12.42
+ - blom       : NorESMhub/BLOM              : v1.13.4
  - cam        : NorESMhub/CAM               : noresm3_0_034_cam6_4_121
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.88_noresm_v2
  - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v0
