@@ -6,7 +6,7 @@ One-line Summary: Updates to CICE, CISM, CLM, CDEPS
 
 Details:
 cice:
-  - update to cesm3_cice6_6_3_11 (will change answers)
+  - update to cesm3_cice6_6_3_11_noresm_v0 (will change answers)
     - all history output variables have changed names
 cism:
   - cismwrap_2_2_007_noresm_v6
