@@ -2,6 +2,76 @@
 
 Tag name: noresm3_0_beta18
 Date:
+One-line Summary: Updates to CDEPS, CAM, CLM
+
+Details:
+clm:
+  - update to ctsm5.4.042 (will change answers)
+  - new compsets for NorESM:
+   - NorESM specific compsets start with NI*
+   - new xml variable CLM_ESM_DEFAULTS that is used to set defaults to NorESM or CESM
+   - component modifier for CLM is now additive.
+   - new component modifiers: %FATES-NCFB (fates no-comp, fixed biogeo), %NORESM (brings noresm defaults)
+   - some of the previous modifiers were split (f.e. %NOANTHRO, %CMIP6DECK, etc)
+   - new bgc_mode options in CLM_BLD_NML_OPTS: fates_ncfb, fates_sp
+   - clm now searches for finidat with fates in defaults through fates_finidat variable in namelist_defaults
+     - you don't need to specify this, for your initial data to get picked up in the user_nl_clm use finidat
+   - fates:
+     - update to api46
+     - removed fates-sp usermod, history is now switch of by hlm_use_fates_sp
+     - fix for H20 balance error in historical runs
+cdeps:
+  - update to escomp:cdeps.1.0.94:
+    - update for how co2diag is read and written to cplhist
+    - Brings CRUJRA2024b to make ifx happy
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.69
+ - cime       : NorESMhub/cime              : cime6.1.173_noresm_v0
+ - share      : NorESMHub/NorESM_share      : share1.1.18_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.13.4
+ - cam        : NorESMhub/CAM               : noresm3_0_034_cam6_4_121
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v0
+ - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v0
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v6
+ - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v0
+    - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci1_api1
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.41_noresm_v1
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v2
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.19
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+ - NorESMhub/CTSM#/218
+
+
+Describe any changes made to scripts/build system: NA
+
+Describe any substantial timing or memory changes: NA
+
+Code merged by: mvdebolskiy
+
+Code reviewed by:
+
+Summary of pre-tag testing on Betzy:
+  - aux_cdeps_noresm: PASS
+  - aux_clm_noresm: PASS
+
+Summary of pre-tag testing on Olivia:
+  - prealpha_noresm :
+  - aux_cam_noresm  :
+  - aux_blom_noresm :
+
+
+Summarize any change to answers:
+  - Expected answer changes due to update in CAM and CLM
+
+==============================================================
+
+Tag name: noresm3_0_beta18
+Date:
 One-line Summary: Updates to CICE, CISM, CLM, CDEPS
 
 Details:
