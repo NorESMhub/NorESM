@@ -25,6 +25,12 @@ cdeps:
     - update for how co2diag is read and written to cplhist
     - Brings CRUJRA2024b to make ifx happy
 
+cism:
+  - cismwrap_2_2_007_noresm_v7
+    - Fix log unit assignment so CISM output goes to glc.log
+  - cismwrap_2_2_007_noresm_v8
+    - Addition of new flux diagnostics
+
 Component tags used in this tag:
 
  - parallelio : NCAR/ParallelIO             : pio2_6_2
@@ -35,7 +41,7 @@ Component tags used in this tag:
  - cam        : NorESMhub/CAM               : noresm3_0_034_cam6_4_121
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v0
  - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v0
- - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v6
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v8
  - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v0
     - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci1_api1
  - cmeps      : NorESMhub/CMEPS             : cmeps1.1.41_noresm_v1
