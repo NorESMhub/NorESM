@@ -24,12 +24,14 @@ cdeps:
   - update to escomp:cdeps.1.0.94:
     - update for how co2diag is read and written to cplhist
     - Brings CRUJRA2024b to make ifx happy
-
 cism:
   - cismwrap_2_2_007_noresm_v7
     - Fix log unit assignment so CISM output goes to glc.log
   - cismwrap_2_2_007_noresm_v8
     - Addition of new flux diagnostics
+mosart:
+  - bugfixes for Faxa_rofi
+  - bugfix for non-h2o tracers restarts
 
 Component tags used in this tag:
 
