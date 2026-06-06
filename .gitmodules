@@ -63,7 +63,7 @@ fxDONOTUSEurl = https://github.com/NorESMhub/cime.git
 [submodule "share"]
 path = share
 url = https://github.com/NorESMHub/NorESM_share.git
-fxtag = share1.1.18_noresm_v0
+fxtag = share1.1.20_noresm_v0
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMHub/NorESM_share.git
 
@@ -109,7 +109,7 @@ fxDONOTUSEurl = https://github.com/NorESMhub/CISM-wrapper.git
 [submodule "clm"]
 path = components/clm
 url = https://github.com/NorESMhub/CTSM.git
-fxtag = ctsm5.4.036_noresm_v0
+fxtag = ctsm5.4.042_noresm_v0
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CTSM.git
 
