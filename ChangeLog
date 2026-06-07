@@ -26,8 +26,8 @@ cam:
     - cmip7 defaults updates
     - align CAM NF compset aliases with NorESM CMIP7 names
   - update to noresm3_0_036_cam6_4_121
-  - tuning of aerosol optical depth by increasing the
-     sensitivity of optical depth to relative humidity.
+    - tuning of aerosol optical depth by increasing the
+      sensitivity of optical depth to relative humidity.
   - update to noresm3_0_037_cam6_4_121
     - update components checkout for stand-alone.
     - update NF compsets to work with new clm ones.
@@ -89,9 +89,8 @@ Summary of pre-tag testing on Betzy:
 
 Summary of pre-tag testing on Olivia:
   - prealpha_noresm : PASS
-  - aux_cam_noresm  : PASS (except gnu test)
-  - aux_clm_noresm : PASS
-
+  - aux_cam_noresm  : PASS
+  - aux_clm_noresm  : PASS
 
 Summarize any change to answers:
   - Expected answer changes due to update in CAM and CLM
