@@ -8,29 +8,35 @@ Details:
 clm:
   - update to ctsm5.4.042_noresm_v0 (will change answers)
   - new compsets for NorESM:
-   - NorESM specific compsets start with NI*
-   - new xml variable CLM_ESM_DEFAULTS that is used to set defaults to NorESM or CESM
-   - component modifier for CLM is now additive.
-   - new component modifiers: %FATES-NCFB (fates no-comp, fixed biogeo), %NORESM (brings noresm defaults)
-   - some of the previous modifiers were split (f.e. %NOANTHRO, %CMIP6DECK, etc)
-   - new bgc_mode options in CLM_BLD_NML_OPTS: fates_ncfb, fates_sp
-   - clm now searches for finidat with fates in defaults through fates_finidat variable in namelist_defaults
+  - NorESM specific compsets start with NI*
+  - new xml variable CLM_ESM_DEFAULTS that is used to set defaults to NorESM or CESM
+  - component modifier for CLM is now additive.
+  - new component modifiers: %FATES-NCFB (fates no-comp, fixed biogeo), %NORESM (brings noresm defaults)
+  - some of the previous modifiers were split (f.e. %NOANTHRO, %CMIP6DECK, etc)
+  - new bgc_mode options in CLM_BLD_NML_OPTS: fates_ncfb, fates_sp
+  - clm now searches for finidat with fates in defaults through fates_finidat variable in namelist_defaults
      - you don't need to specify this, for your initial data to get picked up in the user_nl_clm use finidat
-   - fates:
-     - update to api46
-     - removed fates-sp usermod, history is now switch of by hlm_use_fates_sp
-     - fix for H20 balance error in historical runs
-     - Patch fusion fix.
+  - fates:
+    - update to api46
+    - removed fates-sp usermod, history is now switch of by hlm_use_fates_sp
+    - fix for H20 balance error in historical runs
+    - Patch fusion fix.
 cam:
-   - update to noresm3_0_037_cam6_4_121
-   - cmip7 defaults updates
-   - update components checkout for stand-alone.
-   - update NF compsets to work with new clm ones.
-   - tuning of aerosol optical depth by increasing the
+  - update to noresm3_0_035_cam6_4_121
+    - cmip7 defaults updates
+    - align CAM NF compset aliases with NorESM CMIP7 names
+  - update to noresm3_0_036_cam6_4_121
+  - tuning of aerosol optical depth by increasing the
      sensitivity of optical depth to relative humidity.
+  - update to noresm3_0_037_cam6_4_121
+    - update components checkout for stand-alone.
+    - update NF compsets to work with new clm ones.
 cism:
   - cismwrap_2_2_007_noresm_v7
-    - Fix log unit assignment so CISM output goes to glc.log
+  - Fix log unit assignment so CISM output goes to glc.log
+ccs_config:
+  - update to ccs_config_noresm70
+    - restore Olivia GNU settings to ccs_config_noresm68
 cdeps:
   - update to escomp:cdeps.1.0.94:
     - update for how co2diag is read and written to cplhist
@@ -47,7 +53,7 @@ mosart:
 Component tags used in this tag:
 
  - parallelio : NCAR/ParallelIO             : pio2_6_2
- - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.69
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.70
  - cime       : NorESMhub/cime              : cime6.1.173_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.20_noresm_v0
  - blom       : NorESMhub/BLOM              : v1.13.4
