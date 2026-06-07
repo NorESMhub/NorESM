@@ -1,7 +1,7 @@
 ==============================================================
 
 Tag name: noresm3_0_beta19
-Date:
+Date: 07.06.2026
 One-line Summary: Updates to CDEPS, CAM, CLM
 
 Details:
@@ -63,7 +63,8 @@ Component tags used in this tag:
  - pycect     : NCAR/PyCECT                 : 3.2.2
 
 Bugs fixed:
- - NorESMhub/CTSM#/218
+ - NorESMhub/CTSM#218
+ - NorEMShub/MOSART#13
 
 
 Describe any changes made to scripts/build system: NA
@@ -72,16 +73,18 @@ Describe any substantial timing or memory changes: NA
 
 Code merged by: mvdebolskiy
 
-Code reviewed by:
+Code reviewed by: Steve Goldhaber, Tomas Torsvik, Mariana Vertenstein
 
 Summary of pre-tag testing on Betzy:
+  - prealpha_noresm: PASS
   - aux_cdeps_noresm: PASS
   - aux_clm_noresm: PASS
+  - aux_cam_noresm: PASS
 
 Summary of pre-tag testing on Olivia:
-  - prealpha_noresm :
-  - aux_cam_noresm  :
-  - aux_blom_noresm :
+  - prealpha_noresm : PASS
+  - aux_cam_noresm  : PASS (except gnu test)
+  - aux_clm_noresm : PASS
 
 
 Summarize any change to answers:
@@ -90,7 +93,7 @@ Summarize any change to answers:
 ==============================================================
 
 Tag name: noresm3_0_beta18
-Date:
+Date: 27.05.2026
 One-line Summary: Updates to CICE, CISM, CLM, CDEPS
 
 Details:
@@ -136,16 +139,18 @@ Describe any changes made to scripts/build system: NA
 
 Describe any substantial timing or memory changes: NA
 
-Code merged by:
+Code merged by: Mariana Vertenstein, TomasTorsvik
 
-Code reviewed by:
+Code reviewed by:  Steve Goldhaber, Mariana Vertenstein
 
 Summary of pre-tag testing on Betzy:
+  - prealpha_noresm : PASS
+  - aux_cam_noresm  : PASS
 
 Summary of pre-tag testing on Olivia:
-  - prealpha_noresm :
-  - aux_cam_noresm  :
-  - aux_blom_noresm :
+  - prealpha_noresm : PASS
+  - aux_cam_noresm  : PASS
+  - aux_blom_noresm : 
 
 Summarize any change to answers:
   - Expected answer changes due to update of CICE and CISM
