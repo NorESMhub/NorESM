@@ -5,6 +5,10 @@ Date:
 One-line Summary: 
 
 Details:
+clm:
+  - Update tag to ctsm5.4.042_noresm_v1 (will change answers):
+   - Fix to defaults for fates_spitfire_mode and snow_thermal_conductivity_lake scheme
+   - Fix for default history output with CLM_ACCELERATED_SPINUP on/sasu and fates
 
 Component tags used in this tag:
 
@@ -17,7 +21,7 @@ Component tags used in this tag:
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v0
  - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v0
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v7
- - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v0
+ - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v1
     - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci3_api2
  - cmeps      : NorESMhub/CMEPS             : cmeps1.1.41_noresm_v1
  - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v3
@@ -43,9 +47,10 @@ Summary of pre-tag testing on Betzy:
 Summary of pre-tag testing on Olivia:
   - prealpha_noresm : 
   - aux_cam_noresm  : 
-  - aux_clm_noresm  : 
+  - aux_clm_noresm  : PASS
 
 Summarize any change to answers:
+  - All configs with FATES and %NORESM 
 
 ==============================================================
 
