@@ -14,6 +14,10 @@ blom:
    - v1.13.5: bugfix for checksum calculation (debug option)
    - v1.14.0: Extend the depth range of diagnostic levels
    - v1.14.1: Normalize grid cell widths for better conditioned matrices in CPPM
+cam:
+  - Update tag to noresm3_0_039_cam6_4_121 (answer changing)
+    - noresm3_0_038_cam6_4_121: Fix for CO2 when running GHG chemistry in an emissions driven run
+    - noresm3_0_039_cam6_4_121: Adjust namelist to match current tuning experiments
 
 Component tags used in this tag:
 
@@ -22,7 +26,7 @@ Component tags used in this tag:
  - cime       : NorESMhub/cime              : cime6.1.173_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.20_noresm_v0
  - blom       : NorESMhub/BLOM              : v1.14.1
- - cam        : NorESMhub/CAM               : noresm3_0_037_cam6_4_121
+ - cam        : NorESMhub/CAM               : noresm3_0_039_cam6_4_121
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v0
  - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v0
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v7
