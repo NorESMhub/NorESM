@@ -26,6 +26,10 @@ cism:
     - new dglc capability
   - cismwrap2_2_007_noresm_v8 (answer changing)
     - bug fixes and updated namelists
+  - cismwrap2_2_007_noresm_v9
+    - fix restart issues that arise with time averaged fields and update namelists
+  - cismwrap2_2_007_noresm_v10
+    - restore missing namelist file
 
 Component tags used in this tag:
 
@@ -37,7 +41,7 @@ Component tags used in this tag:
  - cam        : NorESMhub/CAM               : noresm3_0_039_cam6_4_121
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v0
  - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v0
- - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v8
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v10
  - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v1
     - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci3_api2
  - cmeps      : NorESMhub/CMEPS             : cmeps1.1.41_noresm_v1
