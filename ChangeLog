@@ -1,8 +1,8 @@
 ==============================================================
 
 Tag name: noresm3_0_beta20
-Date:
-One-line Summary:
+Date: 18.06.2026
+One-line Summary: New DGLC capacity for CISM; updates and fixes for CAM, CTSM, BLOM
 
 Details:
 ccs_config:
@@ -50,28 +50,32 @@ Component tags used in this tag:
  - pycect     : NCAR/PyCECT                 : 3.2.2
 
 Bugs fixed:
+ - NorESMhub/CAM#284
+ - NorESMhub/BLOM#752
 
 Describe any changes made to scripts/build system: NA
 
 Describe any substantial timing or memory changes: NA
 
-Code merged by:
+Code merged by: Tomas Torsvik
 
-Code reviewed by:
+Code reviewed by: Steve Goldhaber, Mariana Vertenstein, mvdebolskiy, Mats Bentsen
 
 Summary of pre-tag testing on Betzy:
-  - prealpha_noresm:
-  - aux_cdeps_noresm:
-  - aux_clm_noresm:
-  - aux_cam_noresm:
-  - aux_cism_noresm: PASSED (with exceptions due to olivia issues - noted in PR)
+  - prealpha_noresm : PASS
+  - aux_blom_noresm : PASS (except expected failing tests)
+  - aux_clm_noresm  :
+  - aux_cam_noresm  :
+  - aux_cism_noresm : PASSED (with exceptions due to olivia issues - noted in PR)
 
 Summary of pre-tag testing on Olivia:
-  - prealpha_noresm :
+  - prealpha_noresm : PASS
+  - aux_blom_noresm : PASS (except expected failing tests)
   - aux_cam_noresm  :
   - aux_clm_noresm  : PASS
 
 Summarize any change to answers:
+  - Expected answer changes due to update in CAM, CLM, BLOM and CISM
   - All configs with FATES and %NORESM
 
 ==============================================================
