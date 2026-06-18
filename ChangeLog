@@ -7,29 +7,30 @@ One-line Summary: New DGLC capacity for CISM; updates and fixes for CAM, CTSM, B
 Details:
 ccs_config:
   - ccsm_config_noresm0.0.71
-   - new condition for ais8:gris4 to allow for new dglc capability in cism
+    - new condition for ais8:gris4 to allow for new dglc capability in cism
 clm:
   - Update tag to ctsm5.4.042_noresm_v1 (will change answers):
-   - Fix to defaults for fates_spitfire_mode and snow_thermal_conductivity_lake scheme
-   - Fix for default history output with CLM_ACCELERATED_SPINUP on/sasu and fates
+    - Fix to defaults for fates_spitfire_mode and snow_thermal_conductivity_lake scheme
+    - Fix for default history output with CLM_ACCELERATED_SPINUP on/sasu and fates
 blom:
   - Update tag to v1.14.1 (answer changing)
-   - v1.13.5: bugfix for checksum calculation (debug option)
-   - v1.14.0: Extend the depth range of diagnostic levels
-   - v1.14.1: Normalize grid cell widths for better conditioned matrices in CPPM
+    - v1.13.5: bugfix for checksum calculation (debug option)
+    - v1.14.0: Extend the depth range of diagnostic levels
+    - v1.14.1: Normalize grid cell widths for better conditioned matrices in CPPM
 cam:
   - Update tag to noresm3_0_039_cam6_4_121 (answer changing)
     - noresm3_0_038_cam6_4_121: Fix for CO2 when running GHG chemistry in an emissions driven run
     - noresm3_0_039_cam6_4_121: Adjust namelist to match current tuning experiments
 cism:
-  - cismwrap_2_2_007_noresm_v7 (answer changing if noevolve ice sheet is used)
-    - new dglc capability
-  - cismwrap2_2_007_noresm_v8 (answer changing)
-    - bug fixes and updated namelists
-  - cismwrap2_2_007_noresm_v9
-    - fix restart issues that arise with time averaged fields and update namelists
-  - cismwrap2_2_007_noresm_v10
-    - restore missing namelist file
+  - Update to tag cismwrap2_2_007_noresm_v10
+    - cismwrap_2_2_007_noresm_v7 (answer changing if noevolve ice sheet is used)
+      - new dglc capability
+    - cismwrap2_2_007_noresm_v8 (answer changing)
+      - bug fixes and updated namelists
+    - cismwrap2_2_007_noresm_v9
+      - fix restart issues that arise with time averaged fields and update namelists
+    - cismwrap2_2_007_noresm_v10
+      - restore missing namelist file
 
 Component tags used in this tag:
 
@@ -64,7 +65,7 @@ Code reviewed by: Steve Goldhaber, Mariana Vertenstein, mvdebolskiy, Mats Bentse
 Summary of pre-tag testing on Betzy:
   - prealpha_noresm : PASS
   - aux_blom_noresm : PASS (except expected failing tests)
-  - aux_clm_noresm  :PASS
+  - aux_clm_noresm  : PASS
   - aux_cam_noresm  :
   - aux_cism_noresm : PASSED (with exceptions due to olivia issues - noted in PR)
 
