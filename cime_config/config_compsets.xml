@@ -53,6 +53,14 @@
     <alias>N1850EsmGg</alias>
     <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%GRIS-EVOLVE_SWAV_SESP_BGC%BPRP</lname>
   </compset>
+  <compset>
+    <alias>N1850Gaxg</alias>
+    <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP</lname>
+  </compset>
+  <compset>
+    <alias>N1850EsmGaxg</alias>
+    <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP_BGC%BPRP</lname>
+  </compset>
 
   <!-- Historical -->
   <compset>
@@ -70,6 +78,14 @@
   <compset>
     <alias>NHistEsmGg</alias>
     <lname>HIST_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%GRIS-EVOLVE_SWAV_SESP_BGC%BPRP</lname>
+  </compset>
+  <compset>
+    <alias>NHistGaxg</alias>
+    <lname>HIST_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP</lname>
+  </compset>
+  <compset>
+    <alias>NHistEsmGaxg</alias>
+    <lname>HIST_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP_BGC%BPRP</lname>
   </compset>
 
   <!-- CLM variants for testing -->
