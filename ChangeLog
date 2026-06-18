@@ -64,7 +64,7 @@ Code reviewed by: Steve Goldhaber, Mariana Vertenstein, mvdebolskiy, Mats Bentse
 Summary of pre-tag testing on Betzy:
   - prealpha_noresm : PASS
   - aux_blom_noresm : PASS (except expected failing tests)
-  - aux_clm_noresm  :
+  - aux_clm_noresm  :PASS
   - aux_cam_noresm  :
   - aux_cism_noresm : PASSED (with exceptions due to olivia issues - noted in PR)
 
