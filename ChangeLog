@@ -5,11 +5,14 @@ Date:
 One-line Summary:
 
 Details:
+ccs_config:
+  - ccsm_config_noresm0.0.72
+    - fix compress script for use on Olivia
 
 Component tags used in this tag:
 
  - parallelio : NCAR/ParallelIO             : pio2_6_2
- - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.71
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.72
  - cime       : NorESMhub/cime              : cime6.1.173_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.20_noresm_v0
  - blom       : NorESMhub/BLOM              : v1.14.1
@@ -37,10 +40,14 @@ Code reviewed by:
 Summary of pre-tag testing on Betzy:
   - prealpha_noresm :
   - aux_cam_noresm  :
+  - aux_blom_noresm :
+  - aux_clm_noresm  :
 
 Summary of pre-tag testing on Olivia:
   - prealpha_noresm :
   - aux_cam_noresm  :
+  - aux_blom_noresm :
+  - aux_clm_noresm  :
 
 Summarize any change to answers:
 
