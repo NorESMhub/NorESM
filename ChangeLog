@@ -9,9 +9,10 @@ ccs_config:
   - ccsm_config_noresm0.0.72
     - fix compress script for use on Olivia
 blom:
-  - Update tag to v1.14.3 (not answer changing)
+  - Update tag to v1.14.4 (change iHAMOCC diagnostic output)
     - v1.14.2: Pass vertical diffusivity and buoyancy frequency squared to iHAMOCC
     - v1.14.3: Add possibility to set CVMix parameter Cv in BLOM namelist
+    - v1.14.4: Activate CFCs, nat-tracers and shelf-sea residence time
 
 Component tags used in this tag:
 
@@ -19,7 +20,7 @@ Component tags used in this tag:
  - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.72
  - cime       : NorESMhub/cime              : cime6.1.173_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.20_noresm_v0
- - blom       : NorESMhub/BLOM              : v1.14.3
+ - blom       : NorESMhub/BLOM              : v1.14.4
  - cam        : NorESMhub/CAM               : noresm3_0_039_cam6_4_121
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v0
  - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v0
