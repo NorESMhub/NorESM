@@ -53,23 +53,26 @@ Describe any changes made to scripts/build system: NA
 
 Describe any substantial timing or memory changes: NA
 
-Code merged by:
+Code merged by: Tomas Torsvik
 
-Code reviewed by:
+Code reviewed by: Mariana Vertenstein, mvdebolskiy, Mats Bentsen, Jens Debernard,
+                  Marit Sandstad, Alok Gupta, Michele Petrini
 
 Summary of pre-tag testing on Betzy:
-  - prealpha_noresm :
-  - aux_cam_noresm  :
-  - aux_blom_noresm :
-  - aux_clm_noresm  :
+  - prealpha_noresm : PASS
+  - aux_blom_noresm : PASS (except expected failing tests)
+  - aux_clm_noresm  : PASS
+  - aux_cism_noresm : PASSED (with exceptions due to olivia issues - noted in PR)
+  - aux_cice_noresm : PASS
 
 Summary of pre-tag testing on Olivia:
-  - prealpha_noresm :
-  - aux_cam_noresm  :
-  - aux_blom_noresm :
-  - aux_clm_noresm  :
+  - prealpha_noresm : PASS
+  - aux_blom_noresm : PASS (except expected failing tests)
+  - aux_clm_noresm  : PASS
 
 Summarize any change to answers:
+  - Expected answer changes due to update in CLM, BLOM and CISM
+  - All configs with FATES and %NORESM
 
 ==============================================================
 
