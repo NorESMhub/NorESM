@@ -25,6 +25,9 @@ ctsm:
   - Update tag to ctsm5.4.042_noresm_v3
     - Update default parameters
     - Partial NIHIST fix
+cice:
+  - Update NorESM_CICE tag to cesm3_cice6_6_3_11_noresm_v1
+  - Update CICE tag to cice6_6_3_11_noresm_v1
 
 Component tags used in this tag:
 
@@ -35,7 +38,7 @@ Component tags used in this tag:
  - blom       : NorESMhub/BLOM              : v1.14.5
  - cam        : NorESMhub/CAM               : noresm3_0_039_cam6_4_121
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v0
- - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v0
+ - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v1
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v11
  - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v3
     - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci5_api2
