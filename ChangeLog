@@ -5,6 +5,10 @@ Date:
 One-line Summary:
 
 Details:
+cime_config:
+- added new usermods_dirs cmip7_historybase and cmip7_historyhf
+   - this adds new cice history output namelists needed for cmip7 but
+     keeps the reduced output from clm and blom
 ccs_config:
   - ccsm_config_noresm0.0.72
     - fix compress script for use on Olivia
