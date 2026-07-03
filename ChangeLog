@@ -56,7 +56,7 @@ Describe any substantial timing or memory changes: NA
 Code merged by: Tomas Torsvik
 
 Code reviewed by: Mariana Vertenstein, mvdebolskiy, Mats Bentsen, Jens Debernard,
-                  Marit Sandstad, Alok Gupta, Michele Petrini
+                  Steve Goldhaber, Marit Sandstad, Alok Gupta, Michele Petrini
 
 Summary of pre-tag testing on Betzy:
   - prealpha_noresm : PASS
