@@ -1,5 +1,81 @@
 ==============================================================
 
+Tag name: noresm3_0_beta21
+Date:
+One-line Summary:
+
+Details:
+cime_config:
+- added new usermods_dirs cmip7_historybase and cmip7_historyhf
+   - this adds new cice history output namelists needed for cmip7 but
+     keeps the reduced output from clm and blom
+ccs_config:
+  - ccsm_config_noresm0.0.72
+    - fix compress script for use on Olivia
+blom:
+  - Update tag to v1.14.5 (change iHAMOCC diagnostic output)
+    - v1.14.2: Pass vertical diffusivity and buoyancy frequency squared to iHAMOCC
+    - v1.14.3: Add possibility to set CVMix parameter Cv in BLOM namelist
+    - v1.14.4: Activate CFCs, nat-tracers and shelf-sea residence time
+    - v1.14.5: Add possibility to set CVMix parameter Ri_crit in BLOM namelist
+cism:
+  - Update tag to cismwrap_2_2_007_noresm_v11
+    - Fix to include rmicecap, forceretreat in solid runoff
+ctsm:
+  - Update tag to ctsm5.4.042_noresm_v3
+    - Update default parameters
+    - Partial NIHIST fix
+cice:
+  - Update NorESM_CICE tag to cesm3_cice6_6_3_11_noresm_v1
+  - Update CICE tag to cice6_6_3_11_noresm_v1
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.72
+ - cime       : NorESMhub/cime              : cime6.1.173_noresm_v0
+ - share      : NorESMHub/NorESM_share      : share1.1.20_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.14.5
+ - cam        : NorESMhub/CAM               : noresm3_0_039_cam6_4_121
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v0
+ - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v1
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v11
+ - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v3
+    - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci5_api2
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.41_noresm_v1
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v3
+ - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.19
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+
+Describe any changes made to scripts/build system: NA
+
+Describe any substantial timing or memory changes: NA
+
+Code merged by: Tomas Torsvik
+
+Code reviewed by: Mariana Vertenstein, mvdebolskiy, Mats Bentsen, Jens Debernard,
+                  Steve Goldhaber, Marit Sandstad, Alok Gupta, Michele Petrini
+
+Summary of pre-tag testing on Betzy:
+  - prealpha_noresm : PASS
+  - aux_blom_noresm : PASS (except expected failing tests)
+  - aux_clm_noresm  : PASS
+  - aux_cism_noresm : PASSED (with exceptions due to olivia issues - noted in PR)
+  - aux_cice_noresm : PASS
+
+Summary of pre-tag testing on Olivia:
+  - prealpha_noresm : PASS
+  - aux_blom_noresm : PASS (except expected failing tests)
+  - aux_clm_noresm  : PASS
+
+Summarize any change to answers:
+  - Expected answer changes due to update in CLM, BLOM and CISM
+  - All configs with FATES and %NORESM
+
+==============================================================
+
 Tag name: noresm3_0_beta20
 Date: 18.06.2026
 One-line Summary: New DGLC capacity for CISM; updates and fixes for CAM, CTSM, BLOM
