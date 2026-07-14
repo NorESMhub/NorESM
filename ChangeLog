@@ -10,6 +10,11 @@ cam:
     - Update CMIP7 output lists
     - Correct units on two diagnostic fields
 
+ww3:
+  - main_0.1.0_noresm_v0
+    - major updates to ESCOMP WW3_interpface as well as WW3 source code
+    - all results are bit-for-bit
+
 Component tags used in this tag:
 
  - parallelio : NCAR/ParallelIO             : pio2_6_2
@@ -25,7 +30,7 @@ Component tags used in this tag:
     - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci5_api2
  - cmeps      : NorESMhub/CMEPS             : cmeps1.1.41_noresm_v1
  - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v3
- - ww3        : NorESMhub/WW3_interface     : ww3_interface_noresm0.0.19
+ - ww3        : NorESMhub/WW3_interface     : main_0.1.0_noresm_v0
  - pycect     : NCAR/PyCECT                 : 3.2.2
 
 Bugs fixed:
