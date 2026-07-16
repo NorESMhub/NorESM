@@ -15,13 +15,16 @@ ww3:
     - major updates to ESCOMP WW3_interpface as well as WW3 source code
     - all results are bit-for-bit
 
+blom:
+  - v1.14.6 : remove ww3 tests from aux_blom_noresm
+
 Component tags used in this tag:
 
  - parallelio : NCAR/ParallelIO             : pio2_6_2
  - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.72
  - cime       : NorESMhub/cime              : cime6.1.173_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.20_noresm_v0
- - blom       : NorESMhub/BLOM              : v1.14.5
+ - blom       : NorESMhub/BLOM              : v1.14.6
  - cam        : NorESMhub/CAM               : noresm3_0_040_cam6_4_121
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v0
  - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v1
