@@ -6,9 +6,12 @@ One-line Summary:
 
 Details:
 cam:
-  - noresm3_0_040_cam6_4_121:
-    - Update CMIP7 output lists
-    - Correct units on two diagnostic fields
+  - Update tag to noresm3_0_042_cam6_4_121 (answer changing)
+      - noresm3_0_040_cam6_4_121:
+        - Update CMIP7 output lists
+        - Correct units on two diagnostic fields
+      - noresm3_0_041_cam6_4_121: Fix radiation handling for CO2 and other bug fixes
+      - noresm3_0_042_cam6_4_121: Separate CO2 surface source to send to land/ocean
 
 ww3:
   - main_0.1.0_noresm_v0
