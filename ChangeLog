@@ -12,6 +12,8 @@ cam:
         - Correct units on two diagnostic fields
       - noresm3_0_041_cam6_4_121: Fix radiation handling for CO2 and other bug fixes
       - noresm3_0_042_cam6_4_121: Separate CO2 surface source to send to land/ocean
+      - noresm3_0_043_cam6_4_121: Changes to start date and ozone forcing
+        - Adjust start date for NFHIST to match NHIST (1850)
 
 ww3:
   - main_0.1.0_noresm_v0
@@ -28,7 +30,7 @@ Component tags used in this tag:
  - cime       : NorESMhub/cime              : cime6.1.173_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.20_noresm_v0
  - blom       : NorESMhub/BLOM              : v1.14.6
- - cam        : NorESMhub/CAM               : noresm3_0_042_cam6_4_121
+ - cam        : NorESMhub/CAM               : noresm3_0_043_cam6_4_121
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v0
  - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v1
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v11
