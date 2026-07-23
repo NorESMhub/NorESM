@@ -1,12 +1,12 @@
 ==============================================================
 
 Tag name: noresm3_0_beta22
-Date:
-One-line Summary:
+Date: 23.07.2026
+One-line Summary: Updates to CAM, WW3 refactor, BLOM cleanup
 
 Details:
 cam:
-  - Update tag to noresm3_0_042_cam6_4_121 (answer changing)
+  - Update tag to noresm3_0_043_cam6_4_121 (answer changing)
       - noresm3_0_040_cam6_4_121:
         - Update CMIP7 output lists
         - Correct units on two diagnostic fields
