@@ -1,8 +1,81 @@
 ==============================================================
 
+Tag name: noresm3_0_beta22
+Date: 23.07.2026
+One-line Summary: Updates to CAM, WW3 refactor, BLOM cleanup
+
+Details:
+cam:
+  - Update tag to noresm3_0_043_cam6_4_121 (answer changing)
+      - noresm3_0_040_cam6_4_121:
+        - Update CMIP7 output lists
+        - Correct units on two diagnostic fields
+      - noresm3_0_041_cam6_4_121: Fix radiation handling for CO2 and other bug fixes
+      - noresm3_0_042_cam6_4_121: Separate CO2 surface source to send to land/ocean
+      - noresm3_0_043_cam6_4_121: Changes to start date and ozone forcing
+        - Adjust start date for NFHIST to match NHIST (1850)
+
+ww3:
+  - main_0.1.0_noresm_v0
+    - major updates to ESCOMP WW3_interpface as well as WW3 source code
+    - all results are bit-for-bit
+
+blom:
+  - v1.14.6 : remove ww3 tests from aux_blom_noresm
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.72
+ - cime       : NorESMhub/cime              : cime6.1.173_noresm_v0
+ - share      : NorESMHub/NorESM_share      : share1.1.20_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.14.6
+ - cam        : NorESMhub/CAM               : noresm3_0_043_cam6_4_121
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v0
+ - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v1
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v11
+ - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v3
+    - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci5_api2
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.41_noresm_v1
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v3
+ - ww3        : NorESMhub/WW3_interface     : main_0.1.0_noresm_v0
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+
+Describe any changes made to scripts/build system: NA
+
+Describe any substantial timing or memory changes: NA
+
+Code merged by: @gold2718
+
+Code reviewed by: @gold2718, @mvertens
+
+Summary of pre-tag testing on Betzy:
+  - prealpha_noresm : All PASS except for expected namelist and baseline diffs
+  - aux_blom_noresm : NA
+  - aux_cam_noresm  : All PASS except for expected namelist and baseline diffs
+  - aux_clm_noresm  : NA
+  - aux_cism_noresm : NA
+  - aux_cice_noresm : NA
+
+Summary of pre-tag testing on Olivia:
+  - prealpha_noresm : All PASS
+  - aux_blom_noresm : NA
+  - aux_cam_noresm  : All PASS except for expected namelist and baseline diffs
+  - aux_clm_noresm  : NA
+
+Summarize any change to answers:
+  - Baseline changes due to start date change for NFHIST
+  - Baseline differences due to correction on a couple of diagnostic fields
+  - Namelist changes due to new co2_surface_source_stream_nl namelist
+  - Answer changes for ESM tests due to using active CO2 for radiation
+
+==============================================================
+
 Tag name: noresm3_0_beta21
-Date:
-One-line Summary:
+Date: 03.07.2026
+One-line Summary: Update CISM, CTSM, CICE and BLOM for piControl
 
 Details:
 cime_config:
