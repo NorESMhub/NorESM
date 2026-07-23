@@ -47,23 +47,29 @@ Describe any changes made to scripts/build system: NA
 
 Describe any substantial timing or memory changes: NA
 
-Code merged by:
+Code merged by: @gold2718
 
-Code reviewed by:
+Code reviewed by: @gold2718, @mvertens
 
 Summary of pre-tag testing on Betzy:
-  - prealpha_noresm :
-  - aux_blom_noresm :
-  - aux_clm_noresm  :
-  - aux_cism_noresm :
-  - aux_cice_noresm :
+  - prealpha_noresm : All PASS except for expected namelist and baseline diffs
+  - aux_blom_noresm : NA
+  - aux_cam_noresm  : All PASS except for expected namelist and baseline diffs
+  - aux_clm_noresm  : NA
+  - aux_cism_noresm : NA
+  - aux_cice_noresm : NA
 
 Summary of pre-tag testing on Olivia:
-  - prealpha_noresm :
-  - aux_blom_noresm :
-  - aux_clm_noresm  :
+  - prealpha_noresm : All PASS
+  - aux_blom_noresm : NA
+  - aux_cam_noresm  : All PASS except for expected namelist and baseline diffs
+  - aux_clm_noresm  : NA
 
 Summarize any change to answers:
+  - Baseline changes due to start date change for NFHIST
+  - Baseline differences due to correction on a couple of diagnostic fields
+  - Namelist changes due to new co2_surface_source_stream_nl namelist
+  - Answer changes for ESM tests due to using active CO2 for radiation
 
 ==============================================================
 
