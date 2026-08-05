@@ -30,18 +30,4 @@
 
   <!-- prealpha_noresm test suite failures -->
 
-  <test name="ERS_Ld5.ne16pg3_tn14.N1850G.betzy_intel.allactive-defaultio">
-    <phase name="COMPARE_base_rest">
-      <status>FAIL</status>
-      <issue>https://github.com/NorESMhub/CISM-wrapper/issues/12</issue>
-    </phase>
-  </test>
-
-  <test name="ERS_Ld5.ne16pg3_tn14.NHistG.betzy_intel.allactive-defaultio">
-    <phase name="COMPARE_base_rest">
-      <status>FAIL</status>
-      <issue>https://github.com/NorESMhub/CISM-wrapper/issues/12</issue>
-    </phase>
-  </test>
-
 </expectedFails>

@@ -63,7 +63,7 @@ fxDONOTUSEurl = https://github.com/NorESMhub/cime.git
 [submodule "share"]
 path = share
 url = https://github.com/NorESMHub/NorESM_share.git
-fxtag = share1.1.20_noresm_v0
+fxtag = share1.1.21_noresm_v0
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMHub/NorESM_share.git
 
@@ -88,7 +88,7 @@ fxDONOTUSEurl = https://github.com/NorESMhub/CAM.git
 [submodule "cdeps"]
 path = components/cdeps
 url = https://github.com/NorESMhub/CDEPS.git
-fxtag = cdeps1.0.94_noresm_v0
+fxtag = cdeps1.0.94_noresm_v1
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CDEPS.git
 
@@ -116,7 +116,7 @@ fxDONOTUSEurl = https://github.com/NorESMhub/CTSM.git
 [submodule "cmeps"]
 path = components/cmeps
 url = https://github.com/NorESMhub/CMEPS.git
-fxtag = cmeps1.1.41_noresm_v1
+fxtag = cmeps1.1.57_noresm_v0
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/CMEPS.git
 
