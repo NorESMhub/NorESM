@@ -1,2 +1,8 @@
-Directories here can be included in a case via the --user-mods-dir
+Directories here can be included in a case via the --user-mods-dirs
 argument to create_newcase, or via the CPL_USER_MODS XML variable.
+
+These directories provide output support for CMIP7
+cmip7_historybase:    Baseline (for longer runs) output for concentration driven
+cmip7_historyhf:      High frequency output for concentration driven
+cmip7_historybaseESM: Baseline (for longer runs) output for emissions driven
+cmip7_historyhfESM:   High frequency output for emission driven

@@ -3,6 +3,9 @@ Date: TBD
 One-line Summary: Updates to CAM, CMEPS, CDEPS, NorESM_share
 
 Details:
+- Updated and added new usermods directories for CMIP7 output
+  - Added documentation to cime_config/usermods_dirs/README
+
 cam:
   - Ability to use new lat/time and lat/lev time cdeps functionality
 

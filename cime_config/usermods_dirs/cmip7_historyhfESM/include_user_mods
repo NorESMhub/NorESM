@@ -1,4 +1,4 @@
-../../../components/cam/cime_config/usermods_dirs/CMIP7_HistoryHF
+../../../components/cam/cime_config/usermods_dirs/CMIP7_HistoryHFESM
 ../../../components/clm/cime_config/usermods_dirs/clm/reduced_output_fates/
 ../../../components/blom/cime_config/usermods_dirs/reduced_out_devsim
 ../../../components/cice/cime_config/usermods_dirs/cmip7
