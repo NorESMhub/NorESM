@@ -101,7 +101,7 @@ Component tags used in this tag:
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v11
  - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v3
     - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci5_api2
- - cmeps      : NorESMhub/CMEPS             : cmeps1.1.48_noresm_v1
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.41_noresm_v1
  - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v3
  - ww3        : NorESMhub/WW3_interface     : main_0.1.0_noresm_v0
  - pycect     : NCAR/PyCECT                 : 3.2.2
