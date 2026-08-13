@@ -1,0 +1,12 @@
+! h0 to daily
+hist_mfilt(1) = 1
+hist_nhtfrq(1) = -24
+! h1 to daily 
+hist_mfilt(2) = 1
+hist_nhtfrq(2) = -24
+! h2 to daily
+hist_mfilt(3) = 1
+hist_nhtfrq(3) = -24
+! h3 to daily
+hist_mfilt(4) = 8
+hist_nhtfrq(4) = -3
