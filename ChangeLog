@@ -18,6 +18,9 @@ NorESM_share
 cmeps:
   - cmeps1.1.57_noresm_v0 - updated to escomp cmeps1.1.57
 
+clm:
+  - ctsm5.4.042_noresm_v4 -update for fates, parameter files and cmip7 output usermods.
+
 Component tags used in this tag:
 
  - parallelio : NCAR/ParallelIO             : pio2_6_2
@@ -29,8 +32,8 @@ Component tags used in this tag:
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v1
  - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v1
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v11
- - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v3
-    - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci5_api2
+ - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v4
+    - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci7_api2
  - cmeps      : NorESMhub/CMEPS             : cmeps1.1.57_noresm_v0
  - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v3
  - ww3        : NorESMhub/WW3_interface     : main_0.1.0_noresm_v0
@@ -42,7 +45,7 @@ Describe any changes made to scripts/build system: NA
 
 Describe any substantial timing or memory changes: NA
 
-Code merged by: @gold2718
+Code merged by: @gold2718, @mvdebolskiy
 
 Code reviewed by: @gold2718, @mvertens
 
@@ -50,7 +53,7 @@ Summary of pre-tag testing on Betzy:
   - prealpha_noresm :
   - aux_blom_noresm : NA
   - aux_cam_noresm  :
-  - aux_clm_noresm  : NA
+  - aux_clm_noresm  : All PASS except for expected namelist and baseline diffs
   - aux_cism_noresm : NA
   - aux_cice_noresm : NA
 
@@ -58,10 +61,10 @@ Summary of pre-tag testing on Olivia:
   - prealpha_noresm :
   - aux_blom_noresm : NA
   - aux_cam_noresm  :
-  - aux_clm_noresm  : NA
+  - aux_clm_noresm  : All PASS except for expected namelist and baseline diffs
 
 Summarize any change to answers:
-  -
+  - Baseline changes due to updates to parameters in CLM.
 
 ==============================================================
 
