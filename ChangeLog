@@ -7,7 +7,10 @@ Details:
   - Added documentation to cime_config/usermods_dirs/README
 
 cam:
-  - Ability to use new lat/time and lat/lev time cdeps functionality
+  - noresm3_0_044_cam6_4_121: Ability to use new lat/time and lat/lev time cdeps functionality
+  - noresm3_0_045_cam6_4_121:
+    - Fixes for CO2 variation
+    - New CMIP7 usermods sets
 
 cdeps -
   - cdeps1.0.94_noresm_v1 - ability to read in lat/time or lat/lev/time files
@@ -28,7 +31,7 @@ Component tags used in this tag:
  - cime       : NorESMhub/cime              : cime6.1.173_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.21_noresm_v0
  - blom       : NorESMhub/BLOM              : v1.14.6
- - cam        : NorESMhub/CAM               : noresm3_0_043_cam6_4_121
+ - cam        : NorESMhub/CAM               : noresm3_0_045_cam6_4_121
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v1
  - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v1
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v11
