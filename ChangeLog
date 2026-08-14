@@ -1,6 +1,6 @@
 Tag name: noresm3_0_beta23
-Date: TBD
-One-line Summary: Updates to CAM, CMEPS, CDEPS, NorESM_share
+Date: 14.08.2026
+One-line Summary: Updates to CAM, CMEPS, CDEPS, NorESM_share, CLM
 
 Details:
 - Updated and added new usermods directories for CMIP7 output
@@ -48,26 +48,26 @@ Describe any changes made to scripts/build system: NA
 
 Describe any substantial timing or memory changes: NA
 
-Code merged by: @gold2718, @mvdebolskiy
+Code merged by: @mvdebolskiy
 
-Code reviewed by: @gold2718, @mvertens
+Code reviewed by: @gold2718, @mvertens, @TomasTorsvik
 
 Summary of pre-tag testing on Betzy:
-  - prealpha_noresm :
+  - prealpha_noresm : All PASS except for expected namelist and baseline diffs
   - aux_blom_noresm : NA
-  - aux_cam_noresm  :
+  - aux_cam_noresm  : Expected differences
   - aux_clm_noresm  : All PASS except for expected namelist and baseline diffs
   - aux_cism_noresm : NA
   - aux_cice_noresm : NA
 
 Summary of pre-tag testing on Olivia:
-  - prealpha_noresm :
+  - prealpha_noresm : All PASS except for expected namelist and baseline diffs
   - aux_blom_noresm : NA
-  - aux_cam_noresm  :
+  - aux_cam_noresm  : Expected differences
   - aux_clm_noresm  : All PASS except for expected namelist and baseline diffs
 
 Summarize any change to answers:
-  - Baseline changes due to updates to parameters in CLM.
+  - Baseline changes due to updates to parameters in CLM and CAM
 
 ==============================================================
 
