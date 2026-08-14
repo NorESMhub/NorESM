@@ -1,0 +1,3 @@
+! set freq to daily intead of monthly (which is on usermod) for testing.
+nhtfrq(1) = -24
+
