@@ -5,6 +5,7 @@ One-line Summary: Updates to CAM, CMEPS, CDEPS, NorESM_share, CLM
 Details:
 - Updated and added new usermods directories for CMIP7 output
   - Added documentation to cime_config/usermods_dirs/README
+  - Added testmod for high frequency cmip7 esm output
 
 cam:
   - noresm3_0_044_cam6_4_121: Ability to use new lat/time and lat/lev time cdeps functionality
