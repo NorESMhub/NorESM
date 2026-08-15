@@ -1,3 +1,57 @@
+==============================================================
+
+Tag name: noresm3_0_beta24
+Date:
+One-line Summary:
+
+Details:
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.72
+ - cime       : NorESMhub/cime              : cime6.1.173_noresm_v0
+ - share      : NorESMHub/NorESM_share      : share1.1.21_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.14.6
+ - cam        : NorESMhub/CAM               : noresm3_0_045_cam6_4_121
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v1
+ - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v1
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v11
+ - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v4
+    - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci7_api2
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.57_noresm_v0
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v3
+ - ww3        : NorESMhub/WW3_interface     : main_0.1.0_noresm_v0
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+
+Describe any changes made to scripts/build system: NA
+
+Describe any substantial timing or memory changes: NA
+
+Code merged by:
+
+Code reviewed by:
+
+Summary of pre-tag testing on Betzy:
+  - prealpha_noresm :
+  - aux_blom_noresm :
+  - aux_cam_noresm  :
+  - aux_clm_noresm  :
+  - aux_cism_noresm :
+  - aux_cice_noresm :
+
+Summary of pre-tag testing on Olivia:
+  - prealpha_noresm :
+  - aux_blom_noresm :
+  - aux_cam_noresm  :
+  - aux_clm_noresm  :
+
+Summarize any change to answers:
+
+==============================================================
+
 Tag name: noresm3_0_beta23
 Date: 14.08.2026
 One-line Summary: Updates to CAM, CMEPS, CDEPS, NorESM_share, CLM
