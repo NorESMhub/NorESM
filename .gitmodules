@@ -95,7 +95,7 @@ fxDONOTUSEurl = https://github.com/NorESMhub/CDEPS.git
 [submodule "cice6"]
 path = components/cice
 url = https://github.com/NorESMhub/NorESM_CICE.git
-fxtag = cesm3_cice6_6_3_11_noresm_v1
+fxtag = cesm3_cice6_6_3_11_noresm_v2
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/NorESM_CICE.git
 
