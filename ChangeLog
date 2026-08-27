@@ -8,7 +8,7 @@ Details:
 
 
 blom:
- - v1.14.8
+ - v1.14.9
    - Update default BLOM and iHAMOCC parameters for NorESM3
 
 cice:
@@ -22,7 +22,7 @@ Component tags used in this tag:
  - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.72
  - cime       : NorESMhub/cime              : cime6.1.173_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.21_noresm_v0
- - blom       : NorESMhub/BLOM              : v1.14.8
+ - blom       : NorESMhub/BLOM              : v1.14.9
  - cam        : NorESMhub/CAM               : noresm3_0_045_cam6_4_121
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v1
  - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v2
