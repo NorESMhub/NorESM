@@ -2,7 +2,7 @@
 
 Tag name: noresm3_0_beta24
 Date:
-One-line Summary:
+One-line Summary: clm, blom,cice,cam updates
 
 Details:
 
@@ -14,6 +14,12 @@ blom:
 cice:
  - cesm3_cice6_6_3_11_noresm_v2
    - Update default parameters for NorESM3
+
+clm:
+ - ctsm5.4.042_noresm_v6:
+  - fates: sci.1.92.5_api.46.0.0_nor_sci9_api2
+  - Extra fates history field
+  - Fix for btran weighting to not cause h2o balance error
 
 
 Component tags used in this tag:
@@ -27,7 +33,7 @@ Component tags used in this tag:
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v1
  - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v2
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v11
- - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v4
+ - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v6
     - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci7_api2
  - cmeps      : NorESMhub/CMEPS             : cmeps1.1.57_noresm_v0
  - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v3
@@ -48,7 +54,7 @@ Summary of pre-tag testing on Betzy:
   - prealpha_noresm :
   - aux_blom_noresm :
   - aux_cam_noresm  :
-  - aux_clm_noresm  :
+  - aux_clm_noresm  : PASS
   - aux_cism_noresm :
   - aux_cice_noresm :
 
@@ -56,9 +62,10 @@ Summary of pre-tag testing on Olivia:
   - prealpha_noresm :
   - aux_blom_noresm :
   - aux_cam_noresm  :
-  - aux_clm_noresm  :
+  - aux_clm_noresm  : PASS
 
 Summarize any change to answers:
+ - Slight changes in answers due to land water fluxes
 
 ==============================================================
 
