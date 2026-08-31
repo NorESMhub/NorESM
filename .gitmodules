@@ -52,7 +52,7 @@ fxDONOTUSEurl = https://github.com/NorESMhub/ccs_config_noresm.git
 [submodule "cime"]
 path = cime
 url = https://github.com/NorESMhub/cime.git
-fxtag = cime6.1.173_noresm_v0
+fxtag = cime6.1.173_noresm_v2
 fxrequired = ToplevelRequired
 fxDONOTUSEurl = https://github.com/NorESMhub/cime.git
 

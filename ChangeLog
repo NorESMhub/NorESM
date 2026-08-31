@@ -2,7 +2,7 @@
 
 Tag name: noresm3_0_beta24
 Date:
-One-line Summary: clm, blom,cice,cam updates
+One-line Summary: clm, blom, cam, cice, cime updates
 
 Details:
 
@@ -10,6 +10,9 @@ Details:
 blom:
  - v1.14.9
    - Update default BLOM and iHAMOCC parameters for NorESM3
+
+cam:
+ - 
 
 cice:
  - cesm3_cice6_6_3_11_noresm_v2
@@ -21,12 +24,17 @@ clm:
   - Extra fates history field
   - Fix for btran weighting to not cause h2o balance error
 
-
+cime:
+ - cime6.1.173_noresm_v1
+  - addition of ww3 to entries where it was missing
+ - cime6.1.173_noresm_v2
+  - Fix spelling of FORTRAN in CIME/Tools/Makefile
+  - Fix python path in find_circular_dependency.py script
 Component tags used in this tag:
 
  - parallelio : NCAR/ParallelIO             : pio2_6_2
  - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.72
- - cime       : NorESMhub/cime              : cime6.1.173_noresm_v0
+ - cime       : NorESMhub/cime              : cime6.1.173_noresm_v2
  - share      : NorESMHub/NorESM_share      : share1.1.21_noresm_v0
  - blom       : NorESMhub/BLOM              : v1.14.9
  - cam        : NorESMhub/CAM               : noresm3_0_045_cam6_4_121
@@ -34,7 +42,7 @@ Component tags used in this tag:
  - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v2
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v11
  - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v6
-    - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci7_api2
+    - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci9_api2
  - cmeps      : NorESMhub/CMEPS             : cmeps1.1.57_noresm_v0
  - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v3
  - ww3        : NorESMhub/WW3_interface     : main_0.1.0_noresm_v0
