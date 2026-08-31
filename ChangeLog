@@ -77,6 +77,7 @@ Details:
 - Updated and added new usermods directories for CMIP7 output
   - Added documentation to cime_config/usermods_dirs/README
   - Added testmod for high frequency cmip7 esm output
+  - Added new compsets N4xCO2Gaxg and N1PctCO2Gaxg
 
 cam:
   - noresm3_0_044_cam6_4_121: Ability to use new lat/time and lat/lev time cdeps functionality
