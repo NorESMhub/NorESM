@@ -6,13 +6,15 @@ One-line Summary: clm, blom, cam, cice, cime updates
 
 Details:
 
-
 blom:
  - v1.14.9
    - Update default BLOM and iHAMOCC parameters for NorESM3
 
 cam:
- - 
+ - noresm3_0_047_cam6_4_121
+   - Correct CO2 seen by radiation, usermods updates
+ - noresm3_0_046_cam6_4_121
+   - Usermods updates, include aerosol free radiation diagnostics
 
 cice:
  - cesm3_cice6_6_3_11_noresm_v2
@@ -37,7 +39,6 @@ cdeps:
 cmeps:
  - cmeps1.1.57_noresm_v3 - new documentation
 
-	
 Component tags used in this tag:
 
  - parallelio : NCAR/ParallelIO             : pio2_6_2
@@ -45,8 +46,8 @@ Component tags used in this tag:
  - cime       : NorESMhub/cime              : cime6.1.173_noresm_v2
  - share      : NorESMHub/NorESM_share      : share1.1.21_noresm_v0
  - blom       : NorESMhub/BLOM              : v1.14.9
- - cam        : NorESMhub/CAM               : noresm3_0_045_cam6_4_121
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v2
+ - cam        : NorESMhub/CAM               : noresm3_0_047_cam6_4_121
  - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v2
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v11
  - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v6
