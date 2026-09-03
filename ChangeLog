@@ -1,8 +1,8 @@
 ==============================================================
 
 Tag name: noresm3_0_beta24
-Date:
-One-line Summary: clm, blom, cam, cice, cime updates
+Date: 04.09.2026
+One-line Summary: clm, blom, cmeps, cdeps, cam, cice, cime updates
 
 Details:
 
@@ -21,23 +21,27 @@ cice:
    - Update default parameters for NorESM3
 
 clm:
- - ctsm5.4.042_noresm_v6:
-  - fates: sci.1.92.5_api.46.0.0_nor_sci9_api2
-  - Extra fates history field
+ - ctsm5.4.042_noresm_v7:
+  - fates: sci.1.92.5_api.46.0.0_nor_sci10_api2
+  - Extra fates history fields
   - Fix for btran weighting to not cause h2o balance error
+  - Fix for cmip7hf ouput tapes
 
 cime:
- - cime6.1.173_noresm_v1
+ - cime6.1.173_noresm_v1:
   - addition of ww3 to entries where it was missing
- - cime6.1.173_noresm_v2
+ - cime6.1.173_noresm_v2:
   - Fix spelling of FORTRAN in CIME/Tools/Makefile
   - Fix python path in find_circular_dependency.py script
 
 cdeps:
- - cdeps1.0.94_noresm_v2 - added field specific unit conversion to stream file
+ - cdeps1.0.94_noresm_v2:
+   - added field specific unit conversion to stream file
 
 cmeps:
- - cmeps1.1.57_noresm_v3 - new documentation
+ - cmeps1.1.57_noresm_v4
+   - new documentation
+   - bugfix for histaux_l2x1yrg output
 
 Component tags used in this tag:
 
@@ -50,14 +54,16 @@ Component tags used in this tag:
  - cam        : NorESMhub/CAM               : noresm3_0_047_cam6_4_121
  - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v2
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v11
- - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v6
-    - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci9_api2
+ - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v7
+    - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci10_api2
  - cmeps      : NorESMhub/CMEPS             : cmeps1.1.57_noresm_v3
  - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v3
  - ww3        : NorESMhub/WW3_interface     : main_0.1.0_noresm_v0
  - pycect     : NCAR/PyCECT                 : 3.2.2
 
 Bugs fixed:
+  - lnd2glc and ocn2glc cpl history not ouputed properly. CMEPS#58
+  - sporadic crashes during clm history write on olivia
 
 Describe any changes made to scripts/build system: NA
 
