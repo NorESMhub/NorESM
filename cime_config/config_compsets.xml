@@ -88,6 +88,16 @@
     <lname>HIST_CAM70%LT%NORESM%CAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP_BGC%BPRP</lname>
   </compset>
 
+  <!-- 1pct and 4xCO2 -->
+  <compset>
+    <alias>N1PctCO2Gaxg</alias>
+    <lname>1850_CAM70%LT%NORESM%GHGCAMoslo%1PCT_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP</lname>
+  </compset>
+  <compset>
+    <alias>N4xCO2Gaxg</alias>
+    <lname>1850_CAM70%LT%NORESM%GHGCAMoslo%4XCO2_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP</lname>
+  </compset>
+
   <!-- CLM variants for testing -->
   <compset>
     <alias>N2000Clm60Sp</alias>

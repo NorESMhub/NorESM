@@ -1,3 +1,102 @@
+==============================================================
+
+Tag name: noresm3_0_beta24
+Date: 04.09.2026
+One-line Summary: clm, blom, cmeps, cdeps, cam, cice, cime updates
+
+Details:
+
+blom:
+ - v1.14.9
+   - Update default BLOM and iHAMOCC parameters for NorESM3
+
+cam:
+ - noresm3_0_047_cam6_4_121
+   - Correct CO2 seen by radiation, usermods updates
+ - noresm3_0_046_cam6_4_121
+   - Usermods updates, include aerosol free radiation diagnostics
+
+cice:
+ - cesm3_cice6_6_3_11_noresm_v2
+   - Update default parameters for NorESM3
+
+clm:
+ - ctsm5.4.042_noresm_v7:
+  - fates: sci.1.92.5_api.46.0.0_nor_sci10_api2
+  - Extra fates history fields
+  - Fix for btran weighting to not cause h2o balance error
+  - Fix for cmip7hf ouput tapes
+
+cime:
+ - cime6.1.173_noresm_v1:
+  - addition of ww3 to entries where it was missing
+ - cime6.1.173_noresm_v2:
+  - Fix spelling of FORTRAN in CIME/Tools/Makefile
+  - Fix python path in find_circular_dependency.py script
+
+cdeps:
+ - cdeps1.0.94_noresm_v2:
+   - added field specific unit conversion to stream file
+
+cmeps:
+ - cmeps1.1.57_noresm_v4
+   - new documentation
+   - bugfix for histaux_l2x1yrg output
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.72
+ - cime       : NorESMhub/cime              : cime6.1.173_noresm_v2
+ - share      : NorESMHub/NorESM_share      : share1.1.21_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.14.9
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v2
+ - cam        : NorESMhub/CAM               : noresm3_0_047_cam6_4_121
+ - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v2
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v11
+ - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v7
+    - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci10_api2
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.57_noresm_v4
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v3
+ - ww3        : NorESMhub/WW3_interface     : main_0.1.0_noresm_v0
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+  - lnd2glc and ocn2glc cpl history not ouputed properly. CMEPS#58
+  - sporadic crashes during clm history write on olivia
+
+Describe any changes made to scripts/build system: NA
+
+Describe any substantial timing or memory changes: NA
+
+Code merged by: @TomasTorsvik
+
+Code reviewed by: @gold2718 @mvdebolskiy
+
+Summary of pre-tag testing on Betzy:
+  - prealpha_noresm : PASS
+  - aux_blom_noresm : PASS
+  - aux_cam_noresm  :
+  - aux_clm_noresm  : PASS
+  - aux_cism_noresm :
+  - aux_cice_noresm : PASS
+
+Summary of pre-tag testing on Olivia:
+  - prealpha_noresm : (not tested)
+  - aux_blom_noresm : PASS
+  - aux_cam_noresm  :
+  - aux_clm_noresm  : PASS
+
+NOTE: Olivia was not available for prealpha_noresm testing. We merge this since tests passed on Betzy.
+      If tests are made on Olivia later, to generate baselines, please update the ChangeLog accordingly
+      and remove/update this note.
+
+Summarize any change to answers:
+ - Slight changes in answers due to land water fluxes
+ - Changes due to CO2 bug fix
+
+==============================================================
+
 Tag name: noresm3_0_beta23
 Date: 14.08.2026
 One-line Summary: Updates to CAM, CMEPS, CDEPS, NorESM_share, CLM
@@ -6,6 +105,7 @@ Details:
 - Updated and added new usermods directories for CMIP7 output
   - Added documentation to cime_config/usermods_dirs/README
   - Added testmod for high frequency cmip7 esm output
+  - Added new compsets N4xCO2Gaxg and N1PctCO2Gaxg
 
 cam:
   - noresm3_0_044_cam6_4_121: Ability to use new lat/time and lat/lev time cdeps functionality
