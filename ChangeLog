@@ -75,17 +75,21 @@ Code reviewed by: @gold2718 @mvdebolskiy
 
 Summary of pre-tag testing on Betzy:
   - prealpha_noresm : PASS
-  - aux_blom_noresm :
+  - aux_blom_noresm : PASS
   - aux_cam_noresm  :
   - aux_clm_noresm  : PASS
   - aux_cism_noresm :
-  - aux_cice_noresm :
+  - aux_cice_noresm : PASS
 
 Summary of pre-tag testing on Olivia:
-  - prealpha_noresm : 
-  - aux_blom_noresm :
+  - prealpha_noresm : (not tested)
+  - aux_blom_noresm : PASS
   - aux_cam_noresm  :
   - aux_clm_noresm  : PASS
+
+NOTE: Olivia was not available for prealpha_noresm testing. We merge this since tests passed on Betzy.
+      If tests are made on Olivia later, to generate baselines, please update the ChangeLog accordingly
+      and remove/update this note.
 
 Summarize any change to answers:
  - Slight changes in answers due to land water fluxes
