@@ -69,12 +69,12 @@ Describe any changes made to scripts/build system: NA
 
 Describe any substantial timing or memory changes: NA
 
-Code merged by:
+Code merged by: @TomasTorsvik
 
-Code reviewed by:
+Code reviewed by: @gold2718 @mvdebolskiy
 
 Summary of pre-tag testing on Betzy:
-  - prealpha_noresm :
+  - prealpha_noresm : PASS
   - aux_blom_noresm :
   - aux_cam_noresm  :
   - aux_clm_noresm  : PASS
@@ -82,13 +82,14 @@ Summary of pre-tag testing on Betzy:
   - aux_cice_noresm :
 
 Summary of pre-tag testing on Olivia:
-  - prealpha_noresm :
+  - prealpha_noresm : 
   - aux_blom_noresm :
   - aux_cam_noresm  :
   - aux_clm_noresm  : PASS
 
 Summarize any change to answers:
  - Slight changes in answers due to land water fluxes
+ - Changes due to CO2 bug fix
 
 ==============================================================
 
