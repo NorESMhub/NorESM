@@ -61,7 +61,7 @@ Summary of pre-tag testing on Betzy:
   - aux_cice_noresm :
 
 Summary of pre-tag testing on Olivia:
-  - prealpha_noresm :
+  - prealpha_noresm : compared to noresm3_0_beta24- all passed
   - aux_blom_noresm :
   - aux_cam_noresm  :
   - aux_clm_noresm  :
