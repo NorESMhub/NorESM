@@ -17,22 +17,27 @@ cime:
      at the top of the repo
 
 ccs_config:
-   - ccs_config_noresm0.0.75
-     - support for adding .cime_model_id file with noresm as content
+ - ccs_config_noresm0.0.75
+   - support for adding .cime_model_id file with noresm as content
 
 cmeps:
-   - cmeps1.1.57_noresm_v5
-     - support for adding .cime_model_id file with noresm as content
+ - cmeps1.1.57_noresm_v5
+   - support for adding .cime_model_id file with noresm as content
+
+cam:
+ - noresm3_0_048_cam6_4_121
+   - Added .cime_model_id file with noresm as content for CAM
+     standalone builds
 
 Component tags used in this tag:
 
  - parallelio : NCAR/ParallelIO             : pio2_6_2
  - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.75
- - cime       : NorESMhub/cime              : cime5.6.12_noresm_v1
+ - cime       : NorESMhub/cime              : cime6.5.12_noresm_v1
  - share      : NorESMHub/NorESM_share      : share1.1.21_noresm_v0
  - blom       : NorESMhub/BLOM              : v1.14.9
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v2
- - cam        : NorESMhub/CAM               : noresm3_0_047_cam6_4_121
+ - cam        : NorESMhub/CAM               : noresm3_0_048_cam6_4_121
  - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v2
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v11
  - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v7
