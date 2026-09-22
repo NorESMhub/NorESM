@@ -33,13 +33,19 @@ cism:
  - cismwrap_2_2_007_noresm_v12
    - Updated submodules, git-fleximod, and added fleximod gh action
 
+blom:
+ - v1.14.10
+   - add is_inputdata attribute to file entires
+   - enable ocean default parameters to change according to atmospheric
+     grid specification
+
 Component tags used in this tag:
 
  - parallelio : NCAR/ParallelIO             : pio2_6_2
  - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.75
  - cime       : NorESMhub/cime              : cime6.5.12_noresm_v1
  - share      : NorESMHub/NorESM_share      : share1.1.21_noresm_v0
- - blom       : NorESMhub/BLOM              : v1.14.9
+ - blom       : NorESMhub/BLOM              : v1.14.10
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v2
  - cam        : NorESMhub/CAM               : noresm3_0_048_cam6_4_121
  - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v2
