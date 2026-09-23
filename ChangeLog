@@ -21,6 +21,8 @@ ccs_config:
    - support for adding .cime_model_id file with noresm as content
 
 cmeps:
+ - cmeps1.1.71_noresm_v0
+   - update to ESCOMP cmeps1.1.71
  - cmeps1.1.57_noresm_v5
    - support for adding .cime_model_id file with noresm as content
 
@@ -52,7 +54,7 @@ Component tags used in this tag:
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v12
  - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v7
     - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci10_api2
- - cmeps      : NorESMhub/CMEPS             : cmeps1.1.57_noresm_v5
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.71_noresm_v0
  - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v3
  - ww3        : NorESMhub/WW3_interface     : main_0.1.0_noresm_v0
  - pycect     : NCAR/PyCECT                 : 3.2.2
