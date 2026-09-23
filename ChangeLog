@@ -71,7 +71,7 @@ Code reviewed by:
 
 Summary of pre-tag testing on Betzy:
   - prealpha_noresm :
-  - aux_blom_noresm :
+  - aux_blom_noresm : PASS
   - aux_cam_noresm  :
   - aux_clm_noresm  :
   - aux_cism_noresm : PASS
@@ -79,7 +79,7 @@ Summary of pre-tag testing on Betzy:
 
 Summary of pre-tag testing on Olivia:
   - prealpha_noresm : compared to noresm3_0_beta24- all passed
-  - aux_blom_noresm :
+  - aux_blom_noresm : PASS
   - aux_cam_noresm  :
   - aux_clm_noresm  :
 
