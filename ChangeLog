@@ -33,6 +33,17 @@ cam:
    - Added .cime_model_id file with noresm as content for CAM
      standalone builds
 
+clm:
+ - ctsm5.4.042_noresm_v9
+   - submodule updates to support new cime_model
+   - extra tape for cmip7 high frequency output 
+   - update to albice and lapse_rates defaults 
+   - fates: sci.1.92.5_api.46.0.0_nor_sci11_api2
+     - fix for ne30 historical runs with carbon balance fail 
+     - switch logging from 30th of Jan to daily
+     - limit harvest rate
+     - clear all pfts when transition to rangeland
+
 cism:
  - cismwrap_2_2_007_noresm_v12
    - Updated submodules, git-fleximod, and added fleximod gh action
@@ -54,14 +65,17 @@ Component tags used in this tag:
  - cam        : NorESMhub/CAM               : noresm3_0_048_cam6_4_121
  - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v2
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v12
- - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v7
-    - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci10_api2
+ - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v9
+    - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci11_api2
  - cmeps      : NorESMhub/CMEPS             : cmeps1.1.71_noresm_v1
  - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v3
  - ww3        : NorESMhub/WW3_interface     : main_0.1.0_noresm_v0
  - pycect     : NCAR/PyCECT                 : 3.2.2
 
 Bugs fixed:
+ - NorESM3_land_only_dev_simulations/#108
+ - CTSM#250
+ - CTSM251
 
 Describe any changes made to scripts/build system: NA
 
@@ -75,7 +89,7 @@ Summary of pre-tag testing on Betzy:
   - prealpha_noresm :
   - aux_blom_noresm : PASS
   - aux_cam_noresm  :
-  - aux_clm_noresm  :
+  - aux_clm_noresm  : PASS (diffs)
   - aux_cism_noresm : PASS
   - aux_cice_noresm :
 
@@ -83,9 +97,14 @@ Summary of pre-tag testing on Olivia:
   - prealpha_noresm : compared to noresm3_0_beta24- all passed
   - aux_blom_noresm : PASS
   - aux_cam_noresm  :
-  - aux_clm_noresm  :
+  - aux_clm_noresm  : PASS (except NIHISTClm60NorCplHist - olivia libfabric
+  issue)
 
 Summarize any change to answers:
+
+- CLM: slight changes in carbon fluxes in coastal gridcells 
+      where tiny patches get destroyed by lu-transitions
+
 
 ==============================================================
 
