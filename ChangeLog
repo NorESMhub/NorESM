@@ -1,5 +1,118 @@
 ==============================================================
 
+Tag name: noresm3_0_beta25
+Date:
+One-line Summary:
+
+Details:
+
+new file: .cime_model_id
+ - only contains the string "noresm"
+
+cime:
+ - cime6.5.12_noresm_v0
+   - updated to ESMCI cime6.5.12
+ - cime6.5.12_noresm_v2
+   - added noresm as a model via the introducion of a .cime_model_id file
+     at the top of the repo
+
+ccs_config:
+ - ccs_config_noresm0.0.75
+   - support for adding .cime_model_id file with noresm as content
+
+cmeps:
+ - cmeps1.1.71_noresm_v1
+   - new enthalpy module
+ - cmeps1.1.71_noresm_v0
+   - update to ESCOMP cmeps1.1.71
+ - cmeps1.1.57_noresm_v5
+   - support for adding .cime_model_id file with noresm as content
+
+cam:
+ - noresm3_0_050_cam6_4_121
+   - Add new diagnostic output including TMCO2 for all simulations
+   - Update usermods output from CMIP7 request sheet
+ - noresm3_0_049_cam6_4_121
+   - Update 1850 forcings for ozone and oxidants
+ - noresm3_0_048_cam6_4_121
+   - Added .cime_model_id file with noresm as content for CAM
+     standalone builds
+
+clm:
+ - ctsm5.4.042_noresm_v9
+   - submodule updates to support new cime_model
+   - extra tape for cmip7 high frequency output 
+   - update to albice and lapse_rates defaults 
+   - fates: sci.1.92.5_api.46.0.0_nor_sci11_api2
+     - fix for ne30 historical runs with carbon balance fail 
+     - switch logging from 30th of Jan to daily
+     - limit harvest rate
+     - clear all pfts when transition to rangeland
+
+cism:
+ - cismwrap_2_2_007_noresm_v12
+   - Updated submodules, git-fleximod, and added fleximod gh action
+
+blom:
+ - v1.14.10
+   - add is_inputdata attribute to file entires
+   - enable ocean default parameters to change according to atmospheric
+     grid specification
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.75
+ - cime       : NorESMhub/cime              : cime6.5.12_noresm_v2
+ - share      : NorESMHub/NorESM_share      : share1.1.21_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.14.10
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v2
+ - cam        : NorESMhub/CAM               : noresm3_0_050_cam6_4_121
+ - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v2
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v12
+ - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v9
+    - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci11_api2
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.71_noresm_v1
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v3
+ - ww3        : NorESMhub/WW3_interface     : main_0.1.0_noresm_v0
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+ - NorESM3_land_only_dev_simulations/#108
+ - CTSM#250
+ - CTSM251
+
+Describe any changes made to scripts/build system: NA
+
+Describe any substantial timing or memory changes: NA
+
+Code merged by:
+
+Code reviewed by:
+
+Summary of pre-tag testing on Betzy:
+  - prealpha_noresm :
+  - aux_blom_noresm : PASS
+  - aux_cam_noresm  :
+  - aux_clm_noresm  : PASS (diffs)
+  - aux_cism_noresm : PASS
+  - aux_cice_noresm :
+
+Summary of pre-tag testing on Olivia:
+  - prealpha_noresm : compared to noresm3_0_beta24- all passed
+  - aux_blom_noresm : PASS
+  - aux_cam_noresm  :
+  - aux_clm_noresm  : PASS (except NIHISTClm60NorCplHist - olivia libfabric
+  issue)
+
+Summarize any change to answers:
+
+- CLM: slight changes in carbon fluxes in coastal gridcells 
+      where tiny patches get destroyed by lu-transitions
+
+
+==============================================================
+
 Tag name: noresm3_0_beta24
 Date: 04.09.2026
 One-line Summary: clm, blom, cmeps, cdeps, cam, cice, cime updates
@@ -82,14 +195,10 @@ Summary of pre-tag testing on Betzy:
   - aux_cice_noresm : PASS
 
 Summary of pre-tag testing on Olivia:
-  - prealpha_noresm : (not tested)
+  - prealpha_noresm : PASS
   - aux_blom_noresm : PASS
   - aux_cam_noresm  :
   - aux_clm_noresm  : PASS
-
-NOTE: Olivia was not available for prealpha_noresm testing. We merge this since tests passed on Betzy.
-      If tests are made on Olivia later, to generate baselines, please update the ChangeLog accordingly
-      and remove/update this note.
 
 Summarize any change to answers:
  - Slight changes in answers due to land water fluxes
