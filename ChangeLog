@@ -1,8 +1,8 @@
 ==============================================================
 
 Tag name: noresm3_0_beta25
-Date:
-One-line Summary:
+Date: 27.09.2026
+One-line Summary: Bug fixes, new diagnostics, new PI control forcing files
 
 Details:
 
@@ -90,20 +90,20 @@ Describe any substantial timing or memory changes: NA
 
 Code merged by:
 
-Code reviewed by:
+Code reviewed by: gold2718
 
 Summary of pre-tag testing on Betzy:
   - prealpha_noresm :
   - aux_blom_noresm : PASS
-  - aux_cam_noresm  :
-  - aux_clm_noresm  : PASS (diffs)
+  - aux_cam_noresm  : PASS (diffs)
+  - aux_clm_noresm  : PASS (new diagnostic output)
   - aux_cism_noresm : PASS
   - aux_cice_noresm :
 
 Summary of pre-tag testing on Olivia:
   - prealpha_noresm : compared to noresm3_0_beta24- all passed
   - aux_blom_noresm : PASS
-  - aux_cam_noresm  :
+  - aux_cam_noresm  : PASS (except 1-deg NFHIST) (new diagnostic output)
   - aux_clm_noresm  : PASS (except NIHISTClm60NorCplHist - olivia libfabric
   issue)
 
