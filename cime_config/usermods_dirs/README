@@ -2,7 +2,13 @@ Directories here can be included in a case via the --user-mods-dirs
 argument to create_newcase, or via the CPL_USER_MODS XML variable.
 
 These directories provide output support for CMIP7
-cmip7_historybase:    Baseline (for longer runs) output for concentration driven
-cmip7_historyhf:      High frequency output for concentration driven
-cmip7_historybaseESM: Baseline (for longer runs) output for emissions driven
-cmip7_historyhfESM:   High frequency output for emission driven
+- Baseline output usermods for longer runs:
+  - cmip7_historybase:       For concentration driven runs
+  - cmip7_historybaseESM:    For emissions driven runs
+  - cmip7_historybaseGhg:    For concentration driven runs using GHG chemistry
+  - cmip7_historybaseGhgESM: For emissions driven runs using GHG chemistry
+- High frequency output usermods  
+  - cmip7_historyhf:         For concentration driven runs
+  - cmip7_historyhfESM:      For emissions driven runs
+  - cmip7_historyhfGhg:      For concentration driven runs using GHG chemistry
+  - cmip7_historyhfGhgESM:   For emissions driven runs using GHG chemistry
