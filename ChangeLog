@@ -2,7 +2,7 @@
 
 Tag name: noresm3_0_beta26
 Date:
-One-line Summary: Fixed history output, new forcing files
+One-line Summary: Fixed history output, new forcing files, defaults
 
 Details:
 
@@ -23,6 +23,10 @@ cmeps:
 blom:
   - v1.14.11 - Update CVMix to use NorESMhub fork
 
+clm:
+ - ctsm5.4.042_noresm_v10: Update default lapse_rate value for noresm configurations
+
+
 Component tags used in this tag:
 
  - parallelio : NCAR/ParallelIO             : pio2_6_2
@@ -34,7 +38,7 @@ Component tags used in this tag:
  - cam        : NorESMhub/CAM               : noresm3_0_051_cam6_4_121
  - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v3
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v12
- - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v9
+ - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v10
     - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci11_api2
  - cmeps      : NorESMhub/CMEPS             : cmeps1.1.71_noresm_v2
  - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v4
@@ -57,6 +61,7 @@ Summary of pre-tag testing on Betzy:
   - aux_blom_noresm :
   - aux_cam_noresm  :
   - aux_cice_noresm :
+  - aux_clm_noresm  : PASS, difs for NorESM compsets
 
 Summary of pre-tag testing on Olivia:
   - prealpha_noresm :
@@ -64,7 +69,7 @@ Summary of pre-tag testing on Olivia:
   - aux_cice_noresm :
 
 Summarize any change to answers:
-
+ - changes to mass balance in gridcells with glaciers
 
 
 ==============================================================
