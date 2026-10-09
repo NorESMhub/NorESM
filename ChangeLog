@@ -19,7 +19,7 @@ cam:
  - noresm3_0_052_cam6_4_121: Compset and configuration updates
 
 cmeps:
- - cmeps1.1.71._noresm_v2: add new xml variables DOUT_S_AGGREGATE and DOUT_S_AGGREGATE_STREAMS
+  - cmeps1.1.71._noresm_v3 - add new xml variables DOUT_S_AGGREGATE and DOUT_S_AGGREGATE_STREAMS
 
 blom:
  - v1.14.11: Update CVMix to use NorESMhub fork
@@ -44,7 +44,7 @@ Component tags used in this tag:
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v12
  - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v10
     - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci11_api2
- - cmeps      : NorESMhub/CMEPS             : cmeps1.1.71_noresm_v2
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.71_noresm_v3
  - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v4
  - ww3        : NorESMhub/WW3_interface     : main_0.1.0_noresm_v0
  - pycect     : NCAR/PyCECT                 : 3.2.2
