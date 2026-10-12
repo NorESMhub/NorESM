@@ -1,7 +1,7 @@
 ==============================================================
 
 Tag name: noresm3_0_beta26
-Date:
+Date: 12.10.2026
 One-line Summary: Fixed history output, new forcing files, defaults
 
 Details:
@@ -28,6 +28,9 @@ blom:
 clm:
  - ctsm5.4.042_noresm_v10: Update default lapse_rate value for noresm configurations
 
+cism:
+ - cismwrap_2_2_007_noresm_v13: update defaults to be consistent with user_nl* in noresm3_dev simulations
+
 ccs_config:
  - ccs_config_noresm0.0.76: Add aggregate script to aggegrate daily or monthly files into a single yearly file
 
@@ -41,7 +44,7 @@ Component tags used in this tag:
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v3
  - cam        : NorESMhub/CAM               : noresm3_0_052_cam6_4_121
  - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v3
- - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v12
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v13
  - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v10
     - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci11_api2
  - cmeps      : NorESMhub/CMEPS             : cmeps1.1.71_noresm_v3
@@ -61,19 +64,22 @@ Code merged by:
 Code reviewed by:
 
 Summary of pre-tag testing on Betzy:
-  - prealpha_noresm :
+  - prealpha_noresm : PASS
   - aux_blom_noresm :
   - aux_cam_noresm  :
   - aux_cice_noresm :
-  - aux_clm_noresm  : PASS, difs for NorESM compsets
+  - aux_clm_noresm  : PASS, diffs for NorESM compsets
+  - aux_cism_noresm : PASS, DIFFs due to namelist changes
 
 Summary of pre-tag testing on Olivia:
-  - prealpha_noresm :
+  - prealpha_noresm : PASS
   - aux_cam_noresm  :
   - aux_cice_noresm :
+  - aux_cism_noresm : PASS, DIFFs due to namelist changes
 
 Summarize any change to answers:
- - changes to mass balance in gridcells with glaciers
+ - Changes to mass balance in gridcells with glaciers
+ - Changes in cism defaults will not affect ongoing simulatios
 
 
 ==============================================================
