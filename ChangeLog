@@ -34,11 +34,12 @@ cism:
 
 ccs_config:
  - ccs_config_noresm0.0.76: Add aggregate script to aggegrate daily or monthly files into a single yearly file
+ - ccs_config_noresm0.0.77: added cmip7 queue to the config_batch on olivia and betzy to use cmip7 reservations
 
 Component tags used in this tag:
 
  - parallelio : NCAR/ParallelIO             : pio2_6_2
- - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.76
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.77
  - cime       : NorESMhub/cime              : cime6.5.12_noresm_v2
  - share      : NorESMHub/NorESM_share      : share1.1.21_noresm_v0
  - blom       : NorESMhub/BLOM              : v1.14.12
@@ -61,7 +62,7 @@ Describe any changes made to scripts/build system: NA
 
 Describe any substantial timing or memory changes: NA
 
-Code merged by:
+Code merged by: @mvdebolskiy
 
 Code reviewed by: @TomasTorsvik, @gold2718
 
