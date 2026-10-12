@@ -54,6 +54,7 @@ Component tags used in this tag:
 
 Bugs fixed:
  - NorESM #844 : Division by zero due to bug in CVMix. Fixed in blom tag v1.14.11
+ - CAM #318    : Force CO2 emissions off for PI control runs
 
 Describe any changes made to scripts/build system: NA
 
@@ -61,12 +62,12 @@ Describe any substantial timing or memory changes: NA
 
 Code merged by:
 
-Code reviewed by:
+Code reviewed by: @TomasTorsvik, @gold2718
 
 Summary of pre-tag testing on Betzy:
   - prealpha_noresm : PASS
   - aux_blom_noresm : PASS
-  - aux_cam_noresm  :
+  - aux_cam_noresm  : PASS, expected diffs and namelist changes
   - aux_cice_noresm :
   - aux_clm_noresm  : PASS, diffs for NorESM compsets
   - aux_cism_noresm : PASS, DIFFs due to namelist changes
@@ -74,7 +75,7 @@ Summary of pre-tag testing on Betzy:
 Summary of pre-tag testing on Olivia:
   - prealpha_noresm : PASS
   - aux_blom_noresm : PASS
-  - aux_cam_noresm  :
+  - aux_cam_noresm  : PASS, expected diffs and namelist changes
   - aux_cice_noresm :
   - aux_cism_noresm : PASS, DIFFs due to namelist changes
 
