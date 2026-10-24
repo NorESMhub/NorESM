@@ -9,13 +9,16 @@ Details:
 cice:
  - cesm3_cice6_6_3_11_noresm_v4: Add missing cmip7 output
 
+blom:
+ - v1.14.13: Add CF-compliant attributes to netCDF output
+
 Component tags used in this tag:
 
  - parallelio : NCAR/ParallelIO             : pio2_6_2
  - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.77
  - cime       : NorESMhub/cime              : cime6.5.12_noresm_v2
  - share      : NorESMHub/NorESM_share      : share1.1.21_noresm_v0
- - blom       : NorESMhub/BLOM              : v1.14.12
+ - blom       : NorESMhub/BLOM              : v1.14.13
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v3
  - cam        : NorESMhub/CAM               : noresm3_0_053_cam6_4_121
  - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v4
