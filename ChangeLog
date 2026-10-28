@@ -1,10 +1,13 @@
 ===============================================================
 
 Tag name: noresm3_0_beta28
-Date:
-One-line Summary:
+Date: 28.10.2026
+One-line Summary: Compset addition and mods, output updates, bug fixes
 
 Details:
+
+compsets: Create new compsets using GHG chemistry
+testlist: Modify tests to use new compsets, create new testlists for old
 
 cice:
  - cesm3_cice6_6_3_11_noresm_v4: Add missing cmip7 output
