@@ -1,7 +1,7 @@
 ===============================================================
 
 Tag name: noresm3_0_beta28
-Date: 28.10.2026
+Date: 29.10.2026
 One-line Summary: Compset addition and mods, output updates, bug fixes
 
 Details:
@@ -52,17 +52,22 @@ Component tags used in this tag:
  - pycect     : NCAR/PyCECT                 : 3.2.2
 
 Bugs fixed:
+ - https://github.com/NorESMhub/cime/issues/125
+ - large queue is no longer picked up for case.compress on olivia.
+ - https://github.com/NorESMhub/CICE/issues/16
 
 Describe any changes made to scripts/build system:
+ --run-unsupported is no longer needed for compsets in prealpha_noresm
 
 Describe any substantial timing or memory changes:
 
-Code merged by:
+Code merged by: @mvdebolskiy
 
-Code reviewed by:
+Code reviewed by: @mvertens @gold2718
 
 Summary of pre-tag testing on Betzy:
-  - prealpha_noresm : PASS  (DIFFs for fields in blom compsets)
+  - prealpha_noresm : PASS  (DIFFs for fields in blom compsets) 
+                      ERR tests timeout on st_archive
   - aux_blom_noresm : PASS
   - aux_cam_noresm  :
   - aux_clm_noresm  :
