@@ -159,19 +159,11 @@
     <science_support grid="ne30pg3_tn14_ais8gris4"/>
   </compset>
   <compset>
-    <alias>N1PctCO2Gaxg</alias>
-    <lname>1850_CAM70%LT%NORESM%CAMoslo%1PCT_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP</lname>
-  </compset>
-  <compset>
-    <alias>N4xCO2Gaxg</alias>
-    <lname>1850_CAM70%LT%NORESM%CAMoslo%4xCO2_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP</lname>
-  </compset>
-  <compset>
-    <alias>N2xCO2Gaxg</alias>
+    <alias>N2xCO2GhgGaxg</alias>
     <lname>1850_CAM70%LT%NORESM%GHGCAMoslo%2xCO2_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP</lname>
   </compset>
   <compset>
-    <alias>N0p5xCO2Gaxg</alias>
+    <alias>N0p5xCO2GhgGaxg</alias>
     <lname>1850_CAM70%LT%NORESM%GHGCAMoslo%0p5xCO2_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP</lname>
   </compset>
 
