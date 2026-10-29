@@ -69,14 +69,14 @@ Summary of pre-tag testing on Betzy:
   - prealpha_noresm : PASS  (DIFFs for fields in blom compsets) 
                       ERR tests timeout on st_archive
   - aux_blom_noresm : PASS
-  - aux_cam_noresm  :
+  - aux_cam_noresm  : PASS (DIFFs due to new forcing file and compsets)
   - aux_clm_noresm  :
   - aux_cism_noresm :
 
 Summary of pre-tag testing on Olivia:
   - prealpha_noresm : PASS  (DIFFs for fields in blom compsets)
   - aux_blom_noresm : PASS
-  - aux_cam_noresm  :
+  - aux_cam_noresm  : PASS (DIFFs due to new forcing file and compsets)
   - aux_cism_noresm :
 
 Summarize any change to answers:
