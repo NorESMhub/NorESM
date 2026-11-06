@@ -4,6 +4,7 @@
 ! f_albsno	= 'dxxxx'
 ! f_albpnd	= 'dxxxx'
 !----------------------------------------------------------------------------------
+hist_file_period = 'none', 'none', 'none', 'none', 'none'
 histfreq	= 'd','x','x','x','x'
 histfreq_n	=  1,1,1,1,1
 f_hi		= 'dxxxx'
