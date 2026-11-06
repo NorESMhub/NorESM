@@ -6,18 +6,25 @@ One-line Summary:
 
 Details:
 
+Allactive:
+ - Added NAbruptGhgGaxg compset and test for the abrupt-127k experiment
+ - Added usermods variants for Aerocom output runs
 blom:
  - v1.14.14: Fix OpenMP directive for wdust in iHAMOCC
+cam:
+ - noresm3_0_056_cam6_4_121: Update diags, abrupt-127k compset
+cime:
+ - cime6.7.6_noresm_v0: Update to ESMCI cime6.7.6
 
 Component tags used in this tag:
 
  - parallelio : NCAR/ParallelIO             : pio2_6_2
  - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.78
- - cime       : NorESMhub/cime              : cime6.5.12_noresm_v4
+ - cime       : NorESMhub/cime              : cime6.7.6_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.21_noresm_v0
  - blom       : NorESMhub/BLOM              : v1.14.14
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v3
- - cam        : NorESMhub/CAM               : noresm3_0_055_cam6_4_121
+ - cam        : NorESMhub/CAM               : noresm3_0_056_cam6_4_121
  - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v5
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_3_00_002_noresm_v0
  - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v10
