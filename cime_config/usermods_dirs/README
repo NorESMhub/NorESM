@@ -13,6 +13,11 @@ These directories provide output support for CMIP7
   - cmip7_historyhfGhg:      For concentration driven runs using GHG chemistry
   - cmip7_historyhfGhgESM:   For emissions driven runs using GHG chemistry
 - Aerocom output usermods  
+  - cmip7_aerocom:           For concentration driven runs
+  - cmip7_aerocomESM:        For emissions driven runs
+  - cmip7_aerocomGhg:        For concentration driven runs using GHG chemistry
+  - cmip7_aerocomGhgESM:     For emissions driven runs using GHG chemistry
+- High Frequency Aerocom output usermods  
   - cmip7_aerocomhf:         For concentration driven runs
   - cmip7_aerocomhfESM:      For emissions driven runs
   - cmip7_aerocomhfGhg:      For concentration driven runs using GHG chemistry
