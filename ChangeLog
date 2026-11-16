@@ -6,6 +6,8 @@ One-line Summary:
 
 Details:
 
+blom:
+ - v1.14.15: Fix calendar offset for time_bnds
 cice:
  - cesm3_cice6_6_3_11_noresm_v7: add daily cmip7 output for sivol
 
@@ -15,7 +17,7 @@ Component tags used in this tag:
  - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.79
  - cime       : NorESMhub/cime              : cime6.7.6_noresm_v0
  - share      : NorESMHub/NorESM_share      : share1.1.21_noresm_v0
- - blom       : NorESMhub/BLOM              : v1.14.14
+ - blom       : NorESMhub/BLOM              : v1.14.15
  - cam        : NorESMhub/CAM               : noresm3_0_056_cam6_4_121
  - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v3
  - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v7
@@ -28,6 +30,7 @@ Component tags used in this tag:
  - pycect     : NCAR/PyCECT                 : 3.2.2
 
 Bugs fixed:
+ - BLOM: https://github.com/NorESMhub/BLOM/pull/782
 
 Describe any changes made to scripts/build system:
 
