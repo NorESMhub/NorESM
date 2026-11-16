@@ -171,6 +171,26 @@
     <lname>1850_CAM70%LT%NORESM%GHGCAMoslo%abrupt127k_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP</lname>
   </compset>
 
+  <!-- DAMIP : hist-GHG, hist-nat, hist-aer -->	
+  <compset>
+    <alias>NHistGHGonlyGhgGaxg</alias>
+    <lname>1850_CAM70%LT%NORESM%GHGCAMoslo%histGHG_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP</lname>
+    <science_support grid="ne16pg3_tn14_ais8gris4"/>
+    <science_support grid="ne30pg3_tn14_ais8gris4"/>
+  </compset>
+  <compset>
+    <alias>NHistNATonlyGhgGaxg</alias>
+    <lname>1850_CAM70%LT%NORESM%GHGCAMoslo%histNAT_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP</lname>
+    <science_support grid="ne16pg3_tn14_ais8gris4"/>
+    <science_support grid="ne30pg3_tn14_ais8gris4"/>
+  </compset>
+  <compset>
+    <alias>NHistAEROXIDonlyGhgGaxg</alias>
+    <lname>1850_CAM70%LT%NORESM%GHGCAMoslo%histAEROXID_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP</lname>
+    <science_support grid="ne16pg3_tn14_ais8gris4"/>
+    <science_support grid="ne30pg3_tn14_ais8gris4"/>
+  </compset>
+
   <!-- CLM variants for testing -->
   <compset>
     <alias>N2000Clm60Sp</alias>
