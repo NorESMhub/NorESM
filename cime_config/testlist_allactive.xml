@@ -4,6 +4,7 @@
   <test name="ERS_Ld5" grid="f09_tn14" compset="N1850frc2" testmods="allactive/defaultio">
     <machines>
       <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
+      <machine name="olivia" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00 </option>
@@ -12,6 +13,7 @@
   <test name="SMS_D_Ld1" grid="f09_tn14" compset="N1850frc2" testmods="allactive/defaultio">
     <machines>
       <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
+      <machine name="olivia" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00 </option>
@@ -20,6 +22,7 @@
   <test name="PFS" grid="f09_tn14" compset="N1850frc2" testmods="allactive/defaultio">
     <machines>
       <machine name="betzy" compiler="intel" category="prealpha_noresm"/>
+      <machine name="olivia" compiler="intel" category="prealpha_noresm"/>
     </machines>
     <options>
       <option name="wallclock"> 01:00 </option>
