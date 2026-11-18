@@ -11,6 +11,7 @@ blom:
 cice:
  - cesm3_cice6_6_3_11_noresm_v7: add daily cmip7 output for sivol
 cmeps:
+ - cmeps1.1.76_noresm_v1: add cache root xmlvar
  - cmeps1.1.76_noresm_v0: updated to escomp cmeps1.1.76
 
 Component tags used in this tag:
@@ -26,7 +27,7 @@ Component tags used in this tag:
  - cism       : NorESMhub/CISM-wrapper      : cismwrap_3_00_002_noresm_v0
  - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v10
     - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci11_api2
- - cmeps      : NorESMhub/CMEPS             : cmeps1.1.76_noresm_v0
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.76_noresm_v1
  - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v4
  - ww3        : NorESMhub/WW3_interface     : main_0.1.0_noresm_v0
  - pycect     : NCAR/PyCECT                 : 3.2.2
