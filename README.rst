@@ -6,51 +6,105 @@
   NorESM development branch
 =============================
 
-This is the main development branch for NorESM, which is currently in
-development towards NorESM2.5.
+This is the main development branch for the Norwegian Earth System Model
+(NorESM), currently in development towards the NorESM3.0 release.
 
-* This branch is for technical testing only!
+* This branch is for technical testing only! It is not a released version
+  and results from it should not be used for scientific analysis.
 
-* Externals.cfg in this branch points to the latest tag versions of NorESM
-  components that are consitent with the NorESM2.5 build system.
+* The component versions in this branch are defined by the git submodules
+  listed in **.gitmodules** (see `Obtaining the full model code`_). Each
+  submodule is pinned to a tagged version of the NorESM component, via the
+  ``fxtag`` entry, consistent with the NorESM3.0 build system.
 
+* Development tags are named ``noresm3_0_betaNN`` (alpha/beta tags) and
+  ``noresm3_0_*`` for releases. All changes between tags, including the
+  component versions used, are recorded in the **ChangeLog** file.
 
- The Community Earth System Model
-==================================
+NorESM is based on the Community Earth System Model (CESM). Information on
+the model, usage and contributing is found in:
 
-See the CESM web site for documentation and information:
+* NorESM home page: https://www.noresm.org/
+* NorESM3.0 user guide: https://noresm-docs.readthedocs.io/en/noresm3.0/index.html
+* Contributing guidelines: `CONTRIBUTING.md <CONTRIBUTING.md>`_
+* Code of conduct: `CODE_OF_CONDUCT.md <CODE_OF_CONDUCT.md>`_
+* Issues and bug reports: https://github.com/NorESMhub/NorESM/issues
+* NorESM user mailing list: https://www.noresm.org/mailman/listinfo/users_noresm.org
 
-http://www.cesm.ucar.edu
+For background on the underlying CESM framework, see the CESM web site
+(https://www.cesm.ucar.edu) and the CIME documentation
+(https://esmci.github.io/cime/).
 
-The CESM Quickstart Guide is available at:
+License
+=======
 
-http://escomp.github.io/cesm
-
-This repository provides tools for managing the external components that
-make up a CESM tag - alpha, beta and release. CESM tag creation should
-be coordinated through CSEG at NCAR.
-
-This repository is also connected to slack at http://cesm2.slack.com
+NorESM is copyright of the NorESM developers group and is distributed under
+the terms given in **LICENSE.txt**. The parts of the code that originate from
+CESM are covered by the CESM license in **LICENSE-CESM.txt**. Some NorESM
+components have a different license, e.g. BLOM is licensed under the GNU
+Lesser General Public License version 3. See **LICENSE.txt** for details; the
+license of each component must be obeyed when using, modifying or sharing it.
 
 .. sectnum::
 
 .. contents::
 
+Model components
+================
+
+The model is assembled from the following repositories (checked out as
+submodules, see **.gitmodules** for the exact versions):
+
+.. list-table::
+   :header-rows: 1
+
+   * - Path
+     - Component
+     - Repository (NorESMhub)
+   * - components/cam
+     - Atmosphere (CAM-Nor)
+     - CAM
+   * - components/clm
+     - Land (CTSM, incl. FATES)
+     - CTSM
+   * - components/blom
+     - Ocean and ocean biogeochemistry (BLOM/iHAMOCC)
+     - BLOM
+   * - components/cice
+     - Sea ice (CICE6)
+     - NorESM_CICE
+   * - components/cism
+     - Land ice (CISM)
+     - CISM-wrapper
+   * - components/mosart
+     - River routing (MOSART)
+     - MOSART
+   * - components/ww3
+     - Waves (WW3 interface)
+     - WW3_interface
+   * - components/cmeps
+     - Coupler (CMEPS)
+     - CMEPS
+   * - components/cdeps
+     - Data models (CDEPS)
+     - CDEPS
+
+Supporting repositories are ``cime``, ``ccs_config`` (machine and compiler
+configuration), ``share``, ``libraries/parallelio`` (PIO) and ``tools/statistical_ensemble_test/pyCECT``.
+
 Software requirements
 =====================
 
-Software requirements for installing, building and running CESM
----------------------------------------------------------------
+Software requirements for installing, building and running NorESM
+-----------------------------------------------------------------
 
-Installing, building and running CESM requires:
+Installing, building and running NorESM requires:
 
-* a Unix-like operating system (Linux, AIX, OS X, etc.)
+* a Unix-like operating system (Linux, OS X, etc.)
 
-* git client version 1.8 or newer
+* git client version 2.25 or newer (needed by git-fleximod)
 
-* subversion client (we have tested with versions 1.6.11 and newer)
-
-* python3 version 3.6 or newer
+* python3 version 3.8 or newer
 
 * perl version 5
 
@@ -63,7 +117,7 @@ Installing, building and running CESM requires:
 * LAPACK and BLAS libraries
 
 * a NetCDF library version 4.3 or newer built with the same compiler you
-  will use for CESM
+  will use for NorESM
 
   * a PnetCDF library is optional
 
@@ -75,187 +129,143 @@ Details on Fortran compiler versions
 The Fortran compiler must support Fortran 2003 features. However, even
 among mainstream Fortran compilers that claim to support Fortran 2003,
 we have found numerous bugs. Thus, many compiler versions do *not* build
-or run CESM properly (see
-https://wiki.ucar.edu/display/ccsm/Fortran+Compiler+Bug+List for more
-details on older Fortran compiler versions).
+or run NorESM properly. Supported compilers and machines are defined in the
+``ccs_config`` submodule.
 
-CESM2 is tested on several different systems with newer Fortran compilers:
-Please see `CESM Compiler/Machine Tests <https://docs.google.com/spreadsheets/d/15QUqsXD1Z0K_rYNTlykBvjTRt8s0XcQw0cfAj9DZbj0/edit#gid=0>`_
-for a spreadsheet of the current results.
+More details on porting NorESM
+------------------------------
 
-More details on porting CESM
-----------------------------
+For more details on porting NorESM to a new machine, see
+https://esmci.github.io/cime/versions/master/html/users_guide/porting-cime.html
+and the NorESM user guide.
 
-For more details on porting CESM to a new machine, see
-http://esmci.github.io/cime/users_guide/porting-cime.html
+Obtaining the full model code
+=============================
 
-Obtaining the full model code and associated scripting infrastructure
-=====================================================================
-
-CESM is now released via github. You will need some familiarity with git in order
-to modify the code and commit these changes. However, to simply checkout and run the
-code, no git knowledge is required other than what is documented in the following steps.
-
-To obtain the CESM code you need to do the following:
+NorESM is distributed via GitHub. To obtain the code do the following:
 
 #. Clone the repository. ::
 
-      git clone https://github.com/escomp/cesm.git my_cesm_sandbox
+      git clone https://github.com/NorESMhub/NorESM.git my_noresm_sandbox
 
-   This will create a directory ``my_cesm_sandbox/`` in your current working directory.
+   This will create a directory ``my_noresm_sandbox/`` in your current
+   working directory.
 
-#. Go into the newly created CESM repository and determine what version of CESM you want.
-   To see what cesm tags are available, simply issue the **git tag** command. ::
+#. Go into the newly created repository and select the version you want.
+   To see which NorESM tags are available, use **git tag**. The development
+   branch is checked out by default::
 
-      cd my_cesm_sandbox
+      cd my_noresm_sandbox
       git tag
+      git checkout noresm_develop   # or a tag, e.g. noresm3_0_beta30
 
-#. Do a git checkout of the tag you want. If you want to checkout release-cesm2.1.2, you would issue the following. ::
+   (When checking out a tag you will get a message about being in
+   'detached HEAD' state. This is normal and expected.)
 
-      git checkout release-cesm2.1.2
+#. Fetch the components with **git-fleximod**. ::
 
-   (It is normal and expected to get a message about being in 'detached
-   HEAD' state. For now you can ignore this, but it becomes important if
-   you want to make changes to your Externals.cfg file and commit those
-   changes to a branch.)
+      ./bin/git-fleximod update
 
-#. Run the script **manage_externals/checkout_externals**. ::
+   **git-fleximod** is a package manager that populates the sandbox with
+   the relevant versions of each component and the CIME infrastructure,
+   as specified in **.gitmodules**.
 
-      ./manage_externals/checkout_externals
+At this point you have a working version of NorESM.
 
-   The **checkout_externals** script is a package manager that will
-   populate the cesm directory with the relevant versions of each of the
-   components along with the CIME infrastructure code.
+To see full details of how to set up a case, compile and run, see the
+NorESM user guide and the CIME documentation.
 
-At this point you have a working version of CESM.
+More details on git-fleximod
+----------------------------
 
-To see full details of how to set up a case, compile and run, see the CIME documentation at http://esmci.github.io/cime/ .
+The file **.gitmodules** in your top-level directory tells
+**git-fleximod** which version (``fxtag``) of each component should be
+brought in to generate your sandbox. The commit recorded by git for each
+submodule must be consistent with its ``fxtag``. To check this, use::
 
-More details on checkout_externals
-----------------------------------
+  ./bin/git-fleximod status
 
-The file **Externals.cfg** in your top-level CESM directory tells
-**checkout_externals** which tag/branch of each component should be
-brought in to generate your sandbox. (This file serves the same purpose
-as SVN_EXTERNAL_DIRECTORIES when CESM was in a subversion repository.)
+**You need to rerun** ``./bin/git-fleximod update`` **whenever the
+submodule versions have changed**. Common times when this is needed are:
 
-NOTE: Just like svn externals, checkout_externals will always attempt
-to make the working copy exactly match the externals description. For
-example, if you manually modify an external without updating Externals.cfg,
-(e.g. switch to a different tag), then rerunning checkout_externals
-will automatically restore the externals described in Externals.cfg. See
-below documentation `Customizing your CESM sandbox`_ for more details.
+* After checking out a new NorESM branch/tag
 
-**You need to rerun checkout_externals whenever Externals.cfg has
-changed** (unless you have already manually updated the relevant
-external(s) to have the correct branch/tag checked out). Common times
-when this is needed are:
-
-* After checking out a new CESM branch/tag
-
-* After merging some other CESM branch/tag into your currently
+* After merging some other NorESM branch/tag into your currently
   checked-out branch
 
-**checkout_externals** must be run from the root of the source
-tree. For example, if you cloned CESM with::
+**git-fleximod** should be run from the root of the source tree. To see
+more details, issue ::
 
-  git clone https://github.com/escomp/cesm.git my_cesm_sandbox
+  ./bin/git-fleximod --help
 
-then you must run **checkout_externals** from
-``/path/to/my_cesm_sandbox``.
+Customizing your NorESM sandbox
+===============================
 
-To see more details of **checkout_externals**, issue ::
-
-  ./manage_externals/checkout_externals --help
-
-Customizing your CESM sandbox
-=============================
-
-There are several use cases to consider when you want to customize or modify your CESM sandbox.
-
-Switching to a different CESM tag
----------------------------------
+Switching to a different NorESM tag
+-----------------------------------
 
 If you have already checked out a tag and **HAVE NOT MADE ANY
-MODIFICATIONS** it is simple to change your sandbox. Say that you
-checked out release-cesm2.1.2 but really wanted to have release-cesm2.1.3;
-you would simply do the following::
+MODIFICATIONS** it is simple to change your sandbox::
 
-  git checkout release-cesm2.1.3
-  ./manage_externals/checkout_externals
+  git checkout noresm3_0_beta30
+  ./bin/git-fleximod update
 
 You should **not** use this method if you have made any source code
-changes, or if you have any ongoing CESM cases that were created from
-this sandbox. In these cases, it is often easiest to do a second **git
-clone**.
+changes, or if you have any ongoing cases that were created from this
+sandbox. In these cases, it is often easiest to do a second **git clone**.
 
 Pointing to a different version of a component
 ----------------------------------------------
 
-Each entry in **Externals.cfg** has the following form (we use CAM as an
-example below)::
+Each submodule entry in **.gitmodules** has the following form (we use CAM
+as an example)::
 
-  [cam]
-  tag = trunk_tags/cam5_4_143/components/cam
-  protocol = svn
-  repo_url = https://svn-ccsm-models.cgd.ucar.edu/cam1
-  local_path = components/cam
-  required = True
+  [submodule "cam"]
+  path = components/cam
+  url = https://github.com/NorESMhub/CAM.git
+  fxtag = noresm3_0_057_cam6_4_121
+  fxrequired = ToplevelRequired
+  fxDONOTUSEurl = https://github.com/NorESMhub/CAM.git
 
-Each entry specifies either a tag or a branch. To point to a new tag:
+To point to a different version of a component, you can either:
 
-#. Modify the relevant entry/entries in **Externals.cfg** (e.g., changing
-   ``cam5_4_143`` to ``cam5_4_144`` above)
+* change into the submodule directory and check out the desired tag or
+  branch with git; or
 
-#. Checkout the new component(s)::
-
-     ./manage_externals/checkout_externals
+* modify the ``fxtag`` entry in **.gitmodules** and run
+  ``./bin/git-fleximod update``.
 
 Keep in mind that changing individual components from a tag may result
 in an invalid model (won't compile, won't run, not scientifically
 meaningful) and is unsupported.
 
-Committing your change to Externals.cfg
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Committing your change to a component version
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After making this change, it's a good idea to commit the change in your
-local CESM git repository. First create a CESM branch in your local
-repository, then commit it. (Unlike with subversion, branches are stored
-locally unless you explicitly push them up to github. Feel free to
-create whatever local branches you'd like.) For example::
+After changing a component version, commit the change in your local git
+repository, on a branch, so that the sandbox stays reproducible. For
+example::
 
-  git checkout -b my_cesm_branch
-  git add Externals.cfg
-  git commit -m "Update CAM to cam5_4_144"
+  git checkout -b my_noresm_branch
+  git add .gitmodules components/cam
+  git commit -m "Update CAM to noresm3_0_058_cam6_4_121"
 
 Modifying a component
 ---------------------
 
-If you'd like to modify a component via a branch and point to that
-branch in your CESM sandbox, use the following procedure (again, using
-CAM as an example):
+If you'd like to modify a component and use your changes in your sandbox
+(again using CAM as an example):
 
-#. Create a CAM branch. Since CAM originates from a subversion
-   repository, you will first need to create a branch in that
-   repository. Let's assume you have created this branch and called it
-   **my_branch**.
+#. Fork the component repository (e.g. NorESMhub/CAM) on GitHub and create
+   a branch for your development.
 
-#. Update **Externals.cfg** to point to your branch. You can replace the
-   **tag** entry with a **branch** entry, as follows::
+#. Point the submodule to your fork and branch, e.g. by changing into
+   ``components/cam``, adding your fork as a remote, and checking out your
+   branch. Commit the updated submodule hash in the top-level repository.
 
-     [cam]
-     branch = branches/my_branch/components/cam
-     protocol = svn
-     repo_url = https://svn-ccsm-models.cgd.ucar.edu/cam1
-     local_path = components/cam
-     required = True
-
-#. Checkout your branch::
-
-     ./manage_externals/checkout_externals
-
-It's a good idea to commit your **Externals.cfg** file changes. See the above
-documentation, `Committing your change to Externals.cfg`_.
+#. Open a pull request to the relevant NorESM component repository, and
+   later a pull request to this repository to update the component version.
+   See `CONTRIBUTING.md <CONTRIBUTING.md>`_ and the NorESM user guide.
 
 Developer setup
 ===============
@@ -264,4 +274,9 @@ Developers who have not already done so should follow the recommended
 `one-time <https://github.com/esmci/cime/wiki/CIME-Git-Workflow#configure-git-one-time>`_
 setup directions for git. Developers may also want to set up
 `ssh <https://help.github.com/articles/connecting-to-github-with-ssh/>`_
-keys and switch to using the ``git@github.com:ESCOMP/cesm.git`` form of the github URLs.
+keys and switch to using the ``git@github.com:NorESMhub/NorESM.git`` form of
+the github URLs.
+
+Pull requests to this repository should use the provided issue and pull
+request templates, and each new tag should be documented in the **ChangeLog**
+(see **ChangeLog_template**).
