@@ -76,20 +76,22 @@ Code merged by:
 Code reviewed by:
 
 Summary of pre-tag testing on Betzy:
-  - prealpha_noresm :
+  - prealpha_noresm : PASS (diffs for all ne30 and hist ne16 tests)
   - aux_blom_noresm :
   - aux_cam_noresm  :
   - aux_clm_noresm  : PASS (diffs for tests where fates fix is applied)
   - aux_cism_noresm :
 
 Summary of pre-tag testing on Olivia:
-  - prealpha_noresm :
+  - prealpha_noresm : PASS (diffs for all ne30 and hist ne16 tests)
   - aux_blom_noresm :
   - aux_cam_noresm  :
   - aux_cism_noresm :
   - aux_clm_noresm  : PASS (diffs for tests where fates fix is applied)
 
 Summarize any change to answers:
+
+See test diffs.
 
 ===============================================================
 
