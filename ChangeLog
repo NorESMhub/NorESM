@@ -1,3 +1,443 @@
+===============================================================
+
+Tag name: noresm3_0_beta30
+Date: 23.11.2026
+One-line Summary: Fix CLM crashes; DAMIP compsets
+
+Details:
+
+compsets:
+ - Three new compsets, part of DAMIP
+blom:
+ - v1.14.15: Fix calendar offset for time_bnds
+cam:
+ - noresm3_0_057_cam6_4_121: Three DAMIP compsets
+cice:
+ - cesm3_cice6_6_3_11_noresm_v7: add daily cmip7 output for sivol
+cmeps:
+ - cmeps1.1.76_noresm_v0: updated to escomp cmeps1.1.76
+ - cmeps1.1.76_noresm_v1: add cache root xmlvar
+ - cmeps1.1.76_noresm_v2: add d_project_root for works dirs which have project in them
+cdeps:
+ - cdeps1.0.94_noresm_v4: fix cplhist data streams not getting on input_data_list
+ccs_config:
+ - ccs_config_noresm0.0.81: env vars for intel on olivia to avoid hangs
+ - ccs_config_noresm0.0.82: add cache variables and templates to olivia
+cime:
+ - cime6.7.6_noresm_v1: Add caching to check_input_data and case.submit
+clm:
+ - ctsm5.4.042_noresm_v11: update submodules and add vars to cmip7-hf usermod
+ - noresm3_0_rel_beta30: Fix for crashes in transient runs with landuse.
+ - fates:
+   - noresm3_0_rel_beta30: Fix for crashes in transient runs with landuse.
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.82
+ - cime       : NorESMhub/cime              : cime6.7.6_noresm_v1
+ - share      : NorESMHub/NorESM_share      : share1.1.21_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.14.15
+ - cam        : NorESMhub/CAM               : noresm3_0_057_cam6_4_121
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v4
+ - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v7
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_3_00_002_noresm_v0
+ - clm        : NorESMhub/CTSM              : noresm3_0_rel_beta30
+    - fates   : NorESMhub/fates             : noresm3_0_rel_beta30
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.76_noresm_v2
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v4
+ - ww3        : NorESMhub/WW3_interface     : main_0.1.0_noresm_v0
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+ - BLOM: https://github.com/NorESMhub/BLOM/pull/782
+
+Describe any changes made to scripts/build system:
+
+There are now several new xml variables: D_PROJECT_ROOT (/cluster/work/projects/$PROJECT on olivia),
+DIN_CACHE_ROOT and a template file in ccs_config/machines/$MACHINE. DIN_LOC_ROOT on olivia now points to:
+D_PROJECT_ROOT/inputdata. A new subroutine that runs in check_input_data and case.submit will symlink files
+in DIN_CACHE_ROOT to DIN_LOC_ROOT based on Buildconf/*.input_data_list files BEFORE the usual download starts.
+If there is no symlink to a valid file or an actual file in DIN_LOC_ROOT, check_input_data will start a hydrator job,
+by making a filelist and .conf files in $CASEROOT/inputdata_cache. These will be picked up by hydrator and it will try to
+get those files from cdl service to DIN_CACHE_ROOT, if files are succesfully cached, they will get symlinked to DIN_LOC_ROOT.
+If hydrator failed to cache files, a normal download from servers into DIN_LOC_ROOT will happen.
+This will happen ONLY to the files that have DIN_LOC_ROOT as part of their paths.
+
+To reproduce runs with previous beta versions, use_fates_ptfix should be set to .false. However, this might result in crash in fates.
+This flag is true by default apart from 1850 compsets with ne16.
+
+Fates and CTSM are now using noresm3_0_rel_XXX tags and noresm3_0_rel branch.
+
+Describe any substantial timing or memory changes:
+
+Code merged by:
+
+Code reviewed by:
+
+Summary of pre-tag testing on Betzy:
+  - prealpha_noresm : PASS (diffs for all ne30 and hist ne16 tests)
+  - aux_blom_noresm :
+  - aux_cam_noresm  :
+  - aux_clm_noresm  : PASS (diffs for tests where fates fix is applied)
+  - aux_cism_noresm :
+
+Summary of pre-tag testing on Olivia:
+  - prealpha_noresm : PASS (diffs for all ne30 and hist ne16 tests)
+  - aux_blom_noresm : PASS
+  - aux_cam_noresm  :
+  - aux_cism_noresm :
+  - aux_clm_noresm  : PASS (diffs for tests where fates fix is applied)
+
+Summarize any change to answers:
+
+See test diffs.
+
+===============================================================
+
+Tag name: noresm3_0_beta29a
+Date:
+One-line Summary: update to ccs_config for exclusive nodes on olivia
+
+Details:
+
+ccs_config:
+ - ccs_config_noresm0.0.79: exclusive nodes on olivia
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.79
+ - cime       : NorESMhub/cime              : cime6.7.6_noresm_v0
+ - share      : NorESMHub/NorESM_share      : share1.1.21_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.14.14
+ - cam        : NorESMhub/CAM               : noresm3_0_056_cam6_4_121
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v3
+ - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v6
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_3_00_002_noresm_v0
+ - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v10
+    - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci11_api2
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.71_noresm_v4
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v4
+ - ww3        : NorESMhub/WW3_interface     : main_0.1.0_noresm_v0
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+
+Describe any changes made to scripts/build system:
+
+Describe any substantial timing or memory changes:
+
+Code merged by:
+
+Code reviewed by:
+
+Summary of pre-tag testing on Betzy:
+  - prealpha_noresm :
+  - aux_blom_noresm :
+  - aux_cam_noresm  :
+  - aux_clm_noresm  :
+  - aux_cism_noresm :
+
+Summary of pre-tag testing on Olivia:
+  - prealpha_noresm :
+  - aux_blom_noresm :
+  - aux_cam_noresm  :
+  - aux_cism_noresm :
+
+Summarize any change to answers:
+
+===============================================================
+
+Tag name: noresm3_0_beta29
+Date:
+One-line Summary:
+
+Details:
+
+Allactive:
+ - Added NAbruptGhgGaxg compset and test for the abrupt-127k experiment
+ - Added usermods variants for Aerocom output runs
+blom:
+ - v1.14.14: Fix OpenMP directive for wdust in iHAMOCC
+cam:
+ - noresm3_0_056_cam6_4_121: Update diags, abrupt-127k compset
+cime:
+ - cime6.7.6_noresm_v0: Update to ESMCI cime6.7.6
+cice:
+ - cesm3_cice6_6_3_11_noresm_v6: fix cice namelist issues
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.78
+ - cime       : NorESMhub/cime              : cime6.7.6_noresm_v0
+ - share      : NorESMHub/NorESM_share      : share1.1.21_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.14.14
+ - cam        : NorESMhub/CAM               : noresm3_0_056_cam6_4_121
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v3
+ - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v6
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_3_00_002_noresm_v0
+ - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v10
+    - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci11_api2
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.71_noresm_v4
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v4
+ - ww3        : NorESMhub/WW3_interface     : main_0.1.0_noresm_v0
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+
+Describe any changes made to scripts/build system:
+
+Describe any substantial timing or memory changes:
+
+Code merged by: @gold2718
+
+Code reviewed by: @TomasTorsvik, @mvertens
+
+Summary of pre-tag testing on Betzy:
+  - prealpha_noresm : all passed except for expected differences
+  - aux_blom_noresm :
+  - aux_cam_noresm  : all passed except for expected differences
+  - aux_clm_noresm  :
+  - aux_cism_noresm :
+
+Summary of pre-tag testing on Olivia:
+  - prealpha_noresm : all passed except for expected differences
+  - aux_blom_noresm :
+  - aux_cam_noresm  : all passed except for expected differences
+  - aux_cism_noresm :
+
+Summarize any change to answers: changes for a few cice fields
+
+===============================================================
+
+Tag name: noresm3_0_beta28
+Date: 29.10.2026
+One-line Summary: Compset addition and mods, output updates, bug fixes
+
+Details:
+
+compsets: Create new compsets using GHG chemistry
+testlist: Modify tests to use new compsets, create new testlists for old
+
+cice:
+ - cesm3_cice6_6_3_11_noresm_v4: Add missing cmip7 output
+ - cesm3_cice6_6_3_11_noresm_v5: New monthly files with daily output
+
+blom:
+ - v1.14.13: Add CF-compliant attributes to netCDF output
+
+ccs_config:
+ - ccs_config_noresm0.0.0.78:  fixes fro aggregate and compress workflows prereqs
+
+cime:
+ - cime6.5.12_noresm_v3: Bugfix for single processor jobs setting up compress job's queue
+ - cime6.5.12_noresm_v4: Fix unsupported compset + resolution message
+
+cmeps:
+ - cmeps1.1.71_noresm_v4: extra xml variables to control noresm workflows.
+
+cam:
+ - noresm3_0_054_cam6_4_121:
+   - Modifications in CAM to allow for 2xCO2 and 0.5xCO2 CMIP7 compsets
+   - Updated forcing in historical and amip use-cases
+ - noresm3_0_055_cam6_4_121:
+   - Update diagnostics from request sheet and implement some fixes
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.78
+ - cime       : NorESMhub/cime              : cime6.5.12_noresm_v4
+ - share      : NorESMHub/NorESM_share      : share1.1.21_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.14.13
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v3
+ - cam        : NorESMhub/CAM               : noresm3_0_055_cam6_4_121
+ - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v5
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_3_00_002_noresm_v0
+ - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v10
+    - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci11_api2
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.71_noresm_v4
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v4
+ - ww3        : NorESMhub/WW3_interface     : main_0.1.0_noresm_v0
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+ - https://github.com/NorESMhub/cime/issues/125
+ - large queue is no longer picked up for case.compress on olivia.
+ - https://github.com/NorESMhub/CICE/issues/16
+
+Describe any changes made to scripts/build system:
+ --run-unsupported is no longer needed for compsets in prealpha_noresm
+
+Describe any substantial timing or memory changes:
+
+Code merged by: @mvdebolskiy
+
+Code reviewed by: @mvertens @gold2718
+
+Summary of pre-tag testing on Betzy:
+  - prealpha_noresm : PASS  (DIFFs for fields in blom compsets)
+                      ERR tests timeout on st_archive
+  - aux_blom_noresm : PASS
+  - aux_cam_noresm  : PASS (DIFFs due to new forcing file and compsets)
+  - aux_clm_noresm  :
+  - aux_cism_noresm :
+
+Summary of pre-tag testing on Olivia:
+  - prealpha_noresm : PASS  (DIFFs for fields in blom compsets)
+  - aux_blom_noresm : PASS
+  - aux_cam_noresm  : PASS (DIFFs due to new forcing file and compsets)
+  - aux_cism_noresm :
+
+Summarize any change to answers:
+  - BLOM output differ in field lists, due to inclusion of
+    time_bnds variable, as required for CF-compliant output.
+
+===============================================================
+
+Tag name: noresm3_0_beta27
+Date: 16.10.2027
+One-line Summary: CISM history and restart files
+
+Details:
+
+cism:
+ - cismwrap_3_00_002_noresm_v0: make CISM history and restart files follow CESM conventions
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.77
+ - cime       : NorESMhub/cime              : cime6.5.12_noresm_v2
+ - share      : NorESMHub/NorESM_share      : share1.1.21_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.14.12
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v3
+ - cam        : NorESMhub/CAM               : noresm3_0_053_cam6_4_121
+ - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v3
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_3_00_002_noresm_v0
+ - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v10
+    - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci11_api2
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.71_noresm_v3
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v4
+ - ww3        : NorESMhub/WW3_interface     : main_0.1.0_noresm_v0
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+
+Describe any changes made to scripts/build system:
+
+Describe any substantial timing or memory changes:
+
+Code merged by: @TomasTorsvik
+
+Code reviewed by: @maritsanstad, @matsbn
+
+Summary of pre-tag testing on Betzy:
+  - prealpha_noresm : PASS
+  - aux_blom_noresm :
+  - aux_cam_noresm  :
+  - aux_clm_noresm  :
+  - aux_cism_noresm :
+
+Summary of pre-tag testing on Olivia:
+  - prealpha_noresm : PASS
+  - aux_blom_noresm :
+  - aux_cam_noresm  :
+  - aux_cism_noresm : PASS
+
+Summarize any change to answers:
+
+
+==============================================================
+
+Tag name: noresm3_0_beta26
+Date: 12.10.2026
+One-line Summary: Fixed history output, new forcing files, defaults
+
+Details:
+
+cdeps:
+ - cdeps1.0.94_noresm_v3: New input4mip prescribed forcing data
+
+cice:
+ - cesm3_cice6_6_3_11_noresm_v3: new xml variables for prescribed mode
+
+mosart:
+ - mosart1.1.12_noresm_v4: removed instantaneous history files
+
+cam:
+ - noresm3_0_052_cam6_4_121: Compset and configuration updates
+ - noresm3_0_053_cam6_4_121: Fix 1pct and 4xco2 fully-coupled configurations
+
+cmeps:
+  - cmeps1.1.71._noresm_v3 - add new xml variables DOUT_S_AGGREGATE and DOUT_S_AGGREGATE_STREAMS
+
+blom:
+ - v1.14.11: Update CVMix to use NorESMhub fork
+ - v1.14.12: Switch off sediment spinup by default
+
+clm:
+ - ctsm5.4.042_noresm_v10: Update default lapse_rate value for noresm configurations
+
+cism:
+ - cismwrap_2_2_007_noresm_v13: update defaults to be consistent with user_nl* in noresm3_dev simulations
+
+ccs_config:
+ - ccs_config_noresm0.0.76: Add aggregate script to aggegrate daily or monthly files into a single yearly file
+ - ccs_config_noresm0.0.77: added cmip7 queue to the config_batch on olivia and betzy to use cmip7 reservations
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.77
+ - cime       : NorESMhub/cime              : cime6.5.12_noresm_v2
+ - share      : NorESMHub/NorESM_share      : share1.1.21_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.14.12
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v3
+ - cam        : NorESMhub/CAM               : noresm3_0_053_cam6_4_121
+ - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v3
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_2_2_007_noresm_v13
+ - clm        : NorESMhub/CTSM              : ctsm5.4.042_noresm_v10
+    - fates   : NorESMhub/fates             : sci.1.92.5_api.46.0.0_nor_sci11_api2
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.71_noresm_v3
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v4
+ - ww3        : NorESMhub/WW3_interface     : main_0.1.0_noresm_v0
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+ - NorESM #844 : Division by zero due to bug in CVMix. Fixed in blom tag v1.14.11
+ - CAM #318    : Force CO2 emissions off for PI control runs
+
+Describe any changes made to scripts/build system: NA
+
+Describe any substantial timing or memory changes: NA
+
+Code merged by: @mvdebolskiy
+
+Code reviewed by: @TomasTorsvik, @gold2718
+
+Summary of pre-tag testing on Betzy:
+  - prealpha_noresm : PASS
+  - aux_blom_noresm : PASS
+  - aux_cam_noresm  : PASS, expected diffs and namelist changes
+  - aux_cice_noresm :
+  - aux_clm_noresm  : PASS, diffs for NorESM compsets
+  - aux_cism_noresm : PASS, DIFFs due to namelist changes
+
+Summary of pre-tag testing on Olivia:
+  - prealpha_noresm : PASS
+  - aux_blom_noresm : PASS
+  - aux_cam_noresm  : PASS, expected diffs and namelist changes
+  - aux_cice_noresm :
+  - aux_cism_noresm : PASS, DIFFs due to namelist changes
+
+Summarize any change to answers:
+ - Changes to mass balance in gridcells with glaciers
+ - Changes in cism defaults will not affect ongoing simulatios
+
+
 ==============================================================
 
 Tag name: noresm3_0_beta25
@@ -43,10 +483,10 @@ cam:
 clm:
  - ctsm5.4.042_noresm_v9
    - submodule updates to support new cime_model
-   - extra tape for cmip7 high frequency output 
-   - update to albice and lapse_rates defaults 
+   - extra tape for cmip7 high frequency output
+   - update to albice and lapse_rates defaults
    - fates: sci.1.92.5_api.46.0.0_nor_sci11_api2
-     - fix for ne30 historical runs with carbon balance fail 
+     - fix for ne30 historical runs with carbon balance fail
      - switch logging from 30th of Jan to daily
      - limit harvest rate
      - clear all pfts when transition to rangeland
@@ -109,7 +549,7 @@ Summary of pre-tag testing on Olivia:
 
 Summarize any change to answers:
 
-- CLM: slight changes in carbon fluxes in coastal gridcells 
+- CLM: slight changes in carbon fluxes in coastal gridcells
       where tiny patches get destroyed by lu-transitions
 
 
