@@ -34,9 +34,9 @@ Describe any changes made to scripts/build system: NA
 
 Describe any substantial timing or memory changes: NA
 
-Code merged by: @mvdebolskiy
+Code merged by: @TomasTorsvik
 
-Code reviewed by: @gold2718 , @TomasTorsvik
+Code reviewed by:
 
 Summary of pre-tag testing on Betzy:
   - prealpha_noresm :
@@ -127,9 +127,9 @@ Fates and CTSM are now using noresm3_0_rel_XXX tags and noresm3_0_rel branch.
 
 Describe any substantial timing or memory changes:
 
-Code merged by:
+Code merged by: @mvdebolskiy
 
-Code reviewed by:
+Code reviewed by: @gold2718 , @TomasTorsvik
 
 Summary of pre-tag testing on Betzy:
   - prealpha_noresm : PASS (diffs for all ne30 and hist ne16 tests)
