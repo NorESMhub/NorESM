@@ -1,8 +1,8 @@
 ===============================================================
 
 Tag name: noresm3_0_beta30
-Date:
-One-line Summary: 
+Date: 23.11.2026
+One-line Summary: Fix CLM crashes; DAMIP compsets
 
 Details:
 
@@ -59,13 +59,13 @@ DIN_CACHE_ROOT and a template file in ccs_config/machines/$MACHINE. DIN_LOC_ROOT
 D_PROJECT_ROOT/inputdata. A new subroutine that runs in check_input_data and case.submit will symlink files
 in DIN_CACHE_ROOT to DIN_LOC_ROOT based on Buildconf/*.input_data_list files BEFORE the usual download starts.
 If there is no symlink to a valid file or an actual file in DIN_LOC_ROOT, check_input_data will start a hydrator job,
-by making a filelist and .conf files in $CASEROOT/inputdata_cache. These will be picked up by hydrator and it will try to 
+by making a filelist and .conf files in $CASEROOT/inputdata_cache. These will be picked up by hydrator and it will try to
 get those files from cdl service to DIN_CACHE_ROOT, if files are succesfully cached, they will get symlinked to DIN_LOC_ROOT.
 If hydrator failed to cache files, a normal download from servers into DIN_LOC_ROOT will happen.
 This will happen ONLY to the files that have DIN_LOC_ROOT as part of their paths.
 
 To reproduce runs with previous beta versions, use_fates_ptfix should be set to .false. However, this might result in crash in fates.
-This flag is true by default apart from 1850 compsets with ne16. 
+This flag is true by default apart from 1850 compsets with ne16.
 
 Fates and CTSM are now using noresm3_0_rel_XXX tags and noresm3_0_rel branch.
 
@@ -84,7 +84,7 @@ Summary of pre-tag testing on Betzy:
 
 Summary of pre-tag testing on Olivia:
   - prealpha_noresm : PASS (diffs for all ne30 and hist ne16 tests)
-  - aux_blom_noresm :
+  - aux_blom_noresm : PASS
   - aux_cam_noresm  :
   - aux_cism_noresm :
   - aux_clm_noresm  : PASS (diffs for tests where fates fix is applied)
