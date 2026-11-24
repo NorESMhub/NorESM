@@ -152,7 +152,7 @@ NorESM is distributed via GitHub. To obtain the code do the following:
    working directory.
 
 #. Go into the newly created repository and select the version you want.
-   To see which NorESM tags are available, use **git tag**. The development
+   To see which NorESM tags are available, use **git tag**. The `master`
    branch is checked out by default::
 
       cd my_noresm_sandbox
@@ -174,109 +174,3 @@ At this point you have a working version of NorESM.
 
 To see full details of how to set up a case, compile and run, see the
 NorESM user guide and the CIME documentation.
-
-More details on git-fleximod
-----------------------------
-
-The file **.gitmodules** in your top-level directory tells
-**git-fleximod** which version (``fxtag``) of each component should be
-brought in to generate your sandbox. The commit recorded by git for each
-submodule must be consistent with its ``fxtag``. To check this, use::
-
-  ./bin/git-fleximod status
-
-**You need to rerun** ``./bin/git-fleximod update`` **whenever the
-submodule versions have changed**. Common times when this is needed are:
-
-* After checking out a new NorESM branch/tag
-
-* After merging some other NorESM branch/tag into your currently
-  checked-out branch
-
-**git-fleximod** should be run from the root of the source tree. To see
-more details, issue ::
-
-  ./bin/git-fleximod --help
-
-Customizing your NorESM sandbox
-===============================
-
-Switching to a different NorESM tag
------------------------------------
-
-If you have already checked out a tag and **HAVE NOT MADE ANY
-MODIFICATIONS** it is simple to change your sandbox::
-
-  git checkout noresm3_0_beta30
-  ./bin/git-fleximod update
-
-You should **not** use this method if you have made any source code
-changes, or if you have any ongoing cases that were created from this
-sandbox. In these cases, it is often easiest to do a second **git clone**.
-
-Pointing to a different version of a component
-----------------------------------------------
-
-Each submodule entry in **.gitmodules** has the following form (we use CAM
-as an example)::
-
-  [submodule "cam"]
-  path = components/cam
-  url = https://github.com/NorESMhub/CAM.git
-  fxtag = noresm3_0_057_cam6_4_121
-  fxrequired = ToplevelRequired
-  fxDONOTUSEurl = https://github.com/NorESMhub/CAM.git
-
-To point to a different version of a component, you can either:
-
-* change into the submodule directory and check out the desired tag or
-  branch with git; or
-
-* modify the ``fxtag`` entry in **.gitmodules** and run
-  ``./bin/git-fleximod update``.
-
-Keep in mind that changing individual components from a tag may result
-in an invalid model (won't compile, won't run, not scientifically
-meaningful) and is unsupported.
-
-Committing your change to a component version
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-After changing a component version, commit the change in your local git
-repository, on a branch, so that the sandbox stays reproducible. For
-example::
-
-  git checkout -b my_noresm_branch
-  git add .gitmodules components/cam
-  git commit -m "Update CAM to noresm3_0_058_cam6_4_121"
-
-Modifying a component
----------------------
-
-If you'd like to modify a component and use your changes in your sandbox
-(again using CAM as an example):
-
-#. Fork the component repository (e.g. NorESMhub/CAM) on GitHub and create
-   a branch for your development.
-
-#. Point the submodule to your fork and branch, e.g. by changing into
-   ``components/cam``, adding your fork as a remote, and checking out your
-   branch. Commit the updated submodule hash in the top-level repository.
-
-#. Open a pull request to the relevant NorESM component repository, and
-   later a pull request to this repository to update the component version.
-   See `CONTRIBUTING.md <CONTRIBUTING.md>`_ and the NorESM user guide.
-
-Developer setup
-===============
-
-Developers who have not already done so should follow the recommended
-`one-time <https://github.com/esmci/cime/wiki/CIME-Git-Workflow#configure-git-one-time>`_
-setup directions for git. Developers may also want to set up
-`ssh <https://help.github.com/articles/connecting-to-github-with-ssh/>`_
-keys and switch to using the ``git@github.com:NorESMhub/NorESM.git`` form of
-the github URLs.
-
-Pull requests to this repository should use the provided issue and pull
-request templates, and each new tag should be documented in the **ChangeLog**
-(see **ChangeLog_template**).
