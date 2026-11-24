@@ -36,7 +36,7 @@ Describe any substantial timing or memory changes: NA
 
 Code merged by: @TomasTorsvik
 
-Code reviewed by:
+Code reviewed by: @matsbn, @gold2718 
 
 Summary of pre-tag testing on Betzy:
   - prealpha_noresm :
