@@ -40,6 +40,8 @@ to that directory to continue run.
 
 Describe any substantial timing or memory changes:
 
+Code merged by: @mvdebolskiy
+
 Code reviewed by: @gold2718, @TomasTorsvik
 
 Summary of pre-tag testing on Olivia:
