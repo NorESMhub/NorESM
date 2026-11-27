@@ -53,6 +53,61 @@ Summarize any change to answers:
 
 ===============================================================
 
+Tag name: noresm3_0_beta31a
+Date: 27.11.2026
+One-line Summary: hotfix for dout_s_root
+
+Details:
+ccs_config:
+ - ccs_config_noresm0.0.83: fix for dout_s_root not including $USER on olivia
+
+Component tags used in this tag:
+
+ - parallelio : NCAR/ParallelIO             : pio2_6_2
+ - ccs_config : NorESMhub/ccs_config_noresm : ccs_config_noresm0.0.83
+ - cime       : NorESMhub/cime              : cime6.7.6_noresm_v1
+ - share      : NorESMHub/NorESM_share      : share1.1.21_noresm_v0
+ - blom       : NorESMhub/BLOM              : v1.14.15
+ - cam        : NorESMhub/CAM               : noresm3_0_057_cam6_4_121
+ - cdeps      : NorESMhub/CDEPS             : cdeps1.0.94_noresm_v4
+ - cice6      : NorESMhub/NorESM_CICE       : cesm3_cice6_6_3_11_noresm_v7
+ - cism       : NorESMhub/CISM-wrapper      : cismwrap_3_00_002_noresm_v0
+ - clm        : NorESMhub/CTSM              : noresm3_0_rel_beta30
+    - fates   : NorESMhub/fates             : noresm3_0_rel_beta30
+ - cmeps      : NorESMhub/CMEPS             : cmeps1.1.76_noresm_v2
+ - mosart     : NorESMhub/MOSART            : mosart1.1.12_noresm_v4
+ - ww3        : NorESMhub/WW3_interface     : main_0.1.0_noresm_v0
+ - pycect     : NCAR/PyCECT                 : 3.2.2
+
+Bugs fixed:
+
+https://github.com/NorESMhub/cime/issues/129
+
+Describe any changes made to scripts/build system:
+
+None. If you ran a simulation with beta30/beta31
+your DOUT_S_ROOT is incorrectly set to /cluster/work/projects/nn9560k//archive/$CASENAME
+on Olivia. move it to /cluster/work/projects/nn9560k/$USER/archive/$CASENAME and set $DOUT_S_ROOT
+to that directory to continue run.
+
+
+Describe any substantial timing or memory changes:
+
+Code merged by: @mvdebolskiy
+
+Code reviewed by: @gold2718, @TomasTorsvik
+
+Summary of pre-tag testing on Olivia:
+  - prealpha_noresm : PASS (ERI tests)
+  - aux_blom_noresm :
+  - aux_cam_noresm  :
+  - aux_cism_noresm :
+  - aux_clm_noresm  :
+
+Summarize any change to answers: None
+
+===============================================================
+
 Tag name: noresm3_0_beta31
 Date: 24.11.2026
 One-line Summary: Update license for NorESM3.0
