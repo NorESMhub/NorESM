@@ -6,7 +6,7 @@ One-line Summary: hotfix for dout_s_root
 
 Details:
 ccs_config:
- - ccs_config_noresm0.0.83: fix for dout_s_root not includding $USER on olivia
+ - ccs_config_noresm0.0.83: fix for dout_s_root not including $USER on olivia
 
 Component tags used in this tag:
 
