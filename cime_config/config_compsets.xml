@@ -234,6 +234,32 @@
   </compset>
 
   <compset>
+    <alias>N7lGhgGaxg</alias>
+    <lname>SCEN7L_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP</lname>
+    <science_support grid="ne16pg3_tn14_ais8gris4"/>
+    <science_support grid="ne30pg3_tn14_ais8gris4"/>
+  </compset>
+  <compset>
+    <alias>N7lEsmGhgGaxg</alias>
+    <lname>SCEN7L_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP_BGC%BPRP</lname>
+    <science_support grid="ne16pg3_tn14_ais8gris4"/>
+    <science_support grid="ne30pg3_tn14_ais8gris4"/>
+  </compset>
+
+  <compset>
+    <alias>N7lnGhgGaxg</alias>
+    <lname>SCEN7LN_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP</lname>
+    <science_support grid="ne16pg3_tn14_ais8gris4"/>
+    <science_support grid="ne30pg3_tn14_ais8gris4"/>
+  </compset>
+  <compset>
+    <alias>N7lnEsmGhgGaxg</alias>
+    <lname>SCEN7LN_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP_BGC%BPRP</lname>
+    <science_support grid="ne16pg3_tn14_ais8gris4"/>
+    <science_support grid="ne30pg3_tn14_ais8gris4"/>
+  </compset>
+
+  <compset>
     <alias>N7mGhgGaxg</alias>
     <lname>SCEN7M_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP</lname>
     <science_support grid="ne16pg3_tn14_ais8gris4"/>
@@ -260,19 +286,6 @@
   </compset>
 
   <compset>
-    <alias>N7lGhgGaxg</alias>
-    <lname>SCEN7L_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP</lname>
-    <science_support grid="ne16pg3_tn14_ais8gris4"/>
-    <science_support grid="ne30pg3_tn14_ais8gris4"/>
-  </compset>
-  <compset>
-    <alias>N7lEsmGhgGaxg</alias>
-    <lname>SCEN7L_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP_BGC%BPRP</lname>
-    <science_support grid="ne16pg3_tn14_ais8gris4"/>
-    <science_support grid="ne30pg3_tn14_ais8gris4"/>
-  </compset>
-
-  <compset>
     <alias>N7vlGhgGaxg</alias>
     <lname>SCEN7VL_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP</lname>
     <science_support grid="ne16pg3_tn14_ais8gris4"/>
@@ -281,19 +294,6 @@
   <compset>
     <alias>N7vlEsmGhgGaxg</alias>
     <lname>SCEN7VL_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP_BGC%BPRP</lname>
-    <science_support grid="ne16pg3_tn14_ais8gris4"/>
-    <science_support grid="ne30pg3_tn14_ais8gris4"/>
-  </compset>
-
-  <compset>
-    <alias>N7lnGhgGaxg</alias>
-    <lname>SCEN7LN_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP</lname>
-    <science_support grid="ne16pg3_tn14_ais8gris4"/>
-    <science_support grid="ne30pg3_tn14_ais8gris4"/>
-  </compset>
-  <compset>
-    <alias>N7lnEsmGhgGaxg</alias>
-    <lname>SCEN7LN_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP_BGC%BPRP</lname>
     <science_support grid="ne16pg3_tn14_ais8gris4"/>
     <science_support grid="ne30pg3_tn14_ais8gris4"/>
   </compset>
@@ -319,6 +319,7 @@
 	      <value compset="5505_"     >1955-01-01</value>
 	      <value compset="RCP[2468]_">2005-01-01</value>
 	      <value compset="2013_"     >2013-01-01</value>
+        <value compset="^SCEN7"    >2022-01-01</value>
       </values>
     </entry>
   </entries>
