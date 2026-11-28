@@ -205,6 +205,99 @@
     <lname>1850_CAM70%LT%NORESM%CAMoslo_CLM60%BGC-CROP_CICE_BLOM%HYB%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP</lname>
   </compset>
 
+  <!-- ScenarioMIP-->
+
+  <compset>
+    <alias>N7hGhgGaxg</alias>
+    <lname>SCEN7H_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP</lname>
+    <science_support grid="ne16pg3_tn14_ais8gris4"/>
+    <science_support grid="ne30pg3_tn14_ais8gris4"/>
+  </compset>
+  <compset>
+    <alias>N7hEsmGhgGaxg</alias>
+    <lname>SCEN7H_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP_BGC%BPRP</lname>
+    <science_support grid="ne16pg3_tn14_ais8gris4"/>
+    <science_support grid="ne30pg3_tn14_ais8gris4"/>
+  </compset>
+
+  <compset>
+    <alias>N7hlGhgGaxg</alias>
+    <lname>SCEN7HL_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP</lname>
+    <science_support grid="ne16pg3_tn14_ais8gris4"/>
+    <science_support grid="ne30pg3_tn14_ais8gris4"/>
+  </compset>
+  <compset>
+    <alias>N7hlEsmGhgGaxg</alias>
+    <lname>SCEN7HL_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP_BGC%BPRP</lname>
+    <science_support grid="ne16pg3_tn14_ais8gris4"/>
+    <science_support grid="ne30pg3_tn14_ais8gris4"/>
+  </compset>
+
+  <compset>
+    <alias>N7lGhgGaxg</alias>
+    <lname>SCEN7L_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP</lname>
+    <science_support grid="ne16pg3_tn14_ais8gris4"/>
+    <science_support grid="ne30pg3_tn14_ais8gris4"/>
+  </compset>
+  <compset>
+    <alias>N7lEsmGhgGaxg</alias>
+    <lname>SCEN7L_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP_BGC%BPRP</lname>
+    <science_support grid="ne16pg3_tn14_ais8gris4"/>
+    <science_support grid="ne30pg3_tn14_ais8gris4"/>
+  </compset>
+
+  <compset>
+    <alias>N7lnGhgGaxg</alias>
+    <lname>SCEN7LN_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP</lname>
+    <science_support grid="ne16pg3_tn14_ais8gris4"/>
+    <science_support grid="ne30pg3_tn14_ais8gris4"/>
+  </compset>
+  <compset>
+    <alias>N7lnEsmGhgGaxg</alias>
+    <lname>SCEN7LN_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP_BGC%BPRP</lname>
+    <science_support grid="ne16pg3_tn14_ais8gris4"/>
+    <science_support grid="ne30pg3_tn14_ais8gris4"/>
+  </compset>
+
+  <compset>
+    <alias>N7mGhgGaxg</alias>
+    <lname>SCEN7M_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP</lname>
+    <science_support grid="ne16pg3_tn14_ais8gris4"/>
+    <science_support grid="ne30pg3_tn14_ais8gris4"/>
+  </compset>
+  <compset>
+    <alias>N7mEsmGhgGaxg</alias>
+    <lname>SCEN7M_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP_BGC%BPRP</lname>
+    <science_support grid="ne16pg3_tn14_ais8gris4"/>
+    <science_support grid="ne30pg3_tn14_ais8gris4"/>
+  </compset>
+
+  <compset>
+    <alias>N7mlGhgGaxg</alias>
+    <lname>SCEN7ML_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP</lname>
+    <science_support grid="ne16pg3_tn14_ais8gris4"/>
+    <science_support grid="ne30pg3_tn14_ais8gris4"/>
+  </compset>
+  <compset>
+    <alias>N7mlEsmGhgGaxg</alias>
+    <lname>SCEN7ML_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP_BGC%BPRP</lname>
+    <science_support grid="ne16pg3_tn14_ais8gris4"/>
+    <science_support grid="ne30pg3_tn14_ais8gris4"/>
+  </compset>
+
+  <compset>
+    <alias>N7vlGhgGaxg</alias>
+    <lname>SCEN7VL_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP</lname>
+    <science_support grid="ne16pg3_tn14_ais8gris4"/>
+    <science_support grid="ne30pg3_tn14_ais8gris4"/>
+  </compset>
+  <compset>
+    <alias>N7vlEsmGhgGaxg</alias>
+    <lname>SCEN7VL_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_SWAV_SESP_BGC%BPRP</lname>
+    <science_support grid="ne16pg3_tn14_ais8gris4"/>
+    <science_support grid="ne30pg3_tn14_ais8gris4"/>
+  </compset>
+
   <!-- BG compsets: evolving ice sheet -->
 
   <!-- Prognostic wave -->
@@ -220,14 +313,54 @@
   <entries>
     <entry id="RUN_STARTDATE">
       <values>
-	      <value compset="1850_"     >0001-01-01</value>
-	      <value compset="2000_"     >0001-01-01</value>
-	      <value compset="HIST_"     >1850-01-01</value>
-	      <value compset="5505_"     >1955-01-01</value>
-	      <value compset="RCP[2468]_">2005-01-01</value>
-	      <value compset="2013_"     >2013-01-01</value>
+        <value compset="1850_"     >0001-01-01</value>
+        <value compset="2000_"     >0001-01-01</value>
+        <value compset="HIST_"     >1850-01-01</value>
+        <value compset="5505_"     >1955-01-01</value>
+        <value compset="RCP[2468]_">2005-01-01</value>
+        <value compset="2013_"     >2013-01-01</value>
+        <value compset="^SCEN7"    >2022-01-01</value>
+      </values>
+    </entry>
+
+
+    <entry id="RUN_REFDATE">
+      <values match="first">
+        <value compset="SCEN7.*_">2022-01-01</value>
+      </values>
+    </entry>
+
+    <entry id="RUN_TYPE">
+      <values match="last">
+        <value compset="^SCEN7.*_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE"
+               grid="a%ne16np4.pg3_l%ne16np4.pg3_oi%tnx1v4_r%r05_w%null_z%null_g%ais8:gris4_m%tnx1v4" >hybrid</value>
+        <value compset="^SCEN7*_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_*_BGC%BPRP"
+               grid="a%ne16np4.pg3_l%ne16np4.pg3_oi%tnx1v4_r%r05_w%null_z%null_g%ais8:gris4_m%tnx1v4" >hybrid</value>
+      </values>
+    </entry>
+
+    <entry id="GET_REFCASE">
+      <values match="last">
+        <value compset="^SCEN7.*_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE"
+               grid="a%ne16np4.pg3_l%ne16np4.pg3_oi%tnx1v4_r%r05_w%null_z%null_g%ais8:gris4_m%tnx1v4" >TRUE</value>
+        <value compset="^SCEN7.*_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_.*_BGC%BPRP"
+               grid="a%ne16np4.pg3_l%ne16np4.pg3_oi%tnx1v4_r%r05_w%null_z%null_g%ais8:gris4_m%tnx1v4" >TRUE</value>
+      </values>
+    </entry>
+    <entry id="RUN_REFCASE">
+      <values match="last">
+        <!-- Scenario refs are for r1i1p1f1 for testing-->
+        <value compset="^SCEN7.*_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE"
+               grid="a%ne16np4.pg3_l%ne16np4.pg3_oi%tnx1v4_r%r05_w%null_z%null_g%ais8:gris4_m%tnx1v4" >nHistGHGGaxg.LM.nor30b29a.r1i1p1f1.026.20261118</value>
+        <value compset="^SCEN7.*_CAM70%LT%NORESM%GHGCAMoslo_CLM60%FATES-NCFB%NORESM_CICE_BLOM%HYB%ECO_MOSART_CISM2%AIS-NOEVOLVE%GRIS-EVOLVE_.*_BGC%BPRP"
+               grid="a%ne16np4.pg3_l%ne16np4.pg3_oi%tnx1v4_r%r05_w%null_z%null_g%ais8:gris4_m%tnx1v4" >nHistEsmGHGGaxg.LM.nor30b28.008.20261029</value>
+      </values>
+    </entry>
+
+    <entry id="RUN_REFDIR">
+      <values match="last">
+        <value compset="^SCEN7.*">restart</value>
       </values>
     </entry>
   </entries>
-
 </compsets>
